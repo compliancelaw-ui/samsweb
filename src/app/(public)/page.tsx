@@ -188,31 +188,32 @@ export default function HomePage() {
               One Father. One Post. A Movement.
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam had substance use and mental health issues for a long time.
-              His family — father Frank, sister Annie — loved and supported him
-              unconditionally. But they never spoke openly about how Sam&apos;s
+              Sam Sheeder (1998–2025) lived with courage, honesty, and an open
+              heart. He faced life&apos;s challenges — including substance use
+              disorder — with a strength and candor that taught his family
+              something profound: the opposite of addiction is not sobriety,
+              but community. His family loved and supported him
+              unconditionally, but they never spoke openly about how Sam&apos;s
               struggles were affecting <em>them</em>. So they went through it in
-              silence, carrying the shame, guilt, and distress alone.
+              silence.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              After losing Sam, Frank did something most families don&apos;t
-              — he wrote a LinkedIn post about Sam&apos;s death, his struggles,
-              and offered help to others going through similar pain. That post
-              went viral, reaching over 300,000 people. Texts, calls, private
-              messages, and public comments flooded in from people who
-              commended Frank&apos;s courage and shared their own hidden
-              stories.
+              After losing Sam on September 28, 2025, his father Frank did
+              something most families don&apos;t — he wrote openly on LinkedIn
+              about Sam&apos;s life, his struggles, and offered help to anyone
+              carrying the same weight. That post reached over 345,000 people.
+              Nearly 2,000 reactions. 484 comments. Texts, calls, and private
+              messages flooded in — all saying the same thing:
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;
             </blockquote>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              That response made Frank realize just how many people are
-              suffering in silence. He started a nonprofit called Sam&apos;s
-              OATH and embarked on a mission to encourage families to be open
-              and authentic about how a loved one&apos;s substance use and
-              mental health issues affect them — so they can heal together and
-              not feel alone.
+              That response made Frank realize the silence itself was the
+              crisis. He started Sam&apos;s OATH — a movement to encourage
+              families to be open and authentic about how a loved one&apos;s
+              substance use and mental health challenges affect them, so they
+              can heal together and never feel alone.
             </p>
             <Link
               href="/about"
@@ -514,9 +515,9 @@ export default function HomePage() {
             </div>
             <div className="text-center md:text-left">
               <p className="text-2xl md:text-3xl font-semibold text-gray-900 leading-snug mb-4">
-                &ldquo;We loved Sam unconditionally. But we never spoke
-                openly about how his struggles were affecting us. So we went
-                through it in silence.&rdquo;
+                &ldquo;The opposite of addiction is not sobriety, but community.
+                Sam reminded us daily that it&apos;s ok not to be ok, and that
+                joy can be found even on winding roads.&rdquo;
               </p>
               <p className="text-gray-500 font-medium">
                 — Frank Sheeder, Sam&apos;s father

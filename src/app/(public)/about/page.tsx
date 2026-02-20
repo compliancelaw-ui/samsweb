@@ -126,12 +126,16 @@ export default function AboutPage() {
               The Story Behind the Movement
             </p>
             <h2 className="mb-6">Sam&apos;s Story</h2>
+            <p className="text-sm text-gray-400 font-medium mb-6">
+              Samuel Sheeder &middot; July 11, 1998 – September 28, 2025
+            </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam Sheeder was a son, a brother, a friend. He was bright, funny,
-              and deeply loved by everyone around him. He was also fighting a
-              battle with substance use and mental health that his family
-              couldn&apos;t always see — and that society told them not to talk
-              about.
+              Sam Sheeder lived with courage, honesty, and an open heart. He was
+              a son, a brother, a friend — bright, funny, and deeply loved by
+              everyone who knew him. He faced life&apos;s challenges — including
+              substance use disorder — with a strength and candor that taught his
+              family something profound: the opposite of addiction is not
+              sobriety, but community.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               His family — his father Frank, his stepmother Nancy, his sister Annie,
@@ -142,16 +146,18 @@ export default function AboutPage() {
               went through it alone.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              When Sam lost his fight with substance use disorder, his father
-              Frank made a decision that would change everything. Instead of
-              retreating into silence — the way so many grieving families do —
-              Frank spoke up. He wrote about Sam publicly. He shared the pain,
-              the love, the regret, and the hope.
+              Sam reminded the people around him daily that it&apos;s ok not to
+              be ok, and that joy can be found even on winding roads. When Sam
+              passed away on September 28, 2025, his father Frank made a
+              decision that would change everything. Instead of retreating into
+              silence — the way so many grieving families do — Frank wrote openly
+              on LinkedIn about Sam&apos;s life, his struggles, and offered help
+              to anyone carrying the same weight.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              That single LinkedIn post reached over 300,000 people. Hundreds
-              left comments sharing their own hidden stories. Families from
-              across the country said the same thing:
+              That single post reached over 345,000 people. Nearly 2,000
+              reactions. 484 comments. Texts, calls, and private messages
+              flooded in — all saying the same thing:
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;
@@ -192,6 +198,71 @@ export default function AboutPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 25vw"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== THE VIRAL MOMENT — LINKEDIN POST ===== */}
+      <SectionWrapper variant="white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
+              The Moment Everything Changed
+            </p>
+            <h2 className="mb-4">The Post That Started a Movement</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Frank had never shared personal matters on LinkedIn. But on this day, he felt called to.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
+              <Image
+                src="/images/photos/frank-linkedin-post.png"
+                alt="Frank Sheeder's viral LinkedIn post about Sam that reached 345,000 people"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <div className="relative bg-gray-50 rounded-2xl p-8 md:p-10">
+                <Quote className="w-10 h-10 text-primary-200 mb-4" />
+                <blockquote className="text-gray-700 text-lg leading-relaxed italic">
+                  <p className="mb-4">
+                    &ldquo;Sam lived with courage, honesty, and an open heart. He
+                    faced life&apos;s challenges — including substance use disorder —
+                    with a strength and candor that taught us the opposite of
+                    addiction is not sobriety, but community.
+                  </p>
+                  <p className="mb-4">
+                    He reminded us daily that it&apos;s ok not to be ok, and that
+                    joy can be found even on winding roads.
+                  </p>
+                  <p>
+                    For anyone facing these struggles, know that you are seen and
+                    supported. My heart is with you, and I am always open to
+                    listen with compassion and without judgment.&rdquo;
+                  </p>
+                </blockquote>
+                <p className="mt-6 text-sm font-semibold text-gray-500 uppercase tracking-wide">
+                  — Frank Sheeder, LinkedIn
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-4 mt-6">
+                <div className="bg-primary-50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-primary">345K+</p>
+                  <p className="text-xs text-gray-500 mt-1">People Reached</p>
+                </div>
+                <div className="bg-teal-50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-teal">1,933</p>
+                  <p className="text-xs text-gray-500 mt-1">Reactions</p>
+                </div>
+                <div className="bg-orange-50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-orange">484</p>
+                  <p className="text-xs text-gray-500 mt-1">Comments</p>
+                </div>
               </div>
             </div>
           </div>
@@ -295,10 +366,11 @@ export default function AboutPage() {
                 people who understand what you&apos;re carrying.
               </p>
               <p>
-                After losing Sam, Frank channeled his grief into something
-                powerful. He wrote openly on LinkedIn — and the post went viral,
-                reaching more than 300,000 people. People flooded him with
-                messages, all saying the same thing: &ldquo;I thought I was the
+                After losing Sam on September 28, 2025, Frank channeled his
+                grief into something powerful. He wrote openly on LinkedIn — and
+                the post went viral, reaching more than 345,000 people. Nearly
+                2,000 reactions. 484 comments. People flooded him with messages,
+                all saying the same thing: &ldquo;I thought I was the
                 only one.&rdquo;
               </p>
               <p>
