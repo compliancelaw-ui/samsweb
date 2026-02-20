@@ -229,12 +229,13 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
+            <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
               <Image
                 src="/images/photos/frank-linkedin-post.png"
                 alt="Frank Sheeder's viral LinkedIn post about Sam that reached 345,000 people"
-                fill
-                className="object-cover"
+                width={600}
+                height={900}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -291,12 +292,13 @@ export default function AboutPage() {
             <h2 className="mb-4">A Son&apos;s Love for His Father</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
+            <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
               <Image
                 src="/images/photos/sam-instagram-post.png"
                 alt="Sam Sheeder's Instagram post about his father Frank"
-                fill
-                className="object-cover"
+                width={600}
+                height={600}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -402,12 +404,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="lg:col-span-2 space-y-4">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/photos/family-couch.jpg"
                   alt="Frank, Annie, and Sam sharing a laugh"
-                  fill
-                  className="object-cover"
+                  width={800}
+                  height={1000}
+                  className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
@@ -539,7 +542,7 @@ export default function AboutPage() {
           <h2 className="mb-6">Be Part of the Movement</h2>
           <p className="text-xl text-gray-600 mb-10 leading-relaxed">
             You don&apos;t need a title or a platform to make a difference. All
-            you need is the willingness to stop hiding. Take the OATH and join
+            you need is the willingness to stop hiding. Take Sam&apos;s OATH and join
             thousands of families choosing openness over silence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -547,7 +550,7 @@ export default function AboutPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
             >
-              Take the OATH
+              Take Sam&apos;s OATH
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link

@@ -65,7 +65,7 @@ export function Header() {
               href="/take-the-oath"
               className="inline-flex items-center rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-500 hover:shadow-md"
             >
-              Take the OATH
+              Take Sam&apos;s OATH
             </Link>
           </div>
 
@@ -112,7 +112,7 @@ export function Header() {
               className="block w-full rounded-full bg-teal py-3 text-center text-base font-semibold text-white shadow-sm transition-all hover:bg-teal-500 hover:shadow-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Take the OATH
+              Take Sam&apos;s OATH
             </Link>
           </div>
         </nav>

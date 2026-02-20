@@ -227,7 +227,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Join the Movement Today</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            You don&apos;t need permission to be part of this. Take the OATH,
+            You don&apos;t need permission to be part of this. Take Sam&apos;s OATH,
             share your story, or simply tell someone you know about Sam&apos;s
             OATH. Every conversation is a step toward healing.
           </p>
@@ -236,7 +236,7 @@ export default function ContactPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
             >
-              Take the OATH
+              Take Sam&apos;s OATH
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link

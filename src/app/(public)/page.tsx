@@ -55,7 +55,7 @@ export default function HomePage() {
                 href="/take-the-oath"
                 className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
               >
-                Take the OATH
+                Take Sam&apos;s OATH
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
@@ -171,7 +171,7 @@ export default function HomePage() {
             href="/take-the-oath"
             className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
           >
-            Take the OATH — It Takes 60 Seconds
+            Take Sam&apos;s OATH — It Takes 60 Seconds
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -240,12 +240,13 @@ export default function HomePage() {
               />
             </div>
             {/* Overlapping family photo */}
-            <div className="relative aspect-[3/2] rounded-xl overflow-hidden shadow-lg -mt-20 ml-8 mr-[-1rem] lg:ml-16 lg:mr-[-2rem] border-4 border-white">
+            <div className="rounded-xl overflow-hidden shadow-lg -mt-20 ml-8 mr-[-1rem] lg:ml-16 lg:mr-[-2rem] border-4 border-white">
               <Image
                 src="/images/photos/family-couch.jpg"
                 alt="The Sheeder family sharing a laugh"
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 80vw, 40vw"
               />
             </div>
@@ -293,7 +294,7 @@ export default function HomePage() {
       {/* ===== WHAT HAPPENS WHEN YOU TAKE THE OATH ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-16">
-          <h2 className="mb-4">What Happens When You Take the OATH</h2>
+          <h2 className="mb-4">What Happens When You Take Sam&apos;s OATH</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             It takes 60 seconds. Here&apos;s what you get.
           </p>
@@ -540,7 +541,7 @@ export default function HomePage() {
             Whether you&apos;re struggling, grieving, or simply standing in
             support — your voice matters. When Frank shared his story,
             hundreds of people reached out to say they&apos;d been carrying
-            the same pain in silence. Take the OATH. Join the movement. Help
+            the same pain in silence. Take Sam&apos;s OATH. Join the movement. Help
             us prove that what&apos;s hidden doesn&apos;t have to stay that
             way.
           </p>
@@ -549,7 +550,7 @@ export default function HomePage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
             >
-              Take the OATH
+              Take Sam&apos;s OATH
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link

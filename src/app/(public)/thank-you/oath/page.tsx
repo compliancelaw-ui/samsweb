@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Download, Share2, BookOpen, ArrowRight } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { ShareCallToAction } from "@/components/ui/page-share-buttons";
 
 export const metadata: Metadata = {
   title: "Thank You for Taking the OATH",
@@ -84,12 +85,19 @@ export default function ThankYouOathPage() {
         </div>
       </SectionWrapper>
 
+      {/* Share */}
+      <SectionWrapper variant="white">
+        <div className="max-w-lg mx-auto">
+          <ShareCallToAction />
+        </div>
+      </SectionWrapper>
+
       {/* What's Next */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="mb-4">Keep Going</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Taking the OATH is just the beginning. Here are more ways to be part
+            Taking Sam&apos;s OATH is just the beginning. Here are more ways to be part
             of the movement.
           </p>
           <div className="space-y-4">

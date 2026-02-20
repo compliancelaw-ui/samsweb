@@ -237,7 +237,7 @@ export default function MusicPage() {
             href="/take-the-oath"
             className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
           >
-            Take the OATH
+            Take Sam&apos;s OATH
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

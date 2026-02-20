@@ -85,7 +85,7 @@ export default function ThankYouAmbassadorPage() {
               <div className="flex items-center gap-4">
                 <Award className="w-6 h-6 text-teal" />
                 <div className="text-left">
-                  <p className="font-semibold text-gray-900">Take the OATH</p>
+                  <p className="font-semibold text-gray-900">Take Sam&apos;s OATH</p>
                   <p className="text-sm text-gray-500">
                     If you haven&apos;t already, place your pin on the map
                   </p>

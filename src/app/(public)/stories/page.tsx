@@ -146,7 +146,7 @@ export default function StoriesPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/10 transition-all"
             >
-              Take the OATH First
+              Take Sam&apos;s OATH First
             </Link>
           </div>
         </div>

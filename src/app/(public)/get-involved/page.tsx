@@ -48,10 +48,10 @@ export default function GetInvolvedPage() {
                 <MapPin className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-teal transition-colors">
-                Take the OATH
+                Take Sam&apos;s OATH
               </h3>
               <p className="text-gray-600">
-                The simplest and most powerful step. Take the OATH, place your
+                The simplest and most powerful step. Take Sam&apos;s OATH, place your
                 pin on the map, and let the world know you stand with families
                 who refuse to stay silent.
               </p>

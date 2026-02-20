@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CrisisBanner } from "@/components/layout/crisis-banner";
 import { EscapeButton } from "@/components/ui/escape-button";
+import { PageShareButtons } from "@/components/ui/page-share-buttons";
 
 export default function PublicLayout({
   children,
@@ -15,6 +16,7 @@ export default function PublicLayout({
       <Footer />
       <EscapeButton />
       <CrisisBanner />
+      <PageShareButtons variant="floating" />
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Clock, Bell, ArrowRight, Heart } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { ShareCallToAction } from "@/components/ui/page-share-buttons";
 
 export const metadata: Metadata = {
   title: "Thank You for Sharing Your Story",
@@ -72,6 +73,13 @@ export default function ThankYouStoryPage() {
         </div>
       </SectionWrapper>
 
+      {/* Share */}
+      <SectionWrapper variant="white">
+        <div className="max-w-lg mx-auto">
+          <ShareCallToAction />
+        </div>
+      </SectionWrapper>
+
       {/* Keep Going */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
@@ -87,7 +95,7 @@ export default function ThankYouStoryPage() {
               <div className="flex items-center gap-4">
                 <Heart className="w-6 h-6 text-teal" />
                 <div className="text-left">
-                  <p className="font-semibold text-gray-900">Take the OATH</p>
+                  <p className="font-semibold text-gray-900">Take Sam&apos;s OATH</p>
                   <p className="text-sm text-gray-500">
                     Place your pin on the map and join the movement
                   </p>

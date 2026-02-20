@@ -43,7 +43,7 @@ export default function ThankYouNewsletterPage() {
               <div className="flex items-center gap-4">
                 <Heart className="w-6 h-6 text-teal" />
                 <div className="text-left">
-                  <p className="font-semibold text-gray-900">Take the OATH</p>
+                  <p className="font-semibold text-gray-900">Take Sam&apos;s OATH</p>
                   <p className="text-sm text-gray-500">
                     Place your pin on the map and make it official
                   </p>

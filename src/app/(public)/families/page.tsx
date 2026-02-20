@@ -612,7 +612,7 @@ export default function FamiliesPage() {
               className="inline-flex items-center justify-center gap-2 bg-teal text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-600 transition-colors"
             >
               <Users className="w-4 h-4" />
-              Take the OATH
+              Take Sam&apos;s OATH
             </Link>
           </div>
         </div>

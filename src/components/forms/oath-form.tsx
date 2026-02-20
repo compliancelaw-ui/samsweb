@@ -352,11 +352,11 @@ export function OathForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
-            Taking the OATH...
+            Taking Sam&apos;s OATH...
           </>
         ) : (
           <>
-            Take the OATH
+            Take Sam&apos;s OATH
             <ArrowRight className="w-5 h-5" />
           </>
         )}

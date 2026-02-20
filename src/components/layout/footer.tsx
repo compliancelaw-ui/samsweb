@@ -3,7 +3,7 @@ import { SITE_NAME, CRISIS_RESOURCES } from "@/lib/constants";
 import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
 
 const takeActionLinks = [
-  { href: "/take-the-oath", label: "Take the OATH" },
+  { href: "/take-the-oath", label: "Take Sam's OATH" },
   { href: "/stories", label: "Share Your Story" },
   { href: "/get-involved", label: "Get Involved" },
 ];
@@ -151,7 +151,7 @@ export function Footer() {
       <div className="border-t border-gray-600">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-sm text-gray-400">
-            &copy; 2026 {SITE_NAME} Foundation. All rights reserved.
+            &copy; 2026 {SITE_NAME} Foundation &middot; A 501(c)(3) Nonprofit Organization. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link

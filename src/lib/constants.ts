@@ -28,10 +28,10 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/stories", label: "Stories" },
   { href: "/map", label: "Map" },
-  { href: "/music", label: "Music" },
   { href: "/blog", label: "Blog" },
   { href: "/workplace", label: "Workplaces" },
   { href: "/get-involved", label: "Get Involved" },
+  { href: "/music", label: "Music" },
 ] as const;
 
 export const CRISIS_RESOURCES = {
