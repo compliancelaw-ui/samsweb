@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CrisisBanner } from "@/components/layout/crisis-banner";
+import { EscapeButton } from "@/components/ui/escape-button";
 
 export default function PublicLayout({
   children,
@@ -12,6 +13,7 @@ export default function PublicLayout({
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />
+      <EscapeButton />
       <CrisisBanner />
     </>
   );

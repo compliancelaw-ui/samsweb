@@ -51,7 +51,7 @@ export const MUSIC_TRACKS = [
   { title: "What's Hidden Doesn't Heal", theme: "The mission" },
   { title: "Knot on the Family Tree", theme: "Family bonds" },
   { title: "I Carry You Through", theme: "Carrying on" },
-  { title: "For Annie", theme: "A mother's perspective" },
+  { title: "For Annie", theme: "A sister's perspective" },
   { title: "Joy Anyway", theme: "Finding hope" },
   { title: "You Can't Outrun Grief", theme: "The journey" },
   { title: "My Name is More Than Pain", theme: "Identity beyond struggle" },

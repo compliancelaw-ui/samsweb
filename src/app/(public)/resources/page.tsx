@@ -10,6 +10,10 @@ import {
   ExternalLink,
   Shield,
   MessageCircle,
+  ArrowRightLeft,
+  Megaphone,
+  Users,
+  SmartphoneNfc,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { CRISIS_RESOURCES } from "@/lib/constants";
@@ -19,6 +23,124 @@ export const metadata: Metadata = {
   description:
     "Find crisis hotlines, support organizations, and resources for families affected by substance use and mental health challenges. You are not alone.",
 };
+
+const LANGUAGE_GUIDE = [
+  {
+    stigmatizing: "Addict",
+    preferred: "Person with a substance use disorder",
+  },
+  {
+    stigmatizing: "Junkie",
+    preferred: "Person who uses drugs",
+  },
+  {
+    stigmatizing: "Clean / Dirty",
+    preferred: "In recovery / Actively using",
+  },
+  {
+    stigmatizing: "Abuse",
+    preferred: 'Substance use disorder or "misuse"',
+  },
+  {
+    stigmatizing: "Drug habit",
+    preferred: "Substance use disorder",
+  },
+  {
+    stigmatizing: "Alcoholic",
+    preferred: "Person with alcohol use disorder",
+  },
+  {
+    stigmatizing: "Relapse",
+    preferred: "Recurrence or return to use",
+  },
+  {
+    stigmatizing: "Former addict",
+    preferred: "Person in recovery",
+  },
+  {
+    stigmatizing: "Enabling",
+    preferred: "Supporting (context-dependent)",
+  },
+  {
+    stigmatizing: "Rock bottom",
+    preferred:
+      "Avoid — implies someone must suffer maximally before getting help",
+  },
+];
+
+const SUPPORT_ORGS = [
+  {
+    name: "SAMHSA National Helpline",
+    phone: "1-800-662-4357",
+    phoneLink: "tel:18006624357",
+    description:
+      "Free, confidential, 24/7, 365-day-a-year treatment referral and information service for individuals and families facing mental health and substance use disorders.",
+    url: "https://www.samhsa.gov/find-help/national-helpline",
+  },
+  {
+    name: "NAMI (National Alliance on Mental Illness)",
+    phone: "1-800-950-NAMI",
+    phoneLink: "tel:18009506264",
+    description:
+      "The nation's largest grassroots mental health organization. Offers support groups, education programs, and advocacy for individuals and families affected by mental illness.",
+    url: "https://www.nami.org",
+  },
+  {
+    name: "Al-Anon / Nar-Anon Family Groups",
+    phone: "1-888-425-2666",
+    phoneLink: "tel:18884252666",
+    description:
+      "Support groups specifically for families and friends of people struggling with substance use. Find strength through shared experience with people who understand.",
+    url: "https://al-anon.org",
+  },
+  {
+    name: "The Compassionate Friends",
+    phone: "1-877-969-0010",
+    phoneLink: "tel:18779690010",
+    description:
+      "Support for families who have experienced the death of a child. Local chapters, online support, and resources for bereaved parents, grandparents, and siblings.",
+    url: "https://www.compassionatefriends.org",
+  },
+];
+
+const BOOKS = [
+  {
+    title: "Beautiful Boy",
+    author: "David Sheff",
+    description:
+      "A father's powerful account of his son's addiction — honest, heartbreaking, and full of love.",
+  },
+  {
+    title: "Codependent No More",
+    author: "Melody Beattie",
+    description:
+      "The groundbreaking guide for anyone who loves someone struggling with addiction.",
+  },
+  {
+    title: "It's OK That You're Not OK",
+    author: "Megan Devine",
+    description:
+      "A compassionate guide to grieving that doesn't try to fix your pain — it honors it.",
+  },
+  {
+    title: "In the Realm of Hungry Ghosts",
+    author: "Gabor Mate, M.D.",
+    description:
+      "A compassionate look at the roots of addiction from one of the world's leading experts.",
+  },
+  {
+    title: "The Grief Recovery Handbook",
+    author: "John W. James & Russell Friedman",
+    description:
+      "A practical, action-oriented program for moving beyond loss.",
+  },
+  {
+    title: "More Resources Coming",
+    author: "Sam's OATH",
+    description:
+      "We're curating a growing list of books, articles, podcasts, and films. Check back or contact us with suggestions.",
+  },
+];
 
 export default function ResourcesPage() {
   return (
@@ -41,16 +163,18 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* ===== CRISIS HOTLINES ===== */}
+      {/* ===== IMMEDIATE CRISIS HELP — DIRECT CALL/TEXT BUTTONS ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
           <h2 className="mb-4">If You Need Help Right Now</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            These services are free, confidential, and available 24/7. Please
-            reach out — there is no shame in asking for help.
+            These services are free, confidential, and available 24/7. Tap a
+            button to call or text directly from your phone.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+        {/* Primary crisis row — large tappable cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
           {/* 988 Suicide & Crisis Lifeline */}
           <div className="bg-primary-50 border-2 border-primary-200 rounded-2xl p-8 text-center">
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -62,17 +186,26 @@ export default function ResourcesPage() {
             <p className="text-4xl font-bold text-primary mb-3">
               {CRISIS_RESOURCES.suicideHotline.number}
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-6">
               Call or text 988 — available 24/7 for anyone in suicidal crisis or
               emotional distress.
             </p>
-            <a
-              href={`tel:${CRISIS_RESOURCES.suicideHotline.number}`}
-              className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              Call Now
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="tel:988"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg"
+              >
+                <Phone className="w-5 h-5" />
+                Call 988
+              </a>
+              <a
+                href="sms:988"
+                className="inline-flex items-center justify-center gap-2 bg-primary-100 text-primary font-semibold px-8 py-4 rounded-xl text-lg hover:bg-primary-200 transition-colors shadow-md hover:shadow-lg"
+              >
+                <MessageSquare className="w-5 h-5" />
+                Text 988
+              </a>
+            </div>
           </div>
 
           {/* Crisis Text Line */}
@@ -89,82 +222,187 @@ export default function ResourcesPage() {
             <p className="text-4xl font-bold text-teal mb-3">
               {CRISIS_RESOURCES.crisisText.number}
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-6">
               Free, 24/7 crisis support via text message. A trained crisis
               counselor will respond.
             </p>
-            <div className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-6 py-3 rounded-lg">
-              <MessageSquare className="w-4 h-4" />
-              Text for Help
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="sms:741741&body=HOME"
+                className="inline-flex items-center justify-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-teal-600 transition-colors shadow-md hover:shadow-lg"
+              >
+                <MessageSquare className="w-5 h-5" />
+                Text HOME to 741741
+              </a>
             </div>
           </div>
+        </div>
 
-          {/* Emergency */}
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl p-8 text-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-orange" />
+        {/* Secondary crisis row — 911 + SAMHSA */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {/* 911 Emergency */}
+          <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl p-6 text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                <Shield className="w-6 h-6 text-orange" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-lg font-bold text-gray-900">
+                  {CRISIS_RESOURCES.emergency.label}
+                </h3>
+                <p className="text-2xl font-bold text-orange">
+                  {CRISIS_RESOURCES.emergency.number}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
-              {CRISIS_RESOURCES.emergency.label}
-            </h3>
-            <p className="text-4xl font-bold text-orange mb-3">
-              {CRISIS_RESOURCES.emergency.number}
-            </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 text-sm mb-4">
               If someone is in immediate danger, call 911. You can also go to
               your nearest emergency room.
             </p>
             <a
-              href={`tel:${CRISIS_RESOURCES.emergency.number}`}
-              className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+              href="tel:911"
+              className="inline-flex items-center justify-center gap-2 bg-orange text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-orange-600 transition-colors shadow-md hover:shadow-lg w-full sm:w-auto"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-5 h-5" />
               Call 911
+            </a>
+          </div>
+
+          {/* SAMHSA National Helpline */}
+          <div className="bg-primary-50 border-2 border-primary-100 rounded-2xl p-6 text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                <SmartphoneNfc className="w-6 h-6 text-primary" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-lg font-bold text-gray-900">
+                  SAMHSA National Helpline
+                </h3>
+                <p className="text-2xl font-bold text-primary">
+                  1-800-662-4357
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">
+              Free, confidential, 24/7, 365-day treatment referral and
+              information for substance use and mental health.
+            </p>
+            <a
+              href="tel:18006624357"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg w-full sm:w-auto"
+            >
+              <Phone className="w-5 h-5" />
+              Call SAMHSA
             </a>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* ===== SUPPORT ORGANIZATIONS ===== */}
+      {/* ===== WORDS MATTER — STIGMA-BREAKING LANGUAGE ===== */}
       <SectionWrapper variant="light">
-        <div className="text-center mb-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Megaphone className="w-8 h-8 text-primary" />
+            </div>
+            <h2 className="mb-4">Language That Heals</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              The words we use shape how people see themselves and whether they
+              feel safe enough to ask for help. Person-first language reduces
+              shame, fights stigma, and reminds us that no one is defined by
+              their diagnosis.
+            </p>
+          </div>
+
+          {/* Why language matters callout */}
+          <div className="bg-primary-50 border-l-4 border-primary rounded-r-xl p-6 mb-10 max-w-3xl mx-auto">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Why does this matter?
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Research shows that stigmatizing language — even when unintentional
+              — makes people less likely to seek treatment and more likely to
+              face discrimination from healthcare providers. When we change our
+              words, we change the conversation. When we change the
+              conversation, we save lives.
+            </p>
+          </div>
+
+          {/* Language comparison table */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            {/* Table header */}
+            <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
+              <div className="px-6 py-4 font-bold text-gray-500 uppercase text-sm tracking-wider">
+                Instead of...
+              </div>
+              <div className="px-6 py-4 font-bold text-teal uppercase text-sm tracking-wider">
+                Try saying...
+              </div>
+            </div>
+
+            {/* Table rows */}
+            {LANGUAGE_GUIDE.map((item, index) => (
+              <div
+                key={item.stigmatizing}
+                className={`grid grid-cols-2 items-center ${
+                  index < LANGUAGE_GUIDE.length - 1
+                    ? "border-b border-gray-100"
+                    : ""
+                }`}
+              >
+                <div className="px-6 py-4 flex items-center gap-3">
+                  <span className="text-red-400 text-lg leading-none" aria-hidden="true">
+                    &times;
+                  </span>
+                  <span className="text-gray-600 line-through decoration-red-300/50">
+                    {item.stigmatizing}
+                  </span>
+                </div>
+                <div className="px-6 py-4 flex items-center gap-3">
+                  <ArrowRightLeft className="w-4 h-4 text-teal flex-shrink-0" />
+                  <span className="text-gray-900 font-medium">
+                    {item.preferred}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom note */}
+          <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">
+            Language is always evolving. What matters most is the intention to
+            see people — not labels. When in doubt, ask someone how they prefer
+            to be referred to.
+          </p>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== SUPPORT ORGANIZATIONS ===== */}
+      <SectionWrapper variant="white">
+        <div className="text-center mb-4">
           <h2 className="mb-4">Support Organizations</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             These national organizations offer ongoing support, education, and
             community for individuals and families.
           </p>
         </div>
+
+        {/* Movement framing note */}
+        <div className="flex items-start gap-4 bg-teal-50 border border-teal-200 rounded-xl p-5 max-w-3xl mx-auto mb-10">
+          <Users className="w-6 h-6 text-teal flex-shrink-0 mt-0.5" />
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-semibold text-gray-900">
+              Sam&apos;s OATH is a movement
+            </span>{" "}
+            — not a support group or treatment program. We fight to break the
+            silence and stigma around substance use and mental health. The
+            organizations below offer direct support services, and we encourage
+            families to connect with them as part of their journey.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {[
-            {
-              name: "SAMHSA National Helpline",
-              phone: "1-800-662-4357",
-              description:
-                "Free, confidential, 24/7, 365-day-a-year treatment referral and information service for individuals and families facing mental health and substance use disorders.",
-              url: "https://www.samhsa.gov/find-help/national-helpline",
-            },
-            {
-              name: "NAMI (National Alliance on Mental Illness)",
-              phone: "1-800-950-NAMI",
-              description:
-                "The nation's largest grassroots mental health organization. Offers support groups, education programs, and advocacy for individuals and families affected by mental illness.",
-              url: "https://www.nami.org",
-            },
-            {
-              name: "Al-Anon / Nar-Anon Family Groups",
-              phone: "1-888-425-2666",
-              description:
-                "Support groups specifically for families and friends of people struggling with substance use. Find strength through shared experience with people who understand.",
-              url: "https://al-anon.org",
-            },
-            {
-              name: "The Compassionate Friends",
-              phone: "1-877-969-0010",
-              description:
-                "Support for families who have experienced the death of a child. Local chapters, online support, and resources for bereaved parents, grandparents, and siblings.",
-              url: "https://www.compassionatefriends.org",
-            },
-          ].map((org) => (
+          {SUPPORT_ORGS.map((org) => (
             <div
               key={org.name}
               className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
@@ -172,26 +410,41 @@ export default function ResourcesPage() {
               <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {org.name}
               </h3>
-              <p className="text-primary font-semibold mb-3">{org.phone}</p>
+              <a
+                href={org.phoneLink}
+                className="text-primary font-semibold mb-3 inline-flex items-center gap-1.5 hover:text-primary-600 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                {org.phone}
+              </a>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 {org.description}
               </p>
-              <a
-                href={org.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-teal text-sm font-semibold hover:text-teal-600 transition-colors"
-              >
-                Visit Website
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href={org.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-teal text-sm font-semibold hover:text-teal-600 transition-colors"
+                >
+                  Visit Website
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={org.phoneLink}
+                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:text-primary-600 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  Call Now
+                </a>
+              </div>
             </div>
           ))}
         </div>
       </SectionWrapper>
 
       {/* ===== FOR FAMILIES ===== */}
-      <SectionWrapper variant="white">
+      <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="mb-4">Supporting a Loved One</h2>
@@ -215,8 +468,8 @@ export default function ResourcesPage() {
                   "Educate yourself about substance use disorder and mental illness",
                   "Take care of your own mental health — you can't pour from an empty cup",
                   "Set boundaries with love, not anger",
-                  "Connect with a support group like Al-Anon or NAMI",
-                  "Remember that addiction is a disease, not a choice or moral failing",
+                  "Connect with a support group like Al-Anon, Nar-Anon, or NAMI",
+                  "Remember that substance use disorder is a medical condition, not a choice or moral failing",
                 ].map((tip) => (
                   <li key={tip} className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-teal/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -258,7 +511,7 @@ export default function ResourcesPage() {
       </SectionWrapper>
 
       {/* ===== RECOMMENDED READING ===== */}
-      <SectionWrapper variant="light">
+      <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="mb-4">Recommended Reading</h2>
@@ -267,44 +520,7 @@ export default function ResourcesPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Beautiful Boy",
-                author: "David Sheff",
-                description:
-                  "A father's powerful account of his son's addiction — honest, heartbreaking, and full of love.",
-              },
-              {
-                title: "Codependent No More",
-                author: "Melody Beattie",
-                description:
-                  "The groundbreaking guide for anyone who loves someone struggling with addiction.",
-              },
-              {
-                title: "It's OK That You're Not OK",
-                author: "Megan Devine",
-                description:
-                  "A compassionate guide to grieving that doesn't try to fix your pain — it honors it.",
-              },
-              {
-                title: "In the Realm of Hungry Ghosts",
-                author: "Gabor Mate, M.D.",
-                description:
-                  "A compassionate look at the roots of addiction from one of the world's leading experts.",
-              },
-              {
-                title: "The Grief Recovery Handbook",
-                author: "John W. James & Russell Friedman",
-                description:
-                  "A practical, action-oriented program for moving beyond loss.",
-              },
-              {
-                title: "More Resources Coming",
-                author: "Sam's OATH",
-                description:
-                  "We're curating a growing list of books, articles, podcasts, and films. Check back or contact us with suggestions.",
-              },
-            ].map((book) => (
+            {BOOKS.map((book) => (
               <div
                 key={book.title}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
@@ -347,6 +563,13 @@ export default function ResourcesPage() {
             >
               <Phone className="w-5 h-5" />
               Call 988 Now
+            </a>
+            <a
+              href="sms:988"
+              className="inline-flex items-center justify-center gap-2 bg-white/20 text-white border-2 border-white/40 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/30 transition-all hover:shadow-xl"
+            >
+              <MessageSquare className="w-5 h-5" />
+              Text 988
             </a>
             <Link
               href="/take-the-oath"

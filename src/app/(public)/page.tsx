@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, FileText, Users, Heart, Music, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import {
+  ArrowRight,
+  MapPin,
+  FileText,
+  Users,
+  Heart,
+  Music,
+  ChevronRight,
+  Briefcase,
+} from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { IMPACT_STATS } from "@/lib/constants";
 
@@ -7,8 +17,19 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal min-h-[90vh] flex items-center overflow-hidden">
+        {/* Photo overlay behind gradient */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/photos/family-hug.jpg"
+            alt="Frank Sheeder with his children Annie and Sam"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-800/85 via-primary/80 to-teal/75" />
+        </div>
         <div className="relative z-10 container-wide text-white">
           <div className="max-w-3xl">
             <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
@@ -20,12 +41,14 @@ export default function HomePage() {
               Doesn&apos;t Heal
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
-              Millions of families are struggling with substance use and mental
-              health — in silence. You are not alone.
+              Millions of families are struggling with a loved one&apos;s
+              substance use and mental health challenges — in silence, shame,
+              and isolation. You are not alone.
             </p>
             <p className="text-lg text-white/70 mb-10">
-              Sam&apos;s OATH is a movement of families choosing openness over
-              silence, connection over shame, and healing over hiding.
+              Sam&apos;s OATH is a movement encouraging families to be open and
+              authentic about how these struggles affect them — so they can heal
+              together and never feel alone again.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -50,16 +73,20 @@ export default function HomePage() {
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="mb-6">
-            You Shouldn&apos;t Have to Carry This Alone
+            So Many People Are Suffering in Silence
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            If someone you love is struggling — or if you&apos;ve lost someone
-            — you know the weight of silence. The whispered conversations. The
-            shame that keeps families from reaching out. The loneliness of
-            thinking you&apos;re the only one.
+            When someone you love is struggling with substance use or mental
+            health, the weight doesn&apos;t just fall on them — it falls on
+            the entire family. The guilt. The shame. The whispered
+            conversations. The loneliness of going through it without ever
+            speaking openly about how it&apos;s affecting{" "}
+            <em>you</em>.
           </p>
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            You&apos;re not. Not even close.
+            Families love and support unconditionally, but they rarely talk
+            about what they&apos;re going through themselves. So they carry
+            it in silence — and what&apos;s hidden doesn&apos;t heal.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
@@ -161,22 +188,31 @@ export default function HomePage() {
               One Father. One Post. A Movement.
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              When Frank Sheeder lost his son Sam to substance use disorder, he
-              did something most families don&apos;t — he talked about it.
-              Publicly.
+              Sam had substance use and mental health issues for a long time.
+              His family — father Frank, sister Annie — loved and supported him
+              unconditionally. But they never spoke openly about how Sam&apos;s
+              struggles were affecting <em>them</em>. So they went through it in
+              silence, carrying the shame, guilt, and distress alone.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              His LinkedIn post about Sam reached over 345,000 people. Nearly
-              2,000 reacted. Hundreds left comments sharing their own stories of
-              hidden pain. Families from 22 states said the same thing:
+              After losing Sam, Frank did something most families don&apos;t
+              — he wrote a LinkedIn post about Sam&apos;s death, his struggles,
+              and offered help to others going through similar pain. That post
+              went viral, reaching over 300,000 people. Texts, calls, private
+              messages, and public comments flooded in from people who
+              commended Frank&apos;s courage and shared their own hidden
+              stories.
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;
             </blockquote>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              That post became Sam&apos;s OATH — a movement built on the
-              conviction that what&apos;s hidden doesn&apos;t heal, and no
-              family should have to struggle in silence.
+              That response made Frank realize just how many people are
+              suffering in silence. He started a nonprofit called Sam&apos;s
+              OATH and embarked on a mission to encourage families to be open
+              and authentic about how a loved one&apos;s substance use and
+              mental health issues affect them — so they can heal together and
+              not feel alone.
             </p>
             <Link
               href="/about"
@@ -186,16 +222,26 @@ export default function HomePage() {
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="relative">
-            {/* Photo placeholder - will be replaced with actual photos */}
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary-100 to-teal-100 flex items-center justify-center">
-              <div className="text-center text-gray-400 p-8">
-                <Heart className="w-16 h-16 mx-auto mb-4 text-primary-300" />
-                <p className="text-sm">Photo of Sam</p>
-                <p className="text-xs mt-1">
-                  We&apos;ll place your photo here
-                </p>
-              </div>
+          <div className="relative space-y-6">
+            {/* Sam portrait */}
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/photos/sam-portrait.jpg"
+                alt="Sam Sheeder"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            {/* Overlapping family photo */}
+            <div className="relative aspect-[3/2] rounded-xl overflow-hidden shadow-lg -mt-20 ml-8 mr-[-1rem] lg:ml-16 lg:mr-[-2rem] border-4 border-white">
+              <Image
+                src="/images/photos/family-couch.jpg"
+                alt="The Sheeder family sharing a laugh"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 80vw, 40vw"
+              />
             </div>
           </div>
         </div>
@@ -206,8 +252,8 @@ export default function HomePage() {
         <div className="text-center text-white">
           <h2 className="text-white mb-4">A Movement Growing Every Day</h2>
           <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-            What started as one family&apos;s story has become a national
-            community.
+            What started as one father&apos;s post about his son became a
+            national community of families choosing openness over silence.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div>
@@ -392,10 +438,21 @@ export default function HomePage() {
             <h2 className="text-white mb-6">
               Bring the OATH to Your Workplace
             </h2>
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              Frank had a good workplace with a strong culture — and he still
+              felt alone. He didn&apos;t feel like he could share what his
+              family was going through. That should change. Workplaces should
+              be safe places for people dealing with these issues in their
+              families.
+            </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
               One in five employees is affected by substance use or mental
-              health challenges. Most suffer in silence because they don&apos;t
-              feel safe speaking up at work.
+              health challenges in their family. When they can&apos;t speak
+              up, it affects productivity, absenteeism, and morale. It also
+              causes <strong className="text-white">presenteeism</strong> —
+              showing up at work but not really being engaged. The person is
+              there physically, but their mind and heart are somewhere else
+              entirely.
             </p>
             <ul className="space-y-4 mb-8">
               {[
@@ -419,17 +476,55 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="w-64 h-64 rounded-full bg-white/5 flex items-center justify-center">
-              <div className="w-48 h-48 rounded-full bg-white/5 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-teal-300" />
-                </div>
+          <div className="hidden lg:flex flex-col items-center justify-center gap-6">
+            <div className="relative w-56 h-56 rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/photos/frank-headshot.jpg"
+                alt="Frank Sheeder, Founder of Sam's OATH"
+                fill
+                className="object-cover"
+                sizes="224px"
+              />
+            </div>
+            <div className="flex items-center gap-4 mt-2">
+              <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center">
+                <Briefcase className="w-8 h-8 text-teal-300" />
+              </div>
+              <div>
+                <p className="text-white font-semibold">Frank Sheeder</p>
+                <p className="text-gray-400 text-sm">Founder, Sam&apos;s OATH</p>
               </div>
             </div>
           </div>
         </div>
       </SectionWrapper>
+
+      {/* ===== FRANK & SAM PHOTO STRIP ===== */}
+      <section className="relative bg-primary-50 py-12 md:py-16 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/photos/frank-sam-boat.jpg"
+                alt="Frank and Sam Sheeder on a boat"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-semibold text-gray-900 leading-snug mb-4">
+                &ldquo;We loved Sam unconditionally. But we never spoke
+                openly about how his struggles were affecting us. So we went
+                through it in silence.&rdquo;
+              </p>
+              <p className="text-gray-500 font-medium">
+                — Frank Sheeder, Sam&apos;s father
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ===== FINAL CTA ===== */}
       <SectionWrapper variant="white">
@@ -437,9 +532,11 @@ export default function HomePage() {
           <h2 className="mb-6">You Don&apos;t Have to Be Silent Anymore</h2>
           <p className="text-xl text-gray-600 mb-10 leading-relaxed">
             Whether you&apos;re struggling, grieving, or simply standing in
-            support — your voice matters. Take the OATH. Join the movement.
-            Help us prove that what&apos;s hidden doesn&apos;t have to stay
-            that way.
+            support — your voice matters. When Frank shared his story,
+            hundreds of people reached out to say they&apos;d been carrying
+            the same pain in silence. Take the OATH. Join the movement. Help
+            us prove that what&apos;s hidden doesn&apos;t have to stay that
+            way.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

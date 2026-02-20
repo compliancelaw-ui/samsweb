@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -6,10 +7,10 @@ import {
   Fingerprint,
   Users,
   HeartHandshake,
-  Heart,
   Globe,
   Megaphone,
   Sparkles,
+  Quote,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
@@ -126,10 +127,19 @@ export default function AboutPage() {
             </p>
             <h2 className="mb-6">Sam&apos;s Story</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam was a son, a brother, a friend. He was bright, funny, and
-              deeply loved. He was also fighting a battle that his family
+              Sam Sheeder was a son, a brother, a friend. He was bright, funny,
+              and deeply loved by everyone around him. He was also fighting a
+              battle with substance use and mental health that his family
               couldn&apos;t always see — and that society told them not to talk
               about.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              His family — his father Frank, his stepmother Nancy, his sister Annie,
+              his brother Joey, and his chosen brother Rony — loved and supported
+              him unconditionally. But they never spoke openly about how
+              Sam&apos;s struggles affected them. They carried that weight in
+              silence, in shame, in guilt, in distress. For a long time, they
+              went through it alone.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               When Sam lost his fight with substance use disorder, his father
@@ -138,15 +148,15 @@ export default function AboutPage() {
               Frank spoke up. He wrote about Sam publicly. He shared the pain,
               the love, the regret, and the hope.
             </p>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              That single LinkedIn post reached over 345,000 people. Nearly
-              2,000 reacted. Hundreds left comments sharing their own hidden
-              stories. Families from 22 states said the same thing:
+            <p className="text-gray-600 leading-relaxed">
+              That single LinkedIn post reached over 300,000 people. Hundreds
+              left comments sharing their own hidden stories. Families from
+              across the country said the same thing:
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;
             </blockquote>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed">
               Frank realized that the silence itself was the crisis. Families
               everywhere were suffering alone — not because help didn&apos;t
               exist, but because shame kept them from reaching out. Sam&apos;s
@@ -154,17 +164,103 @@ export default function AboutPage() {
               that what&apos;s hidden doesn&apos;t heal.
             </p>
           </div>
-          <div className="relative">
-            {/* Photo placeholder */}
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary-100 to-teal-100 flex items-center justify-center">
-              <div className="text-center text-gray-400 p-8">
-                <Heart className="w-16 h-16 mx-auto mb-4 text-primary-300" />
-                <p className="text-sm font-medium text-gray-500">
-                  Photo of Sam
+          <div className="space-y-6">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/photos/sam-portrait.jpg"
+                alt="Sam Sheeder"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/photos/family-hug.jpg"
+                  alt="Annie, Frank, and Sam Sheeder"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/photos/family-beach-sunset.jpg"
+                  alt="The Sheeder family at the beach"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== THE BOND — SAM'S INSTAGRAM POST ===== */}
+      <SectionWrapper variant="white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
+              In Sam&apos;s Own Words
+            </p>
+            <h2 className="mb-4">A Son&apos;s Love for His Father</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
+              <Image
+                src="/images/photos/sam-instagram-post.png"
+                alt="Sam Sheeder's Instagram post about his father Frank"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <div className="relative bg-gray-50 rounded-2xl p-8 md:p-10">
+                <Quote className="w-10 h-10 text-primary-200 mb-4" />
+                <blockquote className="text-gray-700 text-lg leading-relaxed italic">
+                  <p className="mb-4">
+                    &ldquo;This is my dad, Frank. He is the coolest guy I (and
+                    probably you) know. Dad, thank you for showing me by example
+                    that I can achieve whatever I commit myself to.
+                  </p>
+                  <p className="mb-4">
+                    Your leadership, support and love for our family has provided
+                    so many &lsquo;once in a lifetime&rsquo; moments and
+                    memories that we hold dear to our hearts. I admire your
+                    ability to solve any problem and your passion for learning
+                    new things.
+                  </p>
+                  <p>
+                    You inspire me to be a better version of
+                    myself.&rdquo;
+                  </p>
+                </blockquote>
+                <p className="mt-6 text-sm font-semibold text-gray-500 uppercase tracking-wide">
+                  — Sam Sheeder, Instagram
                 </p>
-                <p className="text-xs mt-1 text-gray-400">
-                  In loving memory
-                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/photos/frank-sam-boat.jpg"
+                    alt="Frank and Sam Sheeder"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/photos/frank-sam-concert.jpg"
+                    alt="Frank and Sam at a concert"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -172,41 +268,66 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* ===== FROM SILENCE TO ADVOCACY ===== */}
-      <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto">
+      <SectionWrapper variant="light">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
               Frank&apos;s Journey
             </p>
             <h2 className="mb-4">From Silence to Advocacy</h2>
           </div>
-          <div className="space-y-6 text-gray-600 leading-relaxed">
-            <p>
-              For years, Frank Sheeder did what most parents in his situation do
-              — he stayed quiet. He kept Sam&apos;s struggles private, worried
-              about judgment, worried about Sam&apos;s reputation, worried about
-              what people would think. The silence felt like protection.
-            </p>
-            <p>
-              But silence doesn&apos;t protect. It isolates. It convinces you
-              that you&apos;re the only family going through this, that
-              you&apos;ve failed in some unique way. It keeps you from finding
-              the very people who understand what you&apos;re carrying.
-            </p>
-            <p>
-              After losing Sam, Frank channeled his grief into something
-              powerful. He began writing and speaking openly — not just about
-              Sam, but about the epidemic of silence that surrounds substance use
-              and mental health in America. He wrote 15 original songs under the
-              name &ldquo;Sam&apos;s OATH&rdquo; on Apple Music, each one
-              carrying a piece of the journey from pain to purpose.
-            </p>
-            <p>
-              Today, Frank works to bring the OATH into workplaces, schools, and
-              communities across the country. His message is simple: you
-              don&apos;t have to do this alone, and you don&apos;t have to be
-              silent anymore.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            <div className="lg:col-span-3 space-y-6 text-gray-600 leading-relaxed">
+              <p>
+                For years, Frank Sheeder did what most parents in his situation
+                do — he stayed quiet. He loved Sam unconditionally, but he never
+                spoke openly about how Sam&apos;s substance use and mental health
+                struggles affected the family. They went through it in silence,
+                shame, guilt, and distress.
+              </p>
+              <p>
+                Frank had a good workplace with a strong culture — but even
+                there, he didn&apos;t feel he could share what his family was
+                going through. The silence felt like protection. But silence
+                doesn&apos;t protect. It isolates. It convinces you that
+                you&apos;re the only family going through this, that you&apos;ve
+                failed in some unique way. It keeps you from finding the very
+                people who understand what you&apos;re carrying.
+              </p>
+              <p>
+                After losing Sam, Frank channeled his grief into something
+                powerful. He wrote openly on LinkedIn — and the post went viral,
+                reaching more than 300,000 people. People flooded him with
+                messages, all saying the same thing: &ldquo;I thought I was the
+                only one.&rdquo;
+              </p>
+              <p>
+                That moment of recognition changed everything. Frank realized
+                this wasn&apos;t about starting a support group. This was a
+                movement. He began writing and speaking openly — not just about
+                Sam, but about the epidemic of silence that surrounds substance
+                use and mental health in America. He wrote 15 original songs
+                under the name &ldquo;Sam&apos;s OATH&rdquo; on Apple Music,
+                each one carrying a piece of the journey from pain to purpose.
+              </p>
+              <p>
+                Today, Frank works to bring the OATH into workplaces, schools,
+                and communities across the country. His message is simple: you
+                don&apos;t have to do this alone, and you don&apos;t have to be
+                silent anymore.
+              </p>
+            </div>
+            <div className="lg:col-span-2 space-y-4">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/photos/family-couch.jpg"
+                  alt="Frank, Annie, and Sam sharing a laugh"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -216,7 +337,8 @@ export default function AboutPage() {
         <div className="text-center text-white mb-16">
           <h2 className="text-white mb-4">The Vision</h2>
           <p className="text-white/80 text-xl max-w-2xl mx-auto">
-            Where this movement is headed — and why it matters.
+            This is a movement, not a support group — and here is where
+            it&apos;s headed.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -272,11 +394,14 @@ export default function AboutPage() {
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="flex justify-center">
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary-100 to-teal-100 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <Heart className="w-12 h-12 mx-auto mb-2 text-primary-300" />
-                    <p className="text-xs">Photo</p>
-                  </div>
+                <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/photos/frank-headshot.jpg"
+                    alt="Frank Sheeder, Founder of Sam's OATH"
+                    width={192}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div className="md:col-span-2">
