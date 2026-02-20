@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Music,
-  Play,
   Disc3,
   ExternalLink,
   Heart,
+  ArrowRight,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { MUSIC_TRACKS } from "@/lib/constants";
+import { MUSIC_TRACKS, APPLE_MUSIC_ARTIST_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "The Music of Sam's OATH",
@@ -36,7 +37,7 @@ export default function MusicPage() {
         </div>
       </section>
 
-      {/* ===== FEATURED TRACK ===== */}
+      {/* ===== FEATURED TRACK — APPLE MUSIC EMBED ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
@@ -45,57 +46,26 @@ export default function MusicPage() {
             </p>
             <h2 className="mb-4">What&apos;s Hidden Doesn&apos;t Heal</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The title track and anthem of the movement. This is the song that
-              started it all — a declaration that silence is not safety, and
-              healing begins when we speak.
+              The title track and anthem of the movement. A declaration that
+              silence is not safety, and healing begins when we speak.
             </p>
           </div>
 
-          {/* Apple Music embed placeholder */}
-          <div className="bg-gradient-to-br from-primary-50 to-teal-50 rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Album art placeholder */}
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-xl bg-gradient-to-br from-primary-200 to-teal-200 flex items-center justify-center flex-shrink-0 shadow-lg">
-                <div className="text-center">
-                  <Disc3 className="w-16 h-16 mx-auto mb-2 text-primary-600" />
-                  <p className="text-sm font-medium text-primary-700">
-                    Sam&apos;s OATH
-                  </p>
-                </div>
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  What&apos;s Hidden Doesn&apos;t Heal
-                </h3>
-                <p className="text-gray-500 mb-1">Sam&apos;s OATH</p>
-                <p className="text-sm text-gray-400 mb-6">
-                  Written by Frank Sheeder
-                </p>
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <Play className="w-6 h-6 text-white ml-0.5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500">
-                        Apple Music Player
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        Embed coming soon
-                      </p>
-                    </div>
-                  </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5">
-                    <div className="bg-primary rounded-full h-1.5 w-1/3" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Apple Music embed — featured track */}
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              frameBorder="0"
+              height="175"
+              style={{ width: "100%", overflow: "hidden", borderRadius: "10px" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/whats-hidden-doesnt-heal/1863071795"
+            />
           </div>
         </div>
       </SectionWrapper>
 
-      {/* ===== ALL TRACKS ===== */}
+      {/* ===== ALL TRACKS WITH EMBEDS ===== */}
       <SectionWrapper variant="light">
         <div className="text-center mb-12">
           <h2 className="mb-4">All 15 Tracks</h2>
@@ -105,26 +75,55 @@ export default function MusicPage() {
             healing.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {MUSIC_TRACKS.map((track, index) => (
-              <div
-                key={track.title}
-                className="flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
-                  {index + 1}
+        <div className="max-w-4xl mx-auto space-y-4">
+          {MUSIC_TRACKS.map((track, index) => (
+            <div key={track.title}>
+              {track.appleId ? (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                  <div className="flex items-center gap-4 p-4 pb-2">
+                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-gray-900 truncate">
+                        {track.title}
+                      </h3>
+                      <p className="text-sm text-gray-500">{track.theme}</p>
+                    </div>
+                  </div>
+                  <div className="px-4 pb-4">
+                    <iframe
+                      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                      frameBorder="0"
+                      height="52"
+                      style={{
+                        width: "100%",
+                        overflow: "hidden",
+                        borderRadius: "8px",
+                      }}
+                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                      src={`https://embed.music.apple.com/us/album/${track.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/${track.appleId}`}
+                    />
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-gray-900 truncate">
-                    {track.title}
-                  </h3>
-                  <p className="text-sm text-gray-500">{track.theme}</p>
+              ) : (
+                <div className="flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                  <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-gray-900 truncate">
+                      {track.title}
+                    </h3>
+                    <p className="text-sm text-gray-500">{track.theme}</p>
+                  </div>
+                  <span className="text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded">
+                    Coming soon
+                  </span>
                 </div>
-                <Music className="w-5 h-5 text-gray-300 flex-shrink-0" />
-              </div>
-            ))}
-          </div>
+              )}
+            </div>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -143,15 +142,16 @@ export default function MusicPage() {
               moment in the journey from silence to healing.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              From the raw grief of &ldquo;If Love Could Have Saved You&rdquo;
-              to the defiant hope of &ldquo;Joy Anyway,&rdquo; these songs give
-              voice to the emotions that families often struggle to express.
-              They&apos;re for the parent who can&apos;t sleep, the sibling who
-              feels forgotten, the friend who doesn&apos;t know what to say.
+              Music was a thread that ran through Sam&apos;s life — whether he
+              was playing or listening, it brought him immense joy. These songs
+              honor that connection. From the raw grief of &ldquo;If Love Could
+              Have Saved You&rdquo; to the defiant hope of &ldquo;Joy
+              Anyway,&rdquo; they give voice to the emotions families often
+              struggle to express.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              All 15 tracks are available under &ldquo;Sam&apos;s OATH&rdquo;
-              on Apple Music and other major streaming platforms.
+              They&apos;re for the parent who can&apos;t sleep, the sibling who
+              feels forgotten, the friend who doesn&apos;t know what to say.
             </p>
           </div>
           <div className="bg-gradient-to-br from-orange-50 to-primary-50 rounded-2xl p-8">
@@ -159,7 +159,8 @@ export default function MusicPage() {
               {[
                 {
                   title: "For the Grieving",
-                  tracks: "If Love Could Have Saved You, Hole in My Heart the Size of You",
+                  tracks:
+                    "If Love Could Have Saved You, Hole in My Heart the Size of You",
                 },
                 {
                   title: "For the Journey",
@@ -167,18 +168,26 @@ export default function MusicPage() {
                 },
                 {
                   title: "For Hope",
-                  tracks: "Joy Anyway, Still Water",
+                  tracks: "Joy Anyway, Still Water, Fifteen Seconds",
                 },
                 {
                   title: "For Families",
-                  tracks: "Knot on the Family Tree, For Annie",
+                  tracks: "Knot on the Family Tree, For Annie, I Carry You Through",
                 },
                 {
                   title: "For Identity",
-                  tracks: "My Name is More Than Pain, My Past Don't Get to Drive",
+                  tracks:
+                    "My Name is More Than Pain, My Past Don't Get to Drive",
+                },
+                {
+                  title: "For Meaning",
+                  tracks: "In the Same Breath, Near to the Broken",
                 },
               ].map((group) => (
-                <div key={group.title} className="bg-white rounded-lg p-4 shadow-sm">
+                <div
+                  key={group.title}
+                  className="bg-white rounded-lg p-4 shadow-sm"
+                >
                   <h4 className="font-semibold text-gray-900 text-sm mb-1">
                     {group.title}
                   </h4>
@@ -195,12 +204,15 @@ export default function MusicPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Listen Now</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            Sam&apos;s OATH is available on all major streaming platforms. Listen,
-            share, and help these songs reach the families who need them most.
+            Sam&apos;s OATH is available on Apple Music and other streaming
+            platforms. Listen, share, and help these songs reach the families who
+            need them most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href={APPLE_MUSIC_ARTIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
             >
               <Music className="w-5 h-5" />
@@ -208,22 +220,19 @@ export default function MusicPage() {
               <ExternalLink className="w-4 h-4" />
             </a>
             <a
-              href="#"
+              href={APPLE_MUSIC_ARTIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/30 hover:bg-white/20 transition-all"
             >
               <Disc3 className="w-5 h-5" />
               Spotify
               <ExternalLink className="w-4 h-4" />
             </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/30 hover:bg-white/20 transition-all"
-            >
-              <Play className="w-5 h-5" />
-              YouTube
-              <ExternalLink className="w-4 h-4" />
-            </a>
           </div>
+          <p className="text-white/50 text-sm mt-6">
+            Search &ldquo;Sam&apos;s OATH&rdquo; on any streaming platform
+          </p>
         </div>
       </SectionWrapper>
 
@@ -240,9 +249,16 @@ export default function MusicPage() {
             hour and reminds them they&apos;re not alone, then every note was
             worth it.&rdquo;
           </blockquote>
-          <p className="text-gray-500">
+          <p className="text-gray-500 mb-8">
             — Frank Sheeder, Founder of Sam&apos;s OATH
           </p>
+          <Link
+            href="/take-the-oath"
+            className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
+          >
+            Take the OATH
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </SectionWrapper>
     </>

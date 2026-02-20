@@ -48,19 +48,21 @@ export const IMPACT_STATS = {
 } as const;
 
 export const MUSIC_TRACKS = [
-  { title: "What's Hidden Doesn't Heal", theme: "The mission" },
-  { title: "Knot on the Family Tree", theme: "Family bonds" },
-  { title: "I Carry You Through", theme: "Carrying on" },
-  { title: "For Annie", theme: "A sister's perspective" },
-  { title: "Joy Anyway", theme: "Finding hope" },
-  { title: "You Can't Outrun Grief", theme: "The journey" },
-  { title: "My Name is More Than Pain", theme: "Identity beyond struggle" },
-  { title: "In the Same Breath", theme: "Living with contradiction" },
-  { title: "If Love Could Have Saved You", theme: "Loss" },
-  { title: "Near to the Broken", theme: "Being present" },
-  { title: "Hole in My Heart the Size of You", theme: "Grief" },
-  { title: "Healing is a Slow Song", theme: "The process" },
-  { title: "Fifteen Seconds", theme: "Moments that matter" },
-  { title: "My Past Don't Get to Drive", theme: "Moving forward" },
-  { title: "Still Water", theme: "Peace" },
+  { title: "What's Hidden Doesn't Heal", theme: "The mission", appleId: "1863071795" },
+  { title: "Knot on the Family Tree", theme: "Family bonds", appleId: "1868102833" },
+  { title: "I Carry You Through", theme: "Carrying on", appleId: "1869974555" },
+  { title: "For Annie", theme: "A sister's perspective", appleId: "1871670671" },
+  { title: "Joy Anyway", theme: "Finding hope", appleId: "1868317828" },
+  { title: "You Can't Outrun Grief", theme: "The journey", appleId: "1866856646" },
+  { title: "My Name is More Than Pain", theme: "Identity beyond struggle", appleId: "" },
+  { title: "In the Same Breath", theme: "Living with contradiction", appleId: "1865731326" },
+  { title: "If Love Could Have Saved You", theme: "Loss", appleId: "1865599851" },
+  { title: "Near to the Broken", theme: "Being present", appleId: "1865581121" },
+  { title: "Hole in My Heart the Size of You", theme: "Grief", appleId: "1865580631" },
+  { title: "Healing is a Slow Song", theme: "The process", appleId: "1865547862" },
+  { title: "Fifteen Seconds", theme: "Moments that matter", appleId: "1873038332" },
+  { title: "My Past Don't Get to Drive", theme: "Moving forward", appleId: "1869799649" },
+  { title: "Still Water", theme: "Peace", appleId: "1869492686" },
 ] as const;
+
+export const APPLE_MUSIC_ARTIST_URL = "https://music.apple.com/us/artist/sams-oath/1862953585";
