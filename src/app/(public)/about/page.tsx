@@ -1,0 +1,355 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Eye,
+  Fingerprint,
+  Users,
+  HeartHandshake,
+  Heart,
+  Globe,
+  Megaphone,
+  Sparkles,
+} from "lucide-react";
+import { SectionWrapper } from "@/components/layout/section-wrapper";
+
+export const metadata: Metadata = {
+  title: "About Sam's OATH",
+  description:
+    "Learn about Sam's OATH — a national movement to break silence around substance use and mental health. Discover the story behind the OATH and the family that started it all.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* ===== HERO ===== */}
+      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
+          <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
+            About Sam&apos;s OATH
+          </p>
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            What&apos;s Hidden Doesn&apos;t Heal
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Sam&apos;s OATH is a national movement empowering families to break
+            the silence around substance use and mental health — because no one
+            should have to carry this weight alone.
+          </p>
+        </div>
+      </section>
+
+      {/* ===== THE OATH EXPLAINED ===== */}
+      <SectionWrapper variant="white">
+        <div className="text-center mb-16">
+          <h2 className="mb-4">The OATH Explained</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Four letters. Four commitments. A framework for families ready to
+            move from silence to strength.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              icon: Eye,
+              letter: "O",
+              word: "Openness",
+              color: "bg-teal text-white",
+              iconBg: "bg-teal-50",
+              iconColor: "text-teal",
+              description:
+                "We choose to talk about substance use and mental health without shame. Silence protects stigma — openness dismantles it. When we speak honestly, we give others permission to do the same.",
+            },
+            {
+              icon: Fingerprint,
+              letter: "A",
+              word: "Authenticity",
+              color: "bg-primary text-white",
+              iconBg: "bg-primary-50",
+              iconColor: "text-primary",
+              description:
+                "We share what our families have really been through — not the polished version, but the truth. Authenticity builds trust, and trust builds community. Your real story is your most powerful tool.",
+            },
+            {
+              icon: Users,
+              letter: "T",
+              word: "Togetherness",
+              color: "bg-sage text-white",
+              iconBg: "bg-sage-50",
+              iconColor: "text-sage",
+              description:
+                "We stand with others who carry this weight. No family should face substance use disorder or mental illness alone. Together, we are stronger than any stigma, and louder than any silence.",
+            },
+            {
+              icon: HeartHandshake,
+              letter: "H",
+              word: "Healing",
+              color: "bg-orange text-white",
+              iconBg: "bg-orange-50",
+              iconColor: "text-orange",
+              description:
+                "We commit to healing — not perfection. Healing is messy, nonlinear, and deeply personal. But it starts when we stop hiding. We choose healing for ourselves, our families, and our communities.",
+            },
+          ].map((item) => (
+            <div
+              key={item.letter}
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center border border-gray-100"
+            >
+              <div
+                className={`w-16 h-16 ${item.color} rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4`}
+              >
+                {item.letter}
+              </div>
+              <div
+                className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
+              >
+                <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {item.word}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* ===== SAM'S STORY ===== */}
+      <SectionWrapper variant="light">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
+              The Story Behind the Movement
+            </p>
+            <h2 className="mb-6">Sam&apos;s Story</h2>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              Sam was a son, a brother, a friend. He was bright, funny, and
+              deeply loved. He was also fighting a battle that his family
+              couldn&apos;t always see — and that society told them not to talk
+              about.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              When Sam lost his fight with substance use disorder, his father
+              Frank made a decision that would change everything. Instead of
+              retreating into silence — the way so many grieving families do —
+              Frank spoke up. He wrote about Sam publicly. He shared the pain,
+              the love, the regret, and the hope.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              That single LinkedIn post reached over 345,000 people. Nearly
+              2,000 reacted. Hundreds left comments sharing their own hidden
+              stories. Families from 22 states said the same thing:
+            </p>
+            <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
+              &ldquo;I thought I was the only one.&rdquo;
+            </blockquote>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              Frank realized that the silence itself was the crisis. Families
+              everywhere were suffering alone — not because help didn&apos;t
+              exist, but because shame kept them from reaching out. Sam&apos;s
+              OATH was born from that revelation: a movement built on the belief
+              that what&apos;s hidden doesn&apos;t heal.
+            </p>
+          </div>
+          <div className="relative">
+            {/* Photo placeholder */}
+            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary-100 to-teal-100 flex items-center justify-center">
+              <div className="text-center text-gray-400 p-8">
+                <Heart className="w-16 h-16 mx-auto mb-4 text-primary-300" />
+                <p className="text-sm font-medium text-gray-500">
+                  Photo of Sam
+                </p>
+                <p className="text-xs mt-1 text-gray-400">
+                  In loving memory
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== FROM SILENCE TO ADVOCACY ===== */}
+      <SectionWrapper variant="white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
+              Frank&apos;s Journey
+            </p>
+            <h2 className="mb-4">From Silence to Advocacy</h2>
+          </div>
+          <div className="space-y-6 text-gray-600 leading-relaxed">
+            <p>
+              For years, Frank Sheeder did what most parents in his situation do
+              — he stayed quiet. He kept Sam&apos;s struggles private, worried
+              about judgment, worried about Sam&apos;s reputation, worried about
+              what people would think. The silence felt like protection.
+            </p>
+            <p>
+              But silence doesn&apos;t protect. It isolates. It convinces you
+              that you&apos;re the only family going through this, that
+              you&apos;ve failed in some unique way. It keeps you from finding
+              the very people who understand what you&apos;re carrying.
+            </p>
+            <p>
+              After losing Sam, Frank channeled his grief into something
+              powerful. He began writing and speaking openly — not just about
+              Sam, but about the epidemic of silence that surrounds substance use
+              and mental health in America. He wrote 15 original songs under the
+              name &ldquo;Sam&apos;s OATH&rdquo; on Apple Music, each one
+              carrying a piece of the journey from pain to purpose.
+            </p>
+            <p>
+              Today, Frank works to bring the OATH into workplaces, schools, and
+              communities across the country. His message is simple: you
+              don&apos;t have to do this alone, and you don&apos;t have to be
+              silent anymore.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== THE VISION ===== */}
+      <SectionWrapper variant="gradient">
+        <div className="text-center text-white mb-16">
+          <h2 className="text-white mb-4">The Vision</h2>
+          <p className="text-white/80 text-xl max-w-2xl mx-auto">
+            Where this movement is headed — and why it matters.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              icon: Globe,
+              title: "National Scale",
+              description:
+                "We envision a map filled with pins from every state — proof that millions of families are choosing openness over silence. Every pin represents a family that refused to hide.",
+            },
+            {
+              icon: Megaphone,
+              title: "Breaking Silence Everywhere",
+              description:
+                "From living rooms to boardrooms, from schools to state legislatures — we're bringing the conversation about substance use and mental health out of the shadows and into the open.",
+            },
+            {
+              icon: Sparkles,
+              title: "A Culture Shift",
+              description:
+                "We're working toward a world where families affected by substance use and mental health challenges are met with compassion instead of judgment, and support instead of stigma.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center"
+            >
+              <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <item.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {item.title}
+              </h3>
+              <p className="text-white/80 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* ===== THE TEAM ===== */}
+      <SectionWrapper variant="white">
+        <div className="text-center mb-16">
+          <h2 className="mb-4">The People Behind the Movement</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Sam&apos;s OATH is built by people who know this pain firsthand —
+            and who believe no family should face it alone.
+          </p>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Frank's bio */}
+          <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="flex justify-center">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary-100 to-teal-100 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <Heart className="w-12 h-12 mx-auto mb-2 text-primary-300" />
+                    <p className="text-xs">Photo</p>
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-2">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-1">
+                  Frank Sheeder
+                </h3>
+                <p className="text-teal font-medium mb-4">
+                  Founder &amp; Executive Director
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Frank is a father, advocate, songwriter, and speaker. After
+                  losing his son Sam to substance use disorder, he turned his
+                  grief into a national movement. A seasoned business leader,
+                  Frank brings decades of experience in building organizations
+                  and rallying communities around a shared mission.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  He is the songwriter behind all 15 tracks on the Sam&apos;s
+                  OATH album on Apple Music, and a passionate advocate for
+                  bringing mental health conversations into the workplace.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Future team placeholder */}
+          <div className="text-center bg-gray-50 rounded-2xl p-12">
+            <Users className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Growing the Team
+            </h3>
+            <p className="text-gray-600 max-w-lg mx-auto mb-6">
+              As Sam&apos;s OATH grows, so will our team. We&apos;re building a
+              network of advocates, counselors, and community leaders who share
+              our vision of a world without silence.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
+            >
+              Interested in joining us?
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== FINAL CTA ===== */}
+      <SectionWrapper variant="light">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="mb-6">Be Part of the Movement</h2>
+          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+            You don&apos;t need a title or a platform to make a difference. All
+            you need is the willingness to stop hiding. Take the OATH and join
+            thousands of families choosing openness over silence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/take-the-oath"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
+            >
+              Take the OATH
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-50 transition-colors"
+            >
+              Share Your Story
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+    </>
+  );
+}

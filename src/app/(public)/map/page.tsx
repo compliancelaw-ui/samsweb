@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+export const metadata: Metadata = {
+  title: "The Movement Map | Sam's OATH",
+  description:
+    "See OATH takers across the country. Every pin represents a family choosing openness over silence, connection over shame, and healing over hiding.",
+  openGraph: {
+    title: "The Movement Map | Sam's OATH",
+    description:
+      "See OATH takers across the country. Every pin represents a family choosing openness over silence.",
+  },
+};
+
+const OathMap = dynamic(() => import("@/components/map/oath-map"), {
+  ssr: false,
+  loading: () => <MapSkeleton />,
+});
+
+function MapSkeleton() {
+  return (
+    <div className="flex h-full w-full items-center justify-center bg-gray-50">
+      <div className="text-center">
+        <div className="relative mx-auto mb-4">
+          <div className="h-12 w-12 rounded-full border-4 border-gray-200" />
+          <div className="absolute inset-0 h-12 w-12 animate-spin rounded-full border-4 border-transparent border-t-teal" />
+        </div>
+        <p className="text-sm font-medium text-gray-600">
+          Loading the movement map...
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function MapPage() {
+  return (
+    <div className="flex flex-col" style={{ height: "calc(100vh - 64px)" }}>
+      {/* ===== Heading Band ===== */}
+      <div className="bg-gradient-to-r from-primary-800 via-primary to-teal px-4 py-5 text-center sm:py-6">
+        <h1 className="text-2xl font-bold text-white sm:text-3xl">
+          The Movement Map
+        </h1>
+        <p className="mx-auto mt-1.5 max-w-xl text-sm text-white/80 sm:text-base">
+          Every pin is a family that chose openness over silence. Click to
+          explore their stories.
+        </p>
+      </div>
+
+      {/* ===== Map fills remaining viewport ===== */}
+      <div className="relative flex-1 min-h-0">
+        <OathMap />
+      </div>
+    </div>
+  );
+}
