@@ -127,47 +127,59 @@ export default function AboutPage() {
             </p>
             <h2 className="mb-6">Sam&apos;s Story</h2>
             <p className="text-sm text-gray-400 font-medium mb-6">
-              Samuel Sheeder &middot; July 11, 1998 – September 28, 2025
+              Samuel Martin Hagood Sheeder &middot; July 11, 1998 – September 28, 2025
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam Sheeder lived with courage, honesty, and an open heart. He was
-              a son, a brother, a friend — bright, funny, and deeply loved by
-              everyone who knew him. He faced life&apos;s challenges — including
-              substance use disorder — with a strength and candor that taught his
-              family something profound: the opposite of addiction is not
-              sobriety, but community.
+              Sam&apos;s presence lit up every room. He was handsome, full of
+              adventure and wanderlust, and his brilliance shone in both mind and
+              spirit. He could strike up a conversation with anyone — from CEOs
+              to those experiencing homelessness — making them feel seen and heard.
+              He was a natural debater with wit, charm, and perspective. He could
+              rig up or fix anything. He was also stubborn, headstrong, and
+              determined to do things his way. Those qualities were his greatest
+              strength and his biggest challenge.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              His family — his father Frank, his stepmother Nancy, his sister Annie,
-              his brother Joey, and his chosen brother Rony — loved and supported
-              him unconditionally. But they never spoke openly about how
-              Sam&apos;s struggles affected them. They carried that weight in
-              silence, in shame, in guilt, in distress. For a long time, they
-              went through it alone.
+              Music was a thread that ran through Sam&apos;s life. He was
+              fearless and had a need for speed — running, biking, skateboarding,
+              boating, riding anything with a motor. He loved connecting with
+              nature. He once drove from Florida to Georgia to help a friend and
+              ended up in Annapolis months later — after turning left to
+              California and back, camping the whole way. Sam never went in
+              straight lines, and he reminds us that the joy is in the journey.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam reminded the people around him daily that it&apos;s ok not to
-              be ok, and that joy can be found even on winding roads. When Sam
-              passed away on September 28, 2025, his father Frank made a
-              decision that would change everything. Instead of retreating into
-              silence — the way so many grieving families do — Frank wrote openly
-              on LinkedIn about Sam&apos;s life, his struggles, and offered help
-              to anyone carrying the same weight.
+              Sam faced the hard and often lonely road of substance use disorder
+              with courage and honesty. He never shied away from the truth of his
+              journey, even when the world&apos;s judgment made it harder to seek
+              help or healing. To speak openly of addiction is rare — to do so
+              with the generosity of spirit Sam showed is extraordinary. He
+              refused to let stigma define him.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              That single post reached over 345,000 people. Nearly 2,000
-              reactions. 484 comments. Texts, calls, and private messages
-              flooded in — all saying the same thing:
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              His family — his father Frank, his stepmother Nancy, his sister
+              Annie, his brother Joey, and his chosen brother Rony — loved him
+              unconditionally. But they never spoke openly about how Sam&apos;s
+              struggles affected <em>them</em>. They carried that weight in
+              silence. Sam reminded them daily that it&apos;s ok not to be ok,
+              and that joy can be found even on winding roads.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              When Sam passed away on September 28, 2025, his father Frank made
+              a decision that would change everything. Instead of retreating into
+              silence, Frank wrote openly on LinkedIn about Sam&apos;s life, his
+              struggles, and offered help to anyone carrying the same weight.
+              That post reached over 345,000 people. Nearly 2,000 reactions.
+              484 comments. All saying the same thing:
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;
             </blockquote>
             <p className="text-gray-600 leading-relaxed">
-              Frank realized that the silence itself was the crisis. Families
-              everywhere were suffering alone — not because help didn&apos;t
-              exist, but because shame kept them from reaching out. Sam&apos;s
-              OATH was born from that revelation: a movement built on the belief
-              that what&apos;s hidden doesn&apos;t heal.
+              Frank realized the silence itself was the crisis. Sam&apos;s OATH
+              was born from that revelation — a movement built on the belief that
+              what&apos;s hidden doesn&apos;t heal, and that the opposite of
+              addiction is not sobriety, but community.
             </p>
           </div>
           <div className="space-y-6">

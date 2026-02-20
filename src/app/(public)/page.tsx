@@ -188,22 +188,27 @@ export default function HomePage() {
               One Father. One Post. A Movement.
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sam Sheeder (1998–2025) lived with courage, honesty, and an open
-              heart. He faced life&apos;s challenges — including substance use
-              disorder — with a strength and candor that taught his family
-              something profound: the opposite of addiction is not sobriety,
-              but community. His family loved and supported him
-              unconditionally, but they never spoke openly about how Sam&apos;s
-              struggles were affecting <em>them</em>. So they went through it in
-              silence.
+              Sam Sheeder (1998–2025) lit up every room he walked into. He was
+              full of adventure and wanderlust — fearless on a skateboard,
+              brilliant in conversation, and stubborn enough to drive from
+              Florida to California and back just because he turned left. Sam
+              never went in straight lines. He reminds us that the joy is in
+              the journey.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              Sam also faced the hard and often lonely road of substance use
+              disorder — with courage and honesty. He taught his family something
+              profound: the opposite of addiction is not sobriety, but community.
+              They loved him unconditionally, but they never spoke openly about
+              how his struggles were affecting <em>them</em>. So they carried it
+              in silence.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               After losing Sam on September 28, 2025, his father Frank did
               something most families don&apos;t — he wrote openly on LinkedIn
               about Sam&apos;s life, his struggles, and offered help to anyone
               carrying the same weight. That post reached over 345,000 people.
-              Nearly 2,000 reactions. 484 comments. Texts, calls, and private
-              messages flooded in — all saying the same thing:
+              Nearly 2,000 reactions. 484 comments — all saying the same thing:
             </p>
             <blockquote className="border-l-4 border-teal pl-6 my-8 italic text-lg text-gray-700">
               &ldquo;I thought I was the only one.&rdquo;

@@ -63,7 +63,12 @@ export default function FamiliesPage() {
               They chose openness. They chose each other. And they chose to make
               sure no other family has to carry this weight in silence.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed mt-6">
+            <blockquote className="border-l-4 border-orange pl-6 my-8 italic text-lg text-gray-700">
+              &ldquo;We never doubted for a moment that Sam loved each of us with
+              his whole heart. What brings us immense comfort is knowing that Sam
+              was just as certain of our unconditional love for him.&rdquo;
+            </blockquote>
+            <p className="text-gray-600 text-lg leading-relaxed">
               Each member of the Sheeder family is sharing their story &mdash; in
               their own voice, in their own words.
             </p>
@@ -117,8 +122,9 @@ export default function FamiliesPage() {
                   After losing Sam, Frank made a decision that changed
                   everything. He wrote about his son publicly on LinkedIn
                   &mdash; openly, honestly, without filter. That post reached
-                  over 300,000 people. Hundreds of families responded, saying
-                  the same thing: &ldquo;I thought I was the only one.&rdquo;
+                  over 345,000 people. Nearly 2,000 reactions. 484 comments.
+                  Families everywhere responded, saying the same thing:
+                  &ldquo;I thought I was the only one.&rdquo;
                 </p>
                 <p>
                   Frank channeled that grief into purpose. He wrote 15 original
@@ -466,10 +472,12 @@ export default function FamiliesPage() {
               <h2 className="mb-6">Rony</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Not every family member is related by blood. Rony is
-                  Sam&apos;s chosen brother &mdash; proof that the bonds we
-                  choose can be just as deep, just as real, and just as powerful
-                  as the ones we&apos;re born into.
+                  Sam&apos;s circle of friends knew no boundaries. He moved with
+                  ease among people from all walks of life, and so many people
+                  called Sam their brother. Rony Robinson is one of them &mdash;
+                  Sam&apos;s chosen brother, proof that the bonds we choose can
+                  be just as deep, just as real, and just as powerful as the ones
+                  we&apos;re born into.
                 </p>
                 <p>
                   Sam and Rony shared the kind of friendship that becomes
