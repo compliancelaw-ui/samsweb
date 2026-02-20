@@ -23,6 +23,16 @@ export default function PrivacyPage() {
 
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto prose prose-gray prose-lg">
+          <div className="not-prose bg-teal-50 border border-teal-200 rounded-lg p-6 mb-8">
+            <p className="text-teal-800 font-semibold text-lg mb-1">
+              We will never share your email address with anyone. Period.
+            </p>
+            <p className="text-teal-700 text-base">
+              Your personal information stays with Sam&apos;s OATH. We never
+              sell, rent, or share your data with third parties.
+            </p>
+          </div>
+
           <h2>Our Commitment to Your Privacy</h2>
           <p>
             At Sam&apos;s OATH, we understand that the information you share with us

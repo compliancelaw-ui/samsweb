@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE_NAME, CRISIS_RESOURCES } from "@/lib/constants";
+import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
 
 const takeActionLinks = [
   { href: "/take-the-oath", label: "Take the OATH" },
@@ -42,6 +43,9 @@ export function Footer() {
               mental health through Openness, Authenticity, Togetherness, and
               Healing.
             </p>
+            <div className="mt-5">
+              <SocialFollowButtons variant="dark" size="sm" />
+            </div>
           </div>
 
           {/* Column 2: Take Action */}
@@ -149,12 +153,20 @@ export function Footer() {
           <p className="text-sm text-gray-400">
             &copy; 2026 {SITE_NAME} Foundation. All rights reserved.
           </p>
-          <Link
-            href="/privacy"
-            className="text-sm text-gray-400 transition-colors hover:text-teal-300"
-          >
-            Privacy Policy
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/terms"
+              className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+            >
+              Privacy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -8,9 +8,10 @@ import {
   Shield,
   Eye,
   CheckCircle,
-  PenLine,
+  AlertTriangle,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { StoryForm } from "@/components/forms/story-form";
 
 export const metadata: Metadata = {
   title: "Share Your Story",
@@ -135,7 +136,82 @@ export default function ShareYourStoryPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== FORM PLACEHOLDER ===== */}
+      {/* ===== QUICK GUIDELINES ===== */}
+      <SectionWrapper variant="light">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* What to share */}
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-teal" />
+                What to share
+              </h3>
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  Your experience with substance use, mental health, or loss
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  What silence looked like in your family
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  The moment you decided to speak up
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  What healing looks like for you today
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  A message to others going through this
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal mt-0.5">&#10003;</span>
+                  A tribute to someone you&apos;ve lost
+                </li>
+              </ul>
+            </div>
+
+            {/* What to avoid */}
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-amber-500" />
+                Please avoid
+              </h3>
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">&#10007;</span>
+                  Naming others without their permission
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">&#10007;</span>
+                  Graphic descriptions of self-harm or substance use methods
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">&#10007;</span>
+                  Hate speech, blame, or attacks on individuals
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">&#10007;</span>
+                  Promoting specific substances or treatments
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">&#10007;</span>
+                  Spam, advertising, or unrelated content
+                </li>
+              </ul>
+              <p className="text-xs text-gray-400 mt-4">
+                All stories are reviewed before publishing. We may edit for
+                safety while preserving your message.
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== STORY FORM ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
@@ -145,59 +221,7 @@ export default function ShareYourStoryPage() {
               sharing about yourself or someone you love — we&apos;re listening.
             </p>
           </div>
-
-          {/* Form placeholder */}
-          <div className="bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center">
-            <PenLine className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Story Submission Form Coming Soon
-            </h3>
-            <p className="text-gray-500 max-w-md mx-auto mb-6">
-              We&apos;re building a secure, compassionate form that lets you
-              share at your own pace with full control over your privacy. In the
-              meantime, you can reach out directly.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
-            >
-              Contact us to share your story
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ===== STORY GUIDELINES ===== */}
-      <SectionWrapper variant="light">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="mb-4">What to Include</h2>
-            <p className="text-gray-600 text-lg">
-              There&apos;s no wrong way to share. But if you&apos;re not sure
-              where to start, here are some ideas.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              "Your relationship to substance use or mental health challenges",
-              "What silence looked or felt like in your family",
-              "The moment you decided to speak up — or wish you had",
-              "What healing looks like for you today",
-              "A message to other families going through this",
-              "A tribute to someone you've lost",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 bg-white rounded-lg p-4"
-              >
-                <div className="w-6 h-6 bg-teal/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-teal rounded-full" />
-                </div>
-                <p className="text-gray-700">{item}</p>
-              </div>
-            ))}
-          </div>
+          <StoryForm />
         </div>
       </SectionWrapper>
 

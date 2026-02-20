@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Music,
-  Disc3,
-  ExternalLink,
   Heart,
   ArrowRight,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { MUSIC_TRACKS, APPLE_MUSIC_ARTIST_URL } from "@/lib/constants";
+import { MUSIC_TRACKS } from "@/lib/constants";
+import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
 
 export const metadata: Metadata = {
   title: "The Music of Sam's OATH",
@@ -199,36 +197,19 @@ export default function MusicPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== STREAMING LINKS ===== */}
+      {/* ===== STREAMING + FOLLOW LINKS ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-4">Listen Now</h2>
+          <h2 className="text-white mb-4">Listen &amp; Follow</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            Sam&apos;s OATH is available on Apple Music and other streaming
-            platforms. Listen, share, and help these songs reach the families who
-            need them most.
+            Sam&apos;s OATH is on Apple Music, Spotify, YouTube, and dozens of
+            streaming platforms. Follow us to hear new releases and help these
+            songs reach the families who need them most.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={APPLE_MUSIC_ARTIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
-            >
-              <Music className="w-5 h-5" />
-              Apple Music
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <a
-              href={APPLE_MUSIC_ARTIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/30 hover:bg-white/20 transition-all"
-            >
-              <Disc3 className="w-5 h-5" />
-              Spotify
-              <ExternalLink className="w-4 h-4" />
-            </a>
+          <div className="flex justify-center">
+            <SocialFollowButtonsLabeled
+              platforms={["appleMusic", "spotify", "youtube", "tiktok", "instagram", "facebook"]}
+            />
           </div>
           <p className="text-white/50 text-sm mt-6">
             Search &ldquo;Sam&apos;s OATH&rdquo; on any streaming platform

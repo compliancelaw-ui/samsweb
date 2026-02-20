@@ -66,3 +66,30 @@ export const MUSIC_TRACKS = [
 ] as const;
 
 export const APPLE_MUSIC_ARTIST_URL = "https://music.apple.com/us/artist/sams-oath/1862953585";
+
+export const SOCIAL_LINKS = {
+  appleMusic: {
+    url: "https://music.apple.com/us/artist/sams-oath/1862953585",
+    label: "Apple Music",
+  },
+  spotify: {
+    url: "https://open.spotify.com/search/Sam%27s%20OATH",
+    label: "Spotify",
+  },
+  youtube: {
+    url: "https://www.youtube.com/results?search_query=Sam%27s+OATH+Frank+Sheeder",
+    label: "YouTube",
+  },
+  tiktok: {
+    url: "https://www.tiktok.com/@samsoath",
+    label: "TikTok",
+  },
+  instagram: {
+    url: "https://www.instagram.com/samsoath",
+    label: "Instagram",
+  },
+  facebook: {
+    url: "https://www.facebook.com/samsoath",
+    label: "Facebook",
+  },
+} as const;
