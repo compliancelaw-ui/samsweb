@@ -298,6 +298,10 @@ export function StoryForm() {
 
       <p className="text-center text-sm text-gray-400">
         By submitting your story, you agree to our{" "}
+        <a href="/terms" className="underline hover:text-gray-600">
+          Terms &amp; Conditions
+        </a>{" "}
+        and{" "}
         <a href="/privacy" className="underline hover:text-gray-600">
           Privacy Policy
         </a>

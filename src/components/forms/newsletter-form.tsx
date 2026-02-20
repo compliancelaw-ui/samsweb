@@ -152,8 +152,12 @@ export function NewsletterForm() {
 
       <p className="text-xs text-gray-400">
         We&apos;ll never share your email or spam you. Unsubscribe anytime.{" "}
+        <a href="/terms" className="underline hover:text-gray-600">
+          Terms
+        </a>{" "}
+        &amp;{" "}
         <a href="/privacy" className="underline hover:text-gray-600">
-          Privacy Policy
+          Privacy
         </a>
       </p>
     </form>
