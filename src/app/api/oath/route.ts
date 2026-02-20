@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       .from('oath_submissions')
       .insert({
         first_name: data.first_name,
-        last_name: data.last_name,
+        last_name: data.last_name || '',
         email: data.email,
         category: data.category,
         city: data.city,

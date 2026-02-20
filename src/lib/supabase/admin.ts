@@ -9,7 +9,13 @@ export function supabaseAdmin(): SupabaseClient {
   if (!_supabaseAdmin) {
     _supabaseAdmin = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      {
+        global: {
+          // Disable Next.js fetch caching — Supabase queries must always hit the DB
+          fetch: (url, opts) => fetch(url, { ...opts, cache: 'no-store' }),
+        },
+      }
     )
   }
   return _supabaseAdmin

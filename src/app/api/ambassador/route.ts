@@ -18,10 +18,16 @@ export async function POST(request: NextRequest) {
     const data = result.data
 
     // Insert into ambassadors with pending status
+    // Map form fields to DB columns (motivation + personal_story → bio)
     const { data: ambassador, error } = await supabaseAdmin()
       .from('ambassadors')
       .insert({
-        ...data,
+        name: data.name,
+        email: data.email,
+        city: data.city,
+        state: data.state,
+        bio: [data.motivation, data.personal_story].filter(Boolean).join('\n\n'),
+        social_links: data.social_links || {},
         status: 'pending',
       })
       .select('id')

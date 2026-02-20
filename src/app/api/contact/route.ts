@@ -28,19 +28,18 @@ export async function POST(request: NextRequest) {
       priority = 'urgent'
     }
 
-    // Get IP address from request headers
-    const ip_address =
-      request.headers.get('x-forwarded-for') ||
-      request.headers.get('x-real-ip') ||
-      'unknown'
-
     // Insert into contact_messages
     const { error } = await supabaseAdmin()
       .from('contact_messages')
       .insert({
-        ...data,
+        sender_name: data.sender_name,
+        sender_email: data.sender_email,
+        sender_phone: data.sender_phone || null,
+        message_type: data.message_type,
+        subject: data.subject,
+        body: data.body,
+        metadata: data.metadata || {},
         priority,
-        ip_address,
       })
 
     if (error) {

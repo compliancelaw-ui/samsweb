@@ -8,6 +8,10 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      global: {
+        // Disable Next.js fetch caching — always query fresh data
+        fetch: (url, opts) => fetch(url, { ...opts, cache: 'no-store' }),
+      },
       cookies: {
         get(name: string) {
           return cookieStore.get(name)?.value
