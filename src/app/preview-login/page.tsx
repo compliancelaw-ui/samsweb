@@ -27,8 +27,9 @@ export default function PreviewLoginPage() {
     });
 
     if (res.ok) {
-      router.push(mode === "admin" ? "/admin" : "/");
-      router.refresh();
+      // Use window.location for a full page reload so the cookie takes effect
+      window.location.href = mode === "admin" ? "/admin" : "/";
+      return;
     } else {
       setError(true);
       setLoading(false);
