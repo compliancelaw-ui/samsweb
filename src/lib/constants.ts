@@ -36,7 +36,7 @@ export const NAV_LINKS = [
   { href: "/map", label: "OATH Map" },
   { href: "/blog", label: "Updates" },
   { href: "/workplace", label: "Workplaces" },
-  { href: "/get-involved", label: "Get Involved" },
+  { href: "/resources", label: "Resources" },
   { href: "/music", label: "Music" },
 ] as const;
 
@@ -48,9 +48,9 @@ export const CRISIS_RESOURCES = {
 
 export const IMPACT_STATS = {
   reached: "345K+",
-  reactions: "1,934",
+  reactions: "2,000+",
   comments: "484",
-  states: "22+",
+  states: "50",
 } as const;
 
 export const MUSIC_TRACKS = [
@@ -60,7 +60,7 @@ export const MUSIC_TRACKS = [
   { title: "For Annie", theme: "A sister's perspective", appleId: "1871670671" },
   { title: "Joy Anyway", theme: "Finding hope", appleId: "1868317828" },
   { title: "You Can't Outrun Grief", theme: "The journey", appleId: "1866856646" },
-  { title: "My Name is More Than Pain", theme: "Identity beyond struggle", appleId: "" },
+  { title: "My Name is More Than Pain", theme: "Identity beyond struggle", appleId: "1873038332" },
   { title: "In the Same Breath", theme: "Living with contradiction", appleId: "1865731326" },
   { title: "If Love Could Have Saved You", theme: "Loss", appleId: "1865599851" },
   { title: "Near to the Broken", theme: "Being present", appleId: "1865581121" },

@@ -75,51 +75,32 @@ export default function MusicPage() {
         </div>
         <div className="max-w-4xl mx-auto space-y-4">
           {MUSIC_TRACKS.map((track, index) => (
-            <div key={track.title}>
-              {track.appleId ? (
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <div className="flex items-center gap-4 p-4 pb-2">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-gray-900 truncate">
-                        {track.title}
-                      </h3>
-                      <p className="text-sm text-gray-500">{track.theme}</p>
-                    </div>
-                  </div>
-                  <div className="px-4 pb-4">
-                    <iframe
-                      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                      frameBorder="0"
-                      height="52"
-                      style={{
-                        width: "100%",
-                        overflow: "hidden",
-                        borderRadius: "8px",
-                      }}
-                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                      src={`https://embed.music.apple.com/us/album/${track.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/${track.appleId}`}
-                    />
-                  </div>
+            <div key={track.title} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="flex items-center gap-4 p-4 pb-2">
+                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
+                  {index + 1}
                 </div>
-              ) : (
-                <div className="flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-gray-900 truncate">
-                      {track.title}
-                    </h3>
-                    <p className="text-sm text-gray-500">{track.theme}</p>
-                  </div>
-                  <span className="text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded">
-                    Coming soon
-                  </span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-gray-900 truncate">
+                    {track.title}
+                  </h3>
+                  <p className="text-sm text-gray-500">{track.theme}</p>
                 </div>
-              )}
+              </div>
+              <div className="px-4 pb-4">
+                <iframe
+                  allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                  frameBorder="0"
+                  height="52"
+                  style={{
+                    width: "100%",
+                    overflow: "hidden",
+                    borderRadius: "8px",
+                  }}
+                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                  src={`https://embed.music.apple.com/us/album/${track.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}/${track.appleId}`}
+                />
+              </div>
             </div>
           ))}
         </div>

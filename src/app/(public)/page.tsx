@@ -259,10 +259,11 @@ export default function HomePage() {
       {/* ===== IMPACT / SOCIAL PROOF ===== */}
       <SectionWrapper variant="gradient">
         <div className="text-center text-white">
-          <h2 className="text-white mb-4">A Movement Growing Every Day</h2>
+          <h2 className="text-white mb-4">How It Started</h2>
           <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-            What started as one conversation became a national community of
-            families choosing openness over silence.
+            After losing his son Sam, Frank Sheeder wrote one honest post about
+            what his family had been through. The response proved what we all
+            knew — millions of families are carrying this weight in silence.
           </p>
           <Suspense
             fallback={

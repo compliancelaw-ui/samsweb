@@ -4,22 +4,23 @@ import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
 
 const takeActionLinks = [
   { href: "/take-the-oath", label: "Take Sam's OATH" },
-  { href: "/stories", label: "Share Your Story" },
-  { href: "/get-involved", label: "Get Involved" },
+  { href: "/share-your-story", label: "Share Your Story" },
+  { href: "/ambassadors", label: "Become an Ambassador" },
+  { href: "/workplace", label: "Workplace Programs" },
 ];
 
 const learnMoreLinks = [
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About the Movement" },
   { href: "/stories", label: "Stories" },
-  { href: "/map", label: "Map" },
+  { href: "/map", label: "OATH Map" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Updates" },
   { href: "/press", label: "Press" },
-  { href: "/workplace", label: "Workplaces" },
 ];
 
 const connectLinks = [
-  { href: "/contact", label: "Contact" },
-  { href: "/blog", label: "Updates" },
-  { href: "/music", label: "Music" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/music", label: "Listen to the Music" },
 ];
 
 export function Footer() {
@@ -43,7 +44,11 @@ export function Footer() {
               mental health through Openness, Authenticity, Togetherness, and
               Healing.
             </p>
-            <div className="mt-5">
+            {/* Follow Us */}
+            <div className="mt-6">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+                Follow Us
+              </h4>
               <SocialFollowButtons variant="dark" size="sm" />
             </div>
           </div>
@@ -151,20 +156,20 @@ export function Footer() {
       <div className="border-t border-gray-600">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-sm text-gray-400">
-            &copy; 2026 {SITE_NAME} Foundation &middot; A 501(c)(3) Nonprofit Organization. All rights reserved.
+            &copy; 2026 {SITE_NAME}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Link
               href="/terms"
               className="text-sm text-gray-400 transition-colors hover:text-teal-300"
             >
-              Terms
+              Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
               className="text-sm text-gray-400 transition-colors hover:text-teal-300"
             >
-              Privacy
+              Privacy Policy
             </Link>
           </div>
         </div>

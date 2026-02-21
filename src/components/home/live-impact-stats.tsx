@@ -38,25 +38,30 @@ async function getImpactCounts(): Promise<ImpactCounts> {
 export async function LiveImpactStats() {
   const counts = await getImpactCounts();
 
-  // If no data yet, show the aspirational static stats
+  // If no OATHs taken yet, show the LinkedIn post stats that started the movement
   if (counts.totalOaths === 0) {
     return (
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-        <div>
-          <p className="text-4xl md:text-5xl font-bold mb-2">345K+</p>
-          <p className="text-white/70">People Reached</p>
-        </div>
-        <div>
-          <p className="text-4xl md:text-5xl font-bold mb-2">1,934</p>
-          <p className="text-white/70">Reactions</p>
-        </div>
-        <div>
-          <p className="text-4xl md:text-5xl font-bold mb-2">484</p>
-          <p className="text-white/70">Stories Shared</p>
-        </div>
-        <div>
-          <p className="text-4xl md:text-5xl font-bold mb-2">22+</p>
-          <p className="text-white/70">States</p>
+      <div>
+        <p className="text-white/60 text-sm uppercase tracking-wider mb-8">
+          Where it started: one LinkedIn post that changed everything
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div>
+            <p className="text-4xl md:text-5xl font-bold mb-2">345K+</p>
+            <p className="text-white/70">People Reached</p>
+          </div>
+          <div>
+            <p className="text-4xl md:text-5xl font-bold mb-2">2,000+</p>
+            <p className="text-white/70">Reactions</p>
+          </div>
+          <div>
+            <p className="text-4xl md:text-5xl font-bold mb-2">484</p>
+            <p className="text-white/70">Comments</p>
+          </div>
+          <div>
+            <p className="text-4xl md:text-5xl font-bold mb-2">50</p>
+            <p className="text-white/70">States</p>
+          </div>
         </div>
       </div>
     );
