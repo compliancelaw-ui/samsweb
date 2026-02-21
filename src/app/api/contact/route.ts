@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { contactSchema } from '@/lib/validators'
+import { sendContactAutoReply, notifyAdmin } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,6 +50,13 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Fire-and-forget emails
+    sendContactAutoReply(data.sender_email, data.sender_name)
+    notifyAdmin(
+      `New message: ${data.subject}`,
+      `<strong>${data.sender_name}</strong> (${data.sender_email}) sent a ${data.message_type} message:<br/><br/>${data.body.slice(0, 500)}`
+    )
 
     return NextResponse.json(
       { message: 'Message sent successfully.' },

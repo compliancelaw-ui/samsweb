@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { ambassadorSchema } from '@/lib/validators'
+import { notifyAdmin } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,6 +41,12 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Notify admin about new ambassador application
+    notifyAdmin(
+      'New ambassador application',
+      `<strong>${data.name}</strong> from ${data.city}, ${data.state} applied to be an ambassador.`
+    )
 
     return NextResponse.json(
       { id: ambassador.id, message: 'Ambassador application submitted successfully.' },

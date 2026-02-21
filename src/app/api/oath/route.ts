@@ -3,6 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase/admin'
 import { oathSchema } from '@/lib/validators'
 import { geocode } from '@/lib/geocode'
 import { OATH_CATEGORIES } from '@/lib/constants'
+import { sendOathConfirmation, notifyAdmin } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -81,6 +82,15 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Fire-and-forget emails (don't block the response)
+    if (data.email) {
+      sendOathConfirmation(data.email, data.first_name)
+    }
+    notifyAdmin(
+      'New OATH taken',
+      `<strong>${display_name}</strong> took Sam's OATH from ${data.city}, ${data.state} (${data.category}).`
+    )
 
     return NextResponse.json(
       {

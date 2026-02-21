@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { newsletterSchema } from '@/lib/validators'
+import { sendNewsletterWelcome } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,6 +41,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Fire-and-forget welcome email
+    sendNewsletterWelcome(data.email, data.first_name ?? null)
 
     return NextResponse.json(
       { message: 'Successfully subscribed to newsletter.' },

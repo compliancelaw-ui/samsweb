@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { storySchema } from '@/lib/validators'
+import { notifyAdmin } from '@/lib/email'
 
 export const dynamic = 'force-dynamic'
 
@@ -91,6 +92,12 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Notify admin about new story submission
+    notifyAdmin(
+      'New story submitted',
+      `<strong>${data.author_name}</strong> submitted a story: "${data.title}". It's pending your review.`
+    )
 
     return NextResponse.json(
       { id: story.id, message: 'Story submitted successfully and is pending review.' },
