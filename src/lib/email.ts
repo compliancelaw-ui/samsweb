@@ -11,7 +11,11 @@ function getResend(): Resend | null {
   return _resend;
 }
 
-const FROM_ADDRESS = "Sam's OATH <hello@samsoath.org>";
+// From addresses — each alias routes to frank@samsoath.org via Google Workspace
+const FROM_HELLO = "Sam's OATH <hello@samsoath.org>";
+const FROM_CONNECT = "Sam's OATH <connect@samsoath.org>";
+// FROM_SHARE available for story submission replies: "Sam's OATH <share@samsoath.org>"
+const FROM_TEAM = "Sam's OATH <team@samsoath.org>";
 const ADMIN_EMAIL = "frank@samsoath.org";
 
 // ---------------------------------------------------------------------------
@@ -24,7 +28,7 @@ export async function sendOathConfirmation(to: string, name: string) {
 
   try {
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: FROM_HELLO,
       to,
       subject: "You took Sam's OATH — thank you",
       html: `
@@ -71,7 +75,7 @@ export async function sendContactAutoReply(to: string, name: string) {
 
   try {
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: FROM_CONNECT,
       to,
       subject: "We got your message — Sam's OATH",
       html: `
@@ -106,7 +110,7 @@ export async function sendNewsletterWelcome(to: string, name: string | null) {
 
   try {
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: FROM_HELLO,
       to,
       subject: "Welcome to Sam's OATH",
       html: `
@@ -145,7 +149,7 @@ export async function notifyAdmin(subject: string, body: string) {
 
   try {
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: FROM_TEAM,
       to: ADMIN_EMAIL,
       subject: `[Sam's OATH] ${subject}`,
       html: `

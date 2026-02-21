@@ -27,6 +27,7 @@ export const STORY_PIN_COLOR = "#E8956F";
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/advisory-board", label: "Advisory Board" },
   { href: "/stories", label: "Stories" },
   { href: "/map", label: "OATH Map" },
   { href: "/blog", label: "Updates" },
