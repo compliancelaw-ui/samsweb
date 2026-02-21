@@ -50,12 +50,12 @@ export default function HomePage() {
               Doesn&apos;t Heal
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
-              Millions of families are struggling with substance use and mental
-              health challenges — in silence, shame, and isolation.
+              Millions of families carry the weight of substance use and mental
+              health challenges alone. It doesn&apos;t have to be that way.
             </p>
             <p className="text-lg text-white/70 mb-10 max-w-2xl">
-              Sam&apos;s OATH is a movement to break that silence. Take the OATH.
-              Join the community. You are not alone.
+              Sam&apos;s OATH is a movement to build community through openness.
+              Take the OATH. Share your story. You are not alone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -75,40 +75,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ===== THE PROBLEM: SILENCE ===== */}
-      <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-6">Silence Is the Crisis</h2>
-          <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            When someone you love is struggling, the weight doesn&apos;t just
-            fall on them — it falls on the entire family. The guilt. The shame.
-            The loneliness of going through it without ever speaking openly.
-            Families carry it in silence — and what&apos;s hidden doesn&apos;t
-            heal.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-primary mb-2">1 in 5</p>
-              <p className="text-gray-500">
-                American families are affected by substance use disorder
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-teal mb-2">46M</p>
-              <p className="text-gray-500">
-                adults experience mental illness each year
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-orange mb-2">90%</p>
-              <p className="text-gray-500">
-                of families never talk about it openly
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
 
       {/* ===== THE OATH: THE SOLUTION ===== */}
       <SectionWrapper variant="light" id="what-is-oath">
@@ -245,75 +211,63 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== IMPACT / SOCIAL PROOF ===== */}
+      {/* ===== THE MOVEMENT IS GROWING (COMBINED STATS + MAP) ===== */}
       <SectionWrapper variant="gradient">
-        <div className="text-center text-white">
-          <h2 className="text-white mb-4">How It Started</h2>
-          <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-            After losing his son Sam, Frank Sheeder wrote one honest post about
-            what his family had been through. The response proved what we all
-            knew — millions of families are carrying this weight in silence.
+        <div className="text-center text-white mb-12">
+          <h2 className="text-white mb-4">The Movement Is Growing</h2>
+          <p className="text-white/80 text-xl max-w-2xl mx-auto">
+            Every OATH taken is a family choosing openness over silence.
+            Every pin on the map is someone saying: I&apos;m not alone anymore.
           </p>
-          <Suspense
-            fallback={
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="animate-pulse">
-                    <div className="h-12 w-24 bg-white/20 rounded mx-auto mb-2" />
-                    <div className="h-4 w-20 bg-white/10 rounded mx-auto" />
-                  </div>
-                ))}
-              </div>
-            }
-          >
+        </div>
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="h-12 w-24 bg-white/20 rounded mx-auto mb-2" />
+                  <div className="h-4 w-20 bg-white/10 rounded mx-auto" />
+                </div>
+              ))}
+            </div>
+          }
+        >
+          <div className="mb-12">
             <LiveImpactStats />
-          </Suspense>
-        </div>
-      </SectionWrapper>
-
-      {/* ===== LIVE MAP PREVIEW ===== */}
-      <SectionWrapper variant="light">
-        <div className="text-center mb-10">
-          <h2 className="mb-4">See the Movement</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Every pin is a family that chose openness. Every color tells a
-            story.
-          </p>
-        </div>
+          </div>
+        </Suspense>
         <div className="max-w-5xl mx-auto">
-          <div
-            className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg h-[300px] sm:h-[350px] md:h-[450px]"
-          >
+          <div className="relative overflow-hidden rounded-2xl border border-white/20 shadow-lg h-[300px] sm:h-[350px] md:h-[450px]">
             <HomeMapPreview />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-teal" />
-              <span className="text-sm text-gray-500">Supporting a Loved One</span>
+              <span className="text-sm text-white/70">Supporting a Loved One</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-sage" />
-              <span className="text-sm text-gray-500">Standing With You</span>
+              <span className="text-sm text-white/70">Standing With You</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-orange" />
-              <span className="text-sm text-gray-500">Hope &amp; Recovery</span>
+              <span className="text-sm text-white/70">Hope &amp; Recovery</span>
             </div>
           </div>
-        </div>
-        <div className="text-center mt-8">
-          <Link
-            href="/map"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
-          >
-            Explore the full OATH Map
-            <ChevronRight className="w-4 h-4" />
-          </Link>
+          <div className="text-center mt-8">
+            <Link
+              href="/map"
+              className="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors"
+            >
+              Explore the full OATH Map
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </SectionWrapper>
 
       {/* ===== ORIGIN — BRIEF ===== */}
-      <SectionWrapper variant="light">
+      <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
             The Story Behind the Movement
@@ -328,7 +282,7 @@ export default function HomePage() {
           </p>
           <p className="text-gray-500 mb-8">
             That moment became the foundation of this movement — built on the
-            belief that no family should carry this weight in silence.
+            belief that no family should carry this weight alone.
           </p>
           <Link
             href="/about"
@@ -347,10 +301,10 @@ export default function HomePage() {
             You Don&apos;t Have to Be Silent Anymore
           </h2>
           <p className="text-xl text-white/80 mb-10 leading-relaxed">
-            Whether you&apos;re struggling, grieving, recovering, or simply
-            standing in support — your voice matters. Take Sam&apos;s OATH. Join
-            the movement. Help us prove that what&apos;s hidden doesn&apos;t
-            have to stay that way.
+            Whether you&apos;re supporting a loved one, walking your own path
+            to recovery, or simply standing with others — your voice matters.
+            Take Sam&apos;s OATH. Join the movement. Be part of something
+            bigger than silence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
