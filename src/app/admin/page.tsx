@@ -112,7 +112,7 @@ const STAT_CARDS = [
 
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
   supporting: { label: "Supporting a Loved One", color: "bg-teal" },
-  supporter: { label: "Supporter", color: "bg-sage" },
+  supporter: { label: "Standing With You", color: "bg-sage" },
   hope: { label: "Hope & Recovery", color: "bg-orange" },
 };
 

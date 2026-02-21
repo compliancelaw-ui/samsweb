@@ -44,7 +44,7 @@ async function getPublishedStories(): Promise<PublishedStory[]> {
 
 const RELATION_COLORS: Record<string, string> = {
   "Supporting a Loved One": "bg-teal/10 text-teal",
-  "I'm a Supporter": "bg-sage/10 text-sage",
+  "Standing With You": "bg-sage/10 text-sage",
   "Hope & Recovery": "bg-orange/10 text-orange",
 };
 
@@ -81,7 +81,7 @@ export default async function StoriesPage() {
 
       {/* ===== STORIES ===== */}
       <SectionWrapper variant="light">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {stories.length > 0 ? (
             stories.map((story) => (
               <Link
@@ -134,32 +134,40 @@ export default async function StoriesPage() {
               </Link>
             ))
           ) : (
-            /* Placeholder stories until real submissions come in */
+            /* Family stories — placeholder content until submitted via the form */
             <>
               {[
                 {
                   relation: "Supporting a Loved One",
                   title: "The Post That Started It All",
                   excerpt:
-                    "For years, our family struggled in silence with substance use. Then I wrote one honest post about what we had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew the silence was the real epidemic.",
+                    "After we lost Sam, I wrote one honest post about what our family had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew \u2014 the silence was the real epidemic. If we could build a community around openness instead of shame, we could change how families deal with these struggles. That\u2019s why Sam\u2019s OATH exists.",
                   author: "Frank Sheeder",
                   location: "Dallas, TX",
                 },
                 {
-                  relation: "I\u2019m a Supporter",
-                  title: "I Didn\u2019t Know What to Say",
+                  relation: "Supporting a Loved One",
+                  title: "My Brother Taught Me What Courage Looks Like",
                   excerpt:
-                    "My best friend\u2019s son was struggling, and I had no idea what to say. I was afraid of saying the wrong thing, so I said nothing. Taking Sam\u2019s OATH gave me the language and the courage to finally show up for her.",
-                  author: "Michelle R.",
-                  location: "Denver, CO",
+                    "Sam was my brother, and watching him fight every day took a kind of courage most people never see. Our family learned the hard way that silence doesn\u2019t protect anyone \u2014 it isolates them. I want other siblings to know: it\u2019s okay to talk about what your family is going through. You\u2019re not betraying anyone by being honest. You\u2019re helping them.",
+                  author: "Annie Sheeder",
+                  location: "Dallas, TX",
                 },
                 {
-                  relation: "Hope & Recovery",
-                  title: "Three Years Sober and Finally Talking About It",
+                  relation: "Supporting a Loved One",
+                  title: "We Don\u2019t Have to Carry This Alone",
                   excerpt:
-                    "For years, my recovery was something I kept to myself. I was afraid of the judgment — from coworkers, from neighbors, even from family. When I found Sam\u2019s OATH, I realized that my silence wasn\u2019t protecting me. It was keeping other people from getting help.",
-                  author: "David K.",
-                  location: "Chicago, IL",
+                    "Growing up, I didn\u2019t have the words for what our family was going through. I just knew something was wrong and nobody was talking about it. Losing Sam changed that for me. Now I talk about it \u2014 with friends, with anyone who\u2019ll listen. Because the families who are still carrying this in silence need to hear that there\u2019s another way.",
+                  author: "Joey Sheeder",
+                  location: "Dallas, TX",
+                },
+                {
+                  relation: "Supporting a Loved One",
+                  title: "Love Doesn\u2019t Fix Everything, but It\u2019s Where Healing Starts",
+                  excerpt:
+                    "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through addiction means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
+                  author: "Nancy Sheeder",
+                  location: "Dallas, TX",
                 },
               ].map((story) => (
                 <div

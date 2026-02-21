@@ -31,7 +31,7 @@ interface OathRecord {
 
 const CATEGORY_LABELS: Record<string, string> = {
   supporting: "Supporting a Loved One",
-  supporter: "Supporter",
+  supporter: "Standing With You",
   hope: "Hope & Recovery",
 };
 
@@ -157,7 +157,7 @@ export default function AdminOathsPage() {
         >
           <option value="">All Categories</option>
           <option value="supporting">Supporting a Loved One</option>
-          <option value="supporter">Supporter</option>
+          <option value="supporter">Standing With You</option>
           <option value="hope">Hope &amp; Recovery</option>
         </select>
         <div className="relative">

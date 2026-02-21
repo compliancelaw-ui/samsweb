@@ -11,7 +11,7 @@ export const OATH_CATEGORIES = {
     tailwind: "teal",
   },
   supporter: {
-    label: "As a supporter of this movement",
+    label: "Standing with you",
     color: "#7AB87A",
     tailwind: "sage",
   },

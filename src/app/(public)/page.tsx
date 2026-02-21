@@ -199,7 +199,7 @@ export default function HomePage() {
             },
             {
               icon: Users,
-              title: "I\u2019m a Supporter",
+              title: "Standing With You",
               description:
                 "You believe no one should face these challenges in silence. You\u2019re here to stand with those who are carrying this weight.",
               color: "border-sage",
@@ -282,8 +282,7 @@ export default function HomePage() {
         </div>
         <div className="max-w-5xl mx-auto">
           <div
-            className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg"
-            style={{ height: "450px" }}
+            className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg h-[300px] sm:h-[350px] md:h-[450px]"
           >
             <HomeMapPreview />
           </div>
@@ -294,7 +293,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-sage" />
-              <span className="text-sm text-gray-500">Supporter</span>
+              <span className="text-sm text-gray-500">Standing With You</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-orange" />

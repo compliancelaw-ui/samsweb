@@ -34,7 +34,7 @@ interface CategoryMeta {
 
 const CATEGORY_META: Record<FilterCategory, CategoryMeta> = {
   supporting: { label: "Supporting a Loved One", color: OATH_CATEGORIES.supporting.color },
-  supporter: { label: "Supporter", color: OATH_CATEGORIES.supporter.color },
+  supporter: { label: "Standing With You", color: OATH_CATEGORIES.supporter.color },
   hope: { label: "Hope & Recovery", color: OATH_CATEGORIES.hope.color },
   story: { label: "Story Sharer", color: STORY_PIN_COLOR },
 };

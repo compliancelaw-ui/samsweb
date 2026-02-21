@@ -39,7 +39,7 @@ const CATEGORIES = [
   },
   {
     value: "supporter" as const,
-    label: "As a supporter of this movement",
+    label: "Standing with you",
     description: "You believe no one should face these challenges in silence",
     icon: Users,
     color: "border-sage bg-sage-50 text-sage-700",

@@ -49,7 +49,7 @@ export default function MapPage() {
 
       {/* ===== Map in a contained box ===== */}
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg" style={{ height: "70vh", minHeight: "500px" }}>
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px]">
           <OathMap />
         </div>
         {/* Legend below map */}
@@ -60,7 +60,7 @@ export default function MapPage() {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#7AB87A" }} />
-            <span className="text-sm text-gray-600">Supporter</span>
+            <span className="text-sm text-gray-600">Standing With You</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#E8956F" }} />
