@@ -18,7 +18,7 @@ const learnMoreLinks = [
 
 const connectLinks = [
   { href: "/contact", label: "Contact" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Updates" },
   { href: "/music", label: "Music" },
 ];
 
