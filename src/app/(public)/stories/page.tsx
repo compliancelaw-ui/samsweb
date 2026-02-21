@@ -43,8 +43,7 @@ async function getPublishedStories(): Promise<PublishedStory[]> {
 }
 
 const RELATION_COLORS: Record<string, string> = {
-  "I'm Struggling": "bg-teal/10 text-teal",
-  "In Loving Memory": "bg-primary/10 text-primary",
+  "Supporting a Loved One": "bg-teal/10 text-teal",
   "I'm a Supporter": "bg-sage/10 text-sage",
   "Hope & Recovery": "bg-orange/10 text-orange",
 };
@@ -139,10 +138,10 @@ export default async function StoriesPage() {
             <>
               {[
                 {
-                  relation: "In Loving Memory",
+                  relation: "Supporting a Loved One",
                   title: "The Post That Started It All",
                   excerpt:
-                    "After we lost Sam, I stayed silent for weeks. Then I wrote one honest post about what our family had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew the silence was the real epidemic.",
+                    "For years, our family struggled in silence with substance use. Then I wrote one honest post about what we had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew the silence was the real epidemic.",
                   author: "Frank Sheeder",
                   location: "Dallas, TX",
                 },

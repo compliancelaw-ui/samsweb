@@ -52,8 +52,23 @@ export default function MapPage() {
         <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg" style={{ height: "70vh", minHeight: "500px" }}>
           <OathMap />
         </div>
-        <p className="mt-4 text-center text-sm text-gray-500">
-          Use the +/&minus; buttons to zoom. Click any pin to see details.
+        {/* Legend below map */}
+        <div className="flex flex-wrap items-center justify-center gap-6 mt-4">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#3EABA8" }} />
+            <span className="text-sm text-gray-600">Supporting a Loved One</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#7AB87A" }} />
+            <span className="text-sm text-gray-600">Supporter</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#E8956F" }} />
+            <span className="text-sm text-gray-600">Hope &amp; Recovery</span>
+          </div>
+        </div>
+        <p className="mt-2 text-center text-sm text-gray-400">
+          Use +/&minus; to zoom. Click any pin to see details.
         </p>
       </div>
     </div>

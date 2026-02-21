@@ -58,8 +58,8 @@ export default function PrivacyPage() {
               on our movement map. We do not collect your street address.
             </li>
             <li>
-              <strong>Category:</strong> Whether you&apos;re taking the OATH for
-              someone struggling, in memory of someone, or as a supporter.
+              <strong>Category:</strong> Whether you&apos;re supporting a loved
+              one, standing as a supporter, or on a journey of hope and recovery.
             </li>
             <li>
               <strong>Email (optional):</strong> Only if you choose to provide

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { cn } from "@/lib/utils";
 import { OATH_CATEGORIES, STORY_PIN_COLOR } from "@/lib/constants";
 import type { MapPin } from "@/lib/types";
 
@@ -26,7 +25,7 @@ interface StoryMapPin {
 
 type AnyPin = MapPin | StoryMapPin;
 
-type FilterCategory = "struggling" | "memory" | "supporter" | "hope" | "story";
+type FilterCategory = "supporting" | "supporter" | "hope" | "story";
 
 interface CategoryMeta {
   label: string;
@@ -34,9 +33,8 @@ interface CategoryMeta {
 }
 
 const CATEGORY_META: Record<FilterCategory, CategoryMeta> = {
-  struggling: { label: "I\u2019m Struggling", color: OATH_CATEGORIES.struggling.color },
-  memory: { label: "In Loving Memory", color: OATH_CATEGORIES.memory.color },
-  supporter: { label: "I\u2019m a Supporter", color: OATH_CATEGORIES.supporter.color },
+  supporting: { label: "Supporting a Loved One", color: OATH_CATEGORIES.supporting.color },
+  supporter: { label: "Supporter", color: OATH_CATEGORIES.supporter.color },
   hope: { label: "Hope & Recovery", color: OATH_CATEGORIES.hope.color },
   story: { label: "Story Sharer", color: STORY_PIN_COLOR },
 };
@@ -54,27 +52,6 @@ export default function OathMap() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [mapReady, setMapReady] = useState(false);
-  const [filters, setFilters] = useState<Record<FilterCategory, boolean>>({
-    struggling: true,
-    memory: true,
-    hope: true,
-    supporter: true,
-    story: true,
-  });
-
-  // ---- Stats derived from pins ------------------------------------------
-  const stats = pins.reduce(
-    (acc, pin) => {
-      const cat = pin.category as FilterCategory;
-      if (cat in acc) acc[cat]++;
-      acc.total++;
-      return acc;
-    },
-    { struggling: 0, memory: 0, supporter: 0, hope: 0, story: 0, total: 0 } as Record<
-      string,
-      number
-    >
-  );
 
   // ---- Fetch pins -------------------------------------------------------
   useEffect(() => {
@@ -103,17 +80,12 @@ export default function OathMap() {
     };
   }, []);
 
-  // ---- Build GeoJSON from pins + active filters -------------------------
+  // ---- Build GeoJSON from pins ------------------------------------------
   const buildGeoJSON = useCallback(
     (activePins: AnyPin[]): GeoJSON.FeatureCollection => ({
       type: "FeatureCollection",
       features: activePins
-        .filter(
-          (p) =>
-            p.latitude != null &&
-            p.longitude != null &&
-            filters[p.category as FilterCategory]
-        )
+        .filter((p) => p.latitude != null && p.longitude != null)
         .map((p) => ({
           type: "Feature" as const,
           geometry: {
@@ -132,7 +104,7 @@ export default function OathMap() {
           },
         })),
     }),
-    [filters]
+    []
   );
 
   // ---- Initialise Mapbox map --------------------------------------------
@@ -150,6 +122,11 @@ export default function OathMap() {
       zoom: 3.5,
       minZoom: 2,
       maxZoom: 15,
+      maxBounds: [
+        [-130, 20], // Southwest: west of Hawaii
+        [-60, 55],  // Northeast: north of Maine
+      ],
+      projection: "mercator",
       attributionControl: false,
       scrollZoom: false,
       dragRotate: false,
@@ -338,7 +315,7 @@ export default function OathMap() {
     };
   }, []);
 
-  // ---- Update source data when pins or filters change -------------------
+  // ---- Update source data when pins change --------------------------------
   useEffect(() => {
     if (!mapReady || !mapRef.current) return;
     const source = mapRef.current.getSource(
@@ -346,12 +323,7 @@ export default function OathMap() {
     ) as mapboxgl.GeoJSONSource | undefined;
     if (!source) return;
     source.setData(buildGeoJSON(pins));
-  }, [pins, filters, mapReady, buildGeoJSON]);
-
-  // ---- Toggle category filter -------------------------------------------
-  function toggleFilter(cat: FilterCategory) {
-    setFilters((prev) => ({ ...prev, [cat]: !prev[cat] }));
-  }
+  }, [pins, mapReady, buildGeoJSON]);
 
   // ---- Error state ------------------------------------------------------
   if (error) {
@@ -390,39 +362,6 @@ export default function OathMap() {
 
   return (
     <div className="relative h-full w-full">
-      {/* ===== Stats Bar ===== */}
-      <div className="absolute inset-x-0 top-0 z-10 bg-white/90 backdrop-blur-sm border-b border-gray-200/60">
-        <div className="flex items-center justify-center gap-4 sm:gap-6 px-4 py-2.5 overflow-x-auto text-sm">
-          <div className="flex items-center gap-1.5 whitespace-nowrap">
-            <span className="font-bold text-gray-900 text-base">
-              {stats.total.toLocaleString()}
-            </span>
-            <span className="text-gray-500 hidden sm:inline">Total Pins</span>
-            <span className="text-gray-500 sm:hidden">Total</span>
-          </div>
-          <div className="h-4 w-px bg-gray-300" />
-          {(
-            Object.entries(CATEGORY_META) as [FilterCategory, CategoryMeta][]
-          ).map(([key, meta]) => (
-            <div
-              key={key}
-              className="flex items-center gap-1.5 whitespace-nowrap"
-            >
-              <span
-                className="h-2.5 w-2.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: meta.color }}
-              />
-              <span className="font-semibold text-gray-800">
-                {(stats[key] ?? 0).toLocaleString()}
-              </span>
-              <span className="text-gray-500 hidden md:inline">
-                {meta.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ===== Map Container ===== */}
       <div ref={mapContainer} className="h-full w-full" />
 
@@ -436,112 +375,6 @@ export default function OathMap() {
           <p className="text-sm font-medium text-gray-600">
             Loading the movement map...
           </p>
-        </div>
-      )}
-
-      {/* ===== Filter Controls (top-right) ===== */}
-      {mapReady && (
-        <div className="absolute right-3 top-14 z-10 sm:right-4 sm:top-16">
-          <div className="rounded-xl bg-white/95 backdrop-blur-sm shadow-lg border border-gray-200/60 p-3 sm:p-4 w-[200px]">
-            <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">
-              Filter by Category
-            </p>
-            <div className="space-y-2">
-              {(
-                Object.entries(CATEGORY_META) as [
-                  FilterCategory,
-                  CategoryMeta,
-                ][]
-              ).map(([key, meta]) => (
-                <label
-                  key={key}
-                  className="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 transition-colors hover:bg-gray-50"
-                >
-                  <div className="relative flex items-center justify-center">
-                    <input
-                      type="checkbox"
-                      checked={filters[key]}
-                      onChange={() => toggleFilter(key)}
-                      className="peer sr-only"
-                    />
-                    <div
-                      className={cn(
-                        "h-4 w-4 rounded border-2 transition-all flex items-center justify-center",
-                        filters[key]
-                          ? "border-transparent"
-                          : "border-gray-300 bg-white"
-                      )}
-                      style={
-                        filters[key]
-                          ? { backgroundColor: meta.color }
-                          : undefined
-                      }
-                    >
-                      {filters[key] && (
-                        <svg
-                          className="h-3 w-3 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                  </div>
-                  <span
-                    className={cn(
-                      "text-sm font-medium transition-colors",
-                      filters[key] ? "text-gray-800" : "text-gray-400"
-                    )}
-                  >
-                    {meta.label}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ===== Legend (bottom-left) ===== */}
-      {mapReady && (
-        <div className="absolute bottom-6 left-3 z-10 sm:left-4">
-          <div className="rounded-xl bg-white/95 backdrop-blur-sm shadow-lg border border-gray-200/60 p-3 sm:p-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2.5">
-              Legend
-            </p>
-            <div className="space-y-1.5">
-              {(
-                Object.entries(CATEGORY_META) as [
-                  FilterCategory,
-                  CategoryMeta,
-                ][]
-              ).map(([key, meta]) => (
-                <div key={key} className="flex items-center gap-2">
-                  <span
-                    className="h-3 w-3 rounded-full flex-shrink-0 shadow-sm"
-                    style={{ backgroundColor: meta.color }}
-                  />
-                  <span className="text-xs font-medium text-gray-700">
-                    {meta.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-3 pt-2.5 border-t border-gray-200/60">
-              <p className="text-[10px] text-gray-400 leading-tight">
-                Clusters show grouped pins.
-                <br />
-                Click to zoom in.
-              </p>
-            </div>
-          </div>
         </div>
       )}
     </div>

@@ -16,8 +16,7 @@ export async function GET() {
       storiesPublished,
       unreadMessages,
       subscribers,
-      struggling,
-      memory,
+      supporting,
       supporter,
       hope,
       ambassadorCount,
@@ -35,9 +34,7 @@ export async function GET() {
       db.from('newsletter_subscribers').select('*', { count: 'exact', head: true })
         .eq('is_active', true),
       db.from('oath_submissions').select('*', { count: 'exact', head: true })
-        .eq('category', 'struggling'),
-      db.from('oath_submissions').select('*', { count: 'exact', head: true })
-        .eq('category', 'memory'),
+        .eq('category', 'supporting'),
       db.from('oath_submissions').select('*', { count: 'exact', head: true })
         .eq('category', 'supporter'),
       db.from('oath_submissions').select('*', { count: 'exact', head: true })
@@ -96,8 +93,7 @@ export async function GET() {
         newsletter_subscribers: subscribers.count || 0,
         ambassadors: ambassadorCount.count || 0,
         category_breakdown: {
-          struggling: struggling.count || 0,
-          memory: memory.count || 0,
+          supporting: supporting.count || 0,
           supporter: supporter.count || 0,
           hope: hope.count || 0,
         },

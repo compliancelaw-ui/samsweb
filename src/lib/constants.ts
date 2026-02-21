@@ -5,15 +5,10 @@ export const SITE_DESCRIPTION =
 export const SITE_TAGLINE = "What's hidden doesn't heal.";
 
 export const OATH_CATEGORIES = {
-  struggling: {
-    label: "For someone I love who is struggling",
+  supporting: {
+    label: "Supporting a loved one",
     color: "#3EABA8",
     tailwind: "teal",
-  },
-  memory: {
-    label: "In memory of someone I lost",
-    color: "#4A6FA5",
-    tailwind: "primary",
   },
   supporter: {
     label: "As a supporter of this movement",

@@ -30,15 +30,13 @@ interface OathRecord {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  struggling: "I\u2019m Struggling",
-  memory: "In Loving Memory",
-  supporter: "I\u2019m a Supporter",
+  supporting: "Supporting a Loved One",
+  supporter: "Supporter",
   hope: "Hope & Recovery",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  struggling: "bg-teal-100 text-teal-700",
-  memory: "bg-blue-100 text-blue-700",
+  supporting: "bg-teal-100 text-teal-700",
   supporter: "bg-green-100 text-green-700",
   hope: "bg-orange-100 text-orange-700",
 };
@@ -158,9 +156,8 @@ export default function AdminOathsPage() {
           className="px-3 py-2 border border-gray-200 rounded-lg text-sm bg-white"
         >
           <option value="">All Categories</option>
-          <option value="struggling">I&apos;m Struggling</option>
-          <option value="memory">In Loving Memory</option>
-          <option value="supporter">I&apos;m a Supporter</option>
+          <option value="supporting">Supporting a Loved One</option>
+          <option value="supporter">Supporter</option>
           <option value="hope">Hope &amp; Recovery</option>
         </select>
         <div className="relative">

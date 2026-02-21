@@ -1,6 +1,6 @@
 // ─── String Union Types ─────────────────────────────────────────────────────
 
-export type OathCategory = "struggling" | "memory" | "supporter" | "hope";
+export type OathCategory = "supporting" | "supporter" | "hope";
 
 export type StoryStatus = "pending" | "approved" | "published" | "rejected";
 

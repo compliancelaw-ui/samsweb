@@ -8,7 +8,6 @@ import {
   Users,
   ChevronRight,
   Sun,
-  User,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
@@ -186,33 +185,23 @@ export default function HomePage() {
             you here.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
               icon: Heart,
-              title: "I\u2019m Struggling",
+              title: "Supporting a Loved One",
               description:
-                "Someone I love is facing substance use or mental health challenges. I need to know I\u2019m not alone.",
+                "Someone you care about is facing substance use or mental health challenges. You don\u2019t have to navigate this alone.",
               color: "border-teal",
               iconBg: "bg-teal-50",
               iconColor: "text-teal",
               dotColor: "bg-teal",
             },
             {
-              icon: User,
-              title: "In Loving Memory",
-              description:
-                "I lost someone I love. I want to honor them and help other families avoid the silence we carried.",
-              color: "border-primary",
-              iconBg: "bg-primary-50",
-              iconColor: "text-primary",
-              dotColor: "bg-primary",
-            },
-            {
               icon: Users,
               title: "I\u2019m a Supporter",
               description:
-                "I believe no family should struggle in silence. I\u2019m here to stand with those who are carrying this weight.",
+                "You believe no one should face these challenges in silence. You\u2019re here to stand with those who are carrying this weight.",
               color: "border-sage",
               iconBg: "bg-sage-50",
               iconColor: "text-sage",
@@ -222,7 +211,7 @@ export default function HomePage() {
               icon: Sun,
               title: "Hope & Recovery",
               description:
-                "I\u2019m on a journey of recovery or finding hope. I want to share that light with others still in the dark.",
+                "You\u2019re on a journey of recovery or finding hope. You want to share that light with others still in the dark.",
               color: "border-orange",
               iconBg: "bg-orange-50",
               iconColor: "text-orange",
@@ -301,15 +290,11 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-teal" />
-              <span className="text-sm text-gray-500">I&apos;m Struggling</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-primary" />
-              <span className="text-sm text-gray-500">In Loving Memory</span>
+              <span className="text-sm text-gray-500">Supporting a Loved One</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-sage" />
-              <span className="text-sm text-gray-500">I&apos;m a Supporter</span>
+              <span className="text-sm text-gray-500">Supporter</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-orange" />

@@ -111,9 +111,8 @@ const STAT_CARDS = [
 ] as const;
 
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
-  struggling: { label: "I'm Struggling", color: "bg-teal" },
-  memory: { label: "In Loving Memory", color: "bg-primary" },
-  supporter: { label: "I'm a Supporter", color: "bg-sage" },
+  supporting: { label: "Supporting a Loved One", color: "bg-teal" },
+  supporter: { label: "Supporter", color: "bg-sage" },
   hope: { label: "Hope & Recovery", color: "bg-orange" },
 };
 

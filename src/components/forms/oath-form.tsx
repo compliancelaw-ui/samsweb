@@ -5,14 +5,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Loader2, Heart, User, Users, Shield, Sun } from "lucide-react";
+import { ArrowRight, Loader2, Heart, Users, Shield, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const oathSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
   last_name: z.string().optional(),
   email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
-  category: z.enum(["struggling", "memory", "supporter", "hope"], {
+  category: z.enum(["supporting", "supporter", "hope"], {
     error: "Please select a category",
   }),
   city: z.string().min(1, "City is required"),
@@ -30,25 +30,17 @@ type OathFormData = z.infer<typeof oathSchema>;
 
 const CATEGORIES = [
   {
-    value: "struggling" as const,
-    label: "For someone I love who is struggling",
-    description: "You're supporting someone through substance use or mental health challenges",
+    value: "supporting" as const,
+    label: "Supporting a loved one",
+    description: "Someone you care about is facing substance use or mental health challenges",
     icon: Heart,
     color: "border-teal bg-teal-50 text-teal-700",
     selectedColor: "border-teal bg-teal text-white",
   },
   {
-    value: "memory" as const,
-    label: "In memory of someone I lost",
-    description: "You're honoring someone who is no longer with us",
-    icon: User,
-    color: "border-primary bg-primary-50 text-primary-700",
-    selectedColor: "border-primary bg-primary text-white",
-  },
-  {
     value: "supporter" as const,
     label: "As a supporter of this movement",
-    description: "You believe no family should struggle in silence",
+    description: "You believe no one should face these challenges in silence",
     icon: Users,
     color: "border-sage bg-sage-50 text-sage-700",
     selectedColor: "border-sage bg-sage text-white",
@@ -56,7 +48,7 @@ const CATEGORIES = [
   {
     value: "hope" as const,
     label: "I\u2019m in recovery or finding hope",
-    description: "You\u2019re on a journey of healing and want to share that hope",
+    description: "You\u2019re on a journey of healing and want to share that hope with others",
     icon: Sun,
     color: "border-orange bg-orange-50 text-orange-700",
     selectedColor: "border-orange bg-orange text-white",

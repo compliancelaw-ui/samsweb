@@ -224,7 +224,7 @@ export default function PressPage() {
                 icon: MapPin,
                 title: "A Map of Courage: Visualizing the Movement",
                 description:
-                  "An interactive map on samsoath.org shows families across all 50 states who've taken the OATH to be open about their struggles. Each pin represents a family that refused to hide. The color-coded system shows whether they're supporting someone struggling, honoring someone lost, or standing as allies.",
+                  "An interactive map on samsoath.org shows people across the country who've taken the OATH to be open about substance use and mental health. Each pin represents someone who refused to stay silent. The color-coded system shows whether they're supporting a loved one, standing as a movement supporter, or sharing their own journey of hope and recovery.",
               },
               {
                 icon: Newspaper,
