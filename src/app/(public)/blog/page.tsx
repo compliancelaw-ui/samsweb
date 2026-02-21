@@ -5,7 +5,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
 export const metadata: Metadata = {
-  title: "Blog | Addiction, Family, Mental Health & Hope",
+  title: "Updates | Addiction, Family, Mental Health & Hope",
   description:
     "Articles and insights for families navigating addiction and mental health. Practical guidance, personal stories, and hope from the Sam's OATH community.",
 };
@@ -57,7 +57,7 @@ export default async function BlogPage() {
       <section className="bg-gradient-to-br from-primary to-slate py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Blog &amp; News
+            Updates &amp; News
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Updates from the movement, reflections from Frank, and stories of

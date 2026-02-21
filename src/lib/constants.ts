@@ -34,7 +34,7 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/stories", label: "Stories" },
   { href: "/map", label: "OATH Map" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Updates" },
   { href: "/workplace", label: "Workplaces" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/music", label: "Music" },
