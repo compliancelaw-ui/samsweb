@@ -5,8 +5,6 @@ const PUBLIC_PATHS = [
   "/preview-login",
   "/api/preview-auth",
   "/api/admin-auth",
-  "/api/debug-env",
-  "/admin/login",
   "/_next",
   "/favicon.ico",
   "/robots.txt",

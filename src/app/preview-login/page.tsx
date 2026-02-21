@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 type AccessMode = null | "guest" | "admin";
 
 export default function PreviewLoginPage() {
-  const router = useRouter();
   const [mode, setMode] = useState<AccessMode>(null);
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
