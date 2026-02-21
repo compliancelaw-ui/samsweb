@@ -38,7 +38,8 @@ export function middleware(request: NextRequest) {
   if (pathname.startsWith("/admin")) {
     const adminCookie = request.cookies.get("admin-access");
     if (adminCookie?.value !== "granted") {
-      return NextResponse.redirect(new URL("/admin/login", request.url));
+      // Send back to the main login page (they'll choose Admin Access)
+      return NextResponse.redirect(new URL("/preview-login", request.url));
     }
   }
 
