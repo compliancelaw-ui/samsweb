@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import {
   ArrowRight,
   Heart,
@@ -15,7 +17,8 @@ import {
   Shield,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { IMPACT_STATS } from "@/lib/constants";
+import { FeaturedStories } from "@/components/stories/featured-stories";
+import { LiveImpactStats } from "@/components/home/live-impact-stats";
 
 const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
   ssr: false,
@@ -31,6 +34,12 @@ const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
     </div>
   ),
 });
+
+export const metadata: Metadata = {
+  title: "Sam's OATH | Break the Silence on Addiction & Mental Health",
+  description:
+    "Join a national movement of families breaking the silence around substance use and mental health. Take the OATH. Share your story. You are not alone.",
+};
 
 export default function HomePage() {
   return (
@@ -262,32 +271,20 @@ export default function HomePage() {
             What started as one conversation became a national community of
             families choosing openness over silence.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div>
-              <p className="text-4xl md:text-5xl font-bold mb-2">
-                {IMPACT_STATS.reached}
-              </p>
-              <p className="text-white/70">People Reached</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-bold mb-2">
-                {IMPACT_STATS.reactions}
-              </p>
-              <p className="text-white/70">Reactions</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-bold mb-2">
-                {IMPACT_STATS.comments}
-              </p>
-              <p className="text-white/70">Stories Shared</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-bold mb-2">
-                {IMPACT_STATS.states}
-              </p>
-              <p className="text-white/70">States</p>
-            </div>
-          </div>
+          <Suspense
+            fallback={
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="animate-pulse">
+                    <div className="h-12 w-24 bg-white/20 rounded mx-auto mb-2" />
+                    <div className="h-4 w-20 bg-white/10 rounded mx-auto" />
+                  </div>
+                ))}
+              </div>
+            }
+          >
+            <LiveImpactStats />
+          </Suspense>
         </div>
       </SectionWrapper>
 
@@ -335,6 +332,13 @@ export default function HomePage() {
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
+      </SectionWrapper>
+
+      {/* ===== FEATURED STORIES ===== */}
+      <SectionWrapper variant="white">
+        <Suspense fallback={null}>
+          <FeaturedStories />
+        </Suspense>
       </SectionWrapper>
 
       {/* ===== WHAT HAPPENS WHEN YOU TAKE THE OATH ===== */}

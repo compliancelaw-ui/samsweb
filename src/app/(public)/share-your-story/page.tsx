@@ -14,9 +14,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { StoryForm } from "@/components/forms/story-form";
 
 export const metadata: Metadata = {
-  title: "Share Your Story",
+  title: "Share Your Story | Families Affected by Addiction",
   description:
-    "Your story matters. Share your experience with substance use, mental health, or loss — and help other families know they're not alone.",
+    "Your story matters. Share your family's experience with addiction or mental health and help others know they are not alone. Every voice breaks the silence.",
 };
 
 export default function ShareYourStoryPage() {

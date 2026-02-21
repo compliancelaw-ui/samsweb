@@ -145,5 +145,13 @@ export interface DashboardStats {
   published_stories: number;
   unread_messages: number;
   newsletter_subscribers: number;
+  ambassadors: number;
   category_breakdown: Record<OathCategory, number>;
+}
+
+export interface RecentActivityItem {
+  id: string;
+  type: "oath" | "story" | "message" | "ambassador";
+  created_at: string;
+  summary: string;
 }

@@ -3,9 +3,9 @@ import { OathForm } from "@/components/forms/oath-form";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Take the OATH",
+  title: "Take the OATH | Pledge to End Addiction Stigma",
   description:
-    "Take Sam's OATH — a 60-second commitment to Openness, Authenticity, Togetherness, and Healing. Join thousands of families breaking silence around substance use and mental health.",
+    "Take the OATH to break the silence around substance use and mental health. Join thousands of families pledging to speak openly and end the stigma.",
 };
 
 export default function TakeTheOathPage() {

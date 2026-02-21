@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-  title: "Sam's OATH Map | Sam's OATH",
+  title: "OATH Takers Map | Join the Movement Near You",
   description:
-    "See OATH takers across the country. Every pin represents a family choosing openness over silence, connection over shame, and healing over hiding.",
+    "See families across the country who have taken the OATH to break the silence. Find your community and know you are not alone in this fight.",
   openGraph: {
-    title: "Sam's OATH Map | Sam's OATH",
+    title: "OATH Takers Map | Join the Movement Near You",
     description:
-      "See OATH takers across the country. Every pin represents a family choosing openness over silence.",
+      "See families across the country who have taken the OATH to break the silence. Find your community and know you are not alone in this fight.",
   },
 };
 

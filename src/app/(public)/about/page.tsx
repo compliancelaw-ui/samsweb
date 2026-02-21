@@ -15,9 +15,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "About Sam's OATH",
+  title: "About Sam's OATH | A Family's Mission to End Stigma",
   description:
-    "Learn about Sam's OATH — a national movement to break silence around substance use and mental health. Discover the story behind the OATH and the family that started it all.",
+    "Sam's OATH began as one family's pain and became a national movement. Learn how we're uniting families to break the silence around addiction and mental health.",
 };
 
 export default function AboutPage() {

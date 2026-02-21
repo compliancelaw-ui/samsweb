@@ -12,9 +12,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Workplace Programs",
+  title: "Workplace Programs | End Stigma at Work | Sam's OATH",
   description:
-    "Bring Sam's OATH to your workplace. Safe Listener Training, corporate OATH programs, and resources for creating supportive environments.",
+    "Bring the Sam's OATH movement to your workplace. Programs to reduce mental health and addiction stigma, support employees, and build compassionate culture.",
 };
 
 export default function WorkplacePage() {

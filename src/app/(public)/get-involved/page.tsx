@@ -11,11 +11,12 @@ import {
   MapPin,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { NewsletterForm } from "@/components/forms/newsletter-form";
 
 export const metadata: Metadata = {
-  title: "Get Involved",
+  title: "Get Involved | Join the Fight Against Stigma",
   description:
-    "Join the Sam's OATH movement. Volunteer, become an ambassador, partner with us, or simply spread the word.",
+    "There are many ways to join the Sam's OATH movement. Volunteer, share your story, or bring programs to your community. Every action matters.",
 };
 
 export default function GetInvolvedPage() {
@@ -174,16 +175,16 @@ export default function GetInvolvedPage() {
 
       {/* Newsletter */}
       <SectionWrapper variant="white">
-        <div className="max-w-2xl mx-auto text-center">
-          <Mail className="w-10 h-10 text-teal mx-auto mb-4" />
-          <h2 className="mb-4">Stay in the Loop</h2>
-          <p className="text-gray-600 text-lg mb-8">
-            Get movement updates, new stories, and ways to help — delivered to
-            your inbox. No spam, ever.
-          </p>
-          <p className="text-gray-500 text-sm">
-            Newsletter signup form coming soon.
-          </p>
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-8">
+            <Mail className="w-10 h-10 text-teal mx-auto mb-4" />
+            <h2 className="mb-4">Stay in the Loop</h2>
+            <p className="text-gray-600 text-lg">
+              Get movement updates, new stories, and ways to help — delivered to
+              your inbox. No spam, ever.
+            </p>
+          </div>
+          <NewsletterForm />
         </div>
       </SectionWrapper>
     </>

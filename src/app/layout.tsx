@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -66,8 +68,16 @@ const jsonLd = {
     jobTitle: "Founder & Executive Director",
   },
   foundingDate: "2025",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "general",
+    url: "https://samsoath.org/contact",
+  },
   sameAs: [
     "https://music.apple.com/us/artist/sams-oath/1862953585",
+    "https://www.instagram.com/samsoath",
+    "https://www.facebook.com/samsoath",
+    "https://www.tiktok.com/@samsoath",
   ],
 };
 
@@ -84,7 +94,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "How Sam's OATH collects, uses, and protects your information.",
+  title: "Privacy Policy | Sam's OATH",
+  description:
+    "Read the Sam's OATH privacy policy. Learn how we handle your information when you visit samsoath.org.",
 };
 
 export default function PrivacyPage() {

@@ -19,9 +19,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { CRISIS_RESOURCES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Resources & Support",
+  title: "Resources | Crisis Help, Guides & Family Support",
   description:
-    "Find crisis hotlines, support organizations, and resources for families affected by substance use and mental health challenges. You are not alone.",
+    "Find crisis hotlines, a language guide, family support resources, and more. Curated for families navigating addiction and mental health challenges.",
 };
 
 const LANGUAGE_GUIDE = [
@@ -162,6 +162,65 @@ export default function ResourcesPage() {
           </p>
         </div>
       </section>
+
+      {/* ===== TOPIC NAVIGATION ===== */}
+      <SectionWrapper variant="white" className="py-8 md:py-8 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-sm text-gray-500 mb-4 uppercase tracking-wide font-medium">
+            Explore by Topic
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link
+              href="/resources/for-families"
+              className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 hover:border-teal hover:shadow-md transition-all"
+            >
+              <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <HandHeart className="w-5 h-5 text-teal" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 group-hover:text-teal transition-colors text-sm">
+                  For Families
+                </p>
+                <p className="text-xs text-gray-500">
+                  Guides, support groups, books
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/resources/language-guide"
+              className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Megaphone className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 group-hover:text-primary transition-colors text-sm">
+                  Language Guide
+                </p>
+                <p className="text-xs text-gray-500">
+                  Words that heal, not harm
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/resources/grief-and-loss"
+              className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Heart className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 group-hover:text-primary transition-colors text-sm">
+                  Grief &amp; Loss
+                </p>
+                <p className="text-xs text-gray-500">
+                  For families carrying loss
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* ===== IMMEDIATE CRISIS HELP — DIRECT CALL/TEXT BUTTONS ===== */}
       <SectionWrapper variant="white">

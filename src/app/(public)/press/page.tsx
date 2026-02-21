@@ -16,9 +16,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Press & Media",
+  title: "Press & Media | Sam's OATH in the News",
   description:
-    "Press kit, media resources, and story angles for covering Sam's OATH and the movement to break silence around substance use and mental health.",
+    "Media coverage, press kits, and interview requests for Sam's OATH — a national movement of families breaking the silence around addiction and mental health.",
 };
 
 export default function PressPage() {

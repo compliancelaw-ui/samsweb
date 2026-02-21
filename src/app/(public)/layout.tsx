@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { CrisisBanner } from "@/components/layout/crisis-banner";
 import { EscapeButton } from "@/components/ui/escape-button";
 import { PageShareButtons } from "@/components/ui/page-share-buttons";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 
 export default function PublicLayout({
   children,
@@ -11,6 +12,7 @@ export default function PublicLayout({
 }) {
   return (
     <>
+      <GoogleAnalytics />
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />

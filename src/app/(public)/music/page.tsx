@@ -9,9 +9,9 @@ import { MUSIC_TRACKS } from "@/lib/constants";
 import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
 
 export const metadata: Metadata = {
-  title: "The Music of Sam's OATH",
+  title: "Original Music for Healing | Songs About Addiction & Loss",
   description:
-    "Listen to 15 original songs written for families affected by substance use and mental health challenges. Music by Frank Sheeder under Sam's OATH on Apple Music.",
+    "Listen to 15 original songs about addiction, grief, family love, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
 };
 
 export default function MusicPage() {

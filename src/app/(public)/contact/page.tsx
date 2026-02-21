@@ -7,15 +7,15 @@ import {
   Mic,
   Building2,
   Handshake,
-  PenLine,
-  Heart,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { ContactForm } from "@/components/forms/contact-form";
+import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Sam's OATH | Reach Out to Our Team",
   description:
-    "Get in touch with Sam's OATH. Whether you have questions, want to book a speaking engagement, or explore partnership opportunities — we'd love to hear from you.",
+    "Have a question, want to partner, or need to connect? Reach out to the Sam's OATH team. We're here for families breaking the silence on addiction.",
 };
 
 const CONTACT_TYPES = [
@@ -23,7 +23,7 @@ const CONTACT_TYPES = [
     icon: MessageSquare,
     title: "General Inquiries",
     description:
-      "Have a question about Sam's OATH, the movement, or how to get involved? We'd love to hear from you. No question is too small.",
+      "Have a question about Sam's OATH, the movement, or how to get involved? We'd love to hear from you.",
     iconBg: "bg-teal-50",
     iconColor: "text-teal",
   },
@@ -31,7 +31,7 @@ const CONTACT_TYPES = [
     icon: Mic,
     title: "Speaking Engagements",
     description:
-      "Invite Frank Sheeder to share the Sam's OATH story at your event, conference, or community gathering. His talks inspire action and break down barriers around substance use and mental health.",
+      "Invite Frank Sheeder to share the Sam's OATH story at your event, conference, or community gathering.",
     iconBg: "bg-primary-50",
     iconColor: "text-primary",
   },
@@ -39,7 +39,7 @@ const CONTACT_TYPES = [
     icon: Building2,
     title: "Workplace Training",
     description:
-      "Bring the OATH into your organization with Safe Listener Training, workplace certification programs, and employee wellness initiatives that address the hidden epidemic of silence.",
+      "Bring the OATH into your organization with Safe Listener Training and employee wellness initiatives.",
     iconBg: "bg-sage-50",
     iconColor: "text-sage",
   },
@@ -47,7 +47,7 @@ const CONTACT_TYPES = [
     icon: Handshake,
     title: "Partnership Opportunities",
     description:
-      "We're building a coalition of organizations, nonprofits, treatment centers, and businesses committed to breaking the stigma. Let's explore how we can work together.",
+      "We're building a coalition of organizations, nonprofits, and businesses committed to breaking the stigma.",
     iconBg: "bg-orange-50",
     iconColor: "text-orange",
   },
@@ -79,8 +79,8 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <h2 className="mb-4">How Can We Help?</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We&apos;re a small team with a big mission, and we read every
-            message that comes our way.
+            Select a category below when you fill out the form, and we&apos;ll
+            route your message to the right person.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -105,11 +105,11 @@ export default function ContactPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== CONTACT FORM PLACEHOLDER + EMAIL ===== */}
+      {/* ===== CONTACT FORM + SIDEBAR ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Form placeholder */}
+            {/* Form */}
             <div className="lg:col-span-3">
               <h2 className="mb-4">Send Us a Message</h2>
               <p className="text-gray-600 mb-8">
@@ -123,16 +123,7 @@ export default function ContactPage() {
                 </Link>
                 .
               </p>
-              <div className="bg-white border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center">
-                <PenLine className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Contact Form Coming Soon
-                </h3>
-                <p className="text-gray-500 max-w-md mx-auto">
-                  We&apos;re building a secure contact form. In the meantime,
-                  please reach out via email below.
-                </p>
-              </div>
+              <ContactForm />
             </div>
 
             {/* Sidebar */}
@@ -163,35 +154,14 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Social media links placeholder */}
+              {/* Social media links */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">
                   Follow the Movement
                 </h4>
-                <div className="space-y-3">
-                  {[
-                    { name: "LinkedIn", handle: "Sam's OATH" },
-                    { name: "Instagram", handle: "@samsoath" },
-                    { name: "Facebook", handle: "Sam's OATH" },
-                    { name: "YouTube", handle: "Sam's OATH" },
-                  ].map((social) => (
-                    <a
-                      key={social.name}
-                      href="#"
-                      className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors group"
-                    >
-                      <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-primary-50 transition-colors">
-                        <Heart className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium">{social.name}</p>
-                        <p className="text-xs text-gray-400">
-                          {social.handle}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+                <SocialFollowButtonsLabeled
+                  platforms={["instagram", "facebook", "youtube", "tiktok"]}
+                />
               </div>
             </div>
           </div>
@@ -205,20 +175,15 @@ export default function ContactPage() {
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
             Sam&apos;s OATH is available for interviews, features, and media
             collaborations. Frank Sheeder has spoken about the movement on
-            podcasts, at conferences, and in publications. We&apos;re always
-            happy to share the story behind the OATH and the families it&apos;s
-            reaching.
+            podcasts, at conferences, and in publications.
           </p>
-          <p className="text-gray-600 mb-8">
-            For press inquiries, please email{" "}
-            <a
-              href="mailto:info@samsoath.org"
-              className="text-primary font-semibold hover:text-primary-600 transition-colors"
-            >
-              info@samsoath.org
-            </a>{" "}
-            with &ldquo;Media Inquiry&rdquo; in the subject line.
-          </p>
+          <Link
+            href="/press"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
+          >
+            Visit our Press page
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </SectionWrapper>
 

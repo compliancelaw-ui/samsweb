@@ -1,23 +1,65 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Filter, PenLine } from "lucide-react";
+import { ArrowRight, BookOpen, PenLine } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { supabaseAdmin } from "@/lib/supabase/admin";
 
 export const metadata: Metadata = {
-  title: "Stories",
+  title: "Family Stories of Addiction & Recovery | Sam's OATH",
   description:
-    "Read stories of courage from families affected by substance use and mental health challenges. Every story shared breaks the cycle of silence.",
+    "Read real stories from families navigating addiction, mental health, grief, and recovery. These voices are breaking the silence and ending the stigma.",
 };
 
-const FILTER_CATEGORIES = [
-  { label: "All Stories", value: "all", color: "bg-gray-900 text-white" },
-  { label: "I\u2019m Struggling", value: "struggling", color: "bg-teal/10 text-teal border border-teal/30" },
-  { label: "In Loving Memory", value: "memory", color: "bg-primary/10 text-primary border border-primary/30" },
-  { label: "I\u2019m a Supporter", value: "supporter", color: "bg-sage/10 text-sage border border-sage/30" },
-  { label: "Hope & Recovery", value: "hope", color: "bg-orange/10 text-orange border border-orange/30" },
-];
+export const revalidate = 300; // revalidate every 5 minutes
 
-export default function StoriesPage() {
+interface PublishedStory {
+  id: string;
+  title: string;
+  excerpt: string | null;
+  slug: string;
+  author_name: string;
+  author_city: string | null;
+  author_state: string | null;
+  author_relation: string | null;
+  published_at: string;
+  is_featured: boolean;
+}
+
+async function getPublishedStories(): Promise<PublishedStory[]> {
+  try {
+    const { data } = await supabaseAdmin()
+      .from("story_submissions")
+      .select(
+        "id, title, excerpt, slug, author_name, author_city, author_state, author_relation, published_at, is_featured"
+      )
+      .eq("status", "published")
+      .order("is_featured", { ascending: false })
+      .order("published_at", { ascending: false });
+
+    return (data as PublishedStory[]) || [];
+  } catch {
+    return [];
+  }
+}
+
+const RELATION_COLORS: Record<string, string> = {
+  "I'm Struggling": "bg-teal/10 text-teal",
+  "In Loving Memory": "bg-primary/10 text-primary",
+  "I'm a Supporter": "bg-sage/10 text-sage",
+  "Hope & Recovery": "bg-orange/10 text-orange",
+};
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+export default async function StoriesPage() {
+  const stories = await getPublishedStories();
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -38,51 +80,105 @@ export default function StoriesPage() {
         </div>
       </section>
 
-      {/* ===== FILTER BAR ===== */}
-      <SectionWrapper variant="white" className="py-8 md:py-8 border-b border-gray-100">
-        <div className="flex flex-wrap items-center gap-3 justify-center">
-          <Filter className="w-5 h-5 text-gray-400 mr-1" />
-          {FILTER_CATEGORIES.map((category) => (
-            <button
-              key={category.value}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all hover:shadow-md ${
-                category.value === "all"
-                  ? category.color
-                  : category.color + " hover:opacity-80"
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-      </SectionWrapper>
-
-      {/* ===== STORY GRID (EMPTY STATE) ===== */}
-      <SectionWrapper variant="light">
-        <div className="max-w-2xl mx-auto text-center py-16">
-          <div className="w-20 h-20 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <BookOpen className="w-10 h-10 text-primary-300" />
+      {/* ===== STORIES ===== */}
+      {stories.length > 0 ? (
+        <SectionWrapper variant="light">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {stories.map((story) => (
+              <Link
+                key={story.id}
+                href={`/stories/${story.slug}`}
+                className="group bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all hover:border-primary/20"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <BookOpen className="w-4 h-4 text-primary" />
+                  {story.author_relation && (
+                    <span
+                      className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                        RELATION_COLORS[story.author_relation] ||
+                        "bg-gray-100 text-gray-600"
+                      }`}
+                    >
+                      {story.author_relation}
+                    </span>
+                  )}
+                  {story.is_featured && (
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-600">
+                      Featured
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                  {story.title}
+                </h3>
+                {story.excerpt && (
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {story.excerpt}
+                  </p>
+                )}
+                <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
+                  <div className="text-xs text-gray-400">
+                    <span className="font-medium text-gray-500">
+                      {story.author_name}
+                    </span>
+                    {story.author_city && story.author_state && (
+                      <span>
+                        {" "}
+                        &middot; {story.author_city}, {story.author_state}
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-xs text-gray-400">
+                    {formatDate(story.published_at)}
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Stories Are Coming Soon
-          </h2>
-          <p className="text-lg text-gray-600 mb-3 leading-relaxed">
-            This is where your stories will live — real accounts from families
-            who&apos;ve chosen courage over silence. Every story shared here
-            helps someone else feel less alone.
-          </p>
-          <p className="text-gray-500 mb-8">
-            Be the first to share yours and help build this community of openness.
-          </p>
-          <Link
-            href="/share-your-story"
-            className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
-          >
-            <PenLine className="w-5 h-5" />
-            Share Your Story
-          </Link>
-        </div>
-      </SectionWrapper>
+
+          {/* CTA below stories */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Have a story of your own? Your voice matters.
+            </p>
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
+            >
+              <PenLine className="w-5 h-5" />
+              Share Your Story
+            </Link>
+          </div>
+        </SectionWrapper>
+      ) : (
+        /* ===== EMPTY STATE ===== */
+        <SectionWrapper variant="light">
+          <div className="max-w-2xl mx-auto text-center py-16">
+            <div className="w-20 h-20 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <BookOpen className="w-10 h-10 text-primary-300" />
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Stories Are Coming Soon
+            </h2>
+            <p className="text-lg text-gray-600 mb-3 leading-relaxed">
+              This is where your stories will live — real accounts from families
+              who&apos;ve chosen courage over silence. Every story shared here
+              helps someone else feel less alone.
+            </p>
+            <p className="text-gray-500 mb-8">
+              Be the first to share yours and help build this community of
+              openness.
+            </p>
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
+            >
+              <PenLine className="w-5 h-5" />
+              Share Your Story
+            </Link>
+          </div>
+        </SectionWrapper>
+      )}
 
       {/* ===== WHY STORIES MATTER ===== */}
       <SectionWrapper variant="white">

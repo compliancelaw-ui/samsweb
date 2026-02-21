@@ -7,11 +7,12 @@ import {
   Star,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { AmbassadorForm } from "@/components/forms/ambassador-form";
 
 export const metadata: Metadata = {
-  title: "Ambassadors",
+  title: "Become an Ambassador | Lead the Movement Locally",
   description:
-    "Sam's OATH ambassadors are leading the movement in their communities. See who's involved and learn how to become one.",
+    "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help families find their voice and end the stigma together.",
 };
 
 export default function AmbassadorsPage() {
@@ -152,18 +153,18 @@ export default function AmbassadorsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Apply CTA */}
-      <SectionWrapper variant="gradient">
-        <div className="max-w-2xl mx-auto text-center">
-          <Award className="w-12 h-12 text-white mx-auto mb-4" />
-          <h2 className="text-white mb-4">Ready to Lead?</h2>
-          <p className="text-white/80 text-lg mb-8">
-            Submit your ambassador application and join the team of leaders
-            making a difference in their communities.
-          </p>
-          <p className="text-white/60 text-sm">
-            Ambassador application form coming soon.
-          </p>
+      {/* Application Form */}
+      <SectionWrapper variant="white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <Award className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h2 className="mb-4">Apply to Be an Ambassador</h2>
+            <p className="text-gray-600 text-lg">
+              Tell us about yourself and why you want to represent Sam&apos;s OATH
+              in your community.
+            </p>
+          </div>
+          <AmbassadorForm />
         </div>
       </SectionWrapper>
     </>

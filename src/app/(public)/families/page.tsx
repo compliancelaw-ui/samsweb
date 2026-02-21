@@ -14,9 +14,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "The Sheeder Family | Sam's OATH",
+  title: "Family Perspectives | Addiction & Mental Health Support",
   description:
-    "Substance use and mental health affect every member of the family. Meet the Sheeder family — Frank, Nancy, Annie, Joey, and Rony — and see the love that drives the movement.",
+    "You didn't cause it, you can't cure it, but you don't have to face it alone. Stories and support for families affected by addiction and mental health.",
 };
 
 export default function FamiliesPage() {
