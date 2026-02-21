@@ -5,14 +5,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Loader2, Heart, User, Users, Shield } from "lucide-react";
+import { ArrowRight, Loader2, Heart, User, Users, Shield, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const oathSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
   last_name: z.string().optional(),
   email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
-  category: z.enum(["struggling", "memory", "supporter"], {
+  category: z.enum(["struggling", "memory", "supporter", "hope"], {
     error: "Please select a category",
   }),
   city: z.string().min(1, "City is required"),
@@ -52,6 +52,14 @@ const CATEGORIES = [
     icon: Users,
     color: "border-sage bg-sage-50 text-sage-700",
     selectedColor: "border-sage bg-sage text-white",
+  },
+  {
+    value: "hope" as const,
+    label: "I\u2019m in recovery or finding hope",
+    description: "You\u2019re on a journey of healing and want to share that hope",
+    icon: Sun,
+    color: "border-orange bg-orange-50 text-orange-700",
+    selectedColor: "border-orange bg-orange text-white",
   },
 ];
 

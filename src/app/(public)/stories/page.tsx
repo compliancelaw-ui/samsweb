@@ -10,10 +10,11 @@ export const metadata: Metadata = {
 };
 
 const FILTER_CATEGORIES = [
-  { label: "All", value: "all", color: "bg-gray-900 text-white" },
-  { label: "Struggling", value: "struggling", color: "bg-teal/10 text-teal border border-teal/30" },
-  { label: "In Memory", value: "memory", color: "bg-primary/10 text-primary border border-primary/30" },
-  { label: "Supporter", value: "supporter", color: "bg-sage/10 text-sage border border-sage/30" },
+  { label: "All Stories", value: "all", color: "bg-gray-900 text-white" },
+  { label: "I\u2019m Struggling", value: "struggling", color: "bg-teal/10 text-teal border border-teal/30" },
+  { label: "In Loving Memory", value: "memory", color: "bg-primary/10 text-primary border border-primary/30" },
+  { label: "I\u2019m a Supporter", value: "supporter", color: "bg-sage/10 text-sage border border-sage/30" },
+  { label: "Hope & Recovery", value: "hope", color: "bg-orange/10 text-orange border border-orange/30" },
 ];
 
 export default function StoriesPage() {

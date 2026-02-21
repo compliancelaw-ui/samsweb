@@ -20,6 +20,11 @@ export const OATH_CATEGORIES = {
     color: "#7AB87A",
     tailwind: "sage",
   },
+  hope: {
+    label: "I\u2019m in recovery or finding hope",
+    color: "#E8956F",
+    tailwind: "orange",
+  },
 } as const;
 
 export const STORY_PIN_COLOR = "#E8956F";
@@ -27,7 +32,7 @@ export const STORY_PIN_COLOR = "#E8956F";
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/stories", label: "Stories" },
-  { href: "/map", label: "Map" },
+  { href: "/map", label: "OATH Map" },
   { href: "/blog", label: "Blog" },
   { href: "/workplace", label: "Workplaces" },
   { href: "/get-involved", label: "Get Involved" },

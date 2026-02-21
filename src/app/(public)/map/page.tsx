@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-  title: "The Movement Map | Sam's OATH",
+  title: "Sam's OATH Map | Sam's OATH",
   description:
     "See OATH takers across the country. Every pin represents a family choosing openness over silence, connection over shame, and healing over hiding.",
   openGraph: {
-    title: "The Movement Map | Sam's OATH",
+    title: "Sam's OATH Map | Sam's OATH",
     description:
       "See OATH takers across the country. Every pin represents a family choosing openness over silence.",
   },
@@ -35,21 +35,26 @@ function MapSkeleton() {
 
 export default function MapPage() {
   return (
-    <div className="flex flex-col" style={{ height: "calc(100vh - 64px)" }}>
+    <div>
       {/* ===== Heading Band ===== */}
-      <div className="bg-gradient-to-r from-primary-800 via-primary to-teal px-4 py-5 text-center sm:py-6">
+      <div className="bg-gradient-to-r from-primary-800 via-primary to-teal px-4 py-8 text-center sm:py-10">
         <h1 className="text-2xl font-bold text-white sm:text-3xl">
-          The Movement Map
+          Sam&apos;s OATH Map
         </h1>
-        <p className="mx-auto mt-1.5 max-w-xl text-sm text-white/80 sm:text-base">
+        <p className="mx-auto mt-2 max-w-xl text-sm text-white/80 sm:text-base">
           Every pin is a family that chose openness over silence. Click to
           explore their stories.
         </p>
       </div>
 
-      {/* ===== Map fills remaining viewport ===== */}
-      <div className="relative flex-1 min-h-0">
-        <OathMap />
+      {/* ===== Map in a contained box ===== */}
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg" style={{ height: "70vh", minHeight: "500px" }}>
+          <OathMap />
+        </div>
+        <p className="mt-4 text-center text-sm text-gray-500">
+          Use the +/&minus; buttons to zoom. Click any pin to see details.
+        </p>
       </div>
     </div>
   );

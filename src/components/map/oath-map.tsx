@@ -26,7 +26,7 @@ interface StoryMapPin {
 
 type AnyPin = MapPin | StoryMapPin;
 
-type FilterCategory = "struggling" | "memory" | "supporter" | "story";
+type FilterCategory = "struggling" | "memory" | "supporter" | "hope" | "story";
 
 interface CategoryMeta {
   label: string;
@@ -34,9 +34,10 @@ interface CategoryMeta {
 }
 
 const CATEGORY_META: Record<FilterCategory, CategoryMeta> = {
-  struggling: { label: "Struggling", color: OATH_CATEGORIES.struggling.color },
-  memory: { label: "In Memory", color: OATH_CATEGORIES.memory.color },
-  supporter: { label: "Supporter", color: OATH_CATEGORIES.supporter.color },
+  struggling: { label: "I\u2019m Struggling", color: OATH_CATEGORIES.struggling.color },
+  memory: { label: "In Loving Memory", color: OATH_CATEGORIES.memory.color },
+  supporter: { label: "I\u2019m a Supporter", color: OATH_CATEGORIES.supporter.color },
+  hope: { label: "Hope & Recovery", color: OATH_CATEGORIES.hope.color },
   story: { label: "Story Sharer", color: STORY_PIN_COLOR },
 };
 
@@ -56,6 +57,7 @@ export default function OathMap() {
   const [filters, setFilters] = useState<Record<FilterCategory, boolean>>({
     struggling: true,
     memory: true,
+    hope: true,
     supporter: true,
     story: true,
   });
@@ -68,7 +70,7 @@ export default function OathMap() {
       acc.total++;
       return acc;
     },
-    { struggling: 0, memory: 0, supporter: 0, story: 0, total: 0 } as Record<
+    { struggling: 0, memory: 0, supporter: 0, hope: 0, story: 0, total: 0 } as Record<
       string,
       number
     >
@@ -149,7 +151,14 @@ export default function OathMap() {
       minZoom: 2,
       maxZoom: 15,
       attributionControl: false,
+      scrollZoom: false,
+      dragRotate: false,
+      touchPitch: false,
+      pitchWithRotate: false,
     });
+
+    // Disable touch rotation (keep pinch-to-zoom)
+    map.touchZoomRotate.disableRotation();
 
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
     map.addControl(

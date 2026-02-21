@@ -59,8 +59,14 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex">
+          {/* Desktop CTAs */}
+          <div className="hidden items-center gap-2 md:flex">
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center rounded-full border border-orange px-4 py-2 text-sm font-semibold text-orange transition-all hover:bg-orange-50"
+            >
+              Share Your Story
+            </Link>
             <Link
               href="/take-the-oath"
               className="inline-flex items-center rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-500 hover:shadow-md"
@@ -106,7 +112,14 @@ export function Header() {
               </Link>
             ))}
           </div>
-          <div className="mt-4 px-4">
+          <div className="mt-4 space-y-3 px-4">
+            <Link
+              href="/share-your-story"
+              className="block w-full rounded-full border border-orange py-3 text-center text-base font-semibold text-orange transition-all hover:bg-orange-50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Share Your Story
+            </Link>
             <Link
               href="/take-the-oath"
               className="block w-full rounded-full bg-teal py-3 text-center text-base font-semibold text-white shadow-sm transition-all hover:bg-teal-500 hover:shadow-md"

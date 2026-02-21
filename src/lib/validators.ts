@@ -6,7 +6,7 @@ export const oathSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
   last_name: z.string().optional(),
   email: z.string().email("Invalid email address").optional(),
-  category: z.enum(["struggling", "memory", "supporter"]),
+  category: z.enum(["struggling", "memory", "supporter", "hope"]),
   city: z.string().min(1, "City is required"),
   state: z.string().min(2, "State must be 2 characters").max(2, "State must be 2 characters").toUpperCase(),
   message: z.string().max(500, "Message must be 500 characters or fewer").optional(),
