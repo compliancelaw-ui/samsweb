@@ -49,8 +49,33 @@ export default function MusicPage() {
         </div>
       </section>
 
-      {/* ===== FEATURED TRACK — APPLE MUSIC EMBED ===== */}
+      {/* ===== SAM SINGING — YOUTUBE EMBED ===== */}
       <SectionWrapper variant="white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
+              Sam&apos;s Voice
+            </p>
+            <h2 className="mb-4">&ldquo;I Am&rdquo; — Performed by Sam</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Before everything else, there was Sam and his music. This is Sam
+              performing &ldquo;I Am&rdquo; — his voice, his heart, his words.
+            </p>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/a4yVnqa8mUg"
+              title="Sam singing 'I Am'"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== FEATURED TRACK — APPLE MUSIC EMBED ===== */}
+      <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-orange font-medium mb-2 uppercase tracking-wide text-sm">
@@ -78,7 +103,7 @@ export default function MusicPage() {
       </SectionWrapper>
 
       {/* ===== ALL TRACKS WITH EMBEDS ===== */}
-      <SectionWrapper variant="light">
+      <SectionWrapper variant="white">
         <div className="text-center mb-12">
           <h2 className="mb-4">All 15 Tracks</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
