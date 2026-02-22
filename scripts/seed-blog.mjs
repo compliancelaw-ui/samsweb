@@ -32,22 +32,22 @@ function slugify(title) {
 const posts = [
   // ── Post 1 ──────────────────────────────────────────────────────────────────
   {
-    title: "What's Hidden Doesn't Heal: Why Families Keep Addiction a Secret",
-    tags: ['addiction', 'family', 'silence', 'stigma'],
-    excerpt: "Millions of families are quietly navigating substance use disorders behind closed doors. Here's why the silence persists — and why breaking it is the first step toward healing.",
+    title: "What's Hidden Doesn't Heal: Why Families Stay Silent",
+    tags: ['families', 'silence', 'stigma', 'healing'],
+    excerpt: "Millions of families are quietly navigating substance use behind closed doors. Here's why the silence persists — and why breaking it is the first step toward healing.",
     content: `## The Secret Everyone Keeps
 
-There's a conversation happening in almost every neighborhood, every school, every workplace in America. It's happening in whispers, behind closed doors, and sometimes not at all. It's the conversation about addiction — and the reason most families never have it is simple: shame.
+There's a conversation happening in almost every neighborhood, every school, every workplace in America. It's happening in whispers, behind closed doors, and sometimes not at all. It's the conversation about substance use — and the reason most families never have it is simple: shame.
 
-If your family has been touched by substance use disorder, you already know the feeling. The careful editing of holiday stories. The rehearsed answers when someone asks how your son, your daughter, your sibling is doing. The way you scan the room before saying anything real, calculating who's safe to tell and who might judge.
+If your family has been touched by substance use, you already know the feeling. The careful editing of holiday stories. The rehearsed answers when someone asks how your son, your daughter, your sibling is doing. The way you scan the room before saying anything real, calculating who's safe to tell and who might judge.
 
-You're not alone. According to the Substance Abuse and Mental Health Services Administration, nearly 21 million Americans have at least one addiction, yet only 10% receive treatment. Behind each of those numbers is a family — often suffering in silence.
+You're not alone. According to the Substance Abuse and Mental Health Services Administration, nearly 21 million Americans have at least one substance use disorder, yet only 10% receive treatment. Behind each of those numbers is a family — often suffering in silence.
 
 ## Why We Hide
 
-Families keep addiction a secret for reasons that make perfect sense from the inside:
+Families keep substance use a secret for reasons that make perfect sense from the inside:
 
-**Fear of judgment.** We live in a culture that still treats addiction as a moral failing rather than a health condition. Parents worry they'll be blamed. Siblings worry they'll be defined by it. Spouses worry about the whispers at school pickup.
+**Fear of judgment.** We live in a culture that still treats substance use as a moral failing rather than a health condition. Parents worry they'll be blamed. Siblings worry they'll be defined by it. Spouses worry about the whispers at school pickup.
 
 **Protecting the person who's struggling.** "If people find out, it'll make things worse." This instinct comes from love, but it often backfires. When we hide someone's struggle, we also hide them from the support they need.
 
@@ -71,7 +71,7 @@ At Sam's OATH, we talk about Openness not as an all-or-nothing proposition, but 
 
 ## You Don't Have to Do This Alone
 
-The silence around addiction thrives because we think we're the only ones. We're not. Millions of families share this experience, and when we find each other, everything changes.
+The silence around substance use thrives because we think we're the only ones. We're not. Millions of families share this experience, and when we find each other, everything changes.
 
 What's hidden doesn't heal. But what's spoken, what's shared, what's brought into the light — that's where healing begins.
 
@@ -82,7 +82,7 @@ What's hidden doesn't heal. But what's spoken, what's shared, what's brought int
 
   // ── Post 2 ──────────────────────────────────────────────────────────────────
   {
-    title: "The Language of Addiction: Words That Help and Words That Hurt",
+    title: "The Language We Use Matters: Words That Help and Words That Hurt",
     tags: ['language', 'stigma', 'recovery', 'families'],
     excerpt: "The words we use shape how people feel about seeking help. A practical guide to language that reduces stigma and supports recovery.",
     content: `## Words Matter More Than We Think
@@ -95,9 +95,9 @@ Most of us use stigmatizing language without even realizing it. We picked it up 
 
 The core principle is straightforward: define people by who they are, not by their condition.
 
-**Instead of "addict" or "junkie"** — say "person with a substance use disorder" or "person who uses drugs."
+**Instead of labels** — say "person with a substance use disorder" or "person who is struggling."
 
-This isn't political correctness. It's accuracy. A person with diabetes isn't called "a diabetic failure." A person with cancer isn't defined by their diagnosis. Addiction is a medical condition, and the people experiencing it deserve the same dignity.
+This isn't political correctness. It's accuracy. A person with diabetes isn't defined by their diagnosis. A person with cancer isn't reduced to a single word. Substance use disorder is a medical condition, and the people experiencing it deserve the same dignity.
 
 **Instead of "clean" or "dirty"** — say "in recovery" or "currently using."
 
@@ -105,29 +105,29 @@ When we say someone is "clean," we imply that using makes them dirty. That's not
 
 **Instead of "abuse"** — say "use" or "misuse."
 
-The word "abuse" suggests intent and violence. Most people who develop substance use disorders didn't set out to harm themselves. They were managing pain, coping with trauma, or following a prescription. "Misuse" is more accurate. "Substance use disorder" is the clinical term.
+The word "abuse" suggests intent and violence. Most people who develop substance use disorders didn't set out to harm themselves. They were managing pain, coping with trauma, or following a prescription. "Misuse" is more accurate.
 
 **Instead of "habit"** — say "substance use disorder."
 
-A habit is biting your nails. Addiction is a chronic brain condition that changes neural pathways. Calling it a habit minimizes its severity and suggests willpower alone can fix it.
+A habit is biting your nails. Substance use disorder is a chronic condition that changes how the brain works. Calling it a habit minimizes its severity and suggests willpower alone can fix it.
 
 ## More Swaps That Make a Difference
 
 | Instead of... | Try... |
 |---|---|
-| Alcoholic | Person with alcohol use disorder |
+| Labels and shorthand | Person with a substance use disorder |
 | Drug problem | Substance use disorder |
 | Getting clean | Entering recovery |
 | Relapse (as failure) | Recurrence of symptoms |
 | Enabling | Supporting (with boundaries) |
-| Rock bottom | Crisis point |
-| Former addict | Person in long-term recovery |
+| Rock bottom | Turning point |
+| Former user | Person in long-term recovery |
 
 ## Why This Matters in Families
 
-Inside families, language hits differently. When a parent says "my son the addict," even with love in their heart, it collapses an entire person into a single word. When a sibling overhears "she's always been the problem," that language shapes how everyone sees her — including herself.
+Inside families, language hits differently. When a parent defines their child by a diagnosis, even with love in their heart, it collapses an entire person into a single word. When a sibling overhears "she's always been the problem," that language shapes how everyone sees her — including herself.
 
-Families can practice new language together. It feels awkward at first, like any new habit. But over time, it reshapes how you think about the situation. Language doesn't just describe reality — it creates it.
+Families can practice new language together. It feels awkward at first, like any new skill. But over time, it reshapes how you think about the situation. Language doesn't just describe reality — it creates it.
 
 ## Language in the Workplace and Community
 
@@ -147,7 +147,7 @@ The people in your life who are navigating substance use disorders will notice t
   // ── Post 3 ──────────────────────────────────────────────────────────────────
   {
     title: "When Someone You Love Is Struggling: A Guide for Families",
-    tags: ['families', 'support', 'loved ones', 'addiction'],
+    tags: ['families', 'support', 'loved ones', 'hope'],
     excerpt: "Your loved one's struggle with substance use affects the whole family. Here's practical guidance for supporting them — and yourself — through it.",
     content: `## The Hardest Kind of Love
 
@@ -162,7 +162,7 @@ This might sound backward when someone you love is in crisis, but it's not optio
 Taking care of yourself means:
 
 - **Eating, sleeping, and moving your body.** Basic, yes. Also the first things to go when you're consumed by worry.
-- **Talking to someone.** A therapist, a support group like Al-Anon or Families Anonymous, a trusted friend. You need a space where you can be honest without performing strength.
+- **Talking to someone.** A therapist, a support group, a trusted friend. You need a space where you can be honest without performing strength.
 - **Setting boundaries — and keeping them.** More on this below.
 
 You are not selfish for prioritizing your own health. You are building the foundation that makes everything else possible.
@@ -174,7 +174,7 @@ Substance use disorder is a chronic medical condition. It affects the brain's re
 - Your loved one is not choosing to hurt you.
 - Willpower alone is not enough.
 - Recovery is possible, but it's rarely linear.
-- Relapse (or recurrence, a better term) is common and does not mean failure.
+- Setbacks are common and do not mean failure.
 
 Understanding this won't make the pain go away, but it can help you respond with compassion instead of frustration — and that makes a difference for everyone.
 
@@ -184,7 +184,7 @@ Understanding this won't make the pain go away, but it can help you respond with
 
 **Listen more than you speak.** When your loved one does open up, resist the urge to problem-solve immediately. Sometimes the most powerful thing you can say is, "Thank you for telling me."
 
-**Educate yourself.** Learn about the specific substance, treatment options in your area, and what recovery actually looks like. SAMHSA's helpline (1-800-662-4357) is free, confidential, and available 24/7.
+**Educate yourself.** Learn about substance use disorders, treatment options in your area, and what recovery actually looks like. SAMHSA's helpline (1-800-662-4357) is free, confidential, and available 24/7.
 
 **Offer support without conditions.** "I'm here for you, and I'll help you find treatment when you're ready." This is different from "I'll only love you if you get better."
 
@@ -197,20 +197,14 @@ Boundaries get a bad reputation in families. They feel cold, selfish, punitive. 
 A boundary sounds like:
 
 - "I love you, and I can't give you money when I know how it will be used."
-- "I need you to be sober when you're in this house. That's not negotiable."
+- "I need you to be honest with me. That's not negotiable."
 - "I will always answer your call if you need help getting to treatment."
 
 Boundaries are not about controlling your loved one. They're about defining what you can and cannot live with. They protect the relationship by preventing resentment from building up.
 
-## What Doesn't Help
-
-- **Shame and blame.** "Look what you're doing to this family." This feels true, but it drives people further into isolation.
-- **Covering up.** Making excuses, paying off debts, calling in sick for them. These actions come from love but remove the natural consequences that can motivate change.
-- **Going it alone.** Family support isn't optional — it's essential. Find your people.
-
 ## For the Siblings, the Partners, the Kids
 
-Addiction doesn't just affect the person using. It reshapes the entire family. Children grow up hypervigilant. Siblings feel invisible. Partners carry impossible weight. If you're one of these people, your pain is valid. Your needs matter. And there are resources specifically for you.
+Substance use doesn't just affect the person using. It reshapes the entire family. Children grow up hypervigilant. Siblings feel invisible. Partners carry impossible weight. If you're one of these people, your pain is valid. Your needs matter. And there are resources specifically for you.
 
 ## There Is Hope
 
@@ -223,99 +217,88 @@ Families do recover from this. Relationships do heal. It doesn't happen overnigh
 
   // ── Post 4 ──────────────────────────────────────────────────────────────────
   {
-    title: "Grief After Overdose: What No One Tells You",
-    tags: ['grief', 'overdose', 'loss', 'healing'],
-    excerpt: "Losing someone to overdose carries a grief that's different from other losses. It's complicated by stigma, silence, and a world that doesn't always know how to show up. Here's what you need to know.",
-    content: `## A Grief That Has No Script
+    title: "Finding Hope Together: How Families Heal From Substance Use",
+    tags: ['hope', 'healing', 'families', 'recovery'],
+    excerpt: "When substance use enters a family, it can feel like hope disappears. But healing is possible — and it starts when families come together, speak openly, and refuse to let shame win.",
+    content: `## Hope Is Not Naive
 
-When you lose someone to overdose, the grief arrives with a shadow. Alongside the shattering loss that every bereaved person knows, there's something else — a silence, a hesitation, a sense that the world doesn't quite know what to do with your pain.
+When your family is in the middle of a substance use crisis, hope can feel like a luxury you can't afford. You've been let down. You've had your heart broken. You've heard promises that didn't hold. Hope starts to feel dangerous — because hoping means you might get hurt again.
 
-Other losses come with rituals. People bring casseroles. They say "I'm sorry." They share memories freely. But when the cause of death is overdose, the phone rings less. The cards are fewer. People stumble over what to say, so sometimes they say nothing at all.
+But hope isn't about ignoring reality. It's about refusing to let the hardest chapter be the last one.
 
-If you're living in this grief, hear this: your loss is real, your love is real, and your pain deserves to be witnessed. All of it.
+At Sam's OATH, we see hope every day. We see it in the parent who reaches out for support for the first time. In the sibling who says, "I'm not okay, and I need help too." In the person in recovery who takes the OATH and says, "I want to help other families so they don't have to go through this alone."
 
-## The Stigma Around Overdose Grief
+Hope isn't naive. It's an act of courage.
 
-Let's name it plainly. The stigma around substance use doesn't disappear when someone dies. It follows the family into grief.
+## What Healing Actually Looks Like
 
-You might have experienced:
+Let's dispel a myth: healing doesn't mean going back to the way things were. That family — the one before substance use entered the picture — isn't the destination. Healing means building something new. Something honest.
 
-- **People avoiding the topic** or changing the subject when you mention your loved one.
-- **Judgmental comments** — "Well, they were using drugs" — as if that somehow makes the loss less devastating.
-- **Self-censorship** — editing the cause of death on social media, in obituaries, in conversation, because you're afraid of what people will think.
-- **Isolation** — feeling like you can't attend regular grief groups because your loss is "different."
+Healing looks like:
 
-None of this is okay. And none of it is your fault. The stigma belongs to the culture, not to you or your loved one.
+- **Conversations that used to be impossible.** The family dinner where someone says, "This has been really hard," and no one changes the subject.
+- **Boundaries held with love.** Not walls built from anger, but guardrails built from wisdom.
+- **Laughter returning.** Not the performative kind, but the real, surprised kind — the kind that reminds you joy hasn't gone anywhere, it was just waiting.
+- **Forgiveness — including self-forgiveness.** Letting go of the idea that you should have done more, known more, been more.
+- **New traditions.** Families in recovery often create new ways of being together — traditions that reflect who they are now, not who they used to pretend to be.
 
-## What Makes This Grief Different
+## The Power of "Me Too"
 
-Grief after overdose often carries layers that other losses don't:
+One of the most healing things that can happen to a family navigating substance use is discovering they're not alone. The shame that keeps families silent also keeps them isolated. And isolation makes everything worse.
 
-**Guilt.** "What if I had done something differently? What if I had answered the phone? What if I had tried harder?" These questions are agonizing, and they rarely have satisfying answers. The truth is that substance use disorder is a medical condition with unpredictable outcomes. You did what you could with what you knew.
+When you connect with another family who understands — truly understands — something shifts. The shame loses its grip. The strategies multiply. The loneliness lifts.
 
-**Anger.** Anger at the person who died, anger at the system that failed them, anger at the dealer, anger at yourself. Anger is a normal part of grief, but in overdose loss, it can feel taboo. You're allowed to be angry and heartbroken at the same time.
+This is why Sam's OATH exists. Not as a program or a service, but as a community. A growing map of people across the country who have said, "I'm done hiding. I'm choosing openness."
 
-**Complicated grief.** When a loss is sudden, traumatic, or stigmatized, grief is more likely to become "complicated" — meaning it intensifies rather than gradually softening over time. If your grief feels stuck, that's not a weakness. It's a signal that you need specialized support.
+Every pin on that map represents a person who decided that what's hidden doesn't heal. And every one of those people makes it easier for the next family to speak up.
 
-**Trauma.** Many families experience the death itself as traumatic — finding the person, receiving the call, the chaos of emergency response. Trauma and grief intertwine and require attention to both.
+## Practical Steps Toward Healing
 
-## What Helps
+**Start talking.** You don't have to tell everyone everything. Start with one person you trust. A friend, a counselor, a support group. The first conversation is the hardest. After that, each one gets a little easier.
 
-**Say their name.** Your loved one was a whole person — with a laugh, a favorite song, a way of lighting up a room. Don't let the cause of death erase who they were. Talk about them. Share stories. Keep their memory alive on your terms.
+**Educate yourself.** Understanding substance use as a medical condition — not a moral failing — changes how you respond to your loved one and how you feel about yourself.
 
-**Find your people.** Grief support groups specifically for overdose loss exist, and they can be transformative. Organizations like The Compassionate Friends and Bereaved Parents of the USA have chapters and online groups. GRASP (Grief Recovery After a Substance Passing) was created specifically for this kind of loss.
+**Get support for the whole family.** Recovery isn't just for the person who's been using. Every family member is affected, and every family member deserves support. Family counseling, support groups, and resources like those on samsoath.org are all good starting points.
 
-**Let yourself grieve fully.** You don't have to be brave all the time. You don't have to "get over it" on anyone's timeline. Grief is not a problem to solve — it's a testament to how much you loved.
+**Be patient with the process.** Healing isn't linear. There will be hard days after good weeks. There will be setbacks. That doesn't mean you're failing — it means you're human.
 
-**Consider professional support.** A therapist experienced with traumatic loss or complicated grief can help you process what you're carrying. This isn't about being broken. It's about having a guide through terrain that no one should navigate alone.
+**Celebrate progress.** Not just the big milestones, but the small ones. The honest conversation. The boundary held. The moment of connection. These are the building blocks of recovery.
 
-**Honor them in your own way.** Some families create memorial gardens. Others volunteer, write, or advocate. Some simply light a candle on difficult days. There's no right way to honor someone you've lost. There's only your way.
+## You Are Not Your Worst Chapter
 
-## What to Say to Someone Grieving Overdose Loss
+If you're reading this in the middle of your family's hardest season, hear this: this moment does not define you. It does not define your family. And it does not determine your future.
 
-If you're reading this because someone in your life is grieving, here's what helps:
+Families who choose openness, who seek help, who refuse to let stigma silence them — these families find their way. Not perfectly, not quickly, but genuinely.
 
-- "I'm so sorry. I'm here."
-- "Tell me about them."
-- "There's nothing I can say to fix this, but I'm not going anywhere."
-
-And here's what doesn't: silence. Avoidance. Anything that begins with "at least."
-
-Show up. Keep showing up. Grief doesn't end after the funeral.
-
-## You Are Not Alone
-
-More than 100,000 people die from drug overdoses in the United States every year. Behind every number is a family, a community, a circle of people whose lives are forever changed. You are part of a large, invisible community of people who understand exactly what you're feeling.
-
-What's hidden doesn't heal. And grief that's hidden — grief that's pushed down, minimized, or shamed — cannot do its sacred work of carrying you toward healing.
+The path forward starts with a single step: the decision to stop hiding and start healing. Together.
 
 ---
 
-**Sam's OATH was born from this grief.** It exists because one family chose to speak openly instead of hiding. If you've lost someone, you belong here. [Take Sam's OATH](https://samsoath.org/take-the-oath) and help build a world where no family grieves alone.`
+**That's exactly what Sam's OATH is about.** Openness. Authenticity. Togetherness. Healing. Four commitments that change everything — not because they're magic, but because they're honest. [Take Sam's OATH](https://samsoath.org/take-the-oath) and join a movement that believes families heal when they stop hiding.`
   },
 
   // ── Post 5 ──────────────────────────────────────────────────────────────────
   {
-    title: "Why 'Just Say No' Never Worked: What Actually Helps",
-    tags: ['prevention', 'education', 'myths', 'families'],
-    excerpt: "For decades, we relied on scare tactics and slogans to prevent drug use. Here's why they failed — and what evidence-based prevention actually looks like.",
+    title: "Beyond 'Just Say No': What Actually Helps Families",
+    tags: ['prevention', 'education', 'families', 'connection'],
+    excerpt: "For decades, we relied on scare tactics and slogans to prevent substance use. Here's why they failed — and what evidence-based approaches actually look like.",
     content: `## The Slogan That Missed the Point
 
-If you grew up in the 1980s or '90s, you remember it. "Just Say No." Three words, a first lady, and an entire generation of kids who watched eggs fry in a pan and were told, "This is your brain on drugs."
+If you grew up in the 1980s or '90s, you remember it. "Just Say No." Three words, a first lady, and an entire generation of kids who were taught that prevention was a matter of willpower.
 
 It was simple. It was memorable. And it didn't work.
 
-Drug use didn't decline during the "Just Say No" era. In some demographics, it increased. The D.A.R.E. program — the backbone of school-based drug prevention for decades — was eventually shown by multiple studies to have no significant long-term impact on drug use. Some research even suggested it might have made kids more curious.
+The D.A.R.E. program — the backbone of school-based prevention for decades — was eventually shown by multiple studies to have no significant long-term impact on substance use. Some research even suggested it might have made kids more curious.
 
 So what went wrong? And more importantly, what actually helps?
 
 ## Why Slogans and Scare Tactics Fail
 
-**They oversimplify.** "Just say no" assumes that drug use is a simple choice made in a vacuum. It ignores the reality that substance use is driven by pain, trauma, peer pressure, mental health conditions, genetics, and environment. Telling someone to "just say no" is like telling someone with depression to "just cheer up."
+**They oversimplify.** "Just say no" assumes that substance use is a simple choice made in a vacuum. It ignores the reality that it's driven by pain, trauma, peer pressure, mental health conditions, genetics, and environment. Telling someone to "just say no" is like telling someone with depression to "just cheer up."
 
-**They rely on fear.** Scare tactics work briefly — until kids encounter real information that contradicts the horror stories. When they discover that not everyone who tries a substance dies immediately, they lose trust in the messenger. And once trust is lost, so is influence.
+**They rely on fear.** Scare tactics work briefly — until kids encounter real information that contradicts the horror stories. When they discover that not everything they were told was accurate, they lose trust in the messenger. And once trust is lost, so is influence.
 
-**They create shame.** When prevention is framed as "good kids don't use drugs," kids who are struggling learn to hide. They don't ask questions. They don't seek help. They internalize the message that they are bad, and bad kids don't deserve support.
+**They create shame.** When prevention is framed as "good kids don't do this," kids who are struggling learn to hide. They don't ask questions. They don't seek help. They internalize the message that they are bad, and bad kids don't deserve support.
 
 **They ignore the family system.** Most prevention programs focused on the individual child, ignoring the family dynamics, household stress, and intergenerational patterns that are the strongest predictors of substance use.
 
@@ -325,37 +308,37 @@ Decades of research have given us a much clearer picture of what works. Effectiv
 
 ### 1. Strong family connections
 
-The single most protective factor against substance use in young people is a warm, communicative relationship with a parent or caregiver. Kids who feel they can talk to their parents about hard things — without being judged or punished — are significantly less likely to develop substance use problems.
+The single most protective factor against substance use in young people is a warm, communicative relationship with a parent or caregiver. Kids who feel they can talk to their parents about hard things — without being judged or punished — are significantly less likely to develop problems.
 
 This doesn't mean being permissive. It means being present, being curious, and being honest.
 
 ### 2. Honest, age-appropriate conversations
 
-Instead of one big scary talk, effective prevention looks like an ongoing dialogue. Start early, answer questions honestly, and resist the urge to exaggerate consequences. Kids can handle the truth, and they respect adults who tell it.
+Instead of one big scary talk, effective prevention looks like an ongoing dialogue. Start early, answer questions honestly, and resist the urge to exaggerate. Kids can handle the truth, and they respect adults who tell it.
 
-"Some people use substances to cope with hard feelings. It can feel good at first, but it changes the brain over time and can become really hard to stop. If you ever feel curious or pressured, I want to be the person you come to."
+"Some people use substances to cope with hard feelings. It can feel like it helps at first, but it changes the brain over time and can become really hard to stop. If you ever feel curious or pressured, I want to be the person you come to."
 
 That conversation — repeated and adapted over years — is worth more than a thousand slogans.
 
 ### 3. Addressing mental health
 
-Substance use and mental health conditions are deeply intertwined. Anxiety, depression, ADHD, trauma — these are often the soil in which addiction grows. Prevention that ignores mental health is incomplete.
+Substance use and mental health conditions are deeply intertwined. Anxiety, depression, ADHD, trauma — these are often the soil in which substance use grows. Prevention that ignores mental health is incomplete.
 
 This means teaching emotional regulation, providing access to counseling, and normalizing the idea that struggling is human, not shameful.
 
 ### 4. Building life skills
 
-Programs that teach critical thinking, stress management, decision-making, and social skills have been shown to reduce substance use. These aren't "drug prevention" programs — they're life skills programs. And that's exactly why they work. They give young people tools to navigate difficulty, rather than a list of things to avoid.
+Programs that teach critical thinking, stress management, decision-making, and social skills have been shown to reduce substance use. These aren't substance-specific programs — they're life skills programs. And that's exactly why they work. They give young people tools to navigate difficulty, rather than a list of things to avoid.
 
 ### 5. Community and belonging
 
-People who feel connected to their communities — through sports, arts, faith, service, or simply having a place where they belong — are more resilient against substance use. Isolation is a risk factor. Connection is a protective one.
+People who feel connected to their communities — through sports, arts, faith, service, or simply having a place where they belong — are more resilient. Isolation is a risk factor. Connection is a protective one.
 
 ## What This Means for Families
 
 You don't need a curriculum or a program. You need honest conversations, genuine connection, and the willingness to talk about hard things without flinching.
 
-If your family has a history of addiction, talk about it. Not with fear, but with honesty. "This runs in our family. It doesn't mean it will happen to you, but it means we need to be aware and take care of each other."
+If your family has a history of substance use, talk about it. Not with fear, but with honesty. "This is something our family has navigated. It doesn't mean it will happen to you, but it means we take care of each other."
 
 If your child or teen is struggling with mental health, get them support now. Don't wait for it to escalate.
 
@@ -375,7 +358,7 @@ Prevention isn't a slogan. It's a relationship.
   // ── Post 6 ──────────────────────────────────────────────────────────────────
   {
     title: "Music as Medicine: How Songs Help Families Heal",
-    tags: ['music', 'healing', 'grief', 'hope'],
+    tags: ['music', 'healing', 'hope', 'families'],
     excerpt: "When words fail, music speaks. How songs create a space for the emotions families carry — and why Sam's OATH turned to music as part of the healing journey.",
     content: `## When Words Aren't Enough
 
@@ -389,13 +372,13 @@ That's where music meets you.
 
 Music engages the brain differently than speech. When you listen to a song that resonates, it activates areas associated with emotion, memory, and reward simultaneously. It literally changes your neural chemistry — releasing dopamine, reducing cortisol, and creating a sense of connection that transcends the rational mind.
 
-This isn't metaphor. It's neuroscience. And families navigating addiction and loss have always known it instinctively.
+This isn't metaphor. It's neuroscience. And families navigating hard times have always known it instinctively.
 
 Think about the songs that have gotten you through hard times. Not because they solved anything, but because they made you feel less alone. Because someone else put into melody what you couldn't put into words.
 
 ## Permission to Feel
 
-One of the cruelest effects of stigma is that it polices emotion. Families dealing with addiction often feel like they're not allowed to grieve openly, not allowed to be angry, not allowed to fall apart. The world expects a certain composure, especially when the struggle involves substances.
+One of the cruelest effects of stigma is that it polices emotion. Families dealing with substance use often feel like they're not allowed to grieve openly, not allowed to be angry, not allowed to fall apart. The world expects a certain composure.
 
 Music gives you permission to feel everything. A song doesn't judge you for crying in the car. A melody doesn't tell you to be strong. It simply says: I know. I've been there, too.
 
@@ -407,7 +390,7 @@ At Sam's OATH, music isn't an afterthought. It's woven into the fabric of the mo
 
 Songs like "What's Hidden Doesn't Heal" take the movement's core truth and set it to music, creating something you can carry with you. "Knot on the Family Tree" explores the tangled bonds of family love and family pain. "Joy Anyway" is about finding light in the middle of darkness — not by pretending the darkness isn't there, but by refusing to let it be the only story.
 
-These songs weren't written for critics or charts. They were written for the parent driving to a visitation. For the sibling who can't sleep. For the person in early recovery who needs to hear that they matter.
+These songs weren't written for critics or charts. They were written for the parent driving home after a hard day. For the sibling who can't sleep. For the person in recovery who needs to hear that they matter.
 
 ## How Families Can Use Music for Healing
 
@@ -425,13 +408,13 @@ You don't need to be a musician. You don't need a therapy degree. You just need 
 
 ## The Science Backs It Up
 
-Music therapy is now an established field with decades of research supporting its effectiveness for grief, trauma, anxiety, and substance use recovery. It's used in hospitals, rehab centers, hospices, and schools. Studies show that group music-making reduces feelings of isolation and increases a sense of belonging — which is exactly what families navigating addiction need most.
+Music therapy is now an established field with decades of research supporting its effectiveness for grief, trauma, anxiety, and recovery. It's used in hospitals, rehab centers, hospices, and schools. Studies show that group music-making reduces feelings of isolation and increases a sense of belonging — which is exactly what families need most.
 
 But you don't need a clinical setting to experience this. You just need a song and a willingness to let it in.
 
 ## What's Hidden Doesn't Heal — But What's Sung Might
 
-Music doesn't fix things. It doesn't bring back the people we've lost or erase the pain of watching someone struggle. But it does something equally important: it reminds us that we're human, that we're connected, and that even in the darkest moments, beauty is still possible.
+Music doesn't fix things. It doesn't erase the pain of watching someone struggle. But it does something equally important: it reminds us that we're human, that we're connected, and that even in the hardest moments, beauty is still possible.
 
 That's not denial. That's resilience.
 
@@ -442,9 +425,9 @@ That's not denial. That's resilience.
 
   // ── Post 7 ──────────────────────────────────────────────────────────────────
   {
-    title: "The OATH: Four Commitments That Changed Everything",
+    title: "The OATH: Four Commitments That Change Everything",
     tags: ['OATH', 'movement', 'openness', 'healing'],
-    excerpt: "Openness. Authenticity. Togetherness. Healing. What each letter of the OATH means, why it matters, and how these four commitments are changing the conversation around addiction and mental health.",
+    excerpt: "Openness. Authenticity. Togetherness. Healing. What each letter of the OATH means, why it matters, and how these four commitments are changing the conversation around substance use and mental health.",
     content: `## More Than an Acronym
 
 Sam's OATH isn't a pledge to memorize and forget. It's not a bumper sticker or a hashtag, though it can certainly be shared. It's a framework — four commitments that, taken together, offer a different way of living with the realities of substance use, mental health, and family.
@@ -457,7 +440,7 @@ Each letter represents a practice, not a destination. You don't master these. Yo
 
 Openness is where it all starts.
 
-For too long, families have been taught to keep struggles with addiction private. Don't air dirty laundry. Keep it in the family. Protect the reputation. And so millions of people suffer in silence, believing they're the only ones.
+For too long, families have been taught to keep struggles with substance use private. Don't air dirty laundry. Keep it in the family. Protect the reputation. And so millions of people suffer in silence, believing they're the only ones.
 
 Openness is the decision to stop pretending. Not recklessly — you choose who, when, and how much to share. But the fundamental posture shifts from hiding to honest.
 
@@ -479,7 +462,7 @@ Authenticity means showing up as who you actually are, not the polished version.
 In a culture that rewards performance — perfect families on social media, curated holiday cards, the illusion that everyone else has it together — Authenticity is a radical act.
 
 **Authenticity in practice looks like:**
-- Using honest language about addiction and mental health (person-first, destigmatizing)
+- Using honest, person-first language about substance use and mental health
 - Letting go of the need to appear in control
 - Being real about your emotions, even the messy ones
 - Telling the truth to yourself about what's happening in your family
@@ -487,7 +470,7 @@ In a culture that rewards performance — perfect families on social media, cura
 
 ## T — Togetherness
 
-Togetherness is the recognition that isolation is the enemy of healing. Addiction thrives in secrecy and disconnection. Recovery — for everyone in the family, not just the person who's using — depends on community.
+Togetherness is the recognition that isolation is the enemy of healing. Substance use thrives in secrecy and disconnection. Recovery — for everyone in the family — depends on community.
 
 Togetherness doesn't mean you have to join a group or attend meetings (though those can be incredibly valuable). It means intentionally refusing to go through this alone.
 
@@ -506,11 +489,11 @@ Healing is the destination — but it doesn't look like what most people expect.
 
 Healing does not mean forgetting. It does not mean "getting over it." It does not mean returning to who you were before. Healing means integrating your experience into a life that still has meaning, joy, and connection.
 
-For families, healing often means repairing relationships that addiction strained. It means processing grief, anger, and fear instead of stuffing them down. It means learning to love someone without losing yourself.
+For families, healing often means repairing relationships that substance use strained. It means processing difficult emotions instead of stuffing them down. It means learning to love someone without losing yourself.
 
 **Healing in practice looks like:**
 - Seeking professional support when you need it
-- Giving yourself permission to grieve, even years later
+- Giving yourself permission to feel, even years later
 - Celebrating progress — your loved one's and your own
 - Creating new family traditions that reflect who you are now
 - Finding purpose in your experience — not because suffering should be "for something," but because meaning-making is part of being human
@@ -527,17 +510,17 @@ Thousands of people across the country have taken this OATH. They're parents, si
 
 ---
 
-**Are you ready?** [Take Sam's OATH](https://samsoath.org/take-the-oath) and join a movement that's changing the conversation around addiction and mental health, one honest moment at a time.`
+**Are you ready?** [Take Sam's OATH](https://samsoath.org/take-the-oath) and join a movement that's changing the conversation around substance use and mental health, one honest moment at a time.`
   },
 
   // ── Post 8 ──────────────────────────────────────────────────────────────────
   {
-    title: "You're Not a Bad Parent: Addiction and Family Guilt",
+    title: "You're Not a Bad Parent: Substance Use and Family Guilt",
     tags: ['parents', 'guilt', 'families', 'support'],
-    excerpt: "If your child is struggling with substance use, the guilt can be overwhelming. But addiction is not a reflection of your parenting — and letting go of blame is the first step toward helping your family heal.",
+    excerpt: "If your child is struggling with substance use, the guilt can be overwhelming. But substance use disorder is not a reflection of your parenting — and letting go of blame is the first step toward helping your family heal.",
     content: `## The Voice in Your Head
 
-If your child is struggling with addiction, you already know the voice. It shows up at 3 a.m. and during quiet moments in the car. It sounds like your own thoughts, but it's meaner than anything you'd say to someone else.
+If your child is struggling with substance use, you already know the voice. It shows up at 3 a.m. and during quiet moments in the car. It sounds like your own thoughts, but it's meaner than anything you'd say to someone else.
 
 "Where did I go wrong?"
 "If I'd been stricter... If I'd been softer... If I'd noticed sooner..."
@@ -546,7 +529,7 @@ If your child is struggling with addiction, you already know the voice. It shows
 
 That voice is guilt, and for parents of children with substance use disorders, it is relentless. It robs you of sleep, strains your relationships, and — here's the cruelest part — makes it harder for you to be the support your child actually needs.
 
-So let's start with the truth, even if it's hard to absorb right now: **You are not a bad parent.** Addiction is not a report card on your love.
+So let's start with the truth, even if it's hard to absorb right now: **You are not a bad parent.** Substance use disorder is not a report card on your love.
 
 ## Why Parents Carry This Weight
 
@@ -554,7 +537,7 @@ Our culture has a deeply ingrained belief that parents are wholly responsible fo
 
 This belief is everywhere — in parenting books, in the sideways glances from other parents, in the silence when you don't get a call back after sharing what's happening in your family. And it's wrong.
 
-Substance use disorder is a complex condition influenced by genetics, brain chemistry, trauma, peer environment, mental health, and factors that no parent can fully control. Research is clear on this. The National Institute on Drug Abuse states that genetics account for 40-60% of a person's vulnerability to addiction. That's not parenting. That's biology.
+Substance use disorder is a complex condition influenced by genetics, brain chemistry, trauma, peer environment, mental health, and factors that no parent can fully control. Research is clear on this. The National Institute on Drug Abuse states that genetics account for 40-60% of a person's vulnerability to substance use disorders. That's not parenting. That's biology.
 
 Did your choices matter? Of course — every parent's choices matter. But no parent, no matter how loving, attentive, or "perfect," can guarantee their child will never struggle. The idea that you could have prevented this by being better is not just wrong. It's harmful.
 
@@ -566,21 +549,21 @@ Guilt doesn't just feel bad. It actively interferes with the things your family 
 
 **Guilt isolates.** Guilty parents don't reach out for help because they believe they don't deserve it — or because they fear judgment. So they carry everything alone, which is exactly the opposite of what works.
 
-**Guilt damages relationships.** When parents are drowning in guilt, they sometimes overcompensate by enabling — removing every consequence, covering up every mess — in an attempt to make up for their perceived failures. Other times, guilt curdles into anger, and they become rigid and punitive. Neither extreme helps.
+**Guilt damages relationships.** When parents are drowning in guilt, they sometimes overcompensate by removing every consequence in an attempt to make up for their perceived failures. Other times, guilt curdles into anger, and they become rigid. Neither extreme helps.
 
-**Guilt steals your grief.** If your child is struggling, you're grieving — the future you imagined, the child you thought you knew, the family life you expected. But guilt tells you that you don't have the right to grieve because this is somehow your fault. So the grief goes underground, and underground emotions always find destructive outlets.
+**Guilt steals your healing.** If your child is struggling, you're hurting too — the future you imagined, the family life you expected. But guilt tells you that you don't have the right to feel that pain because this is somehow your fault. So the feelings go underground, and buried emotions always find destructive outlets.
 
 ## Letting Go of Blame (A Practice, Not an Event)
 
 Releasing guilt isn't a one-time decision. It's something you practice, over and over, until it starts to stick.
 
-**Separate yourself from the disease.** Your child has a medical condition. You didn't cause it any more than you'd cause their diabetes or their asthma. You can be a factor in their environment without being the cause of their illness.
+**Separate yourself from the condition.** Your child has a medical condition. You didn't cause it any more than you'd cause their diabetes or their asthma. You can be a factor in their environment without being the cause of their illness.
 
-**Challenge the "good parent" myth.** Look around you. Addiction touches every kind of family — loving families, strict families, permissive families, wealthy families, struggling families, religious families, secular families. If parenting quality were the determining factor, it wouldn't be this widespread.
+**Challenge the "good parent" myth.** Look around you. Substance use touches every kind of family — loving families, strict families, permissive families, wealthy families, struggling families, religious families, secular families. If parenting quality were the determining factor, it wouldn't be this widespread.
 
-**Talk to other parents who understand.** Nothing dissolves guilt like hearing another parent say "me too." Support groups for parents — like CRAFT (Community Reinforcement and Family Training), Families Anonymous, or parent-focused Al-Anon meetings — are some of the most powerful resources available.
+**Talk to other parents who understand.** Nothing dissolves guilt like hearing another parent say "me too." Support groups for parents — like CRAFT (Community Reinforcement and Family Training) or Families Anonymous — are some of the most powerful resources available.
 
-**Get your own support.** A therapist who specializes in family addiction can help you unpack the guilt, process the grief, and develop strategies that actually work. This isn't a luxury. It's a necessity.
+**Get your own support.** A therapist who specializes in family dynamics can help you unpack the guilt and develop strategies that actually work. This isn't a luxury. It's a necessity.
 
 **Forgive yourself for not knowing what you didn't know.** You made the best decisions you could with the information you had at the time. That's all any parent can do.
 
@@ -594,12 +577,12 @@ They need you to stop blaming yourself and start showing up — imperfectly, hon
 
 ---
 
-**If you're a parent carrying this weight, Sam's OATH is for you.** The movement was started by a father who understands this pain intimately. You are not alone, and you are not to blame. [Take Sam's OATH](https://samsoath.org/take-the-oath) and join a community of families choosing healing over guilt.`
+**If you're a parent carrying this weight, Sam's OATH is for you.** The movement was started by a father who understands this journey intimately. You are not alone, and you are not to blame. [Take Sam's OATH](https://samsoath.org/take-the-oath) and join a community of families choosing healing over guilt.`
   },
 
   // ── Post 9 ──────────────────────────────────────────────────────────────────
   {
-    title: "Bringing the Conversation to Work: Addiction in the Workplace",
+    title: "Bringing the Conversation to Work: Substance Use in the Workplace",
     tags: ['workplace', 'employers', 'support', 'stigma'],
     excerpt: "Substance use doesn't clock out at five. Here's why workplaces need to be part of the conversation — and practical steps employers and employees can take today.",
     content: `## The Elephant in the Break Room
@@ -608,17 +591,15 @@ Every workplace in America has employees affected by substance use — and most 
 
 Be professional. Leave your personal problems at the door. Don't be a liability.
 
-So they do. The employee managing a parent's opioid prescription problem doesn't mention it. The manager whose spouse just entered rehab says everything is fine. The coworker in early recovery herself tells no one, afraid of what it might mean for her career.
+So they do. The employee managing a family member's substance use crisis doesn't mention it. The manager whose spouse just entered treatment says everything is fine. The coworker in early recovery tells no one, afraid of what it might mean for their career.
 
 According to the National Safety Council, nearly 21 million Americans have a substance use disorder, and the majority of them are employed. One in twelve workers. That means in a company of 100 people, roughly eight are personally navigating substance use — and many more are affected as family members, friends, or caregivers.
-
-Substance use costs employers an estimated $81 billion annually in lost productivity, absenteeism, healthcare costs, and turnover. But the human cost is the one that really matters. And the human cost of silence is immeasurable.
 
 ## Why Workplaces Avoid the Conversation
 
 **Liability fears.** Employers worry that acknowledging substance use opens them up to legal risk. In reality, fostering a supportive environment reduces liability by encouraging employees to seek help before problems escalate.
 
-**Stigma.** The same stigma that keeps families silent operates in the workplace. Leaders worry that talking about addiction will seem like they're condoning it, or that employees will take advantage of accommodations.
+**Stigma.** The same stigma that keeps families silent operates in the workplace. Leaders worry that talking about substance use will seem like they're condoning it.
 
 **Discomfort.** Most managers have no training in how to talk about substance use. So they don't. And the culture of silence reinforces itself.
 
@@ -632,53 +613,53 @@ Creating a workplace that addresses substance use doesn't require a massive budg
 
 This starts at the top. When leaders talk openly about mental health and substance use — not sharing personal medical details, but acknowledging that these are common human experiences — it gives everyone permission to be honest.
 
-A CEO who says, "Addiction has touched my family, and I know it's touched many of yours. We want this to be a place where you can get support without fear," changes the entire culture with a single statement.
+A leader who says, "Substance use has touched my family, and I know it's touched many of yours. We want this to be a place where you can get support without fear," changes the entire culture with a single statement.
 
 ### 2. Review your Employee Assistance Program (EAP)
 
 Most companies have an EAP. Most employees don't use it, either because they don't know about it, don't trust it, or believe it's inadequate.
 
-Make your EAP visible. Talk about it in team meetings. Reassure employees that it's confidential. And make sure it actually includes quality substance use and mental health resources. If your current EAP is a 1-800 number that leads to a menu tree, it's time to upgrade.
+Make your EAP visible. Talk about it in team meetings. Reassure employees that it's confidential. And make sure it actually includes quality substance use and mental health resources.
 
 ### 3. Train managers
 
-Managers are the front line. They're the ones who notice when an employee's performance changes, when someone starts calling in sick frequently, or when a team member seems withdrawn. But most managers have zero training in how to have these conversations.
+Managers are the front line. They're the ones who notice when an employee's performance changes or when someone seems withdrawn. But most managers have zero training in how to have these conversations.
 
-Train them. Teach them to approach performance concerns with curiosity, not accusation. Equip them with language like, "I've noticed some changes and I want to check in. Is there anything going on that I can support you with?" Give them clear referral pathways so they know what to do when someone says yes.
+Train them. Teach them to approach performance concerns with curiosity, not accusation. Equip them with language like, "I've noticed some changes and I want to check in. Is there anything going on that I can support you with?" Give them clear referral pathways.
 
 ### 4. Flexible policies that support recovery
 
-People in recovery need to attend appointments, go to meetings, and sometimes take time off for treatment. Rigid attendance policies can force employees to choose between their job and their health. That's a false choice, and it benefits no one.
+People in recovery need to attend appointments, go to meetings, and sometimes take time off for treatment. Rigid attendance policies can force employees to choose between their job and their health.
 
-Consider flexible scheduling, leave policies that accommodate treatment, and graduated return-to-work plans for employees coming back from recovery programs. These accommodations are minimal compared to the cost of losing a trained employee.
+Consider flexible scheduling, leave policies that accommodate treatment, and graduated return-to-work plans. These accommodations are minimal compared to the cost of losing a trained employee.
 
 ### 5. Address the culture, not just the policy
 
 Policies matter, but culture matters more. A company can have the best EAP in the world, but if employees don't trust that they can use it without career consequences, it's worthless.
 
-Build a culture where asking for help is seen as strength, not weakness. Where having a bad day doesn't require an Oscar-worthy performance of being fine. Where people are treated as whole humans, not just productivity units.
+Build a culture where asking for help is seen as strength, not weakness. Where people are treated as whole humans, not just productivity units.
 
 ## For Employees: How to Navigate This
 
 If you're an employee affected by substance use — your own or a loved one's — here are some things to know:
 
-**You have rights.** The Americans with Disabilities Act and the Family and Medical Leave Act may protect you. Substance use disorder is recognized as a disability under federal law, and seeking treatment is protected. Know your rights.
+**You have rights.** The Americans with Disabilities Act and the Family and Medical Leave Act may protect you. Substance use disorder is recognized as a disability under federal law, and seeking treatment is protected.
 
-**You don't have to tell everyone.** Being open doesn't mean announcing your situation company-wide. It might mean telling your manager, your HR rep, or one trusted colleague. Choose the level of disclosure that feels right for you.
+**You don't have to tell everyone.** Being open doesn't mean announcing your situation company-wide. It might mean telling your manager, your HR rep, or one trusted colleague.
 
 **Use your EAP.** It's there for this. It's confidential. And even if it's imperfect, it's a starting point.
 
-**Find allies.** There may be others in your workplace who understand. Employee resource groups for mental health and wellbeing are increasingly common, and they can be a lifeline.
+**Find allies.** There may be others in your workplace who understand. Employee resource groups for mental health and wellbeing are increasingly common.
 
 ## The Business Case Is Clear — But the Human Case Is Clearer
 
 Supporting employees through substance use challenges reduces turnover, increases loyalty, improves safety, and saves money. But those aren't the reasons to do it.
 
-The reason to do it is that the people who work for you are people. They have families, struggles, and lives that don't stop at the office door. When they know you see them as whole humans, they bring their best selves to work. And that's good for everyone.
+The reason to do it is that the people who work for you are people. They have families, struggles, and lives that don't stop at the office door. When they know you see them as whole humans, they bring their best selves to work.
 
 ---
 
-**Sam's OATH believes the conversation about addiction belongs everywhere — including the workplace.** [Take Sam's OATH](https://samsoath.org/take-the-oath) and bring Openness, Authenticity, Togetherness, and Healing to every part of your life.`
+**Sam's OATH believes the conversation about substance use belongs everywhere — including the workplace.** [Take Sam's OATH](https://samsoath.org/take-the-oath) and bring Openness, Authenticity, Togetherness, and Healing to every part of your life.`
   },
 
   // ── Post 10 ─────────────────────────────────────────────────────────────────
@@ -698,7 +679,7 @@ Frank knows this. He lived it. And then he decided to live differently.
 
 ## The Cost of Keeping Quiet
 
-Before Sam's OATH became a movement, before the website and the music and the map full of pins from families across the country, there was just a father sitting with his grief and a question that wouldn't let him go:
+Before Sam's OATH became a movement, before the website and the music and the map full of pins from families across the country, there was just a father sitting with a question that wouldn't let him go:
 
 What if we had talked about this sooner?
 
@@ -706,11 +687,11 @@ Not just Frank and Sam. All of us. What if families didn't feel like they had to
 
 The answer, Frank realized, was that millions of families were drowning in isolation that didn't have to exist. The silence wasn't protecting anyone. It was suffocating everyone.
 
-What's hidden doesn't heal. It was true in Frank's family. It's true in yours. And it's true in every community that treats addiction as a shameful secret rather than a shared human challenge.
+What's hidden doesn't heal. It was true in Frank's family. It's true in yours. And it's true in every community that treats substance use as a shameful secret rather than a shared human challenge.
 
 ## Choosing Openness
 
-The decision to go public with your family's story is not a small one. There's a moment of sheer terror — the fear of judgment, the exposure, the way the internet can take your most vulnerable moment and turn it into content.
+The decision to go public with your family's story is not a small one. There's a moment of sheer vulnerability — the exposure, the way the world might respond.
 
 Frank made that choice anyway. Not because it was easy, but because he understood something important: if one family's honesty could give another family permission to speak, then the discomfort was worth it.
 
@@ -722,7 +703,7 @@ Those two words — "me too" — are the foundation of Sam's OATH.
 
 The OATH framework didn't come from a marketing meeting. It came from the lived experience of a family that had been through the fire and found the things that actually helped.
 
-**Openness** — because silence was killing them, and speaking up was the first thing that brought air back into the room.
+**Openness** — because silence was suffocating them, and speaking up was the first thing that brought air back into the room.
 
 **Authenticity** — because performing "fine" when you're falling apart is exhausting, and because other people can only meet you where you actually are, not where you pretend to be.
 
@@ -742,7 +723,7 @@ Watch the map fill up and something happens to you. The isolation lifts. You rea
 
 Frank would be the first to tell you that Sam's OATH isn't about him or his family. Sam is the origin story. The OATH is the movement. And the movement belongs to everyone who takes it.
 
-It belongs to the mother in Phoenix who took the OATH after losing her daughter. To the teenager in Ohio who took it because his best friend is struggling. To the HR director in Chicago who brought the OATH to her company. To the person in recovery in Maine who took it because they want others to know that healing is real.
+It belongs to the mother in Phoenix who took the OATH because her family is navigating substance use. To the teenager in Ohio who took it because his best friend is struggling. To the HR director in Chicago who brought the OATH to her company. To the person in recovery in Maine who took it because they want others to know that healing is real.
 
 Sam's OATH is a growing community of people who believe that talking openly about substance use and mental health isn't just brave — it's necessary. People who believe that families shouldn't have to navigate this alone. People who believe that the shame has gone on long enough.
 
@@ -756,7 +737,7 @@ What's hidden doesn't heal. But when you speak, when you connect, when you take 
 
 ---
 
-**This movement exists because of families like yours.** Whether you're supporting a loved one, honoring someone you've lost, walking your own recovery path, or simply believe that silence has gone on long enough — you belong here. [Take Sam's OATH](https://samsoath.org/take-the-oath) and add your voice to the growing chorus of families choosing honesty over hiding.`
+**This movement exists because of families like yours.** Whether you're supporting a loved one, walking your own recovery path, or simply believe that silence has gone on long enough — you belong here. [Take Sam's OATH](https://samsoath.org/take-the-oath) and add your voice to the growing chorus of families choosing honesty over hiding.`
   },
 ]
 
