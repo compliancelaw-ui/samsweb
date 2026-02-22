@@ -9,13 +9,15 @@ import {
   Loader2,
   Check,
   Hash,
+  Clock,
+  CalendarDays,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Platform definitions                                               */
 /* ------------------------------------------------------------------ */
 
-type Platform = "linkedin" | "instagram" | "facebook" | "x";
+type Platform = "linkedin" | "instagram" | "tiktok" | "facebook" | "x";
 
 interface PlatformMeta {
   label: string;
@@ -54,6 +56,19 @@ const PLATFORMS: Record<Platform, PlatformMeta> = {
     ),
     toneHint: "Conversational, emotionally resonant. Emojis welcome. Hashtags at the end.",
   },
+  tiktok: {
+    label: "TikTok",
+    charLimit: 2200,
+    color: "text-gray-900",
+    bg: "bg-gray-100",
+    activeBg: "bg-gray-200 border-gray-400",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+      </svg>
+    ),
+    toneHint: "Casual, hook-driven, visual storytelling. First line is the hook. Short sentences.",
+  },
   facebook: {
     label: "Facebook",
     charLimit: 5000,
@@ -82,7 +97,7 @@ const PLATFORMS: Record<Platform, PlatformMeta> = {
   },
 };
 
-const PLATFORM_ORDER: Platform[] = ["linkedin", "instagram", "facebook", "x"];
+const PLATFORM_ORDER: Platform[] = ["linkedin", "instagram", "tiktok", "facebook", "x"];
 
 /* ------------------------------------------------------------------ */
 /*  Post types                                                         */
@@ -134,11 +149,18 @@ const SUGGESTED_HASHTAGS = [
   "#SamsOATH",
   "#WhatsHiddenDoesntHeal",
   "#BreakTheSilence",
+  "#TakeTheSilenceOff",
+  "#MyOATH",
+  "#3PeopleChallenge",
   "#SubstanceUseAwareness",
   "#MentalHealthMatters",
   "#FamilySupport",
   "#EndTheStigma",
   "#OATHMovement",
+  "#AddictionRecovery",
+  "#RecoveryIsPossible",
+  "#GriefSupport",
+  "#OverdoseAwareness",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -504,6 +526,105 @@ export default function AdminSocialPage() {
               </button>
             );
           })}
+        </div>
+      </div>
+
+      {/* Posting Schedule Guide */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="bg-teal-50 rounded-lg p-2">
+            <Clock className="h-5 w-5 text-teal" />
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Best Times to Post
+            </h3>
+            <p className="text-xs text-gray-500">
+              Optimal posting windows by platform for maximum reach.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              platform: "LinkedIn",
+              best: "Tue–Thu, 7–8 AM & 12 PM",
+              freq: "3–5x per week",
+              tip: "Morning posts before work perform best. Avoid weekends.",
+            },
+            {
+              platform: "Instagram",
+              best: "Mon–Fri, 11 AM–1 PM & 7–9 PM",
+              freq: "4–7x per week (feed + stories)",
+              tip: "Reels get 2x reach. Stories keep engagement up between posts.",
+            },
+            {
+              platform: "TikTok",
+              best: "Tue–Thu, 10 AM–12 PM & 7–9 PM",
+              freq: "1–3x per day for growth",
+              tip: "First 3 seconds decide everything. Hook immediately.",
+            },
+            {
+              platform: "Facebook",
+              best: "Wed–Fri, 9 AM–12 PM",
+              freq: "3–5x per week",
+              tip: "Groups and shares drive the algorithm. Ask questions.",
+            },
+            {
+              platform: "X (Twitter)",
+              best: "Mon–Fri, 8–10 AM & 6–9 PM",
+              freq: "1–5x per day",
+              tip: "Threads perform well. Quote-tweet your own posts to resurface.",
+            },
+          ].map((item) => (
+            <div
+              key={item.platform}
+              className="p-4 rounded-lg border border-gray-100 bg-gray-50"
+            >
+              <p className="font-semibold text-sm text-gray-900">{item.platform}</p>
+              <p className="text-xs text-teal-700 font-medium mt-1">{item.best}</p>
+              <p className="text-xs text-gray-500 mt-0.5">{item.freq}</p>
+              <p className="text-xs text-gray-400 mt-2 italic">{item.tip}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Weekly Posting Calendar */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="bg-orange-50 rounded-lg p-2">
+            <CalendarDays className="h-5 w-5 text-orange" />
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Suggested Weekly Schedule
+            </h3>
+            <p className="text-xs text-gray-500">
+              A repeatable content calendar to build consistency.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            { day: "Monday", theme: "Movement Monday", content: "Share OATH stats, milestones, or a movement update", platforms: "LinkedIn, Instagram" },
+            { day: "Tuesday", theme: "Story Tuesday", content: "Spotlight a community story or personal reflection", platforms: "Instagram, Facebook, TikTok" },
+            { day: "Wednesday", theme: "Wisdom Wednesday", content: "Language guide tip, resource share, or educational post", platforms: "LinkedIn, X, Instagram" },
+            { day: "Thursday", theme: "Throwback / BTS", content: "Behind-the-scenes, throwback photo, or founder perspective", platforms: "Instagram, TikTok, Facebook" },
+            { day: "Friday", theme: "Challenge Friday", content: "Challenge 3 people to take the OATH or share the movement", platforms: "All platforms" },
+            { day: "Saturday", theme: "Music Saturday", content: "Share a song, lyric, or music update from Apple Music", platforms: "Instagram, TikTok" },
+            { day: "Sunday", theme: "Rest & Reflect", content: "Lighter post — gratitude, hope, or a quiet reflection", platforms: "Instagram, Facebook" },
+          ].map((item) => (
+            <div
+              key={item.day}
+              className="p-4 rounded-lg border border-gray-100 bg-gray-50"
+            >
+              <p className="font-semibold text-sm text-gray-900">{item.day}</p>
+              <p className="text-xs text-primary font-medium mt-0.5">{item.theme}</p>
+              <p className="text-xs text-gray-600 mt-2">{item.content}</p>
+              <p className="text-xs text-gray-400 mt-1">{item.platforms}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
