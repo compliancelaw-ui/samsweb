@@ -18,6 +18,11 @@ import {
   Sparkles,
   Loader2,
   Wand2,
+  Scissors,
+  AlignLeft,
+  Check,
+  X,
+  PlusCircle,
 } from "lucide-react";
 
 interface BlogPost {
@@ -55,6 +60,7 @@ export default function AdminBlogPage() {
   const [aiPrompt, setAiPrompt] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
   const [showAiPanel, setShowAiPanel] = useState(false);
+  const [aiSuggestion, setAiSuggestion] = useState("");
 
   const fetchPosts = useCallback(async () => {
     setLoading(true);
@@ -83,6 +89,7 @@ export default function AdminBlogPage() {
     setAiPrompt("");
     setShowAiPanel(false);
     setAiLoading(false);
+    setAiSuggestion("");
   };
 
   const startNewPost = () => {
@@ -180,7 +187,7 @@ export default function AdminBlogPage() {
     }
   };
 
-  const handleAiGenerate = async (promptOverride?: string) => {
+  const handleAiGenerate = async (promptOverride?: string, target?: "excerpt" | "tags" | "suggestion") => {
     const finalPrompt = promptOverride || aiPrompt;
     if (!finalPrompt.trim()) {
       alert("Please enter a prompt for the AI assistant.");
@@ -203,10 +210,12 @@ export default function AdminBlogPage() {
       const data = await res.json();
       const aiContent = data.content || data.text || data.result || "";
 
-      if (content.trim()) {
-        setContent(content + "\n\n" + aiContent);
+      if (target === "excerpt") {
+        setExcerpt(aiContent.replace(/^["']|["']$/g, "").trim());
+      } else if (target === "tags") {
+        setTagsInput(aiContent.replace(/^tags:\s*/i, "").trim());
       } else {
-        setContent(aiContent);
+        setAiSuggestion(aiContent);
       }
 
       setAiPrompt("");
@@ -217,29 +226,53 @@ export default function AdminBlogPage() {
     }
   };
 
+  const acceptSuggestion = (mode: "replace" | "append") => {
+    if (mode === "replace") {
+      setContent(aiSuggestion);
+    } else {
+      setContent(content.trim() ? content + "\n\n" + aiSuggestion : aiSuggestion);
+    }
+    setAiSuggestion("");
+  };
+
   const handleQuickAction = (action: string) => {
     let prompt = "";
+    let target: "excerpt" | "tags" | "suggestion" = "suggestion";
+
     switch (action) {
       case "draft":
         prompt = title
-          ? `Write a full blog post about: ${title}`
-          : "Write a full blog post about the importance of breaking the silence around substance use and mental health.";
+          ? `Write a full blog post about: ${title}. Use warm, hopeful tone. Use "substance use" (never "addiction"). Separate paragraphs with blank lines. End with a call to action to take Sam's OATH.`
+          : "Write a full blog post about the importance of breaking the silence around substance use and mental health. Use warm, hopeful tone. Separate paragraphs with blank lines.";
         break;
       case "improve":
         prompt =
-          "Improve the writing quality of this blog post. Make it more engaging, clear, and polished while keeping the same message and tone.";
+          "Rewrite this entire blog post with improved writing quality. Make it more engaging, clear, and polished while keeping the same message and tone. Return the complete rewritten post.";
         break;
       case "seo":
         prompt =
-          "Add SEO-friendly keywords and phrases naturally throughout this blog post. Focus on substance use, mental health, family support, and breaking stigma.";
+          "Rewrite this blog post with SEO-friendly keywords and phrases woven in naturally. Focus on substance use, mental health, family support, and breaking stigma. Return the complete rewritten post.";
         break;
       case "conclusion":
         prompt =
-          "Write a compelling conclusion for this blog post that includes a call to action encouraging readers to take Sam's OATH.";
+          "Write a compelling conclusion paragraph for this blog post that includes a call to action encouraging readers to take Sam's OATH at samsoath.org/take-the-oath.";
+        break;
+      case "shorten":
+        prompt =
+          "Rewrite this blog post to be more concise. Cut unnecessary words and tighten the prose while keeping all key points and the same warm tone. Return the complete rewritten post.";
+        break;
+      case "excerpt":
+        prompt =
+          "Write a 1-2 sentence excerpt/summary of this blog post for use in listings and social sharing. Keep it compelling and under 200 characters. Return ONLY the excerpt text, no quotes.";
+        target = "excerpt";
+        break;
+      case "tags":
+        prompt =
+          "Suggest 4-6 comma-separated tags for this blog post. Tags should be lowercase, relevant to the content, and useful for categorization. Return ONLY the comma-separated tags, nothing else.";
+        target = "tags";
         break;
     }
-    setAiPrompt(prompt);
-    handleAiGenerate(prompt);
+    handleAiGenerate(prompt, target);
   };
 
   const drafts = posts.filter((p) => p.status === "draft");
@@ -407,40 +440,74 @@ export default function AdminBlogPage() {
                     AI Writing Assistant
                   </div>
 
-                  {/* Quick Actions */}
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      onClick={() => handleQuickAction("draft")}
-                      disabled={aiLoading}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <FileText className="w-3 h-3" />
-                      Draft full post
-                    </button>
-                    <button
-                      onClick={() => handleQuickAction("improve")}
-                      disabled={aiLoading}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <Edit3 className="w-3 h-3" />
-                      Improve writing
-                    </button>
-                    <button
-                      onClick={() => handleQuickAction("seo")}
-                      disabled={aiLoading}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <Tag className="w-3 h-3" />
-                      Add SEO keywords
-                    </button>
-                    <button
-                      onClick={() => handleQuickAction("conclusion")}
-                      disabled={aiLoading}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <Send className="w-3 h-3" />
-                      Write conclusion
-                    </button>
+                  {/* Quick Actions — Content */}
+                  <div>
+                    <p className="text-xs text-purple-600 font-medium mb-2">Content</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => handleQuickAction("draft")}
+                        disabled={aiLoading}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <FileText className="w-3 h-3" />
+                        Draft full post
+                      </button>
+                      <button
+                        onClick={() => handleQuickAction("improve")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <Edit3 className="w-3 h-3" />
+                        Improve writing
+                      </button>
+                      <button
+                        onClick={() => handleQuickAction("seo")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <Tag className="w-3 h-3" />
+                        Add SEO keywords
+                      </button>
+                      <button
+                        onClick={() => handleQuickAction("shorten")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <Scissors className="w-3 h-3" />
+                        Shorten
+                      </button>
+                      <button
+                        onClick={() => handleQuickAction("conclusion")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <Send className="w-3 h-3" />
+                        Write conclusion
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Quick Actions — Metadata */}
+                  <div>
+                    <p className="text-xs text-purple-600 font-medium mb-2">Auto-fill</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => handleQuickAction("excerpt")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <AlignLeft className="w-3 h-3" />
+                        Generate excerpt
+                      </button>
+                      <button
+                        onClick={() => handleQuickAction("tags")}
+                        disabled={aiLoading || !content.trim()}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        <Tag className="w-3 h-3" />
+                        Suggest tags
+                      </button>
+                    </div>
                   </div>
 
                   {/* Custom Prompt Input */}
@@ -454,7 +521,7 @@ export default function AdminBlogPage() {
                           handleAiGenerate();
                         }
                       }}
-                      placeholder="Describe what you want to write about, or paste text to improve..."
+                      placeholder="Ask AI anything: &quot;Write an intro about...&quot; or &quot;Make this more personal...&quot;"
                       disabled={aiLoading}
                       className="flex-1 border border-purple-200 rounded-lg px-4 py-2.5 text-sm focus:border-purple-400 focus:ring-1 focus:ring-purple-400 bg-white disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-400"
                     />
@@ -481,6 +548,56 @@ export default function AdminBlogPage() {
                     <div className="flex items-center gap-2 text-sm text-purple-600">
                       <Loader2 className="w-4 h-4 animate-spin" />
                       AI is writing... This may take a moment.
+                    </div>
+                  )}
+
+                  {/* AI Suggestion Preview */}
+                  {aiSuggestion && (
+                    <div className="border border-purple-300 rounded-xl bg-white overflow-hidden">
+                      <div className="px-4 py-3 bg-purple-50 border-b border-purple-200 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-purple-600" />
+                          <span className="text-sm font-medium text-purple-800">AI Suggestion</span>
+                          <span className="text-xs text-purple-500">
+                            {aiSuggestion.split(/\s+/).length} words
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => setAiSuggestion("")}
+                          className="p-1 text-purple-400 hover:text-purple-600 rounded"
+                          title="Discard"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                      <div className="p-4 max-h-96 overflow-y-auto">
+                        <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap font-serif">
+                          {aiSuggestion}
+                        </div>
+                      </div>
+                      <div className="px-4 py-3 bg-gray-50 border-t border-purple-200 flex items-center gap-2">
+                        <button
+                          onClick={() => acceptSuggestion("replace")}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                        >
+                          <Check className="w-3.5 h-3.5" />
+                          Use This
+                        </button>
+                        <button
+                          onClick={() => acceptSuggestion("append")}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border border-purple-300 text-purple-700 rounded-lg hover:bg-purple-50 transition-colors"
+                        >
+                          <PlusCircle className="w-3.5 h-3.5" />
+                          Append
+                        </button>
+                        <button
+                          onClick={() => setAiSuggestion("")}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+                        >
+                          <X className="w-3.5 h-3.5" />
+                          Discard
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
