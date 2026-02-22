@@ -50,21 +50,19 @@ export const IMPACT_STATS = {
 } as const;
 
 export const MUSIC_TRACKS = [
-  { title: "What's Hidden Doesn't Heal", theme: "The mission", appleId: "1863071795" },
-  { title: "Knot on the Family Tree", theme: "Family bonds", appleId: "1868102833" },
-  { title: "I Carry You Through", theme: "Carrying on", appleId: "1869974555" },
-  { title: "For Annie", theme: "A sister's perspective", appleId: "1871670671" },
-  { title: "Joy Anyway", theme: "Finding hope", appleId: "1868317828" },
-  { title: "You Can't Outrun Grief", theme: "The journey", appleId: "1866856646" },
-  { title: "My Name is More Than Pain", theme: "Identity beyond struggle", appleId: "1873038332" },
-  { title: "In the Same Breath", theme: "Living with contradiction", appleId: "1865731326" },
-  { title: "If Love Could Have Saved You", theme: "Loss", appleId: "1865599851" },
-  { title: "Near to the Broken", theme: "Being present", appleId: "1865581121" },
-  { title: "Hole in My Heart the Size of You", theme: "Grief", appleId: "1865580631" },
-  { title: "Healing is a Slow Song", theme: "The process", appleId: "1865547862" },
-  { title: "Fifteen Seconds", theme: "Moments that matter", appleId: "1873038332" },
-  { title: "My Past Don't Get to Drive", theme: "Moving forward", appleId: "1869799649" },
-  { title: "Still Water", theme: "Peace", appleId: "1869492686" },
+  { title: "What's Hidden Doesn't Heal", theme: "The mission", lyric: "What you bury doesn\u2019t disappear \u2014 it just grows roots in the dark.", appleId: "1863071795" },
+  { title: "I Carry You Through", theme: "Carrying on", lyric: "When your legs give out, I\u2019ll carry the weight for both of us.", appleId: "1869974555" },
+  { title: "Healing is a Slow Song", theme: "The process", lyric: "You don\u2019t rush a wound that took years to make.", appleId: "1865547862" },
+  { title: "Hole in My Heart the Size of You", theme: "Grief", lyric: "There\u2019s a space where you used to be, and nothing else fits.", appleId: "1865580631" },
+  { title: "Joy Anyway", theme: "Finding hope", lyric: "Even in the wreckage, something stubborn keeps blooming.", appleId: "1868317828" },
+  { title: "In the Same Breath", theme: "Living with contradiction", lyric: "I can miss you and move forward in the same breath.", appleId: "1865731326" },
+  { title: "My Name is More Than Pain", theme: "Identity beyond struggle", lyric: "I am more than the worst thing that ever happened to me.", appleId: "1873038332" },
+  { title: "You Can't Outrun Grief", theme: "The journey", lyric: "No matter how fast you run, it\u2019s already there when you arrive.", appleId: "1866856646" },
+  { title: "If Love Could Have Saved You", theme: "Loss", lyric: "If love were enough, you\u2019d still be here.", appleId: "1865599851" },
+  { title: "Near to the Broken", theme: "Being present", lyric: "The Lord is near to the brokenhearted.", appleId: "1865581121" },
+  { title: "Knot on the Family Tree", theme: "Family bonds", lyric: "Every family has a knot \u2014 ours just pulled tighter.", appleId: "1868102833" },
+  { title: "My Past Don't Get to Drive", theme: "Moving forward", lyric: "I\u2019ve been through hell, but it doesn\u2019t get to steer.", appleId: "1869799649" },
+  { title: "Still Water", theme: "Peace", lyric: "After the storm, there is a stillness that holds everything.", appleId: "1869492686" },
 ] as const;
 
 export const APPLE_MUSIC_ARTIST_URL = "https://music.apple.com/us/artist/sams-oath/1862953585";

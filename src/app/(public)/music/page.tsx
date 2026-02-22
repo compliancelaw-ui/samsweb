@@ -102,31 +102,29 @@ export default function MusicPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== ALL TRACKS WITH EMBEDS ===== */}
+      {/* ===== ALL TRACKS AS CARDS ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
-          <h2 className="mb-4">All 15 Tracks</h2>
+          <h2 className="mb-4">The Songs</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Each song carries a piece of this movement&apos;s heart. From grief
             to hope, from silence to strength — this is the soundtrack of
             healing.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto space-y-4">
-          {MUSIC_TRACKS.map((track, index) => (
-            <div key={track.title} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="flex items-center gap-4 p-4 pb-2">
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary font-semibold text-sm flex-shrink-0">
-                  {index + 1}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-gray-900 truncate">
-                    {track.title}
-                  </h3>
-                  <p className="text-sm text-gray-500">{track.theme}</p>
-                </div>
-              </div>
-              <div className="px-4 pb-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {MUSIC_TRACKS.map((track) => (
+            <div key={track.title} className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow flex flex-col">
+              <h3 className="font-bold text-gray-900 text-lg mb-1">
+                {track.title}
+              </h3>
+              <p className="text-sm text-teal font-medium uppercase tracking-wide mb-3">
+                {track.theme}
+              </p>
+              <p className="text-gray-500 italic text-sm leading-relaxed mb-4 flex-1">
+                &ldquo;{track.lyric}&rdquo;
+              </p>
+              <div className="rounded-lg overflow-hidden">
                 <iframe
                   allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                   frameBorder="0"
@@ -187,8 +185,8 @@ export default function MusicPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   { title: "For the Grieving", tracks: "If Love Could Have Saved You, Hole in My Heart" },
-                  { title: "For Hope", tracks: "Joy Anyway, Still Water, Fifteen Seconds" },
-                  { title: "For Families", tracks: "Knot on the Family Tree, For Annie" },
+                  { title: "For Hope", tracks: "Joy Anyway, Still Water, I Carry You Through" },
+                  { title: "For Families", tracks: "Knot on the Family Tree, In the Same Breath" },
                   { title: "For the Journey", tracks: "Healing is a Slow Song, You Can't Outrun Grief" },
                 ].map((group) => (
                   <div key={group.title} className="bg-white rounded-lg p-3 shadow-sm">
