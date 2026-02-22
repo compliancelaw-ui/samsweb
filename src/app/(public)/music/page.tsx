@@ -74,12 +74,12 @@ export default function MusicPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== FEATURED TRACK — APPLE MUSIC EMBED ===== */}
+      {/* ===== FEATURED TRACK — MUSIC VIDEO ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-orange font-medium mb-2 uppercase tracking-wide text-sm">
-              Featured Track
+              The Anthem
             </p>
             <h2 className="mb-4">What&apos;s Hidden Doesn&apos;t Heal</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -87,16 +87,13 @@ export default function MusicPage() {
               silence is not safety, and healing begins when we speak.
             </p>
           </div>
-
-          {/* Apple Music embed — featured track */}
-          <div className="rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
             <iframe
-              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-              frameBorder="0"
-              height="175"
-              style={{ width: "100%", overflow: "hidden", borderRadius: "10px" }}
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-              src="https://embed.music.apple.com/us/album/whats-hidden-doesnt-heal/1863071795"
+              src="https://www.youtube.com/embed/FfWqq4F167E"
+              title="What's Hidden Doesn't Heal — Music Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
             />
           </div>
         </div>
