@@ -16,7 +16,7 @@ import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-button
 export const metadata: Metadata = {
   title: "Contact Sam's OATH | Reach Out to Our Team",
   description:
-    "Have a question, want to partner, or need to connect? Reach out to the Sam's OATH team. We're here for families breaking the silence on addiction.",
+    "Have a question, want to partner, or need to connect? Reach out to the Sam's OATH team. We're here for people breaking the silence around substance use and mental health.",
 };
 
 const CONTACT_TYPES = [

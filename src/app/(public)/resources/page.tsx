@@ -21,7 +21,7 @@ import { CRISIS_RESOURCES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Resources | Crisis Help, Guides & Family Support",
   description:
-    "Find crisis hotlines, a language guide, family support resources, and more. Curated for families navigating addiction and mental health challenges.",
+    "Find crisis hotlines, a language guide, family support resources, and more. Curated for navigating substance use and mental health challenges.",
 };
 
 const COMPASSIONATE_LANGUAGE = [

@@ -5,9 +5,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
 export const metadata: Metadata = {
-  title: "Updates | Addiction, Family, Mental Health & Hope",
+  title: "Updates | Substance Use, Mental Health & Hope",
   description:
-    "Articles and insights for families navigating addiction and mental health. Practical guidance, personal stories, and hope from the Sam's OATH community.",
+    "Articles and insights for anyone navigating substance use and mental health. Practical guidance, personal stories, and hope from the Sam's OATH community.",
 };
 
 export const dynamic = "force-dynamic";

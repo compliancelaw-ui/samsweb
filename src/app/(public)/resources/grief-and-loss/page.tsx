@@ -13,7 +13,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { CRISIS_RESOURCES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Grief & Loss Resources | Losing a Loved One to Addiction | Sam's OATH",
+  title: "Grief & Loss Resources | Losing a Loved One to Substance Use | Sam's OATH",
   description:
     "Support for families grieving a loved one lost to overdose or substance use. You are not alone in this grief. Resources, community, and comfort.",
 };

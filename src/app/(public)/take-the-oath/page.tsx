@@ -7,7 +7,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Take the OATH | End Stigma Around Substance Use & Mental Health",
   description:
-    "Take the OATH to break the silence around substance use and mental health. Join thousands of families pledging to speak openly and end the stigma.",
+    "Take the OATH to break the silence around substance use and mental health. Join thousands pledging to speak openly and end the stigma.",
 };
 
 export default function TakeTheOathPage() {
@@ -23,10 +23,10 @@ export default function TakeTheOathPage() {
               </h1>
               <p className="text-xl text-white/80 mb-6">
                 Sixty seconds. Four commitments. A pin on the map that says:
-                my family is done carrying this alone.
+                I am done carrying this alone.
               </p>
               <p className="text-white/60">
-                Join families across America who chose openness over silence.
+                Join thousands across America who chose openness over silence.
                 Your OATH is a personal pledge — not a contract, not a
                 donation. Just a decision to stop hiding.
               </p>

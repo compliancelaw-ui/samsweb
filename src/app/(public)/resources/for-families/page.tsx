@@ -14,9 +14,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Resources for Families of Addicts | Sam's OATH",
+  title: "Resources for Families | Sam's OATH",
   description:
-    "Curated resources for families and loved ones affected by addiction. Support groups, guides, hotlines, and community — because you matter too.",
+    "Curated resources for families and loved ones affected by substance use. Support groups, guides, hotlines, and community — because you matter too.",
 };
 
 export default function ForFamiliesPage() {
@@ -72,7 +72,7 @@ export default function ForFamiliesPage() {
               {
                 icon: Heart,
                 title: "You Are Not to Blame",
-                text: "No parent, partner, or sibling causes addiction. It is a complex medical condition influenced by genetics, environment, trauma, and brain chemistry. Let go of the guilt.",
+                text: "No parent, partner, or sibling causes substance use disorder. It is a complex medical condition influenced by genetics, environment, trauma, and brain chemistry. Let go of the guilt.",
               },
               {
                 icon: Shield,
@@ -260,7 +260,7 @@ export default function ForFamiliesPage() {
                 phone: "1-800-477-6291",
                 link: "https://www.nar-anon.org",
                 description:
-                  "Similar to Al-Anon but focused specifically on families of people with drug addiction. Free 12-step meetings for family members and friends.",
+                  "Similar to Al-Anon but focused specifically on families of people with substance use issues. Free 12-step meetings for family members and friends.",
               },
               {
                 name: "NAMI Family-to-Family",

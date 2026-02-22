@@ -5,7 +5,7 @@ import { Logo } from "@/components/ui/logo";
 export const metadata: Metadata = {
   title: "Links | Sam's OATH",
   description:
-    "All the ways to connect with Sam's OATH — take the pledge, share your story, listen to our music, find resources, and join a national movement breaking the silence on addiction and mental health.",
+    "All the ways to connect with Sam's OATH — take the pledge, share your story, listen to our music, find resources, and join a national movement breaking the silence on substance use and mental health.",
   openGraph: {
     title: "Links | Sam's OATH",
     description:

@@ -9,9 +9,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Addiction Language Guide | Words That Heal | Sam's OATH",
+  title: "Substance Use Language Guide | Words That Heal | Sam's OATH",
   description:
-    "Words matter. Learn person-first, stigma-free language for talking about addiction and mental health. A practical guide for families and communities.",
+    "Words matter. Learn person-first, stigma-free language for talking about substance use and mental health. A practical guide for families and communities.",
 };
 
 const LANGUAGE_PAIRS = [

@@ -14,9 +14,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { StoryForm } from "@/components/forms/story-form";
 
 export const metadata: Metadata = {
-  title: "Share Your Story | Families Affected by Addiction",
+  title: "Share Your Story | Share Your Experience",
   description:
-    "Your story matters. Share your family's experience with addiction or mental health and help others know they are not alone. Every voice breaks the silence.",
+    "Your story matters. Share your experience with substance use or mental health and help others know they are not alone. Every voice breaks the silence.",
 };
 
 export default function ShareYourStoryPage() {
@@ -45,7 +45,7 @@ export default function ShareYourStoryPage() {
           <h2 className="mb-4">Why Share Your Story?</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Every story shared chips away at the wall of silence that keeps
-            families isolated.
+            people isolated.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -54,7 +54,7 @@ export default function ShareYourStoryPage() {
               icon: Users,
               title: "Help Others Feel Less Alone",
               description:
-                "Right now, someone is sitting in silence, convinced they're the only family going through this. Your story tells them they're not. That single moment of connection can be the beginning of healing.",
+                "Right now, someone is sitting in silence, convinced they're alone. Your story tells them they're not. That single moment of connection can be the beginning of healing.",
             },
             {
               icon: VolumeX,

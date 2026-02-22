@@ -231,7 +231,7 @@ export function AmbassadorForm() {
           Your Personal Story <span className="text-gray-400 text-base font-normal">(optional)</span>
         </h3>
         <p className="text-gray-500 mb-6">
-          If you have a personal connection to addiction, mental health, or loss, sharing it can help us understand your perspective.
+          If you have a personal connection to substance use, mental health, or loss, sharing it can help us understand your perspective.
         </p>
 
         <div>

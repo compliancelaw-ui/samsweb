@@ -14,9 +14,9 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Family Perspectives | Addiction & Mental Health Support",
+  title: "Family Perspectives | Substance Use & Mental Health Support",
   description:
-    "You didn't cause it, you can't cure it, but you don't have to face it alone. Stories and support for families affected by addiction and mental health.",
+    "You didn't cause it, you can't cure it, but you don't have to face it alone. Stories and support for families affected by substance use and mental health.",
 };
 
 export default function FamiliesPage() {

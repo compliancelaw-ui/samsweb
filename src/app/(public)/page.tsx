@@ -57,7 +57,7 @@ export default function HomePage() {
               commitments that turn isolation into community.
             </p>
             <p className="text-lg text-white/70 mb-10 max-w-2xl">
-              Sixty seconds. A pin on the map. A family that no longer
+              Sixty seconds. A pin on the map. A person who no longer
               carries this alone. Take Sam&apos;s OATH and join thousands
               who chose openness over silence.
             </p>
@@ -88,9 +88,9 @@ export default function HomePage() {
       {/* ===== THE OATH: THE SOLUTION ===== */}
       <SectionWrapper variant="light" id="what-is-oath">
         <div className="text-center mb-16">
-          <h2 className="mb-4">The OATH: A Framework for Families</h2>
+          <h2 className="mb-4">The OATH: A Framework for Moving Forward</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Silence keeps families stuck. The OATH is how they move forward —
+            Silence keeps people stuck. The OATH is how they move forward —
             four commitments that replace shame with strength.
           </p>
         </div>
@@ -226,7 +226,7 @@ export default function HomePage() {
         <div className="text-center text-white mb-12">
           <h2 className="text-white mb-4">The Movement Is Growing</h2>
           <p className="text-white/80 text-xl max-w-2xl mx-auto">
-            Every pin on the map is a family that chose community over isolation.
+            Every pin on the map is a person who chose community over isolation.
             This is what happens when people stop hiding and start healing.
           </p>
         </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Named for Sam Sheeder, whose life inspired this movement — but
                 built by thousands of people across the country who believe that
-                what&apos;s hidden doesn&apos;t heal, and that no family should
+                what&apos;s hidden doesn&apos;t heal, and that no one should
                 carry this weight alone.
               </p>
               <Link

@@ -33,7 +33,7 @@ export default function GetInvolvedPage() {
               </h1>
               <p className="text-xl text-white/80">
                 The OATH works because people like you choose to show up.
-                Here are the ways your action helps families move from
+                Here are the ways your action helps people move from
                 silence to strength.
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function GetInvolvedPage() {
                 Take Sam&apos;s OATH
               </h3>
               <p className="text-gray-600">
-                Sixty seconds. A pin on the map. A family that no longer carries
+                Sixty seconds. A pin on the map. A person who no longer carries
                 this alone. Then challenge three people you trust to do the same.
               </p>
               <span className="inline-flex items-center gap-1 text-teal font-medium text-sm mt-4">
@@ -87,8 +87,8 @@ export default function GetInvolvedPage() {
                 Share Your Story
               </h3>
               <p className="text-gray-600">
-                When one family shares, another realizes they&apos;re not alone.
-                Your experience — supporting a loved one, honoring someone&apos;s
+                When one person shares, another realizes they&apos;re not alone.
+                Your experience — supporting someone you love, honoring someone&apos;s
                 memory, or walking your own path — is someone else&apos;s lifeline.
               </p>
               <span className="inline-flex items-center gap-1 text-orange font-medium text-sm mt-4">
@@ -109,7 +109,7 @@ export default function GetInvolvedPage() {
               </h3>
               <p className="text-gray-600">
                 Be the person who brings the OATH to your community. Ambassadors
-                connect families to the movement and make openness normal where
+                connect people to the movement and make openness normal where
                 they live.
               </p>
               <span className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4">
@@ -126,7 +126,7 @@ export default function GetInvolvedPage() {
                 Spread the Word
               </h3>
               <p className="text-gray-600">
-                Every conversation about the OATH makes it easier for a family to
+                Every conversation about the OATH makes it easier for someone to
                 come forward. Share on social media, mention it at dinner, bring
                 it up at work. Your voice gives others permission.
               </p>

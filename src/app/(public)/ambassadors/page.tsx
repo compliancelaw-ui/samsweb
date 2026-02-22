@@ -12,7 +12,7 @@ import { AmbassadorForm } from "@/components/forms/ambassador-form";
 export const metadata: Metadata = {
   title: "Become an Ambassador | Lead the Movement Locally",
   description:
-    "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help families find their voice and end the stigma together.",
+    "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help people find their voice and end the stigma together.",
 };
 
 export default function AmbassadorsPage() {
@@ -26,7 +26,7 @@ export default function AmbassadorsPage() {
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Ambassadors make the OATH real where they live. They&apos;re the
-            reason families in their community find out they don&apos;t have to
+            reason people in their community find out they don&apos;t have to
             carry this alone.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function AmbassadorsPage() {
             {[
               {
                 icon: Users,
-                title: "Connect Families",
+                title: "Build Community",
                 description:
                   "Bring the OATH to your workplace, school, or community. When one person speaks up, others find the courage to follow.",
               },
@@ -48,7 +48,7 @@ export default function AmbassadorsPage() {
                 icon: MapPin,
                 title: "Grow the Map",
                 description:
-                  "Every ambassador adds more pins in their area. The map is proof that families everywhere are choosing openness.",
+                  "Every ambassador adds more pins in their area. The map is proof that people everywhere are choosing openness.",
               },
               {
                 icon: Star,

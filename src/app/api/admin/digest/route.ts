@@ -52,7 +52,7 @@ const CONTENT_CALENDAR: Record<
       "Post a striking statistic about substance use or mental health stigma",
       "Share a reflection on what it means to live openly and honestly",
       "Ask a question that invites conversation (e.g., 'What would change if we stopped whispering?')",
-      "Highlight how language shapes how we see addiction and recovery",
+      "Highlight how language shapes how we see substance use and recovery",
     ],
     hashtags: ["#ThoughtfulThursday", "#EndTheStigma", "#SamsOATH"],
   },

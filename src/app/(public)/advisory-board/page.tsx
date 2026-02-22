@@ -6,16 +6,16 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Advisory Board | Sam's OATH",
   description:
-    "Meet the multidisciplinary advisory board guiding Sam's OATH — experts in addiction medicine, mental health, family advocacy, and community building.",
+    "Meet the multidisciplinary advisory board guiding Sam's OATH — experts in substance use medicine, mental health, family advocacy, and community building.",
 };
 
 const BOARD_MEMBERS = [
   {
     name: "Board Member",
-    title: "Addiction Medicine",
+    title: "Substance Use Medicine",
     initials: "AM",
     color: "from-teal/30 to-teal/10",
-    bio: "A physician specializing in addiction medicine, bringing clinical expertise in substance use treatment and evidence-based recovery approaches to the board.",
+    bio: "A physician specializing in substance use medicine, bringing clinical expertise in substance use treatment and evidence-based recovery approaches to the board.",
   },
   {
     name: "Board Member",
@@ -36,7 +36,7 @@ const BOARD_MEMBERS = [
     title: "Public Health / Policy",
     initials: "PH",
     color: "from-orange/30 to-orange/10",
-    bio: "A public health leader focused on community-level interventions, health equity, and policy reform in addiction and mental health services.",
+    bio: "A public health leader focused on community-level interventions, health equity, and policy reform in substance use and mental health services.",
   },
   {
     name: "Board Member",
@@ -77,7 +77,7 @@ export default function AdvisoryBoardPage() {
           <p className="text-xl text-gray-600 leading-relaxed mb-4">
             Sam&apos;s OATH is a movement built on lived experience — but to
             reach millions of families, we need expertise across disciplines.
-            Our advisory board brings together leaders in addiction medicine,
+            Our advisory board brings together leaders in substance use medicine,
             mental health, family advocacy, public health, communications, and
             nonprofit strategy.
           </p>

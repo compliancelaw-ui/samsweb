@@ -6,9 +6,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
 export const metadata: Metadata = {
-  title: "Family Stories of Addiction & Recovery | Sam's OATH",
+  title: "Stories of Substance Use & Recovery | Sam's OATH",
   description:
-    "Read real stories from families navigating addiction, mental health, grief, and recovery. These voices are breaking the silence and ending the stigma.",
+    "Read real stories from people navigating substance use, mental health, grief, and recovery. These voices are breaking the silence and ending the stigma.",
 };
 
 export const revalidate = 300; // revalidate every 5 minutes
@@ -166,7 +166,7 @@ export default async function StoriesPage() {
                   relation: "Supporting a Loved One",
                   title: "Love Doesn\u2019t Fix Everything, but It\u2019s Where Healing Starts",
                   excerpt:
-                    "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through addiction means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
+                    "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through substance use challenges means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
                   author: "Nancy Sheeder",
                   location: "Dallas, TX",
                 },

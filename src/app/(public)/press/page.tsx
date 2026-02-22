@@ -18,7 +18,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Press & Media | Sam's OATH in the News",
   description:
-    "Media coverage, press kits, and interview requests for Sam's OATH — a national movement of families breaking the silence around addiction and mental health.",
+    "Media coverage, press kits, and interview requests for Sam's OATH — a national movement breaking the silence around substance use and mental health.",
 };
 
 export default function PressPage() {
@@ -140,8 +140,8 @@ export default function PressPage() {
               <p className="text-gray-600 leading-relaxed mt-4">
                 Frank realized the silence itself was the crisis. Sam&apos;s OATH was born
                 from that revelation &mdash; a movement built on the belief that what&apos;s
-                hidden doesn&apos;t heal, and that the opposite of addiction is not
-                sobriety, but community.
+                hidden doesn&apos;t heal, and that healing begins when silence ends, and that community
+                is where recovery starts.
               </p>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function PressPage() {
             {[
               {
                 quote:
-                  "Sam lived with courage, honesty, and an open heart. He faced life's challenges — including substance use disorder — with a strength and candor that taught us the opposite of addiction is not sobriety, but community.",
+                  "Sam lived with courage, honesty, and an open heart. He faced life's challenges — including substance use disorder — with a strength and candor that taught us what's hidden doesn't heal, but community does.",
                 attribution: "Frank Sheeder, from the viral LinkedIn post",
               },
               {

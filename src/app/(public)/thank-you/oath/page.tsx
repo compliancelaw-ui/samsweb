@@ -30,7 +30,7 @@ export default async function ThankYouOathPage({
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Your pin is live. Your voice has been counted. You just joined
-            a growing community of families who chose openness over silence.
+            a growing community of people who chose openness over silence.
           </p>
           <Link
             href="/map"
@@ -82,7 +82,7 @@ export default async function ThankYouOathPage({
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Read Stories</p>
                   <p className="text-sm text-gray-500">
-                    See what other families have shared
+                    See what others have shared
                   </p>
                 </div>
               </div>
