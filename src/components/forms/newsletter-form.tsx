@@ -60,7 +60,7 @@ export function NewsletterForm() {
   if (isSuccess) {
     return (
       <div className="flex items-center gap-3 p-6 bg-teal-50 border border-teal-200 rounded-lg">
-        <CheckCircle2 className="w-6 h-6 text-teal flex-shrink-0" />
+        <CheckCircle2 className="w-6 h-6 text-teal flex-shrink-0" aria-hidden="true" />
         <div>
           <p className="font-semibold text-teal-800">You&apos;re signed up!</p>
           <p className="text-sm text-teal-600 mt-1">
@@ -85,6 +85,8 @@ export function NewsletterForm() {
               id="newsletter_email"
               type="email"
               {...register("email")}
+              aria-required="true"
+              aria-describedby={errors.email ? "newsletter_email-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.email ? "border-red-400" : "border-gray-300"
@@ -113,15 +115,15 @@ export function NewsletterForm() {
             )}
           >
             {isSubmitting ? (
-              <Loader2 className="w-5 h-5 animate-spin" />
+              <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
             ) : (
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5" aria-hidden="true" />
             )}
             {isSubmitting ? "Signing up..." : "Subscribe"}
           </button>
         </div>
         {errors.email && (
-          <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
+          <p id="newsletter_email-error" role="alert" className="text-red-500 text-sm mt-2">{errors.email.message}</p>
         )}
       </div>
 
@@ -134,6 +136,7 @@ export function NewsletterForm() {
           {INTERESTS.map((interest) => (
             <label key={interest.value} className="flex items-center gap-2 cursor-pointer">
               <input
+                id={`interest-${interest.value}`}
                 type="checkbox"
                 value={interest.value}
                 {...register("interests")}
@@ -147,7 +150,7 @@ export function NewsletterForm() {
 
       {/* Error */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           {submitError}
         </div>
       )}

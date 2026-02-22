@@ -26,25 +26,25 @@ const connectLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#2E3B4E] text-white">
+    <footer className="bg-[#2E3B4E] text-white" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Logo + Mission */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded-lg">
               <Logo variant="footer" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 text-sm font-medium leading-relaxed text-gray-300">
               What&apos;s hidden doesn&apos;t heal.
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-gray-400">
-              <span className="text-gray-300">Our mission:</span> Break the
+            <p className="mt-2 text-sm leading-relaxed text-gray-300">
+              <span className="text-white">Our mission:</span> Break the
               silence around substance use and mental health so no family
               carries this weight alone.
             </p>
             {/* Follow Us */}
             <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-3">
                 Follow Us
               </h4>
               <SocialFollowButtons variant="dark" size="sm" />
@@ -53,7 +53,7 @@ export function Footer() {
 
           {/* Column 2: Take Action */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Take Action
             </h3>
             <ul className="mt-4 space-y-3">
@@ -61,7 +61,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export function Footer() {
 
           {/* Column 3: Learn More */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Learn More
             </h3>
             <ul className="mt-4 space-y-3">
@@ -80,7 +80,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -91,7 +91,7 @@ export function Footer() {
 
           {/* Column 4: Connect + Crisis Resources */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Connect
             </h3>
             <ul className="mt-4 space-y-3">
@@ -99,7 +99,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -116,7 +116,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.suicideHotline.number}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-white"
+                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.suicideHotline.label}:{" "}
                     <span className="font-semibold text-white">
@@ -136,7 +136,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.emergency.number}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-white"
+                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.emergency.label}:{" "}
                     <span className="font-semibold text-white">
@@ -156,16 +156,16 @@ export function Footer() {
           <p className="text-sm text-gray-300">
             &copy; 2026 {SITE_NAME}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             <Link
               href="/terms"
-              className="text-sm text-gray-300 transition-colors hover:text-white"
+              className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
-              className="text-sm text-gray-300 transition-colors hover:text-white"
+              className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Privacy Policy
             </Link>

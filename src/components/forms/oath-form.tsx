@@ -128,18 +128,20 @@ export function OathForm() {
       <HoneypotField />
       {/* STEP 1: Category Selection */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+        <h3 id="category-label" className="text-xl font-semibold text-gray-900 mb-2">
           I&apos;m taking this OATH...
         </h3>
         <p className="text-gray-500 mb-6">Select the one that fits you best.</p>
 
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4" role="radiogroup" aria-labelledby="category-label">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.value;
             return (
               <button
                 key={cat.value}
                 type="button"
+                role="radio"
+                aria-checked={isSelected}
                 onClick={() => setValue("category", cat.value, { shouldValidate: true })}
                 className={cn(
                   "flex items-start gap-4 p-5 rounded-lg border-2 text-left transition-all",
@@ -147,7 +149,7 @@ export function OathForm() {
                   "hover:shadow-md"
                 )}
               >
-                <cat.icon className={cn("w-6 h-6 mt-0.5 flex-shrink-0", isSelected ? "text-white" : "")} />
+                <cat.icon aria-hidden="true" className={cn("w-6 h-6 mt-0.5 flex-shrink-0", isSelected ? "text-white" : "")} />
                 <div>
                   <p className="font-semibold text-base">{cat.label}</p>
                   <p className={cn("text-sm mt-1", isSelected ? "text-white/80" : "opacity-70")}>
@@ -159,7 +161,7 @@ export function OathForm() {
           })}
         </div>
         {errors.category && (
-          <p className="text-red-500 text-sm mt-2">{errors.category.message}</p>
+          <p id="category-error" role="alert" className="text-red-500 text-sm mt-2">{errors.category.message}</p>
         )}
       </div>
 
@@ -182,6 +184,8 @@ export function OathForm() {
             <input
               id="first_name"
               {...register("first_name")}
+              aria-required="true"
+              aria-describedby={errors.first_name ? "first_name-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.first_name ? "border-red-400" : "border-gray-300"
@@ -189,7 +193,7 @@ export function OathForm() {
               placeholder="First name"
             />
             {errors.first_name && (
-              <p className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
+              <p id="first_name-error" role="alert" className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
             )}
           </div>
           <div>
@@ -207,15 +211,17 @@ export function OathForm() {
 
         {/* Privacy: How name displays */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-3">
-            <Shield className="w-4 h-4 inline mr-1" />
+          <label id="name-display-label" className="block text-sm font-medium text-gray-700 mb-3">
+            <Shield aria-hidden="true" className="w-4 h-4 inline mr-1" />
             How should your name appear on the map?
           </label>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3" role="radiogroup" aria-labelledby="name-display-label">
             {NAME_OPTIONS.map((opt) => (
               <button
                 key={opt.value}
                 type="button"
+                role="radio"
+                aria-checked={nameDisplayType === opt.value}
                 onClick={() => setValue("name_display_type", opt.value as OathFormData["name_display_type"])}
                 className={cn(
                   "p-3 rounded-lg border text-center transition-all text-sm",
@@ -248,6 +254,8 @@ export function OathForm() {
             <input
               id="city"
               {...register("city")}
+              aria-required="true"
+              aria-describedby={errors.city ? "city-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.city ? "border-red-400" : "border-gray-300"
@@ -255,7 +263,7 @@ export function OathForm() {
               placeholder="Your city"
             />
             {errors.city && (
-              <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>
+              <p id="city-error" role="alert" className="text-red-500 text-sm mt-1">{errors.city.message}</p>
             )}
           </div>
           <div>
@@ -265,6 +273,8 @@ export function OathForm() {
             <select
               id="state"
               {...register("state")}
+              aria-required="true"
+              aria-describedby={errors.state ? "state-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors appearance-none",
                 errors.state ? "border-red-400" : "border-gray-300"
@@ -278,7 +288,7 @@ export function OathForm() {
               ))}
             </select>
             {errors.state && (
-              <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>
+              <p id="state-error" role="alert" className="text-red-500 text-sm mt-1">{errors.state.message}</p>
             )}
           </div>
         </div>
@@ -300,7 +310,7 @@ export function OathForm() {
           maxLength={500}
         />
         {errors.message && (
-          <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+          <p id="message-error" role="alert" className="text-red-500 text-sm mt-1">{errors.message.message}</p>
         )}
       </div>
 
@@ -324,7 +334,7 @@ export function OathForm() {
             placeholder="your@email.com"
           />
           {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+            <p id="email-error" role="alert" className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
         <label className="flex items-start gap-3 mt-4 cursor-pointer">
@@ -342,7 +352,7 @@ export function OathForm() {
 
       {/* Submit */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           {submitError}
         </div>
       )}
@@ -358,13 +368,13 @@ export function OathForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 aria-hidden="true" className="w-5 h-5 animate-spin" />
             Taking Sam&apos;s OATH...
           </>
         ) : (
           <>
             Take Sam&apos;s OATH
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight aria-hidden="true" className="w-5 h-5" />
           </>
         )}
       </button>

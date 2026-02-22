@@ -69,18 +69,24 @@ export function ContactForm() {
       <HoneypotField />
       {/* Message Type */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+        <h3 id="message-type-label" className="text-xl font-semibold text-gray-900 mb-2">
           What can we help with?
         </h3>
         <p className="text-gray-500 mb-6">
           Select the category that best fits your message so we can route it to the right person.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div
+          role="radiogroup"
+          aria-labelledby="message-type-label"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+        >
           {MESSAGE_TYPES.map((type) => (
             <button
               key={type.value}
               type="button"
+              role="radio"
+              aria-checked={selectedType === type.value}
               onClick={() => setValue("message_type", type.value, { shouldValidate: true })}
               className={cn(
                 "flex flex-col items-center gap-2 p-4 rounded-lg border-2 text-center transition-all",
@@ -89,7 +95,7 @@ export function ContactForm() {
                   : "border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
               )}
             >
-              <type.icon className={cn(
+              <type.icon aria-hidden="true" className={cn(
                 "w-5 h-5",
                 selectedType === type.value ? "text-teal" : "text-gray-400"
               )} />
@@ -119,6 +125,8 @@ export function ContactForm() {
             <input
               id="sender_name"
               {...register("sender_name")}
+              aria-required="true"
+              aria-describedby={errors.sender_name ? "sender_name-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.sender_name ? "border-red-400" : "border-gray-300"
@@ -126,7 +134,7 @@ export function ContactForm() {
               placeholder="Your full name"
             />
             {errors.sender_name && (
-              <p className="text-red-500 text-sm mt-1">{errors.sender_name.message}</p>
+              <p id="sender_name-error" role="alert" className="text-red-500 text-sm mt-1">{errors.sender_name.message}</p>
             )}
           </div>
           <div>
@@ -137,6 +145,8 @@ export function ContactForm() {
               id="sender_email"
               type="email"
               {...register("sender_email")}
+              aria-required="true"
+              aria-describedby={errors.sender_email ? "sender_email-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.sender_email ? "border-red-400" : "border-gray-300"
@@ -144,7 +154,7 @@ export function ContactForm() {
               placeholder="your@email.com"
             />
             {errors.sender_email && (
-              <p className="text-red-500 text-sm mt-1">{errors.sender_email.message}</p>
+              <p id="sender_email-error" role="alert" className="text-red-500 text-sm mt-1">{errors.sender_email.message}</p>
             )}
           </div>
         </div>
@@ -181,6 +191,8 @@ export function ContactForm() {
           <input
             id="subject"
             {...register("subject")}
+            aria-required="true"
+            aria-describedby={errors.subject ? "subject-error" : undefined}
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
               errors.subject ? "border-red-400" : "border-gray-300"
@@ -188,7 +200,7 @@ export function ContactForm() {
             placeholder="What is this about?"
           />
           {errors.subject && (
-            <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+            <p id="subject-error" role="alert" className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
           )}
         </div>
 
@@ -200,6 +212,8 @@ export function ContactForm() {
             id="body"
             {...register("body")}
             rows={6}
+            aria-required="true"
+            aria-describedby={errors.body ? "body-error" : undefined}
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors resize-none",
               errors.body ? "border-red-400" : "border-gray-300"
@@ -208,14 +222,14 @@ export function ContactForm() {
             maxLength={5000}
           />
           {errors.body && (
-            <p className="text-red-500 text-sm mt-1">{errors.body.message}</p>
+            <p id="body-error" role="alert" className="text-red-500 text-sm mt-1">{errors.body.message}</p>
           )}
         </div>
       </div>
 
       {/* Submit */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           {submitError}
         </div>
       )}
@@ -231,13 +245,13 @@ export function ContactForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 aria-hidden="true" className="w-5 h-5 animate-spin" />
             Sending Message...
           </>
         ) : (
           <>
             Send Message
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight aria-hidden="true" className="w-5 h-5" />
           </>
         )}
       </button>

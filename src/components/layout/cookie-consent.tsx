@@ -41,8 +41,9 @@ export function CookieConsent() {
           </Link>
         </p>
         <button
+          type="button"
           onClick={handleAccept}
-          className="flex-shrink-0 rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-600 transition-colors"
+          className="flex-shrink-0 rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           Got it
         </button>

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Settings,
   ExternalLink,
@@ -62,21 +60,35 @@ const QUICK_LINKS = [
   },
 ];
 
-const ENV_STATUS = [
-  { label: "Supabase", connected: true, detail: "Connected" },
-  { label: "Mapbox", connected: true, detail: "Connected" },
-  { label: "Resend", connected: true, detail: "Connected" },
-  {
-    label: "Anthropic AI",
-    connected: false,
-    detail: "Not configured (add ANTHROPIC_API_KEY)",
-  },
-  {
-    label: "Google Analytics",
-    connected: true,
-    detail: "G-M6M4ZP7REZ",
-  },
-];
+function getEnvStatus() {
+  return [
+    {
+      label: "Supabase",
+      connected: !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+      detail: process.env.NEXT_PUBLIC_SUPABASE_URL ? "Connected" : "Missing SUPABASE keys",
+    },
+    {
+      label: "Mapbox",
+      connected: !!process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
+      detail: process.env.NEXT_PUBLIC_MAPBOX_TOKEN ? "Connected" : "Missing MAPBOX_TOKEN",
+    },
+    {
+      label: "Resend",
+      connected: !!process.env.RESEND_API_KEY,
+      detail: process.env.RESEND_API_KEY ? "Connected" : "Missing RESEND_API_KEY",
+    },
+    {
+      label: "Anthropic AI",
+      connected: !!process.env.ANTHROPIC_API_KEY,
+      detail: process.env.ANTHROPIC_API_KEY ? "Connected" : "Not configured (add ANTHROPIC_API_KEY)",
+    },
+    {
+      label: "Google Analytics",
+      connected: !!process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+      detail: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "Not configured",
+    },
+  ];
+}
 
 const SITE_INFO = [
   { label: "Domain", value: "samsoath.org" },
@@ -85,6 +97,8 @@ const SITE_INFO = [
 ];
 
 export default function AdminSettingsPage() {
+  const ENV_STATUS = getEnvStatus();
+
   return (
     <div className="space-y-8">
       {/* Page heading */}

@@ -42,25 +42,25 @@ export async function LiveImpactStats() {
   if (counts.totalOaths === 0) {
     return (
       <div>
-        <p className="text-white/60 text-sm uppercase tracking-wider mb-8">
+        <p className="text-white/80 text-sm uppercase tracking-wider mb-8">
           Where it started: one LinkedIn post that changed everything
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div>
             <p className="text-4xl md:text-5xl font-bold mb-2">345K+</p>
-            <p className="text-white/70">People Reached</p>
+            <p className="text-white/80">People Reached</p>
           </div>
           <div>
             <p className="text-4xl md:text-5xl font-bold mb-2">2,000+</p>
-            <p className="text-white/70">Reactions</p>
+            <p className="text-white/80">Reactions</p>
           </div>
           <div>
             <p className="text-4xl md:text-5xl font-bold mb-2">484</p>
-            <p className="text-white/70">Comments</p>
+            <p className="text-white/80">Comments</p>
           </div>
           <div>
             <p className="text-4xl md:text-5xl font-bold mb-2">50</p>
-            <p className="text-white/70">States</p>
+            <p className="text-white/80">States</p>
           </div>
         </div>
       </div>
@@ -73,19 +73,19 @@ export async function LiveImpactStats() {
         <p className="text-4xl md:text-5xl font-bold mb-2">
           {counts.totalOaths.toLocaleString()}
         </p>
-        <p className="text-white/70">OATHs Taken</p>
+        <p className="text-white/80">OATHs Taken</p>
       </div>
       <div>
         <p className="text-4xl md:text-5xl font-bold mb-2">
           {counts.totalStories}
         </p>
-        <p className="text-white/70">Stories Shared</p>
+        <p className="text-white/80">Stories Shared</p>
       </div>
       <div className="col-span-2 md:col-span-1">
         <p className="text-4xl md:text-5xl font-bold mb-2">
           {counts.stateCount}
         </p>
-        <p className="text-white/70">States Represented</p>
+        <p className="text-white/80">States Represented</p>
       </div>
     </div>
   );

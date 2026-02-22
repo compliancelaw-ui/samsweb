@@ -96,7 +96,7 @@ export function AmbassadorForm() {
       {/* About You */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          <Star className="w-5 h-5 inline mr-2" />
+          <Star className="w-5 h-5 inline mr-2" aria-hidden="true" />
           About You
         </h3>
         <p className="text-gray-500 mb-6">
@@ -111,6 +111,8 @@ export function AmbassadorForm() {
             <input
               id="ambassador_name"
               {...register("name")}
+              aria-required="true"
+              aria-describedby={errors.name ? "ambassador_name-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.name ? "border-red-400" : "border-gray-300"
@@ -118,7 +120,7 @@ export function AmbassadorForm() {
               placeholder="Your full name"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+              <p id="ambassador_name-error" role="alert" className="text-red-500 text-sm mt-1">{errors.name.message}</p>
             )}
           </div>
           <div>
@@ -129,6 +131,8 @@ export function AmbassadorForm() {
               id="ambassador_email"
               type="email"
               {...register("email")}
+              aria-required="true"
+              aria-describedby={errors.email ? "ambassador_email-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.email ? "border-red-400" : "border-gray-300"
@@ -136,7 +140,7 @@ export function AmbassadorForm() {
               placeholder="your@email.com"
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              <p id="ambassador_email-error" role="alert" className="text-red-500 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
         </div>
@@ -149,6 +153,8 @@ export function AmbassadorForm() {
             <input
               id="ambassador_city"
               {...register("city")}
+              aria-required="true"
+              aria-describedby={errors.city ? "ambassador_city-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.city ? "border-red-400" : "border-gray-300"
@@ -156,7 +162,7 @@ export function AmbassadorForm() {
               placeholder="Your city"
             />
             {errors.city && (
-              <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>
+              <p id="ambassador_city-error" role="alert" className="text-red-500 text-sm mt-1">{errors.city.message}</p>
             )}
           </div>
           <div>
@@ -166,6 +172,8 @@ export function AmbassadorForm() {
             <select
               id="ambassador_state"
               {...register("state")}
+              aria-required="true"
+              aria-describedby={errors.state ? "ambassador_state-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors appearance-none",
                 errors.state ? "border-red-400" : "border-gray-300"
@@ -179,7 +187,7 @@ export function AmbassadorForm() {
               ))}
             </select>
             {errors.state && (
-              <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>
+              <p id="ambassador_state-error" role="alert" className="text-red-500 text-sm mt-1">{errors.state.message}</p>
             )}
           </div>
         </div>
@@ -202,6 +210,8 @@ export function AmbassadorForm() {
             id="motivation"
             {...register("motivation")}
             rows={6}
+            aria-required="true"
+            aria-describedby={errors.motivation ? "motivation-error" : undefined}
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors resize-none",
               errors.motivation ? "border-red-400" : "border-gray-300"
@@ -211,7 +221,7 @@ export function AmbassadorForm() {
           />
           <div className="flex justify-between items-center mt-1">
             {errors.motivation ? (
-              <p className="text-red-500 text-sm">{errors.motivation.message}</p>
+              <p id="motivation-error" role="alert" className="text-red-500 text-sm">{errors.motivation.message}</p>
             ) : (
               <span />
             )}
@@ -268,7 +278,7 @@ export function AmbassadorForm() {
       {/* Social Links */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          <LinkIcon className="w-5 h-5 inline mr-2" />
+          <LinkIcon className="w-5 h-5 inline mr-2" aria-hidden="true" />
           Social Media Links <span className="text-gray-400 text-base font-normal">(optional)</span>
         </h3>
         <p className="text-gray-500 mb-6">
@@ -295,7 +305,7 @@ export function AmbassadorForm() {
 
       {/* Submit */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           {submitError}
         </div>
       )}
@@ -311,13 +321,13 @@ export function AmbassadorForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
             Submitting Application...
           </>
         ) : (
           <>
             Apply to Be an Ambassador
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </>
         )}
       </button>

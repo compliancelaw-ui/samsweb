@@ -15,7 +15,7 @@ export default function PublicLayout({
     <>
       <GoogleAnalytics />
       <Header />
-      <main className="min-h-screen text-[17px] leading-relaxed text-gray-700">{children}</main>
+      <main id="main-content" className="min-h-screen text-[17px] leading-relaxed text-gray-700">{children}</main>
       <Footer />
       <EscapeButton />
       <CookieConsent />

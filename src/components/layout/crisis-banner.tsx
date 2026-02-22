@@ -21,16 +21,16 @@ export function CrisisBanner() {
 
           <a
             href={`tel:${CRISIS_RESOURCES.suicideHotline.number}`}
-            className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium text-white transition-colors hover:bg-white/25"
+            className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium text-white transition-colors hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#276A68]"
           >
             <Phone className="h-3.5 w-3.5" />
             {CRISIS_RESOURCES.suicideHotline.label}:{" "}
             {CRISIS_RESOURCES.suicideHotline.number}
           </a>
 
-          <span className="hidden text-teal-200 sm:inline">|</span>
+          <span className="hidden text-white/60 sm:inline" aria-hidden="true">|</span>
 
-          <span className="text-sm text-teal-100">
+          <span className="text-sm text-white/80">
             {CRISIS_RESOURCES.crisisText.label}: Text{" "}
             <span className="font-semibold">
               {CRISIS_RESOURCES.crisisText.keyword}
@@ -45,7 +45,7 @@ export function CrisisBanner() {
         <button
           type="button"
           onClick={() => setVisible(false)}
-          className="flex-shrink-0 rounded-full p-1 text-teal-200 transition-colors hover:bg-white/15 hover:text-white"
+          className="flex-shrink-0 rounded-full p-1.5 text-white/80 transition-colors hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#276A68]"
           aria-label="Dismiss crisis resources banner"
         >
           <X className="h-4 w-4" />

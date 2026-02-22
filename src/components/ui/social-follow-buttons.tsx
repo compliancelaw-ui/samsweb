@@ -87,18 +87,19 @@ export function SocialFollowButtons({
             target="_blank"
             rel="noopener noreferrer"
             title={`Follow on ${link.label}`}
+            aria-label={`Follow on ${link.label} (opens in new window)`}
             className={cn(
-              "inline-flex items-center justify-center rounded-lg transition-all",
+              "inline-flex items-center justify-center rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
               size === "sm" ? "w-9 h-9" : "w-10 h-10",
               variant === "dark" &&
-                "bg-gray-600/50 text-gray-300 hover:bg-gray-500/50 hover:text-white",
+                "bg-gray-600/50 text-gray-300 hover:bg-gray-500/50 hover:text-white focus-visible:ring-teal-300 focus-visible:ring-offset-[#2E3B4E]",
               variant === "light" &&
-                "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700",
+                "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700 focus-visible:ring-primary",
               variant === "colored" &&
-                "bg-white/10 text-white hover:bg-white/20"
+                "bg-white/10 text-white hover:bg-white/20 focus-visible:ring-white"
             )}
           >
-            <Icon className={size === "sm" ? "w-4 h-4" : "w-5 h-5"} />
+            <Icon className={size === "sm" ? "w-4 h-4" : "w-5 h-5"} aria-hidden="true" />
           </a>
         );
       })}
@@ -125,9 +126,10 @@ export function SocialFollowButtonsLabeled({
             target="_blank"
             rel="noopener noreferrer"
             title={`Follow on ${link.label}`}
-            className="inline-flex items-center gap-2 bg-white text-gray-700 font-medium px-4 py-2.5 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-sm"
+            aria-label={`Follow on ${link.label} (opens in new window)`}
+            className="inline-flex items-center gap-2 bg-white text-gray-700 font-medium px-4 py-2.5 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
-            <Icon className="w-5 h-5" />
+            <Icon className="w-5 h-5" aria-hidden="true" />
             {link.label}
           </a>
         );

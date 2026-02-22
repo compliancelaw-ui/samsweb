@@ -123,6 +123,8 @@ export function StoryForm() {
             <input
               id="author_name"
               {...register("author_name")}
+              aria-required="true"
+              aria-describedby={errors.author_name ? "author_name-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.author_name ? "border-red-400" : "border-gray-300"
@@ -130,7 +132,7 @@ export function StoryForm() {
               placeholder="Full name, first name, or initials"
             />
             {errors.author_name && (
-              <p className="text-red-500 text-sm mt-1">{errors.author_name.message}</p>
+              <p id="author_name-error" role="alert" className="text-red-500 text-sm mt-1">{errors.author_name.message}</p>
             )}
           </div>
           <div>
@@ -141,6 +143,8 @@ export function StoryForm() {
               id="author_email"
               type="email"
               {...register("author_email")}
+              aria-required="true"
+              aria-describedby={errors.author_email ? "author_email-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.author_email ? "border-red-400" : "border-gray-300"
@@ -148,7 +152,7 @@ export function StoryForm() {
               placeholder="your@email.com"
             />
             {errors.author_email && (
-              <p className="text-red-500 text-sm mt-1">{errors.author_email.message}</p>
+              <p id="author_email-error" role="alert" className="text-red-500 text-sm mt-1">{errors.author_email.message}</p>
             )}
           </div>
         </div>
@@ -161,6 +165,8 @@ export function StoryForm() {
             <input
               id="author_city"
               {...register("author_city")}
+              aria-required="true"
+              aria-describedby={errors.author_city ? "author_city-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.author_city ? "border-red-400" : "border-gray-300"
@@ -168,7 +174,7 @@ export function StoryForm() {
               placeholder="Your city"
             />
             {errors.author_city && (
-              <p className="text-red-500 text-sm mt-1">{errors.author_city.message}</p>
+              <p id="author_city-error" role="alert" className="text-red-500 text-sm mt-1">{errors.author_city.message}</p>
             )}
           </div>
           <div>
@@ -178,6 +184,8 @@ export function StoryForm() {
             <select
               id="author_state"
               {...register("author_state")}
+              aria-required="true"
+              aria-describedby={errors.author_state ? "author_state-error" : undefined}
               className={cn(
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors appearance-none",
                 errors.author_state ? "border-red-400" : "border-gray-300"
@@ -191,7 +199,7 @@ export function StoryForm() {
               ))}
             </select>
             {errors.author_state && (
-              <p className="text-red-500 text-sm mt-1">{errors.author_state.message}</p>
+              <p id="author_state-error" role="alert" className="text-red-500 text-sm mt-1">{errors.author_state.message}</p>
             )}
           </div>
           <div>
@@ -217,7 +225,7 @@ export function StoryForm() {
       {/* Your Story */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          <BookOpen className="w-5 h-5 inline mr-2" />
+          <BookOpen className="w-5 h-5 inline mr-2" aria-hidden="true" />
           Your Story
         </h3>
         <p className="text-gray-500 mb-6">
@@ -231,6 +239,8 @@ export function StoryForm() {
           <input
             id="title"
             {...register("title")}
+            aria-required="true"
+            aria-describedby={errors.title ? "title-error" : undefined}
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
               errors.title ? "border-red-400" : "border-gray-300"
@@ -239,7 +249,7 @@ export function StoryForm() {
             maxLength={150}
           />
           {errors.title && (
-            <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
+            <p id="title-error" role="alert" className="text-red-500 text-sm mt-1">{errors.title.message}</p>
           )}
         </div>
 
@@ -274,6 +284,8 @@ export function StoryForm() {
           <textarea
             id="content"
             {...register("content")}
+            aria-required="true"
+            aria-describedby={errors.content ? "content-error" : undefined}
             rows={10}
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors resize-none",
@@ -284,7 +296,7 @@ export function StoryForm() {
           />
           <div className="flex justify-between items-center mt-1">
             {errors.content ? (
-              <p className="text-red-500 text-sm">{errors.content.message}</p>
+              <p id="content-error" role="alert" className="text-red-500 text-sm">{errors.content.message}</p>
             ) : (
               <span />
             )}
@@ -315,6 +327,7 @@ export function StoryForm() {
               />
               <button
                 type="button"
+                aria-label="Remove selected photo"
                 onClick={() => {
                   setPhotoFile(null);
                   setPhotoPreview(null);
@@ -326,7 +339,7 @@ export function StoryForm() {
             </div>
           ) : (
             <label className="flex items-center gap-3 px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-teal hover:bg-teal-50/30 transition-colors">
-              <Camera className="w-5 h-5 text-gray-400" />
+              <Camera className="w-5 h-5 text-gray-400" aria-hidden="true" />
               <span className="text-sm text-gray-500">
                 Choose a photo (JPG, PNG, or WebP, max 5 MB)
               </span>
@@ -375,7 +388,7 @@ export function StoryForm() {
             </span>
           </label>
           {errors.consent_publish && (
-            <p className="text-red-500 text-sm ml-7">{errors.consent_publish.message}</p>
+            <p id="consent_publish-error" role="alert" className="text-red-500 text-sm ml-7">{errors.consent_publish.message}</p>
           )}
 
           <label className="flex items-start gap-3 cursor-pointer">
@@ -394,7 +407,7 @@ export function StoryForm() {
 
       {/* Submit */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           {submitError}
         </div>
       )}
@@ -410,13 +423,13 @@ export function StoryForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
             Submitting Your Story...
           </>
         ) : (
           <>
             Submit Your Story
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </>
         )}
       </button>
