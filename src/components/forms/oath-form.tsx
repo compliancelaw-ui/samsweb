@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Loader2, Heart, Users, Shield, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -59,7 +59,7 @@ const NAME_OPTIONS = [
   { value: "full", label: "Full name", example: "John Smith" },
   { value: "first", label: "First name only", example: "John" },
   { value: "initials", label: "Initials", example: "J.S." },
-  { value: "anonymous", label: "Anonymous", example: "A Friend of Sam" },
+  { value: "anonymous", label: "Anonymous", example: "A Friend" },
 ];
 
 const US_STATES = [
@@ -71,6 +71,8 @@ const US_STATES = [
 
 export function OathForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const referredBy = searchParams.get("ref");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -100,7 +102,7 @@ export function OathForm() {
       const response = await fetch("/api/oath", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, referred_by: referredBy || undefined }),
       });
 
       if (!response.ok) {
@@ -109,7 +111,8 @@ export function OathForm() {
       }
 
       const result = await response.json();
-      router.push(`/thank-you/oath?id=${result.id}&category=${result.category}`);
+      const refCode = result.referral_code || result.id?.toString().slice(0, 8);
+      router.push(`/thank-you/oath?id=${result.id}&category=${result.category}&ref=${refCode}`);
     } catch (err) {
       setSubmitError(
         err instanceof Error ? err.message : "Something went wrong. Please try again."
@@ -164,7 +167,9 @@ export function OathForm() {
           Your Name
         </h3>
         <p className="text-gray-500 mb-6">
-          Choose how your name appears on the map. Your full name is never shared without permission.
+          Full name, first name only, or initials are all welcome. Choose how
+          your name appears on the map — or go anonymous and you&apos;ll appear
+          as &ldquo;A Friend.&rdquo;
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">

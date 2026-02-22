@@ -87,23 +87,28 @@ export default function PressPage() {
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-3">
-                The Problem We Address
+                The Solution
               </h3>
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li>
-                  Over 100,000 Americans die from drug overdoses each year (CDC)
+                  100,000+ overdose deaths/year and 1 in 5 adults affected — but
+                  stigma keeps most families silent
                 </li>
                 <li>
-                  1 in 5 U.S. adults experiences mental illness annually (NAMI)
+                  The OATH gives families a simple, concrete framework: four
+                  commitments that replace shame with community
                 </li>
                 <li>
-                  Stigma and silence prevent millions of families from seeking help
+                  A national map visualizes the movement — each pin proves a family
+                  chose openness
                 </li>
                 <li>
-                  Most families struggle alone, believing they&apos;re the only ones
+                  Workplace programs bring the OATH into corporate culture through
+                  Safe Listener Training
                 </li>
                 <li>
-                  The OATH gives families a framework to break through silence together
+                  &ldquo;Challenge 3 People&rdquo; viral model turns every OATH
+                  into three more
                 </li>
               </ul>
             </div>

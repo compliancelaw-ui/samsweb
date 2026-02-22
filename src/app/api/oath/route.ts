@@ -53,26 +53,33 @@ export async function POST(request: NextRequest) {
       'unknown'
 
     // Insert into oath_submissions
+    const insertData: Record<string, unknown> = {
+      first_name: data.first_name,
+      last_name: data.last_name || '',
+      email: data.email,
+      category: data.category,
+      city: data.city,
+      state: data.state,
+      latitude: coords?.lat || null,
+      longitude: coords?.lng || null,
+      geocoded: !!coords,
+      display_name,
+      name_display_type: data.name_display_type,
+      message: data.message || null,
+      email_optin: data.email_optin || false,
+      ip_address,
+      pin_color,
+    }
+
+    // Track referral if present
+    if (body.referred_by) {
+      insertData.referred_by = body.referred_by
+    }
+
     const { data: submission, error } = await supabaseAdmin()
       .from('oath_submissions')
-      .insert({
-        first_name: data.first_name,
-        last_name: data.last_name || '',
-        email: data.email,
-        category: data.category,
-        city: data.city,
-        state: data.state,
-        latitude: coords?.lat || null,
-        longitude: coords?.lng || null,
-        geocoded: !!coords,
-        display_name,
-        name_display_type: data.name_display_type,
-        message: data.message || null,
-        email_optin: data.email_optin || false,
-        ip_address,
-        pin_color,
-      })
-      .select('id, display_name, pin_color, category')
+      .insert(insertData)
+      .select('id, display_name, pin_color, category, referral_code')
       .single()
 
     if (error) {
@@ -98,6 +105,7 @@ export async function POST(request: NextRequest) {
         display_name: submission.display_name,
         pin_color: submission.pin_color,
         category: submission.category,
+        referral_code: submission.referral_code || submission.id?.toString().slice(0, 8),
       },
       { status: 201 }
     )

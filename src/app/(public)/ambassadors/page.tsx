@@ -25,9 +25,9 @@ export default function AmbassadorsPage() {
             OATH Ambassadors
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Ambassadors are the heart of the movement. They bring the OATH to
-            their communities, connect families to resources, and lead by
-            example.
+            Ambassadors make the OATH real where they live. They&apos;re the
+            reason families in their community find out they don&apos;t have to
+            carry this alone.
           </p>
         </div>
       </section>
@@ -40,21 +40,21 @@ export default function AmbassadorsPage() {
             {[
               {
                 icon: Users,
-                title: "Connect Communities",
+                title: "Connect Families",
                 description:
-                  "Bring the OATH to your workplace, school, place of worship, or community organization. Help people find the words.",
+                  "Bring the OATH to your workplace, school, or community. When one person speaks up, others find the courage to follow.",
               },
               {
                 icon: MapPin,
-                title: "Represent Their State",
+                title: "Grow the Map",
                 description:
-                  "Ambassadors represent the movement locally. They're the face of Sam's OATH in their community.",
+                  "Every ambassador adds more pins in their area. The map is proof that families everywhere are choosing openness.",
               },
               {
                 icon: Star,
-                title: "Lead With Courage",
+                title: "Lead by Example",
                 description:
-                  "By sharing their own connection to the cause, ambassadors give others permission to do the same.",
+                  "Your willingness to be open about your connection to the cause gives others permission to do the same.",
               },
             ].map((item) => (
               <div key={item.title} className="text-center">

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/logo";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,11 +40,8 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1">
-            <span className="text-xl font-bold tracking-tight text-slate-800 md:text-2xl">
-              Sam&apos;s{" "}
-              <span className="text-teal">OATH</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Logo variant="header" className="h-11 w-auto md:h-14" />
           </Link>
 
           {/* Desktop Navigation */}

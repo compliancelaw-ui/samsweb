@@ -20,8 +20,8 @@
   body {
     color: var(--foreground);
     background: var(--background);
-    font-size: 1.125rem;
-    line-height: 1.6;
+    font-size: 1.0625rem; /* 17px base */
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -60,6 +60,15 @@
 
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent;
+  }
+
+  /* Ensure prose / content area paragraphs are at least 16px and readable */
+  .prose p,
+  .container-narrow p,
+  .container-wide p {
+    font-size: max(1rem, inherit);
+    line-height: 1.7;
+    color: #374151; /* gray-700 */
   }
 }
 

@@ -15,6 +15,9 @@ import {
   ExternalLink,
   Calendar,
   Tag,
+  Sparkles,
+  Loader2,
+  Wand2,
 } from "lucide-react";
 
 interface BlogPost {
@@ -46,6 +49,11 @@ export default function AdminBlogPage() {
   const [excerpt, setExcerpt] = useState("");
   const [tagsInput, setTagsInput] = useState("");
 
+  // AI Assist state
+  const [aiPrompt, setAiPrompt] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [showAiPanel, setShowAiPanel] = useState(false);
+
   const fetchPosts = useCallback(async () => {
     setLoading(true);
     try {
@@ -70,6 +78,9 @@ export default function AdminBlogPage() {
     setExcerpt("");
     setTagsInput("");
     setEditingPost(null);
+    setAiPrompt("");
+    setShowAiPanel(false);
+    setAiLoading(false);
   };
 
   const startNewPost = () => {
@@ -167,6 +178,68 @@ export default function AdminBlogPage() {
     }
   };
 
+  const handleAiGenerate = async (promptOverride?: string) => {
+    const finalPrompt = promptOverride || aiPrompt;
+    if (!finalPrompt.trim()) {
+      alert("Please enter a prompt for the AI assistant.");
+      return;
+    }
+
+    setAiLoading(true);
+    try {
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt: finalPrompt,
+          context: content || undefined,
+          type: "blog",
+        }),
+      });
+
+      if (!res.ok) throw new Error("AI generation failed");
+      const data = await res.json();
+      const aiContent = data.content || data.text || data.result || "";
+
+      if (content.trim()) {
+        setContent(content + "\n\n" + aiContent);
+      } else {
+        setContent(aiContent);
+      }
+
+      setAiPrompt("");
+    } catch {
+      alert("AI generation failed. Please try again.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const handleQuickAction = (action: string) => {
+    let prompt = "";
+    switch (action) {
+      case "draft":
+        prompt = title
+          ? `Write a full blog post about: ${title}`
+          : "Write a full blog post about the importance of breaking the silence around substance use and mental health.";
+        break;
+      case "improve":
+        prompt =
+          "Improve the writing quality of this blog post. Make it more engaging, clear, and polished while keeping the same message and tone.";
+        break;
+      case "seo":
+        prompt =
+          "Add SEO-friendly keywords and phrases naturally throughout this blog post. Focus on substance use, mental health, family support, and breaking stigma.";
+        break;
+      case "conclusion":
+        prompt =
+          "Write a compelling conclusion for this blog post that includes a call to action encouraging readers to take Sam's OATH.";
+        break;
+    }
+    setAiPrompt(prompt);
+    handleAiGenerate(prompt);
+  };
+
   const drafts = posts.filter((p) => p.status === "draft");
   const published = posts.filter((p) => p.status === "published");
 
@@ -247,9 +320,23 @@ export default function AdminBlogPage() {
 
             {/* Content */}
             <div>
-              <label className="block text-sm font-medium text-gray-500 mb-2">
-                Content
-              </label>
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-sm font-medium text-gray-500">
+                  Content
+                </label>
+                <button
+                  onClick={() => setShowAiPanel(!showAiPanel)}
+                  className={cn(
+                    "inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors",
+                    showAiPanel
+                      ? "bg-purple-100 text-purple-700 hover:bg-purple-200"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  )}
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  AI Assist
+                </button>
+              </div>
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
@@ -261,6 +348,93 @@ export default function AdminBlogPage() {
                 Separate paragraphs with blank lines. Content will be displayed
                 with proper paragraph formatting on the public site.
               </p>
+
+              {/* AI Assist Panel */}
+              {showAiPanel && (
+                <div className="mt-4 border border-purple-200 rounded-xl bg-purple-50/50 p-5 space-y-4">
+                  <div className="flex items-center gap-2 text-sm font-medium text-purple-800">
+                    <Wand2 className="w-4 h-4" />
+                    AI Writing Assistant
+                  </div>
+
+                  {/* Quick Actions */}
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={() => handleQuickAction("draft")}
+                      disabled={aiLoading}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <FileText className="w-3 h-3" />
+                      Draft full post
+                    </button>
+                    <button
+                      onClick={() => handleQuickAction("improve")}
+                      disabled={aiLoading}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <Edit3 className="w-3 h-3" />
+                      Improve writing
+                    </button>
+                    <button
+                      onClick={() => handleQuickAction("seo")}
+                      disabled={aiLoading}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <Tag className="w-3 h-3" />
+                      Add SEO keywords
+                    </button>
+                    <button
+                      onClick={() => handleQuickAction("conclusion")}
+                      disabled={aiLoading}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-purple-200 text-purple-700 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <Send className="w-3 h-3" />
+                      Write conclusion
+                    </button>
+                  </div>
+
+                  {/* Custom Prompt Input */}
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={aiPrompt}
+                      onChange={(e) => setAiPrompt(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && !aiLoading) {
+                          handleAiGenerate();
+                        }
+                      }}
+                      placeholder="Describe what you want to write about, or paste text to improve..."
+                      disabled={aiLoading}
+                      className="flex-1 border border-purple-200 rounded-lg px-4 py-2.5 text-sm focus:border-purple-400 focus:ring-1 focus:ring-purple-400 bg-white disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-400"
+                    />
+                    <button
+                      onClick={() => handleAiGenerate()}
+                      disabled={aiLoading || !aiPrompt.trim()}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      {aiLoading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Generating...
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="w-4 h-4" />
+                          Generate
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  {aiLoading && (
+                    <div className="flex items-center gap-2 text-sm text-purple-600">
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      AI is writing... This may take a moment.
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

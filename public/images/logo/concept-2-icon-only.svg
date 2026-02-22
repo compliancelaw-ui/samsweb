@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 90" width="80" height="90">
+  <!-- Concept 2 icon only: Map pin with heart -->
+  <defs>
+    <linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3EABA8"/>
+      <stop offset="100%" style="stop-color:#4A6FA5"/>
+    </linearGradient>
+  </defs>
+  <path d="M40 5C22.3 5 8 19.3 8 37c0 24 32 50 32 50s32-26 32-50C72 19.3 57.7 5 40 5z" fill="url(#pg)"/>
+  <path d="M40 24c-1.8-3.5-5.2-6-9.5-6-6 0-10.5 4.5-10.5 10.5C20 41 40 50 40 50s20-9 20-21.5C60 22.5 55.5 18 49.5 18c-4.3 0-7.7 2.5-9.5 6z" fill="white"/>
+  <circle cx="25" cy="75" r="4" fill="#3EABA8"/>
+  <circle cx="35" cy="81" r="4" fill="#4A6FA5"/>
+  <circle cx="45" cy="81" r="4" fill="#7AB87A"/>
+  <circle cx="55" cy="75" r="4" fill="#E8956F"/>
+</svg>

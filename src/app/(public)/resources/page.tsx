@@ -10,7 +10,7 @@ import {
   ExternalLink,
   Shield,
   MessageCircle,
-  ArrowRightLeft,
+  Sparkles,
   Megaphone,
   Users,
   SmartphoneNfc,
@@ -24,47 +24,38 @@ export const metadata: Metadata = {
     "Find crisis hotlines, a language guide, family support resources, and more. Curated for families navigating addiction and mental health challenges.",
 };
 
-const LANGUAGE_GUIDE = [
+const COMPASSIONATE_LANGUAGE = [
   {
-    stigmatizing: "Addict",
-    preferred: "Person with a substance use disorder",
+    phrase: "Person with a substance use disorder",
+    why: "Puts the person first. A diagnosis doesn't define who someone is.",
   },
   {
-    stigmatizing: "Junkie",
-    preferred: "Person who uses drugs",
+    phrase: "Person in recovery",
+    why: "Honors the courage it takes to heal without labeling someone by their past.",
   },
   {
-    stigmatizing: "Clean / Dirty",
-    preferred: "In recovery / Actively using",
+    phrase: "In recovery / Actively using",
+    why: "Describes a stage of a journey — not a moral judgment about someone's character.",
   },
   {
-    stigmatizing: "Abuse",
-    preferred: 'Substance use disorder or "misuse"',
+    phrase: "Substance use disorder",
+    why: "Recognizes the medical reality. It's a health condition, not a character flaw.",
   },
   {
-    stigmatizing: "Drug habit",
-    preferred: "Substance use disorder",
+    phrase: "Person with alcohol use disorder",
+    why: "Separates the person from the condition so they feel safe enough to ask for help.",
   },
   {
-    stigmatizing: "Alcoholic",
-    preferred: "Person with alcohol use disorder",
+    phrase: "Recurrence or return to use",
+    why: "Recovery is rarely a straight line. Language that acknowledges setbacks without shame keeps people moving forward.",
   },
   {
-    stigmatizing: "Relapse",
-    preferred: "Recurrence or return to use",
+    phrase: "Supporting someone through their journey",
+    why: "Acknowledges the love behind the action rather than implying blame.",
   },
   {
-    stigmatizing: "Former addict",
-    preferred: "Person in recovery",
-  },
-  {
-    stigmatizing: "Enabling",
-    preferred: "Supporting (context-dependent)",
-  },
-  {
-    stigmatizing: "Rock bottom",
-    preferred:
-      "Avoid — implies someone must suffer maximally before getting help",
+    phrase: "Help is available at every stage",
+    why: "No one should have to suffer maximally before getting support. Help is for right now — not rock bottom.",
   },
 ];
 
@@ -163,8 +154,22 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* ===== LEAD-IN ===== */}
+      <SectionWrapper variant="white">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Sam&apos;s OATH is a movement, not a treatment program &mdash; but
+            we know that breaking the silence is only the first step. Below
+            you&apos;ll find crisis hotlines you can call right now, guides for
+            families navigating substance use and mental health, language tools
+            that reduce stigma, and organizations that offer direct support.
+            Everything here is free and chosen with families like yours in mind.
+          </p>
+        </div>
+      </SectionWrapper>
+
       {/* ===== TOPIC NAVIGATION ===== */}
-      <SectionWrapper variant="white" className="py-8 md:py-8 border-b border-gray-100">
+      <SectionWrapper variant="light" className="py-8 md:py-8 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-sm text-gray-500 mb-4 uppercase tracking-wide font-medium">
             Explore by Topic
@@ -357,7 +362,7 @@ export default function ResourcesPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== WORDS MATTER — STIGMA-BREAKING LANGUAGE ===== */}
+      {/* ===== COMPASSIONATE LANGUAGE ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -366,73 +371,49 @@ export default function ResourcesPage() {
             </div>
             <h2 className="mb-4">Language That Heals</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              The words we use shape how people see themselves and whether they
-              feel safe enough to ask for help. Person-first language reduces
-              shame, fights stigma, and reminds us that no one is defined by
-              their diagnosis.
+              The words we choose shape whether someone feels safe enough to ask
+              for help. Empathetic, person-first language reminds people that
+              they are more than a diagnosis &mdash; and that they deserve
+              compassion, not judgment.
             </p>
           </div>
 
-          {/* Why language matters callout */}
-          <div className="bg-primary-50 border-l-4 border-primary rounded-r-xl p-6 mb-10 max-w-3xl mx-auto">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Why does this matter?
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Research shows that stigmatizing language — even when unintentional
-              — makes people less likely to seek treatment and more likely to
-              face discrimination from healthcare providers. When we change our
-              words, we change the conversation. When we change the
-              conversation, we save lives.
-            </p>
-          </div>
-
-          {/* Language comparison table */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            {/* Table header */}
-            <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
-              <div className="px-6 py-4 font-bold text-gray-500 uppercase text-sm tracking-wider">
-                Instead of...
-              </div>
-              <div className="px-6 py-4 font-bold text-teal uppercase text-sm tracking-wider">
-                Try saying...
-              </div>
-            </div>
-
-            {/* Table rows */}
-            {LANGUAGE_GUIDE.map((item, index) => (
+          {/* Compassionate language cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            {COMPASSIONATE_LANGUAGE.map((item) => (
               <div
-                key={item.stigmatizing}
-                className={`grid grid-cols-2 items-center ${
-                  index < LANGUAGE_GUIDE.length - 1
-                    ? "border-b border-gray-100"
-                    : ""
-                }`}
+                key={item.phrase}
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
               >
-                <div className="px-6 py-4 flex items-center gap-3">
-                  <span className="text-red-400 text-lg leading-none" aria-hidden="true">
-                    &times;
-                  </span>
-                  <span className="text-gray-600 line-through decoration-red-300/50">
-                    {item.stigmatizing}
-                  </span>
+                <div className="flex items-start gap-3 mb-3">
+                  <Sparkles className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-900 font-semibold">
+                    {item.phrase}
+                  </p>
                 </div>
-                <div className="px-6 py-4 flex items-center gap-3">
-                  <ArrowRightLeft className="w-4 h-4 text-teal flex-shrink-0" />
-                  <span className="text-gray-900 font-medium">
-                    {item.preferred}
-                  </span>
-                </div>
+                <p className="text-gray-600 text-sm leading-relaxed pl-8">
+                  {item.why}
+                </p>
               </div>
             ))}
           </div>
 
           {/* Bottom note */}
-          <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">
+          <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
             Language is always evolving. What matters most is the intention to
-            see people — not labels. When in doubt, ask someone how they prefer
-            to be referred to.
+            see people &mdash; not labels. When in doubt, ask someone how they
+            prefer to be referred to.
           </p>
+
+          <div className="text-center mt-6">
+            <Link
+              href="/resources/language-guide"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
+            >
+              Read the full language guide
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </SectionWrapper>
 

@@ -81,7 +81,7 @@ const config: Config = {
         ],
       },
       fontSize: {
-        body: ["1.125rem", { lineHeight: "1.6" }],
+        body: ["1.0625rem", { lineHeight: "1.7" }],
       },
       borderRadius: {
         sm: "4px",

@@ -117,13 +117,16 @@ export interface SiteContent {
 export interface MediaItem {
   id: string;
   created_at: string;
-  file_name: string;
+  filename: string;
+  original_filename: string | null;
   file_url: string;
-  file_type: string;
-  file_size: number;
+  thumbnail_url: string | null;
+  width: number | null;
+  height: number | null;
+  file_size: number | null;
+  mime_type: string | null;
   alt_text: string | null;
-  caption: string | null;
-  uploaded_by: string | null;
+  usage_context: string | null;
 }
 
 export interface MapPin {

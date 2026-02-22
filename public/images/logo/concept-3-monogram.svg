@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Concept 3: Four-petal monogram — O A T H as overlapping circles -->
+  <!-- Each petal represents one commitment, they overlap in the center to form community -->
+  <!-- Top: O (Openness) = Teal -->
+  <circle cx="60" cy="38" r="26" fill="#3EABA8" opacity="0.85"/>
+  <!-- Right: A (Authenticity) = Primary Blue -->
+  <circle cx="82" cy="60" r="26" fill="#4A6FA5" opacity="0.85"/>
+  <!-- Bottom: H (Healing) = Orange -->
+  <circle cx="60" cy="82" r="26" fill="#E8956F" opacity="0.85"/>
+  <!-- Left: T (Togetherness) = Sage -->
+  <circle cx="38" cy="60" r="26" fill="#7AB87A" opacity="0.85"/>
+  <!-- Center overlap brightener -->
+  <circle cx="60" cy="60" r="12" fill="white" opacity="0.35"/>
+  <!-- Letters on each petal -->
+  <text x="60" y="36" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="white" dominant-baseline="central">O</text>
+  <text x="84" y="58" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="white" dominant-baseline="central">A</text>
+  <text x="36" y="58" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="white" dominant-baseline="central">T</text>
+  <text x="60" y="84" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="white" dominant-baseline="central">H</text>
+</svg>

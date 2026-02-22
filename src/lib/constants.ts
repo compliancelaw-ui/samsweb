@@ -22,17 +22,17 @@ export const OATH_CATEGORIES = {
   },
 } as const;
 
-export const STORY_PIN_COLOR = "#E8956F";
+export const STORY_PIN_COLOR = "#4A6FA5";
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/advisory-board", label: "Advisory Board" },
   { href: "/stories", label: "Stories" },
-  { href: "/map", label: "OATH Map" },
+  { href: "/take-the-oath", label: "Take the OATH" },
+  { href: "/map", label: "Map" },
+  { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Updates" },
   { href: "/workplace", label: "Workplaces" },
-  { href: "/resources", label: "Resources" },
   { href: "/music", label: "Music" },
 ] as const;
 

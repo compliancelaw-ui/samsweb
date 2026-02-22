@@ -85,6 +85,33 @@ export default function FamiliesPage() {
         </div>
       </SectionWrapper>
 
+      {/* ===== EARLY CTA ===== */}
+      <SectionWrapper variant="gradient">
+        <div className="max-w-3xl mx-auto text-center text-white">
+          <h2 className="text-white mb-4">Your Family&apos;s Story Matters Too</h2>
+          <p className="text-white/80 text-lg mb-8">
+            You don&apos;t have to share everything. You just have to stop hiding.
+            Take Sam&apos;s OATH in 60 seconds and join families across the country
+            who chose openness over silence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/take-the-oath"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
+            >
+              <Heart className="w-4 h-4" />
+              Take Sam&apos;s OATH
+            </Link>
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
+            >
+              Share Your Story <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* ===== FRANK: A FATHER ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-6xl mx-auto">

@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Download, Share2, BookOpen, ArrowRight } from "lucide-react";
+import { MapPin, BookOpen, ArrowRight, Share2 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { ShareCallToAction } from "@/components/ui/page-share-buttons";
+import { ChallengeThreeFlow } from "@/components/home/challenge-three";
 
 export const metadata: Metadata = {
   title: "Thank You for Taking the OATH",
   description: "You've taken Sam's OATH. Welcome to the movement.",
 };
 
-export default function ThankYouOathPage() {
+export default async function ThankYouOathPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ref?: string }>;
+}) {
+  const params = await searchParams;
+  const referralCode = params.ref || "";
+
   return (
     <>
       {/* Confirmation Hero */}
@@ -22,83 +29,30 @@ export default function ThankYouOathPage() {
             You&apos;re on the Map
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Your pin has been placed. Your voice has been counted. You are part
-            of a growing movement of families who chose openness over silence.
+            Your pin is live. Your voice has been counted. You just joined
+            a growing community of families who chose openness over silence.
           </p>
+          <Link
+            href="/map"
+            className="inline-flex items-center gap-2 mt-8 text-white/90 font-medium hover:text-white transition-colors"
+          >
+            View the OATH Map <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
-      {/* What Just Happened */}
+      {/* Challenge 3 People — the core viral mechanism */}
       <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-10">Here&apos;s What Just Happened</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-7 h-7 text-teal" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Your Pin Is Live
-              </h3>
-              <p className="text-gray-600 text-base">
-                A color-coded pin representing your commitment is now visible on
-                our national map.
-              </p>
-              <Link
-                href="/map"
-                className="inline-flex items-center gap-1 text-teal font-medium text-sm mt-3 hover:text-teal-600"
-              >
-                View the map <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-            <div className="text-center">
-              <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Download className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Your Certificate
-              </h3>
-              <p className="text-gray-600 text-base">
-                Download your personalized OATH certificate to keep or share
-                with your family.
-              </p>
-              <button className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-3 hover:text-primary-600">
-                Download PDF <Download className="w-3 h-3" />
-              </button>
-            </div>
-            <div className="text-center">
-              <div className="w-14 h-14 bg-sage-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Share2 className="w-7 h-7 text-sage" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Share Your Badge
-              </h3>
-              <p className="text-gray-600 text-base">
-                Download a social media badge and share it on LinkedIn,
-                Instagram, or Facebook.
-              </p>
-              <button className="inline-flex items-center gap-1 text-sage-600 font-medium text-sm mt-3 hover:text-sage-700">
-                Download badge <Download className="w-3 h-3" />
-              </button>
-            </div>
-          </div>
-        </div>
+        <ChallengeThreeFlow referralCode={referralCode} />
       </SectionWrapper>
 
-      {/* Share */}
-      <SectionWrapper variant="white">
-        <div className="max-w-lg mx-auto">
-          <ShareCallToAction />
-        </div>
-      </SectionWrapper>
-
-      {/* What's Next */}
+      {/* Keep Going */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">Keep Going</h2>
+          <h2 className="mb-4">Keep the Momentum Going</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Taking Sam&apos;s OATH is just the beginning. Here are more ways to be part
-            of the movement.
+            Taking the OATH was the first step. Here&apos;s how your action
+            keeps growing.
           </p>
           <div className="space-y-4">
             <Link
@@ -112,7 +66,8 @@ export default function ThankYouOathPage() {
                     Share Your Story
                   </p>
                   <p className="text-sm text-gray-500">
-                    Your experience could help another family feel less alone
+                    When one family shares, another realizes they&apos;re not
+                    alone
                   </p>
                 </div>
               </div>
@@ -142,7 +97,7 @@ export default function ThankYouOathPage() {
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Get Involved</p>
                   <p className="text-sm text-gray-500">
-                    Become an ambassador, volunteer, or partner with us
+                    Become an ambassador or bring the OATH to your workplace
                   </p>
                 </div>
               </div>

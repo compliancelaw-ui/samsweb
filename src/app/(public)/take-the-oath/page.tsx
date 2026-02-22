@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { OathForm } from "@/components/forms/oath-form";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
@@ -18,8 +19,8 @@ export default function TakeTheOathPage() {
             Take Sam&apos;s OATH
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            A 60-second commitment to break the silence. Your pin goes on the
-            map. Your voice joins the movement.
+            Sixty seconds. Four commitments. A pin on the map that says:
+            my family is done carrying this alone.
           </p>
         </div>
       </section>
@@ -31,7 +32,8 @@ export default function TakeTheOathPage() {
             <h2 className="mb-4">What You&apos;re Committing To</h2>
             <p className="text-gray-600 text-lg">
               The OATH is a personal pledge — not a contract, not a donation,
-              not a membership. It&apos;s a decision to stop hiding.
+              not a membership. It&apos;s a decision to replace silence with
+              community and shame with strength.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -57,24 +59,27 @@ export default function TakeTheOathPage() {
       {/* The Form */}
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto">
-          <OathForm />
+          <Suspense fallback={null}>
+            <OathForm />
+          </Suspense>
         </div>
       </SectionWrapper>
 
       {/* What Happens Next */}
       <SectionWrapper variant="light">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-8">What Happens After You Submit</h2>
+          <h2 className="mb-8">What Happens Next</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
               <div className="w-10 h-10 bg-teal-100 text-teal rounded-full flex items-center justify-center font-bold mx-auto mb-3">
                 1
               </div>
               <h3 className="text-base font-semibold text-gray-900 mb-1">
-                Pin on the Map
+                You&apos;re on the Map
               </h3>
               <p className="text-sm text-gray-600">
-                Your color-coded pin appears on our national map within seconds.
+                Your color-coded pin joins a growing national map of families
+                who refused to stay silent.
               </p>
             </div>
             <div>
@@ -82,10 +87,11 @@ export default function TakeTheOathPage() {
                 2
               </div>
               <h3 className="text-base font-semibold text-gray-900 mb-1">
-                Certificate & Badge
+                Challenge 3 People
               </h3>
               <p className="text-sm text-gray-600">
-                Download your personalized OATH certificate and social media badge.
+                Share your OATH with three people you trust. Every family that
+                joins makes the next one easier.
               </p>
             </div>
             <div>
@@ -93,10 +99,11 @@ export default function TakeTheOathPage() {
                 3
               </div>
               <h3 className="text-base font-semibold text-gray-900 mb-1">
-                Join the Community
+                Keep Going
               </h3>
               <p className="text-sm text-gray-600">
-                Share on social media and inspire others to break the silence.
+                Share your story, become an ambassador, or bring the OATH to
+                your workplace. The movement grows with you.
               </p>
             </div>
           </div>

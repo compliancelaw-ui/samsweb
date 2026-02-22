@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
+import { ActivityTicker } from "@/components/home/activity-ticker";
 
 const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
   ssr: false,
@@ -50,12 +51,14 @@ export default function HomePage() {
               Doesn&apos;t Heal
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
-              Millions of families carry the weight of substance use and mental
-              health challenges alone. It doesn&apos;t have to be that way.
+              Millions of families face substance use and mental health
+              challenges in silence. The OATH gives them a way out — four
+              commitments that turn isolation into community.
             </p>
             <p className="text-lg text-white/70 mb-10 max-w-2xl">
-              Sam&apos;s OATH is a movement to build community through openness.
-              Take the OATH. Share your story. You are not alone.
+              Sixty seconds. A pin on the map. A family that no longer
+              carries this alone. Take Sam&apos;s OATH and join thousands
+              who chose openness over silence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -76,12 +79,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== ACTIVITY TICKER ===== */}
+      <Suspense fallback={null}>
+        <ActivityTicker />
+      </Suspense>
+
       {/* ===== THE OATH: THE SOLUTION ===== */}
       <SectionWrapper variant="light" id="what-is-oath">
         <div className="text-center mb-16">
-          <h2 className="mb-4">The OATH</h2>
+          <h2 className="mb-4">The OATH: A Framework for Families</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Four commitments. Sixty seconds. A lifetime of change.
+            Silence keeps families stuck. The OATH is how they move forward —
+            four commitments that replace shame with strength.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -90,28 +99,28 @@ export default function HomePage() {
               letter: "O",
               word: "Openness",
               description:
-                "I will talk about substance use and mental health without shame.",
+                "When we talk about substance use and mental health without shame, we give others permission to do the same.",
               color: "bg-teal text-white",
             },
             {
               letter: "A",
               word: "Authenticity",
               description:
-                "I will be honest about what my family has been through.",
+                "When families share what they've really been through, isolation loses its grip. Your real story is your most powerful tool.",
               color: "bg-primary text-white",
             },
             {
               letter: "T",
               word: "Togetherness",
               description:
-                "I will stand with others who are carrying this weight.",
+                "No family should face this alone. Together we are stronger than any stigma and louder than any silence.",
               color: "bg-sage text-white",
             },
             {
               letter: "H",
               word: "Healing",
               description:
-                "I will choose healing — for myself and for my community.",
+                "Healing starts when we stop hiding. We choose healing — for ourselves, our families, and our communities.",
               color: "bg-orange text-white",
             },
           ].map((item) => (
@@ -145,10 +154,10 @@ export default function HomePage() {
       {/* ===== WHICH ONE ARE YOU? (CATEGORY ENTRY POINTS) ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Which One Are You?</h2>
+          <h2 className="mb-4">Find Your Place in the Movement</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            No matter where you are on this journey, there&apos;s a place for
-            you here.
+            Everyone who takes the OATH does it for their own reason.
+            What&apos;s yours?
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -157,7 +166,7 @@ export default function HomePage() {
               icon: Heart,
               title: "Supporting a Loved One",
               description:
-                "Someone you care about is facing substance use or mental health challenges. You don\u2019t have to navigate this alone.",
+                "Someone you care about is struggling. The OATH connects you with families who understand \u2014 so you never have to navigate this alone.",
               color: "border-teal",
               iconBg: "bg-teal-50",
               iconColor: "text-teal",
@@ -167,7 +176,7 @@ export default function HomePage() {
               icon: Users,
               title: "Standing With You",
               description:
-                "You believe no one should face these challenges in silence. You\u2019re here to stand with those who are carrying this weight.",
+                "You believe no family should face this in silence. Your OATH says: I see you, I stand with you, and you are not alone.",
               color: "border-sage",
               iconBg: "bg-sage-50",
               iconColor: "text-sage",
@@ -177,7 +186,7 @@ export default function HomePage() {
               icon: Sun,
               title: "Hope & Recovery",
               description:
-                "You\u2019re on a journey of recovery or finding hope. You want to share that light with others still in the dark.",
+                "You\u2019re walking your own path to recovery or finding hope. Your OATH lights the way for someone still in the dark.",
               color: "border-orange",
               iconBg: "bg-orange-50",
               iconColor: "text-orange",
@@ -216,8 +225,8 @@ export default function HomePage() {
         <div className="text-center text-white mb-12">
           <h2 className="text-white mb-4">The Movement Is Growing</h2>
           <p className="text-white/80 text-xl max-w-2xl mx-auto">
-            Every OATH taken is a family choosing openness over silence.
-            Every pin on the map is someone saying: I&apos;m not alone anymore.
+            Every pin on the map is a family that chose community over isolation.
+            This is what happens when people stop hiding and start healing.
           </p>
         </div>
         <Suspense
@@ -298,13 +307,12 @@ export default function HomePage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-6">
-            You Don&apos;t Have to Be Silent Anymore
+            From Silence to Strength. It Starts Here.
           </h2>
           <p className="text-xl text-white/80 mb-10 leading-relaxed">
-            Whether you&apos;re supporting a loved one, walking your own path
-            to recovery, or simply standing with others — your voice matters.
-            Take Sam&apos;s OATH. Join the movement. Be part of something
-            bigger than silence.
+            The opposite of addiction is not sobriety — it&apos;s community.
+            Take Sam&apos;s OATH, put your pin on the map, and join a
+            growing movement of families who refuse to carry this weight alone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

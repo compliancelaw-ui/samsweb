@@ -80,7 +80,9 @@ export function StoryForm() {
           About You
         </h3>
         <p className="text-gray-500 mb-6">
-          Tell us a little about yourself. Only your name will be displayed publicly if you consent.
+          Full name, first name only, or initials are all fine — if you leave
+          the name blank, you&apos;ll appear as &ldquo;A Friend.&rdquo; Only
+          your chosen display name is shown publicly if you consent.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -95,7 +97,7 @@ export function StoryForm() {
                 "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
                 errors.author_name ? "border-red-400" : "border-gray-300"
               )}
-              placeholder="Your full name"
+              placeholder="Full name, first name, or initials"
             />
             {errors.author_name && (
               <p className="text-red-500 text-sm mt-1">{errors.author_name.message}</p>
@@ -124,23 +126,32 @@ export function StoryForm() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label htmlFor="author_city" className="block text-sm font-medium text-gray-700 mb-1">
-              City
+              City <span className="text-red-500">*</span>
             </label>
             <input
               id="author_city"
               {...register("author_city")}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
-              placeholder="Your city (optional)"
+              className={cn(
+                "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
+                errors.author_city ? "border-red-400" : "border-gray-300"
+              )}
+              placeholder="Your city"
             />
+            {errors.author_city && (
+              <p className="text-red-500 text-sm mt-1">{errors.author_city.message}</p>
+            )}
           </div>
           <div>
             <label htmlFor="author_state" className="block text-sm font-medium text-gray-700 mb-1">
-              State
+              State <span className="text-red-500">*</span>
             </label>
             <select
               id="author_state"
               {...register("author_state")}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors appearance-none"
+              className={cn(
+                "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors appearance-none",
+                errors.author_state ? "border-red-400" : "border-gray-300"
+              )}
             >
               <option value="">Select state</option>
               {US_STATES.map((st) => (
@@ -149,6 +160,9 @@ export function StoryForm() {
                 </option>
               ))}
             </select>
+            {errors.author_state && (
+              <p className="text-red-500 text-sm mt-1">{errors.author_state.message}</p>
+            )}
           </div>
           <div>
             <label htmlFor="author_relation" className="block text-sm font-medium text-gray-700 mb-1">

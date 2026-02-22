@@ -26,11 +26,11 @@ export default function GetInvolvedPage() {
       <section className="bg-gradient-to-br from-teal to-primary py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Be Part of Something Bigger
+            Every Action Grows the Movement
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Every movement needs people who are willing to show up. Here are the
-            ways you can help break the silence.
+            The OATH works because people like you choose to show up. Here are
+            the ways your action helps families move from silence to strength.
           </p>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function GetInvolvedPage() {
       {/* Ways to Get Involved */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-12">How You Can Help</h2>
+          <h2 className="text-center mb-12">Pick Your Path</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Take the OATH */}
             <Link
@@ -52,9 +52,8 @@ export default function GetInvolvedPage() {
                 Take Sam&apos;s OATH
               </h3>
               <p className="text-gray-600">
-                The simplest and most powerful step. Take Sam&apos;s OATH, place your
-                pin on the map, and let the world know you stand with families
-                who refuse to stay silent.
+                Sixty seconds. A pin on the map. A family that no longer carries
+                this alone. Then challenge three people you trust to do the same.
               </p>
               <span className="inline-flex items-center gap-1 text-teal font-medium text-sm mt-4">
                 Get started <ArrowRight className="w-4 h-4" />
@@ -73,9 +72,9 @@ export default function GetInvolvedPage() {
                 Share Your Story
               </h3>
               <p className="text-gray-600">
-                Your experience — whether you&apos;re supporting a loved one,
-                honoring someone&apos;s memory, or walking your own path — could
-                help another family feel less alone.
+                When one family shares, another realizes they&apos;re not alone.
+                Your experience — supporting a loved one, honoring someone&apos;s
+                memory, or walking your own path — is someone else&apos;s lifeline.
               </p>
               <span className="inline-flex items-center gap-1 text-orange font-medium text-sm mt-4">
                 Share now <ArrowRight className="w-4 h-4" />
@@ -94,9 +93,9 @@ export default function GetInvolvedPage() {
                 Become an Ambassador
               </h3>
               <p className="text-gray-600">
-                Lead the movement in your community. Ambassadors help spread
-                awareness, organize local events, and connect families to
-                resources.
+                Be the person who brings the OATH to your community. Ambassadors
+                connect families to the movement and make openness normal where
+                they live.
               </p>
               <span className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4">
                 Learn more <ArrowRight className="w-4 h-4" />
@@ -112,9 +111,9 @@ export default function GetInvolvedPage() {
                 Spread the Word
               </h3>
               <p className="text-gray-600">
-                Follow us on social media. Share our content. Talk about the
-                OATH at your dinner table, in your workplace, or at your place
-                of worship. Every conversation matters.
+                Every conversation about the OATH makes it easier for a family to
+                come forward. Share on social media, mention it at dinner, bring
+                it up at work. Your voice gives others permission.
               </p>
               <div className="flex gap-3 mt-4">
                 <span className="text-sage-600 font-medium text-sm">

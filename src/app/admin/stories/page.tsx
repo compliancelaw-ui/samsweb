@@ -17,6 +17,9 @@ import {
   Shield,
   AlertTriangle,
   Info,
+  Edit3,
+  Sparkles,
+  Loader2,
 } from "lucide-react";
 
 interface StoryRecord {
@@ -65,6 +68,13 @@ export default function AdminStoriesPage() {
   const [updatingStatus, setUpdatingStatus] = useState<string | null>(null);
   const [expandedStory, setExpandedStory] = useState<string | null>(null);
   const [tabCounts, setTabCounts] = useState<Record<TabKey, number>>({ pending: 0, approved: 0, published: 0, rejected: 0 });
+
+  // Edit mode state
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editTitle, setEditTitle] = useState("");
+  const [editContent, setEditContent] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [savingEdit, setSavingEdit] = useState(false);
 
   const fetchStories = useCallback(async () => {
     setLoading(true);
@@ -187,6 +197,95 @@ export default function AdminStoriesPage() {
     setPage(1);
     setSelected(new Set());
     setExpandedStory(null);
+    cancelEdit();
+  };
+
+  // Edit mode handlers
+  const startEdit = (story: StoryRecord) => {
+    setEditingId(story.id);
+    setEditTitle(story.title || "");
+    setEditContent(story.content || "");
+  };
+
+  const cancelEdit = () => {
+    setEditingId(null);
+    setEditTitle("");
+    setEditContent("");
+    setAiLoading(false);
+    setSavingEdit(false);
+  };
+
+  const handleSaveEdit = async (andApprove?: boolean) => {
+    if (!editingId) return;
+    setSavingEdit(true);
+    try {
+      const body: Record<string, string> = {
+        id: editingId,
+        title: editTitle,
+        content: editContent,
+      };
+      if (andApprove) {
+        body.status = "approved";
+      }
+      const res = await fetch("/api/admin/stories", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) throw new Error("Save failed");
+      cancelEdit();
+      fetchStories();
+      if (andApprove) fetchCounts();
+    } catch {
+      alert("Failed to save changes. Please try again.");
+    } finally {
+      setSavingEdit(false);
+    }
+  };
+
+  const handleAIPolish = async () => {
+    if (!editContent.trim()) return;
+    setAiLoading(true);
+    try {
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt: "Polish and improve this story while preserving the author's voice. Fix grammar, improve clarity, ensure safe messaging.",
+          context: editContent,
+          type: "story-edit",
+        }),
+      });
+      if (!res.ok) throw new Error("AI polish failed");
+      const data = await res.json();
+      if (data.result) {
+        setEditContent(data.result);
+      }
+    } catch {
+      alert("AI polish failed. Please try again.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const handleFeatureAsBlog = async (story: StoryRecord) => {
+    try {
+      const res = await fetch("/api/admin/blog", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: story.title,
+          content: story.content,
+          excerpt: story.content.slice(0, 200) + "...",
+          tags: ["stories", story.category],
+          status: "draft",
+        }),
+      });
+      if (!res.ok) throw new Error("Blog post creation failed");
+      alert("Blog post draft created from this story.");
+    } catch {
+      alert("Failed to create blog post. Please try again.");
+    }
   };
 
   return (
@@ -432,11 +531,105 @@ export default function AdminStoriesPage() {
                             Published: {new Date(story.published_at).toLocaleDateString()}
                           </span>
                         )}
+                        <div className="ml-auto flex items-center gap-2">
+                          {editingId !== story.id && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); startEdit(story); }}
+                              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors"
+                              title="Edit story"
+                            >
+                              <Edit3 className="h-3.5 w-3.5" />
+                              Edit
+                            </button>
+                          )}
+                          {story.status === "published" && editingId !== story.id && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleFeatureAsBlog(story); }}
+                              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors"
+                              title="Feature as blog post"
+                            >
+                              <BookOpen className="h-3.5 w-3.5" />
+                              Feature as Blog Post
+                            </button>
+                          )}
+                        </div>
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{story.title || "Untitled"}</h3>
-                      <p className="text-sm text-gray-600 whitespace-pre-wrap leading-relaxed">
-                        {story.content}
-                      </p>
+
+                      {editingId === story.id ? (
+                        /* Edit mode */
+                        <div className="space-y-4">
+                          <div>
+                            <label className="block text-xs font-medium text-gray-500 mb-1">Title</label>
+                            <input
+                              type="text"
+                              value={editTitle}
+                              onChange={(e) => setEditTitle(e.target.value)}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                              placeholder="Story title"
+                            />
+                          </div>
+                          <div>
+                            <div className="flex items-center justify-between mb-1">
+                              <label className="block text-xs font-medium text-gray-500">Content</label>
+                              <button
+                                onClick={(e) => { e.stopPropagation(); handleAIPolish(); }}
+                                disabled={aiLoading || !editContent.trim()}
+                                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors disabled:opacity-50"
+                                title="AI Polish - improve grammar, clarity, and safe messaging"
+                              >
+                                {aiLoading ? (
+                                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                                ) : (
+                                  <Sparkles className="h-3.5 w-3.5" />
+                                )}
+                                {aiLoading ? "Polishing..." : "AI Polish"}
+                              </button>
+                            </div>
+                            <textarea
+                              value={editContent}
+                              onChange={(e) => setEditContent(e.target.value)}
+                              rows={15}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-600 leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-y"
+                              placeholder="Story content"
+                            />
+                          </div>
+                          <div className="flex items-center gap-2 pt-1">
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleSaveEdit(false); }}
+                              disabled={savingEdit}
+                              className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+                            >
+                              {savingEdit ? <Loader2 className="h-4 w-4 animate-spin" /> : <CheckCircle2 className="h-4 w-4" />}
+                              Save
+                            </button>
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleSaveEdit(true); }}
+                              disabled={savingEdit}
+                              className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50"
+                            >
+                              {savingEdit ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+                              Save & Approve
+                            </button>
+                            <button
+                              onClick={(e) => { e.stopPropagation(); cancelEdit(); }}
+                              disabled={savingEdit}
+                              className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50"
+                            >
+                              <XCircle className="h-4 w-4" />
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        /* Read-only view */
+                        <>
+                          <h3 className="font-semibold text-gray-900 mb-2">{story.title || "Untitled"}</h3>
+                          <p className="text-sm text-gray-600 whitespace-pre-wrap leading-relaxed">
+                            {story.content}
+                          </p>
+                        </>
+                      )}
+
                       <div className="mt-4 pt-3 border-t border-gray-200 flex items-center gap-4 text-xs text-gray-400">
                         <span>By: {story.first_name} {story.last_name || ""}</span>
                         <span>Display: {story.display_name}</span>

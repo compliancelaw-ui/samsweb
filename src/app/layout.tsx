@@ -59,7 +59,7 @@ const jsonLd = {
   name: "Sam's OATH",
   alternateName: "Sam's OATH Foundation",
   url: "https://samsoath.org",
-  logo: "https://samsoath.org/images/photos/frank-headshot.jpg",
+  logo: "https://samsoath.org/images/logo/logo-stacked-full.svg",
   description:
     "A national movement empowering families to break silence around substance use and mental health through Openness, Authenticity, Togetherness, and Healing.",
   founder: {

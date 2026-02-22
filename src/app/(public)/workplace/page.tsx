@@ -27,9 +27,9 @@ export default function WorkplacePage() {
             The Workplace OATH
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Your employees are carrying more than you know. Create a culture
-            where it&apos;s safe to be honest about what families are going
-            through.
+            Give your team permission to be honest about what their families
+            are going through. The Workplace OATH creates a culture where
+            people get support instead of silence.
           </p>
         </div>
       </section>
@@ -39,17 +39,16 @@ export default function WorkplacePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="mb-4">The Silent Workplace Crisis</h2>
+              <h2 className="mb-4">Why This Matters at Work</h2>
               <p className="text-gray-600 text-lg mb-4">
                 One in five American adults has a family member struggling with
-                substance use. Most of them come to work every day and say
-                nothing.
+                substance use. Most come to work every day and say nothing — because
+                they don&apos;t feel safe to.
               </p>
               <p className="text-gray-600">
-                The silence isn&apos;t just personal — it&apos;s costing your
-                organization in absenteeism, presenteeism, turnover, and
-                healthcare costs. More importantly, it&apos;s costing your
-                people their wellbeing.
+                The Workplace OATH changes that. When organizations commit
+                publicly, employees feel safe acknowledging what they&apos;re going
+                through — and they get help sooner.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -75,9 +74,10 @@ export default function WorkplacePage() {
       {/* Programs */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">Our Programs</h2>
+          <h2 className="text-center mb-4">How It Works</h2>
           <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Flexible programs designed for organizations of any size.
+            Three programs designed to build a culture of openness — flexible
+            for organizations of any size.
           </p>
           <div className="space-y-8">
             {/* Safe Listener Training */}
@@ -182,7 +182,7 @@ export default function WorkplacePage() {
       {/* Why It Works */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-10">Why It Works</h2>
+          <h2 className="text-center mb-10">What Changes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -225,7 +225,8 @@ export default function WorkplacePage() {
             Bring the OATH to Your Organization
           </h2>
           <p className="text-white/80 text-lg mb-8">
-            Let&apos;s talk about how we can support your team.
+            Your employees are already carrying this. The question is whether
+            they carry it alone. Let&apos;s talk.
           </p>
           <Link
             href="/contact"

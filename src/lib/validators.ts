@@ -21,8 +21,8 @@ export type OathFormData = z.infer<typeof oathSchema>;
 export const storySchema = z.object({
   author_name: z.string().min(1, "Author name is required"),
   author_email: z.string().email("Invalid email address"),
-  author_city: z.string().optional(),
-  author_state: z.string().optional(),
+  author_city: z.string().min(1, "City is required for map placement"),
+  author_state: z.string().min(2, "State is required for map placement"),
   author_relation: z.string().optional(),
   title: z.string().min(3, "Title must be at least 3 characters").max(150, "Title must be 150 characters or fewer"),
   content: z.string().min(50, "Story must be at least 50 characters").max(10000, "Story must be 10,000 characters or fewer"),

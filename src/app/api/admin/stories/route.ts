@@ -39,11 +39,11 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// PATCH /api/admin/stories — update story status or featured flag
+// PATCH /api/admin/stories — update story status, featured flag, or content
 export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json()
-    const { id, status, is_featured } = body
+    const { id, status, is_featured, title, content, excerpt, admin_notes } = body
 
     if (!id) {
       return NextResponse.json({ error: 'ID required' }, { status: 400 })
@@ -66,9 +66,27 @@ export async function PATCH(request: NextRequest) {
       updates.is_featured = Boolean(is_featured)
     }
 
+    if (title !== undefined) {
+      updates.title = title.trim()
+    }
+
+    if (content !== undefined) {
+      updates.content = content.trim()
+    }
+
+    if (excerpt !== undefined) {
+      updates.excerpt = excerpt.trim() || null
+    }
+
+    if (admin_notes !== undefined) {
+      updates.admin_notes = admin_notes.trim() || null
+    }
+
     if (Object.keys(updates).length === 0) {
       return NextResponse.json({ error: 'No updates provided' }, { status: 400 })
     }
+
+    updates.updated_at = new Date().toISOString()
 
     const { error } = await supabaseAdmin()
       .from('story_submissions')

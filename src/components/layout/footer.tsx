@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE_NAME, CRISIS_RESOURCES } from "@/lib/constants";
 import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
+import { Logo } from "@/components/ui/logo";
 
 const takeActionLinks = [
   { href: "/take-the-oath", label: "Take Sam's OATH" },
@@ -31,10 +32,7 @@ export function Footer() {
           {/* Column 1: Logo + Mission */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-xl font-bold tracking-tight">
-                Sam&apos;s{" "}
-                <span className="text-teal-300">OATH</span>
-              </span>
+              <Logo variant="footer" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-300">
               What&apos;s hidden doesn&apos;t heal.
@@ -152,22 +150,22 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-600">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-sm text-gray-400">
+      {/* Bottom Bar — extra bottom padding so the fixed crisis banner doesn't cover it */}
+      <div className="border-t border-gray-500">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 pb-16 sm:flex-row sm:px-6 lg:px-8">
+          <p className="text-sm text-gray-300">
             &copy; 2026 {SITE_NAME}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/terms"
-              className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+              className="text-sm text-gray-300 transition-colors hover:text-white"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
-              className="text-sm text-gray-400 transition-colors hover:text-teal-300"
+              className="text-sm text-gray-300 transition-colors hover:text-white"
             >
               Privacy Policy
             </Link>

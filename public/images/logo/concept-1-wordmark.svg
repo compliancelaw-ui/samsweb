@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Concept 1: Wordmark — "Sam's" light + "OATH" bold with brand colors -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&amp;display=swap');
+  </style>
+  <!-- "Sam's" in light slate -->
+  <text x="10" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="300" font-size="48" fill="#2E3B4E" letter-spacing="-1">Sam's</text>
+  <!-- "O" in teal -->
+  <text x="160" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="52" fill="#3EABA8" letter-spacing="-1">O</text>
+  <!-- "A" in primary blue -->
+  <text x="203" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="52" fill="#4A6FA5" letter-spacing="-1">A</text>
+  <!-- "T" in sage -->
+  <text x="247" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="52" fill="#7AB87A" letter-spacing="-1">T</text>
+  <!-- "H" in orange -->
+  <text x="283" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="52" fill="#E8956F" letter-spacing="-1">H</text>
+  <!-- Thin teal line underneath -->
+  <line x1="10" y1="80" x2="320" y2="80" stroke="#3EABA8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Tagline -->
+  <text x="10" y="96" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="300" font-size="12" fill="#9CA3AF" letter-spacing="2" font-style="italic">WHAT'S HIDDEN DOESN'T HEAL</text>
+</svg>
