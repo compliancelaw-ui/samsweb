@@ -44,18 +44,18 @@ export default function TermsPage() {
           <ul>
             <li>
               The information you provide (name, city, state, category) is
-              accurate
+              accurate.
             </li>
             <li>
-              Your city and state will be displayed on our public movement map
+              Your city and state will be displayed on our public movement map.
             </li>
             <li>
               Your name will appear on the map according to your display
-              preference (full name, first name only, initials, or anonymous)
+              preference (full name, first name only, initials, or anonymous).
             </li>
             <li>
               You may request removal of your information at any time by
-              contacting us
+              contacting us.
             </li>
           </ul>
 
@@ -64,24 +64,24 @@ export default function TermsPage() {
           <ul>
             <li>
               Your story is your own experience, told truthfully and in good
-              faith
+              faith.
             </li>
             <li>
               You will not name specific individuals (other than yourself and
               your own family members who have consented) in a way that could
-              identify or harm them
+              identify or harm them.
             </li>
             <li>
               Sam&apos;s OATH may edit your story for clarity, length, or
               sensitivity before publication, and will notify you of significant
-              changes
+              changes.
             </li>
             <li>
               You grant Sam&apos;s OATH a non-exclusive license to publish your
-              story on our website and in movement-related materials
+              story on our website and in movement-related materials.
             </li>
             <li>
-              You may request removal of your published story at any time
+              You may request removal of your published story at any time.
             </li>
             <li>
               Stories are reviewed by our moderation team before publication.
@@ -95,12 +95,12 @@ export default function TermsPage() {
             the movement. We do not publish stories that:
           </p>
           <ul>
-            <li>Contain hate speech, threats, or harassment</li>
-            <li>Name individuals without their consent in a negative context</li>
-            <li>Include graphic descriptions of self-harm or substance use</li>
-            <li>Promote specific treatment facilities or products</li>
-            <li>Contain spam, advertising, or unrelated content</li>
-            <li>Violate any person&apos;s privacy or legal rights</li>
+            <li>Contain hate speech, threats, or harassment.</li>
+            <li>Name individuals without their consent in a negative context.</li>
+            <li>Include graphic descriptions of self-harm or substance use.</li>
+            <li>Promote specific treatment facilities or products.</li>
+            <li>Contain spam, advertising, or unrelated content.</li>
+            <li>Violate any person&apos;s privacy or legal rights.</li>
           </ul>
 
           <h2>4. Newsletter &amp; Communications</h2>
@@ -109,16 +109,16 @@ export default function TermsPage() {
           </p>
           <ul>
             <li>
-              We will only send content related to the Sam&apos;s OATH movement
+              We will only send content related to the Sam&apos;s OATH movement.
             </li>
             <li>
               <strong>
-                We will never share your email address with any third party
+                We will never share your email address with any third party.
               </strong>
             </li>
-            <li>You may unsubscribe at any time via the link in every email</li>
+            <li>You may unsubscribe at any time via the link in every email.</li>
             <li>
-              We use your email solely for Sam&apos;s OATH communications
+              We use your email solely for Sam&apos;s OATH communications.
             </li>
           </ul>
 
@@ -126,19 +126,19 @@ export default function TermsPage() {
           <p>When using our website, you agree not to:</p>
           <ul>
             <li>
-              Submit false, misleading, or harmful information
+              Submit false, misleading, or harmful information.
             </li>
             <li>
-              Use the website for any commercial or promotional purpose
+              Use the website for any commercial or promotional purpose.
             </li>
             <li>
-              Attempt to access restricted areas of the website
+              Attempt to access restricted areas of the website.
             </li>
             <li>
-              Interfere with the website&apos;s operation or security
+              Interfere with the website&apos;s operation or security.
             </li>
             <li>
-              Scrape, harvest, or collect other users&apos; information
+              Scrape, harvest, or collect other users&apos; information.
             </li>
           </ul>
 

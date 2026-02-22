@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Heart,
@@ -275,31 +276,95 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== ORIGIN — BRIEF ===== */}
+      {/* ===== ORIGIN — SPLIT LAYOUT ===== */}
       <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-            The Story Behind the Movement
-          </p>
-          <h2 className="mb-6">Why &ldquo;Sam&apos;s&rdquo; OATH?</h2>
-          <p className="text-xl text-gray-600 leading-relaxed mb-4">
-            Sam&apos;s OATH is named after Sam Sheeder (1998–2025), who faced
-            substance use disorder with courage and honesty. After losing Sam,
-            his father Frank wrote openly about what their family had been
-            through — and the response was overwhelming. Hundreds of families
-            said the same thing: &ldquo;I thought I was the only one.&rdquo;
-          </p>
-          <p className="text-gray-500 mb-8">
-            That moment became the foundation of this movement — built on the
-            belief that no family should carry this weight alone.
-          </p>
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
-          >
-            Read the full story
-            <ChevronRight className="w-4 h-4" />
-          </Link>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
+                The Story Behind the Movement
+              </p>
+              <h2 className="mb-6">Why &ldquo;Sam&apos;s&rdquo; OATH?</h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-4">
+                Sam&apos;s OATH is named after Sam Sheeder (1998–2025), who
+                faced substance use disorder with courage and honesty. After
+                losing Sam, his father Frank wrote openly about what their
+                family had been through — and the response was overwhelming.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Hundreds of families said the same thing: &ldquo;I thought I
+                was the only one.&rdquo; That moment became the foundation of
+                this movement — built on the belief that no family should carry
+                this weight alone.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
+              >
+                Read the full story
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/images/photos/sam-portrait.jpg"
+                alt="Sam Sheeder"
+                width={3024}
+                height={4032}
+                className="w-full max-w-sm h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== THE REAL STORY ===== */}
+      <SectionWrapper variant="light">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+            <div className="lg:col-span-3">
+              <p className="text-teal font-medium mb-3 uppercase tracking-wide text-sm">
+                The Truth Behind the Movement
+              </p>
+              <h2 className="mb-6">We Had It All. And We Were Still Hiding.</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  Friends. Good careers. A beautiful family. It all looked
+                  wonderful on the outside — and a lot of it was. But we kept
+                  some aspects hidden.
+                </p>
+                <p>
+                  When people asked about Sam, we might say &ldquo;he&apos;s
+                  fine,&rdquo; or share a funny story (there were so many), or
+                  &ldquo;he&apos;s doing better,&rdquo; or &ldquo;he&apos;s
+                  good today.&rdquo; But beneath that feigned pleasantry lay
+                  daily challenges, fears, anxieties, heartbreak.
+                </p>
+                <p>
+                  We aren&apos;t supposed to handle these things alone —
+                  especially because there&apos;s no owner&apos;s manual. There&apos;s
+                  guilt, manipulation, denial, hope, lowering of standards,
+                  enabling. The full gamut of emotions that nobody prepares you
+                  for.
+                </p>
+                <p className="text-gray-900 font-medium">
+                  How much better off would families be if they had a safe
+                  community to discuss these things openly and authentically —
+                  so we could all heal together? That&apos;s what Sam&apos;s
+                  OATH is about.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <Image
+                src="/images/photos/frank-sam-boat.jpg"
+                alt="Frank and Sam on a boat"
+                width={4032}
+                height={3024}
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </SectionWrapper>
 

@@ -34,13 +34,13 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <Logo variant="footer" className="h-12 w-auto" />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-300">
+            <p className="mt-4 text-sm font-medium leading-relaxed text-gray-300">
               What&apos;s hidden doesn&apos;t heal.
             </p>
             <p className="mt-2 text-sm leading-relaxed text-gray-400">
-              A national movement to break silence around substance use and
-              mental health through Openness, Authenticity, Togetherness, and
-              Healing.
+              <span className="text-gray-300">Our mission:</span> Break the
+              silence around substance use and mental health so no family
+              carries this weight alone.
             </p>
             {/* Follow Us */}
             <div className="mt-6">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Heart,
@@ -17,21 +18,34 @@ export const metadata: Metadata = {
 export default function MusicPage() {
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
-          <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            Original Music
-          </p>
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Music That Heals
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            15 original songs written for every family that knows the weight of
-            silence — and the relief of finally being heard. Music has a way of
-            saying what words alone can&apos;t.
-          </p>
+      {/* ===== HERO — split with Sam at piano ===== */}
+      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-16 md:py-24">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="text-white">
+              <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
+                Original Music
+              </p>
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Music That Heals
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+                15 original songs written for every family that knows the
+                weight of silence — and the relief of finally being heard.
+                Music has a way of saying what words alone can&apos;t.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/images/photos/sam-piano.jpg"
+                alt="Sam at the piano"
+                width={1295}
+                height={1632}
+                className="w-full max-w-sm h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -133,46 +147,31 @@ export default function MusicPage() {
               feels forgotten, the friend who doesn&apos;t know what to say.
             </p>
           </div>
-          <div className="bg-gradient-to-br from-orange-50 to-primary-50 rounded-2xl p-8">
-            <div className="space-y-4">
-              {[
-                {
-                  title: "For the Grieving",
-                  tracks:
-                    "If Love Could Have Saved You, Hole in My Heart the Size of You",
-                },
-                {
-                  title: "For the Journey",
-                  tracks: "Healing is a Slow Song, You Can't Outrun Grief",
-                },
-                {
-                  title: "For Hope",
-                  tracks: "Joy Anyway, Still Water, Fifteen Seconds",
-                },
-                {
-                  title: "For Families",
-                  tracks: "Knot on the Family Tree, For Annie, I Carry You Through",
-                },
-                {
-                  title: "For Identity",
-                  tracks:
-                    "My Name is More Than Pain, My Past Don't Get to Drive",
-                },
-                {
-                  title: "For Meaning",
-                  tracks: "In the Same Breath, Near to the Broken",
-                },
-              ].map((group) => (
-                <div
-                  key={group.title}
-                  className="bg-white rounded-lg p-4 shadow-sm"
-                >
-                  <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                    {group.title}
-                  </h4>
-                  <p className="text-sm text-gray-500">{group.tracks}</p>
-                </div>
-              ))}
+          <div className="space-y-6">
+            <Image
+              src="/images/photos/frank-sam-concert.jpg"
+              alt="Frank and Sam at a concert together"
+              width={624}
+              height={623}
+              className="w-full max-w-xs h-auto rounded-2xl shadow-md mx-auto lg:mx-0"
+            />
+            <div className="bg-gradient-to-br from-orange-50 to-primary-50 rounded-2xl p-6">
+              <h4 className="font-semibold text-gray-900 mb-3">
+                Songs for Every Part of the Journey
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: "For the Grieving", tracks: "If Love Could Have Saved You, Hole in My Heart" },
+                  { title: "For Hope", tracks: "Joy Anyway, Still Water, Fifteen Seconds" },
+                  { title: "For Families", tracks: "Knot on the Family Tree, For Annie" },
+                  { title: "For the Journey", tracks: "Healing is a Slow Song, You Can't Outrun Grief" },
+                ].map((group) => (
+                  <div key={group.title} className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="font-medium text-gray-900 text-sm">{group.title}</p>
+                    <p className="text-xs text-gray-500">{group.tracks}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

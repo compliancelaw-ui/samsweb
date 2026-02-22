@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { storySchema } from '@/lib/validators'
 import { notifyAdmin } from '@/lib/email'
+import { shouldFlagForReview } from '@/lib/content-filter'
 
 export const dynamic = 'force-dynamic'
 
@@ -75,12 +76,18 @@ export async function POST(request: NextRequest) {
 
     const data = result.data
 
-    // Insert story with pending status
+    // Run content filter on the submission
+    const filterResult = shouldFlagForReview(data.title, data.content)
+
+    // Insert story with pending status + content flags
     const { data: story, error } = await supabaseAdmin()
       .from('story_submissions')
       .insert({
         ...data,
         status: 'pending',
+        ...(filterResult.flagged && {
+          reviewer_notes: `[Auto-flagged] Score: ${filterResult.score}. ${filterResult.flags.map(f => `${f.type}: ${f.message} (${f.matches.join(', ')})`).join(' | ')}`,
+        }),
       })
       .select('id')
       .single()
@@ -93,10 +100,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Notify admin about new story submission
+    // Notify admin about new story submission (with flag info)
+    const flagInfo = filterResult.flagged
+      ? `\n\n⚠️ <strong>Content flags (${filterResult.score}):</strong> ${filterResult.flags.map(f => f.type).join(', ')}`
+      : ''
     notifyAdmin(
       'New story submitted',
-      `<strong>${data.author_name}</strong> submitted a story: "${data.title}". It's pending your review.`
+      `<strong>${data.author_name}</strong> submitted a story: "${data.title}". It's pending your review.${flagInfo}`
     )
 
     return NextResponse.json(

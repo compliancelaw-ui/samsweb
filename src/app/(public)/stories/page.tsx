@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, PenLine } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -221,45 +222,55 @@ export default async function StoriesPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== WHY STORIES MATTER ===== */}
+      {/* ===== WHY STORIES MATTER — split with image ===== */}
       <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="mb-4">Why Stories Matter</h2>
-          <p className="text-xl text-gray-600">
-            Every story is an act of courage. Here&apos;s what happens when
-            families speak up.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {[
-            {
-              title: "They Break the Isolation",
-              description:
-                "When you share your story, you tell someone else who's struggling in silence that they are not alone. That single connection can change everything.",
-            },
-            {
-              title: "They Reduce Stigma",
-              description:
-                "Every story told normalizes the conversation around substance use and mental health. The more we talk openly, the less power shame has over us.",
-            },
-            {
-              title: "They Inspire Action",
-              description:
-                "Your story might be the reason someone else reaches out for help, checks on a neighbor, or finally has that conversation with their family.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="bg-gray-50 rounded-xl p-8 text-center"
-            >
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {item.description}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <h2 className="mb-4">Why Stories Matter</h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Every story is an act of courage. Here&apos;s what happens
+                when families speak up.
               </p>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "They Break the Isolation",
+                    description:
+                      "When you share your story, you tell someone else who's struggling in silence that they are not alone. That single connection can change everything.",
+                  },
+                  {
+                    title: "They Reduce Stigma",
+                    description:
+                      "Every story told normalizes the conversation around substance use and mental health. The more we talk openly, the less power shame has over us.",
+                  },
+                  {
+                    title: "They Inspire Action",
+                    description:
+                      "Your story might be the reason someone else reaches out for help, checks on a neighbor, or finally has that conversation with their family.",
+                  },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+            <div className="flex justify-center">
+              <Image
+                src="/images/photos/family-couch.jpg"
+                alt="Family sharing together"
+                width={2048}
+                height={1536}
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </SectionWrapper>
 

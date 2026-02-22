@@ -59,7 +59,8 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Category:</strong> Whether you&apos;re supporting a loved
-              one, standing as a supporter, or on a journey of hope and recovery.
+              one, standing as a supporter, or on a journey of hope and
+              recovery.
             </li>
             <li>
               <strong>Email (optional):</strong> Only if you choose to provide
@@ -67,7 +68,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Personal message (optional):</strong> Displayed only to
-              administrators.
+              administrators. Not shared publicly.
             </li>
           </ul>
 
@@ -100,35 +101,35 @@ export default function PrivacyPage() {
 
           <h2>How We Use Your Information</h2>
           <ul>
-            <li>To place your pin on the movement map (OATH submissions)</li>
-            <li>To review and publish community stories</li>
-            <li>To respond to your messages and inquiries</li>
+            <li>To place your pin on the movement map (OATH submissions).</li>
+            <li>To review and publish community stories.</li>
+            <li>To respond to your messages and inquiries.</li>
             <li>
-              To send movement updates and newsletters (only with your consent)
+              To send movement updates and newsletters (only with your consent).
             </li>
-            <li>To generate aggregate statistics about the movement</li>
-            <li>To improve the website and user experience</li>
+            <li>To generate aggregate statistics about the movement.</li>
+            <li>To improve the website and user experience.</li>
           </ul>
 
           <h2>What We Never Do</h2>
           <ul>
             <li>
-              <strong>We never sell your information</strong> to third parties
+              <strong>We never sell your information</strong> to third parties.
             </li>
             <li>
-              <strong>We never share your email</strong> with other organizations
+              <strong>We never share your email</strong> with other organizations.
             </li>
             <li>
               <strong>We never publish your full name</strong> without your
-              explicit consent
+              explicit consent.
             </li>
             <li>
               <strong>We never display your exact address</strong> — only city
-              and state
+              and state.
             </li>
             <li>
               <strong>We never use your story</strong> for purposes other than
-              what you consented to
+              what you consented to.
             </li>
           </ul>
 
@@ -145,22 +146,22 @@ export default function PrivacyPage() {
           <p>You have the right to:</p>
           <ul>
             <li>
-              <strong>Access</strong> the personal information we hold about you
+              <strong>Access</strong> the personal information we hold about you.
             </li>
             <li>
-              <strong>Correct</strong> any inaccurate information
+              <strong>Correct</strong> any inaccurate information.
             </li>
             <li>
-              <strong>Delete</strong> your information from our systems
+              <strong>Delete</strong> your information from our systems.
             </li>
             <li>
-              <strong>Withdraw consent</strong> for newsletter communications
+              <strong>Withdraw consent</strong> for newsletter communications.
             </li>
             <li>
-              <strong>Request removal</strong> of your pin from the map
+              <strong>Request removal</strong> of your pin from the map.
             </li>
             <li>
-              <strong>Request removal</strong> of your published story
+              <strong>Request removal</strong> of your published story.
             </li>
           </ul>
           <p>

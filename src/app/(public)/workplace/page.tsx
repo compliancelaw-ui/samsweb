@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Shield,
@@ -20,38 +21,51 @@ export const metadata: Metadata = {
 export default function WorkplacePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-slate py-24">
-        <div className="container-wide text-white text-center">
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            The Workplace OATH
-          </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Give your team permission to be honest about what their families
-            are going through. The Workplace OATH creates a culture where
-            people get support instead of silence.
-          </p>
+      {/* Hero — split with image */}
+      <section className="bg-gradient-to-br from-primary to-slate py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="text-white">
+              <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
+                The Workplace OATH
+              </h1>
+              <p className="text-xl text-white/80">
+                Give your team permission to be honest about what their
+                families are going through. The Workplace OATH creates a
+                culture where people get support instead of silence.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/images/photos/frank-casual.jpg"
+                alt="Frank Sheeder"
+                width={2013}
+                height={2120}
+                className="w-full max-w-xs h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* The Problem */}
+      {/* The Problem — stats with emphasis */}
       <SectionWrapper variant="white">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-3">
               <h2 className="mb-4">Why This Matters at Work</h2>
               <p className="text-gray-600 text-lg mb-4">
                 One in five American adults has a family member struggling with
-                substance use. Most come to work every day and say nothing — because
-                they don&apos;t feel safe to.
+                substance use. Most come to work every day and say nothing —
+                because they don&apos;t feel safe to.
               </p>
               <p className="text-gray-600">
                 The Workplace OATH changes that. When organizations commit
-                publicly, employees feel safe acknowledging what they&apos;re going
-                through — and they get help sooner.
+                publicly, employees feel safe acknowledging what they&apos;re
+                going through — and they get help sooner.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="lg:col-span-2 grid grid-cols-2 gap-4">
               {[
                 { stat: "1 in 5", label: "adults affected by a loved one's substance use" },
                 { stat: "77%", label: "say they hide it from coworkers" },

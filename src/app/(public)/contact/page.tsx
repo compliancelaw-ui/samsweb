@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -128,6 +129,13 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="lg:col-span-2">
+              <Image
+                src="/images/photos/frank-sam-suits.jpg"
+                alt="Frank and Sam in suits"
+                width={4032}
+                height={3024}
+                className="w-full h-auto rounded-xl shadow-sm mb-6"
+              />
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
                 Reach Out Directly
               </h3>

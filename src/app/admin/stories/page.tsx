@@ -38,6 +38,7 @@ interface StoryRecord {
   published_at: string | null;
   slug: string | null;
   is_featured: boolean;
+  reviewer_notes: string | null;
 }
 
 type TabKey = "pending" | "approved" | "published" | "rejected";
@@ -412,9 +413,16 @@ export default function AdminStoriesPage() {
 
                   {/* Title */}
                   <div className="col-span-3">
-                    <p className="font-medium text-gray-900 text-sm truncate">
-                      {story.title || "Untitled"}
-                    </p>
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-medium text-gray-900 text-sm truncate">
+                        {story.title || "Untitled"}
+                      </p>
+                      {story.reviewer_notes?.startsWith("[Auto-flagged]") && (
+                        <span title="Content flagged for review">
+                          <AlertTriangle className="h-3.5 w-3.5 text-amber-500 shrink-0" />
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs text-gray-400 truncate">
                       {story.content?.slice(0, 80)}...
                     </p>
@@ -554,6 +562,19 @@ export default function AdminStoriesPage() {
                           )}
                         </div>
                       </div>
+
+                      {/* Auto-flag alerts */}
+                      {story.reviewer_notes?.startsWith("[Auto-flagged]") && (
+                        <div className="mb-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                          <div className="flex items-start gap-2">
+                            <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                            <div>
+                              <p className="text-sm font-medium text-amber-800">Content Filter Flags</p>
+                              <p className="text-xs text-amber-700 mt-1">{story.reviewer_notes.replace("[Auto-flagged] ", "")}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
 
                       {editingId === story.id ? (
                         /* Edit mode */
