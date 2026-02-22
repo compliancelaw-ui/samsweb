@@ -167,7 +167,7 @@ export default function HomePage() {
               icon: Heart,
               title: "Supporting a Loved One",
               description:
-                "Someone in your life is struggling. The OATH connects you with people who understand \u2014 so you never have to navigate this alone.",
+                "Someone in your life is struggling. The OATH is your commitment to share openly and find strength in community as others do the same.",
               color: "border-teal",
               iconBg: "bg-teal-50",
               iconColor: "text-teal",
@@ -177,7 +177,7 @@ export default function HomePage() {
               icon: Users,
               title: "Standing With You",
               description:
-                "You believe no family should face this in silence. Your OATH says: I see you, I stand with you, and you are not alone.",
+                "You believe no one should face this in silence. Your OATH says: I see you, I stand with you, and you are not alone.",
               color: "border-sage",
               iconBg: "bg-sage-50",
               iconColor: "text-sage",
