@@ -76,6 +76,7 @@ export default function AdminStoriesPage() {
   const [editContent, setEditContent] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
   const [savingEdit, setSavingEdit] = useState(false);
+  const [showEditPreview, setShowEditPreview] = useState(false);
 
   const fetchStories = useCallback(async () => {
     setLoading(true);
@@ -214,6 +215,7 @@ export default function AdminStoriesPage() {
     setEditContent("");
     setAiLoading(false);
     setSavingEdit(false);
+    setShowEditPreview(false);
   };
 
   const handleSaveEdit = async (andApprove?: boolean) => {
@@ -592,20 +594,57 @@ export default function AdminStoriesPage() {
                           <div>
                             <div className="flex items-center justify-between mb-1">
                               <label className="block text-xs font-medium text-gray-500">Content</label>
-                              <button
-                                onClick={(e) => { e.stopPropagation(); handleAIPolish(); }}
-                                disabled={aiLoading || !editContent.trim()}
-                                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors disabled:opacity-50"
-                                title="AI Polish - improve grammar, clarity, and safe messaging"
-                              >
-                                {aiLoading ? (
-                                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                                ) : (
-                                  <Sparkles className="h-3.5 w-3.5" />
-                                )}
-                                {aiLoading ? "Polishing..." : "AI Polish"}
-                              </button>
+                              <div className="flex items-center gap-2">
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); setShowEditPreview(!showEditPreview); }}
+                                  disabled={!editContent.trim()}
+                                  className={cn(
+                                    "flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors disabled:opacity-50",
+                                    showEditPreview
+                                      ? "bg-primary-100 text-primary border border-primary-200"
+                                      : "text-gray-600 bg-white border border-gray-200 hover:bg-gray-100"
+                                  )}
+                                >
+                                  <Eye className="h-3.5 w-3.5" />
+                                  {showEditPreview ? "Hide Preview" : "Preview"}
+                                </button>
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); handleAIPolish(); }}
+                                  disabled={aiLoading || !editContent.trim()}
+                                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors disabled:opacity-50"
+                                  title="AI Polish - improve grammar, clarity, and safe messaging"
+                                >
+                                  {aiLoading ? (
+                                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                                  ) : (
+                                    <Sparkles className="h-3.5 w-3.5" />
+                                  )}
+                                  {aiLoading ? "Polishing..." : "AI Polish"}
+                                </button>
+                              </div>
                             </div>
+
+                            {/* Story Preview Panel */}
+                            {showEditPreview && editContent.trim() && (
+                              <div className="mb-3 border border-primary-200 rounded-lg overflow-hidden">
+                                <div className="px-4 py-2 bg-primary-50 border-b border-primary-200 flex items-center gap-2">
+                                  <Eye className="h-3.5 w-3.5 text-primary" />
+                                  <span className="text-xs font-medium text-primary">Story Preview — as it will appear on the site</span>
+                                </div>
+                                <div className="p-6 bg-white">
+                                  <h3 className="text-xl font-bold text-gray-900 mb-1">{editTitle || "Untitled"}</h3>
+                                  <p className="text-sm text-gray-500 mb-4">
+                                    By {story.display_name} &middot; {story.city}, {story.state}
+                                  </p>
+                                  <div className="prose prose-sm max-w-none text-gray-600">
+                                    {editContent.split("\n\n").map((paragraph, i) => (
+                                      <p key={i} className="mb-3 leading-relaxed">{paragraph}</p>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+
                             <textarea
                               value={editContent}
                               onChange={(e) => setEditContent(e.target.value)}

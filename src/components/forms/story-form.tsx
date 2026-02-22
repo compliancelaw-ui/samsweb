@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Loader2, BookOpen } from "lucide-react";
+import { ArrowRight, Loader2, BookOpen, Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { storySchema, type StoryFormData } from "@/lib/validators";
 
@@ -26,15 +26,27 @@ const RELATIONS = [
   { value: "other", label: "Other" },
 ];
 
+const CONVERSATION_PROMPTS = [
+  "The moment I realized my family wasn\u2019t the only one\u2026",
+  "What silence looked like in our house\u2026",
+  "If I could tell another family one thing, it would be\u2026",
+  "The hardest part no one talks about is\u2026",
+  "What I wish someone had told me\u2026",
+  "Recovery looks different for everyone \u2014 for us, it means\u2026",
+];
+
 export function StoryForm() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<StoryFormData>({
     resolver: zodResolver(storySchema),
@@ -51,10 +63,26 @@ export function StoryForm() {
     setSubmitError(null);
 
     try {
+      let photoUrl: string | undefined;
+
+      if (photoFile) {
+        const formData = new FormData();
+        formData.append("file", photoFile);
+        const uploadRes = await fetch("/api/upload", {
+          method: "POST",
+          body: formData,
+        });
+        if (!uploadRes.ok) {
+          throw new Error("Failed to upload photo. Please try again.");
+        }
+        const uploadData = await uploadRes.json();
+        photoUrl = uploadData.url;
+      }
+
       const response = await fetch("/api/stories", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, photo_url: photoUrl }),
       });
 
       if (!response.ok) {
@@ -213,6 +241,30 @@ export function StoryForm() {
           )}
         </div>
 
+        {/* Conversation Prompts */}
+        <div className="mb-4">
+          <p className="text-sm text-gray-500 mb-2">
+            Not sure where to start? Click a prompt to get going:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {CONVERSATION_PROMPTS.map((prompt) => (
+              <button
+                key={prompt}
+                type="button"
+                onClick={() => {
+                  const current = watch("content") || "";
+                  if (!current.trim()) {
+                    setValue("content", prompt + "\n\n", { shouldValidate: false });
+                  }
+                }}
+                className="text-xs px-3 py-1.5 rounded-full bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors border border-teal-200"
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div>
           <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
             Your Story <span className="text-red-500">*</span>
@@ -242,6 +294,59 @@ export function StoryForm() {
             </p>
           </div>
         </div>
+
+        {/* Photo Upload */}
+        <div className="mt-6">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Photo <span className="text-gray-400 font-normal">(optional)</span>
+          </label>
+          <p className="text-sm text-gray-500 mb-3">
+            Add a photo to accompany your story — yourself, your family, or
+            something meaningful to your journey. Photos are reviewed before publishing.
+          </p>
+          {photoPreview ? (
+            <div className="relative inline-block">
+              <img
+                src={photoPreview}
+                alt="Preview"
+                className="max-h-48 rounded-lg shadow-sm"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  setPhotoFile(null);
+                  setPhotoPreview(null);
+                }}
+                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm hover:bg-red-600"
+              >
+                &times;
+              </button>
+            </div>
+          ) : (
+            <label className="flex items-center gap-3 px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-teal hover:bg-teal-50/30 transition-colors">
+              <Camera className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-500">
+                Choose a photo (JPG, PNG, or WebP, max 5 MB)
+              </span>
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                className="hidden"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    if (file.size > 5 * 1024 * 1024) {
+                      setSubmitError("Photo must be under 5 MB.");
+                      return;
+                    }
+                    setPhotoFile(file);
+                    setPhotoPreview(URL.createObjectURL(file));
+                  }
+                }}
+              />
+            </label>
+          )}
+        </div>
       </div>
 
       {/* Consent */}
@@ -261,7 +366,10 @@ export function StoryForm() {
               className="mt-1 w-4 h-4 rounded border-gray-300 text-teal focus:ring-teal"
             />
             <span className="text-sm text-gray-700">
-              I consent to having my story published on samsoath.org <span className="text-red-500">*</span>
+              I grant Sam&apos;s OATH permission to publish my story on
+              samsoath.org and share it on social media to help raise awareness.
+              I understand my story will be reviewed before publication.{" "}
+              <span className="text-red-500">*</span>
             </span>
           </label>
           {errors.consent_publish && (
@@ -275,7 +383,8 @@ export function StoryForm() {
               className="mt-1 w-4 h-4 rounded border-gray-300 text-teal focus:ring-teal"
             />
             <span className="text-sm text-gray-700">
-              You may display my name with my story
+              I give permission to display my name alongside my published story.
+              If unchecked, your story will be attributed to &ldquo;A Friend.&rdquo;
             </span>
           </label>
         </div>

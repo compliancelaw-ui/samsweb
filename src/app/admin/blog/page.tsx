@@ -34,7 +34,7 @@ interface BlogPost {
   updated_at: string;
 }
 
-type ViewMode = "list" | "editor";
+type ViewMode = "list" | "editor" | "preview";
 
 export default function AdminBlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -48,6 +48,8 @@ export default function AdminBlogPage() {
   const [content, setContent] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [tagsInput, setTagsInput] = useState("");
+
+  const [showPreview, setShowPreview] = useState(false);
 
   // AI Assist state
   const [aiPrompt, setAiPrompt] = useState("");
@@ -257,6 +259,19 @@ export default function AdminBlogPage() {
           </button>
           <div className="flex items-center gap-3">
             <button
+              onClick={() => setShowPreview(!showPreview)}
+              disabled={!content.trim()}
+              className={cn(
+                "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors disabled:opacity-40",
+                showPreview
+                  ? "bg-primary-100 text-primary border border-primary-200"
+                  : "border border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+            >
+              <Eye className="w-4 h-4" />
+              {showPreview ? "Hide Preview" : "Preview"}
+            </button>
+            <button
               onClick={() => savePost("draft")}
               disabled={saving}
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50"
@@ -274,6 +289,41 @@ export default function AdminBlogPage() {
             </button>
           </div>
         </div>
+
+        {/* Preview Panel */}
+        {showPreview && content.trim() && (
+          <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+            <div className="px-6 py-3 bg-gray-50 border-b border-gray-200 flex items-center gap-2">
+              <Eye className="h-4 w-4 text-gray-400" />
+              <span className="text-sm font-medium text-gray-600">Post Preview</span>
+              <span className="text-xs text-gray-400 ml-auto">This is how the post will appear on the public site</span>
+            </div>
+            <div className="p-8 max-w-3xl mx-auto">
+              {parseTags().length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {parseTags().map((tag) => (
+                    <span key={tag} className="text-xs font-medium px-2.5 py-1 bg-primary-50 text-primary rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <h1 className="text-3xl font-bold text-gray-900 mb-3">
+                {title || "Untitled Post"}
+              </h1>
+              {excerpt && (
+                <p className="text-lg text-gray-500 mb-6 italic">{excerpt}</p>
+              )}
+              <div className="border-t border-gray-200 pt-6">
+                <div className="prose prose-lg max-w-none text-gray-600">
+                  {content.split("\n\n").map((paragraph, i) => (
+                    <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Editor Form */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
