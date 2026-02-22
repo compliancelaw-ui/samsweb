@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { ambassadorSchema } from '@/lib/validators'
-import { notifyAdmin } from '@/lib/email'
+import { notifyAdmin, sendAmbassadorConfirmation } from '@/lib/email'
 import { checkHoneypot } from '@/lib/honeypot'
 import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
 
@@ -57,6 +57,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Send confirmation email to applicant (fire-and-forget)
+    sendAmbassadorConfirmation(data.email, data.name)
 
     // Notify admin about new ambassador application
     notifyAdmin(

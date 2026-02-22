@@ -129,6 +129,76 @@ export async function sendNewsletterWelcome(to: string, name: string | null) {
 }
 
 // ---------------------------------------------------------------------------
+// Story Submission Confirmation
+// ---------------------------------------------------------------------------
+
+export async function sendStoryConfirmation(to: string, name: string) {
+  const resend = getResend();
+  if (!resend || !to) return;
+
+  try {
+    await resend.emails.send({
+      from: getFromAddress("share"),
+      to,
+      subject: "We received your story — Sam's OATH",
+      html: brandedEmailHtml(
+        `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you, ${name}.</h1>
+        <p>
+          Your story has been received. Sharing takes real courage, and we
+          don't take that lightly.
+        </p>
+        <p>
+          Our team will review your submission within a few days. Once approved,
+          it will be published on the site so others can find strength in your
+          words. We'll let you know when it's live.
+        </p>
+        <p>
+          In the meantime, you can read stories from others who have chosen to
+          break the silence.
+        </p>`,
+        "share",
+        { cta: { label: "Read Other Stories", href: "https://samsoath.org/stories" } }
+      ),
+    });
+  } catch (err) {
+    console.error("Failed to send story confirmation email:", err);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Ambassador Application Confirmation
+// ---------------------------------------------------------------------------
+
+export async function sendAmbassadorConfirmation(to: string, name: string) {
+  const resend = getResend();
+  if (!resend || !to) return;
+
+  try {
+    await resend.emails.send({
+      from: getFromAddress("hello"),
+      to,
+      subject: "Your ambassador application — Sam's OATH",
+      html: brandedEmailHtml(
+        `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you for applying, ${name}.</h1>
+        <p>
+          We received your application to become a Sam's OATH Ambassador.
+          We're grateful for your willingness to represent this movement in
+          your community.
+        </p>
+        <p>
+          Our team reviews every application personally. We'll be in touch
+          soon to discuss next steps.
+        </p>`,
+        "hello",
+        { cta: { label: "Explore Sam's OATH", href: "https://samsoath.org" } }
+      ),
+    });
+  } catch (err) {
+    console.error("Failed to send ambassador confirmation email:", err);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Admin Notification (new submission alert)
 // ---------------------------------------------------------------------------
 

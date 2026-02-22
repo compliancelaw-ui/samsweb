@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { storySchema } from '@/lib/validators'
-import { notifyAdmin } from '@/lib/email'
+import { notifyAdmin, sendStoryConfirmation } from '@/lib/email'
 import { shouldFlagForReview } from '@/lib/content-filter'
 import { checkHoneypot } from '@/lib/honeypot'
 import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
@@ -115,6 +115,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Send confirmation email to submitter (fire-and-forget)
+    sendStoryConfirmation(data.author_email, data.author_name)
 
     // Notify admin about new story submission (with flag info)
     const flagInfo = filterResult.flagged
