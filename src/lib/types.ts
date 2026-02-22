@@ -106,12 +106,28 @@ export interface Ambassador {
 
 export interface SiteContent {
   id: string;
+  page_slug: string;
+  section_key: string;
+  content_type: string;
+  content: string | null;
+  version: number;
+  previous_content: string | null;
+  ai_generated: boolean;
+  ai_prompt: string | null;
   created_at: string;
   updated_at: string;
-  page: string;
-  section: string;
-  content: Record<string, unknown>;
-  is_published: boolean;
+}
+
+export interface SiteContentHistory {
+  id: string;
+  content_id: string;
+  page_slug: string;
+  section_key: string;
+  content: string | null;
+  version: number;
+  ai_generated: boolean;
+  ai_prompt: string | null;
+  created_at: string;
 }
 
 export interface MediaItem {

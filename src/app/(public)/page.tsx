@@ -13,6 +13,7 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
 import { ActivityTicker } from "@/components/home/activity-ticker";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
   ssr: false,
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
     "Join a national movement breaking the silence around substance use and mental health. Take the OATH. Share your story. You are not alone.",
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const c = await getPageContent("home");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -44,22 +47,21 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white w-full">
           <div className="max-w-3xl">
             <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-              A National Movement
+              {c["hero.eyebrow"]}
             </p>
             <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-              What&apos;s Hidden
-              <br />
-              Doesn&apos;t Heal
+              {c["hero.title"].split("\n").map((line, i) => (
+                <span key={i}>
+                  {i > 0 && <br />}
+                  {line}
+                </span>
+              ))}
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
-              Someone in your life is facing substance use or mental health
-              challenges in silence. The OATH is a way forward — four
-              commitments that turn isolation into community.
+              {c["hero.subtitle"]}
             </p>
             <p className="text-lg text-white/70 mb-10 max-w-2xl">
-              Sixty seconds. A pin on the map. A person who no longer
-              carries this alone. Take Sam&apos;s OATH and join thousands
-              who chose openness over silence.
+              {c["hero.body"]}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -88,10 +90,9 @@ export default function HomePage() {
       {/* ===== THE OATH: THE SOLUTION ===== */}
       <SectionWrapper variant="light" id="what-is-oath">
         <div className="text-center mb-16">
-          <h2 className="mb-4">The OATH: A Framework for Moving Forward</h2>
+          <h2 className="mb-4">{c["oath.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Silence keeps people stuck. The OATH is how they move forward —
-            four commitments that replace shame with strength.
+            {c["oath.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -99,29 +100,25 @@ export default function HomePage() {
             {
               letter: "O",
               word: "Openness",
-              description:
-                "When we talk about substance use and mental health without shame, we give others permission to do the same.",
+              description: c["oath.o-description"],
               color: "bg-teal text-white",
             },
             {
               letter: "A",
               word: "Authenticity",
-              description:
-                "When families share what they've really been through, isolation loses its grip. Your real story is your most powerful tool.",
+              description: c["oath.a-description"],
               color: "bg-primary text-white",
             },
             {
               letter: "T",
               word: "Togetherness",
-              description:
-                "No family should face this alone. Together we are stronger than any stigma and louder than any silence.",
+              description: c["oath.t-description"],
               color: "bg-sage text-white",
             },
             {
               letter: "H",
               word: "Healing",
-              description:
-                "Healing starts when we stop hiding. We choose healing — for ourselves, our families, and our communities.",
+              description: c["oath.h-description"],
               color: "bg-orange text-white",
             },
           ].map((item) => (
@@ -155,10 +152,9 @@ export default function HomePage() {
       {/* ===== WHICH ONE ARE YOU? (CATEGORY ENTRY POINTS) ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Find Your Place in the Movement</h2>
+          <h2 className="mb-4">{c["categories.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Everyone who takes the OATH does it for their own reason.
-            What&apos;s yours?
+            {c["categories.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -166,8 +162,7 @@ export default function HomePage() {
             {
               icon: Heart,
               title: "Supporting a Loved One",
-              description:
-                "Someone in your life is struggling. The OATH is your commitment to share openly and find strength in community as others do the same.",
+              description: c["categories.supporting-description"],
               color: "border-teal",
               iconBg: "bg-teal-50",
               iconColor: "text-teal",
@@ -176,8 +171,7 @@ export default function HomePage() {
             {
               icon: Users,
               title: "Standing With You",
-              description:
-                "You believe no one should face this in silence. Your OATH says: I see you, I stand with you, and you are not alone.",
+              description: c["categories.standing-description"],
               color: "border-sage",
               iconBg: "bg-sage-50",
               iconColor: "text-sage",
@@ -186,8 +180,7 @@ export default function HomePage() {
             {
               icon: Sun,
               title: "Hope & Recovery",
-              description:
-                "You\u2019re walking your own path to recovery or finding hope. Your OATH lights the way for someone still in the dark.",
+              description: c["categories.recovery-description"],
               color: "border-orange",
               iconBg: "bg-orange-50",
               iconColor: "text-orange",
@@ -224,10 +217,9 @@ export default function HomePage() {
       {/* ===== THE MOVEMENT IS GROWING (COMBINED STATS + MAP) ===== */}
       <SectionWrapper variant="gradient">
         <div className="text-center text-white mb-12">
-          <h2 className="text-white mb-4">The Movement Is Growing</h2>
+          <h2 className="text-white mb-4">{c["movement.title"]}</h2>
           <p className="text-white/80 text-xl max-w-2xl mx-auto">
-            Every pin on the map is a person who chose community over isolation.
-            This is what happens when people stop hiding and start healing.
+            {c["movement.subtitle"]}
           </p>
         </div>
         <Suspense
@@ -282,20 +274,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-                Our Mission
+                {c["mission.eyebrow"]}
               </p>
-              <h2 className="mb-6">End the Stigma. Start the Conversation.</h2>
+              <h2 className="mb-6">{c["mission.title"]}</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-4">
-                Sam&apos;s OATH is a national movement to end the stigma around
-                substance use and mental health. We believe that when people
-                choose Openness, Authenticity, Togetherness, and Healing,
-                everything changes.
+                {c["mission.body-1"]}
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Named for Sam Sheeder, whose life inspired this movement — but
-                built by thousands of people across the country who believe that
-                what&apos;s hidden doesn&apos;t heal, and that no one should
-                carry this weight alone.
+                {c["mission.body-2"]}
               </p>
               <Link
                 href="/about"
@@ -322,13 +308,10 @@ export default function HomePage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-6">
-            From Silence to Strength. It Starts Here.
+            {c["cta.title"]}
           </h2>
           <p className="text-xl text-white/80 mb-10 leading-relaxed">
-            Substance use and mental health challenges thrive in silence.
-            Community breaks that silence. Take Sam&apos;s OATH, put your pin
-            on the map, and join a growing movement of people who believe
-            that no one should carry this weight alone.
+            {c["cta.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

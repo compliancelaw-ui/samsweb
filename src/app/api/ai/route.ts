@@ -31,6 +31,8 @@ export async function POST(request: NextRequest) {
       systemPrompt += "\n\nYou are writing blog content for the Sam's OATH website. Write in a conversational but authoritative tone. Separate paragraphs with blank lines. Include SEO-relevant keywords naturally. Target 500-1000 words unless asked otherwise.";
     } else if (type === "story-edit") {
       systemPrompt += "\n\nYou are editing a submitted story for publication. Preserve the original author's voice and meaning. Fix grammar, improve clarity, and ensure safe messaging guidelines are followed (no graphic details of substance use, no glorification). Keep edits minimal and respectful.";
+    } else if (type === "content-edit") {
+      systemPrompt += "\n\nYou are editing website page content for Sam's OATH. Keep the same meaning and message but improve the writing. Use warm, hopeful tone. Use 'substance use' (never 'addiction'). Return ONLY the rewritten text — no quotes, no explanation, no preamble. Match the approximate length of the original.";
     }
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {

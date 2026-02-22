@@ -18,6 +18,7 @@ import {
   ImageIcon,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "About Sam's OATH | A Movement to End Stigma",
@@ -25,7 +26,9 @@ export const metadata: Metadata = {
     "Sam's OATH is a national movement to break the silence around substance use and mental health. Learn about the OATH, the mission, and how you can be part of it.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const c = await getPageContent("about");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -33,16 +36,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            About Sam&apos;s OATH
+            {c["hero.eyebrow"]}
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            What&apos;s Hidden Doesn&apos;t Heal
+            {c["hero.title"]}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Millions of people face substance use and mental health challenges in
-            silence. Sam&apos;s OATH is a movement to change that — replacing
-            shame with openness, isolation with community, and silence with
-            healing.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -50,10 +50,9 @@ export default function AboutPage() {
       {/* ===== THE OATH ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
-          <h2 className="mb-4">The OATH</h2>
+          <h2 className="mb-4">{c["oath.title"]}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Four commitments that replace shame with openness, isolation with
-            community, and silence with healing. It takes sixty seconds.
+            {c["oath.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
@@ -63,32 +62,28 @@ export default function AboutPage() {
               letter: "O",
               word: "Openness",
               color: "bg-teal text-white",
-              description:
-                "We choose to talk about substance use and mental health without shame.",
+              description: c["oath.o-description"],
             },
             {
               icon: Fingerprint,
               letter: "A",
               word: "Authenticity",
               color: "bg-primary text-white",
-              description:
-                "We share what we've really been through — the truth, not the polished version.",
+              description: c["oath.a-description"],
             },
             {
               icon: Users,
               letter: "T",
               word: "Togetherness",
               color: "bg-sage text-white",
-              description:
-                "We stand with others who carry this weight. No one should face this alone.",
+              description: c["oath.t-description"],
             },
             {
               icon: HeartHandshake,
               letter: "H",
               word: "Healing",
               color: "bg-orange text-white",
-              description:
-                "We commit to healing — not perfection. It starts when we stop hiding.",
+              description: c["oath.h-description"],
             },
           ].map((item) => (
             <div
@@ -123,9 +118,9 @@ export default function AboutPage() {
       {/* ===== TOPIC CARDS ===== */}
       <SectionWrapper variant="light">
         <div className="text-center mb-10">
-          <h2 className="mb-4">Learn More</h2>
+          <h2 className="mb-4">{c["topics.title"]}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            The movement, the mission, and how it all started.
+            {c["topics.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -223,10 +218,9 @@ export default function AboutPage() {
       {/* ===== PEOPLE BEHIND THE MOVEMENT ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-10">
-          <h2 className="mb-4">People Behind the Movement</h2>
+          <h2 className="mb-4">{c["people.title"]}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Substance use and mental health challenges don&apos;t happen in
-            isolation. The people closest to you carry the weight too.
+            {c["people.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -237,23 +231,23 @@ export default function AboutPage() {
               image: "/images/photos/frank-headshot.jpg",
               icon: Heart,
               color: "bg-primary-50 text-primary border-primary/20",
-              quote: "I stayed silent for years. After losing Sam, I chose a different path.",
+              quote: c["people.frank-quote"],
             },
             {
               name: "Annie",
-              role: "Sam's Sister",
+              role: "Sam\u2019s Sister",
               image: "/images/photos/sam-annie-smile-1.jpg",
               icon: HandHeart,
               color: "bg-teal-50 text-teal border-teal/20",
-              quote: "Siblings see things others don't. Our voices deserve to be heard too.",
+              quote: c["people.annie-quote"],
             },
             {
               name: "Nancy",
-              role: "Frank's Wife",
+              role: "Frank\u2019s Wife",
               image: "/images/photos/frank-nancy-sunset.jpg",
               icon: HeartHandshake,
               color: "bg-orange-50 text-orange border-orange/20",
-              quote: "She chose this family and never wavered — through every challenge.",
+              quote: c["people.nancy-quote"],
             },
           ].map((member) => (
             <div
@@ -299,29 +293,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div>
               <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-                The Origin Story
+                {c["origin.eyebrow"]}
               </p>
-              <h2 className="mb-6">How It Started</h2>
+              <h2 className="mb-6">{c["origin.title"]}</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Sam Sheeder lit up every room he entered. Adventurous, brilliant,
-                  and deeply authentic — he had a gift for making anyone feel seen
-                  and heard. He loved music, the outdoors, and connecting with
-                  people from every walk of life.
-                </p>
-                <p>
-                  Sam also faced the hard and often lonely road of substance use
-                  disorder. He never shied away from the truth of his journey,
-                  even when the world&apos;s judgment made it harder to seek help.
-                  He taught everyone around him that it&apos;s ok not to be ok —
-                  and that openness and authenticity matter more than appearances.
-                </p>
-                <p>
-                  After losing Sam, his father Frank made a choice: instead of
-                  continuing the silence, he would tell the truth publicly. That
-                  act of openness became the spark for Sam&apos;s OATH — a movement
-                  built on the values Sam lived by.
-                </p>
+                <p>{c["origin.body-1"]}</p>
+                <p>{c["origin.body-2"]}</p>
+                <p>{c["origin.body-3"]}</p>
                 <p className="text-sm text-gray-400">
                   Samuel Martin Hagood Sheeder &middot; July 11, 1998 – September 28, 2025
                 </p>
@@ -349,9 +327,9 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
-                Proof That People Needed Permission to Talk
+                {c["spark.eyebrow"]}
               </p>
-              <h2 className="mb-4">The Spark</h2>
+              <h2 className="mb-4">{c["spark.title"]}</h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
@@ -366,26 +344,12 @@ export default function AboutPage() {
               </div>
               <div>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    One raw, honest LinkedIn post about substance use and mental
-                    health — and the silence that surrounds it — reached 345,000
-                    people. But what was remarkable wasn&apos;t the number. It was
-                    the response.
-                  </p>
-                  <p>
-                    Parents, siblings, partners, and friends who had been
-                    carrying the same weight in secret all said the same thing:
-                  </p>
+                  <p>{c["spark.body-1"]}</p>
+                  <p>{c["spark.body-2"]}</p>
                   <blockquote className="border-l-4 border-teal pl-6 my-4 italic text-lg text-gray-700">
-                    &ldquo;I thought I was the only one.&rdquo;
+                    &ldquo;{c["spark.quote"]}&rdquo;
                   </blockquote>
-                  <p>
-                    That moment proved the silence itself was the crisis. When one
-                    person spoke openly, thousands felt permission to do the same.
-                    That&apos;s the power of the OATH — not one person&apos;s
-                    courage, but what happens when people give each other
-                    permission to be honest.
-                  </p>
+                  <p>{c["spark.body-3"]}</p>
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="bg-primary-50 rounded-xl p-4 text-center">
@@ -414,37 +378,14 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-3">
                 <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
-                  The Founder
+                  {c["founder.eyebrow"]}
                 </p>
-                <h2 className="mb-6">Frank Sheeder</h2>
+                <h2 className="mb-6">{c["founder.title"]}</h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    Frank spent his career as a lawyer — the person others turned
-                    to when they faced their toughest challenges. He built a
-                    reputation for solving complex problems and guiding people
-                    through their hardest moments. Yet when it came to his own
-                    son&apos;s struggle with substance use, he couldn&apos;t fix
-                    it. And like so many others, he carried that weight in silence.
-                  </p>
-                  <p>
-                    After losing Sam, Frank made a choice that most people in his
-                    situation never make — he spoke publicly about what his family
-                    had been going through. Not to draw attention to himself, but
-                    because he believed that if his story resonated with even a
-                    few people, the silence was the real problem.
-                  </p>
-                  <p>
-                    It resonated with hundreds of thousands. Sam&apos;s OATH grew
-                    out of that moment — Frank&apos;s way of turning what he
-                    learned into a framework that helps anyone move from isolation
-                    to community. He wrote 15 original songs, built this
-                    movement, and now works to bring the OATH into workplaces,
-                    schools, and communities across the country.
-                  </p>
-                  <p>
-                    His message is simple: you don&apos;t have to do this alone,
-                    and you don&apos;t have to be silent anymore.
-                  </p>
+                  <p>{c["founder.body-1"]}</p>
+                  <p>{c["founder.body-2"]}</p>
+                  <p>{c["founder.body-3"]}</p>
+                  <p>{c["founder.body-4"]}</p>
                 </div>
               </div>
               <div className="lg:col-span-2">
@@ -468,9 +409,7 @@ export default function AboutPage() {
                       Founder &amp; Executive Director
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed text-center">
-                      Lawyer, advocate, songwriter, and father. Frank turned a
-                      personal loss into a national movement to end the silence
-                      around substance use and mental health.
+                      {c["founder.bio"]}
                     </p>
                   </div>
                 </div>
@@ -484,11 +423,9 @@ export default function AboutPage() {
       <section id="vision">
         <SectionWrapper variant="gradient">
           <div className="text-center text-white mb-12">
-            <h2 className="text-white mb-4">Where This Is Going</h2>
+            <h2 className="text-white mb-4">{c["vision.title"]}</h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Sam&apos;s OATH isn&apos;t a support group or a counseling service
-              — it&apos;s a national movement to change how people experience
-              substance use and mental health challenges.
+              {c["vision.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -496,20 +433,17 @@ export default function AboutPage() {
               {
                 icon: Globe,
                 title: "A Pin in Every Community",
-                description:
-                  "A national map where every pin proves another person chose community over isolation.",
+                description: c["vision.pin-description"],
               },
               {
                 icon: Briefcase,
                 title: "The OATH in Every Workplace",
-                description:
-                  "Programs that give employees permission to be honest about what they're going through.",
+                description: c["vision.workplace-description"],
               },
               {
                 icon: Sparkles,
                 title: "Compassion Instead of Judgment",
-                description:
-                  "A world where people facing substance use and mental health challenges are met with support instead of stigma.",
+                description: c["vision.compassion-description"],
               },
             ].map((item) => (
               <div
@@ -534,11 +468,9 @@ export default function AboutPage() {
       {/* ===== GET INVOLVED CTA ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-6">Ready to Be Part of This?</h2>
+          <h2 className="mb-6">{c["cta.title"]}</h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            Every person who takes the OATH makes it easier for the next one.
-            You don&apos;t need a platform or a title. You just need sixty
-            seconds and the willingness to stop carrying this alone.
+            {c["cta.body"]}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
