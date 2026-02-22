@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     const { data: submission, error } = await supabaseAdmin()
       .from('oath_submissions')
       .insert(insertData)
-      .select('id, display_name, pin_color, category, referral_code')
+      .select('id, display_name, pin_color, category')
       .single()
 
     if (error) {
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
         display_name: submission.display_name,
         pin_color: submission.pin_color,
         category: submission.category,
-        referral_code: submission.referral_code || submission.id?.toString().slice(0, 8),
+        referral_code: submission.id?.toString().slice(0, 8),
       },
       { status: 201 }
     )
