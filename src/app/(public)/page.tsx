@@ -318,56 +318,6 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== THE REAL STORY ===== */}
-      <SectionWrapper variant="light">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
-            <div className="lg:col-span-3">
-              <p className="text-teal font-medium mb-3 uppercase tracking-wide text-sm">
-                The Truth Behind the Movement
-              </p>
-              <h2 className="mb-6">We Had It All. And We Were Still Hiding.</h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Friends. Good careers. A beautiful family. It all looked
-                  wonderful on the outside — and a lot of it was. But we kept
-                  some aspects hidden.
-                </p>
-                <p>
-                  When people asked about Sam, we might say &ldquo;he&apos;s
-                  fine,&rdquo; or share a funny story (there were so many), or
-                  &ldquo;he&apos;s doing better,&rdquo; or &ldquo;he&apos;s
-                  good today.&rdquo; But beneath that feigned pleasantry lay
-                  daily challenges, fears, anxieties, heartbreak.
-                </p>
-                <p>
-                  We aren&apos;t supposed to handle these things alone —
-                  especially because there&apos;s no owner&apos;s manual. There&apos;s
-                  guilt, manipulation, denial, hope, lowering of standards,
-                  enabling. The full gamut of emotions that nobody prepares you
-                  for.
-                </p>
-                <p className="text-gray-900 font-medium">
-                  How much better off would families be if they had a safe
-                  community to discuss these things openly and authentically —
-                  so we could all heal together? That&apos;s what Sam&apos;s
-                  OATH is about.
-                </p>
-              </div>
-            </div>
-            <div className="lg:col-span-2">
-              <Image
-                src="/images/photos/frank-sam-boat.jpg"
-                alt="Frank and Sam on a boat"
-                width={4032}
-                height={3024}
-                className="w-full h-auto rounded-2xl shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
       {/* ===== FINAL CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
