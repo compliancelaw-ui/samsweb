@@ -10,9 +10,9 @@ import { MUSIC_TRACKS } from "@/lib/constants";
 import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
 
 export const metadata: Metadata = {
-  title: "Original Music for Healing | Songs About Addiction & Loss",
+  title: "Original Music for Healing | Songs About Substance Use, Grief & Hope",
   description:
-    "Listen to 15 original songs about addiction, grief, family love, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
+    "Listen to 15 original songs about substance use, grief, healing, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
 };
 
 export default function MusicPage() {
@@ -31,9 +31,9 @@ export default function MusicPage() {
                 Music That Heals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                15 original songs written for every family that knows the
-                weight of silence — and the relief of finally being heard.
-                Music has a way of saying what words alone can&apos;t.
+                15 original songs for anyone who knows the weight of silence —
+                and the relief of finally being heard. Music has a way of
+                saying what words alone can&apos;t.
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -149,22 +149,25 @@ export default function MusicPage() {
             </p>
             <h2 className="mb-6">Songs Born from the Journey</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              These aren&apos;t just songs — they&apos;re chapters of a
-              story that millions of families know by heart. Written by Frank
-              Sheeder after the loss of his son Sam, each track captures a
-              moment in the journey from silence to healing.
+              These songs were born from the journey that inspired Sam&apos;s
+              OATH — but they belong to everyone who&apos;s carried the
+              weight of substance use or mental health challenges in silence.
+              Each track captures a moment in the journey from silence to
+              healing.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Music was a thread that ran through Sam&apos;s life — whether he
-              was playing or listening, it brought him immense joy. These songs
-              honor that connection. From the raw grief of &ldquo;If Love Could
-              Have Saved You&rdquo; to the defiant hope of &ldquo;Joy
-              Anyway,&rdquo; they give voice to the emotions families often
-              struggle to express.
+              Grief isn&apos;t just about loss through death. You can grieve for
+              the person someone used to be, for lost experiences, for the
+              relationship you wish you had — even while they&apos;re still
+              here. These songs give voice to all of it. From the raw weight of
+              &ldquo;If Love Could Have Saved You&rdquo; to the defiant hope of
+              &ldquo;Joy Anyway,&rdquo; they speak to emotions that are often
+              too heavy for words.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              They&apos;re for the parent who can&apos;t sleep, the sibling who
-              feels forgotten, the friend who doesn&apos;t know what to say.
+              They&apos;re for the parent who can&apos;t sleep, the partner
+              who feels helpless, the sibling who feels forgotten, and the
+              friend who doesn&apos;t know what to say.
             </p>
           </div>
           <div className="space-y-6">
@@ -183,7 +186,7 @@ export default function MusicPage() {
                 {[
                   { title: "For the Grieving", tracks: "If Love Could Have Saved You, Hole in My Heart" },
                   { title: "For Hope", tracks: "Joy Anyway, Still Water, I Carry You Through" },
-                  { title: "For Families", tracks: "Knot on the Family Tree, In the Same Breath" },
+                  { title: "For Loved Ones", tracks: "Knot on the Family Tree, In the Same Breath" },
                   { title: "For the Journey", tracks: "Healing is a Slow Song, You Can't Outrun Grief" },
                 ].map((group) => (
                   <div key={group.title} className="bg-white rounded-lg p-3 shadow-sm">
@@ -204,7 +207,8 @@ export default function MusicPage() {
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
             Sam&apos;s OATH is on Apple Music, Spotify, YouTube, and dozens of
             streaming platforms. Follow us to hear new releases and help these
-            songs reach the families who need them most.
+            songs reach everyone carrying the weight of substance use or mental
+            health challenges in silence.
           </p>
           <div className="flex justify-center">
             <SocialFollowButtonsLabeled
@@ -226,7 +230,7 @@ export default function MusicPage() {
             &ldquo;These songs were born in the hardest season of my life. I
             wrote them because the words I needed to say were too heavy to just
             speak — they needed melody, they needed music, they needed a place
-            to land. If even one of these songs reaches a family in their darkest
+            to land. If even one of these songs reaches someone in their darkest
             hour and reminds them they&apos;re not alone, then every note was
             worth it.&rdquo;
           </blockquote>

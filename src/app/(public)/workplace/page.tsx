@@ -15,7 +15,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Workplace Programs | End Stigma at Work | Sam's OATH",
   description:
-    "Bring the Sam's OATH movement to your workplace. Programs to reduce mental health and addiction stigma, support employees, and build compassionate culture.",
+    "Bring the Sam's OATH movement to your workplace. Programs to reduce stigma around substance use and mental health, support employees, and build compassionate culture.",
 };
 
 export default function WorkplacePage() {
@@ -30,17 +30,18 @@ export default function WorkplacePage() {
                 The Workplace OATH
               </h1>
               <p className="text-xl text-white/80">
-                Give your team permission to be honest about what their
-                families are going through. The Workplace OATH creates a
-                culture where people get support instead of silence.
+                Give your team permission to be honest about what they&apos;re going
+                through — substance use or mental health challenges, or someone in their
+                life who is. The Workplace OATH creates a culture where people get
+                support instead of silence.
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image
-                src="/images/photos/frank-casual.jpg"
-                alt="Frank Sheeder"
-                width={2013}
-                height={2120}
+                src="/images/photos/frank-headshot.jpg"
+                alt="Frank Sheeder, Founder of Sam's OATH"
+                width={800}
+                height={800}
                 className="w-full max-w-xs h-auto rounded-2xl shadow-lg"
               />
             </div>

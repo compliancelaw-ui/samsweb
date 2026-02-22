@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "mental health",
     "family support",
     "break the silence",
-    "addiction",
-    "family perspective",
+    "substance use disorder",
+    "community support",
     "openness",
     "healing",
     "Frank Sheeder",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sam's OATH — What's Hidden Doesn't Heal",
     description:
-      "Join a growing movement of families breaking silence around substance use and mental health. The opposite of addiction is not sobriety — it's community.",
+      "Join a growing movement breaking the silence around substance use and mental health. What's hidden doesn't heal — but community does.",
     url: "https://samsoath.org",
     siteName: "Sam's OATH",
     locale: "en_US",

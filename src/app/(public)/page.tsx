@@ -30,9 +30,9 @@ const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
 });
 
 export const metadata: Metadata = {
-  title: "Sam's OATH | Break the Silence on Addiction & Mental Health",
+  title: "Sam's OATH | Break the Silence on Substance Use & Mental Health",
   description:
-    "Join a national movement of families breaking the silence around substance use and mental health. Take the OATH. Share your story. You are not alone.",
+    "Join a national movement breaking the silence around substance use and mental health. Take the OATH. Share your story. You are not alone.",
 };
 
 export default function HomePage() {

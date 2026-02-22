@@ -15,14 +15,14 @@ import {
   BookOpen,
   Briefcase,
   HandHeart,
-  Handshake,
+  ImageIcon,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "About Sam's OATH | A Family's Mission to End Stigma",
+  title: "About Sam's OATH | A Movement to End Stigma",
   description:
-    "Sam's OATH began as one family's pain and became a national movement. Learn how we're uniting families to break the silence around addiction and mental health.",
+    "Sam's OATH is a national movement to break the silence around substance use and mental health. Learn about the OATH, the mission, and how you can be part of it.",
 };
 
 export default function AboutPage() {
@@ -39,9 +39,10 @@ export default function AboutPage() {
             What&apos;s Hidden Doesn&apos;t Heal
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Millions of families face substance use and mental health challenges
-            in silence. Sam&apos;s OATH gives them a framework to move from isolation
-            to community — and from shame to strength.
+            Millions of people face substance use and mental health challenges in
+            silence. Sam&apos;s OATH is a movement to change that — replacing
+            shame with openness, isolation with community, and silence with
+            healing.
           </p>
         </div>
       </section>
@@ -71,7 +72,7 @@ export default function AboutPage() {
               word: "Authenticity",
               color: "bg-primary text-white",
               description:
-                "We share what our families have really been through — the truth, not the polished version.",
+                "We share what we've really been through — the truth, not the polished version.",
             },
             {
               icon: Users,
@@ -79,7 +80,7 @@ export default function AboutPage() {
               word: "Togetherness",
               color: "bg-sage text-white",
               description:
-                "We stand with others who carry this weight. No family should face this alone.",
+                "We stand with others who carry this weight. No one should face this alone.",
             },
             {
               icon: HeartHandshake,
@@ -122,35 +123,35 @@ export default function AboutPage() {
       {/* ===== TOPIC CARDS ===== */}
       <SectionWrapper variant="light">
         <div className="text-center mb-10">
-          <h2 className="mb-4">Explore the Story</h2>
+          <h2 className="mb-4">Learn More</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Choose a topic to learn more about the movement, the people behind it,
-            and what we&apos;re building.
+            The movement, the mission, and how it all started.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {/* Sam's Story */}
+          {/* The Origin Story */}
           <a
-            href="#sams-story"
+            href="#origin"
             className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
           >
             <div className="relative h-48 overflow-hidden">
               <Image
                 src="/images/photos/sam-portrait.jpg"
-                alt="Sam Sheeder"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="Sam Sheeder — the person who inspired the movement"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-lg">Sam&apos;s Story</p>
-                <p className="text-white/70 text-sm">The person behind the mission</p>
+                <p className="text-white font-semibold text-lg">The Origin Story</p>
+                <p className="text-white/70 text-sm">How one person inspired a movement</p>
               </div>
             </div>
           </a>
 
-          {/* The Viral Moment */}
+          {/* The Moment That Changed Everything */}
           <a
             href="#viral-moment"
             className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
@@ -158,29 +159,8 @@ export default function AboutPage() {
             <div className="relative h-48 overflow-hidden bg-primary-50 flex items-center justify-center">
               <div className="text-center px-6">
                 <Megaphone className="w-10 h-10 text-primary mx-auto mb-3" />
-                <p className="text-gray-900 font-semibold text-lg">The Post That Sparked a Movement</p>
-                <p className="text-gray-500 text-sm mt-1">345K+ people reached on LinkedIn</p>
-              </div>
-            </div>
-          </a>
-
-          {/* A Father-Son Bond */}
-          <a
-            href="#father-son"
-            className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
-          >
-            <div className="relative h-48 overflow-hidden">
-              <Image
-                src="/images/photos/frank-sam-boat.jpg"
-                alt="Frank and Sam Sheeder"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold text-lg">A Father-Son Bond</p>
-                <p className="text-white/70 text-sm">In Sam&apos;s own words</p>
+                <p className="text-gray-900 font-semibold text-lg">The Spark</p>
+                <p className="text-gray-500 text-sm mt-1">345K+ people reached, thousands said &ldquo;me too&rdquo;</p>
               </div>
             </div>
           </a>
@@ -213,36 +193,47 @@ export default function AboutPage() {
             </div>
           </a>
 
-          {/* Frank's Journey */}
+          {/* The Founder */}
           <a
-            href="#franks-journey"
+            href="#founder"
             className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
           >
             <div className="relative h-48 overflow-hidden bg-teal-50 flex items-center justify-center">
               <div className="text-center px-6">
                 <Heart className="w-10 h-10 text-teal mx-auto mb-3" />
-                <p className="text-gray-900 font-semibold text-lg">From Silence to Advocacy</p>
-                <p className="text-gray-500 text-sm mt-1">Frank&apos;s journey from grief to purpose</p>
+                <p className="text-gray-900 font-semibold text-lg">The Founder</p>
+                <p className="text-gray-500 text-sm mt-1">From silence to a national movement</p>
               </div>
             </div>
           </a>
+
+          {/* Community placeholder */}
+          <div className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="relative h-48 overflow-hidden bg-gray-50 flex items-center justify-center">
+              <div className="text-center px-6">
+                <ImageIcon className="w-10 h-10 text-gray-300 mx-auto mb-3" />
+                <p className="text-gray-900 font-semibold text-lg">Our Community</p>
+                <p className="text-gray-400 text-sm mt-1">Stories from people who&apos;ve taken the OATH</p>
+              </div>
+            </div>
+          </div>
         </div>
       </SectionWrapper>
 
-      {/* ===== FAMILY PERSPECTIVES CARDS ===== */}
+      {/* ===== PEOPLE BEHIND THE MOVEMENT ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-10">
-          <h2 className="mb-4">The Family Behind the Movement</h2>
+          <h2 className="mb-4">People Behind the Movement</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Substance use and mental health challenges don&apos;t happen to just one person in a family.
-            Each member carries their own story. Click to hear their perspective.
+            Substance use and mental health challenges don&apos;t happen in
+            isolation. The people closest to you carry the weight too.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {[
             {
               name: "Frank",
-              role: "A Father",
+              role: "Founder",
               image: "/images/photos/frank-headshot.jpg",
               icon: Heart,
               color: "bg-primary-50 text-primary border-primary/20",
@@ -250,49 +241,33 @@ export default function AboutPage() {
             },
             {
               name: "Annie",
-              role: "A Sister",
+              role: "Sam's Sister",
               image: "/images/photos/sam-annie-smile-1.jpg",
               icon: HandHeart,
               color: "bg-teal-50 text-teal border-teal/20",
-              quote: "Siblings see things parents don't. Our grief deserves to be heard too.",
-            },
-            {
-              name: "Joey",
-              role: "A Brother",
-              image: "/images/photos/sam-joey-reading.jpg",
-              icon: Users,
-              color: "bg-sage-50 text-sage border-sage/20",
-              quote: "The everyday stuff — reading, riding, boating — turns out to be everything.",
+              quote: "Siblings see things others don't. Our voices deserve to be heard too.",
             },
             {
               name: "Nancy",
-              role: "A Stepmother",
+              role: "Frank's Wife",
               image: "/images/photos/frank-nancy-sunset.jpg",
               icon: HeartHandshake,
               color: "bg-orange-50 text-orange border-orange/20",
-              quote: "She chose Sam. She chose this family. She never wavered.",
-            },
-            {
-              name: "Rony",
-              role: "Chosen Family",
-              image: "/images/photos/sam-rony.jpg",
-              icon: Handshake,
-              color: "bg-primary-50 text-primary border-primary/20",
-              quote: "The bonds we choose can be just as deep as the ones we're born into.",
+              quote: "She chose this family and never wavered — through every challenge.",
             },
           ].map((member) => (
-            <Link
+            <div
               key={member.name}
-              href="/families"
-              className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all text-center"
+              className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden text-center"
             >
-              <div className="relative h-40 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, 20vw"
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3">
@@ -305,91 +280,63 @@ export default function AboutPage() {
                   &ldquo;{member.quote}&rdquo;
                 </p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
-        <div className="text-center mt-8">
-          <Link
-            href="/families"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
-          >
-            Read their full stories
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+        {/* Placeholder for community voices */}
+        <div className="text-center mt-10 p-8 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 max-w-4xl mx-auto">
+          <ImageIcon className="w-8 h-8 text-gray-300 mx-auto mb-3" />
+          <p className="text-gray-500 text-sm">
+            More voices coming soon — people from all walks of life who&apos;ve
+            taken Sam&apos;s OATH and chosen openness over silence.
+          </p>
         </div>
       </SectionWrapper>
 
-      {/* ===== SAM'S STORY (detail) ===== */}
-      <section id="sams-story">
-        <SectionWrapper variant="white">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      {/* ===== THE ORIGIN STORY (brief Sam section) ===== */}
+      <section id="origin">
+        <SectionWrapper variant="light">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div>
               <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-                The Person Behind the Mission
+                The Origin Story
               </p>
-              <h2 className="mb-4">Sam&apos;s Story</h2>
-              <p className="text-sm text-gray-400 font-medium mb-6">
-                Samuel Martin Hagood Sheeder &middot; July 11, 1998 – September 28, 2025
-              </p>
+              <h2 className="mb-6">How It Started</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Sam&apos;s presence lit up every room. He was handsome, full of
-                  adventure and wanderlust, and his brilliance shone in both mind and
-                  spirit. He could strike up a conversation with anyone — from CEOs
-                  to those experiencing homelessness — making them feel seen and heard.
+                  Sam Sheeder lit up every room he entered. Adventurous, brilliant,
+                  and deeply authentic — he had a gift for making anyone feel seen
+                  and heard. He loved music, the outdoors, and connecting with
+                  people from every walk of life.
                 </p>
                 <p>
-                  Music was a thread that ran through Sam&apos;s life. He was
-                  fearless and had a need for speed — running, biking, skateboarding,
-                  boating, riding anything with a motor. He loved connecting with
-                  nature. He once drove from Florida to Georgia to help a friend and
-                  ended up in Annapolis months later — after turning left to
-                  California and back, camping the whole way.
+                  Sam also faced the hard and often lonely road of substance use
+                  disorder. He never shied away from the truth of his journey,
+                  even when the world&apos;s judgment made it harder to seek help.
+                  He taught everyone around him that it&apos;s ok not to be ok —
+                  and that openness and authenticity matter more than appearances.
                 </p>
                 <p>
-                  Sam faced the hard and often lonely road of substance use disorder
-                  with courage and honesty. He never shied away from the truth of his
-                  journey, even when the world&apos;s judgment made it harder to seek
-                  help or healing. He refused to let stigma define him.
+                  After losing Sam, his father Frank made a choice: instead of
+                  continuing the silence, he would tell the truth publicly. That
+                  act of openness became the spark for Sam&apos;s OATH — a movement
+                  built on the values Sam lived by.
                 </p>
-                <p>
-                  His family — his father Frank, his stepmother Nancy, his sister
-                  Annie, his brother Joey, and his chosen brother Rony — loved him
-                  unconditionally. But they never spoke openly about how Sam&apos;s
-                  struggles affected <em>them</em>. They carried that weight in
-                  silence. Sam reminded them daily that it&apos;s ok not to be ok.
+                <p className="text-sm text-gray-400">
+                  Samuel Martin Hagood Sheeder &middot; July 11, 1998 – September 28, 2025
                 </p>
               </div>
             </div>
-            <div className="space-y-4">
+            <div>
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/photos/sam-portrait.jpg"
                   alt="Sam Sheeder"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={750}
+                  className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/photos/family-hug.jpg"
-                    alt="Annie, Frank, and Sam Sheeder"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/photos/family-beach-sunset.jpg"
-                    alt="The Sheeder family at the beach"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -398,19 +345,19 @@ export default function AboutPage() {
 
       {/* ===== THE VIRAL MOMENT ===== */}
       <section id="viral-moment">
-        <SectionWrapper variant="light">
+        <SectionWrapper variant="white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
-                The Moment Everything Changed
+                Proof That People Needed Permission to Talk
               </p>
-              <h2 className="mb-4">The Post That Started a Movement</h2>
+              <h2 className="mb-4">The Spark</h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
                 <Image
                   src="/images/photos/frank-linkedin-post.png"
-                  alt="Frank Sheeder's viral LinkedIn post about Sam that reached 345,000 people"
+                  alt="A LinkedIn post about substance use and mental health that reached 345,000 people"
                   width={600}
                   height={900}
                   className="w-full h-auto"
@@ -420,23 +367,24 @@ export default function AboutPage() {
               <div>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    After losing Sam, Frank did something most parents in his situation
-                    never do — he told the truth publicly. In one raw, unfiltered
-                    LinkedIn post, he told the world what his family had been carrying
-                    in silence for years.
+                    One raw, honest LinkedIn post about substance use and mental
+                    health — and the silence that surrounds it — reached 345,000
+                    people. But what was remarkable wasn&apos;t the number. It was
+                    the response.
                   </p>
                   <p>
-                    The response was staggering. Parents, siblings, spouses, and
-                    friends who had been carrying the same weight in secret all said
-                    the same thing:
+                    Parents, siblings, partners, and friends who had been
+                    carrying the same weight in secret all said the same thing:
                   </p>
                   <blockquote className="border-l-4 border-teal pl-6 my-4 italic text-lg text-gray-700">
                     &ldquo;I thought I was the only one.&rdquo;
                   </blockquote>
                   <p>
-                    That single moment proved that the silence itself was the crisis.
-                    When one person spoke openly, thousands felt permission to do the
-                    same.
+                    That moment proved the silence itself was the crisis. When one
+                    person spoke openly, thousands felt permission to do the same.
+                    That&apos;s the power of the OATH — not one person&apos;s
+                    courage, but what happens when people give each other
+                    permission to be honest.
                   </p>
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-8">
@@ -459,101 +407,43 @@ export default function AboutPage() {
         </SectionWrapper>
       </section>
 
-      {/* ===== FATHER-SON BOND ===== */}
-      <section id="father-son">
-        <SectionWrapper variant="white">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
-                In Sam&apos;s Own Words
-              </p>
-              <h2 className="mb-4">A Son&apos;s Love for His Father</h2>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0 w-full">
-                <Image
-                  src="/images/photos/sam-instagram-post.png"
-                  alt="Sam Sheeder's Instagram post about his father Frank"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div>
-                <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    Sam posted this about his dad on Instagram — long before anyone
-                    knew the struggles that lay ahead. It shows the bond between
-                    father and son that would eventually become the foundation for
-                    this entire movement.
-                  </p>
-                  <p>
-                    Sam admired his father&apos;s leadership, his problem-solving
-                    instincts, and his relentless love for the family. Years later,
-                    those words carry a different weight. Frank committed himself to
-                    this movement — and Sam&apos;s belief in his father is a reminder
-                    that the people we love see the best in us, even when we can&apos;t
-                    see it ourselves.
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/photos/frank-sam-boat.jpg"
-                      alt="Frank and Sam Sheeder"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                    />
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/photos/frank-sam-concert.jpg"
-                      alt="Frank and Sam at a concert"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SectionWrapper>
-      </section>
-
-      {/* ===== FRANK'S JOURNEY ===== */}
-      <section id="franks-journey">
+      {/* ===== THE FOUNDER ===== */}
+      <section id="founder">
         <SectionWrapper variant="light">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-3">
                 <p className="text-primary font-medium mb-2 uppercase tracking-wide text-sm">
-                  Frank&apos;s Journey
+                  The Founder
                 </p>
-                <h2 className="mb-6">From Silence to Advocacy</h2>
+                <h2 className="mb-6">Frank Sheeder</h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    For years, Frank Sheeder did what most parents in his situation
-                    do — he stayed quiet. He loved Sam unconditionally, but he never
-                    spoke openly about how Sam&apos;s substance use and mental health
-                    struggles affected the family. The silence felt like protection.
-                    But silence doesn&apos;t protect. It isolates.
+                    Frank spent his career as a lawyer — the person others turned
+                    to when they faced their toughest challenges. He built a
+                    reputation for solving complex problems and guiding people
+                    through their hardest moments. Yet when it came to his own
+                    son&apos;s struggle with substance use, he couldn&apos;t fix
+                    it. And like so many others, he carried that weight in silence.
                   </p>
                   <p>
-                    After losing Sam, Frank channeled his grief into something
-                    powerful. He began writing and speaking openly — not just about
-                    Sam, but about the epidemic of silence that surrounds substance
-                    use and mental health in America. He wrote 15 original songs
-                    under the name &ldquo;Sam&apos;s OATH&rdquo; on Apple Music,
-                    each one carrying a piece of the journey from pain to purpose.
+                    After losing Sam, Frank made a choice that most people in his
+                    situation never make — he spoke publicly about what his family
+                    had been going through. Not to draw attention to himself, but
+                    because he believed that if his story resonated with even a
+                    few people, the silence was the real problem.
                   </p>
                   <p>
-                    Today, Frank works to bring the OATH into workplaces, schools,
-                    and communities across the country. His message is simple: you
-                    don&apos;t have to do this alone, and you don&apos;t have to be
-                    silent anymore.
+                    It resonated with hundreds of thousands. Sam&apos;s OATH grew
+                    out of that moment — Frank&apos;s way of turning what he
+                    learned into a framework that helps anyone move from isolation
+                    to community. He wrote 15 original songs, built this
+                    movement, and now works to bring the OATH into workplaces,
+                    schools, and communities across the country.
+                  </p>
+                  <p>
+                    His message is simple: you don&apos;t have to do this alone,
+                    and you don&apos;t have to be silent anymore.
                   </p>
                 </div>
               </div>
@@ -578,19 +468,10 @@ export default function AboutPage() {
                       Founder &amp; Executive Director
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed text-center">
-                      Father, advocate, songwriter, speaker. A seasoned business
-                      leader who turned grief into a national movement.
+                      Lawyer, advocate, songwriter, and father. Frank turned a
+                      personal loss into a national movement to end the silence
+                      around substance use and mental health.
                     </p>
-                  </div>
-                  <div className="rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/photos/family-couch.jpg"
-                      alt="Frank, Annie, and Sam sharing a laugh"
-                      width={800}
-                      height={600}
-                      className="w-full h-auto"
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                    />
                   </div>
                 </div>
               </div>
@@ -605,9 +486,9 @@ export default function AboutPage() {
           <div className="text-center text-white mb-12">
             <h2 className="text-white mb-4">Where This Is Going</h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Sam&apos;s OATH isn&apos;t a support group — it&apos;s a national
-              movement to change how families experience substance use and mental
-              health.
+              Sam&apos;s OATH isn&apos;t a support group or a counseling service
+              — it&apos;s a national movement to change how people experience
+              substance use and mental health challenges.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -616,19 +497,19 @@ export default function AboutPage() {
                 icon: Globe,
                 title: "A Pin in Every Community",
                 description:
-                  "A national map where every pin proves another family chose community over isolation.",
+                  "A national map where every pin proves another person chose community over isolation.",
               },
               {
                 icon: Briefcase,
                 title: "The OATH in Every Workplace",
                 description:
-                  "Safe Listener Training and corporate programs that give employees permission to be honest.",
+                  "Programs that give employees permission to be honest about what they're going through.",
               },
               {
                 icon: Sparkles,
                 title: "Compassion Instead of Judgment",
                 description:
-                  "A world where families affected by substance use and mental health challenges are met with support instead of stigma.",
+                  "A world where people facing substance use and mental health challenges are met with support instead of stigma.",
               },
             ].map((item) => (
               <div
@@ -655,7 +536,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="mb-6">Ready to Be Part of This?</h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            Every family that takes the OATH makes it easier for the next one.
+            Every person who takes the OATH makes it easier for the next one.
             You don&apos;t need a platform or a title. You just need sixty
             seconds and the willingness to stop carrying this alone.
           </p>
@@ -665,7 +546,7 @@ export default function AboutPage() {
               className="flex flex-col items-center gap-2 p-6 bg-teal-50 rounded-xl hover:shadow-md transition-shadow"
             >
               <Heart className="w-8 h-8 text-teal" />
-              <span className="font-semibold text-gray-900">Take the OATH</span>
+              <span className="font-semibold text-gray-900">Take Sam&apos;s OATH</span>
               <span className="text-sm text-gray-500">60 seconds</span>
             </Link>
             <Link
@@ -682,7 +563,7 @@ export default function AboutPage() {
             >
               <Users className="w-8 h-8 text-sage" />
               <span className="font-semibold text-gray-900">Get Involved</span>
-              <span className="text-sm text-gray-500">Join the team</span>
+              <span className="text-sm text-gray-500">Join the movement</span>
             </Link>
           </div>
         </div>
