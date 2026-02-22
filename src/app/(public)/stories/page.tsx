@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, PenLine } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Stories of Substance Use & Recovery | Sam's OATH",
@@ -58,7 +59,10 @@ function formatDate(dateStr: string): string {
 }
 
 export default async function StoriesPage() {
-  const stories = await getPublishedStories();
+  const [stories, c] = await Promise.all([
+    getPublishedStories(),
+    getPageContent("stories"),
+  ]);
 
   return (
     <>
@@ -67,15 +71,13 @@ export default async function StoriesPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            Community Voices
+            {c["hero.eyebrow"]}
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Stories of Courage
+            {c["hero.title"]}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Every story shared is a step away from silence and toward healing.
-            These are real voices from real families who chose openness over
-            shame.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -227,10 +229,9 @@ export default async function StoriesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="mb-4">Why Stories Matter</h2>
+              <h2 className="mb-4">{c["why.title"]}</h2>
               <p className="text-xl text-gray-600 mb-8">
-                Every story is an act of courage. Here&apos;s what happens
-                when families speak up.
+                {c["why.subtitle"]}
               </p>
               <div className="space-y-6">
                 {[
@@ -277,11 +278,9 @@ export default async function StoriesPage() {
       {/* ===== SHARE YOUR STORY CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-4">Your Story Could Change a Life</h2>
+          <h2 className="text-white mb-4">{c["cta.title"]}</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            You don&apos;t have to be a writer. You don&apos;t have to have it
-            all figured out. You just have to be willing to be honest. Your
-            story — in any form, at any length — matters.
+            {c["cta.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

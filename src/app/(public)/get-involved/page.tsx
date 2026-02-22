@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Get Involved | Join the Fight Against Stigma",
@@ -20,7 +21,9 @@ export const metadata: Metadata = {
     "There are many ways to join the Sam's OATH movement. Volunteer, share your story, or bring programs to your community. Every action matters.",
 };
 
-export default function GetInvolvedPage() {
+export default async function GetInvolvedPage() {
+  const c = await getPageContent("get-involved");
+
   return (
     <>
       {/* Hero — split with image */}
@@ -29,12 +32,10 @@ export default function GetInvolvedPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="text-white">
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                Every Action Grows the Movement
+                {c["hero.title"]}
               </h1>
               <p className="text-xl text-white/80">
-                The OATH works because people like you choose to show up.
-                Here are the ways your action helps people move from
-                silence to strength.
+                {c["hero.subtitle"]}
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -53,7 +54,7 @@ export default function GetInvolvedPage() {
       {/* Ways to Get Involved */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-12">Pick Your Path</h2>
+          <h2 className="text-center mb-12">{c["paths.title"]}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Take the OATH */}
             <Link
@@ -67,8 +68,7 @@ export default function GetInvolvedPage() {
                 Take Sam&apos;s OATH
               </h3>
               <p className="text-gray-600">
-                Sixty seconds. A pin on the map. A person who no longer carries
-                this alone. Then challenge three people you trust to do the same.
+                {c["oath-card.description"]}
               </p>
               <span className="inline-flex items-center gap-1 text-teal font-medium text-sm mt-4">
                 Get started <ArrowRight className="w-4 h-4" />
@@ -87,9 +87,7 @@ export default function GetInvolvedPage() {
                 Share Your Story
               </h3>
               <p className="text-gray-600">
-                When one person shares, another realizes they&apos;re not alone.
-                Your experience — supporting someone you love, honoring someone&apos;s
-                memory, or walking your own path — is someone else&apos;s lifeline.
+                {c["story-card.description"]}
               </p>
               <span className="inline-flex items-center gap-1 text-orange font-medium text-sm mt-4">
                 Share now <ArrowRight className="w-4 h-4" />
@@ -108,9 +106,7 @@ export default function GetInvolvedPage() {
                 Become an Ambassador
               </h3>
               <p className="text-gray-600">
-                Be the person who brings the OATH to your community. Ambassadors
-                connect people to the movement and make openness normal where
-                they live.
+                {c["ambassador-card.description"]}
               </p>
               <span className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4">
                 Learn more <ArrowRight className="w-4 h-4" />
@@ -126,9 +122,7 @@ export default function GetInvolvedPage() {
                 Spread the Word
               </h3>
               <p className="text-gray-600">
-                Every conversation about the OATH makes it easier for someone to
-                come forward. Share on social media, mention it at dinner, bring
-                it up at work. Your voice gives others permission.
+                {c["spread-card.description"]}
               </p>
               <div className="flex gap-3 mt-4">
                 <span className="text-sage-600 font-medium text-sm">
@@ -143,10 +137,9 @@ export default function GetInvolvedPage() {
       {/* For Organizations */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">For Organizations</h2>
+          <h2 className="text-center mb-4">{c["orgs.title"]}</h2>
           <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Bring the OATH into your workplace, school, or community
-            organization.
+            {c["orgs.subtitle"]}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
@@ -202,10 +195,9 @@ export default function GetInvolvedPage() {
             </div>
             <div>
               <Mail className="w-10 h-10 text-teal mb-4" />
-              <h2 className="mb-4">Stay in the Loop</h2>
+              <h2 className="mb-4">{c["newsletter.title"]}</h2>
               <p className="text-gray-600 text-lg mb-8">
-                Get movement updates, new stories, and ways to help —
-                delivered to your inbox. No spam, ever.
+                {c["newsletter.body"]}
               </p>
               <NewsletterForm />
             </div>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { CRISIS_RESOURCES } from "@/lib/constants";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Resources | Crisis Help, Guides & Family Support",
@@ -133,7 +134,9 @@ const BOOKS = [
   },
 ];
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const c = await getPageContent("resources");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -141,15 +144,13 @@ export default function ResourcesPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            Help &amp; Support
+            {c["hero.eyebrow"]}
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            You Are Not Alone
+            {c["hero.title"]}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Whether you&apos;re in crisis, supporting a loved one, or looking
-            for guidance — help is available right now. You don&apos;t have to
-            figure this out by yourself.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -158,12 +159,7 @@ export default function ResourcesPage() {
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg text-gray-600 leading-relaxed">
-            Sam&apos;s OATH is a movement, not a treatment program &mdash; but
-            we know that breaking the silence is only the first step. Below
-            you&apos;ll find crisis hotlines you can call right now, guides for
-            families navigating substance use and mental health, language tools
-            that reduce stigma, and organizations that offer direct support.
-            Everything here is free and chosen with families like yours in mind.
+            {c["leadin.body"]}
           </p>
         </div>
       </SectionWrapper>
@@ -230,10 +226,9 @@ export default function ResourcesPage() {
       {/* ===== IMMEDIATE CRISIS HELP — DIRECT CALL/TEXT BUTTONS ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-12">
-          <h2 className="mb-4">If You Need Help Right Now</h2>
+          <h2 className="mb-4">{c["crisis.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            These services are free, confidential, and available 24/7. Tap a
-            button to call or text directly from your phone.
+            {c["crisis.subtitle"]}
           </p>
         </div>
 
@@ -369,12 +364,9 @@ export default function ResourcesPage() {
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Megaphone className="w-8 h-8 text-primary" />
             </div>
-            <h2 className="mb-4">Language That Heals</h2>
+            <h2 className="mb-4">{c["language.title"]}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              The words we choose shape whether someone feels safe enough to ask
-              for help. Empathetic, person-first language reminds people that
-              they are more than a diagnosis &mdash; and that they deserve
-              compassion, not judgment.
+              {c["language.subtitle"]}
             </p>
           </div>
 
@@ -420,10 +412,9 @@ export default function ResourcesPage() {
       {/* ===== SUPPORT ORGANIZATIONS ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-4">
-          <h2 className="mb-4">Support Organizations</h2>
+          <h2 className="mb-4">{c["support.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            These national organizations offer ongoing support, education, and
-            community for individuals and families.
+            {c["support.subtitle"]}
           </p>
         </div>
 
@@ -487,10 +478,9 @@ export default function ResourcesPage() {
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Supporting a Loved One</h2>
+            <h2 className="mb-4">{c["families.title"]}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              If someone you love is struggling with substance use or mental
-              health, here are some ways to show up for them.
+              {c["families.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -554,9 +544,9 @@ export default function ResourcesPage() {
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Recommended Reading</h2>
+            <h2 className="mb-4">{c["reading.title"]}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Books and articles that have helped families on this journey.
+              {c["reading.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -586,12 +576,10 @@ export default function ResourcesPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <Heart className="w-10 h-10 mx-auto mb-4 text-white/80" />
           <h2 className="text-white mb-4">
-            You Don&apos;t Have to Do This Alone
+            {c["cta.title"]}
           </h2>
           <p className="text-white/80 text-xl mb-6 leading-relaxed">
-            If you or someone you know is struggling with substance use, mental
-            health challenges, or grief — please reach out. Help is available.
-            You are worthy of support, and your pain matters.
+            {c["cta.body"]}
           </p>
           <p className="text-white/90 text-lg font-semibold mb-10">
             Call or text 988 anytime, day or night.

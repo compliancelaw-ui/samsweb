@@ -11,6 +11,7 @@ import {
   Heart,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Workplace Programs | End Stigma at Work | Sam's OATH",
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
     "Bring the Sam's OATH movement to your workplace. Programs to reduce stigma around substance use and mental health, support employees, and build compassionate culture.",
 };
 
-export default function WorkplacePage() {
+export default async function WorkplacePage() {
+  const c = await getPageContent("workplace");
+
   return (
     <>
       {/* Hero — split with image */}
@@ -27,13 +30,10 @@ export default function WorkplacePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="text-white">
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                The Workplace OATH
+                {c["hero.title"]}
               </h1>
               <p className="text-xl text-white/80">
-                Give your team permission to be honest about what they&apos;re going
-                through — substance use or mental health challenges, or someone in their
-                life who is. The Workplace OATH creates a culture where people get
-                support instead of silence.
+                {c["hero.subtitle"]}
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -54,16 +54,12 @@ export default function WorkplacePage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             <div className="lg:col-span-3">
-              <h2 className="mb-4">Why This Matters at Work</h2>
+              <h2 className="mb-4">{c["problem.title"]}</h2>
               <p className="text-gray-600 text-lg mb-4">
-                One in five American adults has a family member struggling with
-                substance use. Most come to work every day and say nothing —
-                because they don&apos;t feel safe to.
+                {c["problem.body-1"]}
               </p>
               <p className="text-gray-600">
-                The Workplace OATH changes that. When organizations commit
-                publicly, employees feel safe acknowledging what they&apos;re
-                going through — and they get help sooner.
+                {c["problem.body-2"]}
               </p>
             </div>
             <div className="lg:col-span-2 grid grid-cols-2 gap-4">
@@ -89,10 +85,9 @@ export default function WorkplacePage() {
       {/* Programs */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">How It Works</h2>
+          <h2 className="text-center mb-4">{c["programs.title"]}</h2>
           <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Three programs designed to build a culture of openness — flexible
-            for organizations of any size.
+            {c["programs.subtitle"]}
           </p>
           <div className="space-y-8">
             {/* Safe Listener Training */}
@@ -106,10 +101,7 @@ export default function WorkplacePage() {
                     Safe Listener Training
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Train managers and team leads to recognize when a colleague
-                    may be struggling, respond with empathy instead of judgment,
-                    and connect them to resources. Not therapy — just human
-                    decency at work.
+                    {c["programs.listener-description"]}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {["2-hour workshop", "Virtual or in-person", "Up to 50 participants", "Certificate included"].map(
@@ -138,10 +130,7 @@ export default function WorkplacePage() {
                     Corporate OATH Program
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    A comprehensive program that includes leadership training,
-                    employee awareness sessions, resource guides, and ongoing
-                    support. Your organization takes the OATH as a whole — a
-                    public commitment to supporting families.
+                    {c["programs.corporate-description"]}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {["Multi-session program", "Custom to your org", "Leadership + all-hands", "Ongoing support"].map(
@@ -170,10 +159,7 @@ export default function WorkplacePage() {
                     Keynote Speaking
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Frank Sheeder shares his family&apos;s story and the OATH
-                    framework in a powerful, moving presentation. Ideal for
-                    all-hands meetings, wellness weeks, conferences, and
-                    leadership retreats.
+                    {c["programs.keynote-description"]}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {["30-60 minutes", "Q&A included", "Virtual or in-person", "Music optional"].map(
@@ -197,7 +183,7 @@ export default function WorkplacePage() {
       {/* Why It Works */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-10">What Changes</h2>
+          <h2 className="text-center mb-10">{c["changes.title"]}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -237,11 +223,10 @@ export default function WorkplacePage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-white mb-4">
-            Bring the OATH to Your Organization
+            {c["cta.title"]}
           </h2>
           <p className="text-white/80 text-lg mb-8">
-            Your employees are already carrying this. The question is whether
-            they carry it alone. Let&apos;s talk.
+            {c["cta.body"]}
           </p>
           <Link
             href="/contact"

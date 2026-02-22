@@ -12,6 +12,7 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ContactForm } from "@/components/forms/contact-form";
 import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Contact Sam's OATH | Reach Out to Our Team",
@@ -54,7 +55,9 @@ const CONTACT_TYPES = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const c = await getPageContent("contact");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -62,15 +65,13 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            Get In Touch
+            {c["hero.eyebrow"]}
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Let&apos;s Connect
+            {c["hero.title"]}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Whether you want to share your story, bring the OATH to your
-            workplace, or simply say hello — we&apos;re here and we&apos;re
-            listening.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -78,10 +79,9 @@ export default function ContactPage() {
       {/* ===== CONTACT TYPES ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-16">
-          <h2 className="mb-4">How Can We Help?</h2>
+          <h2 className="mb-4">{c["help.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Select a category below when you fill out the form, and we&apos;ll
-            route your message to the right person.
+            {c["help.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -112,17 +112,17 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
-              <h2 className="mb-4">Send Us a Message</h2>
+              <h2 className="mb-4">{c["form.title"]}</h2>
               <p className="text-gray-600 mb-8">
-                We typically respond within 1-2 business days. For urgent
-                matters or crisis support, please call 988 or visit our{" "}
+                {c["form.body"]}{" "}
+                Visit our{" "}
                 <Link
                   href="/resources"
                   className="text-primary font-semibold hover:text-primary-600 transition-colors"
                 >
                   Resources page
                 </Link>
-                .
+                {" "}for additional support.
               </p>
               <ContactForm />
             </div>
@@ -179,11 +179,9 @@ export default function ContactPage() {
       {/* ===== FOR MEDIA ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-4">For Media &amp; Press</h2>
+          <h2 className="mb-4">{c["media.title"]}</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            Sam&apos;s OATH is available for interviews, features, and media
-            collaborations. Frank Sheeder has spoken about the movement on
-            podcasts, at conferences, and in publications.
+            {c["media.body"]}
           </p>
           <Link
             href="/press"
@@ -198,11 +196,9 @@ export default function ContactPage() {
       {/* ===== CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-4">Join the Movement Today</h2>
+          <h2 className="text-white mb-4">{c["cta.title"]}</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            You don&apos;t need permission to be part of this. Take Sam&apos;s OATH,
-            share your story, or simply tell someone you know about Sam&apos;s
-            OATH. Every conversation is a step toward healing.
+            {c["cta.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

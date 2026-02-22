@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { OathForm } from "@/components/forms/oath-form";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Take the OATH | End Stigma Around Substance Use & Mental Health",
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
     "Take the OATH to break the silence around substance use and mental health. Join thousands pledging to speak openly and end the stigma.",
 };
 
-export default function TakeTheOathPage() {
+export default async function TakeTheOathPage() {
+  const c = await getPageContent("take-the-oath");
+
   return (
     <>
       {/* Hero — split layout with image */}
@@ -19,16 +22,13 @@ export default function TakeTheOathPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="text-white">
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                Take Sam&apos;s OATH
+                {c["hero.title"]}
               </h1>
               <p className="text-xl text-white/80 mb-6">
-                Sixty seconds. Four commitments. A pin on the map that says:
-                I am done carrying this alone.
+                {c["hero.subtitle"]}
               </p>
               <p className="text-white/60">
-                Join thousands across America who chose openness over silence.
-                Your OATH is a personal pledge — not a contract, not a
-                donation. Just a decision to stop hiding.
+                {c["hero.body"]}
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -48,11 +48,9 @@ export default function TakeTheOathPage() {
       <SectionWrapper variant="light">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="mb-4">What You&apos;re Committing To</h2>
+            <h2 className="mb-4">{c["oath.title"]}</h2>
             <p className="text-gray-600 text-lg">
-              The OATH is a personal pledge — not a contract, not a donation,
-              not a membership. It&apos;s a decision to replace silence with
-              community and shame with strength.
+              {c["oath.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -98,7 +96,7 @@ export default function TakeTheOathPage() {
               />
             </div>
             <div className="lg:col-span-3">
-              <h2 className="mb-8">What Happens Next</h2>
+              <h2 className="mb-8">{c["next.title"]}</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-teal-100 text-teal rounded-full flex items-center justify-center font-bold flex-shrink-0">
@@ -106,11 +104,10 @@ export default function TakeTheOathPage() {
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-gray-900 mb-1">
-                      You&apos;re on the Map
+                      {c["next.step1-title"]}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Your color-coded pin joins a growing national map of
-                      families who refused to stay silent.
+                      {c["next.step1-description"]}
                     </p>
                   </div>
                 </div>
@@ -120,11 +117,10 @@ export default function TakeTheOathPage() {
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-gray-900 mb-1">
-                      Challenge 3 People
+                      {c["next.step2-title"]}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Share your OATH with three people you trust. Every family
-                      that joins makes the next one easier.
+                      {c["next.step2-description"]}
                     </p>
                   </div>
                 </div>
@@ -134,11 +130,10 @@ export default function TakeTheOathPage() {
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-gray-900 mb-1">
-                      Keep Going
+                      {c["next.step3-title"]}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Share your story, become an ambassador, or bring the OATH
-                      to your workplace. The movement grows with you.
+                      {c["next.step3-description"]}
                     </p>
                   </div>
                 </div>

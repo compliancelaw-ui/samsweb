@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { ArrowRight, BookOpen, MapPin } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "OATH Map | See the Movement Growing Across America",
@@ -38,7 +39,9 @@ function MapSkeleton() {
   );
 }
 
-export default function MapPage() {
+export default async function MapPage() {
+  const c = await getPageContent("map");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -48,23 +51,19 @@ export default function MapPage() {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
             <MapPin className="w-4 h-4 text-teal-200" />
             <span className="text-sm font-medium text-white/90">
-              The Centerpiece of the Movement
+              {c["hero.badge"]}
             </span>
           </div>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            This Is What Happens When
-            <br />
-            Families Stop Hiding
+            {c["hero.title"].split("\n").map((line, i) => (
+              <span key={i}>{i > 0 && <br />}{line}</span>
+            ))}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-4">
-            Every pin on this map is someone who decided that silence was no
-            longer an option. A parent, a sibling, a friend, a person in
-            recovery &mdash; each one proving that no family has to face this
-            alone.
+            {c["hero.subtitle"]}
           </p>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            This map isn&apos;t data. It&apos;s proof. Proof that when one
-            person speaks up, others find the courage to do the same.
+            {c["hero.body"]}
           </p>
         </div>
       </section>
@@ -120,11 +119,9 @@ export default function MapPage() {
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="mb-4">Add Your Pin to the Map</h2>
+            <h2 className="mb-4">{c["add-pin.title"]}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Every pin makes the next family feel less alone. Whether you&apos;re
-              supporting someone you love, standing in solidarity, or walking your
-              own path to recovery &mdash; your pin matters.
+              {c["add-pin.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -176,13 +173,10 @@ export default function MapPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">
-            Silence Ends One Pin at a Time
+            {c["closing.title"]}
           </h2>
           <p className="text-xl text-white/80 mb-8 leading-relaxed">
-            Every community in America has families carrying this weight in
-            secret. The map proves they don&apos;t have to. When you add your
-            pin, you&apos;re not just joining a movement &mdash; you&apos;re
-            giving someone else permission to join too.
+            {c["closing.body"]}
           </p>
           <Link
             href="/take-the-oath"

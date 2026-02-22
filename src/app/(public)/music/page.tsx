@@ -8,6 +8,7 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { MUSIC_TRACKS } from "@/lib/constants";
 import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Original Music for Healing | Songs About Substance Use, Grief & Hope",
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
     "Listen to 15 original songs about substance use, grief, healing, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
 };
 
-export default function MusicPage() {
+export default async function MusicPage() {
+  const c = await getPageContent("music");
+
   return (
     <>
       {/* ===== HERO — split with Sam at piano ===== */}
@@ -28,12 +31,10 @@ export default function MusicPage() {
                 Original Music
               </p>
               <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Music That Heals
+                {c["hero.title"]}
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                15 original songs for anyone who knows the weight of silence —
-                and the relief of finally being heard. Music has a way of
-                saying what words alone can&apos;t.
+                {c["hero.subtitle"]}
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -56,10 +57,9 @@ export default function MusicPage() {
             <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
               Sam&apos;s Voice
             </p>
-            <h2 className="mb-4">&ldquo;I Am&rdquo; — Performed by Sam</h2>
+            <h2 className="mb-4">{c["sam-video.title"]}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Before everything else, there was Sam and his music. This is Sam
-              performing &ldquo;I Am&rdquo; — his voice, his heart, his words.
+              {c["sam-video.description"]}
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
@@ -83,8 +83,7 @@ export default function MusicPage() {
             </p>
             <h2 className="mb-4">What&apos;s Hidden Doesn&apos;t Heal</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The title track and anthem of the movement. A declaration that
-              silence is not safety, and healing begins when we speak.
+              {c["anthem.description"]}
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
@@ -147,27 +146,15 @@ export default function MusicPage() {
             <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
               The Story Behind the Songs
             </p>
-            <h2 className="mb-6">Songs Born from the Journey</h2>
+            <h2 className="mb-6">{c["story.title"]}</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              These songs were born from the journey that inspired Sam&apos;s
-              OATH — but they belong to everyone who&apos;s carried the
-              weight of substance use or mental health challenges in silence.
-              Each track captures a moment in the journey from silence to
-              healing.
+              {c["story.body-1"]}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Grief isn&apos;t just about loss through death. You can grieve for
-              the person someone used to be, for lost experiences, for the
-              relationship you wish you had — even while they&apos;re still
-              here. These songs give voice to all of it. From the raw weight of
-              &ldquo;If Love Could Have Saved You&rdquo; to the defiant hope of
-              &ldquo;Joy Anyway,&rdquo; they speak to emotions that are often
-              too heavy for words.
+              {c["story.body-2"]}
             </p>
             <p className="text-gray-600 leading-relaxed">
-              They&apos;re for the parent who can&apos;t sleep, the partner
-              who feels helpless, the sibling who feels forgotten, and the
-              friend who doesn&apos;t know what to say.
+              {c["story.body-3"]}
             </p>
           </div>
           <div className="space-y-6">
@@ -227,12 +214,7 @@ export default function MusicPage() {
           <Heart className="w-10 h-10 mx-auto mb-4 text-orange" />
           <h2 className="mb-4">A Note from Frank</h2>
           <blockquote className="text-lg text-gray-600 leading-relaxed italic mb-8">
-            &ldquo;These songs were born in the hardest season of my life. I
-            wrote them because the words I needed to say were too heavy to just
-            speak — they needed melody, they needed music, they needed a place
-            to land. If even one of these songs reaches someone in their darkest
-            hour and reminds them they&apos;re not alone, then every note was
-            worth it.&rdquo;
+            &ldquo;{c["frank-note"]}&rdquo;
           </blockquote>
           <p className="text-gray-500 mb-8">
             — Frank Sheeder, Founder of Sam&apos;s OATH

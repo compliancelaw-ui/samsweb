@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { AmbassadorForm } from "@/components/forms/ambassador-form";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Become an Ambassador | Lead the Movement Locally",
@@ -15,19 +16,19 @@ export const metadata: Metadata = {
     "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help people find their voice and end the stigma together.",
 };
 
-export default function AmbassadorsPage() {
+export default async function AmbassadorsPage() {
+  const c = await getPageContent("ambassadors");
+
   return (
     <>
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-teal py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            OATH Ambassadors
+            {c["hero.title"]}
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Ambassadors make the OATH real where they live. They&apos;re the
-            reason people in their community find out they don&apos;t have to
-            carry this alone.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -35,7 +36,7 @@ export default function AmbassadorsPage() {
       {/* What Ambassadors Do */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-10">What Ambassadors Do</h2>
+          <h2 className="text-center mb-10">{c["what.title"]}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -74,9 +75,9 @@ export default function AmbassadorsPage() {
       {/* Ambassador Profiles - Empty State */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">Our Ambassadors</h2>
+          <h2 className="text-center mb-4">{c["profiles.title"]}</h2>
           <p className="text-center text-gray-600 text-lg mb-10">
-            Meet the people leading the movement across the country.
+            {c["profiles.subtitle"]}
           </p>
           <div className="text-center py-12 bg-white rounded-xl border border-gray-200">
             <Award className="w-12 h-12 text-gray-300 mx-auto mb-4" />
@@ -93,7 +94,7 @@ export default function AmbassadorsPage() {
       {/* How to Become an Ambassador */}
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-10">How to Become an Ambassador</h2>
+          <h2 className="text-center mb-10">{c["how.title"]}</h2>
           <div className="space-y-6">
             {[
               {
@@ -134,7 +135,7 @@ export default function AmbassadorsPage() {
       {/* What We Look For */}
       <SectionWrapper variant="light">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-10">What We Look For</h2>
+          <h2 className="text-center mb-10">{c["look-for.title"]}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               "A personal connection to substance use or mental health",
@@ -158,10 +159,9 @@ export default function AmbassadorsPage() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <Award className="w-10 h-10 text-primary mx-auto mb-4" />
-            <h2 className="mb-4">Apply to Be an Ambassador</h2>
+            <h2 className="mb-4">{c["form.title"]}</h2>
             <p className="text-gray-600 text-lg">
-              Tell us about yourself and why you want to represent Sam&apos;s OATH
-              in your community.
+              {c["form.subtitle"]}
             </p>
           </div>
           <AmbassadorForm />

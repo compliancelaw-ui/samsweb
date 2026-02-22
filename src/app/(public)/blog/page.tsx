@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Newspaper, ArrowRight, Calendar, User } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Updates | Substance Use, Mental Health & Hope",
@@ -49,7 +50,10 @@ async function getBlogPosts(): Promise<{ posts: BlogPost[]; total: number }> {
 }
 
 export default async function BlogPage() {
-  const { posts, total } = await getBlogPosts();
+  const [{ posts, total }, c] = await Promise.all([
+    getBlogPosts(),
+    getPageContent("blog"),
+  ]);
 
   return (
     <>
@@ -57,11 +61,10 @@ export default async function BlogPage() {
       <section className="bg-gradient-to-br from-primary to-slate py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Updates &amp; News
+            {c["hero.title"]}
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Updates from the movement, reflections from Frank, and stories of
-            families finding their voice.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -72,12 +75,10 @@ export default async function BlogPage() {
           <div className="max-w-3xl mx-auto text-center py-12">
             <Newspaper className="w-16 h-16 text-gray-300 mx-auto mb-6" />
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              Coming Soon
+              {c["empty.title"]}
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              We&apos;re getting ready to share updates, reflections, and news
-              from the movement. Check back soon or subscribe to our newsletter
-              to be the first to know.
+              {c["empty.body"]}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

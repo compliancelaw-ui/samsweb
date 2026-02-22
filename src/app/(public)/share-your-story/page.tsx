@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { StoryForm } from "@/components/forms/story-form";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Share Your Story | Share Your Experience",
@@ -19,7 +20,9 @@ export const metadata: Metadata = {
     "Your story matters. Share your experience with substance use or mental health and help others know they are not alone. Every voice breaks the silence.",
 };
 
-export default function ShareYourStoryPage() {
+export default async function ShareYourStoryPage() {
+  const c = await getPageContent("share-your-story");
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -27,14 +30,13 @@ export default function ShareYourStoryPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            Your Voice Matters
+            {c["hero.eyebrow"]}
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Your Story Matters
+            {c["hero.title"]}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            You don&apos;t need perfect words. You just need the willingness to
-            be honest. Your story could be the reason someone else stops hiding.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -42,10 +44,9 @@ export default function ShareYourStoryPage() {
       {/* ===== WHY SHARE ===== */}
       <SectionWrapper variant="white">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Why Share Your Story?</h2>
+          <h2 className="mb-4">{c["why.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Every story shared chips away at the wall of silence that keeps
-            people isolated.
+            {c["why.subtitle"]}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -91,9 +92,9 @@ export default function ShareYourStoryPage() {
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Your Privacy. Your Terms.</h2>
+            <h2 className="mb-4">{c["privacy.title"]}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We treat every story with care. Here&apos;s how we protect you.
+              {c["privacy.subtitle"]}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -215,10 +216,9 @@ export default function ShareYourStoryPage() {
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="mb-4">Tell Us Your Story</h2>
+            <h2 className="mb-4">{c["form.title"]}</h2>
             <p className="text-gray-600 text-lg">
-              Whether it&apos;s a paragraph or a page, whether you&apos;re
-              sharing about yourself or someone you love — we&apos;re listening.
+              {c["form.body"]}
             </p>
           </div>
           <StoryForm />
@@ -228,11 +228,9 @@ export default function ShareYourStoryPage() {
       {/* ===== CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-4">Not Ready to Share Yet?</h2>
+          <h2 className="text-white mb-4">{c["cta.title"]}</h2>
           <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            That&apos;s okay. There&apos;s no pressure and no timeline. You can
-            start by taking the OATH — a 60-second commitment to break the
-            silence. When you&apos;re ready to share more, we&apos;ll be here.
+            {c["cta.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

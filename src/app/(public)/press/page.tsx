@@ -14,6 +14,7 @@ import {
   Heart,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
   title: "Press & Media | Sam's OATH in the News",
@@ -21,19 +22,19 @@ export const metadata: Metadata = {
     "Media coverage, press kits, and interview requests for Sam's OATH — a national movement breaking the silence around substance use and mental health.",
 };
 
-export default function PressPage() {
+export default async function PressPage() {
+  const c = await getPageContent("press");
+
   return (
     <>
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate to-primary py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Press &amp; Media
+            {c["hero.title"]}
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Resources for journalists, producers, and media professionals
-            covering the movement to break silence around substance use and
-            mental health.
+            {c["hero.subtitle"]}
           </p>
         </div>
       </section>
@@ -123,25 +124,13 @@ export default function PressPage() {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
             <div className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed">
-                Sam Sheeder (1998&ndash;2025) lit up every room he walked into. He was
-                handsome, adventurous, and could strike up a conversation with anyone
-                &mdash; from CEOs to those experiencing homelessness &mdash; making them
-                feel seen and heard. He faced the hard road of substance use disorder
-                with extraordinary courage and honesty, refusing to let stigma define him.
+                {c["origin.body-1"]}
               </p>
               <p className="text-gray-600 leading-relaxed mt-4">
-                After Sam passed away on September 28, 2025, his father Frank made a
-                decision that changed everything. Instead of retreating into silence,
-                Frank wrote openly on LinkedIn about Sam&apos;s life, his struggles, and
-                his love. That post reached <strong>345,000 people</strong>. Nearly{" "}
-                <strong>2,000 reactions</strong>. <strong>484 comments</strong>. All
-                saying the same thing: &ldquo;I thought I was the only one.&rdquo;
+                {c["origin.body-2"]}
               </p>
               <p className="text-gray-600 leading-relaxed mt-4">
-                Frank realized the silence itself was the crisis. Sam&apos;s OATH was born
-                from that revelation &mdash; a movement built on the belief that what&apos;s
-                hidden doesn&apos;t heal, and that healing begins when silence ends, and that community
-                is where recovery starts.
+                {c["origin.body-3"]}
               </p>
             </div>
           </div>
@@ -173,23 +162,13 @@ export default function PressPage() {
               </p>
               <div className="text-gray-600 space-y-3 text-sm leading-relaxed">
                 <p>
-                  Frank Sheeder is a father, advocate, songwriter, and speaker. After
-                  losing his son Sam to substance use disorder in 2025, he channeled his
-                  grief into a national movement to break the silence that surrounds
-                  families affected by substance use and mental health challenges.
+                  {c["frank-bio.body-1"]}
                 </p>
                 <p>
-                  A seasoned business leader with decades of experience building
-                  organizations and leading teams, Frank brings the same strategic
-                  thinking and relentless energy to Sam&apos;s OATH. He is the songwriter
-                  behind all 15 original tracks on the Sam&apos;s OATH album, available
-                  on Apple Music, Spotify, YouTube, and all major streaming platforms.
+                  {c["frank-bio.body-2"]}
                 </p>
                 <p>
-                  Frank&apos;s LinkedIn post about Sam reached over 345,000 people and
-                  became one of the platform&apos;s most-engaged personal posts on
-                  substance use and mental health. He speaks to organizations, schools,
-                  and communities about breaking silence in the workplace and at home.
+                  {c["frank-bio.body-3"]}
                 </p>
                 <p className="text-xs text-gray-400 mt-4">
                   Available for interviews, keynotes, panels, and podcast appearances.
@@ -341,8 +320,7 @@ export default function PressPage() {
           <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
           <h2 className="mb-4">Media Contact</h2>
           <p className="text-gray-600 text-lg mb-6">
-            For interviews, press inquiries, or to request additional materials,
-            please reach out.
+            {c["media-contact.body"]}
           </p>
           <p className="text-gray-900 font-medium mb-2">Frank Sheeder</p>
           <p className="text-gray-600 mb-1">
