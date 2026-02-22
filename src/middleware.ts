@@ -11,8 +11,22 @@ const PUBLIC_PATHS = [
   "/sitemap.xml",
 ];
 
+// Public API endpoints that accept form submissions (geo-blocked for non-US)
+const FORM_API_PATHS = [
+  "/api/oath",
+  "/api/stories",
+  "/api/contact",
+  "/api/newsletter",
+  "/api/ambassador",
+  "/api/upload",
+];
+
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname.startsWith(p));
+}
+
+function isFormApiPath(pathname: string): boolean {
+  return FORM_API_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"));
 }
 
 export function middleware(request: NextRequest) {
@@ -21,6 +35,22 @@ export function middleware(request: NextRequest) {
   // Always allow public paths (login pages, static assets, auth endpoints)
   if (isPublicPath(pathname)) {
     return NextResponse.next();
+  }
+
+  // Geo-block: only allow POST to form endpoints from US
+  // GET requests (page views, API reads) are allowed from anywhere for SEO
+  if (request.method === "POST" && isFormApiPath(pathname)) {
+    const country =
+      request.geo?.country ||
+      request.headers.get("x-vercel-ip-country");
+
+    // Allow if no country data (local dev) or if US
+    if (country && country !== "US") {
+      return NextResponse.json(
+        { error: "This service is currently available in the United States only." },
+        { status: 403 }
+      );
+    }
   }
 
   // Check site-wide preview access

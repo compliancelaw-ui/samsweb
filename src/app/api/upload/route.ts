@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
+import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
@@ -8,6 +9,16 @@ const MAX_SIZE = 5 * 1024 * 1024 // 5 MB
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const rateCheck = checkRateLimit(ip, 'upload', RATE_LIMITS.upload.max, RATE_LIMITS.upload.window)
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: 'Too many uploads. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(rateCheck.resetIn) } }
+      )
+    }
+
     const formData = await request.formData()
     const file = formData.get('file') as File | null
 

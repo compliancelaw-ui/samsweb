@@ -4,10 +4,26 @@ import { oathSchema } from '@/lib/validators'
 import { geocode } from '@/lib/geocode'
 import { OATH_CATEGORIES } from '@/lib/constants'
 import { sendOathConfirmation, notifyAdmin } from '@/lib/email'
+import { checkHoneypot } from '@/lib/honeypot'
+import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+
+    // Anti-spam: honeypot check
+    const honeypotResponse = checkHoneypot(body)
+    if (honeypotResponse) return honeypotResponse
+
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const rateCheck = checkRateLimit(ip, 'oath', RATE_LIMITS.oath.max, RATE_LIMITS.oath.window)
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: 'Too many submissions. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(rateCheck.resetIn) } }
+      )
+    }
 
     // Validate request body
     const result = oathSchema.safeParse(body)

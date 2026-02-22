@@ -3,6 +3,8 @@ import { supabaseAdmin } from '@/lib/supabase/admin'
 import { storySchema } from '@/lib/validators'
 import { notifyAdmin } from '@/lib/email'
 import { shouldFlagForReview } from '@/lib/content-filter'
+import { checkHoneypot } from '@/lib/honeypot'
+import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
@@ -64,6 +66,20 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+
+    // Anti-spam: honeypot check
+    const honeypotResponse = checkHoneypot(body)
+    if (honeypotResponse) return honeypotResponse
+
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const rateCheck = checkRateLimit(ip, 'story', RATE_LIMITS.story.max, RATE_LIMITS.story.window)
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: 'Too many submissions. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(rateCheck.resetIn) } }
+      )
+    }
 
     // Validate request body
     const result = storySchema.safeParse(body)

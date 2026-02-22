@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, Star, Link as LinkIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ambassadorSchema, type AmbassadorFormData } from "@/lib/validators";
+import { HoneypotField } from "@/components/ui/honeypot-field";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -91,6 +92,7 @@ export function AmbassadorForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <HoneypotField />
       {/* About You */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">

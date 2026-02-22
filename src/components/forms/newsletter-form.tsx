@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, CheckCircle2, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { newsletterSchema, type NewsletterFormData } from "@/lib/validators";
+import { HoneypotField } from "@/components/ui/honeypot-field";
 
 const INTERESTS = [
   { value: "movement_updates", label: "Movement updates" },
@@ -72,6 +73,7 @@ export function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <HoneypotField />
       {/* Inline fields: email + name + button */}
       <div>
         <div className="flex flex-col sm:flex-row gap-3">

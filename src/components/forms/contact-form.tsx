@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, Mail, Mic, Building2, Handshake } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { contactSchema, type ContactFormData } from "@/lib/validators";
+import { HoneypotField } from "@/components/ui/honeypot-field";
 
 const MESSAGE_TYPES = [
   { value: "general" as const, label: "General", icon: Mail },
@@ -65,6 +66,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <HoneypotField />
       {/* Message Type */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">

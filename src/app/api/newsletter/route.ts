@@ -2,10 +2,26 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 import { newsletterSchema } from '@/lib/validators'
 import { sendNewsletterWelcome } from '@/lib/email'
+import { checkHoneypot } from '@/lib/honeypot'
+import { checkRateLimit, RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+
+    // Anti-spam: honeypot check
+    const honeypotResponse = checkHoneypot(body)
+    if (honeypotResponse) return honeypotResponse
+
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const rateCheck = checkRateLimit(ip, 'newsletter', RATE_LIMITS.newsletter.max, RATE_LIMITS.newsletter.window)
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(rateCheck.resetIn) } }
+      )
+    }
 
     // Validate request body
     const result = newsletterSchema.safeParse(body)

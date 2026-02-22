@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, BookOpen, Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { storySchema, type StoryFormData } from "@/lib/validators";
+import { HoneypotField } from "@/components/ui/honeypot-field";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -102,6 +103,7 @@ export function StoryForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <HoneypotField />
       {/* About You */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">

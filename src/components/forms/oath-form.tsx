@@ -7,6 +7,7 @@ import { z } from "zod";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Loader2, Heart, Users, Shield, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { HoneypotField } from "@/components/ui/honeypot-field";
 
 const oathSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
@@ -124,6 +125,7 @@ export function OathForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <HoneypotField />
       {/* STEP 1: Category Selection */}
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
