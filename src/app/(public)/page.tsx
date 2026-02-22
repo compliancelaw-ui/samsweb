@@ -39,7 +39,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white w-full">
           <div className="max-w-3xl">

@@ -311,7 +311,7 @@ export function StoryForm() {
               <img
                 src={photoPreview}
                 alt="Preview"
-                className="max-h-48 rounded-lg shadow-sm"
+                className="max-h-48 max-w-full rounded-lg shadow-sm"
               />
               <button
                 type="button"

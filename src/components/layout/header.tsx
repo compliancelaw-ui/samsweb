@@ -94,7 +94,7 @@ export function Header() {
       <div
         className={cn(
           "overflow-hidden transition-all duration-300 ease-in-out md:hidden",
-          mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="border-t border-gray-100 bg-white px-4 pb-6 pt-4">

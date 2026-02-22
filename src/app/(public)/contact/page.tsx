@@ -109,7 +109,7 @@ export default function ContactPage() {
       {/* ===== CONTACT FORM + SIDEBAR ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               <h2 className="mb-4">Send Us a Message</h2>

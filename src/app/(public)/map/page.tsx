@@ -89,7 +89,7 @@ export default function MapPage() {
 
       {/* ===== THE MAP ===== */}
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px]">
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg h-[280px] sm:h-[400px] md:h-[550px] lg:h-[600px]">
           <OathMap />
         </div>
         {/* Legend */}
