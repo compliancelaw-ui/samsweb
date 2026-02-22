@@ -22,6 +22,7 @@ import {
   Trophy,
   Share2,
   HelpCircle,
+  Wrench,
   Sparkles,
   Loader2,
   Send,
@@ -40,6 +41,7 @@ const navItems = [
   { label: "Email", href: "/admin/email", icon: Mail },
   { label: "Content", href: "/admin/content", icon: Layers },
   { label: "Media", href: "/admin/media", icon: Image },
+  { label: "Maintenance", href: "/admin/maintenance", icon: Wrench },
   { label: "Settings", href: "/admin/settings", icon: Settings },
   { label: "Manual", href: "/admin/manual", icon: HelpCircle },
 ];
@@ -153,6 +155,16 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "Alt text is important for accessibility — add it to every image.",
     ],
     manualSection: "media",
+  },
+  "/admin/maintenance": {
+    title: "Maintenance",
+    tips: [
+      "Dependencies tab checks npm for newer package versions.",
+      "Green = up to date, amber = minor update, red = major update.",
+      "Major updates may have breaking changes — update with care.",
+      "Security tab links to GitHub Dependabot and Vercel security settings.",
+    ],
+    manualSection: "maintenance",
   },
   "/admin/settings": {
     title: "Settings",
