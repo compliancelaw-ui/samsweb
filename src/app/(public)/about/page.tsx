@@ -234,7 +234,7 @@ export default function AboutPage() {
         <div className="text-center mb-10">
           <h2 className="mb-4">The Family Behind the Movement</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Substance use didn&apos;t happen to just one person in this family.
+            Substance use and mental health challenges don&apos;t happen to just one person in a family.
             Each member carries their own story. Click to hear their perspective.
           </p>
         </div>
@@ -628,7 +628,7 @@ export default function AboutPage() {
                 icon: Sparkles,
                 title: "Compassion Instead of Judgment",
                 description:
-                  "A world where families affected by substance use are met with support instead of stigma.",
+                  "A world where families affected by substance use and mental health challenges are met with support instead of stigma.",
               },
             ].map((item) => (
               <div

@@ -52,8 +52,8 @@ export default function HomePage() {
               Doesn&apos;t Heal
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
-              Millions of families face substance use and mental health
-              challenges in silence. The OATH gives them a way out — four
+              Someone in your life is facing substance use or mental health
+              challenges in silence. The OATH is a way forward — four
               commitments that turn isolation into community.
             </p>
             <p className="text-lg text-white/70 mb-10 max-w-2xl">
@@ -167,7 +167,7 @@ export default function HomePage() {
               icon: Heart,
               title: "Supporting a Loved One",
               description:
-                "Someone you care about is struggling. The OATH connects you with families who understand \u2014 so you never have to navigate this alone.",
+                "Someone in your life is struggling. The OATH connects you with people who understand \u2014 so you never have to navigate this alone.",
               color: "border-teal",
               iconBg: "bg-teal-50",
               iconColor: "text-teal",
@@ -276,32 +276,32 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== ORIGIN — SPLIT LAYOUT ===== */}
+      {/* ===== MISSION — SPLIT LAYOUT ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-                The Story Behind the Movement
+                Our Mission
               </p>
-              <h2 className="mb-6">Why &ldquo;Sam&apos;s&rdquo; OATH?</h2>
+              <h2 className="mb-6">End the Stigma. Start the Conversation.</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-4">
-                Sam&apos;s OATH is named after Sam Sheeder (1998–2025), who
-                faced substance use disorder with courage and honesty. After
-                losing Sam, his father Frank wrote openly about what their
-                family had been through — and the response was overwhelming.
+                Sam&apos;s OATH is a national movement to end the stigma around
+                substance use and mental health. We believe that when people
+                choose Openness, Authenticity, Togetherness, and Healing,
+                everything changes.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Hundreds of families said the same thing: &ldquo;I thought I
-                was the only one.&rdquo; That moment became the foundation of
-                this movement — built on the belief that no family should carry
-                this weight alone.
+                Named for Sam Sheeder, whose life inspired this movement — but
+                built by thousands of people across the country who believe that
+                what&apos;s hidden doesn&apos;t heal, and that no family should
+                carry this weight alone.
               </p>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
               >
-                Read the full story
+                Learn more about the movement
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -325,9 +325,10 @@ export default function HomePage() {
             From Silence to Strength. It Starts Here.
           </h2>
           <p className="text-xl text-white/80 mb-10 leading-relaxed">
-            The opposite of addiction is not sobriety — it&apos;s community.
-            Take Sam&apos;s OATH, put your pin on the map, and join a
-            growing movement of families who refuse to carry this weight alone.
+            Substance use and mental health challenges thrive in silence.
+            Community breaks that silence. Take Sam&apos;s OATH, put your pin
+            on the map, and join a growing movement of people who believe
+            that no one should carry this weight alone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
