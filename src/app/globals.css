@@ -77,3 +77,30 @@
     text-wrap: balance;
   }
 }
+
+/* ─── Print styles ─── */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Each major section starts on a fresh page */
+  section,
+  .section-wrapper-print-break {
+    break-inside: avoid;
+    break-before: page;
+  }
+
+  /* Don't break before the very first section (hero) */
+  section:first-child {
+    break-before: auto;
+  }
+
+  /* Hide interactive elements that don't make sense in print */
+  nav,
+  footer,
+  .activity-ticker {
+    display: none !important;
+  }
+}

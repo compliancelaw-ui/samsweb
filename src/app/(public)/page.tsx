@@ -10,6 +10,10 @@ import {
   ChevronRight,
   Sun,
   Quote,
+  MessageCircle,
+  Shield,
+  Sparkles,
+  PenLine,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
@@ -290,7 +294,68 @@ export default async function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== 7. FEATURED STORIES (light bg, hidden if none) ===== */}
+      {/* ===== 7. STORIES PROMOTION — Why stories matter (dark) ===== */}
+      <section className="bg-[#2E3B4E] py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-teal-200 text-sm font-medium mb-3 tracking-wide uppercase">
+              {c["stories-promo.eyebrow"]}
+            </p>
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+              {c["stories-promo.title"]}
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
+              {c["stories-promo.subtitle"]}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
+            {[
+              {
+                icon: MessageCircle,
+                title: "Break Isolation",
+                body: "Your story tells someone they\u2019re not alone.",
+              },
+              {
+                icon: Shield,
+                title: "End Stigma",
+                body: "Every story normalizes the conversation.",
+              },
+              {
+                icon: Sparkles,
+                title: "Inspire Others",
+                body: "Your voice might be why someone reaches out.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white/10 rounded-xl p-5 text-center"
+              >
+                <item.icon className="w-6 h-6 text-teal mx-auto mb-3" />
+                <h3 className="text-white font-semibold mb-1">{item.title}</h3>
+                <p className="text-white/60 text-sm">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all"
+            >
+              Share Your Story
+              <PenLine className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/stories"
+              className="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors"
+            >
+              Read Stories
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 8. FEATURED STORIES (light bg, hidden if none) ===== */}
       <Suspense fallback={null}>
         <SectionWrapper variant="light">
           <FeaturedStories />

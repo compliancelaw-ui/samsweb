@@ -247,10 +247,37 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
       "Substance use and mental health challenges thrive in silence. Community breaks that silence. Take Sam\u2019s OATH, put your pin on the map, and join a growing movement of people who believe that no one should carry this weight alone.",
     group: "Final CTA",
   },
+  {
+    pageSlug: "home",
+    sectionKey: "stories-promo.eyebrow",
+    label: "Stories Promotion Eyebrow",
+    contentType: "text",
+    defaultContent: "Beyond the OATH",
+    group: "Stories Promotion",
+  },
+  {
+    pageSlug: "home",
+    sectionKey: "stories-promo.title",
+    label: "Stories Promotion Title",
+    contentType: "text",
+    defaultContent: "Stories Are How Movements Grow",
+    group: "Stories Promotion",
+  },
+  {
+    pageSlug: "home",
+    sectionKey: "stories-promo.subtitle",
+    label: "Stories Promotion Subtitle",
+    contentType: "textarea",
+    defaultContent:
+      "Sam\u2019s OATH is the commitment. Stories are the proof. When you share what you\u2019ve been through, you give someone else permission to do the same.",
+    group: "Stories Promotion",
+  },
 
   // ═══════════════════════════════════════════════════════════════════════════
   // ABOUT PAGE
   // ═══════════════════════════════════════════════════════════════════════════
+
+  // ── Hero ──
   {
     pageSlug: "about",
     sectionKey: "hero.eyebrow",
@@ -264,7 +291,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "hero.title",
     label: "Hero Title",
     contentType: "text",
-    defaultContent: "What\u2019s Hidden Doesn\u2019t Heal",
+    defaultContent: "When Silence Breaks,\nHealing Begins",
     group: "Hero",
   },
   {
@@ -273,171 +300,90 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Millions of people face substance use and mental health challenges in silence. Sam\u2019s OATH is a movement to change that \u2014 replacing shame with openness, isolation with community, and silence with healing.",
+      "Millions of people carry the weight of substance use and mental health challenges in silence \u2014 not just those who struggle, but everyone around them. Sam\u2019s OATH is a movement to change that.",
     group: "Hero",
   },
+
+  // ── Weight of Silence (The Problem) ──
   {
     pageSlug: "about",
-    sectionKey: "oath.title",
-    label: "OATH Section Title",
+    sectionKey: "silence.eyebrow",
+    label: "Problem Section Eyebrow",
     contentType: "text",
-    defaultContent: "Sam's OATH",
-    group: "Sam's OATH",
+    defaultContent: "The Problem",
+    group: "Weight of Silence",
   },
   {
     pageSlug: "about",
-    sectionKey: "oath.subtitle",
-    label: "OATH Section Subtitle",
-    contentType: "textarea",
-    defaultContent:
-      "Four commitments that replace shame with openness, isolation with community, and silence with healing. It takes sixty seconds.",
-    group: "Sam's OATH",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "oath.o-description",
-    label: "Openness Description",
-    contentType: "textarea",
-    defaultContent:
-      "We choose to talk about substance use and mental health without shame.",
-    group: "Sam's OATH",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "oath.a-description",
-    label: "Authenticity Description",
-    contentType: "textarea",
-    defaultContent:
-      "We share what we\u2019ve really been through \u2014 the truth, not the polished version.",
-    group: "Sam's OATH",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "oath.t-description",
-    label: "Togetherness Description",
-    contentType: "textarea",
-    defaultContent:
-      "We stand with others who carry this weight. No one should face this alone.",
-    group: "Sam's OATH",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "oath.h-description",
-    label: "Healing Description",
-    contentType: "textarea",
-    defaultContent:
-      "We commit to healing \u2014 not perfection. It starts when we stop hiding.",
-    group: "Sam's OATH",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "topics.title",
-    label: "Topics Section Title",
+    sectionKey: "silence.title",
+    label: "Problem Section Title",
     contentType: "text",
-    defaultContent: "Learn More",
-    group: "Topic Cards",
+    defaultContent: "Millions Carry This Weight Alone",
+    group: "Weight of Silence",
   },
   {
     pageSlug: "about",
-    sectionKey: "topics.subtitle",
-    label: "Topics Section Subtitle",
-    contentType: "textarea",
-    defaultContent: "The movement, the mission, and how it all started.",
-    group: "Topic Cards",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "people.title",
-    label: "People Section Title",
-    contentType: "text",
-    defaultContent: "People Behind the Movement",
-    group: "People",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "people.subtitle",
-    label: "People Section Subtitle",
+    sectionKey: "silence.body",
+    label: "Problem Section Body",
     contentType: "textarea",
     defaultContent:
-      "Substance use and mental health challenges don\u2019t happen in isolation. The people closest to you carry the weight too.",
-    group: "People",
+      "Nearly 50 million Americans face substance use challenges. But here\u2019s what the statistics don\u2019t capture: for every person struggling, there are parents, siblings, partners, children, coworkers, and friends carrying the weight in silence. The stigma doesn\u2019t just affect the person going through it \u2014 it silences everyone around them.",
+    group: "Weight of Silence",
   },
   {
     pageSlug: "about",
-    sectionKey: "people.frank-quote",
-    label: "Frank\u2019s Quote",
+    sectionKey: "silence.scenarios",
+    label: "Problem Section Scenarios",
     contentType: "textarea",
     defaultContent:
-      "I stayed silent for years. After losing Sam, I chose a different path.",
-    group: "People",
+      "The parent who lies awake every night. The partner who smiles through it at work. The sibling who feels invisible. The friend who wants to help but doesn\u2019t know what to say. The coworker who hides everything from their team.",
+    group: "Weight of Silence",
   },
-  {
-    pageSlug: "about",
-    sectionKey: "people.annie-quote",
-    label: "Annie\u2019s Quote",
-    contentType: "textarea",
-    defaultContent:
-      "Siblings see things others don\u2019t. Our voices deserve to be heard too.",
-    group: "People",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "people.nancy-quote",
-    label: "Nancy\u2019s Quote",
-    contentType: "textarea",
-    defaultContent:
-      "She chose this family and never wavered \u2014 through every challenge.",
-    group: "People",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "origin.eyebrow",
-    label: "Origin Eyebrow",
-    contentType: "text",
-    defaultContent: "The Origin Story",
-    group: "Origin Story",
-  },
+
+  // ── How It Started (Origin \u2014 compact) ──
   {
     pageSlug: "about",
     sectionKey: "origin.title",
     label: "Origin Title",
     contentType: "text",
     defaultContent: "How It Started",
-    group: "Origin Story",
+    group: "Origin",
   },
   {
     pageSlug: "about",
     sectionKey: "origin.body-1",
-    label: "Origin Body \u2014 Paragraph 1",
+    label: "Origin Body \u2014 Sam",
     contentType: "textarea",
     defaultContent:
-      "Sam Sheeder lit up every room he entered. Adventurous, brilliant, and deeply authentic \u2014 he had a gift for making anyone feel seen and heard. He loved music, the outdoors, and connecting with people from every walk of life.",
-    group: "Origin Story",
+      "Sam Sheeder lit up every room he entered \u2014 adventurous, brilliant, and deeply authentic. He also faced the hard road of substance use disorder. But unlike most people, Sam never hid from it. He taught everyone around him that it\u2019s ok not to be ok, and that openness matters more than appearances.",
+    group: "Origin",
   },
   {
     pageSlug: "about",
     sectionKey: "origin.body-2",
-    label: "Origin Body \u2014 Paragraph 2",
+    label: "Origin Body \u2014 Frank\u2019s turning point",
     contentType: "textarea",
     defaultContent:
-      "Sam also faced the hard and often lonely road of substance use disorder. He never shied away from the truth of his journey, even when the world\u2019s judgment made it harder to seek help. He taught everyone around him that it\u2019s ok not to be ok \u2014 and that openness and authenticity matter more than appearances.",
-    group: "Origin Story",
+      "After losing Sam, his father Frank \u2014 who had spent years hiding the effect his son\u2019s struggle had on himself and his family \u2014 made a choice most people never make. He told the truth publicly. Not to draw attention to himself, but because he realized the silence was the real crisis. That act of openness became Sam\u2019s OATH.",
+    group: "Origin",
   },
   {
     pageSlug: "about",
-    sectionKey: "origin.body-3",
-    label: "Origin Body \u2014 Paragraph 3",
+    sectionKey: "origin.quote",
+    label: "Origin Pull Quote",
     contentType: "textarea",
     defaultContent:
-      "After losing Sam, his father Frank made a choice: instead of continuing the silence, he would tell the truth publicly. That act of openness became the spark for Sam\u2019s OATH \u2014 a movement built on the values Sam lived by.",
-    group: "Origin Story",
+      "Sam taught me that openness takes courage, and silence costs everything.",
+    group: "Origin",
   },
+
+  // ── The Spark ──
   {
     pageSlug: "about",
     sectionKey: "spark.eyebrow",
     label: "Spark Eyebrow",
     contentType: "text",
-    defaultContent: "Proof That People Needed Permission to Talk",
+    defaultContent: "The Proof",
     group: "The Spark",
   },
   {
@@ -445,7 +391,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "spark.title",
     label: "Spark Title",
     contentType: "text",
-    defaultContent: "The Spark",
+    defaultContent: "People Were Waiting for Permission",
     group: "The Spark",
   },
   {
@@ -483,67 +429,81 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
       "That moment proved the silence itself was the crisis. When one person spoke openly, thousands felt permission to do the same. That\u2019s the power of Sam's OATH \u2014 not one person\u2019s courage, but what happens when people give each other permission to be honest.",
     group: "The Spark",
   },
+
+  // ── Who This Is For (Personas) ──
   {
     pageSlug: "about",
-    sectionKey: "founder.eyebrow",
-    label: "Founder Eyebrow",
+    sectionKey: "personas.title",
+    label: "Personas Section Title",
     contentType: "text",
-    defaultContent: "The Founder",
-    group: "Founder",
+    defaultContent: "This Is for You",
+    group: "Who This Is For",
   },
   {
     pageSlug: "about",
-    sectionKey: "founder.title",
-    label: "Founder Title",
+    sectionKey: "personas.subtitle",
+    label: "Personas Section Subtitle",
+    contentType: "textarea",
+    defaultContent:
+      "Wherever you are in this journey, Sam\u2019s OATH meets you there.",
+    group: "Who This Is For",
+  },
+  {
+    pageSlug: "about",
+    sectionKey: "personas.supporting",
+    label: "Supporting a Loved One \u2014 Description",
+    contentType: "textarea",
+    defaultContent:
+      "You\u2019re watching someone you love struggle, and you\u2019re carrying it in silence too. You don\u2019t have to. Taking Sam\u2019s OATH is your first step toward community.",
+    group: "Who This Is For",
+  },
+  {
+    pageSlug: "about",
+    sectionKey: "personas.recovery",
+    label: "Seeking Hope & Recovery \u2014 Description",
+    contentType: "textarea",
+    defaultContent:
+      "You\u2019re walking your own path and looking for people who understand \u2014 without judgment. Your openness lights the way for someone still in the dark.",
+    group: "Who This Is For",
+  },
+  {
+    pageSlug: "about",
+    sectionKey: "personas.standing",
+    label: "Standing With Others \u2014 Description",
+    contentType: "textarea",
+    defaultContent:
+      "You believe no one should face this alone, and you want to show up. Your OATH says: I see you, I stand with you, and you are not alone.",
+    group: "Who This Is For",
+  },
+
+  // ── Why Stories Matter ──
+  {
+    pageSlug: "about",
+    sectionKey: "stories.eyebrow",
+    label: "Stories Section Eyebrow",
     contentType: "text",
-    defaultContent: "Frank Sheeder",
-    group: "Founder",
+    defaultContent: "Your Story Matters",
+    group: "Stories Bridge",
   },
   {
     pageSlug: "about",
-    sectionKey: "founder.body-1",
-    label: "Founder Body \u2014 Paragraph 1",
-    contentType: "textarea",
-    defaultContent:
-      "Frank spent his career as a lawyer \u2014 the person others turned to when they faced their toughest challenges. He built a reputation for solving complex problems and guiding people through their hardest moments. Yet when it came to his own son\u2019s struggle with substance use, he couldn\u2019t fix it. And like so many others, he carried that weight in silence.",
-    group: "Founder",
+    sectionKey: "stories.title",
+    label: "Stories Section Title",
+    contentType: "text",
+    defaultContent: "Every Voice Breaks the Silence a Little More",
+    group: "Stories Bridge",
   },
   {
     pageSlug: "about",
-    sectionKey: "founder.body-2",
-    label: "Founder Body \u2014 Paragraph 2",
+    sectionKey: "stories.body",
+    label: "Stories Section Body",
     contentType: "textarea",
     defaultContent:
-      "After losing Sam, Frank made a choice that most people in his situation never make \u2014 he spoke publicly about what his family had been going through. Not to draw attention to himself, but because he believed that if his story resonated with even a few people, the silence was the real problem.",
-    group: "Founder",
+      "Sam\u2019s OATH is the commitment. Stories are the proof that it works. When someone shares what they\u2019ve been through \u2014 the silence, the struggle, the moment they chose openness \u2014 they give permission to the next person.",
+    group: "Stories Bridge",
   },
-  {
-    pageSlug: "about",
-    sectionKey: "founder.body-3",
-    label: "Founder Body \u2014 Paragraph 3",
-    contentType: "textarea",
-    defaultContent:
-      "It resonated with hundreds of thousands. Sam\u2019s OATH grew out of that moment \u2014 Frank\u2019s way of turning what he learned into a framework that helps anyone move from isolation to community. He wrote 15 original songs, built this movement, and now works to bring Sam's OATH into workplaces, schools, and communities across the country.",
-    group: "Founder",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "founder.body-4",
-    label: "Founder Body \u2014 Paragraph 4",
-    contentType: "textarea",
-    defaultContent:
-      "His message is simple: you don\u2019t have to do this alone, and you don\u2019t have to be silent anymore.",
-    group: "Founder",
-  },
-  {
-    pageSlug: "about",
-    sectionKey: "founder.bio",
-    label: "Founder Bio Card",
-    contentType: "textarea",
-    defaultContent:
-      "Lawyer, advocate, songwriter, and father. Frank turned a personal loss into a national movement to end the silence around substance use and mental health.",
-    group: "Founder",
-  },
+
+  // ── Vision ──
   {
     pageSlug: "about",
     sectionKey: "vision.title",
@@ -588,12 +548,14 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
       "A world where people facing substance use and mental health challenges are met with support instead of stigma.",
     group: "Vision",
   },
+
+  // ── CTA ──
   {
     pageSlug: "about",
     sectionKey: "cta.title",
     label: "CTA Title",
     contentType: "text",
-    defaultContent: "Ready to Be Part of This?",
+    defaultContent: "Be Part of This",
     group: "CTA",
   },
   {
@@ -602,7 +564,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "CTA Body",
     contentType: "textarea",
     defaultContent:
-      "Every person who takes Sam's OATH makes it easier for the next one. You don\u2019t need a platform or a title. You just need sixty seconds and the willingness to stop carrying this alone.",
+      "Sixty seconds to take Sam\u2019s OATH. Five minutes to share your story. Either way, you\u2019re helping someone who needs to know they\u2019re not alone.",
     group: "CTA",
   },
 
