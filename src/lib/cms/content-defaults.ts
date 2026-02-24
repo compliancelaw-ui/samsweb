@@ -120,6 +120,23 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
   },
   {
     pageSlug: "home",
+    sectionKey: "quote.text",
+    label: "Founder Quote",
+    contentType: "textarea",
+    defaultContent:
+      "I started Sam\u2019s OATH because I watched my son struggle in silence, and I promised myself that no other family would have to carry that weight alone. Every pin on the map is someone who said: not one more day in silence.",
+    group: "Founder Quote",
+  },
+  {
+    pageSlug: "home",
+    sectionKey: "quote.attribution",
+    label: "Quote Attribution",
+    contentType: "text",
+    defaultContent: "Frank Sheeder, Founder",
+    group: "Founder Quote",
+  },
+  {
+    pageSlug: "home",
     sectionKey: "categories.title",
     label: "Categories Section Title",
     contentType: "text",

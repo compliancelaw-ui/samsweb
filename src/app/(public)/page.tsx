@@ -9,10 +9,12 @@ import {
   Users,
   ChevronRight,
   Sun,
+  Quote,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
 import { ActivityTicker } from "@/components/home/activity-ticker";
+import { FeaturedStories } from "@/components/stories/featured-stories";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
@@ -42,9 +44,16 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
+      {/* ===== HERO WITH PHOTO ===== */}
+      <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
+        <Image
+          src="/images/photos/sam-finish-line.jpg"
+          alt="Sam crossing the finish line"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2E3B4E]/90 via-[#4A6FA5]/80 to-[#3EABA8]/60" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white w-full">
           <div className="max-w-3xl">
             <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
@@ -152,8 +161,34 @@ export default async function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== WHICH ONE ARE YOU? (CATEGORY ENTRY POINTS) ===== */}
+      {/* ===== FOUNDER QUOTE ===== */}
       <SectionWrapper variant="white">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex-shrink-0">
+              <Image
+                src="/images/photos/frank-headshot.jpg"
+                alt="Frank Sheeder, Founder of Sam's OATH"
+                width={600}
+                height={600}
+                className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover shadow-lg border-4 border-teal/20"
+              />
+            </div>
+            <div className="relative">
+              <Quote className="w-10 h-10 text-teal/20 absolute -top-2 -left-4 rotate-180" />
+              <blockquote className="text-xl md:text-2xl text-gray-700 leading-relaxed italic pl-6">
+                {c["quote.text"]}
+              </blockquote>
+              <p className="mt-4 text-sm font-semibold text-teal pl-6">
+                {c["quote.attribution"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== WHICH ONE ARE YOU? (CATEGORY ENTRY POINTS) ===== */}
+      <SectionWrapper variant="light">
         <div className="text-center mb-12">
           <h2 className="mb-4">{c["categories.title"]}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -193,7 +228,7 @@ export default async function HomePage() {
             <Link
               key={item.title}
               href="/take-the-oath"
-              className={`group flex flex-col items-center rounded-xl border-2 ${item.color} p-6 text-center hover:shadow-lg transition-all h-full`}
+              className={`group flex flex-col items-center rounded-xl border-2 ${item.color} bg-white p-6 text-center hover:shadow-lg transition-all h-full`}
             >
               <div
                 className={`w-14 h-14 ${item.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
@@ -216,6 +251,13 @@ export default async function HomePage() {
           ))}
         </div>
       </SectionWrapper>
+
+      {/* ===== FEATURED STORIES ===== */}
+      <Suspense fallback={null}>
+        <SectionWrapper variant="white">
+          <FeaturedStories />
+        </SectionWrapper>
+      </Suspense>
 
       {/* ===== THE MOVEMENT IS GROWING (COMBINED STATS + MAP) ===== */}
       <SectionWrapper variant="gradient">
@@ -251,7 +293,7 @@ export default async function HomePage() {
               <span className="text-sm text-white/70">Supporting a Loved One</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-sage" />
+              <div className="w-3 h-3 rounded-full bg-orange" />
               <span className="text-sm text-white/70">Seeking Hope &amp; Recovery</span>
             </div>
             <div className="flex items-center gap-2">
