@@ -207,8 +207,8 @@ export default async function HomePage() {
               <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                 {item.description}
               </p>
-              <span className="text-sm font-medium text-gray-400 group-hover:text-gray-600 transition-colors mt-auto">
-                Take Sam&apos;s OATH &rarr;
+              <span className="inline-flex items-center gap-1.5 mt-auto px-5 py-2 rounded-lg bg-[#4A6FA5]/10 text-[#4A6FA5] text-sm font-semibold group-hover:bg-[#4A6FA5] group-hover:text-white transition-all">
+                Take Sam&apos;s OATH <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
           ))}
