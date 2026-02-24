@@ -124,7 +124,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Founder Quote",
     contentType: "textarea",
     defaultContent:
-      "I started Sam\u2019s OATH because I watched my son struggle in silence, and I promised myself that no other family would have to carry that weight alone. Every pin on the map is someone who said: not one more day in silence.",
+      "Sam taught me that openness takes courage, and silence costs everything. I started Sam\u2019s OATH because the people surrounding the struggle need a way forward too. Every pin on that map is someone who said: I\u2019m done hiding.",
     group: "Founder Quote",
   },
   {
