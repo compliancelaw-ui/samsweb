@@ -46,8 +46,8 @@ export default function PrivacyPage() {
 
           <h2>Information We Collect</h2>
 
-          <h3>When You Take Sam's OATH</h3>
-          <p>We collect the information you provide in Sam's OATH form:</p>
+          <h3>When You Take Sam&apos;s OATH</h3>
+          <p>We collect the information you provide in Sam&apos;s OATH form:</p>
           <ul>
             <li>
               <strong>Name:</strong> First and last name. You choose how your

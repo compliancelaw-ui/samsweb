@@ -191,7 +191,7 @@ const sections: ManualSection[] = [
       <>
         <SectionBlock title="What it does">
           <p>
-            Sam's OATHs tab shows every person who has taken Sam&apos;s OATH,
+            Sam&apos;s OATHs tab shows every person who has taken Sam&apos;s OATH,
             including their display name, real name, category, location, date,
             email, and whether their pin is on the map.
           </p>
@@ -239,8 +239,8 @@ const sections: ManualSection[] = [
         <SectionBlock title="What it does">
           <p>
             The Challenges tab tracks the &ldquo;Challenge 3 People&rdquo; viral
-            loop. After someone takes Sam's OATH, they&apos;re encouraged to share a
-            unique referral link with three people. When someone takes Sam's OATH
+            loop. After someone takes Sam&apos;s OATH, they&apos;re encouraged to share a
+            unique referral link with three people. When someone takes Sam&apos;s OATH
             using that link, the referral is tracked here.
           </p>
         </SectionBlock>
@@ -506,7 +506,7 @@ const sections: ManualSection[] = [
         </SectionBlock>
         <SectionBlock title="How to use it">
           <ol className="list-decimal pl-5 space-y-1">
-            <li>Select a <strong>page tab</strong> (Home, About, Take Sam's OATH, etc.).</li>
+            <li>Select a <strong>page tab</strong> (Home, About, Take Sam&apos;s OATH, etc.).</li>
             <li>Each field shows the current content &mdash; edit directly in the text area.</li>
             <li>Changes <strong>auto-save</strong> when you click away from a field.</li>
             <li>An <strong>orange dot</strong> next to a field means it has unsaved changes.</li>
@@ -709,10 +709,10 @@ const faqItems: FAQItem[] = [
     question: "How does the referral/challenge system work?",
     answer: (
       <p>
-        When someone takes Sam's OATH, they get a unique referral code. The
+        When someone takes Sam&apos;s OATH, they get a unique referral code. The
         thank-you page encourages them to share a link
         (samsoath.org/take-the-oath?ref=CODE) with 3 people. When someone takes
-        Sam's OATH through that link, the referral is tracked. View results in the
+        Sam&apos;s OATH through that link, the referral is tracked. View results in the
         Challenges tab.
       </p>
     ),

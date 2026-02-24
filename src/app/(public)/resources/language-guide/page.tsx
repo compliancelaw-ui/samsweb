@@ -316,7 +316,7 @@ export default function LanguageGuidePage() {
             href="/take-the-oath"
             className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
           >
-            Take Sam's OATH
+            Take Sam&apos;s OATH
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

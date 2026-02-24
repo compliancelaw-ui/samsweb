@@ -97,7 +97,7 @@ export default async function PressPage() {
                   stigma keeps most families silent
                 </li>
                 <li>
-                  Sam's OATH gives families a simple, concrete framework: four
+                  Sam&apos;s OATH gives families a simple, concrete framework: four
                   commitments that replace shame with community
                 </li>
                 <li>
@@ -105,7 +105,7 @@ export default async function PressPage() {
                   chose openness
                 </li>
                 <li>
-                  Workplace programs bring Sam's OATH into corporate culture through
+                  Workplace programs bring Sam&apos;s OATH into corporate culture through
                   Safe Listener Training
                 </li>
                 <li>

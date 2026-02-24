@@ -90,7 +90,7 @@ export function ShareBanner({ className }: ShareBannerProps) {
             <Share2 className="w-7 h-7 text-teal" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-            Take Sam's OATH &amp; Share
+            Take Sam&apos;s OATH &amp; Share
           </h2>
           <p className="text-gray-600 text-lg max-w-xl mx-auto">
             Silence ends when we speak up. Share Sam&apos;s OATH with your

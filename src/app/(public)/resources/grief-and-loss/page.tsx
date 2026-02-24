@@ -429,7 +429,7 @@ export default function GriefAndLossPage() {
           <h2 className="text-white mb-4">Their Life Mattered. So Does Yours.</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
             Sam&apos;s OATH began with loss — and the belief that no family
-            should carry that loss in silence. Take Sam's OATH in your loved
+            should carry that loss in silence. Take Sam&apos;s OATH in your loved
             one&apos;s memory and join a community that understands.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -437,7 +437,7 @@ export default function GriefAndLossPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
             >
-              Take Sam's OATH in Their Memory
+              Take Sam&apos;s OATH in Their Memory
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link

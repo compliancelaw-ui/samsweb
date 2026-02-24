@@ -381,7 +381,7 @@ export function OathForm() {
       </button>
 
       <p className="text-center text-sm text-gray-400">
-        By taking Sam's OATH, you agree to our{" "}
+        By taking Sam&apos;s OATH, you agree to our{" "}
         <a href="/terms" className="underline hover:text-gray-600">
           Terms &amp; Conditions
         </a>{" "}

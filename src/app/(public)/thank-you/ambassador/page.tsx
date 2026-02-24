@@ -42,7 +42,7 @@ export default function ThankYouAmbassadorPage() {
               </h3>
               <p className="text-gray-600 text-base">
                 Our team reviews every ambassador application personally. We
-                look for passion, commitment, and alignment with Sam's OATH values.
+                look for passion, commitment, and alignment with Sam&apos;s OATH values.
               </p>
             </div>
             <div className="text-center">
@@ -66,7 +66,7 @@ export default function ThankYouAmbassadorPage() {
                 You Lead
               </h3>
               <p className="text-gray-600 text-base">
-                As an ambassador, you&apos;ll help spread Sam's OATH in your
+                As an ambassador, you&apos;ll help spread Sam&apos;s OATH in your
                 community, share resources, and help families break the silence.
               </p>
             </div>

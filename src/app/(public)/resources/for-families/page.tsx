@@ -396,7 +396,7 @@ export default function ForFamiliesPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">You Matter in This Story Too</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
-            Sam&apos;s OATH exists for families like yours. Take Sam's OATH. Join
+            Sam&apos;s OATH exists for families like yours. Take Sam&apos;s OATH. Join
             the community. Break the silence not just for your loved one — but
             for yourself.
           </p>
