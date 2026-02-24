@@ -575,13 +575,13 @@ export default function AdminContentPage() {
                             <div className="flex items-center gap-1.5">
                               {/* Save Status */}
                               {status === "saving" && (
-                                <Loader2 className="w-4 h-4 text-gray-400 animate-spin" />
+                                <Loader2 className="w-4 h-4 text-[#4A6FA5] animate-spin" />
                               )}
                               {status === "saved" && (
-                                <Check className="w-4 h-4 text-emerald-500" />
+                                <Check className="w-4 h-4 text-emerald-600 stroke-[3]" />
                               )}
                               {status === "error" && (
-                                <X className="w-4 h-4 text-red-500" />
+                                <X className="w-4 h-4 text-red-600 stroke-[3]" />
                               )}
 
                               {/* History Button */}
@@ -594,11 +594,11 @@ export default function AdminContentPage() {
                                     "p-1.5 rounded-lg transition-colors",
                                     isHistoryOpen
                                       ? "bg-gray-200 text-gray-700"
-                                      : "text-gray-400 hover:text-gray-600 hover:bg-gray-100"
+                                      : "text-gray-500 hover:text-gray-700 hover:bg-gray-100"
                                   )}
                                   title="Version history"
                                 >
-                                  <Clock className="w-3.5 h-3.5" />
+                                  <Clock className="w-4 h-4" />
                                 </button>
                               )}
 
@@ -611,11 +611,11 @@ export default function AdminContentPage() {
                                   "p-1.5 rounded-lg transition-colors",
                                   isAiOpen
                                     ? "bg-purple-100 text-purple-700"
-                                    : "text-gray-400 hover:text-purple-600 hover:bg-purple-50"
+                                    : "text-purple-400 hover:text-purple-600 hover:bg-purple-50"
                                 )}
                                 title="AI Assist"
                               >
-                                <Sparkles className="w-3.5 h-3.5" />
+                                <Sparkles className="w-4 h-4" />
                               </button>
                             </div>
                           </div>
