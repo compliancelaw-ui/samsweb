@@ -96,7 +96,7 @@ export default async function HomePage() {
             {c["oath.subtitle"]}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {[
             {
               letter: "O",
@@ -125,17 +125,19 @@ export default async function HomePage() {
           ].map((item) => (
             <div
               key={item.letter}
-              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center"
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-5 flex items-start gap-4"
             >
               <div
-                className={`w-16 h-16 ${item.color} rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4`}
+                className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0`}
               >
                 {item.letter}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {item.word}
-              </h3>
-              <p className="text-gray-600">{item.description}</p>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  {item.word}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>
