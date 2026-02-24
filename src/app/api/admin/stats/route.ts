@@ -64,7 +64,7 @@ export async function GET() {
         id: o.id,
         type: 'oath' as const,
         created_at: o.created_at,
-        summary: `${o.display_name} took the OATH from ${o.city}, ${o.state}`,
+        summary: `${o.display_name} took Sam's OATH from ${o.city}, ${o.state}`,
       })),
       ...(recentStories.data || []).map((s) => ({
         id: s.id,

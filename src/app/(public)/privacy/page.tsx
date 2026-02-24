@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Sam's OATH",
   description:
     "Read the Sam's OATH privacy policy. Learn how we handle your information when you visit samsoath.org.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -45,8 +46,8 @@ export default function PrivacyPage() {
 
           <h2>Information We Collect</h2>
 
-          <h3>When You Take the OATH</h3>
-          <p>We collect the information you provide in the OATH form:</p>
+          <h3>When You Take Sam's OATH</h3>
+          <p>We collect the information you provide in Sam's OATH form:</p>
           <ul>
             <li>
               <strong>Name:</strong> First and last name. You choose how your

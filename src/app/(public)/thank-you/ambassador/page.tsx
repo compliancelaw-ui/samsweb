@@ -6,6 +6,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Ambassador Application Received",
   description: "Your ambassador application has been submitted. We'll review it shortly.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouAmbassadorPage() {
@@ -41,7 +42,7 @@ export default function ThankYouAmbassadorPage() {
               </h3>
               <p className="text-gray-600 text-base">
                 Our team reviews every ambassador application personally. We
-                look for passion, commitment, and alignment with the OATH values.
+                look for passion, commitment, and alignment with Sam's OATH values.
               </p>
             </div>
             <div className="text-center">
@@ -65,7 +66,7 @@ export default function ThankYouAmbassadorPage() {
                 You Lead
               </h3>
               <p className="text-gray-600 text-base">
-                As an ambassador, you&apos;ll help spread the OATH in your
+                As an ambassador, you&apos;ll help spread Sam's OATH in your
                 community, share resources, and help families break the silence.
               </p>
             </div>

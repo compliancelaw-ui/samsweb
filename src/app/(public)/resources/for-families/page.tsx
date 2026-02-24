@@ -17,11 +17,42 @@ export const metadata: Metadata = {
   title: "Resources for Families | Sam's OATH",
   description:
     "Curated resources for families and loved ones affected by substance use. Support groups, guides, hotlines, and community — because you matter too.",
+  alternates: { canonical: "/resources/for-families" },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://samsoath.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resources",
+      item: "https://samsoath.org/resources",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "For Families",
+      item: "https://samsoath.org/resources/for-families",
+    },
+  ],
 };
 
 export default function ForFamiliesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
         <div className="absolute inset-0 bg-black/20" />
@@ -365,7 +396,7 @@ export default function ForFamiliesPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">You Matter in This Story Too</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
-            Sam&apos;s OATH exists for families like yours. Take the OATH. Join
+            Sam&apos;s OATH exists for families like yours. Take Sam's OATH. Join
             the community. Break the silence not just for your loved one — but
             for yourself.
           </p>

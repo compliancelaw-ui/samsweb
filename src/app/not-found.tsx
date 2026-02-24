@@ -27,7 +27,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
           >
             <Heart className="w-4 h-4" aria-hidden="true" />
-            Take the OATH
+            Take Sam&apos;s OATH
           </Link>
         </div>
 

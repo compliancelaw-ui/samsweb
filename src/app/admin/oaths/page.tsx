@@ -187,7 +187,7 @@ export default function AdminOathsPage() {
             <p className="text-sm text-gray-400 mt-1">
               {filterCategory || filterState
                 ? "Try adjusting your filters."
-                : "Submissions will appear here when people take the OATH."}
+                : "Submissions will appear here when people take Sam's OATH."}
             </p>
           </div>
         ) : (

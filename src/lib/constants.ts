@@ -1,7 +1,7 @@
 export const SITE_NAME = "Sam's OATH";
 export const SITE_URL = "https://samsoath.org";
 export const SITE_DESCRIPTION =
-  "A national movement to break silence around substance use and mental health. Take the OATH: Openness, Authenticity, Togetherness, Healing.";
+  "A national movement to break silence around substance use and mental health. Take Sam's OATH: Openness, Authenticity, Togetherness, Healing.";
 export const SITE_TAGLINE = "What's hidden doesn't heal.";
 
 export const OATH_CATEGORIES = {
@@ -28,7 +28,7 @@ export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/stories", label: "Stories" },
-  { href: "/take-the-oath", label: "Take the OATH" },
+  { href: "/take-the-oath", label: "Take Sam's OATH" },
   { href: "/map", label: "Map" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Updates" },

@@ -16,11 +16,42 @@ export const metadata: Metadata = {
   title: "Grief & Loss Resources | Losing a Loved One to Substance Use | Sam's OATH",
   description:
     "Support for families grieving a loved one lost to overdose or substance use. You are not alone in this grief. Resources, community, and comfort.",
+  alternates: { canonical: "/resources/grief-and-loss" },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://samsoath.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resources",
+      item: "https://samsoath.org/resources",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Grief & Loss",
+      item: "https://samsoath.org/resources/grief-and-loss",
+    },
+  ],
 };
 
 export default function GriefAndLossPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
         <div className="absolute inset-0 bg-black/20" />
@@ -398,7 +429,7 @@ export default function GriefAndLossPage() {
           <h2 className="text-white mb-4">Their Life Mattered. So Does Yours.</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
             Sam&apos;s OATH began with loss — and the belief that no family
-            should carry that loss in silence. Take the OATH in your loved
+            should carry that loss in silence. Take Sam's OATH in your loved
             one&apos;s memory and join a community that understands.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -406,7 +437,7 @@ export default function GriefAndLossPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
             >
-              Take the OATH in Their Memory
+              Take Sam's OATH in Their Memory
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link

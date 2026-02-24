@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Workplace Programs | End Stigma at Work | Sam's OATH",
   description:
     "Bring the Sam's OATH movement to your workplace. Programs to reduce stigma around substance use and mental health, support employees, and build compassionate culture.",
+  alternates: { canonical: "/workplace" },
 };
 
 export default async function WorkplacePage() {
@@ -190,7 +191,7 @@ export default async function WorkplacePage() {
                 icon: Users,
                 title: "Reduces Stigma",
                 description:
-                  "When organizations publicly commit to the OATH, employees feel safe acknowledging what they're going through.",
+                  "When organizations publicly commit to Sam's OATH, employees feel safe acknowledging what they're going through.",
               },
               {
                 icon: TrendingUp,

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Sam's OATH",
   },
   description:
-    "A national movement to break silence around substance use and mental health. Take the OATH: Openness, Authenticity, Togetherness, Healing.",
+    "A national movement to break silence around substance use and mental health. Take Sam's OATH: Openness, Authenticity, Togetherness, Healing.",
   metadataBase: new URL("https://samsoath.org"),
   keywords: [
     "Sam's OATH",

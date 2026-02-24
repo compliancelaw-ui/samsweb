@@ -116,7 +116,7 @@ const POST_TYPES: PostType[] = [
     label: "Movement Update",
     description: "Recent OATH stats & milestones",
     promptTemplate:
-      "Write a post celebrating recent momentum in the Sam's OATH movement. Reference growing numbers of people taking the OATH, the power of community, and encourage others to join. Make it feel like a movement milestone.",
+      "Write a post celebrating recent momentum in the Sam's OATH movement. Reference growing numbers of people taking Sam's OATH, the power of community, and encourage others to join. Make it feel like a movement milestone.",
   },
   {
     key: "story",
@@ -128,9 +128,9 @@ const POST_TYPES: PostType[] = [
   {
     key: "challenge",
     label: "Challenge Callout",
-    description: "Encourage people to take the OATH",
+    description: "Encourage people to take Sam's OATH",
     promptTemplate:
-      "Write a challenge post encouraging people to take Sam's OATH at samsoath.org. Make it feel urgent but hopeful. The OATH stands for Openness, Authenticity, Togetherness, and Healing. Challenge readers to take the OATH and tag 3 people.",
+      "Write a challenge post encouraging people to take Sam's OATH at samsoath.org. Make it feel urgent but hopeful. Sam's OATH stands for Openness, Authenticity, Togetherness, and Healing. Challenge readers to take Sam's OATH and tag 3 people.",
   },
   {
     key: "bts",
@@ -611,7 +611,7 @@ export default function AdminSocialPage() {
             { day: "Tuesday", theme: "Story Tuesday", content: "Spotlight a community story or personal reflection", platforms: "Instagram, Facebook, TikTok" },
             { day: "Wednesday", theme: "Wisdom Wednesday", content: "Language guide tip, resource share, or educational post", platforms: "LinkedIn, X, Instagram" },
             { day: "Thursday", theme: "Throwback / BTS", content: "Behind-the-scenes, throwback photo, or founder perspective", platforms: "Instagram, TikTok, Facebook" },
-            { day: "Friday", theme: "Challenge Friday", content: "Challenge 3 people to take the OATH or share the movement", platforms: "All platforms" },
+            { day: "Friday", theme: "Challenge Friday", content: "Challenge 3 people to take Sam's OATH or share the movement", platforms: "All platforms" },
             { day: "Saturday", theme: "Music Saturday", content: "Share a song, lyric, or music update from Apple Music", platforms: "Instagram, TikTok" },
             { day: "Sunday", theme: "Rest & Reflect", content: "Lighter post — gratitude, hope, or a quiet reflection", platforms: "Instagram, Facebook" },
           ].map((item) => (

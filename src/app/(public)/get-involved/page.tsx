@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Get Involved | Join the Fight Against Stigma",
   description:
     "There are many ways to join the Sam's OATH movement. Volunteer, share your story, or bring programs to your community. Every action matters.",
+  alternates: { canonical: "/get-involved" },
 };
 
 export default async function GetInvolvedPage() {
@@ -56,7 +57,7 @@ export default async function GetInvolvedPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-center mb-12">{c["paths.title"]}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Take the OATH */}
+            {/* Take Sam's OATH */}
             <Link
               href="/take-the-oath"
               className="group p-8 bg-teal-50 rounded-xl border border-teal-100 hover:shadow-lg transition-all"

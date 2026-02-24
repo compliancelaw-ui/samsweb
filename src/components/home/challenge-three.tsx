@@ -121,7 +121,7 @@ export function ChallengeThreeFlow({ referralCode }: { referralCode?: string }) 
           Challenge 3 People
         </h2>
         <p className="text-gray-600 text-lg">
-          Every family that takes the OATH makes it easier for the next one.
+          Every family that takes Sam's OATH makes it easier for the next one.
           Share it with three people you trust.
         </p>
       </div>

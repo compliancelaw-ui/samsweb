@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 const SHARE_MESSAGES = [
   "I just took Sam's OATH \u2014 a commitment to break the silence around substance use and mental health. Join me: samsoath.org",
-  "What's hidden doesn't heal. I'm standing with @SamsOATH. Take the OATH: samsoath.org",
+  "What's hidden doesn't heal. I'm standing with @SamsOATH. Take Sam's OATH: samsoath.org",
 ] as const;
 
 /* ------------------------------------------------------------------ */
@@ -90,7 +90,7 @@ export function ShareBanner({ className }: ShareBannerProps) {
             <Share2 className="w-7 h-7 text-teal" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-            Take the OATH &amp; Share
+            Take Sam's OATH &amp; Share
           </h2>
           <p className="text-gray-600 text-lg max-w-xl mx-auto">
             Silence ends when we speak up. Share Sam&apos;s OATH with your

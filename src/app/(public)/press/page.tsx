@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: "Press & Media | Sam's OATH in the News",
   description:
     "Media coverage, press kits, and interview requests for Sam's OATH — a national movement breaking the silence around substance use and mental health.",
+  alternates: { canonical: "/press" },
 };
 
 export default async function PressPage() {
@@ -96,7 +97,7 @@ export default async function PressPage() {
                   stigma keeps most families silent
                 </li>
                 <li>
-                  The OATH gives families a simple, concrete framework: four
+                  Sam's OATH gives families a simple, concrete framework: four
                   commitments that replace shame with community
                 </li>
                 <li>
@@ -104,7 +105,7 @@ export default async function PressPage() {
                   chose openness
                 </li>
                 <li>
-                  Workplace programs bring the OATH into corporate culture through
+                  Workplace programs bring Sam's OATH into corporate culture through
                   Safe Listener Training
                 </li>
                 <li>
@@ -208,7 +209,7 @@ export default async function PressPage() {
                 icon: MapPin,
                 title: "A Map of Courage: Visualizing the Movement",
                 description:
-                  "An interactive map on samsoath.org shows people across the country who've taken the OATH to be open about substance use and mental health. Each pin represents someone who refused to stay silent. The color-coded system shows whether they're supporting a loved one, standing as a movement supporter, or sharing their own journey of hope and recovery.",
+                  "An interactive map on samsoath.org shows people across the country who've taken Sam's OATH to be open about substance use and mental health. Each pin represents someone who refused to stay silent. The color-coded system shows whether they're supporting a loved one, standing as a movement supporter, or sharing their own journey of hope and recovery.",
               },
               {
                 icon: Newspaper,

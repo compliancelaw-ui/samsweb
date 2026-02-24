@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Contact Sam's OATH | Reach Out to Our Team",
   description:
     "Have a question, want to partner, or need to connect? Reach out to the Sam's OATH team. We're here for people breaking the silence around substance use and mental health.",
+  alternates: { canonical: "/contact" },
 };
 
 const CONTACT_TYPES = [
@@ -41,7 +42,7 @@ const CONTACT_TYPES = [
     icon: Building2,
     title: "Workplace Training",
     description:
-      "Bring the OATH into your organization with Safe Listener Training and employee wellness initiatives.",
+      "Bring Sam's OATH into your organization with Safe Listener Training and employee wellness initiatives.",
     iconBg: "bg-sage-50",
     iconColor: "text-sage",
   },

@@ -22,6 +22,7 @@ import {
   Shield,
   Sparkles,
   AlertTriangle,
+  Wrench,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -190,7 +191,7 @@ const sections: ManualSection[] = [
       <>
         <SectionBlock title="What it does">
           <p>
-            The OATHs tab shows every person who has taken Sam&apos;s OATH,
+            Sam's OATHs tab shows every person who has taken Sam&apos;s OATH,
             including their display name, real name, category, location, date,
             email, and whether their pin is on the map.
           </p>
@@ -238,8 +239,8 @@ const sections: ManualSection[] = [
         <SectionBlock title="What it does">
           <p>
             The Challenges tab tracks the &ldquo;Challenge 3 People&rdquo; viral
-            loop. After someone takes the OATH, they&apos;re encouraged to share a
-            unique referral link with three people. When someone takes the OATH
+            loop. After someone takes Sam's OATH, they&apos;re encouraged to share a
+            unique referral link with three people. When someone takes Sam's OATH
             using that link, the referral is tracked here.
           </p>
         </SectionBlock>
@@ -365,7 +366,7 @@ const sections: ManualSection[] = [
         <SectionBlock title="What it does">
           <p>
             The Social Post Generator creates ready-to-post content for
-            LinkedIn, Instagram, Facebook, and X (Twitter). Select a platform,
+            LinkedIn, Instagram, TikTok, Facebook, and X (Twitter). Select a platform,
             choose a post type, and the AI writes a post tailored to that
             platform&apos;s style and character limits.
           </p>
@@ -376,15 +377,20 @@ const sections: ManualSection[] = [
             <li>Pick a <strong>post type</strong>: Movement Update, Story Spotlight, Challenge Callout, or Behind the Scenes.</li>
             <li>Optionally add <strong>custom instructions</strong> (e.g., &ldquo;Announce we hit 500 OATHs&rdquo;).</li>
             <li>Click <strong>Generate</strong>.</li>
-            <li>Review the output. Click <strong>Copy</strong> to paste it directly into the social platform.</li>
-            <li>Click <strong>Regenerate</strong> if you want a different version.</li>
+            <li>Review the output. A character count bar shows how close you are to the limit.</li>
+            <li>Click <strong>Copy</strong> to paste directly into the social platform, or <strong>Regenerate</strong> for a different version.</li>
           </ol>
         </SectionBlock>
-        <SectionBlock title="Hashtags">
+        <SectionBlock title="Hashtags &amp; scheduling">
           <p>
-            Suggested hashtags appear at the bottom. Click any hashtag to append
-            it to the generated post. Hashtags already in the post are marked
-            with a green check.
+            Suggested hashtags appear below the generated post. Click any hashtag
+            to append it. Hashtags already in the post show a green check.
+          </p>
+          <p>
+            The page also includes a <strong>Best Times to Post</strong> guide
+            with optimal posting windows for each platform, and a <strong>Suggested
+            Weekly Schedule</strong> with themed content days (Movement Monday,
+            Story Tuesday, etc.).
           </p>
         </SectionBlock>
       </>
@@ -435,7 +441,9 @@ const sections: ManualSection[] = [
             The Email Composer lets you send individual emails or newsletters
             from any @samsoath.org alias. All 11 aliases are available (hello,
             connect, share, press, workplace, speaking, support, board, team,
-            partnerships, frank).
+            partnerships, frank). Automatic confirmation emails are also sent
+            to visitors after every form submission (OATH, contact, newsletter,
+            story, ambassador).
           </p>
         </SectionBlock>
         <SectionBlock title="Sending modes">
@@ -491,26 +499,48 @@ const sections: ManualSection[] = [
       <>
         <SectionBlock title="What it does">
           <p>
-            The Content tab is a reference page that shows all content on the
-            site and where to edit it.
+            The Content tab is a full CMS for editing text on every public page
+            without touching code. Each page has editable fields (headings,
+            body text, CTAs) stored in Supabase with versioning and AI assistance.
           </p>
         </SectionBlock>
-        <SectionBlock title="Two types of content">
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <strong>Public Pages</strong> (Homepage, About, Take the OATH,
-              etc.) &mdash; these are code files. Text changes require editing
-              the source code.
-            </li>
-            <li>
-              <strong>Dynamic Content</strong> (Blog Posts, Stories, Media) &mdash;
-              managed through their respective admin tabs.
-            </li>
-          </ul>
+        <SectionBlock title="How to use it">
+          <ol className="list-decimal pl-5 space-y-1">
+            <li>Select a <strong>page tab</strong> (Home, About, Take Sam's OATH, etc.).</li>
+            <li>Each field shows the current content &mdash; edit directly in the text area.</li>
+            <li>Changes <strong>auto-save</strong> when you click away from a field.</li>
+            <li>An <strong>orange dot</strong> next to a field means it has unsaved changes.</li>
+          </ol>
+        </SectionBlock>
+        <SectionBlock title="Seeding defaults">
+          <p>
+            If a page&apos;s fields haven&apos;t been saved to the database yet, you&apos;ll see
+            an amber banner with a <strong>Seed from defaults</strong> button. This
+            populates the database with the default content so you can start editing
+            and tracking versions.
+          </p>
+        </SectionBlock>
+        <SectionBlock title="AI Assist">
+          <p>
+            Click the <strong>sparkle icon</strong> next to any field to open AI Assist.
+            Quick actions: <strong>Improve</strong> (polish the text),
+            <strong> Shorten</strong> (make it more concise), or
+            <strong> More hopeful</strong> (warm up the tone). You can also type a
+            custom prompt. Click <strong>Use This</strong> to accept the AI suggestion
+            or <strong>Discard</strong> to keep your original.
+          </p>
+        </SectionBlock>
+        <SectionBlock title="Version history">
+          <p>
+            Click the <strong>clock icon</strong> on any field to see its version
+            history. Each edit creates a new version, and AI-generated changes are
+            tagged with a purple &ldquo;AI&rdquo; badge. Click <strong>Restore</strong>
+            to revert to any previous version.
+          </p>
         </SectionBlock>
         <Tip>
-          To change text on a static page, you can ask your AI assistant for
-          help or edit the file path shown under each page name.
+          Changes appear on the live site immediately after saving. Version
+          history lets you roll back if needed.
         </Tip>
       </>
     ),
@@ -588,6 +618,59 @@ const sections: ManualSection[] = [
       </>
     ),
   },
+  {
+    id: "maintenance",
+    title: "Maintenance",
+    icon: Wrench,
+    color: "text-gray-600",
+    bg: "bg-gray-100",
+    content: (
+      <>
+        <SectionBlock title="What it does">
+          <p>
+            The Maintenance tab helps you keep the site&apos;s software dependencies
+            up to date and monitor security. It has two sub-tabs: Dependencies
+            and Security.
+          </p>
+        </SectionBlock>
+        <SectionBlock title="Dependencies tab">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              Click <strong>Check for Updates</strong> to scan all npm packages
+              against the latest versions on the npm registry.
+            </li>
+            <li>
+              <strong>Green</strong> = up to date, <strong>Amber</strong> = minor
+              update available, <strong>Red</strong> = major update available.
+            </li>
+            <li>
+              Summary cards show totals at a glance. Use the filter buttons
+              (All / Updates / Major) to focus on what needs attention.
+            </li>
+            <li>
+              The table shows each package name, current version, latest version,
+              type (dependency vs. devDependency), and status.
+            </li>
+          </ul>
+        </SectionBlock>
+        <SectionBlock title="Security tab">
+          <p>
+            Links to GitHub Dependabot and Vercel security settings, plus best
+            practices for keeping the site secure:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Enable GitHub Dependabot for automated vulnerability alerts.</li>
+            <li>Review Vercel environment variables and access controls.</li>
+            <li>Rotate API keys periodically (Supabase, Resend, Mapbox, Anthropic).</li>
+          </ul>
+        </SectionBlock>
+        <Warning>
+          Major version updates may have breaking changes. Always test locally
+          before deploying updates to production.
+        </Warning>
+      </>
+    ),
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -604,10 +687,10 @@ const faqItems: FAQItem[] = [
     question: "How do I change text on a page like the About or Homepage?",
     answer: (
       <p>
-        Static page content lives in code files (e.g.,{" "}
-        <code className="text-xs bg-gray-100 px-1.5 py-0.5 rounded">src/app/(public)/about/page.tsx</code>).
-        You can use the AI coding assistant to make changes, or edit the file directly if you&apos;re comfortable with code.
-        The Content tab lists every page and its file path.
+        Go to the <strong>Content</strong> tab, select the page you want to edit,
+        and change the text directly in the fields. Changes auto-save when you
+        click away and appear on the live site immediately. You can also use
+        the AI Assist sparkle icon to improve or rewrite any field.
       </p>
     ),
   },
@@ -626,10 +709,10 @@ const faqItems: FAQItem[] = [
     question: "How does the referral/challenge system work?",
     answer: (
       <p>
-        When someone takes the OATH, they get a unique referral code. The
+        When someone takes Sam's OATH, they get a unique referral code. The
         thank-you page encourages them to share a link
         (samsoath.org/take-the-oath?ref=CODE) with 3 people. When someone takes
-        the OATH through that link, the referral is tracked. View results in the
+        Sam's OATH through that link, the referral is tracked. View results in the
         Challenges tab.
       </p>
     ),
@@ -685,9 +768,60 @@ const faqItems: FAQItem[] = [
     answer: (
       <p>
         <strong>Vercel Analytics</strong> is built into the site (all pages).
-        <strong> Google Analytics</strong> runs on public pages only. Access both
-        from the Quick Links on the Dashboard or Settings page.
+        <strong> Google Analytics</strong> (GA4) runs on public pages only.
+        Access both from the Quick Links on the Dashboard or Settings page.
       </p>
+    ),
+  },
+  {
+    question: "Do visitors get confirmation emails after submitting forms?",
+    answer: (
+      <div>
+        <p>
+          Yes. All 5 forms send automatic confirmation emails via Resend:
+        </p>
+        <ul className="list-disc pl-5 space-y-1 mt-2">
+          <li><strong>Take Sam&apos;s OATH</strong> &mdash; confirmation from connect@samsoath.org</li>
+          <li><strong>Contact</strong> &mdash; auto-reply from connect@samsoath.org</li>
+          <li><strong>Newsletter</strong> &mdash; welcome email from hello@samsoath.org</li>
+          <li><strong>Share Your Story</strong> &mdash; confirmation from share@samsoath.org</li>
+          <li><strong>Ambassador</strong> &mdash; application received from hello@samsoath.org</li>
+        </ul>
+        <p className="mt-2">
+          The admin also receives a notification email for every submission.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "How do I check if packages need updating?",
+    answer: (
+      <p>
+        Go to <strong>Maintenance</strong> &rarr; <strong>Dependencies</strong> tab
+        and click <strong>Check for Updates</strong>. The table shows every npm
+        package with its current and latest version. Green = up to date, amber =
+        minor update, red = major update. Major updates may require code changes,
+        so test locally first.
+      </p>
+    ),
+  },
+  {
+    question: "What services does the site depend on?",
+    answer: (
+      <div>
+        <ul className="list-disc pl-5 space-y-1">
+          <li><strong>Supabase</strong> &mdash; PostgreSQL database, auth, storage</li>
+          <li><strong>Vercel</strong> &mdash; hosting, deployments, analytics</li>
+          <li><strong>Mapbox</strong> &mdash; interactive OATH map</li>
+          <li><strong>Resend</strong> &mdash; transactional + newsletter emails</li>
+          <li><strong>Anthropic (Claude)</strong> &mdash; AI writing features</li>
+          <li><strong>Google Analytics</strong> &mdash; public page traffic</li>
+          <li><strong>Google Workspace</strong> &mdash; email aliases (@samsoath.org)</li>
+        </ul>
+        <p className="mt-2">
+          Check <strong>Settings</strong> to verify all services are connected.
+        </p>
+      </div>
     ),
   },
 ];
@@ -753,7 +887,7 @@ export default function AdminManualPage() {
         </h3>
         <p className="text-gray-700 mb-4 leading-relaxed">
           The Sam&apos;s OATH admin dashboard lets you manage every aspect of the
-          movement from one place. The sidebar on the left has 12 tabs &mdash;
+          movement from one place. The sidebar on the left has 13 tabs &mdash;
           click any section below for detailed instructions.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -865,7 +999,7 @@ export default function AdminManualPage() {
         <h3 className="text-sm font-semibold text-gray-900 mb-4">
           External Resources
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           <a
             href="https://supabase.com/dashboard/project/spqisrxqpqrphkndnlad"
             target="_blank"
@@ -892,6 +1026,33 @@ export default function AdminManualPage() {
           >
             <ExternalLink className="w-3.5 h-3.5" />
             Google Analytics
+          </a>
+          <a
+            href="https://search.google.com/search-console"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            Search Console
+          </a>
+          <a
+            href="https://resend.com/overview"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            Resend Dashboard
+          </a>
+          <a
+            href="https://studio.mapbox.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            Mapbox Studio
           </a>
           <a
             href="https://github.com/compliancelaw-ui/samsweb"

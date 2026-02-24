@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Substance Use Language Guide | Words That Heal | Sam's OATH",
   description:
     "Words matter. Learn person-first, stigma-free language for talking about substance use and mental health. A practical guide for families and communities.",
+  alternates: { canonical: "/resources/language-guide" },
 };
 
 const LANGUAGE_PAIRS = [
@@ -63,9 +64,39 @@ const LANGUAGE_PAIRS = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://samsoath.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resources",
+      item: "https://samsoath.org/resources",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Language Guide",
+      item: "https://samsoath.org/resources/language-guide",
+    },
+  ],
+};
+
 export default function LanguageGuidePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
         <div className="absolute inset-0 bg-black/20" />
@@ -285,7 +316,7 @@ export default function LanguageGuidePage() {
             href="/take-the-oath"
             className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
           >
-            Take the OATH
+            Take Sam's OATH
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Become an Ambassador | Lead the Movement Locally",
   description:
     "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help people find their voice and end the stigma together.",
+  alternates: { canonical: "/ambassadors" },
 };
 
 export default async function AmbassadorsPage() {
@@ -43,7 +44,7 @@ export default async function AmbassadorsPage() {
                 icon: Users,
                 title: "Build Community",
                 description:
-                  "Bring the OATH to your workplace, school, or community. When one person speaks up, others find the courage to follow.",
+                  "Bring Sam's OATH to your workplace, school, or community. When one person speaks up, others find the courage to follow.",
               },
               {
                 icon: MapPin,
@@ -113,7 +114,7 @@ export default async function AmbassadorsPage() {
                 step: "3",
                 title: "Lead",
                 description:
-                  "Start spreading the word in your community. Share the OATH, connect families to resources, and help break the silence.",
+                  "Start spreading the word in your community. Share Sam's OATH, connect families to resources, and help break the silence.",
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-5">
@@ -141,7 +142,7 @@ export default async function AmbassadorsPage() {
               "A personal connection to substance use or mental health",
               "Willingness to share openly about the cause",
               "Active in their community or workplace",
-              "Aligned with the OATH values (Openness, Authenticity, Togetherness, Healing)",
+              "Aligned with Sam's OATH values (Openness, Authenticity, Togetherness, Healing)",
               "Comfortable representing the movement publicly",
               "Committed to reducing stigma with compassion",
             ].map((item) => (

@@ -11,7 +11,7 @@ export interface ContentFieldDef {
 export const PAGE_LABELS: Record<string, string> = {
   home: "Home",
   about: "About",
-  "take-the-oath": "Take the OATH",
+  "take-the-oath": "Take Sam's OATH",
   music: "Music",
   families: "Families",
   workplace: "Workplace",
@@ -53,7 +53,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Someone in your life is facing substance use or mental health challenges in silence. The OATH is a way forward \u2014 four commitments that turn isolation into community.",
+      "Someone in your life is facing substance use or mental health challenges in silence. Sam's OATH is a way forward \u2014 four commitments that turn isolation into community.",
     group: "Hero",
   },
   {
@@ -70,7 +70,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "oath.title",
     label: "OATH Section Title",
     contentType: "text",
-    defaultContent: "The OATH: A Framework for Moving Forward",
+    defaultContent: "Sam's OATH: A Framework for Moving Forward",
     group: "OATH Framework",
   },
   {
@@ -79,7 +79,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "OATH Section Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Silence keeps people stuck. The OATH is how they move forward \u2014 four commitments that replace shame with strength.",
+      "Silence keeps people stuck. Sam's OATH is how they move forward \u2014 four commitments that replace shame with strength.",
     group: "OATH Framework",
   },
   {
@@ -132,7 +132,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Categories Section Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Everyone who takes the OATH does it for their own reason. What\u2019s yours?",
+      "Everyone who takes Sam's OATH does it for their own reason. What\u2019s yours?",
     group: "Categories",
   },
   {
@@ -141,7 +141,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Supporting a Loved One \u2014 Description",
     contentType: "textarea",
     defaultContent:
-      "Someone in your life is struggling. The OATH is your commitment to share openly and find strength in community as others do the same.",
+      "Someone in your life is struggling. Sam's OATH is your commitment to share openly and find strength in community as others do the same.",
     group: "Categories",
   },
   {
@@ -264,8 +264,8 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "oath.title",
     label: "OATH Section Title",
     contentType: "text",
-    defaultContent: "The OATH",
-    group: "The OATH",
+    defaultContent: "Sam's OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -274,7 +274,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     contentType: "textarea",
     defaultContent:
       "Four commitments that replace shame with openness, isolation with community, and silence with healing. It takes sixty seconds.",
-    group: "The OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -283,7 +283,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     contentType: "textarea",
     defaultContent:
       "We choose to talk about substance use and mental health without shame.",
-    group: "The OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -292,7 +292,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     contentType: "textarea",
     defaultContent:
       "We share what we\u2019ve really been through \u2014 the truth, not the polished version.",
-    group: "The OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -301,7 +301,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     contentType: "textarea",
     defaultContent:
       "We stand with others who carry this weight. No one should face this alone.",
-    group: "The OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -310,7 +310,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     contentType: "textarea",
     defaultContent:
       "We commit to healing \u2014 not perfection. It starts when we stop hiding.",
-    group: "The OATH",
+    group: "Sam's OATH",
   },
   {
     pageSlug: "about",
@@ -463,7 +463,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Spark Body \u2014 Paragraph 3",
     contentType: "textarea",
     defaultContent:
-      "That moment proved the silence itself was the crisis. When one person spoke openly, thousands felt permission to do the same. That\u2019s the power of the OATH \u2014 not one person\u2019s courage, but what happens when people give each other permission to be honest.",
+      "That moment proved the silence itself was the crisis. When one person spoke openly, thousands felt permission to do the same. That\u2019s the power of Sam's OATH \u2014 not one person\u2019s courage, but what happens when people give each other permission to be honest.",
     group: "The Spark",
   },
   {
@@ -506,7 +506,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Founder Body \u2014 Paragraph 3",
     contentType: "textarea",
     defaultContent:
-      "It resonated with hundreds of thousands. Sam\u2019s OATH grew out of that moment \u2014 Frank\u2019s way of turning what he learned into a framework that helps anyone move from isolation to community. He wrote 15 original songs, built this movement, and now works to bring the OATH into workplaces, schools, and communities across the country.",
+      "It resonated with hundreds of thousands. Sam\u2019s OATH grew out of that moment \u2014 Frank\u2019s way of turning what he learned into a framework that helps anyone move from isolation to community. He wrote 15 original songs, built this movement, and now works to bring Sam's OATH into workplaces, schools, and communities across the country.",
     group: "Founder",
   },
   {
@@ -585,7 +585,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "CTA Body",
     contentType: "textarea",
     defaultContent:
-      "Every person who takes the OATH makes it easier for the next one. You don\u2019t need a platform or a title. You just need sixty seconds and the willingness to stop carrying this alone.",
+      "Every person who takes Sam's OATH makes it easier for the next one. You don\u2019t need a platform or a title. You just need sixty seconds and the willingness to stop carrying this alone.",
     group: "CTA",
   },
 
@@ -723,7 +723,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "OATH Meaning Subtitle",
     contentType: "textarea",
     defaultContent:
-      "The OATH is a personal pledge \u2014 not a contract, not a donation, not a membership. It\u2019s a decision to replace silence with community and shame with strength.",
+      "Sam's OATH is a personal pledge \u2014 not a contract, not a donation, not a membership. It\u2019s a decision to replace silence with community and shame with strength.",
     group: "OATH Meaning",
   },
   {
@@ -782,7 +782,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Step 3 Description",
     contentType: "textarea",
     defaultContent:
-      "Share your story, become an ambassador, or bring the OATH to your workplace. The movement grows with you.",
+      "Share your story, become an ambassador, or bring Sam's OATH to your workplace. The movement grows with you.",
     group: "What Happens Next",
   },
 
@@ -1114,7 +1114,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Corporate OATH Description",
     contentType: "textarea",
     defaultContent:
-      "A comprehensive program that includes leadership training, employee awareness sessions, resource guides, and ongoing support. Your organization takes the OATH as a whole \u2014 a public commitment to supporting families.",
+      "A comprehensive program that includes leadership training, employee awareness sessions, resource guides, and ongoing support. Your organization takes Sam's OATH as a whole \u2014 a public commitment to supporting families.",
     group: "Programs",
   },
   {
@@ -1123,7 +1123,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Keynote Speaking Description",
     contentType: "textarea",
     defaultContent:
-      "Frank Sheeder shares his family\u2019s story and the OATH framework in a powerful, moving presentation. Ideal for all-hands meetings, wellness weeks, conferences, and leadership retreats.",
+      "Frank Sheeder shares his family\u2019s story and Sam's OATH framework in a powerful, moving presentation. Ideal for all-hands meetings, wellness weeks, conferences, and leadership retreats.",
     group: "Programs",
   },
   {
@@ -1139,7 +1139,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "cta.title",
     label: "CTA Title",
     contentType: "text",
-    defaultContent: "Bring the OATH to Your Organization",
+    defaultContent: "Bring Sam's OATH to Your Organization",
     group: "CTA",
   },
   {
@@ -1169,7 +1169,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "The OATH works because people like you choose to show up. Here are the ways your action helps people move from silence to strength.",
+      "Sam's OATH works because people like you choose to show up. Here are the ways your action helps people move from silence to strength.",
     group: "Hero",
   },
   {
@@ -1204,7 +1204,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Ambassador Card Description",
     contentType: "textarea",
     defaultContent:
-      "Be the person who brings the OATH to your community. Ambassadors connect people to the movement and make openness normal where they live.",
+      "Be the person who brings Sam's OATH to your community. Ambassadors connect people to the movement and make openness normal where they live.",
     group: "Paths",
   },
   {
@@ -1213,7 +1213,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Spread the Word Description",
     contentType: "textarea",
     defaultContent:
-      "Every conversation about the OATH makes it easier for someone to come forward. Share on social media, mention it at dinner, bring it up at work. Your voice gives others permission.",
+      "Every conversation about Sam's OATH makes it easier for someone to come forward. Share on social media, mention it at dinner, bring it up at work. Your voice gives others permission.",
     group: "Paths",
   },
   {
@@ -1230,7 +1230,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Organizations Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Bring the OATH into your workplace, school, or community organization.",
+      "Bring Sam's OATH into your workplace, school, or community organization.",
     group: "Organizations",
   },
   {
@@ -1276,7 +1276,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Whether you want to share your story, bring the OATH to your workplace, or simply say hello \u2014 we\u2019re here and we\u2019re listening.",
+      "Whether you want to share your story, bring Sam's OATH to your workplace, or simply say hello \u2014 we\u2019re here and we\u2019re listening.",
     group: "Hero",
   },
   {
@@ -1525,7 +1525,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "CTA Body",
     contentType: "textarea",
     defaultContent:
-      "That\u2019s okay. There\u2019s no pressure and no timeline. You can start by taking the OATH \u2014 a 60-second commitment to break the silence. When you\u2019re ready to share more, we\u2019ll be here.",
+      "That\u2019s okay. There\u2019s no pressure and no timeline. You can start by taking Sam's OATH \u2014 a 60-second commitment to break the silence. When you\u2019re ready to share more, we\u2019ll be here.",
     group: "CTA",
   },
 
@@ -1758,7 +1758,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Ambassadors make the OATH real where they live. They\u2019re the reason people in their community find out they don\u2019t have to carry this alone.",
+      "Ambassadors make Sam's OATH real where they live. They\u2019re the reason people in their community find out they don\u2019t have to carry this alone.",
     group: "Hero",
   },
   {

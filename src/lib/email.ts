@@ -54,7 +54,7 @@ export async function sendOathConfirmation(to: string, name: string) {
         </p>
         <p>
           Want to do more? Share your story, challenge someone you trust to take
-          the OATH, or simply keep talking openly. Every conversation chips away
+          Sam's OATH, or simply keep talking openly. Every conversation chips away
           at the silence.
         </p>`,
         "hello",

@@ -33,7 +33,8 @@ const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
 export const metadata: Metadata = {
   title: "Sam's OATH | Break the Silence on Substance Use & Mental Health",
   description:
-    "Join a national movement breaking the silence around substance use and mental health. Take the OATH. Share your story. You are not alone.",
+    "Join a national movement breaking the silence around substance use and mental health. Take Sam's OATH. Share your story. You are not alone.",
+  alternates: { canonical: "/" },
 };
 
 export default async function HomePage() {
@@ -207,7 +208,7 @@ export default async function HomePage() {
                 {item.description}
               </p>
               <span className="text-sm font-medium text-gray-400 group-hover:text-gray-600 transition-colors">
-                Take the OATH &rarr;
+                Take Sam's OATH &rarr;
               </span>
             </Link>
           ))}

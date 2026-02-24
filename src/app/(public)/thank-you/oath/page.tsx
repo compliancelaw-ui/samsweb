@@ -5,8 +5,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ChallengeThreeFlow } from "@/components/home/challenge-three";
 
 export const metadata: Metadata = {
-  title: "Thank You for Taking the OATH",
+  title: "Thank You for Taking Sam's OATH",
   description: "You've taken Sam's OATH. Welcome to the movement.",
+  robots: { index: false, follow: false },
 };
 
 export default async function ThankYouOathPage({
@@ -36,7 +37,7 @@ export default async function ThankYouOathPage({
             href="/map"
             className="inline-flex items-center gap-2 mt-8 text-white/90 font-medium hover:text-white transition-colors"
           >
-            View the OATH Map <ArrowRight className="w-4 h-4" />
+            View Sam's OATH Map <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -51,7 +52,7 @@ export default async function ThankYouOathPage({
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="mb-4">Keep the Momentum Going</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Taking the OATH was the first step. Here&apos;s how your action
+            Taking Sam's OATH was the first step. Here&apos;s how your action
             keeps growing.
           </p>
           <div className="space-y-4">
@@ -97,7 +98,7 @@ export default async function ThankYouOathPage({
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Get Involved</p>
                   <p className="text-sm text-gray-500">
-                    Become an ambassador or bring the OATH to your workplace
+                    Become an ambassador or bring Sam's OATH to your workplace
                   </p>
                 </div>
               </div>

@@ -11,7 +11,7 @@ const CONTENT_CALENDAR: Record<
   1: {
     theme: "Movement Monday",
     description:
-      "Highlight the OATH movement — milestones, new oath-takers, community growth.",
+      "Highlight Sam's OATH movement — milestones, new oath-takers, community growth.",
     topics: [
       "Share how many people have taken Sam's OATH this month",
       "Spotlight a city or state where oath-takers are growing",
@@ -75,7 +75,7 @@ const CONTENT_CALENDAR: Record<
     topics: [
       "Share a personal memory or lesson learned from Sam",
       "Post a photo or moment that represents hope to you",
-      "Write a short reflection on what the OATH means to you personally",
+      "Write a short reflection on what Sam's OATH means to you personally",
       "Encourage followers to take a moment of honesty with someone they love",
     ],
     hashtags: ["#WeekendReflection", "#HopeAndHealing", "#SamsOATH"],
@@ -87,7 +87,7 @@ const CONTENT_CALENDAR: Record<
     topics: [
       "Share a personal memory or lesson learned from Sam",
       "Post a photo or moment that represents hope to you",
-      "Write a short reflection on what the OATH means to you personally",
+      "Write a short reflection on what Sam's OATH means to you personally",
       "Encourage followers to take a moment of honesty with someone they love",
     ],
     hashtags: ["#WeekendReflection", "#HopeAndHealing", "#SamsOATH"],

@@ -23,7 +23,8 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "About Sam's OATH | A Movement to End Stigma",
   description:
-    "Sam's OATH is a national movement to break the silence around substance use and mental health. Learn about the OATH, the mission, and how you can be part of it.",
+    "Sam's OATH is a national movement to break the silence around substance use and mental health. Learn about Sam's OATH, the mission, and how you can be part of it.",
+  alternates: { canonical: "/about" },
 };
 
 export default async function AboutPage() {
@@ -208,7 +209,7 @@ export default async function AboutPage() {
               <div className="text-center px-6">
                 <ImageIcon className="w-10 h-10 text-gray-300 mx-auto mb-3" />
                 <p className="text-gray-900 font-semibold text-lg">Our Community</p>
-                <p className="text-gray-400 text-sm mt-1">Stories from people who&apos;ve taken the OATH</p>
+                <p className="text-gray-400 text-sm mt-1">Stories from people who&apos;ve taken Sam's OATH</p>
               </div>
             </div>
           </div>
@@ -437,7 +438,7 @@ export default async function AboutPage() {
               },
               {
                 icon: Briefcase,
-                title: "The OATH in Every Workplace",
+                title: "Sam's OATH in Every Workplace",
                 description: c["vision.workplace-description"],
               },
               {

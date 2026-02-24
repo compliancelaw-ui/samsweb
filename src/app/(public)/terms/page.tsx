@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "Terms and conditions for using the Sam's OATH website and participating in the movement.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
@@ -33,14 +34,14 @@ export default function TermsPage() {
           <p>
             Sam&apos;s OATH is a national movement to break silence around
             substance use and mental health in families. We provide a platform
-            for people to take the OATH (Openness, Authenticity, Togetherness,
+            for people to take Sam's OATH (Openness, Authenticity, Togetherness,
             Healing), share their stories, and connect with a community of
             support. Sam&apos;s OATH is not a treatment provider, crisis
             service, or substitute for professional help.
           </p>
 
-          <h2>2. Taking the OATH</h2>
-          <p>When you take the OATH, you agree that:</p>
+          <h2>2. Taking Sam's OATH</h2>
+          <p>When you take Sam's OATH, you agree that:</p>
           <ul>
             <li>
               The information you provide (name, city, state, category) is
@@ -166,7 +167,7 @@ export default function TermsPage() {
           <h2>7. Intellectual Property</h2>
           <p>
             All content on the Sam&apos;s OATH website — including text, images,
-            music references, design, and the OATH framework — is the property
+            music references, design, and Sam's OATH framework — is the property
             of Sam&apos;s OATH and is protected by copyright. You may share
             links to our content and use our shareable graphics for
             movement-related purposes. You may not reproduce, modify, or
