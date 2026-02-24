@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Share Your Story | Share Your Experience",
   description:
     "Your story matters. Share your experience with substance use or mental health and help others know they are not alone. Every voice breaks the silence.",
+  alternates: { canonical: "/share-your-story" },
 };
 
 export default async function ShareYourStoryPage() {

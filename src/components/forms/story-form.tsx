@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, BookOpen, Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getUTMFromCookie } from "@/lib/utm";
 import { storySchema, type StoryFormData } from "@/lib/validators";
 import { HoneypotField } from "@/components/ui/honeypot-field";
 
@@ -83,7 +84,7 @@ export function StoryForm() {
       const response = await fetch("/api/stories", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, photo_url: photoUrl }),
+        body: JSON.stringify({ ...data, photo_url: photoUrl, ...getUTMFromCookie() }),
       });
 
       if (!response.ok) {

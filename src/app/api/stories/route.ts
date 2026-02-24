@@ -92,6 +92,15 @@ export async function POST(request: NextRequest) {
 
     const data = result.data
 
+    // Extract UTM tracking fields (if present)
+    const utmFields = {
+      ...(body.utm_source && { utm_source: body.utm_source }),
+      ...(body.utm_medium && { utm_medium: body.utm_medium }),
+      ...(body.utm_campaign && { utm_campaign: body.utm_campaign }),
+      ...(body.utm_content && { utm_content: body.utm_content }),
+      ...(body.utm_term && { utm_term: body.utm_term }),
+    }
+
     // Run content filter on the submission
     const filterResult = shouldFlagForReview(data.title, data.content)
 
@@ -101,6 +110,7 @@ export async function POST(request: NextRequest) {
       .insert({
         ...data,
         status: 'pending',
+        ...utmFields,
         ...(filterResult.flagged && {
           reviewer_notes: `[Auto-flagged] Score: ${filterResult.score}. ${filterResult.flags.map(f => `${f.type}: ${f.message} (${f.matches.join(', ')})`).join(' | ')}`,
         }),

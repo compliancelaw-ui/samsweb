@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, CheckCircle2, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getUTMFromCookie } from "@/lib/utm";
 import { newsletterSchema, type NewsletterFormData } from "@/lib/validators";
 import { HoneypotField } from "@/components/ui/honeypot-field";
 
@@ -39,7 +40,7 @@ export function NewsletterForm() {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...getUTMFromCookie() }),
       });
 
       if (!response.ok) {

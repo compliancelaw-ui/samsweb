@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Updates | Substance Use, Mental Health & Hope",
   description:
     "Articles and insights for anyone navigating substance use and mental health. Practical guidance, personal stories, and hope from the Sam's OATH community.",
+  alternates: { canonical: "/blog" },
 };
 
 export const dynamic = "force-dynamic";

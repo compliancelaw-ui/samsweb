@@ -6,6 +6,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "You're Subscribed",
   description: "Welcome to the Sam's OATH community. You'll hear from us soon.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouNewsletterPage() {

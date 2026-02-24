@@ -6,6 +6,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Message Sent",
   description: "Your message has been received. We'll respond as soon as possible.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouContactPage() {

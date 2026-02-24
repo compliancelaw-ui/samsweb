@@ -34,6 +34,15 @@ export async function POST(request: NextRequest) {
 
     const data = result.data
 
+    // Extract UTM tracking fields (if present)
+    const utmFields = {
+      ...(body.utm_source && { utm_source: body.utm_source }),
+      ...(body.utm_medium && { utm_medium: body.utm_medium }),
+      ...(body.utm_campaign && { utm_campaign: body.utm_campaign }),
+      ...(body.utm_content && { utm_content: body.utm_content }),
+      ...(body.utm_term && { utm_term: body.utm_term }),
+    }
+
     // Upsert into newsletter_subscribers:
     // On email conflict, update first_name and interests, and reactivate the subscription.
     const { error } = await supabaseAdmin()
@@ -44,6 +53,7 @@ export async function POST(request: NextRequest) {
           first_name: data.first_name,
           interests: data.interests,
           is_active: true,
+          ...utmFields,
         },
         {
           onConflict: 'email',

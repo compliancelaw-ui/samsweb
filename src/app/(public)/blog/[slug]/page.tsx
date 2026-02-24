@@ -59,6 +59,7 @@ export async function generateMetadata({
       authors: [post.author],
       tags: post.tags || undefined,
     },
+    alternates: { canonical: `/blog/${slug}` },
   };
 }
 

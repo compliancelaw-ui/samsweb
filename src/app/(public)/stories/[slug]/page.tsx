@@ -76,6 +76,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: story.published_at,
     },
+    alternates: { canonical: `/stories/${slug}` },
   };
 }
 

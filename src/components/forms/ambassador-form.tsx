@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, Star, Link as LinkIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getUTMFromCookie } from "@/lib/utm";
 import { ambassadorSchema, type AmbassadorFormData } from "@/lib/validators";
 import { HoneypotField } from "@/components/ui/honeypot-field";
 
@@ -72,7 +73,7 @@ export function AmbassadorForm() {
       const response = await fetch("/api/ambassador", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submitData),
+        body: JSON.stringify({ ...submitData, ...getUTMFromCookie() }),
       });
 
       if (!response.ok) {

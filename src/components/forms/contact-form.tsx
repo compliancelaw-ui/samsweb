@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, Mail, Mic, Building2, Handshake } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getUTMFromCookie } from "@/lib/utm";
 import { contactSchema, type ContactFormData } from "@/lib/validators";
 import { HoneypotField } from "@/components/ui/honeypot-field";
 
@@ -46,7 +47,7 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...getUTMFromCookie() }),
       });
 
       if (!response.ok) {

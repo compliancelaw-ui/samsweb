@@ -23,6 +23,7 @@ import {
   Share2,
   HelpCircle,
   Wrench,
+  Megaphone,
   Sparkles,
   Loader2,
   Send,
@@ -39,6 +40,7 @@ const navItems = [
   { label: "Social Posts", href: "/admin/social", icon: Share2 },
   { label: "Ambassadors", href: "/admin/ambassadors", icon: Users },
   { label: "Email", href: "/admin/email", icon: Mail },
+  { label: "Ads", href: "/admin/ads", icon: Megaphone },
   { label: "Content", href: "/admin/content", icon: Layers },
   { label: "Media", href: "/admin/media", icon: Image },
   { label: "Maintenance", href: "/admin/maintenance", icon: Wrench },
@@ -137,6 +139,16 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "All 11 @samsoath.org aliases are available as senders.",
     ],
     manualSection: "email",
+  },
+  "/admin/ads": {
+    title: "Ads & Attribution",
+    tips: [
+      "Overview shows which ad sources drive the most conversions.",
+      "Create campaigns to track budget and spending per platform.",
+      "UTM Builder generates tagged links — use them in every ad and post.",
+      "Run the SQL migration in Supabase before using this tab.",
+    ],
+    manualSection: "ads",
   },
   "/admin/content": {
     title: "Manage Content",

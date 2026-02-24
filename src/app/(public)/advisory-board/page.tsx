@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Advisory Board | Sam's OATH",
   description:
     "Meet the multidisciplinary advisory board guiding Sam's OATH — experts in substance use medicine, mental health, family advocacy, and community building.",
+  alternates: { canonical: "/advisory-board" },
 };
 
 const BOARD_MEMBERS = [

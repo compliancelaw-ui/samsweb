@@ -34,6 +34,15 @@ export async function POST(request: NextRequest) {
 
     const data = result.data
 
+    // Extract UTM tracking fields (if present)
+    const utmFields = {
+      ...(body.utm_source && { utm_source: body.utm_source }),
+      ...(body.utm_medium && { utm_medium: body.utm_medium }),
+      ...(body.utm_campaign && { utm_campaign: body.utm_campaign }),
+      ...(body.utm_content && { utm_content: body.utm_content }),
+      ...(body.utm_term && { utm_term: body.utm_term }),
+    }
+
     // Insert into ambassadors with pending status
     // Map form fields to DB columns (motivation + personal_story → bio)
     const { data: ambassador, error } = await supabaseAdmin()
@@ -46,6 +55,7 @@ export async function POST(request: NextRequest) {
         bio: [data.motivation, data.personal_story].filter(Boolean).join('\n\n'),
         social_links: data.social_links || {},
         status: 'pending',
+        ...utmFields,
       })
       .select('id')
       .single()

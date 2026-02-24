@@ -7,6 +7,7 @@ import { ShareCallToAction } from "@/components/ui/page-share-buttons";
 export const metadata: Metadata = {
   title: "Thank You for Sharing Your Story",
   description: "Your story has been submitted. We'll review it and be in touch.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouStoryPage() {

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: "Resources | Crisis Help, Guides & Family Support",
   description:
     "Find crisis hotlines, a language guide, family support resources, and more. Curated for navigating substance use and mental health challenges.",
+  alternates: { canonical: "/resources" },
 };
 
 const COMPASSIONATE_LANGUAGE = [
@@ -134,11 +135,87 @@ const BOOKS = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What should I say instead of 'addict'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use 'person with a substance use disorder' — it puts the person first. A diagnosis doesn't define who someone is.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should I say instead of 'in recovery' or 'clean'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use 'person in recovery' or 'in recovery / actively using.' These phrases honor the courage it takes to heal without labeling someone by their past, and describe a stage of a journey — not a moral judgment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why should I say 'substance use disorder' instead of 'addiction'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Substance use disorder recognizes the medical reality. It's a health condition, not a character flaw. Using clinical language helps reduce stigma and encourages people to seek help.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should I say instead of 'alcoholic'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use 'person with alcohol use disorder.' This separates the person from the condition so they feel safe enough to ask for help.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should I say instead of 'relapse'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use 'recurrence' or 'return to use.' Recovery is rarely a straight line. Language that acknowledges setbacks without shame keeps people moving forward.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How should I talk about supporting someone with substance use disorder?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use phrases like 'supporting someone through their journey' and 'help is available at every stage.' This acknowledges the love behind the action rather than implying blame, and reminds people that no one should have to suffer maximally before getting support.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where can I get immediate help for a substance use crisis?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For immediate help, contact SAMHSA's National Helpline at 1-800-662-4357 (free, confidential, 24/7, 365 days a year). For suicidal crisis or emotional distress, call or text 988 (Suicide & Crisis Lifeline). For text-based crisis support, text HOME to 741741 (Crisis Text Line). In an emergency, call 911.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can families get support for a loved one's substance use?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Families can find support through organizations like NAMI (National Alliance on Mental Illness) at 1-800-950-NAMI, Al-Anon and Nar-Anon family support groups, The Compassionate Friends for bereaved families, and SAMHSA's helpline at 1-800-662-4357. Visit samsoath.org/resources for a curated list of crisis hotlines, language guides, family support resources, and more.",
+      },
+    },
+  ],
+};
+
 export default async function ResourcesPage() {
   const c = await getPageContent("resources");
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
         <div className="absolute inset-0 bg-black/20" />

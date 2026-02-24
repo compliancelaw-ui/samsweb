@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Stories of Substance Use & Recovery | Sam's OATH",
   description:
     "Read real stories from people navigating substance use, mental health, grief, and recovery. These voices are breaking the silence and ending the stigma.",
+  alternates: { canonical: "/stories" },
 };
 
 export const revalidate = 300; // revalidate every 5 minutes

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Every pin on this map is a family that chose openness over silence. See the movement growing across the country and add your pin.",
   },
+  alternates: { canonical: "/map" },
 };
 
 const OathMap = dynamic(() => import("@/components/map/oath-map"), {

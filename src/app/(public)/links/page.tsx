@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       "All the ways to connect with Sam's OATH — take the pledge, share your story, listen to our music, and join the movement.",
     url: "https://samsoath.org/links",
   },
+  alternates: { canonical: "/links" },
 };
 
 /* ------------------------------------------------------------------ */

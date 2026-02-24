@@ -36,6 +36,15 @@ export async function POST(request: NextRequest) {
 
     const data = result.data
 
+    // Extract UTM tracking fields (if present)
+    const utmFields = {
+      ...(body.utm_source && { utm_source: body.utm_source }),
+      ...(body.utm_medium && { utm_medium: body.utm_medium }),
+      ...(body.utm_campaign && { utm_campaign: body.utm_campaign }),
+      ...(body.utm_content && { utm_content: body.utm_content }),
+      ...(body.utm_term && { utm_term: body.utm_term }),
+    }
+
     // Compute display name based on name_display_type
     let display_name: string
     switch (data.name_display_type) {
@@ -85,6 +94,7 @@ export async function POST(request: NextRequest) {
       email_optin: data.email_optin || false,
       ip_address,
       pin_color,
+      ...utmFields,
     }
 
     // Track referral if present
