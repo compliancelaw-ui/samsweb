@@ -307,32 +307,6 @@ export default async function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== FINAL CTA ===== */}
-      <SectionWrapper variant="gradient">
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-6">
-            {c["cta.title"]}
-          </h2>
-          <p className="text-xl text-white/80 mb-10 leading-relaxed">
-            {c["cta.body"]}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/take-the-oath"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/90 transition-all hover:shadow-xl"
-            >
-              Take Sam&apos;s OATH
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/stories"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/10 transition-all"
-            >
-              Read Stories
-            </Link>
-          </div>
-        </div>
-      </SectionWrapper>
     </>
   );
 }
