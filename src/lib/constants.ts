@@ -33,7 +33,7 @@ export const NAV_LINKS = [
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Updates" },
   { href: "/workplace", label: "Workplaces" },
-  { href: "/music", label: "Music" },
+  // { href: "/music", label: "Music" }, // Hidden until music video is ready
 ] as const;
 
 export const CRISIS_RESOURCES = {
