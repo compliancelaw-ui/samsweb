@@ -41,7 +41,7 @@ const CATEGORIES = [
   },
   {
     value: "supporter" as const,
-    label: "Standing with you",
+    label: "Standing with others",
     description: "You believe no one should face these challenges in silence",
     icon: Users,
     color: "border-sage bg-sage-50 text-sage-700",
@@ -49,7 +49,7 @@ const CATEGORIES = [
   },
   {
     value: "hope" as const,
-    label: "I\u2019m in recovery or finding hope",
+    label: "Seeking hope & recovery",
     description: "You\u2019re on a journey of healing and want to share that hope with others",
     icon: Sun,
     color: "border-orange bg-orange-50 text-orange-700",

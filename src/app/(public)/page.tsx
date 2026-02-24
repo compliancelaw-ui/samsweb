@@ -170,28 +170,28 @@ export default async function HomePage() {
               dotColor: "bg-teal",
             },
             {
-              icon: Users,
-              title: "Standing With You",
-              description: c["categories.standing-description"],
-              color: "border-sage",
-              iconBg: "bg-sage-50",
-              iconColor: "text-sage",
-              dotColor: "bg-sage",
-            },
-            {
               icon: Sun,
-              title: "Hope & Recovery",
+              title: "Seeking Hope & Recovery",
               description: c["categories.recovery-description"],
               color: "border-orange",
               iconBg: "bg-orange-50",
               iconColor: "text-orange",
               dotColor: "bg-orange",
             },
+            {
+              icon: Users,
+              title: "Standing With Others",
+              description: c["categories.standing-description"],
+              color: "border-sage",
+              iconBg: "bg-sage-50",
+              iconColor: "text-sage",
+              dotColor: "bg-sage",
+            },
           ].map((item) => (
             <Link
               key={item.title}
               href="/take-the-oath"
-              className={`group block rounded-xl border-2 ${item.color} p-6 text-center hover:shadow-lg transition-all`}
+              className={`group flex flex-col items-center rounded-xl border-2 ${item.color} p-6 text-center hover:shadow-lg transition-all h-full`}
             >
               <div
                 className={`w-14 h-14 ${item.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
@@ -204,11 +204,11 @@ export default async function HomePage() {
                   {item.title}
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                 {item.description}
               </p>
-              <span className="text-sm font-medium text-gray-400 group-hover:text-gray-600 transition-colors">
-                Take Sam's OATH &rarr;
+              <span className="text-sm font-medium text-gray-400 group-hover:text-gray-600 transition-colors mt-auto">
+                Take Sam&apos;s OATH &rarr;
               </span>
             </Link>
           ))}
@@ -250,11 +250,11 @@ export default async function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-sage" />
-              <span className="text-sm text-white/70">Standing With You</span>
+              <span className="text-sm text-white/70">Seeking Hope &amp; Recovery</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-orange" />
-              <span className="text-sm text-white/70">Hope &amp; Recovery</span>
+              <div className="w-3 h-3 rounded-full bg-sage" />
+              <span className="text-sm text-white/70">Standing With Others</span>
             </div>
           </div>
           <div className="text-center mt-8">

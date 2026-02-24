@@ -11,12 +11,12 @@ export const OATH_CATEGORIES = {
     tailwind: "teal",
   },
   supporter: {
-    label: "Standing with you",
+    label: "Standing with others",
     color: "#7AB87A",
     tailwind: "sage",
   },
   hope: {
-    label: "I\u2019m in recovery or finding hope",
+    label: "Seeking hope & recovery",
     color: "#E8956F",
     tailwind: "orange",
   },
