@@ -10,6 +10,7 @@ import {
   HandHeart,
   ArrowRight,
   MapPin,
+  DollarSign,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
@@ -131,6 +132,32 @@ export default async function GetInvolvedPage() {
                 </span>
               </div>
             </div>
+
+            {/* Support Our Mission */}
+            <Link
+              href="/donate"
+              className="group p-8 bg-teal-50 rounded-xl border border-teal-100 hover:shadow-lg transition-all md:col-span-2"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+                <div className="w-14 h-14 bg-teal rounded-xl flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-teal transition-colors">
+                    Support Our Mission
+                  </h3>
+                  <p className="text-gray-600">
+                    Your tax-deductible donation funds awareness campaigns,
+                    community events, and support resources for families who need
+                    them most. Every dollar goes directly toward breaking the
+                    silence.
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-teal font-medium text-sm mt-4">
+                    Make a donation <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </SectionWrapper>

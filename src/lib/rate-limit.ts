@@ -69,4 +69,5 @@ export const RATE_LIMITS = {
   newsletter: { max: 3, window: 60 * 60 * 1000 },   // 3 per hour
   ambassador: { max: 3, window: 60 * 60 * 1000 },   // 3 per hour
   upload: { max: 10, window: 60 * 60 * 1000 },      // 10 per hour
+  donate: { max: 10, window: 60 * 60 * 1000 },      // 10 per hour
 } as const

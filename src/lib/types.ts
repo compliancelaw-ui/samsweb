@@ -1,5 +1,9 @@
 // ─── String Union Types ─────────────────────────────────────────────────────
 
+export type DonationType = "one-time" | "recurring";
+
+export type DonationStatus = "pending" | "completed" | "failed" | "refunded" | "canceled";
+
 export type OathCategory = "supporting" | "supporter" | "hope";
 
 export type StoryStatus = "pending" | "approved" | "published" | "rejected";
@@ -143,6 +147,22 @@ export interface MediaItem {
   mime_type: string | null;
   alt_text: string | null;
   usage_context: string | null;
+}
+
+export interface Donation {
+  id: string;
+  created_at: string;
+  donor_email: string | null;
+  donor_name: string | null;
+  amount_cents: number;
+  currency: string;
+  donation_type: DonationType;
+  stripe_session_id: string | null;
+  stripe_subscription_id: string | null;
+  stripe_customer_id: string | null;
+  is_anonymous: boolean;
+  status: DonationStatus;
+  campaign: string | null;
 }
 
 export interface MapPin {

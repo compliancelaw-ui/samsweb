@@ -116,3 +116,16 @@ export const ambassadorSchema = z.object({
 });
 
 export type AmbassadorFormData = z.infer<typeof ambassadorSchema>;
+
+// ─── Donation Form ──────────────────────────────────────────────────────────
+
+export const donationSchema = z.object({
+  amount: z.number().min(1, "Donation amount must be at least $1").max(100000, "Maximum donation is $100,000"),
+  donation_type: z.enum(["one-time", "recurring"]),
+  donor_name: z.string().optional(),
+  donor_email: z.string().email("Invalid email address").optional(),
+  is_anonymous: z.boolean().default(false),
+  campaign: z.string().default("general"),
+});
+
+export type DonationFormData = z.infer<typeof donationSchema>;

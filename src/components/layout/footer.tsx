@@ -8,6 +8,7 @@ const takeActionLinks = [
   { href: "/share-your-story", label: "Share Your Story" },
   { href: "/ambassadors", label: "Become an Ambassador" },
   { href: "/workplace", label: "Workplace Programs" },
+  { href: "/donate", label: "Donate" },
 ];
 
 const learnMoreLinks = [

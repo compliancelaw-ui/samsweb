@@ -199,6 +199,56 @@ export async function sendAmbassadorConfirmation(to: string, name: string) {
 }
 
 // ---------------------------------------------------------------------------
+// Donation Thank You
+// ---------------------------------------------------------------------------
+
+export async function sendDonationThankYou(
+  to: string,
+  name: string | null,
+  amountCents: number,
+  isRecurring: boolean
+) {
+  const resend = getResend();
+  if (!resend || !to) return;
+
+  const greeting = name ? `Thank you, ${name}.` : "Thank you.";
+  const amount = `$${(amountCents / 100).toFixed(2)}`;
+  const recurringNote = isRecurring
+    ? `<p>Your monthly gift of ${amount} will continue to make a difference each month. You can manage your subscription at any time through the link in your Stripe receipt.</p>`
+    : "";
+
+  try {
+    await resend.emails.send({
+      from: getFromAddress("hello"),
+      to,
+      subject: "Thank you for your donation - Sam's OATH",
+      html: brandedEmailHtml(
+        `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">${greeting}</h1>
+        <p>
+          Your generous donation of ${amount} helps us break the silence around
+          substance use and mental health. Every dollar goes directly toward
+          awareness campaigns, community events, and support resources for
+          families who need them most.
+        </p>
+        ${recurringNote}
+        <p>
+          Sam's OATH Foundation is a 501(c)(3) nonprofit organization.
+          Your donation is tax-deductible to the extent allowed by law.
+          You will receive a receipt from Stripe for your records.
+        </p>
+        <p>
+          Because of supporters like you, no family has to carry this weight alone.
+        </p>`,
+        "hello",
+        { cta: { label: "See the Movement", href: "https://samsoath.org/map" } }
+      ),
+    });
+  } catch (err) {
+    console.error("Failed to send donation thank-you email:", err);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Admin Notification (new submission alert)
 // ---------------------------------------------------------------------------
 
