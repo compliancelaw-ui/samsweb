@@ -203,6 +203,30 @@ const faqJsonLd = {
         text: "Families can find support through organizations like NAMI (National Alliance on Mental Illness) at 1-800-950-NAMI, Al-Anon and Nar-Anon family support groups, The Compassionate Friends for bereaved families, and SAMHSA's helpline at 1-800-662-4357. Visit samsoath.org/resources for a curated list of crisis hotlines, language guides, family support resources, and more.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Are donations to Sam's OATH tax-deductible?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Sam's OATH Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law. You will receive a receipt via email after your donation is processed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I make a recurring donation to Sam's OATH?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. When you visit samsoath.org/donate, you can choose between a one-time donation or a monthly recurring donation. Recurring donations are processed securely through Stripe, and you can cancel or update your subscription at any time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is my donation used?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "100% of donations go directly toward the mission: awareness campaigns that reach hundreds of thousands of families, community events and speaking engagements, free educational resources and Safe Listener Training programs, and direct family support and outreach.",
+      },
+    },
   ],
 };
 
@@ -470,8 +494,8 @@ export default async function ResourcesPage() {
           {/* Bottom note */}
           <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
             Language is always evolving. What matters most is the intention to
-            see people &mdash; not labels. When in doubt, ask someone how they
-            prefer to be referred to.
+            see people, not labels. When in doubt, ask someone how they prefer
+            to be referred to.
           </p>
 
           <div className="text-center mt-6">
