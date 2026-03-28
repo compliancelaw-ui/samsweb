@@ -87,10 +87,10 @@ export interface BlogPost {
   slug: string;
   content: string;
   excerpt: string | null;
-  featured_image: string | null;
-  author: string;
+  featured_image_url: string | null;
+  author_name: string;
   tags: string[] | null;
-  is_published: boolean;
+  status: string;
   published_at: string | null;
 }
 

@@ -19,9 +19,9 @@ interface BlogPost {
   title: string;
   slug: string;
   excerpt: string | null;
-  author: string;
+  author_name: string;
   published_at: string;
-  featured_image: string | null;
+  featured_image_url: string | null;
   tags: string[] | null;
   status: string;
 }
@@ -31,7 +31,7 @@ async function getBlogPosts(): Promise<{ posts: BlogPost[]; total: number }> {
     const { data, count, error } = await supabaseAdmin()
       .from("blog_posts")
       .select(
-        "id, title, slug, excerpt, author, published_at, featured_image, tags, status",
+        "id, title, slug, excerpt, author_name, published_at, featured_image_url, tags, status",
         { count: "exact" }
       )
       .eq("status", "published")
@@ -132,7 +132,7 @@ export default async function BlogPage() {
                     <div className="flex items-center gap-4 text-sm text-gray-400">
                       <span className="flex items-center gap-1.5">
                         <User className="w-4 h-4" />
-                        {post.author}
+                        {post.author_name}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-4 h-4" />

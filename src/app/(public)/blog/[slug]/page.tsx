@@ -13,9 +13,9 @@ interface BlogPost {
   slug: string;
   content: string;
   excerpt: string | null;
-  author: string;
+  author_name: string;
   published_at: string;
-  featured_image: string | null;
+  featured_image_url: string | null;
   tags: string[] | null;
 }
 
@@ -56,7 +56,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: post.published_at,
-      authors: [post.author],
+      authors: [post.author_name],
       tags: post.tags || undefined,
     },
     alternates: { canonical: `/blog/${slug}` },
@@ -83,7 +83,7 @@ export default async function BlogPostPage({
     datePublished: post.published_at,
     author: {
       "@type": "Person",
-      name: post.author,
+      name: post.author_name,
     },
     publisher: {
       "@type": "Organization",
@@ -130,7 +130,7 @@ export default async function BlogPostPage({
           <div className="flex items-center gap-4 text-white/70">
             <span className="flex items-center gap-1.5">
               <User className="w-4 h-4" />
-              {post.author}
+              {post.author_name}
             </span>
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />

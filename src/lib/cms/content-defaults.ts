@@ -24,6 +24,7 @@ export const PAGE_LABELS: Record<string, string> = {
   ambassadors: "Ambassadors",
   blog: "Blog",
   stories: "Stories",
+  events: "Events & Speaking",
 };
 
 // ─── CONTENT REGISTRY ───────────────────────────────────────────────────────
