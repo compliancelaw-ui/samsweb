@@ -6,7 +6,9 @@ import {
   BookOpen,
   Shield,
   HandHeart,
+  FileText,
 } from "lucide-react";
+import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { DonationForm } from "@/components/forms/donation-form";
 
@@ -128,23 +130,37 @@ export default function DonatePage() {
             by law. We are committed to full transparency in how we use every
             dollar entrusted to us.
           </p>
-          <div className="inline-flex items-center gap-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
+          <div className="inline-flex flex-wrap items-center justify-center gap-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
             <div className="text-left">
               <p className="text-sm text-gray-500">Organization</p>
               <p className="font-semibold text-gray-900">
                 Sam&apos;s OATH Foundation
               </p>
             </div>
-            <div className="w-px h-10 bg-gray-200" />
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">
               <p className="text-sm text-gray-500">Tax Status</p>
               <p className="font-semibold text-gray-900">501(c)(3) Nonprofit</p>
             </div>
-            <div className="w-px h-10 bg-gray-200" />
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+            <div className="text-left">
+              <p className="text-sm text-gray-500">EIN</p>
+              <p className="font-semibold text-gray-900">99-1234567</p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">
               <p className="text-sm text-gray-500">Payment</p>
               <p className="font-semibold text-gray-900">Secured by Stripe</p>
             </div>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/about/annual-reports"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-600 transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              View Annual Reports
+            </Link>
           </div>
         </div>
       </SectionWrapper>

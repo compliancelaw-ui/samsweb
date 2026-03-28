@@ -12,6 +12,9 @@ import {
   MapPin,
   Users,
   Heart,
+  Palette,
+  Copy,
+  FileText,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
@@ -189,15 +192,21 @@ export default async function PressPage() {
             {[
               {
                 icon: Heart,
-                title: "A Father's Mission to Break Silence",
+                title: "A Father's Fight Against Stigma",
                 description:
-                  "After losing his son to substance use, Frank Sheeder turned his family's pain into a national movement. His LinkedIn post reached 345,000 people — all saying 'I thought I was the only one.' Now he's building the infrastructure so no family has to struggle in silence.",
+                  "After losing his son to substance use, Frank Sheeder turned his family's pain into a national movement. His LinkedIn post reached 345,000 people, all saying 'I thought I was the only one.' Now he is building the infrastructure so no family has to struggle in silence.",
               },
               {
                 icon: Users,
-                title: "The Hidden Epidemic Within the Epidemic",
+                title: "The OATH That's Changing How We Talk About Addiction",
                 description:
-                  "While overdose deaths make headlines, the silence and stigma that prevent families from seeking help remains largely unaddressed. Sam's OATH is the first national framework giving families language and community to talk openly about substance use and mental health.",
+                  "Sam's OATH is the first national framework giving families a concrete way to break through the stigma of substance use and mental health challenges. Four simple commitments, Openness, Authenticity, Togetherness, and Healing, replace shame with community and silence with conversation.",
+              },
+              {
+                icon: Newspaper,
+                title: "Why Language Matters in the Substance Use Crisis",
+                description:
+                  "While overdose deaths make headlines, the silence and stigma that prevent families from seeking help remains largely unaddressed. Sam's OATH champions person-first language and open dialogue as the foundation for recovery and connection.",
               },
               {
                 icon: Music,
@@ -209,13 +218,7 @@ export default async function PressPage() {
                 icon: MapPin,
                 title: "A Map of Courage: Visualizing the Movement",
                 description:
-                  "An interactive map on samsoath.org shows people across the country who've taken Sam's OATH to be open about substance use and mental health. Each pin represents someone who refused to stay silent. The color-coded system shows whether they're supporting a loved one, standing as a movement supporter, or sharing their own journey of hope and recovery.",
-              },
-              {
-                icon: Newspaper,
-                title: "Workplace Silence: The Crisis Behind Closed Doors",
-                description:
-                  "Frank had a great workplace — but even there, he never felt he could share what his family was going through. Sam's OATH is bringing the conversation into corporate America through Safe Listener Training and workplace OATH programs.",
+                  "An interactive map on samsoath.org shows people across the country who have taken Sam's OATH to be open about substance use and mental health. Each pin represents someone who refused to stay silent. The color-coded system shows whether they are supporting a loved one, standing as a movement supporter, or sharing their own journey of hope and recovery.",
               },
             ].map((angle) => (
               <div
@@ -276,10 +279,43 @@ export default async function PressPage() {
         </div>
       </SectionWrapper>
 
-      {/* Press Kit Downloads */}
+      {/* Brand Assets */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-10">Press Kit</h2>
+          <h2 className="text-center mb-4">Brand Assets</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+            When referencing the organization, always write &ldquo;Sam&apos;s
+            OATH&rdquo; with OATH in all capitals. The acronym stands for
+            Openness, Authenticity, Togetherness, Healing.
+          </p>
+
+          {/* Brand Colors */}
+          <div className="mb-10">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <Palette className="w-5 h-5 text-primary" />
+              Brand Colors (Hopeful Twilight Palette)
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {[
+                { name: "Primary Blue", hex: "#4A6FA5", bg: "bg-primary", textClass: "text-white" },
+                { name: "Teal", hex: "#3EABA8", bg: "bg-teal", textClass: "text-white" },
+                { name: "Slate", hex: "#2E3B4E", bg: "bg-[#2E3B4E]", textClass: "text-white" },
+                { name: "Sage", hex: "#7AB87A", bg: "bg-sage", textClass: "text-white" },
+                { name: "Warm Orange", hex: "#E8956F", bg: "bg-orange", textClass: "text-white" },
+              ].map((color) => (
+                <div key={color.name} className="text-center">
+                  <div
+                    className={`${color.bg} ${color.textClass} rounded-xl p-6 mb-2 shadow-sm`}
+                  >
+                    <p className="text-sm font-mono font-semibold">{color.hex}</p>
+                  </div>
+                  <p className="text-sm font-medium text-gray-900">{color.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Logo & Downloads */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-lg text-center shadow-sm">
               <Download className="w-8 h-8 text-primary mx-auto mb-3" />
@@ -311,6 +347,55 @@ export default async function PressPage() {
               </p>
               <span className="text-sm text-gray-400">Coming soon</span>
             </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Boilerplate */}
+      <SectionWrapper variant="white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center mb-4">Boilerplate</h2>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Standard paragraph for use in press releases and media coverage
+          </p>
+          <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 relative">
+            <Copy className="w-5 h-5 text-gray-300 absolute top-4 right-4" />
+            <p className="text-gray-700 leading-relaxed">
+              Sam&apos;s OATH Foundation is a 501(c)(3) nonprofit national
+              movement to break the silence around substance use and mental
+              health. Founded in 2025 by Frank Sheeder after the loss of his
+              son, Samuel Martin Hagood Sheeder, the organization empowers
+              families and individuals to replace shame with openness, isolation
+              with community, and silence with healing. OATH stands for
+              Openness, Authenticity, Togetherness, and Healing. Through its
+              interactive movement map, community stories, original music,
+              workplace programs, and ambassador network, Sam&apos;s OATH has
+              reached more than 345,000 people across all 50 states. The
+              foundation&apos;s tagline, &ldquo;What&apos;s hidden doesn&apos;t
+              heal,&rdquo; captures the core belief that open conversation is the
+              first step toward recovery and connection. Learn more at
+              samsoath.org.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Recent Coverage */}
+      <SectionWrapper variant="light">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center mb-4">Recent Coverage</h2>
+          <div className="bg-white rounded-xl p-12 text-center shadow-sm border border-gray-100">
+            <FileText className="w-10 h-10 text-gray-300 mx-auto mb-4" />
+            <p className="text-gray-500 text-lg">Coverage coming soon</p>
+            <p className="text-gray-400 text-sm mt-2">
+              For media inquiries or interview requests, contact{" "}
+              <a
+                href="mailto:press@samsoath.org"
+                className="text-primary hover:text-primary-600"
+              >
+                press@samsoath.org
+              </a>
+            </p>
           </div>
         </div>
       </SectionWrapper>

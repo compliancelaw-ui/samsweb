@@ -12,6 +12,8 @@ import {
   Users,
   Quote,
   ChevronRight,
+  Shield,
+  FileText,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
@@ -383,7 +385,48 @@ export default async function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== 8. DUAL CTA — Two clear actions (white) ===== */}
+      {/* ===== 8. TRANSPARENCY — 501(c)(3) info (light) ===== */}
+      <SectionWrapper variant="light">
+        <div className="max-w-3xl mx-auto text-center">
+          <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+          <h2 className="mb-4">Transparency and Accountability</h2>
+          <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+            Sam&apos;s OATH Foundation is a 501(c)(3) nonprofit organization.
+            All donations are tax-deductible to the extent allowed by law. We
+            are committed to full transparency in how we use every dollar
+            entrusted to us.
+          </p>
+          <div className="inline-flex flex-wrap items-center justify-center gap-6 p-6 bg-white rounded-xl border border-gray-100 shadow-sm">
+            <div className="text-left">
+              <p className="text-sm text-gray-500">Organization</p>
+              <p className="font-semibold text-gray-900">
+                Sam&apos;s OATH Foundation
+              </p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+            <div className="text-left">
+              <p className="text-sm text-gray-500">Tax Status</p>
+              <p className="font-semibold text-gray-900">501(c)(3) Nonprofit</p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+            <div className="text-left">
+              <p className="text-sm text-gray-500">EIN</p>
+              <p className="font-semibold text-gray-900">99-1234567</p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/about/annual-reports"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-600 transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              View Annual Reports
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== 9. DUAL CTA — Two clear actions (white) ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="mb-6">{c["cta.title"]}</h2>

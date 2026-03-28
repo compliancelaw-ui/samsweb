@@ -165,6 +165,14 @@ export interface Donation {
   campaign: string | null;
 }
 
+export interface OathDripProgress {
+  id: string;
+  oath_id: string;
+  last_drip_day: number;
+  completed: boolean;
+  updated_at: string;
+}
+
 export interface MapPin {
   id: string;
   display_name: string;
