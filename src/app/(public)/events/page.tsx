@@ -307,7 +307,7 @@ export default function EventsPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-lg font-semibold hover:bg-white/20 transition-colors"
             >
-              Take Sam's OATH
+              Take Sam&apos;s OATH
             </Link>
           </div>
           <p className="text-white/50 text-sm mt-6">

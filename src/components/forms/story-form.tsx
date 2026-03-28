@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { ArrowRight, Loader2, BookOpen, Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getUTMFromCookie } from "@/lib/utm";
@@ -325,10 +326,13 @@ export function StoryForm() {
           </p>
           {photoPreview ? (
             <div className="relative inline-block">
-              <img
+              <Image
                 src={photoPreview}
                 alt="Preview"
-                className="max-h-48 max-w-full rounded-lg shadow-sm"
+                width={400}
+                height={192}
+                className="max-h-48 max-w-full rounded-lg shadow-sm object-contain"
+                unoptimized
               />
               <button
                 type="button"

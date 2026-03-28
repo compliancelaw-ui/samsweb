@@ -98,7 +98,7 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
   productName: "SamsOath",
   mission:
     "Fighting stigma around substance use disorder through advocacy, education, and community.",
-  coreHashtags: SAMSOATH_HASHTAGS.core,
+  coreHashtags: [...SAMSOATH_HASHTAGS.core],
   schedule: [
     {
       day: "Monday",
@@ -277,9 +277,9 @@ export function getTodayTheme(): ContentDaySchedule {
 /** Get all hashtags for a given day (core + day-specific, deduplicated) */
 export function getHashtagsForDay(day: DayOfWeek): string[] {
   const daySchedule = SAMSOATH_CALENDAR.schedule.find((d) => d.day === day);
-  if (!daySchedule) return SAMSOATH_HASHTAGS.core;
+  if (!daySchedule) return [...SAMSOATH_HASHTAGS.core];
   const all = [...SAMSOATH_CALENDAR.coreHashtags, ...daySchedule.hashtags];
-  return [...new Set(all)];
+  return Array.from(new Set(all));
 }
 
 /** Get a random topic suggestion for a given day */
