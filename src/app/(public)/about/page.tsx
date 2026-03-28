@@ -14,6 +14,13 @@ import {
   ChevronRight,
   Shield,
   FileText,
+  Handshake,
+  Stethoscope,
+  GraduationCap,
+  Church,
+  Building2,
+  Newspaper,
+  HeartHandshake,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
@@ -385,7 +392,88 @@ export default async function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== 8. TRANSPARENCY — 501(c)(3) info (light) ===== */}
+      {/* ===== 8. PARTNERS AND SUPPORTERS — Logo grid (white) ===== */}
+      <SectionWrapper variant="white" id="partners">
+        <div className="text-center mb-12">
+          <Handshake className="w-10 h-10 text-teal mx-auto mb-4" />
+          <h2 className="mb-4">Our Partners and Supporters</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Sam&apos;s OATH is building a coalition of organizations that
+            believe openness and compassion can replace silence and stigma.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            {
+              category: "Healthcare",
+              icon: Stethoscope,
+              color: "text-teal",
+              bgColor: "bg-teal/10",
+              borderColor: "border-teal/20",
+            },
+            {
+              category: "Recovery Community",
+              icon: HeartHandshake,
+              color: "text-primary",
+              bgColor: "bg-primary/10",
+              borderColor: "border-primary/20",
+            },
+            {
+              category: "Education",
+              icon: GraduationCap,
+              color: "text-sage",
+              bgColor: "bg-sage/10",
+              borderColor: "border-sage/20",
+            },
+            {
+              category: "Faith",
+              icon: Church,
+              color: "text-orange",
+              bgColor: "bg-orange/10",
+              borderColor: "border-orange/20",
+            },
+            {
+              category: "Corporate",
+              icon: Building2,
+              color: "text-primary",
+              bgColor: "bg-primary/10",
+              borderColor: "border-primary/20",
+            },
+            {
+              category: "Media",
+              icon: Newspaper,
+              color: "text-teal",
+              bgColor: "bg-teal/10",
+              borderColor: "border-teal/20",
+            },
+          ].map((slot) => (
+            <div
+              key={slot.category}
+              className={`rounded-xl border-2 border-dashed ${slot.borderColor} ${slot.bgColor} p-8 text-center`}
+            >
+              <slot.icon className={`w-10 h-10 ${slot.color} mx-auto mb-4 opacity-60`} />
+              <p className="font-semibold text-gray-900 mb-1">{slot.category}</p>
+              <p className="text-sm text-gray-500">
+                Partner announcement coming soon
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <p className="text-gray-600 mb-6">
+            Interested in joining the movement as an organizational partner?
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
+          >
+            Become a Partner
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== 9. TRANSPARENCY — 501(c)(3) info (light) ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-3xl mx-auto text-center">
           <Shield className="w-10 h-10 text-primary mx-auto mb-4" />

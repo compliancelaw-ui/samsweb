@@ -170,6 +170,12 @@ export function Footer() {
             >
               Privacy Policy
             </Link>
+            <Link
+              href="/accessibility"
+              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+            >
+              Accessibility
+            </Link>
           </div>
         </div>
       </div>
