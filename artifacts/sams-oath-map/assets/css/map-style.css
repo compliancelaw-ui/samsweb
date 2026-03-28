@@ -1,0 +1,145 @@
+/* Sam's OATH Map Styles */
+
+.samsoath-map-wrapper {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.samsoath-map-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.samsoath-filter {
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.samsoath-filter:hover {
+    background: #e8e8e8;
+    border-color: #ccc;
+}
+
+.samsoath-filter.active {
+    background: #0066CC;
+    color: white;
+    border-color: #0066CC;
+}
+
+#samsoath-map {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.samsoath-map-legend {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.samsoath-map-stats {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.samsoath-map-stats strong {
+    color: #0066CC;
+    font-size: 24px;
+}
+
+.mapboxgl-popup-content {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.samsoath-popup-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.samsoath-popup-location {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.samsoath-popup-category {
+    color: #0066CC;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.samsoath-popup-date {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.samsoath-popup-story-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #0066CC;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background 0.3s ease;
+}
+
+.samsoath-popup-story-link:hover {
+    background: #0052A3;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .samsoath-map-filters {
+        flex-direction: column;
+    }
+    
+    .samsoath-filter {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .samsoath-map-legend {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #samsoath-map {
+        height: 400px !important;
+    }
+}

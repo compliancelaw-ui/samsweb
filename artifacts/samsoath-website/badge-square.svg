@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Sam's OATH Badge - Square (for profile photos) -->
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A6FA5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3EABA8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+  
+  <!-- White circle background -->
+  <circle cx="200" cy="200" r="160" fill="#FFFFFF" />
+  
+  <!-- Teal inner circle -->
+  <circle cx="200" cy="200" r="145" fill="#3EABA8" />
+  
+  <!-- Text -->
+  <text x="200" y="140" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">I TOOK</text>
+  
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SAM'S</text>
+  
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">OATH</text>
+  
+  <!-- Small heart -->
+  <path d="M200 285 Q 190 275, 185 275 Q 180 275, 180 280 Q 180 285, 200 300 Q 220 285, 220 280 Q 220 275, 215 275 Q 210 275, 200 285 Z" fill="#FFFFFF"/>
+  
+  <!-- Bottom text -->
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="600">SAMSOATH.ORG</text>
+</svg>

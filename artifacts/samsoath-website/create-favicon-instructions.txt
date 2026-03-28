@@ -1,0 +1,45 @@
+CREATING YOUR FAVICON
+=====================
+
+A favicon is the small icon that appears in browser tabs.
+
+OPTION 1 - USE FREE ONLINE TOOL (EASIEST):
+1. Go to https://favicon.io/favicon-generator/
+2. Settings:
+   - Text: "SO" (for Sam's OATH)
+   - Background: #3EABA8 (Vibrant Teal)
+   - Font Color: #FFFFFF (White)
+   - Font: Arial Bold
+   - Shape: Square
+3. Click "Download"
+4. Upload favicon.ico to your WordPress site root
+
+OPTION 2 - CONVERT YOUR LOGO:
+1. Go to https://favicon.io/favicon-converter/
+2. Upload logo.svg
+3. Download the generated favicon
+4. Upload to WordPress
+
+OPTION 3 - USE YOUR LOGO AS IS:
+1. Save logo.svg as logo.png (300×300px)
+2. Upload to WordPress Media Library
+3. In Appearance → Customize → Site Identity
+4. Upload as "Site Icon"
+
+WORDPRESS INTEGRATION:
+1. Go to Appearance → Customize
+2. Click "Site Identity"
+3. Scroll to "Site Icon"
+4. Upload your favicon (recommended size: 512×512px)
+5. WordPress auto-generates all needed sizes
+
+FILE NAMES:
+- favicon.ico (classic, 16×16px + 32×32px)
+- favicon.png (modern, 32×32px or 512×512px)
+- apple-touch-icon.png (180×180px for iOS)
+
+HTML REFERENCE (if manually adding):
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+NOTE: We created logo.svg for you - use that as starting point!

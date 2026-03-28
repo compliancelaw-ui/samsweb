@@ -1,0 +1,84 @@
+SAM'S OATH - QUICK START GUIDE
+==============================
+
+You have 15 complete, professional pages ready to import!
+
+IMMEDIATE NEXT STEPS (30 minutes):
+1. Download the ZIP file
+2. Unzip and open index.html in your browser to preview
+3. Import pages to WordPress (see README.md for methods)
+4. Add your forms (2 shortcodes to replace)
+5. Add your map (1 shortcode to replace)
+
+PAGES YOU HAVE (ALL COMPLETE):
+✅ Homepage
+✅ About (Sam & Frank's story)
+✅ Take OATH (form wrapper)
+✅ Share Story (form wrapper)
+✅ Map (map wrapper)
+✅ Stories (archive with filtering)
+✅ Resources (comprehensive)
+✅ Workplaces (full certification program)
+✅ Advisory Board (ready for bios)
+✅ Contact (form wrapper)
+✅ Press/Media (ready for press kit)
+✅ Thank You - OATH (with social sharing)
+✅ Thank You - Story (confirmation)
+✅ Terms & Conditions
+✅ Privacy Policy
+
+WHAT TO FILL IN (Do Later):
+
+PHOTOS NEEDED (See PHOTO-DIMENSIONS.txt):
+□ Sam's photos (hero background, portraits, gallery)
+□ Frank's photo (About page)
+□ LinkedIn post screenshot
+□ Advisory board headshots (when you recruit advisors)
+□ Story photos (optional, can use placeholders)
+
+CONTENT PLACEHOLDERS:
+□ Stories (6 placeholders - use LinkedIn comments/messages)
+□ Advisory Board bios (when you recruit advisors)
+□ Frank's bio on About page (3-4 paragraphs)
+□ Contact info (phone, address)
+□ Social media URLs (LinkedIn, Facebook, Instagram, Twitter)
+
+FORM INTEGRATION (15 minutes):
+□ OATH form shortcode (take-oath.html)
+□ Story form shortcode (share-story.html)
+□ Contact form shortcode (contact.html)
+
+MAP INTEGRATION (5 minutes):
+□ Map shortcode/embed (map.html)
+
+OPTIONAL (Can Do After Launch):
+□ Update Calendly link (Workplaces page)
+□ Add press coverage (Press page)
+□ Generate downloadable certificates/badges
+□ Create media kit ZIP
+
+LAUNCH CHECKLIST:
+□ All pages imported to WordPress
+□ CSS added to Additional CSS
+□ Forms integrated and tested
+□ Map integrated and working
+□ At least 4 photos added (Sam main, Frank, LinkedIn screenshot)
+□ 2-3 stories filled in
+□ Frank's bio added
+□ Contact info updated
+□ Social media links updated
+□ Mobile view tested
+□ All navigation links tested
+
+ESTIMATED TIME TO LAUNCH:
+- Import pages: 1-2 hours
+- Add essential content: 2-3 hours
+- Test everything: 1 hour
+- TOTAL: 4-6 hours spread over 1-2 weeks
+
+YOU'RE READY!
+
+This is a complete, professional website.
+You can launch with what you have and add more later.
+
+Questions? See README.md for detailed instructions.

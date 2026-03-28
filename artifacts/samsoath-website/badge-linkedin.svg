@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 627" width="1200" height="627">
+  <!-- Sam's OATH LinkedIn Cover Image -->
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A6FA5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3EABA8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7AB87A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="627" fill="url(#coverGrad)" />
+  
+  <!-- Left side - Logo/Branding -->
+  <circle cx="200" cy="313" r="120" fill="#FFFFFF" opacity="0.2" />
+  <circle cx="200" cy="313" r="100" fill="#FFFFFF" />
+  
+  <text x="200" y="300" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#4A6FA5" text-anchor="middle">OATH</text>
+  <path d="M200 320 Q 190 310, 185 310 Q 180 310, 180 315 Q 180 320, 200 335 Q 220 320, 220 315 Q 220 310, 215 310 Q 210 310, 200 320 Z" fill="#3EABA8"/>
+  
+  <!-- Right side - Text -->
+  <text x="450" y="200" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF">I Took Sam's OATH</text>
+  
+  <text x="450" y="270" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" opacity="0.95">Breaking the silence around</text>
+  <text x="450" y="310" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" opacity="0.95">substance use & mental health</text>
+  
+  <text x="450" y="380" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#FFFFFF" style="letter-spacing: 2px">O A T H</text>
+  
+  <text x="450" y="420" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" opacity="0.9">Openness • Authenticity • Togetherness • Healing</text>
+  
+  <!-- Bottom -->
+  <text x="450" y="500" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF">samsoath.org</text>
+  <text x="450" y="540" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF" opacity="0.85" font-style="italic">"What's hidden doesn't heal"</text>
+</svg>

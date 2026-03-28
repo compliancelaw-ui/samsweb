@@ -1,0 +1,228 @@
+SAM'S OATH - PHOTO SOURCING GUIDE
+==================================
+
+You mentioned wanting some stock or AI-generated photos for sections.
+Here's where to get high-quality, authentic photos that match the Hopeful Twilight design.
+
+=====================================
+STOCK PHOTO SOURCES (FREE & PAID)
+=====================================
+
+1. UNSPLASH (FREE)
+   https://unsplash.com
+   - Completely free, high-quality
+   - Search terms to try:
+     * "support group" "community" "hands together"
+     * "diversity people smiling" "authentic portrait"
+     * "mental health" "therapy session" "counseling"
+     * "family support" "friends hugging"
+     * "hope" "healing" "breakthrough"
+   - Hopeful Twilight vibe: Natural light, authentic moments, diverse people
+
+2. PEXELS (FREE)
+   https://pexels.com
+   - Free, no attribution required
+   - Good search terms:
+     * "community gathering" "people talking"
+     * "workplace support" "office diversity"
+     * "recovery" "resilience" "strength"
+   
+3. PIXELS FREE STOCK (FREE)
+   https://www.pixels.com/free-stock-photos
+   - Similar to Pexels/Unsplash
+   - Filter by "people" and "lifestyle"
+
+4. CANVA (FREE + PRO)
+   https://canva.com
+   - Free tier has great stock photos
+   - Pro tier ($13/month) has even more
+   - Can also create graphics, badges, certificates
+
+5. ISTOCK/GETTY (PAID)
+   https://istockphoto.com
+   - More curated, professional
+   - $29+ per image or subscription
+   - Better for workplace/professional shots
+
+=====================================
+AI-GENERATED PHOTOS
+=====================================
+
+1. MIDJOURNEY (PAID - Best Quality)
+   https://midjourney.com
+   - $10/month basic plan
+   - Prompts to try:
+     * "Diverse group of professionals in supportive workplace conversation, natural lighting, authentic, hopeful, teal and blue tones --ar 16:9"
+     * "Person sharing emotional story in support group, empathetic listeners, warm lighting, real moment --ar 4:3"
+     * "Family members hugging, emotional healing, natural outdoor setting, sunrise, hope --ar 16:9"
+   
+2. DALL-E 3 (via ChatGPT Plus)
+   https://chat.openai.com
+   - $20/month for ChatGPT Plus
+   - Good for creating specific scenes
+   - Prompts:
+     * "A diverse group sitting in a circle, supportive workplace environment, natural light through windows, professional but warm, photorealistic"
+     * "Hands clasped together in support, close-up, different skin tones, symbol of community and healing"
+
+3. LEONARDO.AI (FREE + PAID)
+   https://leonardo.ai
+   - Free tier available
+   - Good for realistic photos
+   - Similar prompts to Midjourney
+
+=====================================
+WHAT PHOTOS YOU NEED
+=====================================
+
+HOMEPAGE:
+□ Hero background (1920×1080) - SUGGESTED: 
+   - Outdoor nature scene (sunrise, peaceful)
+   - OR diverse group of people in supportive moment
+   - AI prompt: "Peaceful sunrise over calm water, teal and blue tones, hope and healing, cinematic --ar 16:9"
+
+□ Sam portrait (600×600) - USE REAL PHOTO OF SAM
+
+□ Featured story thumbnails (3× 400×400) - CAN USE STOCK:
+   - Diverse people, different ages/backgrounds
+   - Authentic, not overly posed
+   - Natural lighting
+
+ABOUT PAGE:
+□ LinkedIn post screenshot (1200×800) - USE REAL SCREENSHOT
+□ Sam's gallery (6-8× 500×500) - USE REAL PHOTOS OF SAM
+□ Frank's photo (600×600) - USE REAL PHOTO OF FRANK
+
+FAMILY PERSPECTIVES:
+□ Annie, Joey, Nancy (3× 500×500) - USE REAL PHOTOS
+
+ADVISORY BOARD:
+□ Advisor headshots (6× 300×300) - USE REAL PHOTOS when you recruit advisors
+
+RESOURCES PAGE:
+□ Hero image (optional) - SUGGESTED STOCK:
+   - "Hands reaching to help someone, supportive community, hope"
+   - Or use abstract teal/blue gradient
+
+WORKPLACES PAGE:
+□ Hero image (optional) - SUGGESTED STOCK:
+   - "Diverse workplace team meeting, authentic conversation, modern office"
+   - "Safe space discussion, professional setting, empathetic listening"
+
+=====================================
+COLOR FILTERS TO MATCH DESIGN
+=====================================
+
+If photos don't match Hopeful Twilight colors, you can:
+
+1. Use Canva's Photo Editor:
+   - Upload photo
+   - Adjust → Color → Tint → Add slight teal/blue overlay
+   - Brightness +10 to +20 (to match "hopeful" vibe)
+
+2. Use Photoshop/GIMP:
+   - Layer → New Adjustment Layer → Hue/Saturation
+   - Shift hues toward blue/teal
+   - Increase brightness 10-15%
+   - Add slight glow/softness
+
+=====================================
+PHOTO STYLE GUIDE
+=====================================
+
+DO:
+✓ Natural, authentic moments
+✓ Diverse people (age, race, gender, background)
+✓ Soft, natural lighting
+✓ Hopeful expressions (not forced smiles, but genuine)
+✓ Cool tones (blues, teals, gentle greens)
+✓ Connection shown through body language
+
+DON'T:
+✗ Overly staged corporate stock photos
+✗ Cheesy "everyone pointing at whiteboard" shots
+✗ Isolated individuals looking sad/dramatic
+✗ Warm tones (oranges, reds, harsh yellows)
+✗ Dark, moody, or overly dramatic lighting
+✗ Generic "doctor in white coat" medical imagery
+
+=====================================
+RECOMMENDED SEARCH COMBOS
+=====================================
+
+For Homepage Hero:
+- "peaceful sunrise teal blue water hope healing"
+- "hands together diverse community support"
+
+For Workplace Page:
+- "diverse professionals authentic conversation office natural light"
+- "supportive workplace discussion empathy"
+
+For Stories Section:
+- "real people portrait diverse authentic"
+- "person sharing story support group"
+
+For Resources:
+- "helping hand reaching support"
+- "community circle diverse people"
+
+=====================================
+FREE vs AI vs REAL PHOTOS
+=====================================
+
+HOMEPAGE HERO: Stock or AI (symbolic, sets tone)
+SAM'S PHOTOS: Real only
+FRANK'S PHOTO: Real only
+FAMILY PHOTOS: Real only
+STORY THUMBNAILS: Stock OK (until you have real submissions)
+ADVISORY BOARD: Real when you have advisors
+WORKPLACE SCENES: Stock or AI (illustrative)
+RESOURCE IMAGERY: Stock or AI (supportive, not clinical)
+
+=====================================
+QUICK START RECOMMENDATION
+=====================================
+
+Week 1 - Essential Real Photos:
+1. Sam's main portrait
+2. Frank's headshot
+3. LinkedIn post screenshot
+4. 2-3 Sam gallery photos
+
+Week 2 - Fill with Stock:
+5. Homepage hero background (Unsplash)
+6. 3 story thumbnails (diverse people, Pexels)
+7. Workplace header image (Unsplash)
+
+Week 3 - Upgrade with AI if desired:
+8. Custom hero backgrounds (Midjourney)
+9. Specific workplace scenarios
+10. Resource page imagery
+
+=====================================
+COPYRIGHT & ATTRIBUTION
+=====================================
+
+Unsplash/Pexels: No attribution required, but nice to do
+Canva Free: Attribution not required for free images
+AI (Midjourney/DALL-E): You own the rights
+Stock (iStock): Check license, usually just need to purchase
+
+ALWAYS:
+- Make sure you have rights to use
+- Don't use photos of real people without permission
+- For Sam's photos, get family approval
+- Keep originals backed up
+
+=====================================
+FINAL TIP
+=====================================
+
+Start with real photos where it matters most (Sam, Frank, family).
+Use high-quality stock for everything else.
+Upgrade to AI or custom photography later if needed.
+
+The most important thing is authentic content, not perfect photos.
+Sam's story, Frank's vulnerability, and real family perspectives
+matter WAY more than polished stock imagery.
+
+Launch with what you have. Perfect later.

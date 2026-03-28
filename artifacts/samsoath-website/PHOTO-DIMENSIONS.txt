@@ -1,0 +1,97 @@
+SAM'S OATH - PHOTO DIMENSIONS QUICK REFERENCE
+=============================================
+
+Use this guide when preparing photos for upload.
+
+HOMEPAGE (index.html)
+--------------------
+□ Hero Background: 1920px × 1080px (landscape)
+  Suggested: Sam outdoors, adventure, sunset/nature
+  Format: JPG
+  
+□ Sam Portrait (About section): 600px × 600px (square)
+  Suggested: Sam smiling, friendly headshot
+  Format: JPG
+  
+□ Story Thumbnails (3 photos): 400px × 400px each (square)
+  Can be: Anonymous/stock or real people if public
+  Format: JPG
+
+
+ABOUT PAGE (about.html)
+----------------------
+□ LinkedIn Post Screenshot: 1200px × 800px (landscape)
+  Actual screenshot of your Oct 3, 2025 post
+  Format: PNG (for text clarity)
+  
+□ Sam Main Portrait: 800px × 1000px (portrait)
+  Suggested: Main memorial photo
+  Format: JPG
+  
+□ Photo Gallery (6-8 photos): 500px × 500px each (square)
+  Suggested: Sam's adventures, friends, music, nature
+  Format: JPG
+  
+□ Frank's Photo: 600px × 600px (square)
+  Professional headshot or friendly photo
+  Format: JPG
+
+
+STORIES (homepage + stories page)
+---------------------------------
+□ Story Thumbnails: 400px × 400px (square)
+  Can be anonymous/stock images
+  Format: JPG
+
+
+MAP PAGE (map.html)
+------------------
+□ No photos needed - your existing map embeds here
+
+
+FORM PAGES (take-oath.html, share-story.html)
+--------------------------------------------
+□ No photos needed - forms are the focus
+
+
+PHOTO OPTIMIZATION TIPS
+-----------------------
+✓ Use JPG for photos (smaller file size)
+✓ Use PNG for screenshots (better text clarity)
+✓ Compress before upload (use tinypng.com or squoosh.app)
+✓ Target file size: Under 200KB per image
+✓ Name files clearly: sam-portrait.jpg, frank-headshot.jpg
+
+
+PLACEHOLDER LOCATIONS IN HTML
+-----------------------------
+Search for these comments in the HTML files:
+
+<!-- PHOTO PLACEHOLDER: [description] -->
+Dimensions: [width]px × [height]px
+
+Each placeholder shows:
+- What photo goes there
+- Exact dimensions needed
+- Suggested content
+- File format recommendation
+
+
+PRIORITY ORDER
+-------------
+Launch with these first:
+1. Sam main portrait (about page)
+2. LinkedIn post screenshot (about page)
+3. Sam portrait for homepage
+4. Frank's photo (about page)
+
+Add later:
+5. Hero background image
+6. Photo gallery (6-8 photos)
+7. Story thumbnails
+
+
+TOTAL PHOTOS NEEDED
+------------------
+Minimum to launch: 4 photos
+Full site: 15-20 photos

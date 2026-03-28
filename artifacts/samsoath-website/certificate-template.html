@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam's OATH Certificate</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            width: 8.5in;
+            height: 11in;
+            position: relative;
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
+        }
+        
+        .certificate {
+            width: 100%;
+            height: 100%;
+            padding: 1in;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        /* Decorative border */
+        .border {
+            position: absolute;
+            top: 0.5in;
+            left: 0.5in;
+            right: 0.5in;
+            bottom: 0.5in;
+            border: 4px solid #3EABA8;
+            border-radius: 8px;
+        }
+        
+        .inner-border {
+            position: absolute;
+            top: 0.6in;
+            left: 0.6in;
+            right: 0.6in;
+            bottom: 0.6in;
+            border: 1px solid #4A6FA5;
+        }
+        
+        /* Logo */
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        
+        /* Content */
+        .content {
+            text-align: center;
+            z-index: 1;
+            max-width: 6in;
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #4A6FA5;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #3EABA8;
+            font-style: italic;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        
+        .recipient-intro {
+            font-size: 18px;
+            color: #4B5563;
+            margin-bottom: 20px;
+        }
+        
+        .recipient-name {
+            font-size: 36px;
+            color: #1F2937;
+            font-weight: bold;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3EABA8;
+        }
+        
+        .oath-text {
+            font-size: 16px;
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .oath-letters {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+            max-width: 5in;
+        }
+        
+        .oath-letter {
+            text-align: center;
+        }
+        
+        .letter {
+            font-size: 32px;
+            color: #3EABA8;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .word {
+            font-size: 14px;
+            color: #4A6FA5;
+            font-weight: 600;
+        }
+        
+        .date-signature {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 5in;
+            margin-top: 40px;
+        }
+        
+        .date-block, .signature-block {
+            text-align: center;
+        }
+        
+        .date, .signature-name {
+            font-size: 14px;
+            color: #4B5563;
+            margin-bottom: 5px;
+        }
+        
+        .line {
+            width: 200px;
+            border-top: 1px solid #4B5563;
+            margin-bottom: 5px;
+        }
+        
+        .label {
+            font-size: 12px;
+            color: #6B7280;
+            font-style: italic;
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            bottom: 0.75in;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #9CA3AF;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .watermark-url {
+            color: #3EABA8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="border"></div>
+        <div class="inner-border"></div>
+        
+        <img src="logo.svg" alt="Sam's OATH Logo" class="logo">
+        
+        <div class="content">
+            <h1>Sam's OATH</h1>
+            <p class="tagline">What's Hidden Doesn't Heal</p>
+            
+            <p class="recipient-intro">This certifies that</p>
+            
+            <!-- USER'S NAME WILL BE INSERTED HERE -->
+            <div class="recipient-name">[Full Name / First Name / Initials]</div>
+            
+            <p class="oath-text">
+                has taken Sam's OATH and committed to breaking the silence around 
+                substance use and mental health through openness, authenticity, 
+                togetherness, and healing.
+            </p>
+            
+            <div class="oath-letters">
+                <div class="oath-letter">
+                    <span class="letter">O</span>
+                    <span class="word">Openness</span>
+                </div>
+                <div class="oath-letter">
+                    <span class="letter">A</span>
+                    <span class="word">Authenticity</span>
+                </div>
+                <div class="oath-letter">
+                    <span class="letter">T</span>
+                    <span class="word">Togetherness</span>
+                </div>
+                <div class="oath-letter">
+                    <span class="letter">H</span>
+                    <span class="word">Healing</span>
+                </div>
+            </div>
+            
+            <div class="date-signature">
+                <div class="date-block">
+                    <div class="line"></div>
+                    <p class="label">Date</p>
+                </div>
+                <div class="signature-block">
+                    <p class="signature-name">Frank Sheeder</p>
+                    <div class="line"></div>
+                    <p class="label">Founder, Sam's OATH</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="watermark">
+            Sam's OATH • 501(c)(3) Nonprofit<br>
+            <a href="https://samsoath.org" class="watermark-url">samsoath.org</a>
+        </div>
+    </div>
+</body>
+</html>
