@@ -23,6 +23,7 @@ const learnMoreLinks = [
 const connectLinks = [
   { href: "/contact", label: "Contact Us" },
   { href: "/music", label: "Listen to the Music" },
+  { href: "/install", label: "Install the App" },
 ];
 
 export function Footer() {
