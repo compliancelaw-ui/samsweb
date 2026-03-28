@@ -97,7 +97,7 @@ export function DonationForm() {
             type="button"
             onClick={() => setDonationType("one-time")}
             className={cn(
-              "px-5 py-2.5 text-sm font-semibold rounded-md transition-all",
+              "px-6 py-3 text-sm font-semibold rounded-md transition-all",
               donationType === "one-time"
                 ? "bg-white text-teal shadow-sm"
                 : "text-gray-500 hover:text-gray-700"
@@ -109,7 +109,7 @@ export function DonationForm() {
             type="button"
             onClick={() => setDonationType("recurring")}
             className={cn(
-              "px-5 py-2.5 text-sm font-semibold rounded-md transition-all",
+              "px-6 py-3 text-sm font-semibold rounded-md transition-all",
               donationType === "recurring"
                 ? "bg-white text-teal shadow-sm"
                 : "text-gray-500 hover:text-gray-700"
@@ -163,6 +163,7 @@ export function DonationForm() {
             </span>
             <input
               type="number"
+              inputMode="numeric"
               min="1"
               max="100000"
               step="1"
@@ -191,6 +192,7 @@ export function DonationForm() {
               type="text"
               value={donorName}
               onChange={(e) => setDonorName(e.target.value)}
+              autoComplete="name"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
               placeholder="Your name"
             />
@@ -207,6 +209,7 @@ export function DonationForm() {
               type="email"
               value={donorEmail}
               onChange={(e) => setDonorEmail(e.target.value)}
+              autoComplete="email"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
               placeholder="your@email.com"
             />

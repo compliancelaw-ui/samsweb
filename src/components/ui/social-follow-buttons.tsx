@@ -90,7 +90,7 @@ export function SocialFollowButtons({
             aria-label={`Follow on ${link.label} (opens in new window)`}
             className={cn(
               "inline-flex items-center justify-center rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-              size === "sm" ? "w-9 h-9" : "w-10 h-10",
+              size === "sm" ? "w-10 h-10 sm:w-9 sm:h-9" : "w-11 h-11 sm:w-10 sm:h-10",
               variant === "dark" &&
                 "bg-gray-600/50 text-gray-300 hover:bg-gray-500/50 hover:text-white focus-visible:ring-teal-300 focus-visible:ring-offset-[#2E3B4E]",
               variant === "light" &&

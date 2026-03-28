@@ -57,12 +57,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Take Action
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-1">
               {takeActionLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -76,12 +76,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Learn More
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-1">
               {learnMoreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -95,12 +95,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Connect
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-1">
               {connectLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -113,11 +113,11 @@ export function Footer() {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-teal-300">
                 Crisis Resources
               </h4>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-1">
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.suicideHotline.number}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.suicideHotline.label}:{" "}
                     <span className="font-semibold text-white">
@@ -126,7 +126,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <p className="text-sm text-gray-300">
+                  <p className="py-2 text-sm text-gray-300">
                     {CRISIS_RESOURCES.crisisText.label}:{" "}
                     <span className="font-semibold text-white">
                       Text {CRISIS_RESOURCES.crisisText.keyword} to{" "}
@@ -137,7 +137,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.emergency.number}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.emergency.label}:{" "}
                     <span className="font-semibold text-white">
@@ -153,20 +153,20 @@ export function Footer() {
 
       {/* Bottom Bar — extra bottom padding so the fixed crisis banner doesn't cover it */}
       <div className="border-t border-gray-500">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 pb-16 sm:flex-row sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 pb-[max(4rem,calc(1.5rem+env(safe-area-inset-bottom)))] sm:flex-row sm:px-6 lg:px-8">
           <p className="text-sm text-gray-300">
             &copy; 2026 {SITE_NAME}. All rights reserved.
           </p>
-          <div className="flex items-center gap-3 sm:gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <Link
               href="/terms"
-              className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
-              className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Privacy Policy
             </Link>

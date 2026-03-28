@@ -112,6 +112,7 @@ export function AmbassadorForm() {
             <input
               id="ambassador_name"
               {...register("name")}
+              autoComplete="name"
               aria-required="true"
               aria-describedby={errors.name ? "ambassador_name-error" : undefined}
               className={cn(
@@ -132,6 +133,7 @@ export function AmbassadorForm() {
               id="ambassador_email"
               type="email"
               {...register("email")}
+              autoComplete="email"
               aria-required="true"
               aria-describedby={errors.email ? "ambassador_email-error" : undefined}
               className={cn(
@@ -154,6 +156,7 @@ export function AmbassadorForm() {
             <input
               id="ambassador_city"
               {...register("city")}
+              autoComplete="address-level2"
               aria-required="true"
               aria-describedby={errors.city ? "ambassador_city-error" : undefined}
               className={cn(
@@ -173,6 +176,7 @@ export function AmbassadorForm() {
             <select
               id="ambassador_state"
               {...register("state")}
+              autoComplete="address-level1"
               aria-required="true"
               aria-describedby={errors.state ? "ambassador_state-error" : undefined}
               className={cn(

@@ -86,6 +86,7 @@ export function NewsletterForm() {
               id="newsletter_email"
               type="email"
               {...register("email")}
+              autoComplete="email"
               aria-required="true"
               aria-describedby={errors.email ? "newsletter_email-error" : undefined}
               className={cn(
@@ -102,6 +103,7 @@ export function NewsletterForm() {
             <input
               id="newsletter_first_name"
               {...register("first_name")}
+              autoComplete="given-name"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
               placeholder="First name (optional)"
             />

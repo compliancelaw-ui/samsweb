@@ -281,7 +281,7 @@ export default function OathMap() {
         const popup = new mapboxgl.Popup({
           offset: 12,
           closeButton: true,
-          maxWidth: "260px",
+          maxWidth: "300px",
         })
           .setLngLat(coords)
           .setHTML(html)

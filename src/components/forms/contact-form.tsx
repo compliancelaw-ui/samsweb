@@ -126,6 +126,7 @@ export function ContactForm() {
             <input
               id="sender_name"
               {...register("sender_name")}
+              autoComplete="name"
               aria-required="true"
               aria-describedby={errors.sender_name ? "sender_name-error" : undefined}
               className={cn(
@@ -146,6 +147,7 @@ export function ContactForm() {
               id="sender_email"
               type="email"
               {...register("sender_email")}
+              autoComplete="email"
               aria-required="true"
               aria-describedby={errors.sender_email ? "sender_email-error" : undefined}
               className={cn(
@@ -169,6 +171,7 @@ export function ContactForm() {
               id="sender_phone"
               type="tel"
               {...register("sender_phone")}
+              autoComplete="tel"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
               placeholder="(555) 123-4567 (optional)"
             />

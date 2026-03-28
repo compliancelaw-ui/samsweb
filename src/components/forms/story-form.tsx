@@ -124,6 +124,7 @@ export function StoryForm() {
             <input
               id="author_name"
               {...register("author_name")}
+              autoComplete="name"
               aria-required="true"
               aria-describedby={errors.author_name ? "author_name-error" : undefined}
               className={cn(
@@ -144,6 +145,7 @@ export function StoryForm() {
               id="author_email"
               type="email"
               {...register("author_email")}
+              autoComplete="email"
               aria-required="true"
               aria-describedby={errors.author_email ? "author_email-error" : undefined}
               className={cn(
@@ -166,6 +168,7 @@ export function StoryForm() {
             <input
               id="author_city"
               {...register("author_city")}
+              autoComplete="address-level2"
               aria-required="true"
               aria-describedby={errors.author_city ? "author_city-error" : undefined}
               className={cn(
@@ -185,6 +188,7 @@ export function StoryForm() {
             <select
               id="author_state"
               {...register("author_state")}
+              autoComplete="address-level1"
               aria-required="true"
               aria-describedby={errors.author_state ? "author_state-error" : undefined}
               className={cn(
@@ -270,7 +274,7 @@ export function StoryForm() {
                     setValue("content", prompt + "\n\n", { shouldValidate: false });
                   }
                 }}
-                className="text-xs px-3 py-1.5 rounded-full bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors border border-teal-200"
+                className="text-xs px-3 py-2.5 rounded-full bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors border border-teal-200"
               >
                 {prompt}
               </button>

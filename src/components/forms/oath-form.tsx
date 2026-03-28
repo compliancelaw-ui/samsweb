@@ -185,6 +185,7 @@ export function OathForm() {
             <input
               id="first_name"
               {...register("first_name")}
+              autoComplete="given-name"
               aria-required="true"
               aria-describedby={errors.first_name ? "first_name-error" : undefined}
               className={cn(
@@ -204,6 +205,7 @@ export function OathForm() {
             <input
               id="last_name"
               {...register("last_name")}
+              autoComplete="family-name"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors"
               placeholder="Last name (optional)"
             />
@@ -255,6 +257,7 @@ export function OathForm() {
             <input
               id="city"
               {...register("city")}
+              autoComplete="address-level2"
               aria-required="true"
               aria-describedby={errors.city ? "city-error" : undefined}
               className={cn(
@@ -274,6 +277,7 @@ export function OathForm() {
             <select
               id="state"
               {...register("state")}
+              autoComplete="address-level1"
               aria-required="true"
               aria-describedby={errors.state ? "state-error" : undefined}
               className={cn(
@@ -328,6 +332,7 @@ export function OathForm() {
             id="email"
             type="email"
             {...register("email")}
+            autoComplete="email"
             className={cn(
               "w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal transition-colors",
               errors.email ? "border-red-400" : "border-gray-300"
