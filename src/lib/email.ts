@@ -41,24 +41,71 @@ export async function sendOathConfirmation(to: string, name: string) {
     await resend.emails.send({
       from: getFromAddress("hello"),
       to,
-      subject: "You took Sam's OATH - thank you",
+      subject: "You took Sam's OATH. Now help someone else break the silence.",
       html: brandedEmailHtml(
-        `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you, ${name}.</h1>
-        <p>
-          You just took Sam's OATH - a commitment to openness, authenticity,
-          togetherness, and healing. That matters more than you know.
+        `<h1 style="color:#4A6FA5;font-size:28px;margin:0 0 20px 0;">You did something that matters, ${name}.</h1>
+        <p style="font-size:17px;line-height:1.7;">
+          You just committed to four things that most people never say out loud. Here is what you pledged:
         </p>
-        <p>
-          Your pin is now on the map. Every pin represents a family or individual
-          who chose to break the silence. You're part of something bigger now.
+
+        <div style="margin:24px 0;padding:20px 24px;background:#F0FAFA;border-radius:12px;border-left:4px solid #3EABA8;">
+          <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#3EABA8;">
+            <span style="display:inline-block;width:28px;height:28px;background:#3EABA8;color:white;border-radius:50%;text-align:center;line-height:28px;font-size:14px;margin-right:8px;">O</span>
+            Openness
+          </p>
+          <p style="margin:0;color:#4B5563;font-size:14px;">To speak honestly about what your family has experienced, without shame.</p>
+        </div>
+
+        <div style="margin:24px 0;padding:20px 24px;background:#EEF2F9;border-radius:12px;border-left:4px solid #4A6FA5;">
+          <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#4A6FA5;">
+            <span style="display:inline-block;width:28px;height:28px;background:#4A6FA5;color:white;border-radius:50%;text-align:center;line-height:28px;font-size:14px;margin-right:8px;">A</span>
+            Authenticity
+          </p>
+          <p style="margin:0;color:#4B5563;font-size:14px;">To show up as you truly are, not as the world expects you to be.</p>
+        </div>
+
+        <div style="margin:24px 0;padding:20px 24px;background:#F0F7F0;border-radius:12px;border-left:4px solid #7AB87A;">
+          <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#7AB87A;">
+            <span style="display:inline-block;width:28px;height:28px;background:#7AB87A;color:white;border-radius:50%;text-align:center;line-height:28px;font-size:14px;margin-right:8px;">T</span>
+            Togetherness
+          </p>
+          <p style="margin:0;color:#4B5563;font-size:14px;">To stand with others who are facing these challenges, because no one should face them alone.</p>
+        </div>
+
+        <div style="margin:24px 0;padding:20px 24px;background:#FDF4F0;border-radius:12px;border-left:4px solid #E8956F;">
+          <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#E8956F;">
+            <span style="display:inline-block;width:28px;height:28px;background:#E8956F;color:white;border-radius:50%;text-align:center;line-height:28px;font-size:14px;margin-right:8px;">H</span>
+            Healing
+          </p>
+          <p style="margin:0;color:#4B5563;font-size:14px;">To pursue recovery, growth, and hope, for yourself and for those you love.</p>
+        </div>
+
+        <p style="font-size:17px;line-height:1.7;margin-top:28px;">
+          Your pin is on the map. You are standing with families across the country who chose openness over silence.
         </p>
-        <p>
-          Want to do more? Share your story, challenge someone you trust to take
-          Sam's OATH, or simply keep talking openly. Every conversation chips away
-          at the silence.
+
+        <div style="margin:32px 0;padding:24px;background:#2E3B4E;border-radius:12px;text-align:center;">
+          <p style="color:white;font-size:18px;font-weight:700;margin:0 0 8px;">
+            Now do the most important thing:
+          </p>
+          <p style="color:#9CA3AF;font-size:15px;margin:0 0 20px;">
+            Tell three people about Sam's OATH. The movement grows one honest conversation at a time.
+          </p>
+          <div style="margin:0 0 16px;">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsamsoath.org%2Ftake-the-oath&quote=I%20just%20took%20Sam%27s%20OATH%20-%20a%20commitment%20to%20break%20the%20silence%20around%20substance%20use%20and%20mental%20health.%20Join%20me." style="display:inline-block;padding:10px 20px;background:#4267B2;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600;margin:4px;">Share on Facebook</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsamsoath.org%2Ftake-the-oath" style="display:inline-block;padding:10px 20px;background:#0A66C2;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600;margin:4px;">Share on LinkedIn</a>
+          </div>
+          <div>
+            <a href="https://twitter.com/intent/tweet?text=I%20took%20Sam%27s%20OATH%20-%2060%20seconds%20to%20commit%20to%20openness%20about%20substance%20use%20and%20mental%20health.%20What%27s%20hidden%20doesn%27t%20heal.%20samsoath.org%2Ftake-the-oath%20%23SamsOATH" style="display:inline-block;padding:10px 20px;background:#1DA1F2;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600;margin:4px;">Share on X</a>
+            <a href="https://samsoath.org/take-the-oath" style="display:inline-block;padding:10px 20px;background:#3EABA8;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600;margin:4px;">Copy Link to Share</a>
+          </div>
+        </div>
+
+        <p style="font-size:15px;color:#4B5563;">
+          Someone in your life is carrying this weight in silence right now. Your share might be the reason they realize they are not alone.
         </p>`,
-        "hello",
-        { cta: { label: "See the Movement Map", href: "https://samsoath.org/map" } }
+        "frank",
+        { cta: { label: "Download Your Certificate", href: `https://samsoath.org/api/export/oath-certificate?name=${encodeURIComponent(name)}` } }
       ),
     });
   } catch (err) {
