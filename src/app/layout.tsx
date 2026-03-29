@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/photos/family-hug.jpg",
+        url: "/api/og/site",
         width: 1200,
         height: 630,
         alt: "Sam's OATH — A national movement to break silence around substance use and mental health",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Sam's OATH — What's Hidden Doesn't Heal",
     description:
       "Join a growing movement of families breaking silence around substance use and mental health.",
-    images: ["/images/photos/family-hug.jpg"],
+    images: ["/api/og/site"],
   },
   robots: {
     index: true,
