@@ -249,6 +249,116 @@ export async function sendDonationThankYou(
 }
 
 // ---------------------------------------------------------------------------
+// Monthly Newsletter
+// ---------------------------------------------------------------------------
+
+export interface MonthlyNewsletterData {
+  conversationStarter: {
+    topic: string;
+    prompt: string;
+  };
+  challenge: {
+    title: string;
+    description: string;
+    href: string;
+  };
+  featuredStory: {
+    authorName: string;
+    excerpt: string;
+    href: string;
+  };
+  resourceSpotlight: {
+    title: string;
+    description: string;
+    href: string;
+  };
+}
+
+export function generateMonthlyNewsletter(
+  name: string | null,
+  data: MonthlyNewsletterData
+): string {
+  const greeting = name ? `Hi ${name},` : "Hi there,";
+
+  const sectionStyle =
+    'margin:24px 0;padding:20px;background:#F8FAFB;border-radius:8px;border-left:4px solid #3EABA8;';
+  const sectionTitleStyle =
+    'margin:0 0 8px;font-size:16px;font-weight:700;color:#4A6FA5;';
+  const linkStyle =
+    'color:#3EABA8;text-decoration:none;font-weight:600;';
+
+  const crisisFooter = `
+  <div style="margin-top:32px;padding:16px 20px;background:#F8FAFB;border-radius:8px;border-left:4px solid #3EABA8;">
+    <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#2E3B4E;">
+      If you or someone you know is in crisis:
+    </p>
+    <p style="margin:0;font-size:13px;color:#4B5563;line-height:1.6;">
+      Suicide &amp; Crisis Lifeline: <strong>988</strong> (call or text)<br/>
+      Crisis Text Line: Text <strong>HELLO</strong> to <strong>741741</strong><br/>
+      SAMHSA National Helpline: <strong>1-800-662-4357</strong> (free, confidential, 24/7)
+    </p>
+  </div>`;
+
+  return brandedEmailHtml(
+    `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">${greeting}</h1>
+    <p>
+      Here is what the Sam's OATH community is talking about, doing, and
+      building this month. Every section below is something you can bring
+      to your family, your workplace, or your next honest conversation.
+    </p>
+
+    <div style="${sectionStyle}">
+      <p style="${sectionTitleStyle}">This Month's Conversation Starter</p>
+      <p style="margin:0 0 8px;font-size:15px;font-weight:600;color:#2E3B4E;">
+        ${data.conversationStarter.topic}
+      </p>
+      <p style="margin:0;font-size:14px;color:#4B5563;line-height:1.6;">
+        ${data.conversationStarter.prompt}
+      </p>
+    </div>
+
+    <div style="${sectionStyle}">
+      <p style="${sectionTitleStyle}">Challenge of the Month</p>
+      <p style="margin:0 0 8px;font-size:15px;font-weight:600;color:#2E3B4E;">
+        ${data.challenge.title}
+      </p>
+      <p style="margin:0 0 12px;font-size:14px;color:#4B5563;line-height:1.6;">
+        ${data.challenge.description}
+      </p>
+      <a href="${data.challenge.href}" style="${linkStyle}">Join the Challenge</a>
+    </div>
+
+    <div style="${sectionStyle}">
+      <p style="${sectionTitleStyle}">Featured Story</p>
+      <p style="margin:0 0 8px;font-size:14px;color:#4B5563;line-height:1.6;">
+        <em>"${data.featuredStory.excerpt}"</em>
+      </p>
+      <p style="margin:0 0 12px;font-size:13px;color:#9CA3AF;">
+        - ${data.featuredStory.authorName}
+      </p>
+      <a href="${data.featuredStory.href}" style="${linkStyle}">Read the Full Story</a>
+    </div>
+
+    <div style="${sectionStyle}">
+      <p style="${sectionTitleStyle}">Resource Spotlight</p>
+      <p style="margin:0 0 8px;font-size:15px;font-weight:600;color:#2E3B4E;">
+        ${data.resourceSpotlight.title}
+      </p>
+      <p style="margin:0 0 12px;font-size:14px;color:#4B5563;line-height:1.6;">
+        ${data.resourceSpotlight.description}
+      </p>
+      <a href="${data.resourceSpotlight.href}" style="${linkStyle}">Download the Guide</a>
+    </div>
+
+    ${crisisFooter}`,
+    "hello",
+    {
+      unsubscribe: true,
+    }
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Admin Notification (new submission alert)
 // ---------------------------------------------------------------------------
 

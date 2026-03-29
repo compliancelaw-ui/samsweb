@@ -7,6 +7,10 @@
     {
       "path": "/api/cron/oath-drip?secret=a3f7c9d1e4b6082f5a91d3c7e8f20b64",
       "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/monthly-newsletter?secret=a3f7c9d1e4b6082f5a91d3c7e8f20b64",
+      "schedule": "0 14 1 * *"
     }
   ]
 }

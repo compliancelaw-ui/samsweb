@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { sendDripEmail, getNextDripDay, DRIP_SEQUENCE } from "@/lib/email-drips";
+import {
+  sendDripEmail,
+  getNextDripDay,
+  DRIP_SEQUENCE,
+  sendStoryDripEmail,
+  getNextStoryDripDay,
+  STORY_DRIP_SEQUENCE,
+} from "@/lib/email-drips";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -152,13 +159,142 @@ export async function GET(request: NextRequest) {
       }
     }
 
+    // -----------------------------------------------------------------
+    // Story submission drip processing
+    // -----------------------------------------------------------------
+
+    // Ensure story_drip_progress table exists
+    await db.rpc("exec_sql", {
+      query: `
+        CREATE TABLE IF NOT EXISTS story_drip_progress (
+          id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+          story_id uuid NOT NULL REFERENCES story_submissions(id) ON DELETE CASCADE,
+          last_drip_day integer NOT NULL DEFAULT -1,
+          completed boolean NOT NULL DEFAULT false,
+          updated_at timestamptz NOT NULL DEFAULT now(),
+          UNIQUE(story_id)
+        );
+      `,
+    }).then(() => {}, () => {
+      console.warn(
+        "story_drip_progress: Could not auto-create table via rpc. " +
+        "Ensure the table exists via migration."
+      );
+    });
+
+    // Fetch stories with author_email
+    const { data: storiesNeedingDrip, error: storyFetchError } = await db
+      .from("story_submissions")
+      .select("id, author_name, author_email, created_at")
+      .not("author_email", "is", null)
+      .order("created_at", { ascending: true });
+
+    let storySent = 0;
+    let storySkipped = 0;
+    let storyCompleted = 0;
+    const storyErrors: string[] = [];
+
+    if (storyFetchError) {
+      console.error("Error fetching stories for drip:", storyFetchError);
+    } else if (storiesNeedingDrip && storiesNeedingDrip.length > 0) {
+      const storyIds = storiesNeedingDrip.map((s) => s.id);
+      const { data: storyProgressRows } = await db
+        .from("story_drip_progress")
+        .select("story_id, last_drip_day, completed")
+        .in("story_id", storyIds);
+
+      const storyProgressMap = new Map<string, { last_drip_day: number; completed: boolean }>();
+      for (const row of storyProgressRows || []) {
+        storyProgressMap.set(row.story_id, {
+          last_drip_day: row.last_drip_day,
+          completed: row.completed,
+        });
+      }
+
+      const maxStoryDripDay = Math.max(...STORY_DRIP_SEQUENCE.map((d) => d.day));
+
+      for (const story of storiesNeedingDrip) {
+        if (!story.author_email) continue;
+
+        const progress = storyProgressMap.get(story.id);
+
+        if (progress?.completed) {
+          storySkipped++;
+          continue;
+        }
+
+        const lastDripDay = progress?.last_drip_day ?? null;
+        const storyDate = new Date(story.created_at);
+        const nextDay = getNextStoryDripDay(storyDate, lastDripDay);
+
+        if (nextDay === null) {
+          if (progress) {
+            await db
+              .from("story_drip_progress")
+              .update({ completed: true, updated_at: new Date().toISOString() })
+              .eq("story_id", story.id);
+          } else {
+            await db.from("story_drip_progress").insert({
+              story_id: story.id,
+              last_drip_day: maxStoryDripDay,
+              completed: true,
+              updated_at: new Date().toISOString(),
+            });
+          }
+          storyCompleted++;
+          continue;
+        }
+
+        const success = await sendStoryDripEmail(
+          story.author_email,
+          story.author_name,
+          nextDay
+        );
+
+        if (success) {
+          storySent++;
+          const isComplete = nextDay >= maxStoryDripDay;
+
+          if (progress) {
+            await db
+              .from("story_drip_progress")
+              .update({
+                last_drip_day: nextDay,
+                completed: isComplete,
+                updated_at: new Date().toISOString(),
+              })
+              .eq("story_id", story.id);
+          } else {
+            await db.from("story_drip_progress").insert({
+              story_id: story.id,
+              last_drip_day: nextDay,
+              completed: isComplete,
+              updated_at: new Date().toISOString(),
+            });
+          }
+        } else {
+          storyErrors.push(`Failed story drip: ${story.id} (day ${nextDay})`);
+        }
+      }
+    }
+
+    const allErrors = [...errors, ...storyErrors];
+
     return NextResponse.json({
       success: true,
-      processed: oathsNeedingDrip.length,
-      sent,
-      skipped,
-      completed,
-      errors: errors.length > 0 ? errors : undefined,
+      oath: {
+        processed: oathsNeedingDrip.length,
+        sent,
+        skipped,
+        completed,
+      },
+      story: {
+        processed: storiesNeedingDrip?.length || 0,
+        sent: storySent,
+        skipped: storySkipped,
+        completed: storyCompleted,
+      },
+      errors: allErrors.length > 0 ? allErrors : undefined,
     });
   } catch (error) {
     console.error("OATH drip cron error:", error);

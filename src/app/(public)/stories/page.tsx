@@ -1,10 +1,13 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, PenLine } from "lucide-react";
+import { ArrowRight, BookOpen, PenLine, Quote } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { getPageContent } from "@/lib/cms/get-page-content";
+import { StoryShareButton } from "@/components/stories/story-share-button";
+import { SoftEmailCapture } from "@/components/ui/soft-email-capture";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Stories of Substance Use & Recovery | Sam's OATH",
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/stories" },
 };
 
-export const revalidate = 300; // revalidate every 5 minutes
+export const revalidate = 300;
 
 interface PublishedStory {
   id: string;
@@ -51,19 +54,47 @@ const RELATION_COLORS: Record<string, string> = {
   "Hope & Recovery": "bg-orange/10 text-orange",
 };
 
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-}
+const FAMILY_STORIES = [
+  {
+    relation: "Supporting a Loved One",
+    title: "The Post That Started It All",
+    excerpt:
+      "After we lost Sam, I wrote one honest post about what our family had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew \u2014 the silence was the real epidemic. If we could build a community around openness instead of shame, we could change how families deal with these struggles. That\u2019s why Sam\u2019s OATH exists.",
+    author: "Frank Sheeder",
+    location: "Texas",
+  },
+  {
+    relation: "Supporting a Loved One",
+    title: "My Brother Taught Me What Courage Looks Like",
+    excerpt:
+      "Sam was my brother, and watching him fight every day took a kind of courage most people never see. Our family learned the hard way that silence doesn\u2019t protect anyone \u2014 it isolates them. I want other siblings to know: it\u2019s okay to talk about what your family is going through. You\u2019re not betraying anyone by being honest. You\u2019re helping them.",
+    author: "Annie Sheeder",
+    location: "North Carolina",
+  },
+  {
+    relation: "Supporting a Loved One",
+    title: "We Don\u2019t Have to Carry This Alone",
+    excerpt:
+      "Growing up, I didn\u2019t have the words for what our family was going through. I just knew something was wrong and nobody was talking about it. Losing Sam changed that for me. Now I talk about it \u2014 with friends, with anyone who\u2019ll listen. Because the families who are still carrying this in silence need to hear that there\u2019s another way.",
+    author: "Joey Sheeder",
+    location: "Texas",
+  },
+  {
+    relation: "Supporting a Loved One",
+    title: "Love Doesn\u2019t Fix Everything, but It\u2019s Where Healing Starts",
+    excerpt:
+      "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through substance use challenges means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
+    author: "Nancy Sheeder",
+    location: "Texas",
+  },
+];
 
 export default async function StoriesPage() {
-  const [stories, c] = await Promise.all([
-    getPublishedStories(),
-    getPageContent("stories"),
-  ]);
+  const stories = await getPublishedStories();
+
+  const featuredStory = stories.find((s) => s.is_featured);
+  const gridStories = stories.filter((s) => s !== featuredStory);
+  const hasDbStories = stories.length > 0;
 
   return (
     <>
@@ -72,167 +103,233 @@ export default async function StoriesPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
-            {c["hero.eyebrow"]}
+            Authenticity in Action
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            {c["hero.title"]}
+            Every Story Breaks the Silence a Little More
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            {c["hero.subtitle"]}
+            These are real families choosing Authenticity over pretending.
+            Read their words. Feel their courage. Share yours when you&apos;re ready.
           </p>
         </div>
       </section>
 
-      {/* ===== STORIES ===== */}
-      <SectionWrapper variant="light">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {stories.length > 0 ? (
-            stories.map((story) => (
-              <Link
-                key={story.id}
-                href={`/stories/${story.slug}`}
-                className="group bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all hover:border-primary/20"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <BookOpen className="w-4 h-4 text-primary" />
-                  {story.author_relation && (
-                    <span
-                      className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                        RELATION_COLORS[story.author_relation] ||
+      {/* ===== FEATURED STORY ===== */}
+      {featuredStory && (
+        <SectionWrapper variant="white">
+          <div className="max-w-4xl mx-auto">
+            <Link
+              href={`/stories/${featuredStory.slug}`}
+              className="group block bg-gradient-to-br from-primary-50 to-teal-50 rounded-2xl border border-primary/10 p-8 md:p-12 shadow-sm hover:shadow-xl transition-all"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                {featuredStory.author_relation && (
+                  <span
+                    className={cn(
+                      "text-xs font-medium px-3 py-1 rounded-full",
+                      RELATION_COLORS[featuredStory.author_relation] ||
                         "bg-gray-100 text-gray-600"
-                      }`}
-                    >
-                      {story.author_relation}
-                    </span>
-                  )}
-                  {story.is_featured && (
-                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-600">
-                      Featured
-                    </span>
-                  )}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {story.title}
-                </h3>
-                {story.excerpt && (
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {story.excerpt}
-                  </p>
-                )}
-                <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
-                  <div className="text-xs text-gray-400">
-                    <span className="font-medium text-gray-500">
-                      {story.author_name}
-                    </span>
-                    {story.author_city && story.author_state && (
-                      <span>
-                        {" "}
-                        &middot; {story.author_city}, {story.author_state}
-                      </span>
                     )}
-                  </div>
-                  <span className="text-xs text-gray-400">
-                    {formatDate(story.published_at)}
+                  >
+                    {featuredStory.author_relation}
                   </span>
-                </div>
-              </Link>
-            ))
-          ) : (
-            /* Family stories — placeholder content until submitted via the form */
-            <>
-              {[
-                {
-                  relation: "Supporting a Loved One",
-                  title: "The Post That Started It All",
-                  excerpt:
-                    "After we lost Sam, I wrote one honest post about what our family had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew \u2014 the silence was the real epidemic. If we could build a community around openness instead of shame, we could change how families deal with these struggles. That\u2019s why Sam\u2019s OATH exists.",
-                  author: "Frank Sheeder",
-                  location: "Texas",
-                },
-                {
-                  relation: "Supporting a Loved One",
-                  title: "My Brother Taught Me What Courage Looks Like",
-                  excerpt:
-                    "Sam was my brother, and watching him fight every day took a kind of courage most people never see. Our family learned the hard way that silence doesn\u2019t protect anyone \u2014 it isolates them. I want other siblings to know: it\u2019s okay to talk about what your family is going through. You\u2019re not betraying anyone by being honest. You\u2019re helping them.",
-                  author: "Annie Sheeder",
-                  location: "North Carolina",
-                },
-                {
-                  relation: "Supporting a Loved One",
-                  title: "We Don\u2019t Have to Carry This Alone",
-                  excerpt:
-                    "Growing up, I didn\u2019t have the words for what our family was going through. I just knew something was wrong and nobody was talking about it. Losing Sam changed that for me. Now I talk about it \u2014 with friends, with anyone who\u2019ll listen. Because the families who are still carrying this in silence need to hear that there\u2019s another way.",
-                  author: "Joey Sheeder",
-                  location: "Texas",
-                },
-                {
-                  relation: "Supporting a Loved One",
-                  title: "Love Doesn\u2019t Fix Everything, but It\u2019s Where Healing Starts",
-                  excerpt:
-                    "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through substance use challenges means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
-                  author: "Nancy Sheeder",
-                  location: "Texas",
-                },
-              ].map((story) => (
-                <div
-                  key={story.title}
-                  className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <BookOpen className="w-4 h-4 text-primary" />
-                    <span
-                      className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                        RELATION_COLORS[story.relation] ||
-                        "bg-gray-100 text-gray-600"
-                      }`}
-                    >
-                      {story.relation}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {story.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {story.excerpt}
-                  </p>
-                  <div className="pt-3 border-t border-gray-100">
-                    <span className="text-xs font-medium text-gray-500">
-                      {story.author}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {" "}
-                      &middot; {story.location}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
+                )}
+                <span className="text-xs font-medium px-3 py-1 rounded-full bg-amber-50 text-amber-600">
+                  Featured
+                </span>
+              </div>
 
-        {/* CTA below stories */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Have a story of your own? Your voice matters.
-          </p>
-          <Link
-            href="/share-your-story"
-            className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
-          >
-            <PenLine className="w-5 h-5" />
-            Share Your Story
-          </Link>
-        </div>
+              {featuredStory.excerpt && (
+                <div className="relative mb-6">
+                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" aria-hidden="true" />
+                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed italic pl-8">
+                    {featuredStory.excerpt}
+                  </p>
+                </div>
+              )}
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                {featuredStory.title}
+              </h2>
+
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="text-sm text-gray-500">
+                  <span className="font-medium text-gray-700">
+                    {featuredStory.author_name}
+                  </span>
+                  {featuredStory.author_city && featuredStory.author_state && (
+                    <span>
+                      {" "}
+                      &middot; {featuredStory.author_city},{" "}
+                      {featuredStory.author_state}
+                    </span>
+                  )}
+                </div>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                  Read Full Story
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </SectionWrapper>
+      )}
+
+      {/* ===== STORIES GRID ===== */}
+      <SectionWrapper variant="light">
+        {hasDbStories ? (
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto [column-fill:_balance]">
+            {gridStories.map((story, index) => (
+              <Fragment key={story.id}>
+                <div
+                  className="break-inside-avoid mb-6"
+                >
+                  <div className="group bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all hover:border-primary/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
+                      {story.author_relation && (
+                        <span
+                          className={cn(
+                            "text-xs font-medium px-2 py-0.5 rounded-full",
+                            RELATION_COLORS[story.author_relation] ||
+                              "bg-gray-100 text-gray-600"
+                          )}
+                        >
+                          {story.author_relation}
+                        </span>
+                      )}
+                    </div>
+
+                    <Link href={`/stories/${story.slug}`}>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        {story.title}
+                      </h3>
+                    </Link>
+
+                    {story.excerpt && (
+                      <Link href={`/stories/${story.slug}`}>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
+                          {story.excerpt}
+                        </p>
+                      </Link>
+                    )}
+
+                    <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
+                      <div className="text-xs text-gray-400">
+                        <span className="font-medium text-gray-500">
+                          {story.author_name}
+                        </span>
+                        {story.author_city && story.author_state && (
+                          <span>
+                            {" "}
+                            &middot; {story.author_city}, {story.author_state}
+                          </span>
+                        )}
+                      </div>
+                      <StoryShareButton
+                        slug={story.slug}
+                        title={story.title}
+                        authorName={story.author_name}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Add Your Voice CTA card every 4 stories */}
+                {(index + 1) % 4 === 0 && (
+                  <div className="break-inside-avoid mb-6">
+                    <Link
+                      href="/share-your-story"
+                      className="block bg-gradient-to-br from-teal-50 to-primary-50 rounded-xl border border-teal/20 p-6 text-center hover:shadow-lg transition-all group"
+                    >
+                      <PenLine className="w-8 h-8 text-teal mx-auto mb-3" aria-hidden="true" />
+                      <p className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                        Add Your Voice
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Your story gives someone else permission to speak up.
+                      </p>
+                    </Link>
+                  </div>
+                )}
+              </Fragment>
+            ))}
+          </div>
+        ) : (
+          /* Family stories fallback */
+          <div className="columns-1 md:columns-2 gap-6 max-w-5xl mx-auto [column-fill:_balance]">
+            {FAMILY_STORIES.map((story, index) => (
+              <Fragment key={story.title}>
+                <div
+                  className="break-inside-avoid mb-6"
+                >
+                  <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+                    <div className="flex items-center gap-2 mb-3">
+                      <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
+                      <span
+                        className={cn(
+                          "text-xs font-medium px-2 py-0.5 rounded-full",
+                          RELATION_COLORS[story.relation] ||
+                            "bg-gray-100 text-gray-600"
+                        )}
+                      >
+                        {story.relation}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {story.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {story.excerpt}
+                    </p>
+                    <div className="pt-3 border-t border-gray-100">
+                      <span className="text-xs font-medium text-gray-500">
+                        {story.author}
+                      </span>
+                      <span className="text-xs text-gray-400">
+                        {" "}
+                        &middot; {story.location}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Add Your Voice CTA after story #2 in fallback */}
+                {index === 1 && (
+                  <div className="break-inside-avoid mb-6">
+                    <Link
+                      href="/share-your-story"
+                      className="block bg-gradient-to-br from-teal-50 to-primary-50 rounded-xl border border-teal/20 p-6 text-center hover:shadow-lg transition-all group"
+                    >
+                      <PenLine className="w-8 h-8 text-teal mx-auto mb-3" aria-hidden="true" />
+                      <p className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                        Add Your Voice
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Your story gives someone else permission to speak up.
+                      </p>
+                    </Link>
+                  </div>
+                )}
+              </Fragment>
+            ))}
+          </div>
+        )}
       </SectionWrapper>
 
-      {/* ===== WHY STORIES MATTER — split with image ===== */}
+      {/* ===== WHY STORIES MATTER ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="mb-4">{c["why.title"]}</h2>
+              <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
+                The Power of Authenticity
+              </p>
+              <h2 className="mb-4">Why Stories Matter</h2>
               <p className="text-xl text-gray-600 mb-8">
-                {c["why.subtitle"]}
+                Every story shared is an act of Authenticity that gives someone
+                else permission to stop pretending.
               </p>
               <div className="space-y-6">
                 {[
@@ -262,6 +359,18 @@ export default async function StoriesPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Pull quote */}
+              <div className="mt-8 pl-6 border-l-4 border-teal/30">
+                <p className="text-gray-700 italic leading-relaxed">
+                  &ldquo;To speak openly of addiction is rare; to do so with
+                  the generosity of spirit that Sam showed is
+                  extraordinary.&rdquo;
+                </p>
+                <p className="text-sm text-gray-500 mt-2 font-medium">
+                  From Sam&apos;s obituary
+                </p>
+              </div>
             </div>
             <div className="flex justify-center">
               <Image
@@ -279,9 +388,14 @@ export default async function StoriesPage() {
       {/* ===== SHARE YOUR STORY CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-white mb-4">{c["cta.title"]}</h2>
-          <p className="text-white/80 text-xl mb-10 leading-relaxed">
-            {c["cta.body"]}
+          <h2 className="text-white mb-4">Your Story Is an Act of Courage</h2>
+          <p className="text-white/80 text-xl mb-4 leading-relaxed">
+            You chose Openness when you came here.
+            Sharing your story is Authenticity.
+            Together, we heal.
+          </p>
+          <p className="text-white/60 text-base mb-10">
+            O &rarr; A &rarr; T &rarr; H
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -295,8 +409,20 @@ export default async function StoriesPage() {
               href="/take-the-oath"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/10 transition-all"
             >
-              Take Sam&apos;s OATH First
+              Take Sam&apos;s OATH
             </Link>
+          </div>
+
+          {/* Email capture for those not ready to share */}
+          <div className="mt-12">
+            <p className="text-white/70 text-sm mb-4">
+              Not ready to share? Stay connected.
+            </p>
+            <SoftEmailCapture
+              source="stories-page"
+              heading="Stay Connected"
+              subtext="Get stories and resources delivered to your inbox. No spam, no judgment, just community."
+            />
           </div>
         </div>
       </SectionWrapper>

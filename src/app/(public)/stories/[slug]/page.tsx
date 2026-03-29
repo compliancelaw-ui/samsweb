@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpen, Calendar, MapPin, PenLine, Share2 } from "lucide-react";
+import { ArrowLeft, BookOpen, Calendar, MapPin, PenLine } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { StoryShareButton } from "@/components/stories/story-share-button";
+import { PageShareButtons } from "@/components/ui/page-share-buttons";
 
 export const revalidate = 300;
 
@@ -175,7 +177,7 @@ export default async function StoryPage({
 
           {/* Footer */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
               <div className="text-sm text-gray-500">
                 Shared by{" "}
                 <span className="font-medium text-gray-700">
@@ -187,9 +189,20 @@ export default async function StoryPage({
                   </span>
                 )}
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Share2 className="w-4 h-4" />
-                <span>Share this story to help break the silence</span>
+              <StoryShareButton
+                slug={story.slug}
+                title={story.title}
+                authorName={story.author_name}
+              />
+            </div>
+            <div className="bg-gray-50 rounded-xl p-6">
+              <p className="text-sm text-gray-600 mb-3 text-center">
+                Share this story to help break the silence
+              </p>
+              <div className="flex justify-center">
+                <PageShareButtons
+                  text={`"${story.title}" - Read ${story.author_name}'s story on Sam's OATH.`}
+                />
               </div>
             </div>
           </div>
