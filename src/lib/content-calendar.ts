@@ -174,7 +174,7 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
       suggestedTopics: [
         "Sam's story and legacy",
         "Family photos and memories",
-        "Why this fight is personal",
+        "Why this movement is personal",
         "Community member milestones",
         "Anniversary reflections",
         "Letters to loved ones",

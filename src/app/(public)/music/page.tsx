@@ -90,7 +90,7 @@ export default async function MusicPage() {
           <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
             <iframe
               src="https://www.youtube.com/embed/FfWqq4F167E"
-              title="What's Hidden Doesn't Heal — Music Video"
+              title="What's Hidden Doesn't Heal - Music Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
@@ -105,7 +105,7 @@ export default async function MusicPage() {
           <h2 className="mb-4">The Songs</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Each song carries a piece of this movement&apos;s heart. From grief
-            to hope, from silence to strength — this is the soundtrack of
+            to hope, from silence to strength. This is the soundtrack of
             healing.
           </p>
         </div>
@@ -218,7 +218,7 @@ export default async function MusicPage() {
             &ldquo;{c["frank-note"]}&rdquo;
           </blockquote>
           <p className="text-gray-500 mb-8">
-            — Frank Sheeder, Founder of Sam&apos;s OATH
+            - Frank Sheeder, Founder of Sam&apos;s OATH
           </p>
           <Link
             href="/take-the-oath"

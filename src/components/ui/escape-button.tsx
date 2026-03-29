@@ -46,7 +46,7 @@ export function EscapeButton() {
     <button
       type="button"
       onClick={escape}
-      aria-label="Quick exit — leave this site immediately (or press Escape)"
+      aria-label="Quick exit - leave this site immediately (or press Escape)"
       title="Quick exit (ESC)"
       className="fixed bottom-3 right-3 z-[60] inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50/90 px-3 py-1.5 text-xs font-medium text-red-700 shadow-sm backdrop-blur transition-all hover:bg-red-100 hover:text-red-900 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 sm:bottom-4 sm:right-4"
     >

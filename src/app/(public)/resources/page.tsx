@@ -37,7 +37,7 @@ const COMPASSIONATE_LANGUAGE = [
   },
   {
     phrase: "In recovery / Actively using",
-    why: "Describes a stage of a journey — not a moral judgment about someone's character.",
+    why: "Describes a stage of a journey, not a moral judgment about someone's character.",
   },
   {
     phrase: "Substance use disorder",
@@ -57,7 +57,7 @@ const COMPASSIONATE_LANGUAGE = [
   },
   {
     phrase: "Help is available at every stage",
-    why: "No one should have to suffer maximally before getting support. Help is for right now — not rock bottom.",
+    why: "No one should have to suffer maximally before getting support. Help is for right now, not rock bottom.",
   },
 ];
 
@@ -101,7 +101,7 @@ const BOOKS = [
     title: "Beautiful Boy",
     author: "David Sheff",
     description:
-      "A father's powerful account of his son's addiction — honest, heartbreaking, and full of love.",
+      "A father's powerful account of his son's addiction. Honest, heartbreaking, and full of love.",
   },
   {
     title: "Codependent No More",
@@ -113,7 +113,7 @@ const BOOKS = [
     title: "It's OK That You're Not OK",
     author: "Megan Devine",
     description:
-      "A compassionate guide to grieving that doesn't try to fix your pain — it honors it.",
+      "A compassionate guide to grieving that doesn't try to fix your pain. It honors it.",
   },
   {
     title: "In the Realm of Hungry Ghosts",
@@ -144,7 +144,7 @@ const faqJsonLd = {
       name: "What should I say instead of 'addict'?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Use 'person with a substance use disorder' — it puts the person first. A diagnosis doesn't define who someone is.",
+        text: "Use 'person with a substance use disorder.' It puts the person first. A diagnosis doesn't define who someone is.",
       },
     },
     {
@@ -152,7 +152,7 @@ const faqJsonLd = {
       name: "What should I say instead of 'in recovery' or 'clean'?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Use 'person in recovery' or 'in recovery / actively using.' These phrases honor the courage it takes to heal without labeling someone by their past, and describe a stage of a journey — not a moral judgment.",
+        text: "Use 'person in recovery' or 'in recovery / actively using.' These phrases honor the courage it takes to heal without labeling someone by their past, and describe a stage of a journey, not a moral judgment.",
       },
     },
     {
@@ -347,7 +347,7 @@ export default async function ResourcesPage() {
               {CRISIS_RESOURCES.suicideHotline.number}
             </p>
             <p className="text-gray-600 mb-6">
-              Call or text 988 — available 24/7 for anyone in suicidal crisis or
+              Call or text 988, available 24/7 for anyone in suicidal crisis or
               emotional distress.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -526,7 +526,7 @@ export default async function ResourcesPage() {
             <span className="font-semibold text-gray-900">
               Sam&apos;s OATH is a movement
             </span>{" "}
-            — not a support group or treatment program. We fight to break the
+            - not a support group or treatment program. We work to break the
             silence around substance use and mental health. The
             organizations below offer direct support services, and we encourage
             families to connect with them as part of their journey.
@@ -595,9 +595,9 @@ export default async function ResourcesPage() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "Listen without judgment — you don't need to have the answers",
+                  "Listen without judgment. You don't need to have the answers",
                   "Educate yourself about substance use disorder and mental illness",
-                  "Take care of your own mental health — you can't pour from an empty cup",
+                  "Take care of your own mental health. You can't pour from an empty cup",
                   "Set boundaries with love, not anger",
                   "Connect with a support group like Al-Anon, Nar-Anon, or NAMI",
                   "Remember that substance use disorder is a medical condition, not a choice or moral failing",

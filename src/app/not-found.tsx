@@ -41,7 +41,7 @@ export default function NotFound() {
               { label: "Resources", href: "/resources" },
               { label: "OATH Map", href: "/map" },
               { label: "Music", href: "/music" },
-              { label: "Blog", href: "/blog" },
+              { label: "Updates", href: "/blog" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (
               <Link

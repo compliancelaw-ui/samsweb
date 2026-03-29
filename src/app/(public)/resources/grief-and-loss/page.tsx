@@ -64,7 +64,7 @@ export default function GriefAndLossPage() {
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             If you&apos;ve lost someone you love to substance use, overdose, or
-            suicide — this page is for you. Your grief is real, it is valid, and
+            suicide, this page is for you. Your grief is real, it is valid, and
             you do not have to carry it alone.
           </p>
         </div>
@@ -81,17 +81,17 @@ export default function GriefAndLossPage() {
             Back to all resources
           </Link>
 
-          <h2 className="mb-6">Your Grief Is Different — And That&apos;s OK</h2>
+          <h2 className="mb-6">Your Grief Is Different, And That&apos;s OK</h2>
           <div className="space-y-4 text-lg text-gray-600 leading-relaxed mb-10">
             <p>
               Losing someone to substance use, overdose, or suicide carries a
               kind of grief that the world doesn&apos;t always know how to hold.
               People may say the wrong things. They may avoid talking about your
-              loved one at all. You may feel anger alongside your sadness —
+              loved one at all. You may feel anger alongside your sadness:
               anger at the disease, at the system, at yourself, at them.
             </p>
             <p>
-              This is sometimes called <strong>disenfranchised grief</strong> —
+              This is sometimes called <strong>disenfranchised grief</strong>:
               grief that society doesn&apos;t fully acknowledge or validate.
               When someone dies from cancer, people bring casseroles. When
               someone dies from an overdose, people sometimes go quiet. That
@@ -115,14 +115,14 @@ export default function GriefAndLossPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                "Guilt — wondering if you could have done more or said something different",
-                "Anger — at the disease, at the person, at yourself, at God, at the world",
-                "Shame — feeling like you can't talk about how your loved one died",
-                "Relief — and then guilt about feeling relieved",
-                "Isolation — feeling like nobody understands what you're going through",
-                "Ambiguous grief — grieving someone you lost long before they died",
-                "Trauma — replaying the phone call, the hospital, the moment you found out",
-                "Fear — worried the same thing could happen to another family member",
+                "Guilt: wondering if you could have done more or said something different",
+                "Anger: at the disease, at the person, at yourself, at God, at the world",
+                "Shame: feeling like you can't talk about how your loved one died",
+                "Relief: and then guilt about feeling relieved",
+                "Isolation: feeling like nobody understands what you're going through",
+                "Ambiguous grief: grieving someone you lost long before they died",
+                "Trauma: replaying the phone call, the hospital, the moment you found out",
+                "Fear: worried the same thing could happen to another family member",
               ].map((feeling) => (
                 <div
                   key={feeling}
@@ -155,7 +155,7 @@ export default function GriefAndLossPage() {
                 Talk About Them
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Say their name. Share their stories — not just the hard parts,
+                Say their name. Share their stories, not just the hard parts,
                 but the funny ones, the beautiful ones, the ordinary Tuesday
                 ones. Your loved one was a whole person, and they deserve to be
                 remembered that way. If the people around you go quiet when you
@@ -168,8 +168,8 @@ export default function GriefAndLossPage() {
                 Find Your People
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Grief support groups — especially ones designed for families
-                who&apos;ve lost someone to substance use — can be
+                Grief support groups, especially ones designed for families
+                who&apos;ve lost someone to substance use, can be
                 transformative. Being in a room (virtual or in-person) with
                 people who truly understand is one of the most healing
                 experiences. Organizations like The Compassionate Friends and
@@ -185,8 +185,8 @@ export default function GriefAndLossPage() {
                 This is perhaps the hardest thing. The &ldquo;what ifs&rdquo;
                 can consume you. But substance use disorder is a powerful,
                 complex medical condition. You did not cause it. You could not
-                have cured it. And your love — even when it wasn&apos;t enough
-                to save them — was never wasted.
+                have cured it. And your love, even when it wasn&apos;t enough
+                to save them, was never wasted.
               </p>
             </div>
 
@@ -195,8 +195,8 @@ export default function GriefAndLossPage() {
                 Seek Professional Help
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Grief counseling and therapy — particularly with someone who
-                understands substance use-related loss — can provide tools for
+                Grief counseling and therapy, particularly with someone who
+                understands substance use-related loss, can provide tools for
                 processing the complex emotions that come with this kind of
                 grief. EMDR therapy can be especially helpful for traumatic
                 loss. You deserve professional support.
@@ -359,7 +359,7 @@ export default function GriefAndLossPage() {
               {
                 title: "It's OK That You're Not OK",
                 author: "Megan Devine",
-                why: "A compassionate guide that doesn't try to fix your grief — it honors it. Written for anyone who has been told to 'move on' too soon.",
+                why: "A compassionate guide that doesn't try to fix your grief. It honors it. Written for anyone who has been told to 'move on' too soon.",
               },
               {
                 title: "The Grief Recovery Handbook",
@@ -428,7 +428,7 @@ export default function GriefAndLossPage() {
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Their Life Mattered. So Does Yours.</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
-            Sam&apos;s OATH began with loss — and the belief that no family
+            Sam&apos;s OATH began with loss, and the belief that no family
             should carry that loss in silence. Take Sam&apos;s OATH in your loved
             one&apos;s memory and join a community that understands.
           </p>

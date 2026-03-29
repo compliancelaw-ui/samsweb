@@ -22,7 +22,7 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "Press & Media | Sam's OATH in the News",
   description:
-    "Media coverage, press kits, and interview requests for Sam's OATH — a national movement breaking the silence around substance use and mental health.",
+    "Media coverage, press kits, and interview requests for Sam's OATH, a national movement breaking the silence around substance use and mental health.",
   alternates: { canonical: "/press" },
 };
 
@@ -96,7 +96,7 @@ export default async function PressPage() {
               </h3>
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li>
-                  100,000+ overdose deaths/year and 1 in 5 adults affected — but
+                  100,000+ overdose deaths/year and 1 in 5 adults affected, but
                   silence keeps most families isolated
                 </li>
                 <li>
@@ -104,7 +104,7 @@ export default async function PressPage() {
                   commitments that replace shame with community
                 </li>
                 <li>
-                  A national map visualizes the movement — each pin proves a family
+                  A national map visualizes the movement. Each pin proves a family
                   chose openness
                 </li>
                 <li>
@@ -246,7 +246,7 @@ export default async function PressPage() {
             {[
               {
                 quote:
-                  "Sam lived with courage, honesty, and an open heart. He faced life's challenges — including substance use disorder — with a strength and candor that taught us what's hidden doesn't heal, but community does.",
+                  "Sam lived with courage, honesty, and an open heart. He faced life's challenges, including substance use disorder, with a strength and candor that taught us what's hidden doesn't heal, but community does.",
                 attribution: "Frank Sheeder, from the viral LinkedIn post",
               },
               {

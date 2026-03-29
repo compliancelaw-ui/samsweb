@@ -41,11 +41,11 @@ export async function sendOathConfirmation(to: string, name: string) {
     await resend.emails.send({
       from: getFromAddress("hello"),
       to,
-      subject: "You took Sam's OATH — thank you",
+      subject: "You took Sam's OATH - thank you",
       html: brandedEmailHtml(
         `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you, ${name}.</h1>
         <p>
-          You just took Sam's OATH — a commitment to openness, authenticity,
+          You just took Sam's OATH - a commitment to openness, authenticity,
           togetherness, and healing. That matters more than you know.
         </p>
         <p>
@@ -78,7 +78,7 @@ export async function sendContactAutoReply(to: string, name: string) {
     await resend.emails.send({
       from: getFromAddress("connect"),
       to,
-      subject: "We got your message — Sam's OATH",
+      subject: "We got your message - Sam's OATH",
       html: brandedEmailHtml(
         `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thanks for reaching out, ${name}.</h1>
         <p>
@@ -114,7 +114,7 @@ export async function sendNewsletterWelcome(to: string, name: string | null) {
         <p>
           You're now part of a growing community of families and individuals
           who believe that what's hidden doesn't heal. We'll send you stories,
-          updates, and resources — never spam.
+          updates, and resources. Never spam.
         </p>`,
         "hello",
         {
@@ -140,7 +140,7 @@ export async function sendStoryConfirmation(to: string, name: string) {
     await resend.emails.send({
       from: getFromAddress("share"),
       to,
-      subject: "We received your story — Sam's OATH",
+      subject: "We received your story - Sam's OATH",
       html: brandedEmailHtml(
         `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you, ${name}.</h1>
         <p>
@@ -177,7 +177,7 @@ export async function sendAmbassadorConfirmation(to: string, name: string) {
     await resend.emails.send({
       from: getFromAddress("hello"),
       to,
-      subject: "Your ambassador application — Sam's OATH",
+      subject: "Your ambassador application - Sam's OATH",
       html: brandedEmailHtml(
         `<h1 style="color:#4A6FA5;font-size:24px;margin:0 0 16px 0;">Thank you for applying, ${name}.</h1>
         <p>

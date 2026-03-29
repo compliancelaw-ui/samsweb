@@ -57,7 +57,7 @@ const LANGUAGE_PAIRS = [
     category: "Describing Behaviors & Situations",
     items: [
       { instead: "Enabling", say: "Supporting (context-dependent)" },
-      { instead: "Rock bottom", say: "Avoid — implies someone must suffer maximally before getting help" },
+      { instead: "Rock bottom", say: "Avoid. Implies someone must suffer maximally before getting help" },
       { instead: "Committed suicide", say: "Died by suicide" },
       { instead: "Successful / Failed suicide attempt", say: "Suicide attempt / Survived a suicide attempt" },
     ],
@@ -108,7 +108,7 @@ export default function LanguageGuidePage() {
             A Guide to Language That Heals Instead of Harms
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            The words we use shape how people see themselves — and whether they
+            The words we use shape how people see themselves, and whether they
             feel safe enough to ask for help. Here&apos;s how to talk about
             substance use and mental health without adding to the stigma.
           </p>
@@ -133,8 +133,8 @@ export default function LanguageGuidePage() {
 
           <div className="space-y-4 text-lg text-gray-600 leading-relaxed mb-8">
             <p>
-              Research consistently shows that stigmatizing language — even when
-              used with good intentions — has real consequences. Studies
+              Research consistently shows that stigmatizing language, even when
+              used with good intentions, has real consequences. Studies
               published in the <em>International Journal of Drug Policy</em> and
               the <em>Journal of Substance Abuse Treatment</em> found that when
               healthcare providers read patient files using stigmatizing labels
@@ -143,7 +143,7 @@ export default function LanguageGuidePage() {
               likely to recommend punitive measures over treatment.
             </p>
             <p>
-              Words don&apos;t just describe reality — they create it. When we
+              Words don&apos;t just describe reality. They create it. When we
               call someone an &ldquo;addict,&rdquo; we reduce a whole person to
               a single condition. When we say someone is &ldquo;clean,&rdquo; we
               imply they were &ldquo;dirty&rdquo; before. These words carry moral
@@ -153,7 +153,7 @@ export default function LanguageGuidePage() {
               Changing our language isn&apos;t about being politically correct.
               It&apos;s about being accurate, compassionate, and effective. When
               we change how we talk about substance use and mental health, we
-              make it safer for people to ask for help — and that saves lives.
+              make it safer for people to ask for help, and that saves lives.
             </p>
           </div>
 
@@ -165,8 +165,8 @@ export default function LanguageGuidePage() {
             <p className="text-gray-700 leading-relaxed">
               Person-first language puts the person before the condition. Instead
               of &ldquo;an addict,&rdquo; we say &ldquo;a person with a
-              substance use disorder.&rdquo; This isn&apos;t just semantics —
-              it&apos;s a reminder that a diagnosis doesn&apos;t define a person.
+              substance use disorder.&rdquo; This isn&apos;t just semantics.
+              It&apos;s a reminder that a diagnosis doesn&apos;t define a person.
               They are someone&apos;s child, parent, friend, and colleague first.
             </p>
           </div>
@@ -237,7 +237,7 @@ export default function LanguageGuidePage() {
           <div className="mt-10 bg-primary-50 rounded-xl p-6 text-center">
             <p className="text-gray-700 leading-relaxed">
               Language is always evolving, and no guide is perfect. What matters
-              most is the intention to see <strong>people</strong> — not labels.
+              most is the intention to see <strong>people</strong>, not labels.
               When in doubt, ask someone how they prefer to be referred to. The
               willingness to learn is what counts.
             </p>
@@ -258,7 +258,7 @@ export default function LanguageGuidePage() {
                 How you talk about substance use and mental health at your
                 dinner table shapes how your children and family members think
                 about it. If your family is directly affected, person-first
-                language helps your loved one feel seen as a whole person — not
+                language helps your loved one feel seen as a whole person, not
                 defined by their struggle.
               </p>
             </div>
@@ -310,7 +310,7 @@ export default function LanguageGuidePage() {
           </h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
             Take Sam&apos;s OATH and commit to openness, authenticity,
-            togetherness, and healing — starting with the words you use.
+            togetherness, and healing, starting with the words you use.
           </p>
           <Link
             href="/take-the-oath"

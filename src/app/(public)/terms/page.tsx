@@ -32,7 +32,7 @@ export default function TermsPage() {
 
           <h2>1. About Sam&apos;s OATH</h2>
           <p>
-            Sam&apos;s OATH is a 501(c)(3) nonprofit organization and national
+            Sam&apos;s OATH is a 501(c)(3) public charity and national
             movement to break silence around substance use and mental health in
             families. We provide a platform for people to take Sam&apos;s OATH
             (Openness, Authenticity, Togetherness, Healing), share their stories,
@@ -135,7 +135,7 @@ export default function TermsPage() {
 
           <h2>5. Donations</h2>
           <p>
-            Sam&apos;s OATH is a 501(c)(3) tax-exempt nonprofit organization.
+            Sam&apos;s OATH is a 501(c)(3) tax-exempt public charity.
             Donations made through the website are processed by Stripe, Inc.
             We do not store your payment card information. By making a donation,
             you acknowledge:

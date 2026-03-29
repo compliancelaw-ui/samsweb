@@ -27,7 +27,7 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "About Sam's OATH | A Movement to End the Silence",
   description:
-    "Millions carry the weight of substance use and mental health challenges in silence. Sam's OATH is a movement to change that — replacing shame with openness, isolation with community, and silence with healing.",
+    "Millions carry the weight of substance use and mental health challenges in silence. Sam's OATH is a movement to change that, replacing shame with openness, isolation with community, and silence with healing.",
   alternates: { canonical: "/about" },
 };
 

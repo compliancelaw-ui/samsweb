@@ -124,7 +124,7 @@ export default async function ShareYourStoryPage() {
                 icon: CheckCircle,
                 title: "Moderated with Compassion",
                 description:
-                  "Our moderation process is built on respect, not judgment. We're here to amplify your voice — not edit your truth. We only step in to ensure safety for you and our community.",
+                  "Our moderation process is built on respect, not judgment. We're here to amplify your voice, not edit your truth. We only step in to ensure safety for you and our community.",
               },
             ].map((item) => (
               <div

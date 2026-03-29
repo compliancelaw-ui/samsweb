@@ -16,7 +16,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Resources for Families | Sam's OATH",
   description:
-    "Curated resources for families and loved ones affected by substance use. Support groups, guides, hotlines, and community — because you matter too.",
+    "Curated resources for families and loved ones affected by substance use. Support groups, guides, hotlines, and community, because you matter too.",
   alternates: { canonical: "/resources/for-families" },
 };
 
@@ -65,7 +65,7 @@ export default function ForFamiliesPage() {
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             You didn&apos;t cause it. You can&apos;t cure it. But you
-            don&apos;t have to face it alone. This page is for you — the
+            don&apos;t have to face it alone. This page is for you - the
             parent, the spouse, the sibling, the friend carrying more than
             anyone knows.
           </p>
@@ -86,13 +86,13 @@ export default function ForFamiliesPage() {
           <h2 className="mb-6">Understanding What You&apos;re Going Through</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
             When someone you love is struggling with substance use or mental
-            health challenges, the weight doesn&apos;t fall on them alone — it
+            health challenges, the weight doesn&apos;t fall on them alone. It
             falls on the entire family. You may feel guilt, anger, fear,
             exhaustion, shame, or all of them at once. These feelings are
             normal, and they are valid.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            Substance use disorder is a medical condition — not a choice, not a
+            Substance use disorder is a medical condition, not a choice, not a
             moral failing, and not something you caused. Understanding this is
             the first step toward healing for both your loved one and yourself.
           </p>
@@ -108,12 +108,12 @@ export default function ForFamiliesPage() {
               {
                 icon: Shield,
                 title: "You Cannot Fix It Alone",
-                text: "Recovery requires professional help, community support, and — most importantly — the individual's own willingness. You can support, but you cannot control the outcome.",
+                text: "Recovery requires professional help, community support, and, most importantly, the individual's own willingness. You can support, but you cannot control the outcome.",
               },
               {
                 icon: Users,
                 title: "You Deserve Support Too",
-                text: "Families of people with substance use disorder have higher rates of anxiety, depression, and physical illness. Your health matters. Getting help for yourself is not selfish — it's essential.",
+                text: "Families of people with substance use disorder have higher rates of anxiety, depression, and physical illness. Your health matters. Getting help for yourself is not selfish. It's essential.",
               },
               {
                 icon: HandHeart,
@@ -146,7 +146,7 @@ export default function ForFamiliesPage() {
           <h2 className="mb-4">How to Help Without Losing Yourself</h2>
           <p className="text-lg text-gray-600 mb-8">
             The line between helping and enabling can feel impossibly thin.
-            Here&apos;s what actually helps — and what doesn&apos;t.
+            Here&apos;s what actually helps, and what doesn&apos;t.
           </p>
 
           <div className="space-y-6 mb-10">
@@ -169,7 +169,7 @@ export default function ForFamiliesPage() {
                 Set Boundaries with Love
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Boundaries are not punishment — they&apos;re protection. For
+                Boundaries are not punishment. They&apos;re protection. For
                 both of you. A boundary might sound like: &ldquo;I love you and
                 I will always be here for you, but I cannot give you money when
                 I know it&apos;s being used for substances.&rdquo; Setting
@@ -186,7 +186,7 @@ export default function ForFamiliesPage() {
                 Learn about substance use disorder as a medical condition.
                 Understand how it changes the brain, why willpower alone
                 isn&apos;t enough, and what recovery actually looks like. The
-                more you understand, the less you&apos;ll blame yourself — and
+                more you understand, the less you&apos;ll blame yourself, and
                 the better you&apos;ll be able to support your loved one.
               </p>
             </div>
@@ -198,7 +198,7 @@ export default function ForFamiliesPage() {
               <p className="text-gray-600 leading-relaxed">
                 You cannot pour from an empty cup. Make space for your own
                 therapy, your own support group, your own moments of rest.
-                Prioritizing your well-being is not abandoning your loved one —
+                Prioritizing your well-being is not abandoning your loved one.
                 it&apos;s making sure you have the strength to keep showing up.
               </p>
             </div>
@@ -235,7 +235,7 @@ export default function ForFamiliesPage() {
             {[
               {
                 context: "If you're worried about a loved one:",
-                line: "\"I've noticed you've been going through a really tough time. I'm not here to judge you — I just want you to know I love you and I'm here.\"",
+                line: "\"I've noticed you've been going through a really tough time. I'm not here to judge you. I just want you to know I love you and I'm here.\"",
               },
               {
                 context: "If you want to break the family silence:",
@@ -251,7 +251,7 @@ export default function ForFamiliesPage() {
               },
               {
                 context: "If you're the one struggling:",
-                line: "\"I need to tell you something that's been really hard for me. I'm not looking for you to solve it — I just need you to know.\"",
+                line: "\"I need to tell you something that's been really hard for me. I'm not looking for you to solve it. I just need you to know.\"",
               },
             ].map((item) => (
               <div
@@ -284,7 +284,7 @@ export default function ForFamiliesPage() {
                 phone: "1-888-425-2666",
                 link: "https://al-anon.org",
                 description:
-                  "The most established family support program. Free peer support groups — in person and online — for anyone affected by a loved one's drinking or drug use. Built on the principle that families need their own recovery too.",
+                  "The most established family support program. Free peer support groups, in person and online, for anyone affected by a loved one's drinking or drug use. Built on the principle that families need their own recovery too.",
               },
               {
                 name: "Nar-Anon Family Groups",
@@ -366,12 +366,12 @@ export default function ForFamiliesPage() {
               {
                 title: "Beyond Addiction",
                 author: "Jeffrey Foote, PhD, et al.",
-                why: "A science-based guide for families that replaces tough love with compassion — and shows that it works better.",
+                why: "A science-based guide for families that replaces tough love with compassion, and shows that it works better.",
               },
               {
                 title: "Get Your Loved One Sober",
                 author: "Robert Meyers, PhD",
-                why: "The CRAFT method — a proven approach for families to encourage their loved ones toward treatment without confrontation.",
+                why: "The CRAFT method: a proven approach for families to encourage their loved ones toward treatment without confrontation.",
               },
             ].map((book) => (
               <div
@@ -397,7 +397,7 @@ export default function ForFamiliesPage() {
           <h2 className="text-white mb-4">You Matter in This Story Too</h2>
           <p className="text-white/80 text-xl mb-8 leading-relaxed">
             Sam&apos;s OATH exists for families like yours. Take Sam&apos;s OATH. Join
-            the community. Break the silence not just for your loved one — but
+            the community. Break the silence not just for your loved one, but
             for yourself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

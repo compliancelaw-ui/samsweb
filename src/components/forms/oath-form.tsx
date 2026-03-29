@@ -173,7 +173,7 @@ export function OathForm() {
         </h3>
         <p className="text-gray-500 mb-6">
           Full name, first name only, or initials are all welcome. Choose how
-          your name appears on the map — or go anonymous and you&apos;ll appear
+          your name appears on the map, or go anonymous and you&apos;ll appear
           as &ldquo;A Friend.&rdquo;
         </p>
 

@@ -227,13 +227,13 @@ export default async function WorkplacePage() {
                 icon: TrendingUp,
                 title: "Improves Retention",
                 description:
-                  "Employees stay at organizations that support the whole person — not just the worker.",
+                  "Employees stay at organizations that support the whole person, not just the worker.",
               },
               {
                 icon: CheckCircle,
                 title: "Saves Lives",
                 description:
-                  "Early intervention saves lives. When people feel safe speaking up, they get help sooner.",
+                  "Early support saves lives. When people feel safe speaking up, they get help sooner.",
               },
             ].map((item) => (
               <div key={item.title} className="text-center">

@@ -96,11 +96,12 @@ export default async function GuidesPage() {
             <div className="text-center py-16">
               <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Guides Coming Soon
+                Free Guides for Families
               </h3>
               <p className="text-gray-500 max-w-md mx-auto">
-                We are preparing free downloadable guides for families. Check back soon, or
-                visit our resources page for crisis help and support organizations.
+                We are developing downloadable guides on topics like starting the conversation,
+                supporting a loved one, and navigating grief. In the meantime, visit our
+                resources page for crisis help and support organizations.
               </p>
               <Link
                 href="/resources"
