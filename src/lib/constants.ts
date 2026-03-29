@@ -27,9 +27,9 @@ export const STORY_PIN_COLOR = "#4A6FA5";
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/stories", label: "Stories" },
+  { href: "/stories", label: "Shared Stories" },
   { href: "/take-the-oath", label: "Take Sam's OATH" },
-  { href: "/map", label: "Map" },
+  { href: "/map", label: "OATH Map" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Updates" },
   { href: "/events", label: "Events" },
