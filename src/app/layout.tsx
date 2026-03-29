@@ -56,6 +56,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
+  "nonprofitStatus": "501(c)(3) Public Charity",
   name: "Sam's OATH",
   alternateName: "Sam's OATH Foundation",
   url: "https://samsoath.org",

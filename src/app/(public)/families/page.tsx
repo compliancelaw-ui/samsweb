@@ -163,7 +163,7 @@ export default async function FamiliesPage() {
                   <Play className="w-8 h-8 text-primary" />
                 </div>
                 <p className="font-semibold text-gray-900">Frank&apos;s Story</p>
-                <p className="text-sm text-gray-500">Video coming soon</p>
+                <p className="text-sm text-gray-500">Full video interview in production</p>
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ export default async function FamiliesPage() {
                   <Play className="w-8 h-8 text-teal" />
                 </div>
                 <p className="font-semibold text-gray-900">Annie&apos;s Story</p>
-                <p className="text-sm text-gray-500">Video coming soon</p>
+                <p className="text-sm text-gray-500">Full video interview in production</p>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default async function FamiliesPage() {
                   <Play className="w-8 h-8 text-sage" />
                 </div>
                 <p className="font-semibold text-gray-900">Joey&apos;s Story</p>
-                <p className="text-sm text-gray-500">Video coming soon</p>
+                <p className="text-sm text-gray-500">Full video interview in production</p>
               </div>
             </div>
           </div>
@@ -368,7 +368,7 @@ export default async function FamiliesPage() {
                   <Play className="w-8 h-8 text-orange" />
                 </div>
                 <p className="font-semibold text-gray-900">Nancy&apos;s Story</p>
-                <p className="text-sm text-gray-500">Video coming soon</p>
+                <p className="text-sm text-gray-500">Full video interview in production</p>
               </div>
             </div>
           </div>

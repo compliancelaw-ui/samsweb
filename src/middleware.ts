@@ -53,15 +53,8 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Check site-wide preview access
-  const previewCookie = request.cookies.get("site-preview");
-  if (previewCookie?.value !== "granted") {
-    // API routes get a 401 instead of a redirect
-    if (pathname.startsWith("/api/")) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-    return NextResponse.redirect(new URL("/preview-login", request.url));
-  }
+  // Site is public - no preview gate needed for launch
+  // Admin routes still require admin cookie below
 
   // For admin routes, also require admin cookie
   if (pathname.startsWith("/admin")) {

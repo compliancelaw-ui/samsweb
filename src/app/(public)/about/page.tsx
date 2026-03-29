@@ -13,7 +13,6 @@ import {
   Quote,
   ChevronRight,
   Shield,
-  FileText,
   Handshake,
   Stethoscope,
   GraduationCap,
@@ -39,20 +38,7 @@ export default async function AboutPage() {
     <>
       {/* ===== 1. HERO — Full-bleed photo, mission-focused ===== */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        {/* Stock photo placeholder — replace with real image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2E3B4E] via-[#4A6FA5] to-[#3EABA8]">
-          <div className="absolute inset-0 flex items-center justify-center text-white/20">
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-white/20 flex items-center justify-center">
-                <Users className="w-10 h-10" />
-              </div>
-              <p className="text-sm font-medium max-w-xs">
-                Stock photo: Diverse group showing connection and support
-                (1920&times;1080)
-              </p>
-            </div>
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E3B4E] via-[#4A6FA5] to-[#3EABA8]" />
         <div className="absolute inset-0 bg-[#2E3B4E]/60" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white w-full">
           <div className="max-w-3xl">
@@ -93,18 +79,14 @@ export default async function AboutPage() {
               </div>
             </div>
             <div className="flex justify-center">
-              {/* Stock photo placeholder — replace with real image */}
-              <div className="w-full max-w-md aspect-[4/3] rounded-2xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center shadow-lg">
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gray-200 flex items-center justify-center">
-                    <Heart className="w-8 h-8 text-gray-400" />
-                  </div>
-                  <p className="text-sm text-gray-400 font-medium">
-                    Stock photo: Person in contemplative moment,
-                    <br />
-                    representing isolation (800&times;600)
-                  </p>
-                </div>
+              <div className="w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/photos/sam-portrait.jpg"
+                  alt="Sam Sheeder"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -219,8 +201,6 @@ export default async function AboutPage() {
               icon: Heart,
               topColor: "bg-teal",
               iconColor: "text-teal",
-              placeholder:
-                "Parent or family member, warm lighting, strength and vulnerability",
             },
             {
               title: "Seeking Hope & Recovery",
@@ -228,8 +208,6 @@ export default async function AboutPage() {
               icon: Sun,
               iconColor: "text-orange",
               topColor: "bg-orange",
-              placeholder:
-                "Young person looking forward with hope, outdoor setting",
             },
             {
               title: "Standing With Others",
@@ -237,8 +215,6 @@ export default async function AboutPage() {
               icon: Users,
               iconColor: "text-sage",
               topColor: "bg-sage",
-              placeholder:
-                "Group of friends or community, showing support and togetherness",
             },
           ].map((item) => (
             <Link
@@ -246,16 +222,10 @@ export default async function AboutPage() {
               href="/take-the-oath"
               className="group flex flex-col rounded-xl overflow-hidden bg-[#F8FAFB] hover:shadow-lg transition-all h-full border border-gray-100"
             >
-              {/* Stock photo placeholder — replace with real images */}
-              <div className="relative h-48 bg-gray-100 flex items-center justify-center">
+              <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
                 <div className={`absolute top-0 left-0 right-0 h-1.5 ${item.topColor}`} />
                 <div className="text-center p-4">
-                  <item.icon className={`w-8 h-8 mx-auto mb-2 ${item.iconColor} opacity-30`} />
-                  <p className="text-xs text-gray-400">
-                    Stock photo: {item.placeholder}
-                    <br />
-                    (600&times;400)
-                  </p>
+                  <item.icon className={`w-12 h-12 mx-auto ${item.iconColor}`} />
                 </div>
               </div>
               <div className="flex flex-col p-6 flex-1">
@@ -330,18 +300,14 @@ export default async function AboutPage() {
               </div>
             </div>
             <div className="flex justify-center order-first lg:order-last">
-              {/* Stock photo placeholder — replace with real image */}
-              <div className="w-full max-w-md aspect-[4/3] rounded-2xl bg-white border-2 border-dashed border-gray-300 flex items-center justify-center shadow-lg">
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center">
-                    <PenLine className="w-8 h-8 text-gray-400" />
-                  </div>
-                  <p className="text-sm text-gray-400 font-medium">
-                    Stock photo: People sharing stories
-                    <br />
-                    in group setting, warm and diverse (800&times;600)
-                  </p>
-                </div>
+              <div className="w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/photos/family-hug.jpg"
+                  alt="The Sheeder family embracing"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -410,6 +376,7 @@ export default async function AboutPage() {
               color: "text-teal",
               bgColor: "bg-teal/10",
               borderColor: "border-teal/20",
+              description: "Hospitals, treatment centers, and health systems committed to reducing stigma",
             },
             {
               category: "Recovery Community",
@@ -417,6 +384,7 @@ export default async function AboutPage() {
               color: "text-primary",
               bgColor: "bg-primary/10",
               borderColor: "border-primary/20",
+              description: "Recovery organizations, peer support networks, and sober living communities",
             },
             {
               category: "Education",
@@ -424,6 +392,7 @@ export default async function AboutPage() {
               color: "text-sage",
               bgColor: "bg-sage/10",
               borderColor: "border-sage/20",
+              description: "Schools and universities bringing open conversation to campuses",
             },
             {
               category: "Faith",
@@ -431,6 +400,7 @@ export default async function AboutPage() {
               color: "text-orange",
               bgColor: "bg-orange/10",
               borderColor: "border-orange/20",
+              description: "Faith communities creating safe spaces for families affected by substance use",
             },
             {
               category: "Corporate",
@@ -438,6 +408,7 @@ export default async function AboutPage() {
               color: "text-primary",
               bgColor: "bg-primary/10",
               borderColor: "border-primary/20",
+              description: "Companies bringing Sam's OATH into workplace wellness and EAP programs",
             },
             {
               category: "Media",
@@ -445,16 +416,17 @@ export default async function AboutPage() {
               color: "text-teal",
               bgColor: "bg-teal/10",
               borderColor: "border-teal/20",
+              description: "Media organizations helping change the narrative around substance use",
             },
           ].map((slot) => (
             <div
               key={slot.category}
-              className={`rounded-xl border-2 border-dashed ${slot.borderColor} ${slot.bgColor} p-8 text-center`}
+              className={`rounded-xl border ${slot.borderColor} ${slot.bgColor} p-8 text-center`}
             >
-              <slot.icon className={`w-10 h-10 ${slot.color} mx-auto mb-4 opacity-60`} />
-              <p className="font-semibold text-gray-900 mb-1">{slot.category}</p>
+              <slot.icon className={`w-10 h-10 ${slot.color} mx-auto mb-4`} />
+              <p className="font-semibold text-gray-900 mb-2">{slot.category}</p>
               <p className="text-sm text-gray-500">
-                Partner announcement coming soon
+                {slot.description}
               </p>
             </div>
           ))}
@@ -479,7 +451,7 @@ export default async function AboutPage() {
           <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
           <h2 className="mb-4">Transparency and Accountability</h2>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            Sam&apos;s OATH Foundation is a 501(c)(3) nonprofit organization.
+            Sam&apos;s OATH Foundation is a 501(c)(3) public charity.
             All donations are tax-deductible to the extent allowed by law. We
             are committed to full transparency in how we use every dollar
             entrusted to us.
@@ -494,22 +466,8 @@ export default async function AboutPage() {
             <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">
               <p className="text-sm text-gray-500">Tax Status</p>
-              <p className="font-semibold text-gray-900">501(c)(3) Nonprofit</p>
+              <p className="font-semibold text-gray-900">501(c)(3) Public Charity</p>
             </div>
-            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
-            <div className="text-left">
-              <p className="text-sm text-gray-500">EIN</p>
-              <p className="font-semibold text-gray-900">99-1234567</p>
-            </div>
-          </div>
-          <div className="mt-6">
-            <Link
-              href="/about/annual-reports"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-600 transition-colors"
-            >
-              <FileText className="w-4 h-4" />
-              View Annual Reports
-            </Link>
           </div>
         </div>
       </SectionWrapper>

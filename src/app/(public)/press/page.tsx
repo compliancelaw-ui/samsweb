@@ -325,7 +325,7 @@ export default async function PressPage() {
               <p className="text-sm text-gray-600 mb-4">
                 High-resolution logos, color palette, and brand guidelines
               </p>
-              <span className="text-sm text-gray-400">Coming soon</span>
+              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request assets</a>
             </div>
             <div className="p-6 bg-white rounded-lg text-center shadow-sm">
               <Camera className="w-8 h-8 text-teal mx-auto mb-3" />
@@ -335,7 +335,7 @@ export default async function PressPage() {
               <p className="text-sm text-gray-600 mb-4">
                 High-resolution photos of Frank, Sam, family, and the movement
               </p>
-              <span className="text-sm text-gray-400">Coming soon</span>
+              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request photos</a>
             </div>
             <div className="p-6 bg-white rounded-lg text-center shadow-sm">
               <Newspaper className="w-8 h-8 text-orange mx-auto mb-3" />
@@ -345,7 +345,7 @@ export default async function PressPage() {
               <p className="text-sm text-gray-600 mb-4">
                 One-page overview of Sam&apos;s OATH with key stats and quotes
               </p>
-              <span className="text-sm text-gray-400">Coming soon</span>
+              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request fact sheet</a>
             </div>
           </div>
         </div>
@@ -383,12 +383,12 @@ export default async function PressPage() {
       {/* Recent Coverage */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">Recent Coverage</h2>
+          <h2 className="text-center mb-4">Media Inquiries</h2>
           <div className="bg-white rounded-xl p-12 text-center shadow-sm border border-gray-100">
-            <FileText className="w-10 h-10 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-500 text-lg">Coverage coming soon</p>
-            <p className="text-gray-400 text-sm mt-2">
-              For media inquiries or interview requests, contact{" "}
+            <FileText className="w-10 h-10 text-primary/30 mx-auto mb-4" />
+            <p className="text-gray-700 text-lg font-medium">Media inquiries welcome</p>
+            <p className="text-gray-500 text-sm mt-2">
+              For interview requests, story leads, or coverage inquiries, contact{" "}
               <a
                 href="mailto:press@samsoath.org"
                 className="text-primary hover:text-primary-600"

@@ -81,12 +81,12 @@ export default async function AmbassadorsPage() {
             {c["profiles.subtitle"]}
           </p>
           <div className="text-center py-12 bg-white rounded-xl border border-gray-200">
-            <Award className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-500 text-lg mb-2">
-              Ambassador profiles coming soon
+            <Award className="w-12 h-12 text-primary/40 mx-auto mb-4" />
+            <p className="text-gray-700 text-lg mb-2 font-medium">
+              We are building our ambassador network
             </p>
-            <p className="text-gray-400">
-              Be among the first to represent the movement in your state.
+            <p className="text-gray-500">
+              Apply below to be among the first to represent the movement in your state.
             </p>
           </div>
         </div>
