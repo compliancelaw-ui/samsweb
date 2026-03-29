@@ -24,6 +24,7 @@ import {
   HelpCircle,
   Wrench,
   CalendarDays,
+  FileDown,
   Megaphone,
   Sparkles,
   Loader2,
@@ -45,6 +46,7 @@ const navItems = [
   { label: "Ads", href: "/admin/ads", icon: Megaphone },
   { label: "Calendar", href: "/admin/calendar", icon: CalendarDays },
   { label: "Donations", href: "/admin/donations", icon: DollarSign },
+  { label: "Resources", href: "/admin/resources", icon: FileDown },
   { label: "Content", href: "/admin/content", icon: Layers },
   { label: "Media", href: "/admin/media", icon: Image },
   { label: "Maintenance", href: "/admin/maintenance", icon: Wrench },
@@ -163,6 +165,16 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "The Hashtag Library at the bottom shows all available hashtag categories.",
     ],
     manualSection: "calendar",
+  },
+  "/admin/resources": {
+    title: "Resource Library",
+    tips: [
+      "Create downloadable PDF guides for families navigating substance use and mental health.",
+      "Content is written in the editor and auto-generates a branded PDF on download.",
+      "Toggle Published to make guides visible on the public site.",
+      "Download count tracks how many times each guide has been downloaded.",
+    ],
+    manualSection: "resources",
   },
   "/admin/donations": {
     title: "Donation Reporting",
