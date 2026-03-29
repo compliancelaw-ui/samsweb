@@ -34,8 +34,8 @@ export default async function TakeTheOathPage() {
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image
-                src="/images/photos/family-hug.jpg"
-                alt="Family embracing"
+                src="/images/photos/cairn-shoreline.png"
+                alt="A hand placing a stone on a cairn by the ocean"
                 width={1272}
                 height={838}
                 className="w-full h-auto rounded-2xl shadow-lg max-w-lg"
@@ -89,8 +89,8 @@ export default async function TakeTheOathPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
             <div className="lg:col-span-2">
               <Image
-                src="/images/photos/frank-sam-lighthouse.jpg"
-                alt="Frank and Sam at a lighthouse"
+                src="/images/photos/beach-footprints.png"
+                alt="Footprints leading toward the ocean at sunrise"
                 width={4032}
                 height={3024}
                 className="w-full h-auto rounded-2xl shadow-md"

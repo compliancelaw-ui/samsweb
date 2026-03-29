@@ -374,8 +374,8 @@ export default async function StoriesPage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/images/photos/family-couch.jpg"
-                alt="Family sharing together"
+                src="/images/photos/journal-writing.png"
+                alt="Someone writing their story in a journal"
                 width={2048}
                 height={1536}
                 className="w-full h-auto rounded-2xl shadow-lg"
