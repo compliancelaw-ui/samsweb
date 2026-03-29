@@ -13,7 +13,7 @@ const takeActionLinks = [
 
 const learnMoreLinks = [
   { href: "/about", label: "About the Movement" },
-  { href: "/stories", label: "Stories" },
+  { href: "/stories", label: "Shared Stories" },
   { href: "/map", label: "OATH Map" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Updates" },
