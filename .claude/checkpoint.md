@@ -1,82 +1,32 @@
-# Checkpoint - 2026-03-29 (SamsOath Mega-Session - Final)
+# Checkpoint - 2026-03-29 (Final)
 
-## All 6 Phases Complete and Deployed
+## Session Complete - Site Is Debut Ready
 
-### Phase 1: Post-Action Engagement
-- OathShareSection: certificate download + social sharing with pre-written messages
-- SoftEmailCapture: gentle email capture for anonymous users
-- Thank-you pages restructured around O->A->T->H arc
-- OG image generation (/api/og/oath) for branded social sharing
-- Share event tracking (share_events table + API)
-- Instagram + TikTok added to floating share buttons site-wide
+75 pages deployed across 21 commits. Full engagement platform built.
 
-### Phase 2: Resource Library
-- resource_documents table in Supabase
-- Admin CRUD at /admin/resources
-- Public pages: /resources/guides and /resources/guides/[slug]
-- Branded multi-page PDF generation via pdf-lib
-- Download tracking API
+## Pre-Launch Testing (Frank's action)
 
-### Phase 3: 7 Resource Guides (all in database)
-1. How to Talk to Your Family About Substance Use and Mental Health
-2. What to Do in a Crisis
-3. Supporting Someone You Love: A Family Guide
-4. How to Set Boundaries Without Cutting Someone Off
-5. Talking to Kids About a Family Member's Substance Use or Mental Health
-6. Taking Care of Yourself While Supporting Someone Else
-7. Navigating Holidays and Triggers as a Family
+- [ ] Take the OATH on mobile - test form, thank-you page, certificate, sharing
+- [ ] Submit a test story - check submission and thank-you flow
+- [ ] Download a resource guide PDF - verify branding and content
+- [ ] Try the challenge join form on /challenges
+- [ ] Test mobile experience (nav, images, readability)
+- [ ] Read "Who Was Sam?" section aloud - make sure it sounds like Frank
+- [ ] Read first blog post - would you post this on LinkedIn?
+- [ ] Verify Supabase is on paid plan (free tier will choke under traffic)
+- [ ] Verify Vercel is on Pro plan (free tier has bandwidth limits)
 
-### Phase 4: Challenge System
-- challenges + challenge_participants tables in Supabase
-- Public /challenges page with join form
-- CurrentChallengeCard on homepage
-- Admin CRUD at /api/admin/challenges/manage
-- 3 months seeded (Apr=Openness, May=Authenticity, Jun=Togetherness)
+## Post-Launch Action Items
 
-### Phase 5: Stories Feed Redesign
-- Featured story hero for is_featured stories
-- Masonry grid with CSS columns
-- Per-story share buttons with tracking
-- "Add Your Voice" CTAs interspersed
-- Sam obituary pull quote
-- SoftEmailCapture at bottom
+- [ ] Film founder video (2-3 min, iPhone, natural light, script outline in feature spec)
+- [ ] Write and post LinkedIn announcement linking to samsoath.org/take-the-oath
+- [ ] Set up Meta Developer App for social publishing (full checklist below)
+- [ ] Wait for TechSoup verification, then apply for Google Ad Grants
+- [ ] Get real stories flowing (ask LinkedIn audience to share)
 
-### Phase 6: Email Drip Enhancements
-- Extended OATH drip to 8 emails (days 0-90) following O->A->T->H arc
-- Post-story 2-email drip sequence
-- Monthly newsletter template + cron route
-- Updated vercel.json with cron schedule
+## Social Account Setup
 
-### Earlier This Session
-- Google Ad Grants readiness (EIN, public charity, no Coming Soon)
-- Homepage restructure (Who Was Sam, Silence stats, emotional OATH cards)
-- Advisory Board rewrite (Sheeder family as founding advisors)
-- 8 Firefly-generated inclusive photos
-- 4 admin features (Calendar, Donations, Social Publishing, Google Ad Grant)
-- Language corrections (no stigma, no Foundation, cause of death)
-- 4 blog posts pushed
-
-## Still To Do
-
-### Photos to Swap (next session)
-- Take the OATH hero: swap family-hug.jpg for something more universal
-- Take the OATH "What Happens Next": swap frank-sam-lighthouse.jpg
-- Stories "Why Stories Matter": swap family-couch.jpg
-- Firefly prompts are ready (cairn on shoreline, beach footprints, open journal)
-
-### Needs Manual Action
-- Set up Meta App for social publishing (see Social Account Setup section below)
-- TechSoup verification pending for Google Ad Grants
-- Film founder video (script outline in feature spec)
-
-### Future Development
-- Workplace toolkit PDF (facilitator guide, discussion prompts, ceremony instructions)
-- Analytics dashboards (/admin/analytics/shares, /admin/analytics/downloads)
-- More Firefly photos for remaining pages
-
-## Social Account Setup (Admin Task)
-
-### Meta Developer App (enables direct publishing from admin)
+### Meta Developer App (enables publishing from admin)
 1. Go to developers.facebook.com, create app (type: Business)
 2. Add Facebook Login product
 3. Request: pages_manage_posts, pages_read_engagement, instagram_content_publish, instagram_basic
@@ -86,14 +36,51 @@
    - META_SAMSOATH_PAGE_ID
    - META_SAMSOATH_IG_ACCOUNT_ID
 
-## Key Decisions
+### Other Social
+- Create/verify Facebook Page for Sam's OATH
+- Convert Instagram @samsoath to Business Account, link to Facebook Page
+- TikTok @samsoath profile setup
+- Consider LinkedIn company page
+
+## What Was Built This Session
+
+### Public Site (75 pages)
+- Homepage restructured around O->A->T->H journey with Sam's story
+- Advisory board with Sheeder family as founding advisors
+- 11 Firefly-generated inclusive photos across site
+- 8 blog posts on Updates page
+- 7 downloadable resource guides for families + workplace toolkit
+- Monthly challenge system with public page + homepage card
+- Stories feed with masonry grid, featured stories, per-story sharing
+- Post-oath/story social sharing with pre-written messages + certificates
+- OG image generation for social sharing
+- Soft email capture for anonymous users
+- All language corrected (no stigma, no Foundation, no em-dashes, correct cause of death)
+
+### Admin Features
+- Content Calendar, Donations Dashboard, Social Publishing, Google Ad Grant tab
+- Resource Library CRUD, Analytics (shares + downloads)
+- 8-email drip sequence (0-90 days) following O->A->T->H arc
+- Post-story drip sequence (2 emails)
+- Monthly newsletter cron + template
+- Share event tracking
+
+### Database Tables Created
+- share_events (share tracking)
+- resource_documents (7 family guides + 1 workplace toolkit)
+- challenges + challenge_participants (3 months seeded)
+- blog_posts (8 posts)
+
+## Key Decisions (permanent)
 - "Sam's OATH" (never Foundation), EIN 39-5101030, Texas public charity
-- No "stigma" language - use openness/silence/community
-- Sam died in moped accident - never imply substance use was cause of death
+- No "stigma" language - use openness, silence, community
+- No em-dashes - use commas, periods, colons, or hyphens
+- Sam died in a moped accident - never imply substance use was cause
 - OATH is a journey: O -> A -> T -> H (not four equal pillars)
 - Movement is FOR FAMILIES, not people in recovery
 - All content cites authoritative sources (SAMHSA, NAMI, NIMH)
-- Admin features built directly in SamsOath (not Frankventure hub)
+- Admin features built in SamsOath directly (not Frankventure hub)
+- Frank/Joey/Nancy in Texas, Annie in North Carolina
 
 ## Feature Spec
 Full engagement platform plan at .claude/feature_specs/engagement-platform-plan.md
