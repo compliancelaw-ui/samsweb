@@ -65,12 +65,13 @@ interface APIResponse {
   totals: TotalTable[];
 }
 
-type TabKey = "overview" | "campaigns" | "utm";
+type TabKey = "overview" | "campaigns" | "utm" | "google-ads";
 
 const TABS: { key: TabKey; label: string; icon: React.ElementType }[] = [
   { key: "overview", label: "Overview", icon: BarChart3 },
   { key: "campaigns", label: "Campaigns", icon: Layers },
   { key: "utm", label: "UTM Builder", icon: Link2 },
+  { key: "google-ads", label: "Google Ad Grant", icon: Target },
 ];
 
 const PLATFORM_BADGE: Record<string, string> = {
@@ -1190,6 +1191,150 @@ export default function AdminAdsPage() {
                   </div>
                 </dl>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Google Ad Grant Tab ─────────────────────────────────────────── */}
+      {!loading && activeTab === "google-ads" && (
+        <div className="space-y-6">
+          {/* Grant overview */}
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <Target className="h-5 w-5 text-blue-700" />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900">Google Ad Grant</h2>
+                <p className="text-sm text-gray-500">$10,000/month in free Google Ads for nonprofits</p>
+              </div>
+            </div>
+
+            {/* Status */}
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-amber-900">Application In Progress</p>
+                  <p className="text-sm text-amber-700 mt-1">
+                    TechSoup verification is pending. Once verified, apply for Google for Nonprofits,
+                    then activate the Google Ad Grant. This dashboard will show live campaign data
+                    once the grant is active and API credentials are configured.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Setup checklist */}
+            <h3 className="font-semibold text-gray-900 mb-3">Setup Checklist</h3>
+            <div className="space-y-3">
+              {[
+                { step: "Register with TechSoup", status: "pending", detail: "Verification typically takes 2-14 business days" },
+                { step: "Activate Google for Nonprofits", status: "not-started", detail: "At google.com/nonprofits after TechSoup verifies" },
+                { step: "Create Google Ads account", status: "not-started", detail: "Google will convert it to a Grants account" },
+                { step: "Apply for Google Ad Grant", status: "not-started", detail: "Within Google for Nonprofits dashboard" },
+                { step: "Set up conversion tracking", status: "not-started", detail: "Track OATH signups and story submissions as conversions" },
+                { step: "Connect API for this dashboard", status: "not-started", detail: "Add GOOGLE_ADS_* env vars to enable monitoring" },
+              ].map((item) => (
+                <div key={item.step} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                  <div className={cn(
+                    "w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5",
+                    item.status === "pending" ? "border-amber-400 bg-amber-50" :
+                    item.status === "done" ? "border-emerald-400 bg-emerald-50" :
+                    "border-gray-300"
+                  )}>
+                    {item.status === "pending" && <div className="w-2 h-2 bg-amber-400 rounded-full" />}
+                    {item.status === "done" && <Check className="h-3 w-3 text-emerald-600" />}
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 text-sm">{item.step}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Grant compliance rules */}
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="font-semibold text-gray-900 mb-4">Google Ad Grant Rules</h3>
+            <p className="text-sm text-gray-500 mb-4">
+              The Ad Grant has strict compliance requirements. Violating these can suspend your grant.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { rule: "Max $2.00 CPC", detail: "Individual keyword bids cannot exceed $2.00 (exceptions for Smart Bidding)" },
+                { rule: "5% minimum CTR", detail: "Account must maintain 5% click-through rate each month or risk suspension" },
+                { rule: "No single-word keywords", detail: "All keywords must be 2+ words (exceptions: branded terms, medical terms)" },
+                { rule: "No overly generic keywords", detail: "Keywords like 'free videos' or 'best things' are not allowed" },
+                { rule: "Geo-targeting required", detail: "Campaigns must target specific geographic areas" },
+                { rule: "Quality Score 3+", detail: "Keywords with Quality Score below 3 must be paused" },
+                { rule: "2+ ad groups per campaign", detail: "Each campaign needs at least 2 ad groups" },
+                { rule: "2+ ads per ad group", detail: "Each ad group needs at least 2 active ads" },
+              ].map((item) => (
+                <div key={item.rule} className="p-3 bg-gray-50 rounded-lg">
+                  <p className="font-medium text-gray-900 text-sm">{item.rule}</p>
+                  <p className="text-xs text-gray-500 mt-1">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Suggested keywords */}
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="font-semibold text-gray-900 mb-4">Suggested Keywords</h3>
+            <p className="text-sm text-gray-500 mb-4">
+              High-volume, mission-aligned keywords that work within the $2 CPC cap.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                "substance use support",
+                "family mental health resources",
+                "grief and loss support",
+                "how to help someone with addiction",
+                "supporting a loved one with addiction",
+                "mental health family support",
+                "substance use awareness",
+                "break the silence mental health",
+                "person first language addiction",
+                "grief support for families",
+                "substance use disorder help",
+                "addiction family resources",
+              ].map((keyword) => (
+                <div key={keyword} className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-lg text-sm text-blue-800">
+                  <span className="text-blue-400 text-xs">#</span>
+                  {keyword}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Landing pages */}
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="font-semibold text-gray-900 mb-4">Recommended Landing Pages</h3>
+            <p className="text-sm text-gray-500 mb-4">
+              Match each ad group to a relevant landing page for better Quality Score.
+            </p>
+            <div className="space-y-3">
+              {[
+                { page: "/take-the-oath", keywords: "take the oath, pledge, commitment, join movement", purpose: "Primary conversion page" },
+                { page: "/resources", keywords: "substance use resources, mental health help, crisis support", purpose: "Resource seekers" },
+                { page: "/stories", keywords: "addiction stories, recovery stories, family stories", purpose: "Story readers" },
+                { page: "/families", keywords: "family support, supporting loved one, caregiver help", purpose: "Family members" },
+                { page: "/resources/language-guide", keywords: "person first language, how to talk about addiction", purpose: "Language and awareness" },
+                { page: "/share-your-story", keywords: "share your story, tell your story, break the silence", purpose: "Story contributors" },
+              ].map((item) => (
+                <div key={item.page} className="flex items-start gap-4 p-3 bg-gray-50 rounded-lg">
+                  <code className="text-sm font-mono text-primary bg-primary/5 px-2 py-1 rounded flex-shrink-0">
+                    {item.page}
+                  </code>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-gray-700">{item.keywords}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{item.purpose}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

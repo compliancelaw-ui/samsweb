@@ -23,11 +23,13 @@ import {
   Share2,
   HelpCircle,
   Wrench,
+  CalendarDays,
   Megaphone,
   Sparkles,
   Loader2,
   Send,
   ArrowRight,
+  DollarSign,
 } from "lucide-react";
 
 const navItems = [
@@ -41,6 +43,8 @@ const navItems = [
   { label: "Ambassadors", href: "/admin/ambassadors", icon: Users },
   { label: "Email", href: "/admin/email", icon: Mail },
   { label: "Ads", href: "/admin/ads", icon: Megaphone },
+  { label: "Calendar", href: "/admin/calendar", icon: CalendarDays },
+  { label: "Donations", href: "/admin/donations", icon: DollarSign },
   { label: "Content", href: "/admin/content", icon: Layers },
   { label: "Media", href: "/admin/media", icon: Image },
   { label: "Maintenance", href: "/admin/maintenance", icon: Wrench },
@@ -149,6 +153,26 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "Run the SQL migration in Supabase before using this tab.",
     ],
     manualSection: "ads",
+  },
+  "/admin/calendar": {
+    title: "Content Calendar",
+    tips: [
+      "Today's theme is highlighted at the top with suggested topics.",
+      "Click 'Generate Post' to jump to Social Posts with the day's theme.",
+      "Each day has specific content types (image, video, text, etc.).",
+      "The Hashtag Library at the bottom shows all available hashtag categories.",
+    ],
+    manualSection: "calendar",
+  },
+  "/admin/donations": {
+    title: "Donation Reporting",
+    tips: [
+      "All donation data comes from Stripe webhooks automatically.",
+      "Total Raised shows all successful donations since launch.",
+      "Recurring donors are tracked by active Stripe subscriptions.",
+      "Anonymous donations hide the donor name but still track the amount.",
+    ],
+    manualSection: "donations",
   },
   "/admin/content": {
     title: "Manage Content",

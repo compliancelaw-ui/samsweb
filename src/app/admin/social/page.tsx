@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
   Sparkles,
@@ -11,6 +11,12 @@ import {
   Hash,
   Clock,
   CalendarDays,
+  Send,
+  ExternalLink,
+  Info,
+  CheckCircle2,
+  Image as ImageIcon,
+  AlertCircle,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -167,6 +173,18 @@ const SUGGESTED_HASHTAGS = [
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+interface PlatformStatus {
+  facebook: boolean;
+  instagram: boolean;
+}
+
+interface PublishResult {
+  ok: boolean;
+  postId?: string;
+  url?: string;
+  error?: string;
+}
+
 export default function AdminSocialPage() {
   const [platform, setPlatform] = useState<Platform>("linkedin");
   const [postType, setPostType] = useState<string | null>(null);
@@ -176,8 +194,30 @@ export default function AdminSocialPage() {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  // Social publishing state
+  const [platformStatus, setPlatformStatus] = useState<PlatformStatus | null>(null);
+  const [statusLoading, setStatusLoading] = useState(true);
+  const [publishing, setPublishing] = useState<string | null>(null);
+  const [publishResult, setPublishResult] = useState<PublishResult | null>(null);
+  const [igImageUrl, setIgImageUrl] = useState("");
+
   const activePlatform = PLATFORMS[platform];
   const charLimit = activePlatform.charLimit;
+
+  /* ---- fetch platform connection status ---- */
+
+  useEffect(() => {
+    fetch("/api/admin/social/status")
+      .then((res) => res.json())
+      .then((data) => {
+        setPlatformStatus(data.platforms);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch social status:", err);
+        setPlatformStatus({ facebook: false, instagram: false });
+      })
+      .finally(() => setStatusLoading(false));
+  }, []);
 
   /* ---- helpers ---- */
 
@@ -198,6 +238,9 @@ export default function AdminSocialPage() {
         ? "bg-amber-500"
         : "bg-red-500";
 
+  const anyPlatformConnected =
+    platformStatus?.facebook || platformStatus?.instagram;
+
   /* ---- generate ---- */
 
   const handleGenerate = async () => {
@@ -211,6 +254,7 @@ export default function AdminSocialPage() {
 
     setLoading(true);
     setCopied(false);
+    setPublishResult(null);
 
     try {
       const res = await fetch("/api/ai", {
@@ -259,6 +303,36 @@ export default function AdminSocialPage() {
     }
   };
 
+  /* ---- publish ---- */
+
+  const handlePublish = async (targetPlatform: "facebook" | "instagram") => {
+    if (!generatedPost) return;
+    setPublishing(targetPlatform);
+    setPublishResult(null);
+
+    try {
+      const body: { platform: string; text: string; imageUrl?: string } = {
+        platform: targetPlatform,
+        text: generatedPost,
+      };
+      if (targetPlatform === "instagram") {
+        body.imageUrl = igImageUrl;
+      }
+
+      const res = await fetch("/api/admin/social/publish", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const result: PublishResult = await res.json();
+      setPublishResult(result);
+    } catch (err) {
+      setPublishResult({ ok: false, error: String(err) });
+    } finally {
+      setPublishing(null);
+    }
+  };
+
   /* ---- insert hashtag ---- */
 
   const insertHashtag = (tag: string) => {
@@ -283,6 +357,69 @@ export default function AdminSocialPage() {
           Create ready-to-post content for your social channels.
         </p>
       </div>
+
+      {/* Connection status banner */}
+      {!statusLoading && platformStatus && (
+        <div
+          className={cn(
+            "rounded-lg border p-4",
+            anyPlatformConnected
+              ? "bg-emerald-50 border-emerald-200"
+              : "bg-blue-50 border-blue-200"
+          )}
+        >
+          {anyPlatformConnected ? (
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-emerald-600 mt-0.5 shrink-0" />
+              <div>
+                <p className="text-sm font-medium text-emerald-800">
+                  Social publishing connected
+                </p>
+                <div className="flex items-center gap-4 mt-1.5">
+                  {platformStatus.facebook && (
+                    <span className="flex items-center gap-1.5 text-xs text-emerald-700">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      Facebook
+                    </span>
+                  )}
+                  {platformStatus.instagram && (
+                    <span className="flex items-center gap-1.5 text-xs text-emerald-700">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      Instagram
+                    </span>
+                  )}
+                  {!platformStatus.facebook && (
+                    <span className="flex items-center gap-1.5 text-xs text-gray-500">
+                      <span className="h-2 w-2 rounded-full bg-gray-300" />
+                      Facebook not configured
+                    </span>
+                  )}
+                  {!platformStatus.instagram && (
+                    <span className="flex items-center gap-1.5 text-xs text-gray-500">
+                      <span className="h-2 w-2 rounded-full bg-gray-300" />
+                      Instagram not configured
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-start gap-3">
+              <Info className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+              <div>
+                <p className="text-sm font-medium text-blue-800">
+                  Social publishing is not yet connected
+                </p>
+                <p className="text-xs text-blue-700 mt-1">
+                  Add META_SAMSOATH_PAGE_TOKEN and META_SAMSOATH_PAGE_ID to your
+                  environment variables to enable direct publishing to Facebook
+                  and Instagram.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Platform selector */}
       <div>
@@ -456,8 +593,75 @@ export default function AdminSocialPage() {
                   </div>
                 </div>
 
+                {/* Instagram image URL input */}
+                {platformStatus?.instagram && (
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <label
+                      htmlFor="ig-image-url"
+                      className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2"
+                    >
+                      <ImageIcon className="h-4 w-4 text-[#E1306C]" />
+                      Instagram Image URL
+                      <span className="font-normal text-gray-400 text-xs">
+                        (required for Instagram publishing)
+                      </span>
+                    </label>
+                    <input
+                      id="ig-image-url"
+                      type="url"
+                      value={igImageUrl}
+                      onChange={(e) => setIgImageUrl(e.target.value)}
+                      placeholder="https://example.com/image.jpg"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E1306C]/50 focus:border-[#E1306C]"
+                    />
+                  </div>
+                )}
+
+                {/* Publish result toast */}
+                {publishResult && (
+                  <div
+                    className={cn(
+                      "mt-4 p-3 rounded-lg text-sm flex items-start gap-2",
+                      publishResult.ok
+                        ? "bg-emerald-50 border border-emerald-200 text-emerald-800"
+                        : "bg-red-50 border border-red-200 text-red-800"
+                    )}
+                  >
+                    {publishResult.ok ? (
+                      <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5 shrink-0" />
+                    ) : (
+                      <AlertCircle className="h-4 w-4 text-red-600 mt-0.5 shrink-0" />
+                    )}
+                    <div>
+                      {publishResult.ok ? (
+                        <>
+                          <p className="font-medium">Published successfully!</p>
+                          {publishResult.url && (
+                            <a
+                              href={publishResult.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-emerald-700 underline mt-1"
+                            >
+                              View post
+                              <ExternalLink className="h-3 w-3" />
+                            </a>
+                          )}
+                          {publishResult.postId && !publishResult.url && (
+                            <p className="text-xs text-emerald-600 mt-1">
+                              Post ID: {publishResult.postId}
+                            </p>
+                          )}
+                        </>
+                      ) : (
+                        <p>{publishResult.error || "Publishing failed"}</p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 {/* Action buttons */}
-                <div className="mt-4 flex items-center gap-2">
+                <div className="mt-4 flex flex-wrap items-center gap-2">
                   <button
                     onClick={handleCopy}
                     className={cn(
@@ -482,6 +686,42 @@ export default function AdminSocialPage() {
                     <RefreshCw className="h-4 w-4" />
                     Regenerate
                   </button>
+
+                  {/* Publish to Facebook button */}
+                  {platformStatus?.facebook && (
+                    <button
+                      onClick={() => handlePublish("facebook")}
+                      disabled={publishing !== null || !generatedPost}
+                      className="flex items-center gap-2 px-4 py-2 bg-[#1877F2] text-white text-sm font-medium rounded-lg hover:bg-[#1877F2]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {publishing === "facebook" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="h-4 w-4" />
+                      )}
+                      {publishing === "facebook"
+                        ? "Publishing..."
+                        : "Publish to Facebook"}
+                    </button>
+                  )}
+
+                  {/* Publish to Instagram button */}
+                  {platformStatus?.instagram && igImageUrl.trim() && (
+                    <button
+                      onClick={() => handlePublish("instagram")}
+                      disabled={publishing !== null || !generatedPost}
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] text-white text-sm font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {publishing === "instagram" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="h-4 w-4" />
+                      )}
+                      {publishing === "instagram"
+                        ? "Publishing..."
+                        : "Publish to Instagram"}
+                    </button>
+                  )}
                 </div>
               </>
             )}
@@ -548,32 +788,32 @@ export default function AdminSocialPage() {
           {[
             {
               platform: "LinkedIn",
-              best: "Tue–Thu, 7–8 AM & 12 PM",
-              freq: "3–5x per week",
+              best: "Tue-Thu, 7-8 AM & 12 PM",
+              freq: "3-5x per week",
               tip: "Morning posts before work perform best. Avoid weekends.",
             },
             {
               platform: "Instagram",
-              best: "Mon–Fri, 11 AM–1 PM & 7–9 PM",
-              freq: "4–7x per week (feed + stories)",
+              best: "Mon-Fri, 11 AM-1 PM & 7-9 PM",
+              freq: "4-7x per week (feed + stories)",
               tip: "Reels get 2x reach. Stories keep engagement up between posts.",
             },
             {
               platform: "TikTok",
-              best: "Tue–Thu, 10 AM–12 PM & 7–9 PM",
-              freq: "1–3x per day for growth",
+              best: "Tue-Thu, 10 AM-12 PM & 7-9 PM",
+              freq: "1-3x per day for growth",
               tip: "First 3 seconds decide everything. Hook immediately.",
             },
             {
               platform: "Facebook",
-              best: "Wed–Fri, 9 AM–12 PM",
-              freq: "3–5x per week",
+              best: "Wed-Fri, 9 AM-12 PM",
+              freq: "3-5x per week",
               tip: "Groups and shares drive the algorithm. Ask questions.",
             },
             {
               platform: "X (Twitter)",
-              best: "Mon–Fri, 8–10 AM & 6–9 PM",
-              freq: "1–5x per day",
+              best: "Mon-Fri, 8-10 AM & 6-9 PM",
+              freq: "1-5x per day",
               tip: "Threads perform well. Quote-tweet your own posts to resurface.",
             },
           ].map((item) => (
@@ -613,7 +853,7 @@ export default function AdminSocialPage() {
             { day: "Thursday", theme: "Throwback / BTS", content: "Behind-the-scenes, throwback photo, or founder perspective", platforms: "Instagram, TikTok, Facebook" },
             { day: "Friday", theme: "Challenge Friday", content: "Challenge 3 people to take Sam's OATH or share the movement", platforms: "All platforms" },
             { day: "Saturday", theme: "Music Saturday", content: "Share a song, lyric, or music update from Apple Music", platforms: "Instagram, TikTok" },
-            { day: "Sunday", theme: "Rest & Reflect", content: "Lighter post — gratitude, hope, or a quiet reflection", platforms: "Instagram, Facebook" },
+            { day: "Sunday", theme: "Rest & Reflect", content: "Lighter post - gratitude, hope, or a quiet reflection", platforms: "Instagram, Facebook" },
           ].map((item) => (
             <div
               key={item.day}
