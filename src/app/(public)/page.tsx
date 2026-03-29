@@ -68,7 +68,7 @@ export default async function HomePage() {
             <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed max-w-2xl">
               {c["hero.subtitle"]}
             </p>
-            <p className="text-lg text-white/70 mb-10 max-w-2xl">
+            <p className="text-lg text-white/90 mb-10 max-w-2xl">
               {c["hero.body"]}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

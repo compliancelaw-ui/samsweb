@@ -63,7 +63,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Body",
     contentType: "textarea",
     defaultContent:
-      "Sixty seconds. A pin on the map. A person who no longer carries this alone. Take Sam\u2019s OATH and join thousands who chose openness over silence.",
+      "Sixty seconds. One commitment. A pin on the map showing you\u2019re not alone. Read stories from others who are living this too. Share yours when you\u2019re ready. This is where silence ends and healing begins.",
     group: "Hero",
   },
   {
