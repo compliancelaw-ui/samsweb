@@ -13,6 +13,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { LiveImpactStats } from "@/components/home/live-impact-stats";
 import { ActivityTicker } from "@/components/home/activity-ticker";
 import { FeaturedStories } from "@/components/stories/featured-stories";
+import { CurrentChallengeCard } from "@/components/challenges/current-challenge-card";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 const HomeMapPreview = dynamic(() => import("@/components/map/oath-map"), {
@@ -324,6 +325,13 @@ export default async function HomePage() {
       <Suspense fallback={null}>
         <SectionWrapper variant="light">
           <FeaturedStories />
+        </SectionWrapper>
+      </Suspense>
+
+      {/* ===== 7b. MONTHLY CHALLENGE CARD ===== */}
+      <Suspense fallback={null}>
+        <SectionWrapper variant="white">
+          <CurrentChallengeCard />
         </SectionWrapper>
       </Suspense>
 
