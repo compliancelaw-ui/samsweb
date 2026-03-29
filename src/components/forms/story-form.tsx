@@ -235,7 +235,7 @@ export function StoryForm() {
           Your Story
         </h3>
         <p className="text-gray-500 mb-6">
-          Share your experience. Your story can help others feel less alone and inspire change in communities everywhere.
+          Share what your family has been through. Your story can help other families feel less alone and inspire change in communities everywhere.
         </p>
 
         <div className="mb-4">

@@ -16,9 +16,9 @@ import { StoryForm } from "@/components/forms/story-form";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
-  title: "Share Your Story | Share Your Experience",
+  title: "Share Your Story | Sam's OATH",
   description:
-    "Your story matters. Share your experience with substance use or mental health and help others know they are not alone. Every voice breaks the silence.",
+    "Your family's story matters. Share what your family has been through and help other families know they are not alone. Every voice breaks the silence.",
   alternates: { canonical: "/share-your-story" },
 };
 
@@ -159,7 +159,7 @@ export default async function ShareYourStoryPage() {
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="text-teal mt-0.5">&#10003;</span>
-                  Your experience with substance use, mental health, or loss
+                  Your family's experience with substance use, mental health, or loss
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-teal mt-0.5">&#10003;</span>

@@ -3,26 +3,14 @@ import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 // SamsOath "Hopeful Twilight" branding
 const TEAL = rgb(0.24, 0.67, 0.66); // #3EABA8
-const PRIMARY = rgb(0.2, 0.25, 0.45); // deep navy/twilight
+const PRIMARY = rgb(0.29, 0.44, 0.65); // #4A6FA5
 const SAGE = rgb(0.48, 0.72, 0.48); // #7AB87A
 const ORANGE = rgb(0.91, 0.59, 0.44); // #E8956F
+const SLATE = rgb(0.18, 0.23, 0.31); // #2E3B4E
 const GOLD = rgb(0.76, 0.6, 0.2);
 const WHITE = rgb(1, 1, 1);
 const LIGHT_BG = rgb(0.97, 0.97, 0.99);
-
-const OATH_TEXT = [
-  "I choose OPENNESS - to speak honestly about what my family",
-  "and I have experienced, without shame.",
-  "",
-  "I choose AUTHENTICITY - to show up as I truly am, not as",
-  "the world expects me to be.",
-  "",
-  "I choose TOGETHERNESS - to stand with others who are",
-  "facing these challenges, because no one should face them alone.",
-  "",
-  "I choose HEALING - to pursue recovery, growth, and hope,",
-  "for myself and for those I love.",
-];
+const GRAY = rgb(0.55, 0.55, 0.6);
 
 /**
  * GET /api/export/oath-certificate?name=John+Smith&date=2026-03-26
@@ -32,7 +20,7 @@ const OATH_TEXT = [
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const name = searchParams.get("name") || "A Friend";
+    const name = searchParams.get("name") || "A Friend of Sam";
     const dateParam = searchParams.get("date");
     const dateStr = dateParam
       ? new Date(dateParam).toLocaleDateString("en-US", {
@@ -51,6 +39,7 @@ export async function GET(request: NextRequest) {
     const fontItalic = await pdf.embedFont(StandardFonts.TimesRomanItalic);
     const fontRegular = await pdf.embedFont(StandardFonts.TimesRoman);
     const fontSans = await pdf.embedFont(StandardFonts.HelveticaBold);
+    const fontSansReg = await pdf.embedFont(StandardFonts.Helvetica);
 
     // Landscape letter
     const PAGE_W = 792;
@@ -59,235 +48,211 @@ export async function GET(request: NextRequest) {
 
     // Background
     page.drawRectangle({
-      x: 0,
-      y: 0,
-      width: PAGE_W,
-      height: PAGE_H,
-      color: LIGHT_BG,
+      x: 0, y: 0, width: PAGE_W, height: PAGE_H, color: LIGHT_BG,
     });
 
     // Decorative border - outer
-    const borderInset = 20;
     page.drawRectangle({
-      x: borderInset,
-      y: borderInset,
-      width: PAGE_W - 2 * borderInset,
-      height: PAGE_H - 2 * borderInset,
-      borderColor: PRIMARY,
-      borderWidth: 3,
+      x: 20, y: 20, width: PAGE_W - 40, height: PAGE_H - 40,
+      borderColor: SLATE, borderWidth: 3,
     });
 
     // Decorative border - inner
-    const innerInset = 30;
     page.drawRectangle({
-      x: innerInset,
-      y: innerInset,
-      width: PAGE_W - 2 * innerInset,
-      height: PAGE_H - 2 * innerInset,
-      borderColor: TEAL,
-      borderWidth: 1,
+      x: 30, y: 30, width: PAGE_W - 60, height: PAGE_H - 60,
+      borderColor: TEAL, borderWidth: 1,
     });
 
-    // Corner accents (small squares at each inner border corner)
+    // Corner accents
     const corners = [
-      { x: innerInset - 3, y: innerInset - 3 },
-      { x: PAGE_W - innerInset - 3, y: innerInset - 3 },
-      { x: innerInset - 3, y: PAGE_H - innerInset - 3 },
-      { x: PAGE_W - innerInset - 3, y: PAGE_H - innerInset - 3 },
+      { x: 27, y: 27 }, { x: PAGE_W - 33, y: 27 },
+      { x: 27, y: PAGE_H - 33 }, { x: PAGE_W - 33, y: PAGE_H - 33 },
     ];
     for (const c of corners) {
-      page.drawRectangle({
-        x: c.x,
-        y: c.y,
-        width: 6,
-        height: 6,
-        color: GOLD,
-      });
+      page.drawRectangle({ x: c.x, y: c.y, width: 6, height: 6, color: GOLD });
     }
 
-    let y = PAGE_H - 65;
-
-    // "Certificate of Commitment" header
-    const headerText = "Certificate of Commitment";
-    const headerWidth = fontBold.widthOfTextAtSize(headerText, 14);
-    page.drawText(headerText, {
-      x: (PAGE_W - headerWidth) / 2,
-      y,
-      size: 14,
-      font: fontBold,
-      color: GOLD,
+    // Top color bar
+    const barY = PAGE_H - 50;
+    const barW = (PAGE_W - 80) / 4;
+    [TEAL, PRIMARY, SAGE, ORANGE].forEach((color, i) => {
+      page.drawRectangle({
+        x: 40 + i * barW, y: barY, width: barW, height: 4, color,
+      });
     });
-    y -= 36;
+
+    let y = PAGE_H - 75;
+
+    // "Certificate of Commitment"
+    const headerText = "Certificate of Commitment";
+    const headerWidth = fontBold.widthOfTextAtSize(headerText, 13);
+    page.drawText(headerText, {
+      x: (PAGE_W - headerWidth) / 2, y, size: 13, font: fontBold, color: GOLD,
+    });
+    y -= 32;
 
     // "Sam's OATH" title
     const titleText = "Sam's OATH";
-    const titleWidth = fontSans.widthOfTextAtSize(titleText, 36);
+    const titleWidth = fontSans.widthOfTextAtSize(titleText, 40);
     page.drawText(titleText, {
-      x: (PAGE_W - titleWidth) / 2,
-      y,
-      size: 36,
-      font: fontSans,
-      color: PRIMARY,
+      x: (PAGE_W - titleWidth) / 2, y, size: 40, font: fontSans, color: SLATE,
     });
-    y -= 22;
+    y -= 20;
 
     // Tagline
     const tagline = "What's hidden doesn't heal.";
     const taglineWidth = fontItalic.widthOfTextAtSize(tagline, 12);
     page.drawText(tagline, {
-      x: (PAGE_W - taglineWidth) / 2,
-      y,
-      size: 12,
-      font: fontItalic,
-      color: TEAL,
+      x: (PAGE_W - taglineWidth) / 2, y, size: 12, font: fontItalic, color: TEAL,
     });
-    y -= 16;
+    y -= 28;
 
-    // O - A - T - H letters with colors
-    const oathLetters = [
-      { letter: "O", word: "Openness", color: TEAL },
-      { letter: "A", word: "Authenticity", color: PRIMARY },
-      { letter: "T", word: "Togetherness", color: SAGE },
-      { letter: "H", word: "Healing", color: ORANGE },
+    // O - A - T - H with words and descriptions
+    const oathItems = [
+      { letter: "O", word: "Openness", color: TEAL, desc: "To speak honestly, without shame" },
+      { letter: "A", word: "Authenticity", color: PRIMARY, desc: "To show up as you truly are" },
+      { letter: "T", word: "Togetherness", color: SAGE, desc: "To stand with others" },
+      { letter: "H", word: "Healing", color: ORANGE, desc: "To pursue growth and hope" },
     ];
 
-    const letterSpacing = 120;
-    const startX = (PAGE_W - letterSpacing * 3) / 2 - 10;
-    for (let i = 0; i < oathLetters.length; i++) {
-      const lx = startX + i * letterSpacing;
+    const spacing = 160;
+    const startX = (PAGE_W - spacing * 3) / 2;
+    for (let i = 0; i < oathItems.length; i++) {
+      const item = oathItems[i];
+      const cx = startX + i * spacing;
+
       // Circle
-      const circleR = 12;
-      page.drawCircle({
-        x: lx,
-        y: y - 2,
-        size: circleR,
-        color: oathLetters[i].color,
+      page.drawCircle({ x: cx, y: y - 2, size: 14, color: item.color });
+
+      // Letter in circle
+      const lw = fontSans.widthOfTextAtSize(item.letter, 16);
+      page.drawText(item.letter, {
+        x: cx - lw / 2, y: y - 8, size: 16, font: fontSans, color: WHITE,
       });
-      // Letter
-      const lw = fontSans.widthOfTextAtSize(oathLetters[i].letter, 14);
-      page.drawText(oathLetters[i].letter, {
-        x: lx - lw / 2,
-        y: y - 7,
-        size: 14,
-        font: fontSans,
-        color: WHITE,
+
+      // Word below circle
+      const ww = fontSansReg.widthOfTextAtSize(item.word, 10);
+      page.drawText(item.word, {
+        x: cx - ww / 2, y: y - 24, size: 10, font: fontSansReg, color: item.color,
       });
-      // Word below
-      const ww = fontRegular.widthOfTextAtSize(oathLetters[i].word, 9);
-      page.drawText(oathLetters[i].word, {
-        x: lx - ww / 2,
-        y: y - 22,
-        size: 9,
-        font: fontRegular,
-        color: oathLetters[i].color,
+
+      // Description below word
+      const dw = fontRegular.widthOfTextAtSize(item.desc, 7);
+      page.drawText(item.desc, {
+        x: cx - dw / 2, y: y - 35, size: 7, font: fontRegular, color: GRAY,
       });
     }
-    y -= 44;
+    y -= 52;
 
-    // Separator line
+    // Separator
     page.drawLine({
-      start: { x: 100, y },
-      end: { x: PAGE_W - 100, y },
-      thickness: 0.5,
-      color: TEAL,
+      start: { x: 120, y }, end: { x: PAGE_W - 120, y },
+      thickness: 0.5, color: TEAL,
     });
-    y -= 18;
+    y -= 16;
 
     // "This certifies that"
     const certText = "This certifies that";
     const certWidth = fontItalic.widthOfTextAtSize(certText, 11);
     page.drawText(certText, {
-      x: (PAGE_W - certWidth) / 2,
-      y,
-      size: 11,
-      font: fontItalic,
-      color: PRIMARY,
+      x: (PAGE_W - certWidth) / 2, y, size: 11, font: fontItalic, color: SLATE,
     });
-    y -= 28;
+    y -= 32;
 
-    // Name (large, emphasized)
-    const nameWidth = fontBold.widthOfTextAtSize(name, 24);
+    // Name (large)
+    const nameSize = name.length > 20 ? 26 : 30;
+    const nameWidth = fontBold.widthOfTextAtSize(name, nameSize);
     page.drawText(name, {
-      x: (PAGE_W - nameWidth) / 2,
-      y,
-      size: 24,
-      font: fontBold,
-      color: PRIMARY,
+      x: (PAGE_W - nameWidth) / 2, y, size: nameSize, font: fontBold, color: SLATE,
     });
     y -= 8;
 
-    // Underline the name
-    const nameLineStart = (PAGE_W - nameWidth) / 2 - 20;
-    const nameLineEnd = (PAGE_W + nameWidth) / 2 + 20;
+    // Name underline
+    const lineStart = (PAGE_W - nameWidth) / 2 - 20;
+    const lineEnd = (PAGE_W + nameWidth) / 2 + 20;
     page.drawLine({
-      start: { x: nameLineStart, y },
-      end: { x: nameLineEnd, y },
-      thickness: 0.75,
-      color: GOLD,
+      start: { x: lineStart, y }, end: { x: lineEnd, y },
+      thickness: 0.75, color: GOLD,
     });
     y -= 18;
 
-    // "has taken Sam's OATH, pledging:"
-    const pledgeText = "has taken Sam's OATH, pledging:";
+    // "has taken Sam's OATH, pledging to choose"
+    const pledgeText = "has taken Sam's OATH, pledging to choose";
     const pledgeWidth = fontItalic.widthOfTextAtSize(pledgeText, 11);
     page.drawText(pledgeText, {
-      x: (PAGE_W - pledgeWidth) / 2,
-      y,
-      size: 11,
-      font: fontItalic,
-      color: PRIMARY,
+      x: (PAGE_W - pledgeWidth) / 2, y, size: 11, font: fontItalic, color: SLATE,
     });
-    y -= 22;
+    y -= 18;
 
-    // OATH text
-    for (const line of OATH_TEXT) {
-      if (line === "") {
-        y -= 6;
-        continue;
-      }
-      const lineWidth = fontRegular.widthOfTextAtSize(line, 9);
-      page.drawText(line, {
-        x: (PAGE_W - lineWidth) / 2,
-        y,
-        size: 9,
-        font: fontRegular,
-        color: PRIMARY,
-      });
-      y -= 13;
+    // Colored pledge words in a row
+    const pledgeWords = [
+      { word: "Openness", color: TEAL },
+      { sep: " · " },
+      { word: "Authenticity", color: PRIMARY },
+      { sep: " · " },
+      { word: "Togetherness", color: SAGE },
+      { sep: " · " },
+      { word: "Healing", color: ORANGE },
+    ] as Array<{ word?: string; color?: ReturnType<typeof rgb>; sep?: string }>;
+
+    let totalPledgeWidth = 0;
+    for (const pw of pledgeWords) {
+      const text = pw.word || pw.sep || "";
+      const font = pw.word ? fontSans : fontRegular;
+      totalPledgeWidth += font.widthOfTextAtSize(text, 12);
     }
+    let px = (PAGE_W - totalPledgeWidth) / 2;
+    for (const pw of pledgeWords) {
+      const text = pw.word || pw.sep || "";
+      const font = pw.word ? fontSans : fontRegular;
+      const color = pw.color || GRAY;
+      const w = font.widthOfTextAtSize(text, 12);
+      page.drawText(text, { x: px, y, size: 12, font, color });
+      px += w;
+    }
+    y -= 28;
 
-    y -= 10;
+    // Quote
+    const quote = '"The opposite of addiction is not sobriety; it is community."';
+    const quoteWidth = fontItalic.widthOfTextAtSize(quote, 10);
+    page.drawText(quote, {
+      x: (PAGE_W - quoteWidth) / 2, y, size: 10, font: fontItalic, color: GRAY,
+    });
+    y -= 14;
+    const quoteAttr = "- Sam Sheeder";
+    const qaWidth = fontRegular.widthOfTextAtSize(quoteAttr, 8);
+    page.drawText(quoteAttr, {
+      x: (PAGE_W - qaWidth) / 2, y, size: 8, font: fontRegular, color: GRAY,
+    });
+    y -= 28;
 
     // Separator
     page.drawLine({
-      start: { x: 200, y },
-      end: { x: PAGE_W - 200, y },
-      thickness: 0.5,
-      color: TEAL,
+      start: { x: 200, y }, end: { x: PAGE_W - 200, y },
+      thickness: 0.5, color: TEAL,
     });
-    y -= 20;
+    y -= 18;
 
     // Date
     const dateLabel = `Taken on ${dateStr}`;
     const dateLabelWidth = fontRegular.widthOfTextAtSize(dateLabel, 11);
     page.drawText(dateLabel, {
-      x: (PAGE_W - dateLabelWidth) / 2,
-      y,
-      size: 11,
-      font: fontRegular,
-      color: PRIMARY,
+      x: (PAGE_W - dateLabelWidth) / 2, y, size: 11, font: fontRegular, color: SLATE,
     });
-    y -= 22;
+    y -= 20;
 
     // samsoath.org
     const urlText = "samsoath.org";
     const urlWidth = fontSans.widthOfTextAtSize(urlText, 10);
     page.drawText(urlText, {
-      x: (PAGE_W - urlWidth) / 2,
-      y,
-      size: 10,
-      font: fontSans,
-      color: TEAL,
+      x: (PAGE_W - urlWidth) / 2, y, size: 10, font: fontSans, color: TEAL,
+    });
+
+    // Bottom color bar
+    [TEAL, PRIMARY, SAGE, ORANGE].forEach((color, i) => {
+      page.drawRectangle({
+        x: 40 + i * barW, y: 42, width: barW, height: 4, color,
+      });
     });
 
     // Serialize
