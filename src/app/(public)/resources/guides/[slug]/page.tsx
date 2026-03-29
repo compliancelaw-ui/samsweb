@@ -141,7 +141,7 @@ export default async function GuidePage({
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-white">
           <Link
             href="/resources/guides"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Guides
@@ -150,7 +150,7 @@ export default async function GuidePage({
             <span className="text-xs font-medium px-2.5 py-1 bg-white/20 rounded-full">
               {CATEGORY_LABELS[guide.category] || guide.category}
             </span>
-            <span className="text-xs text-white/60 flex items-center gap-1">
+            <span className="text-xs text-white/80 flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               {new Date(guide.created_at).toLocaleDateString("en-US", {
                 year: "numeric",

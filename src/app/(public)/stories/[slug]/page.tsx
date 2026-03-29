@@ -140,7 +140,7 @@ export default async function StoryPage({
           <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
             {story.title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-white/70 text-sm flex-wrap">
+          <div className="flex items-center justify-center gap-4 text-white/90 text-sm flex-wrap">
             <span className="font-medium text-white/90">
               {story.author_name}
             </span>
@@ -246,7 +246,7 @@ export default async function StoryPage({
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Your Story Matters Too</h2>
-          <p className="text-white/80 text-xl mb-8 leading-relaxed">
+          <p className="text-white/90 text-xl mb-8 leading-relaxed">
             Reading someone else&apos;s story might be the first step toward
             sharing your own. When you&apos;re ready, we&apos;re here.
           </p>

@@ -107,7 +107,7 @@ export default async function BlogPostPage({
         <div className="container-wide text-white">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Updates
@@ -127,7 +127,7 @@ export default async function BlogPostPage({
           <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 max-w-4xl">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-white/70">
+          <div className="flex items-center gap-4 text-white/90">
             <span className="flex items-center gap-1.5">
               <User className="w-4 h-4" />
               {post.author_name}

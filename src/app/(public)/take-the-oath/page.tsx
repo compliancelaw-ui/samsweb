@@ -25,10 +25,10 @@ export default async function TakeTheOathPage() {
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
                 {c["hero.title"]}
               </h1>
-              <p className="text-xl text-white/80 mb-6">
+              <p className="text-xl text-white/90 mb-6">
                 {c["hero.subtitle"]}
               </p>
-              <p className="text-white/60">
+              <p className="text-white/80">
                 {c["hero.body"]}
               </p>
             </div>

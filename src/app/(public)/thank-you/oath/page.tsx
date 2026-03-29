@@ -37,7 +37,7 @@ export default async function ThankYouOathPage({
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-2">
             You chose openness. That takes courage.
           </p>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             Your pin is live. Your voice has been counted. You just joined a
             growing community of people who chose openness over silence.
           </p>

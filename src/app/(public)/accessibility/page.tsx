@@ -18,7 +18,7 @@ export default function AccessibilityPage() {
           <h1 className="text-white text-4xl font-bold mb-2">
             Accessibility Commitment
           </h1>
-          <p className="text-white/70">
+          <p className="text-white/90">
             Last updated: March 2026
           </p>
         </div>

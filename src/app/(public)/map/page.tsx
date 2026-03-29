@@ -63,7 +63,7 @@ export default async function MapPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-4">
             {c["hero.subtitle"]}
           </p>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             {c["hero.body"]}
           </p>
         </div>
@@ -176,7 +176,7 @@ export default async function MapPage() {
           <h2 className="text-white mb-4">
             {c["closing.title"]}
           </h2>
-          <p className="text-xl text-white/80 mb-8 leading-relaxed">
+          <p className="text-xl text-white/90 mb-8 leading-relaxed">
             {c["closing.body"]}
           </p>
           <Link

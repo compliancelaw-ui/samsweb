@@ -109,13 +109,13 @@ export default function AdvisoryBoardPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-primary-800 via-primary to-teal py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/60 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/80 mb-3">
             Guided by Lived Experience
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Advisory Board
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Sam&apos;s OATH is guided by the people who lived it - a founding
             family that turned loss into a movement, supported by advisors who
             bring professional expertise to the mission.
@@ -251,13 +251,13 @@ export default function AdvisoryBoardPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Join the Advisory Board</h2>
-          <p className="text-xl text-white/80 mb-4 leading-relaxed">
+          <p className="text-xl text-white/90 mb-4 leading-relaxed">
             Know someone who would be a strong fit? We welcome nominations,
             including self-nominations. If you or someone you know has the
             expertise and passion to help guide Sam&apos;s OATH, we want to hear
             from you.
           </p>
-          <p className="text-white/70 mb-8">
+          <p className="text-white/90 mb-8">
             We are especially interested in professionals with clinical,
             policy, or communications backgrounds who share our commitment to
             ending the silence around substance use and mental health.

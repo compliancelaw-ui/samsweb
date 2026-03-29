@@ -146,7 +146,7 @@ export default async function HomePage() {
             <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
               The Silence Is the Crisis
             </h2>
-            <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-white/90 text-lg max-w-3xl mx-auto leading-relaxed">
               Nearly 50 million Americans face substance use challenges. One
               in five adults experiences a mental health condition every year.
               Behind every one of those numbers is a family carrying this
@@ -156,18 +156,18 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-10">
             <div className="bg-white/10 rounded-xl p-8 text-center">
               <p className="text-4xl font-bold text-teal mb-2">50M+</p>
-              <p className="text-white/70 text-sm">Americans face substance use challenges</p>
+              <p className="text-white/90 text-sm">Americans face substance use challenges</p>
             </div>
             <div className="bg-white/10 rounded-xl p-8 text-center">
               <p className="text-4xl font-bold text-orange mb-2">1 in 5</p>
-              <p className="text-white/70 text-sm">Adults experience a mental health condition yearly</p>
+              <p className="text-white/90 text-sm">Adults experience a mental health condition yearly</p>
             </div>
             <div className="bg-white/10 rounded-xl p-8 text-center">
               <p className="text-4xl font-bold text-sage mb-2">Millions</p>
-              <p className="text-white/70 text-sm">Of families carry this in silence, alone</p>
+              <p className="text-white/90 text-sm">Of families carry this in silence, alone</p>
             </div>
           </div>
-          <p className="text-center text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-center text-white/80 text-lg max-w-2xl mx-auto">
             They&apos;re not alone. They just can&apos;t see each other because
             nobody is talking. Sam&apos;s OATH changes that.
           </p>
@@ -271,7 +271,7 @@ export default async function HomePage() {
       <SectionWrapper variant="gradient">
         <div className="text-center text-white mb-12">
           <h2 className="text-white mb-4">{c["movement.title"]}</h2>
-          <p className="text-white/80 text-xl max-w-2xl mx-auto">
+          <p className="text-white text-xl max-w-2xl mx-auto">
             {c["movement.subtitle"]}
           </p>
         </div>
@@ -298,15 +298,15 @@ export default async function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-teal" />
-              <span className="text-sm text-white/70">Supporting a Loved One</span>
+              <span className="text-sm text-white/90">Supporting a Loved One</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-orange" />
-              <span className="text-sm text-white/70">Seeking Hope &amp; Recovery</span>
+              <span className="text-sm text-white/90">Seeking Hope &amp; Recovery</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-sage" />
-              <span className="text-sm text-white/70">Standing With Others</span>
+              <span className="text-sm text-white/90">Standing With Others</span>
             </div>
           </div>
           <div className="text-center mt-8">

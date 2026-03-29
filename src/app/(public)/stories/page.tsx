@@ -389,12 +389,12 @@ export default async function StoriesPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Your Story Is an Act of Courage</h2>
-          <p className="text-white/80 text-xl mb-4 leading-relaxed">
+          <p className="text-white/90 text-xl mb-4 leading-relaxed">
             You chose Openness when you came here.
             Sharing your story is Authenticity.
             Together, we heal.
           </p>
-          <p className="text-white/60 text-base mb-10">
+          <p className="text-white/80 text-base mb-10">
             O &rarr; A &rarr; T &rarr; H
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -415,7 +415,7 @@ export default async function StoriesPage() {
 
           {/* Email capture for those not ready to share */}
           <div className="mt-12">
-            <p className="text-white/70 text-sm mb-4">
+            <p className="text-white/90 text-sm mb-4">
               Not ready to share? Stay connected.
             </p>
             <SoftEmailCapture
