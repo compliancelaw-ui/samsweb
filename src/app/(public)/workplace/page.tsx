@@ -9,6 +9,7 @@ import {
   Building2,
   ArrowRight,
   Heart,
+  Download,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
@@ -49,6 +50,35 @@ export default async function WorkplacePage() {
           </div>
         </div>
       </section>
+
+      {/* Free Toolkit CTA */}
+      <SectionWrapper variant="white">
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 bg-gradient-to-r from-teal-50 to-primary-50 rounded-2xl border border-teal-100">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Download className="w-8 h-8 text-teal" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  Free Workplace Toolkit
+                </h2>
+                <p className="text-gray-600">
+                  Download our complete toolkit with a facilitator guide,
+                  discussion prompts, OATH ceremony instructions, and printable
+                  materials. Everything you need to start the conversation.
+                </p>
+              </div>
+              <Link
+                href="/workplace/toolkit"
+                className="inline-flex items-center gap-2 bg-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors flex-shrink-0"
+              >
+                Get the Toolkit <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* The Problem — stats with emphasis */}
       <SectionWrapper variant="white">

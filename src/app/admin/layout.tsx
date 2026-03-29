@@ -31,6 +31,7 @@ import {
   Send,
   ArrowRight,
   DollarSign,
+  BarChart3,
 } from "lucide-react";
 
 const navItems = [
@@ -46,6 +47,7 @@ const navItems = [
   { label: "Ads", href: "/admin/ads", icon: Megaphone },
   { label: "Calendar", href: "/admin/calendar", icon: CalendarDays },
   { label: "Donations", href: "/admin/donations", icon: DollarSign },
+  { label: "Analytics", href: "/admin/analytics", icon: BarChart3 },
   { label: "Resources", href: "/admin/resources", icon: FileDown },
   { label: "Content", href: "/admin/content", icon: Layers },
   { label: "Media", href: "/admin/media", icon: Image },
@@ -185,6 +187,16 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "Anonymous donations hide the donor name but still track the amount.",
     ],
     manualSection: "donations",
+  },
+  "/admin/analytics": {
+    title: "Analytics",
+    tips: [
+      "Shares track when visitors click share buttons across the site.",
+      "Downloads track resource guide PDF downloads.",
+      "Platform breakdown shows which social networks drive the most shares.",
+      "Data updates in real-time as visitors interact with the site.",
+    ],
+    manualSection: "analytics",
   },
   "/admin/content": {
     title: "Manage Content",
