@@ -39,8 +39,8 @@ export default async function AboutPage() {
       {/* ===== 1. HERO — Full-bleed photo, mission-focused ===== */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <Image
-          src="/images/photos/community-together.png"
-          alt="A group of people in conversation outdoors"
+          src="/images/photos/dock-golden-hour.png"
+          alt="An empty dock at golden hour with worn sneakers at the edge, water and light stretching into the distance"
           fill
           className="object-cover"
           priority

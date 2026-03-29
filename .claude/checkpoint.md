@@ -65,6 +65,47 @@
 - Generate more inclusive photos as needed for other pages
 - Await video production
 - Continue building out real user stories and ambassador profiles
+- Set up and wire social accounts for publishing (see below)
+
+## Social Account Setup (Admin Task)
+
+The social publishing feature is built but needs accounts created, configured, and wired:
+
+### Facebook
+1. Create or claim a **Facebook Page** for Sam's OATH (facebook.com/samsoath)
+2. Verify the page as a nonprofit (adds credibility badge)
+3. Set up page profile photo (logo), cover photo, about section, contact info
+4. Link to samsoath.org
+
+### Instagram
+1. Create or claim **@samsoath** Instagram account (already listed in constants)
+2. Convert to **Instagram Business Account** (required for API publishing)
+3. Connect it to the Facebook Page (required for Meta Graph API)
+4. Set up profile photo, bio, link in bio to samsoath.org/links
+
+### Meta Developer App (enables direct publishing from admin)
+1. Go to developers.facebook.com
+2. Create a new app (type: Business)
+3. Add **Facebook Login** product
+4. Request permissions: `pages_manage_posts`, `pages_read_engagement`, `instagram_content_publish`, `instagram_basic`
+5. Generate a **long-lived Page Access Token** (never-expiring)
+6. Add these env vars to Vercel:
+   - `META_SAMSOATH_PAGE_TOKEN` - the long-lived Page Access Token
+   - `META_SAMSOATH_PAGE_ID` - Facebook Page ID (found in Page settings > About)
+   - `META_SAMSOATH_IG_ACCOUNT_ID` - Instagram Business Account ID (found via Graph API Explorer)
+
+### TikTok
+1. Create or claim **@samsoath** TikTok account (already listed in constants)
+2. Set up profile with logo, bio, link to samsoath.org
+3. No API publishing yet (manual posting for now)
+
+### LinkedIn
+1. Frank's personal LinkedIn is the primary channel (already has 345K+ reach)
+2. Consider creating a **Sam's OATH LinkedIn Page** for organizational presence
+3. API publishing can be added later if needed
+
+### Verification
+Once env vars are added, the admin Social Posts page will show green "Connected" indicators for Facebook and Instagram, and the Publish buttons will be active.
 
 ## Key Decisions Made
 - "Sam's OATH" is the official name (never "Foundation")

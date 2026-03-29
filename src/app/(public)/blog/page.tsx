@@ -59,7 +59,7 @@ export default async function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-slate py-24">
+      <section className="bg-gradient-to-br from-[#2E3B4E] to-primary py-24">
         <div className="container-wide text-white text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             {c["hero.title"]}
