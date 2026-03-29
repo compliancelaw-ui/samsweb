@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, BookOpen, ArrowRight, Share2 } from "lucide-react";
+import { MapPin, BookOpen, ArrowRight, Share2, Heart } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ChallengeThreeFlow } from "@/components/home/challenge-three";
+import { OathShareSection } from "@/components/ui/oath-share-section";
+import { SoftEmailCapture } from "@/components/ui/soft-email-capture";
 
 export const metadata: Metadata = {
   title: "Thank You for Taking Sam's OATH",
@@ -13,14 +15,17 @@ export const metadata: Metadata = {
 export default async function ThankYouOathPage({
   searchParams,
 }: {
-  searchParams: Promise<{ ref?: string }>;
+  searchParams: Promise<{ ref?: string; name?: string; date?: string }>;
 }) {
   const params = await searchParams;
   const referralCode = params.ref || "";
+  const name = params.name || "Friend";
+  const date =
+    params.date || new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
   return (
     <>
-      {/* Confirmation Hero */}
+      {/* Hero - Openness */}
       <section className="bg-gradient-to-br from-teal to-primary py-24">
         <div className="container-wide text-white text-center">
           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -29,9 +34,12 @@ export default async function ThankYouOathPage({
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             You&apos;re on the Map
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Your pin is live. Your voice has been counted. You just joined
-            a growing community of people who chose openness over silence.
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-2">
+            You chose openness. That takes courage.
+          </p>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            Your pin is live. Your voice has been counted. You just joined a
+            growing community of people who chose openness over silence.
           </p>
           <Link
             href="/map"
@@ -42,18 +50,42 @@ export default async function ThankYouOathPage({
         </div>
       </section>
 
-      {/* Challenge 3 People — the core viral mechanism */}
+      {/* Section 1 - Certificate & Sharing (Authenticity) */}
       <SectionWrapper variant="white">
+        <OathShareSection name={name} date={date} />
+      </SectionWrapper>
+
+      {/* Section 2 - Challenge 3 People (Togetherness) */}
+      <SectionWrapper variant="light">
+        <div className="max-w-2xl mx-auto text-center mb-8">
+          <h2 className="mb-2">Togetherness Starts Here</h2>
+          <p className="text-gray-600 text-lg">
+            The movement grows when you invite others in
+          </p>
+        </div>
         <ChallengeThreeFlow referralCode={referralCode} />
       </SectionWrapper>
 
-      {/* Keep Going */}
+      {/* Section 3 - Email Capture (bridge to Healing) */}
+      <SectionWrapper variant="white">
+        <div className="max-w-2xl mx-auto text-center mb-8">
+          <h2 className="mb-2">Healing Is a Journey</h2>
+          <p className="text-gray-600 text-lg">
+            Not a destination. Let us walk alongside you.
+          </p>
+        </div>
+        <SoftEmailCapture />
+      </SectionWrapper>
+
+      {/* Section 4 - Keep the Momentum Going (Healing) */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">Keep the Momentum Going</h2>
+          <div className="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Heart className="w-6 h-6 text-teal" aria-hidden="true" />
+          </div>
+          <h2 className="mb-2">Healing Happens in Community</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Taking Sam&apos;s OATH was the first step. Here&apos;s how your action
-            keeps growing.
+            Here&apos;s where to find it.
           </p>
           <div className="space-y-4">
             <Link
@@ -98,7 +130,8 @@ export default async function ThankYouOathPage({
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Get Involved</p>
                   <p className="text-sm text-gray-500">
-                    Become an ambassador or bring Sam&apos;s OATH to your workplace
+                    Become an ambassador or bring Sam&apos;s OATH to your
+                    workplace
                   </p>
                 </div>
               </div>

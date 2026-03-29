@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Clock, Bell, ArrowRight, Heart } from "lucide-react";
+import { BookOpen, Clock, Bell, ArrowRight, Heart, Compass } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { ShareCallToAction } from "@/components/ui/page-share-buttons";
+import { StoryShareButtons } from "./share-buttons";
+import { SoftEmailCapture } from "@/components/ui/soft-email-capture";
 
 export const metadata: Metadata = {
   title: "Thank You for Sharing Your Story",
@@ -13,26 +14,26 @@ export const metadata: Metadata = {
 export default function ThankYouStoryPage() {
   return (
     <>
-      {/* Confirmation Hero */}
+      {/* Hero - Celebrating Authenticity */}
       <section className="bg-gradient-to-br from-orange to-primary py-24">
         <div className="container-wide text-white text-center">
           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <BookOpen className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Your Story Has Been Received
+            Your Voice Matters
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Thank you for your courage. Sharing your story is one of the most
-            powerful things you can do to help others feel less alone.
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            You just did one of the hardest things there is - you told the truth.
+            That&apos;s <strong>Authenticity</strong> in action.
           </p>
         </div>
       </section>
 
-      {/* What Happens Next */}
+      {/* Section 1 - Your Story's Journey */}
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-10">What Happens Next</h2>
+          <h2 className="text-center mb-10">Your Story&apos;s Journey</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -74,19 +75,35 @@ export default function ThankYouStoryPage() {
         </div>
       </SectionWrapper>
 
-      {/* Share */}
-      <SectionWrapper variant="white">
-        <div className="max-w-lg mx-auto">
-          <ShareCallToAction />
+      {/* Section 2 - Share the Movement (Togetherness) */}
+      <SectionWrapper variant="light">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="mb-3">Share the Movement</h2>
+          <p className="text-gray-600 text-lg mb-8">
+            Your story isn&apos;t published yet, but you can still invite others
+            into <strong>Togetherness</strong>. Let people know you spoke up.
+          </p>
+          <StoryShareButtons />
         </div>
       </SectionWrapper>
 
-      {/* Keep Going */}
+      {/* Section 3 - Stay Connected */}
+      <SectionWrapper variant="white">
+        <div className="max-w-lg mx-auto text-center">
+          <p className="text-gray-600 text-base mb-6">
+            We&apos;d love to stay in touch as your story makes its way to others.
+          </p>
+          <SoftEmailCapture />
+        </div>
+      </SectionWrapper>
+
+      {/* Section 4 - Keep Going (Togetherness + Healing) */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="mb-4">Keep Going</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Your story is just one way to be part of the movement.
+            Sharing your story was an act of courage. Here&apos;s how to keep
+            building <strong>Togetherness</strong> and <strong>Healing</strong>.
           </p>
           <div className="space-y-4">
             <Link
@@ -98,7 +115,7 @@ export default function ThankYouStoryPage() {
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Take Sam&apos;s OATH</p>
                   <p className="text-sm text-gray-500">
-                    Place your pin on the map and join the movement
+                    Place your pin on the map and stand with others
                   </p>
                 </div>
               </div>
@@ -114,6 +131,21 @@ export default function ThankYouStoryPage() {
                   <p className="font-semibold text-gray-900">Read Stories</p>
                   <p className="text-sm text-gray-500">
                     See what other families have shared
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400" />
+            </Link>
+            <Link
+              href="/resources"
+              className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4">
+                <Compass className="w-6 h-6 text-orange" />
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Resources</p>
+                  <p className="text-sm text-gray-500">
+                    Free guides for families navigating substance use and mental health
                   </p>
                 </div>
               </div>
