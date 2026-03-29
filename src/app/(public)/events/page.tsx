@@ -35,7 +35,7 @@ const SPEAKING_TOPICS: SpeakingTopic[] = [
   {
     title: "Sam's Story",
     description:
-      "A deeply personal account of losing a son to fentanyl, the silence that surrounded it, and how grief became a movement. Frank shares what he wishes he had known, what he wishes he had said, and why he built Sam's OATH.",
+      "A deeply personal account of a family's journey through substance use disorder, the silence that surrounded it, and how grief became a movement. Frank shares what he wishes he had known, what he wishes he had said, and why he built Sam's OATH.",
     icon: <Heart className="w-6 h-6" />,
   },
   {
