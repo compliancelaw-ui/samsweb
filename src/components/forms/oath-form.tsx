@@ -114,7 +114,9 @@ export function OathForm() {
 
       const result = await response.json();
       const refCode = result.referral_code || result.id?.toString().slice(0, 8);
-      router.push(`/thank-you/oath?id=${result.id}&category=${result.category}&ref=${refCode}`);
+      const displayName = encodeURIComponent(result.display_name || data.first_name);
+      const today = new Date().toISOString().split("T")[0];
+      router.push(`/thank-you/oath?id=${result.id}&category=${result.category}&ref=${refCode}&name=${displayName}&date=${today}`);
     } catch (err) {
       setSubmitError(
         err instanceof Error ? err.message : "Something went wrong. Please try again."
