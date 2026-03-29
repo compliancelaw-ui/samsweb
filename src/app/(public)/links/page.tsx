@@ -47,7 +47,7 @@ const LINKS: readonly { label: string; href: string; primary?: boolean; descript
     description: "Help for families and individuals",
   },
   {
-    label: "Read Our Blog",
+    label: "Updates & News",
     href: "/blog",
     description: "Stories, insights, and updates",
   },

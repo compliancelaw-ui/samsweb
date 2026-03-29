@@ -49,7 +49,7 @@ export async function generateMetadata({
 
   const description = post.excerpt || `${post.content.slice(0, 160)}...`;
   return {
-    title: `${post.title} | Sam's OATH Blog`,
+    title: `${post.title} | Sam's OATH Updates`,
     description,
     openGraph: {
       title: post.title,
@@ -110,7 +110,7 @@ export default async function BlogPostPage({
             className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Blog
+            Back to Updates
           </Link>
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">

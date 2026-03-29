@@ -38,8 +38,14 @@ export default async function AboutPage() {
     <>
       {/* ===== 1. HERO — Full-bleed photo, mission-focused ===== */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2E3B4E] via-[#4A6FA5] to-[#3EABA8]" />
-        <div className="absolute inset-0 bg-[#2E3B4E]/60" />
+        <Image
+          src="/images/photos/community-together.png"
+          alt="A group of people in conversation outdoors"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#2E3B4E]/70" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white w-full">
           <div className="max-w-3xl">
             <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
@@ -81,8 +87,8 @@ export default async function AboutPage() {
             <div className="flex justify-center">
               <div className="w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/photos/sam-portrait.jpg"
-                  alt="Sam Sheeder"
+                  src="/images/photos/family-support.png"
+                  alt="A mother comforting her adult son on a porch"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover"
@@ -264,7 +270,7 @@ export default async function AboutPage() {
                     color: "bg-teal",
                   },
                   {
-                    title: "They Reduce Stigma",
+                    title: "They Build Openness",
                     body: "Every story told normalizes the conversation around substance use and mental health.",
                     color: "bg-primary",
                   },
@@ -302,8 +308,8 @@ export default async function AboutPage() {
             <div className="flex justify-center order-first lg:order-last">
               <div className="w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/photos/family-hug.jpg"
-                  alt="The Sheeder family embracing"
+                  src="/images/photos/people-sharing.png"
+                  alt="People sharing stories in a living room"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover"
@@ -365,7 +371,7 @@ export default async function AboutPage() {
           <h2 className="mb-4">Our Partners and Supporters</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Sam&apos;s OATH is building a coalition of organizations that
-            believe openness and compassion can replace silence and stigma.
+            believe openness and compassion can replace silence and shame.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -376,7 +382,7 @@ export default async function AboutPage() {
               color: "text-teal",
               bgColor: "bg-teal/10",
               borderColor: "border-teal/20",
-              description: "Hospitals, treatment centers, and health systems committed to reducing stigma",
+              description: "Hospitals, treatment centers, and health systems committed to building openness",
             },
             {
               category: "Recovery Community",
@@ -451,7 +457,7 @@ export default async function AboutPage() {
           <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
           <h2 className="mb-4">Transparency and Accountability</h2>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            Sam&apos;s OATH Foundation is a 501(c)(3) public charity.
+            Sam&apos;s OATH is a 501(c)(3) public charity.
             All donations are tax-deductible to the extent allowed by law. We
             are committed to full transparency in how we use every dollar
             entrusted to us.
@@ -460,13 +466,18 @@ export default async function AboutPage() {
             <div className="text-left">
               <p className="text-sm text-gray-500">Organization</p>
               <p className="font-semibold text-gray-900">
-                Sam&apos;s OATH Foundation
+                Sam&apos;s OATH
               </p>
             </div>
             <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">
               <p className="text-sm text-gray-500">Tax Status</p>
               <p className="font-semibold text-gray-900">501(c)(3) Public Charity</p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+            <div className="text-left">
+              <p className="text-sm text-gray-500">EIN</p>
+              <p className="font-semibold text-gray-900">39-5101030</p>
             </div>
           </div>
         </div>

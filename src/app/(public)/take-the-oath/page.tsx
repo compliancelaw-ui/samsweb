@@ -6,9 +6,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
-  title: "Take Sam's OATH | End Stigma Around Substance Use & Mental Health",
+  title: "Take Sam's OATH | Break the Silence Around Substance Use & Mental Health",
   description:
-    "Take Sam's OATH to break the silence around substance use and mental health. Join thousands pledging to speak openly and end the stigma.",
+    "Take Sam's OATH to break the silence around substance use and mental health. Join thousands pledging to speak openly and choose honesty over shame.",
   alternates: { canonical: "/take-the-oath" },
 };
 

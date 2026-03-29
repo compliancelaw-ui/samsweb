@@ -160,7 +160,7 @@ const faqJsonLd = {
       name: "Why should I say 'substance use disorder' instead of 'addiction'?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Substance use disorder recognizes the medical reality. It's a health condition, not a character flaw. Using clinical language helps reduce stigma and encourages people to seek help.",
+        text: "Substance use disorder recognizes the medical reality. It's a health condition, not a character flaw. Using clinical language helps build openness and encourages people to seek help.",
       },
     },
     {
@@ -208,7 +208,7 @@ const faqJsonLd = {
       name: "Are donations to Sam's OATH tax-deductible?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Sam's OATH Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law. You will receive a receipt via email after your donation is processed.",
+        text: "Yes. Sam's OATH is a registered 501(c)(3) public charity. All donations are tax-deductible to the extent allowed by law. You will receive a receipt via email after your donation is processed.",
       },
     },
     {
@@ -527,7 +527,7 @@ export default async function ResourcesPage() {
               Sam&apos;s OATH is a movement
             </span>{" "}
             — not a support group or treatment program. We fight to break the
-            silence and stigma around substance use and mental health. The
+            silence around substance use and mental health. The
             organizations below offer direct support services, and we encourage
             families to connect with them as part of their journey.
           </p>

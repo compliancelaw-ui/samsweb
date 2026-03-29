@@ -251,7 +251,7 @@ export default function AdminBlogPage() {
         break;
       case "seo":
         prompt =
-          "Rewrite this blog post with SEO-friendly keywords and phrases woven in naturally. Focus on substance use, mental health, family support, and breaking stigma. Return the complete rewritten post.";
+          "Rewrite this blog post with SEO-friendly keywords and phrases woven in naturally. Focus on substance use, mental health, family support, and breaking the silence. Return the complete rewritten post.";
         break;
       case "conclusion":
         prompt =

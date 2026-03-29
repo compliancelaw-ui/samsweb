@@ -73,15 +73,15 @@ export default async function PressPage() {
               </h3>
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li>
-                  A 501(c)(3) nonprofit national movement to break silence around
-                  substance use and mental health
+                  A 501(c)(3) public charity (EIN: 39-5101030) and national
+                  movement to break silence around substance use and mental health
                 </li>
                 <li>
                   OATH stands for <strong>O</strong>penness, <strong>A</strong>uthenticity,{" "}
                   <strong>T</strong>ogetherness, <strong>H</strong>ealing
                 </li>
                 <li>
-                  Founded in 2025 by Frank Sheeder after the death of his son,
+                  Founded in 2025 by Frank Sheeder in honor of his son,
                   Samuel Martin Hagood Sheeder (1998&ndash;2025)
                 </li>
                 <li>
@@ -97,7 +97,7 @@ export default async function PressPage() {
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li>
                   100,000+ overdose deaths/year and 1 in 5 adults affected — but
-                  stigma keeps most families silent
+                  silence keeps most families isolated
                 </li>
                 <li>
                   Sam&apos;s OATH gives families a simple, concrete framework: four
@@ -162,7 +162,7 @@ export default async function PressPage() {
                 Frank Sheeder
               </h3>
               <p className="text-teal font-medium mb-4">
-                Founder &amp; Executive Director, Sam&apos;s OATH Foundation
+                Founder &amp; Executive Director, Sam&apos;s OATH
               </p>
               <div className="text-gray-600 space-y-3 text-sm leading-relaxed">
                 <p>
@@ -192,21 +192,21 @@ export default async function PressPage() {
             {[
               {
                 icon: Heart,
-                title: "A Father's Fight Against Stigma",
+                title: "A Father's Fight to Break the Silence",
                 description:
-                  "After losing his son to substance use, Frank Sheeder turned his family's pain into a national movement. His LinkedIn post reached 345,000 people, all saying 'I thought I was the only one.' Now he is building the infrastructure so no family has to struggle in silence.",
+                  "After his son Sam's passing, Frank Sheeder turned his family's experience into a national movement. His LinkedIn post reached 345,000 people, all saying 'I thought I was the only one.' Now he is building the infrastructure so no family has to carry this weight in silence.",
               },
               {
                 icon: Users,
                 title: "The OATH That's Changing How We Talk About Addiction",
                 description:
-                  "Sam's OATH is the first national framework giving families a concrete way to break through the stigma of substance use and mental health challenges. Four simple commitments, Openness, Authenticity, Togetherness, and Healing, replace shame with community and silence with conversation.",
+                  "Sam's OATH is the first national framework giving families a concrete way to break through the silence around substance use and mental health challenges. Four simple commitments, Openness, Authenticity, Togetherness, and Healing, replace shame with community and silence with conversation.",
               },
               {
                 icon: Newspaper,
                 title: "Why Language Matters in the Substance Use Crisis",
                 description:
-                  "While overdose deaths make headlines, the silence and stigma that prevent families from seeking help remains largely unaddressed. Sam's OATH champions person-first language and open dialogue as the foundation for recovery and connection.",
+                  "While overdose deaths make headlines, the silence that prevents families from seeking help remains largely unaddressed. Sam's OATH champions person-first language and open dialogue as the foundation for recovery and connection.",
               },
               {
                 icon: Music,
@@ -361,9 +361,9 @@ export default async function PressPage() {
           <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 relative">
             <Copy className="w-5 h-5 text-gray-300 absolute top-4 right-4" />
             <p className="text-gray-700 leading-relaxed">
-              Sam&apos;s OATH Foundation is a 501(c)(3) nonprofit national
-              movement to break the silence around substance use and mental
-              health. Founded in 2025 by Frank Sheeder after the loss of his
+              Sam&apos;s OATH is a 501(c)(3) public charity (EIN:
+              39-5101030) and a national movement to break the silence around
+              substance use and mental health. Founded in 2025 by Frank Sheeder in honor of his
               son, Samuel Martin Hagood Sheeder, the organization empowers
               families and individuals to replace shame with openness, isolation
               with community, and silence with healing. OATH stands for
@@ -410,7 +410,7 @@ export default async function PressPage() {
           </p>
           <p className="text-gray-900 font-medium mb-2">Frank Sheeder</p>
           <p className="text-gray-600 mb-1">
-            Founder &amp; Executive Director, Sam&apos;s OATH Foundation
+            Founder &amp; Executive Director, Sam&apos;s OATH
           </p>
           <p className="text-gray-600 mb-6">
             <a

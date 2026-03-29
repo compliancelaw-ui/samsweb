@@ -156,7 +156,7 @@ export function Footer() {
       <div className="border-t border-gray-500">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 pb-[max(4rem,calc(1.5rem+env(safe-area-inset-bottom)))] sm:flex-row sm:px-6 lg:px-8">
           <p className="text-sm text-gray-300">
-            &copy; 2026 {SITE_NAME} Foundation. A 501(c)(3) public charity. All rights reserved.
+            &copy; 2026 {SITE_NAME}. A 501(c)(3) public charity. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
             <Link

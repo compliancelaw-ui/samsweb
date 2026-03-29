@@ -57,8 +57,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
   "nonprofitStatus": "501(c)(3) Public Charity",
+  "taxID": "39-5101030",
   name: "Sam's OATH",
-  alternateName: "Sam's OATH Foundation",
+  alternateName: "Sam's OATH",
   url: "https://samsoath.org",
   logo: "https://samsoath.org/images/logo/logo-stacked-full.svg",
   description:

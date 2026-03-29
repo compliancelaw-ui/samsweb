@@ -5,14 +5,8 @@ import { Suspense } from "react";
 import Image from "next/image";
 import {
   ArrowRight,
-  Heart,
-  Users,
   ChevronRight,
-  Sun,
   Quote,
-  MessageCircle,
-  Shield,
-  Sparkles,
   PenLine,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -96,81 +90,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ===== 2. ACTIVITY TICKER ===== */}
-      <Suspense fallback={null}>
-        <ActivityTicker />
-      </Suspense>
-
-      {/* ===== 3. THE OATH — What it is (white bg) ===== */}
-      <SectionWrapper variant="white" id="what-is-oath">
-        <div className="text-center mb-16">
-          <h2 className="mb-4">{c["oath.title"]}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {c["oath.subtitle"]}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-6xl mx-auto">
-          {[
-            {
-              letter: "O",
-              word: "Openness",
-              description: c["oath.o-description"],
-              color: "bg-teal text-white",
-              border: "border-l-4 border-teal",
-            },
-            {
-              letter: "A",
-              word: "Authenticity",
-              description: c["oath.a-description"],
-              color: "bg-primary text-white",
-              border: "border-l-4 border-primary",
-            },
-            {
-              letter: "T",
-              word: "Togetherness",
-              description: c["oath.t-description"],
-              color: "bg-sage text-white",
-              border: "border-l-4 border-sage",
-            },
-            {
-              letter: "H",
-              word: "Healing",
-              description: c["oath.h-description"],
-              color: "bg-orange text-white",
-              border: "border-l-4 border-orange",
-            },
-          ].map((item) => (
-            <div
-              key={item.letter}
-              className={`bg-[#F8FAFB] rounded-lg ${item.border} shadow-sm hover:shadow-md transition-shadow p-5 flex items-start gap-4`}
-            >
-              <div
-                className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0`}
-              >
-                {item.letter}
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  {item.word}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Link
-            href="/take-the-oath"
-            className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
-          >
-            Take Sam&apos;s OATH — It Takes 60 Seconds
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </SectionWrapper>
-
-      {/* ===== 4. SAM'S STORY — Split layout, photo left (light bg) ===== */}
-      <SectionWrapper variant="light">
+      {/* ===== 2. WHO WAS SAM — Emotional intro (white bg) ===== */}
+      <SectionWrapper variant="white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="flex justify-center lg:justify-start order-2 lg:order-1">
@@ -184,14 +105,26 @@ export default async function HomePage() {
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-teal font-medium mb-2 uppercase tracking-wide text-sm">
-                {c["mission.eyebrow"]}
+                The Person Behind the Movement
               </p>
-              <h2 className="mb-6">{c["mission.title"]}</h2>
+              <h2 className="mb-6">Sam</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-4">
-                {c["mission.body-1"]}
+                Sam Sheeder lit up every room he walked into. He was
+                adventurous, fearless, and could strike up a conversation with
+                anyone, from CEOs to those experiencing homelessness, making
+                them feel seen and heard.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Sam also faced the hard road of substance use disorder with a
+                courage and honesty most people never attempt. He talked about
+                it openly. He refused to hide. And he taught his family that
+                the opposite of addiction is not sobriety - it is community.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                {c["mission.body-2"]}
+                When we lost Sam in 2025, his father Frank made a choice: to
+                honor Sam&apos;s openness by building a movement around it.
+                Sam&apos;s OATH exists because one family decided that silence
+                was no longer an option.
               </p>
               <Link
                 href="/about"
@@ -202,6 +135,108 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== 3. THE SILENCE PROBLEM — Stats + urgency (dark bg) ===== */}
+      <section className="bg-[#2E3B4E] py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+              The Silence Is the Crisis
+            </h2>
+            <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
+              Nearly 50 million Americans face substance use challenges. One
+              in five adults experiences a mental health condition every year.
+              Behind every one of those numbers is a family carrying this
+              weight in silence.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-10">
+            <div className="bg-white/10 rounded-xl p-8 text-center">
+              <p className="text-4xl font-bold text-teal mb-2">50M+</p>
+              <p className="text-white/70 text-sm">Americans face substance use challenges</p>
+            </div>
+            <div className="bg-white/10 rounded-xl p-8 text-center">
+              <p className="text-4xl font-bold text-orange mb-2">1 in 5</p>
+              <p className="text-white/70 text-sm">Adults experience a mental health condition yearly</p>
+            </div>
+            <div className="bg-white/10 rounded-xl p-8 text-center">
+              <p className="text-4xl font-bold text-sage mb-2">Millions</p>
+              <p className="text-white/70 text-sm">Of families carry this in silence, alone</p>
+            </div>
+          </div>
+          <p className="text-center text-white/60 text-lg max-w-2xl mx-auto">
+            They&apos;re not alone. They just can&apos;t see each other because
+            nobody is talking. Sam&apos;s OATH changes that.
+          </p>
+        </div>
+      </section>
+
+      {/* ===== 4. THE OATH — Framework with emotional hooks (light bg) ===== */}
+      <SectionWrapper variant="light" id="what-is-oath">
+        <div className="text-center mb-16">
+          <h2 className="mb-4">{c["oath.title"]}</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Four commitments that replace silence with community. Each one is
+            something Sam lived.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-6xl mx-auto">
+          {[
+            {
+              letter: "O",
+              word: "Openness",
+              hook: "Sam never hid. He told the truth even when it was hard.",
+              description: c["oath.o-description"],
+              color: "bg-teal text-white",
+              border: "border-l-4 border-teal",
+            },
+            {
+              letter: "A",
+              word: "Authenticity",
+              hook: "Your real story is your most powerful tool.",
+              description: c["oath.a-description"],
+              color: "bg-primary text-white",
+              border: "border-l-4 border-primary",
+            },
+            {
+              letter: "T",
+              word: "Togetherness",
+              hook: "The opposite of addiction is not sobriety. It is community.",
+              description: c["oath.t-description"],
+              color: "bg-sage text-white",
+              border: "border-l-4 border-sage",
+            },
+            {
+              letter: "H",
+              word: "Healing",
+              hook: "What's hidden doesn't heal. But what's shared can.",
+              description: c["oath.h-description"],
+              color: "bg-orange text-white",
+              border: "border-l-4 border-orange",
+            },
+          ].map((item) => (
+            <div
+              key={item.letter}
+              className={`bg-white rounded-lg ${item.border} shadow-sm hover:shadow-md transition-shadow p-5 flex items-start gap-4`}
+            >
+              <div
+                className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0`}
+              >
+                {item.letter}
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  {item.word}
+                </h3>
+                <p className="text-primary font-medium text-sm italic mb-2">
+                  {item.hook}
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -231,138 +266,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ===== 6. WHICH ONE ARE YOU — Three pathways (white bg) ===== */}
-      <SectionWrapper variant="white">
-        <div className="text-center mb-12">
-          <h2 className="mb-4">{c["categories.title"]}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {c["categories.subtitle"]}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {[
-            {
-              icon: Heart,
-              title: "Supporting a Loved One",
-              description: c["categories.supporting-description"],
-              topColor: "bg-teal",
-              iconColor: "text-teal",
-              dotColor: "bg-teal",
-            },
-            {
-              icon: Sun,
-              title: "Seeking Hope & Recovery",
-              description: c["categories.recovery-description"],
-              topColor: "bg-orange",
-              iconColor: "text-orange",
-              dotColor: "bg-orange",
-            },
-            {
-              icon: Users,
-              title: "Standing With Others",
-              description: c["categories.standing-description"],
-              topColor: "bg-sage",
-              iconColor: "text-sage",
-              dotColor: "bg-sage",
-            },
-          ].map((item) => (
-            <Link
-              key={item.title}
-              href="/take-the-oath"
-              className="group flex flex-col rounded-xl overflow-hidden bg-[#F8FAFB] hover:shadow-lg transition-all h-full border border-gray-100"
-            >
-              <div className={`h-1.5 ${item.topColor}`} />
-              <div className="flex flex-col items-center p-6 text-center flex-1">
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <item.icon className={`w-7 h-7 ${item.iconColor}`} />
-                </div>
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <div className={`w-2.5 h-2.5 rounded-full ${item.dotColor}`} />
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
-                  {item.description}
-                </p>
-                <span className="inline-flex items-center gap-1.5 mt-auto px-5 py-2 rounded-lg bg-[#4A6FA5]/10 text-[#4A6FA5] text-sm font-semibold group-hover:bg-[#4A6FA5] group-hover:text-white transition-all">
-                  Take Sam&apos;s OATH <ArrowRight className="w-4 h-4" />
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </SectionWrapper>
-
-      {/* ===== 7. STORIES PROMOTION — Why stories matter (dark) ===== */}
-      <section className="bg-[#2E3B4E] py-16 md:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <p className="text-teal-200 text-sm font-medium mb-3 tracking-wide uppercase">
-              {c["stories-promo.eyebrow"]}
-            </p>
-            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-              {c["stories-promo.title"]}
-            </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              {c["stories-promo.subtitle"]}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
-            {[
-              {
-                icon: MessageCircle,
-                title: "Break Isolation",
-                body: "Your story tells someone they\u2019re not alone.",
-              },
-              {
-                icon: Shield,
-                title: "End Stigma",
-                body: "Every story normalizes the conversation.",
-              },
-              {
-                icon: Sparkles,
-                title: "Inspire Others",
-                body: "Your voice might be why someone reaches out.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-white/10 rounded-xl p-5 text-center"
-              >
-                <item.icon className="w-6 h-6 text-teal mx-auto mb-3" />
-                <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                <p className="text-white/60 text-sm">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/share-your-story"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all"
-            >
-              Share Your Story
-              <PenLine className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/stories"
-              className="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors"
-            >
-              Read Stories
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 8. FEATURED STORIES (light bg, hidden if none) ===== */}
-      <Suspense fallback={null}>
-        <SectionWrapper variant="light">
-          <FeaturedStories />
-        </SectionWrapper>
-      </Suspense>
-
-      {/* ===== 8. THE MOVEMENT IS GROWING — Stats + Map (gradient) ===== */}
+      {/* ===== 6. THE MOVEMENT IS GROWING — Stats + Map (gradient) ===== */}
       <SectionWrapper variant="gradient">
         <div className="text-center text-white mb-12">
           <h2 className="text-white mb-4">{c["movement.title"]}</h2>
@@ -411,6 +315,46 @@ export default async function HomePage() {
             >
               Explore the full OATH Map
               <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===== 7. FEATURED STORIES (light bg, hidden if none) ===== */}
+      <Suspense fallback={null}>
+        <SectionWrapper variant="light">
+          <FeaturedStories />
+        </SectionWrapper>
+      </Suspense>
+
+      {/* ===== 8. ACTIVITY TICKER — Social proof ===== */}
+      <Suspense fallback={null}>
+        <ActivityTicker />
+      </Suspense>
+
+      {/* ===== 9. SINGLE CTA — One clear closing ask (white bg) ===== */}
+      <SectionWrapper variant="white">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="mb-6">Join the Movement</h2>
+          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+            Take Sam&apos;s OATH and put your pin on the map. Share your story
+            and help someone else find their voice. Every person who chooses
+            openness makes it easier for the next one.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/take-the-oath"
+              className="inline-flex items-center justify-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-teal-600 transition-colors"
+            >
+              Take Sam&apos;s OATH
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/share-your-story"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-primary-600 transition-colors"
+            >
+              Share Your Story
+              <PenLine className="w-5 h-5" />
             </Link>
           </div>
         </div>

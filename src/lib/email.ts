@@ -232,7 +232,7 @@ export async function sendDonationThankYou(
         </p>
         ${recurringNote}
         <p>
-          Sam's OATH Foundation is a 501(c)(3) nonprofit organization.
+          Sam's OATH is a 501(c)(3) public charity.
           Your donation is tax-deductible to the extent allowed by law.
           You will receive a receipt from Stripe for your records.
         </p>

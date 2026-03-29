@@ -9,7 +9,7 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "Stories of Substance Use & Recovery | Sam's OATH",
   description:
-    "Read real stories from people navigating substance use, mental health, grief, and recovery. These voices are breaking the silence and ending the stigma.",
+    "Read real stories from people navigating substance use, mental health, grief, and recovery. These voices are breaking the silence and choosing openness.",
   alternates: { canonical: "/stories" },
 };
 
@@ -147,7 +147,7 @@ export default async function StoriesPage() {
                   excerpt:
                     "After we lost Sam, I wrote one honest post about what our family had been through. 345,000 people read it. Hundreds of families said the same thing: \u2018I thought I was the only one.\u2019 That\u2019s when I knew \u2014 the silence was the real epidemic. If we could build a community around openness instead of shame, we could change how families deal with these struggles. That\u2019s why Sam\u2019s OATH exists.",
                   author: "Frank Sheeder",
-                  location: "Dallas, TX",
+                  location: "Texas",
                 },
                 {
                   relation: "Supporting a Loved One",
@@ -155,7 +155,7 @@ export default async function StoriesPage() {
                   excerpt:
                     "Sam was my brother, and watching him fight every day took a kind of courage most people never see. Our family learned the hard way that silence doesn\u2019t protect anyone \u2014 it isolates them. I want other siblings to know: it\u2019s okay to talk about what your family is going through. You\u2019re not betraying anyone by being honest. You\u2019re helping them.",
                   author: "Annie Sheeder",
-                  location: "Dallas, TX",
+                  location: "North Carolina",
                 },
                 {
                   relation: "Supporting a Loved One",
@@ -163,7 +163,7 @@ export default async function StoriesPage() {
                   excerpt:
                     "Growing up, I didn\u2019t have the words for what our family was going through. I just knew something was wrong and nobody was talking about it. Losing Sam changed that for me. Now I talk about it \u2014 with friends, with anyone who\u2019ll listen. Because the families who are still carrying this in silence need to hear that there\u2019s another way.",
                   author: "Joey Sheeder",
-                  location: "Dallas, TX",
+                  location: "Texas",
                 },
                 {
                   relation: "Supporting a Loved One",
@@ -171,7 +171,7 @@ export default async function StoriesPage() {
                   excerpt:
                     "When I became part of this family, I stepped into something I wasn\u2019t prepared for. Substance use doesn\u2019t just affect one person \u2014 it reshapes every relationship in the house. I learned that loving someone through substance use challenges means showing up even when you don\u2019t have answers. And it means being willing to talk about it, openly, so other families know they\u2019re not alone.",
                   author: "Nancy Sheeder",
-                  location: "Dallas, TX",
+                  location: "Texas",
                 },
               ].map((story) => (
                 <div
@@ -242,7 +242,7 @@ export default async function StoriesPage() {
                       "When you share your story, you tell someone else who's struggling in silence that they are not alone. That single connection can change everything.",
                   },
                   {
-                    title: "They Reduce Stigma",
+                    title: "They Build Openness",
                     description:
                       "Every story told normalizes the conversation around substance use and mental health. The more we talk openly, the less power shame has over us.",
                   },

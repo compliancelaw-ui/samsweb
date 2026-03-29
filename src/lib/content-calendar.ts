@@ -43,10 +43,10 @@ export interface ContentCalendar {
 export const SAMSOATH_HASHTAGS = {
   core: [
     "#SamsOATH",
-    "#EndTheStigma",
+    "#BreakTheSilence",
     "#SubstanceUseDisorder",
     "#RecoveryIsPossible",
-    "#FightStigma",
+    "#ChooseOpenness",
     "#LanguageMatters",
   ],
   recovery: [
@@ -59,8 +59,8 @@ export const SAMSOATH_HASHTAGS = {
   ],
   advocacy: [
     "#AdvocacyInAction",
-    "#EndTheStigma",
     "#BreakTheSilence",
+    "#ChooseOpenness",
     "#SpeakUp",
     "#PolicyChange",
     "#TakeTheOATH",
@@ -97,7 +97,7 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
   productKey: "samsoath",
   productName: "SamsOath",
   mission:
-    "Fighting stigma around substance use disorder through advocacy, education, and community.",
+    "Breaking the silence around substance use disorder through advocacy, education, and community.",
   coreHashtags: [...SAMSOATH_HASHTAGS.core],
   schedule: [
     {
@@ -105,7 +105,7 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
       theme: "Movement Monday",
       tagline: "Advocacy actions, calls to action",
       description:
-        "Start the week with momentum. Share advocacy actions, policy updates, petitions, or ways the community can take action right now. Encourage followers to do one thing this week to fight stigma.",
+        "Start the week with momentum. Share advocacy actions, policy updates, petitions, or ways the community can take action right now. Encourage followers to do one thing this week to choose openness.",
       suggestedTopics: [
         "Call your representative about [policy]",
         "Sign this petition for treatment funding",
@@ -124,14 +124,14 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
     {
       day: "Tuesday",
       theme: "Truth Tuesday",
-      tagline: "Stigma facts, statistics, myth-busting",
+      tagline: "Facts, statistics, myth-busting",
       description:
         "Combat misinformation with facts. Post statistics, debunk myths about substance use disorder, and educate followers on person-first language. Correct common misconceptions with compassion.",
       suggestedTopics: [
         "Myth vs. fact about addiction",
         "Person-first language guide (say 'person with SUD' not 'addict')",
         "Statistics on treatment outcomes",
-        "How stigma prevents people from seeking help",
+        "How silence prevents people from seeking help",
         "Brain science of substance use disorder",
         "Comparison: SUD vs. other chronic conditions",
         "Media portrayal vs. reality",
@@ -140,7 +140,7 @@ export const SAMSOATH_CALENDAR: ContentCalendar = {
       hashtags: [
         ...SAMSOATH_HASHTAGS.core.slice(0, 3),
         "#MythBusted",
-        "#FactsNotStigma",
+        "#FactsNotFear",
         "#PersonFirstLanguage",
       ],
     },

@@ -50,7 +50,7 @@ const CONTACT_TYPES = [
     icon: Handshake,
     title: "Partnership Opportunities",
     description:
-      "We're building a coalition of organizations, nonprofits, and businesses committed to breaking the stigma.",
+      "We're building a coalition of organizations, nonprofits, and businesses committed to breaking the silence.",
     iconBg: "bg-orange-50",
     iconColor: "text-orange",
   },

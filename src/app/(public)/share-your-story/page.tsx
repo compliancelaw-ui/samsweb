@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -28,7 +29,14 @@ export default async function ShareYourStoryPage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-primary-800 via-primary to-teal py-24 md:py-32">
-        <div className="absolute inset-0 bg-black/20" />
+        <Image
+          src="/images/photos/community-conversation.png"
+          alt="Two people in genuine conversation"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#2E3B4E]/70" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white text-center">
           <p className="text-teal-200 text-lg font-medium mb-4 tracking-wide uppercase">
             {c["hero.eyebrow"]}
@@ -62,7 +70,7 @@ export default async function ShareYourStoryPage() {
               icon: VolumeX,
               title: "Break the Cycle of Silence",
               description:
-                "Stigma thrives in silence. Every time someone speaks openly about substance use or mental health, the stigma loses its grip. Your words have the power to change the conversation — in your family and beyond.",
+                "Silence thrives when no one speaks first. Every time someone speaks openly about substance use or mental health, the silence loses its grip. Your words have the power to change the conversation - in your family and beyond.",
             },
             {
               icon: Heart,

@@ -261,7 +261,7 @@ export function DonationForm() {
 
       <p className="text-xs text-gray-400 text-center">
         You will be redirected to Stripe for secure payment processing.
-        Sam&apos;s OATH Foundation is a 501(c)(3) nonprofit. Your donation is
+        Sam&apos;s OATH is a 501(c)(3) public charity. Your donation is
         tax-deductible to the extent allowed by law.
       </p>
     </form>

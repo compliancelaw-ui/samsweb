@@ -27,7 +27,7 @@ const CONTENT_CALENDAR: Record<
     topics: [
       "Feature a recently published community story from the site",
       "Invite followers to share their story at samsoath.org/share-your-story",
-      "Post a 'Did you know?' about how sharing stories reduces stigma",
+      "Post a 'Did you know?' about how sharing stories builds openness",
       "Share a brief personal reflection about a story that moved you",
     ],
     hashtags: ["#StoryTuesday", "#ShareYourStory", "#SamsOATH"],
@@ -47,14 +47,14 @@ const CONTENT_CALENDAR: Record<
   4: {
     theme: "Thoughtful Thursday",
     description:
-      "Share a thought-provoking insight, statistic, or reflection on stigma.",
+      "Share a thought-provoking insight, statistic, or reflection on silence and openness.",
     topics: [
-      "Post a striking statistic about substance use or mental health stigma",
+      "Post a striking statistic about substance use or mental health",
       "Share a reflection on what it means to live openly and honestly",
       "Ask a question that invites conversation (e.g., 'What would change if we stopped whispering?')",
       "Highlight how language shapes how we see substance use and recovery",
     ],
-    hashtags: ["#ThoughtfulThursday", "#EndTheStigma", "#SamsOATH"],
+    hashtags: ["#ThoughtfulThursday", "#BreakTheSilence", "#SamsOATH"],
   },
   5: {
     theme: "Feature Friday",

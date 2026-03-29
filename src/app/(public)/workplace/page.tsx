@@ -14,9 +14,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
-  title: "Workplace Programs | End Stigma at Work | Sam's OATH",
+  title: "Workplace Programs | Break the Silence at Work | Sam's OATH",
   description:
-    "Bring the Sam's OATH movement to your workplace. Programs to reduce stigma around substance use and mental health, support employees, and build compassionate culture.",
+    "Bring the Sam's OATH movement to your workplace. Programs to build openness around substance use and mental health, support employees, and build compassionate culture.",
   alternates: { canonical: "/workplace" },
 };
 
@@ -39,11 +39,11 @@ export default async function WorkplacePage() {
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image
-                src="/images/photos/frank-headshot.jpg"
-                alt="Frank Sheeder, Founder of Sam's OATH"
+                src="/images/photos/workplace-conversation.png"
+                alt="Two coworkers having a supportive conversation"
                 width={800}
-                height={800}
-                className="w-full max-w-xs h-auto rounded-2xl shadow-lg"
+                height={600}
+                className="w-full max-w-md h-auto rounded-2xl shadow-lg"
               />
             </div>
           </div>
@@ -189,7 +189,7 @@ export default async function WorkplacePage() {
             {[
               {
                 icon: Users,
-                title: "Reduces Stigma",
+                title: "Builds Openness",
                 description:
                   "When organizations publicly commit to Sam's OATH, employees feel safe acknowledging what they're going through.",
               },

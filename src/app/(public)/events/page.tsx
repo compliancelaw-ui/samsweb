@@ -19,7 +19,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Events & Speaking | Sam's OATH",
   description:
-    "Book Frank Sheeder to speak about substance use stigma, loss, and advocacy. Keynotes, workshops, panels, and virtual presentations for conferences, workplaces, schools, and communities.",
+    "Book Frank Sheeder to speak about substance use, breaking the silence, loss, and advocacy. Keynotes, workshops, panels, and virtual presentations for conferences, workplaces, schools, and communities.",
   alternates: { canonical: "/events" },
 };
 
@@ -39,9 +39,9 @@ const SPEAKING_TOPICS: SpeakingTopic[] = [
     icon: <Heart className="w-6 h-6" />,
   },
   {
-    title: "Fighting Stigma in Your Community",
+    title: "Choosing Openness in Your Community",
     description:
-      "Stigma is the number one reason people with substance use disorders do not seek help. This talk examines how stigma operates at the community level and provides concrete strategies for replacing judgment with support.",
+      "Silence is the number one reason people with substance use disorders do not seek help. This talk examines how silence operates at the community level and provides concrete strategies for replacing judgment with support.",
     icon: <Users className="w-6 h-6" />,
   },
   {
@@ -121,7 +121,7 @@ export default function EventsPage() {
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Frank Sheeder speaks to organizations, communities, and families about
-            substance use stigma, loss, and the power of choosing openness over
+            substance use, loss, and the power of choosing openness over
             silence.
           </p>
         </div>

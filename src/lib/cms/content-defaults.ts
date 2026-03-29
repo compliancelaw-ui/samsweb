@@ -107,7 +107,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Togetherness Description",
     contentType: "textarea",
     defaultContent:
-      "No family should face this alone. Together we are stronger than any stigma and louder than any silence.",
+      "No family should face this alone. Together we are stronger than any silence and louder than any shame.",
     group: "OATH Framework",
   },
   {
@@ -210,7 +210,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "mission.title",
     label: "Mission Title",
     contentType: "text",
-    defaultContent: "End the Stigma. Start the Conversation.",
+    defaultContent: "Break the Silence. Start the Conversation.",
     group: "Mission",
   },
   {
@@ -219,7 +219,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Mission Body \u2014 Paragraph 1",
     contentType: "textarea",
     defaultContent:
-      "Sam\u2019s OATH is a national movement to end the stigma around substance use and mental health. We believe that when people choose Openness, Authenticity, Togetherness, and Healing, everything changes.",
+      "Sam\u2019s OATH is a national movement to break the silence around substance use and mental health. We believe that when people choose Openness, Authenticity, Togetherness, and Healing, everything changes.",
     group: "Mission",
   },
   {
@@ -328,7 +328,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Problem Section Body",
     contentType: "textarea",
     defaultContent:
-      "Nearly 50 million Americans face substance use challenges. But here\u2019s what the statistics don\u2019t capture: for every person struggling, there are parents, siblings, partners, children, coworkers, and friends carrying the weight in silence. The stigma doesn\u2019t just affect the person going through it \u2014 it silences everyone around them.",
+      "Nearly 50 million Americans face substance use challenges. But here\u2019s what the statistics don\u2019t capture: for every person struggling, there are parents, siblings, partners, children, coworkers, and friends carrying the weight in silence. The silence doesn\u2019t just affect the person going through it \u2014 it isolates everyone around them.",
     group: "Weight of Silence",
   },
   {
@@ -365,7 +365,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Origin Body \u2014 Frank\u2019s turning point",
     contentType: "textarea",
     defaultContent:
-      "After losing Sam, his father Frank \u2014 who had spent years hiding the effect his son\u2019s struggle had on himself and his family \u2014 made a choice most people never make. He told the truth publicly. Not to draw attention to himself, but because he realized the silence was the real crisis. That act of openness became Sam\u2019s OATH.",
+      "After Sam\u2019s passing, his father Frank \u2014 who had spent years keeping his family\u2019s experience private \u2014 made a choice most people never make. He told the truth publicly. Not to draw attention to himself, but because he realized the silence was the real crisis. That act of openness became Sam\u2019s OATH.",
     group: "Origin",
   },
   {
@@ -546,7 +546,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Vision \u2014 Compassion Card",
     contentType: "textarea",
     defaultContent:
-      "A world where people facing substance use and mental health challenges are met with support instead of stigma.",
+      "A world where people facing substance use and mental health challenges are met with support instead of silence.",
     group: "Vision",
   },
 
@@ -879,7 +879,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Frank \u2014 Paragraph 3",
     contentType: "textarea",
     defaultContent:
-      "After losing Sam, Frank made a decision that changed everything. He wrote about his son publicly on LinkedIn \u2014 openly, honestly, without filter. That post reached over 345,000 people. Nearly 2,000 reactions. 484 comments. Families everywhere responded, saying the same thing: \u201cI thought I was the only one.\u201d",
+      "After Sam\u2019s passing, Frank made a decision that changed everything. He wrote about his son publicly on LinkedIn \u2014 openly, honestly, without filter. That post reached over 345,000 people. Nearly 2,000 reactions. 484 comments. Families everywhere responded, saying the same thing: \u201cI thought I was the only one.\u201d",
     group: "Frank",
   },
   {
@@ -1354,7 +1354,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Origin Story \u2014 Paragraph 1",
     contentType: "textarea",
     defaultContent:
-      "Sam Sheeder (1998\u20132025) lit up every room he walked into. He was handsome, adventurous, and could strike up a conversation with anyone \u2014 from CEOs to those experiencing homelessness \u2014 making them feel seen and heard. He faced the hard road of substance use disorder with extraordinary courage and honesty, refusing to let stigma define him.",
+      "Sam Sheeder (1998\u20132025) lit up every room he walked into. He was handsome, adventurous, and could strike up a conversation with anyone \u2014 from CEOs to those experiencing homelessness \u2014 making them feel seen and heard. He faced the hard road of substance use disorder with extraordinary courage and honesty, refusing to let silence define him.",
     group: "Origin Story",
   },
   {
@@ -1381,7 +1381,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Frank Bio \u2014 Paragraph 1",
     contentType: "textarea",
     defaultContent:
-      "Frank Sheeder is a father, advocate, songwriter, and speaker. After losing his son Sam to substance use disorder in 2025, he channeled his grief into a national movement to break the silence that surrounds families affected by substance use and mental health challenges.",
+      "Frank Sheeder is a father, advocate, songwriter, and speaker. After his son Sam\u2019s passing in 2025, he channeled his family\u2019s experience into a national movement to break the silence that surrounds families affected by substance use and mental health challenges.",
     group: "Founder Bio",
   },
   {
@@ -1543,7 +1543,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Lead-in Body",
     contentType: "textarea",
     defaultContent:
-      "Sam\u2019s OATH is a movement, not a treatment program \u2014 but we know that breaking the silence is only the first step. Below you\u2019ll find crisis hotlines you can call right now, guides for families navigating substance use and mental health, language tools that reduce stigma, and organizations that offer direct support. Everything here is free and chosen with families like yours in mind.",
+      "Sam\u2019s OATH is a movement, not a treatment program \u2014 but we know that breaking the silence is only the first step. Below you\u2019ll find crisis hotlines you can call right now, guides for families navigating substance use and mental health, language tools that encourage honest conversation, and organizations that offer direct support. Everything here is free and chosen with families like yours in mind.",
     group: "Lead-in",
   },
   {
@@ -1817,7 +1817,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "Updates from the movement, reflections from Frank, and stories of families finding their voice.",
+      "News from the movement, updates on what we are building, and reflections on breaking the silence.",
     group: "Hero",
   },
   {
@@ -1825,7 +1825,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     sectionKey: "empty.title",
     label: "Empty State Title",
     contentType: "text",
-    defaultContent: "Coming Soon",
+    defaultContent: "Updates Are On the Way",
     group: "Empty State",
   },
   {

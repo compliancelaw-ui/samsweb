@@ -155,7 +155,7 @@ const SUGGESTED_HASHTAGS = [
   "#SubstanceUseAwareness",
   "#MentalHealthMatters",
   "#FamilySupport",
-  "#EndTheStigma",
+  "#BreakTheSilence",
   "#OATHMovement",
   "#SubstanceUseRecovery",
   "#RecoveryIsPossible",

@@ -13,7 +13,7 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "Become an Ambassador | Lead the Movement Locally",
   description:
-    "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help people find their voice and end the stigma together.",
+    "Become a Sam's OATH Ambassador and lead the movement to break the silence in your community. Help people find their voice and choose openness together.",
   alternates: { canonical: "/ambassadors" },
 };
 
@@ -144,7 +144,7 @@ export default async function AmbassadorsPage() {
               "Active in their community or workplace",
               "Aligned with Sam's OATH values (Openness, Authenticity, Togetherness, Healing)",
               "Comfortable representing the movement publicly",
-              "Committed to reducing stigma with compassion",
+              "Committed to building openness with compassion",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />

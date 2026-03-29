@@ -226,7 +226,7 @@ export const DRIP_SEQUENCE: DripEmail[] = [
           And if you are able, consider supporting the foundation with a
           donation. Every dollar goes directly toward awareness campaigns,
           community events, and resources for families who need them most.
-          Sam's OATH Foundation is a 501(c)(3), and all donations are
+          Sam's OATH is a 501(c)(3) public charity, and all donations are
           tax-deductible.
         </p>
         <p>

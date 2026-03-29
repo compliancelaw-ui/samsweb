@@ -17,7 +17,7 @@ import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
-  title: "Get Involved | Join the Fight Against Stigma",
+  title: "Get Involved | Join the Movement for Openness",
   description:
     "There are many ways to join the Sam's OATH movement. Volunteer, share your story, or bring programs to your community. Every action matters.",
   alternates: { canonical: "/get-involved" },
@@ -42,10 +42,10 @@ export default async function GetInvolvedPage() {
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image
-                src="/images/photos/frank-annie-sam-outdoors.jpg"
-                alt="Frank, Annie, and Sam outdoors together"
-                width={4032}
-                height={3024}
+                src="/images/photos/walking-together.png"
+                alt="Two people walking together on a tree-lined path"
+                width={800}
+                height={600}
                 className="w-full h-auto rounded-2xl shadow-lg max-w-lg"
               />
             </div>

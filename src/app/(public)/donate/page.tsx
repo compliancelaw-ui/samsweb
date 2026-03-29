@@ -24,7 +24,7 @@ const IMPACT_ITEMS = [
     icon: Megaphone,
     title: "Awareness Campaigns",
     description:
-      "Digital and grassroots campaigns that reach hundreds of thousands of families and break through the stigma of silence.",
+      "Digital and grassroots campaigns that reach hundreds of thousands of families and break through the silence.",
     color: "teal",
     bgColor: "bg-teal-50",
   },
@@ -125,7 +125,7 @@ export default function DonatePage() {
           <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
           <h2 className="mb-4">Transparency and Trust</h2>
           <p className="text-gray-600 text-lg mb-8">
-            Sam&apos;s OATH Foundation is a registered 501(c)(3) public charity.
+            Sam&apos;s OATH is a registered 501(c)(3) public charity.
             All donations are tax-deductible to the extent allowed by law. We
             are committed to full transparency in how we use every dollar
             entrusted to us.
@@ -134,13 +134,18 @@ export default function DonatePage() {
             <div className="text-left">
               <p className="text-sm text-gray-500">Organization</p>
               <p className="font-semibold text-gray-900">
-                Sam&apos;s OATH Foundation
+                Sam&apos;s OATH
               </p>
             </div>
             <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">
               <p className="text-sm text-gray-500">Tax Status</p>
               <p className="font-semibold text-gray-900">501(c)(3) Public Charity</p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+            <div className="text-left">
+              <p className="text-sm text-gray-500">EIN</p>
+              <p className="font-semibold text-gray-900">39-5101030</p>
             </div>
             <div className="w-px h-10 bg-gray-200 hidden sm:block" />
             <div className="text-left">

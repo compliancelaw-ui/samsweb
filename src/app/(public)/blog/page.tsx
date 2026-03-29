@@ -6,9 +6,9 @@ import { supabaseAdmin } from "@/lib/supabase/admin";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
-  title: "Updates | Substance Use, Mental Health & Hope",
+  title: "Updates & News | Sam's OATH",
   description:
-    "Articles and insights for anyone navigating substance use and mental health. Practical guidance, personal stories, and hope from the Sam's OATH community.",
+    "News from the movement, updates on what we are building, and reflections on breaking the silence around substance use and mental health.",
   alternates: { canonical: "/blog" },
 };
 
@@ -64,7 +64,7 @@ export default async function BlogPage() {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             {c["hero.title"]}
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             {c["hero.subtitle"]}
           </p>
         </div>

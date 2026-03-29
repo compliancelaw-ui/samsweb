@@ -5,7 +5,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
   title: "Thank You | Sam's OATH",
-  description: "Thank you for your generous donation to Sam's OATH Foundation.",
+  description: "Thank you for your generous donation to Sam's OATH.",
   robots: { index: false },
 };
 
@@ -26,7 +26,7 @@ export default function DonateThankYouPage() {
           </p>
           <p className="text-gray-500 mb-10">
             A receipt from Stripe has been sent to your email. As a 501(c)(3)
-            nonprofit, your donation to Sam&apos;s OATH Foundation is
+            public charity, your donation to Sam&apos;s OATH is
             tax-deductible to the extent allowed by law.
           </p>
 

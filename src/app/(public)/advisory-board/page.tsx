@@ -17,7 +17,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 export const metadata: Metadata = {
   title: "Advisory Board | Sam's OATH",
   description:
-    "Meet the founding advisory board of Sam's OATH Foundation - family members with lived experience guiding a national movement to break the silence around substance use and mental health.",
+    "Meet the founding advisory board of Sam's OATH - family members with lived experience guiding a national movement to break the silence around substance use and mental health.",
   alternates: { canonical: "/advisory-board" },
 };
 
@@ -30,7 +30,7 @@ const FOUNDING_ADVISORS = [
     color: "bg-primary/10 text-primary border-primary/20",
     iconColor: "text-primary",
     image: "/images/photos/frank-headshot.jpg",
-    bio: "Attorney, songwriter, and the driving force behind Sam's OATH. After losing Sam, Frank channeled his family's experience into a national movement, writing 15 original songs and building the platform that connects families across all 50 states. His viral LinkedIn post reached 345,000 people and proved that families everywhere are waiting for permission to speak openly.",
+    bio: "Attorney, songwriter, and the driving force behind Sam's OATH. After Sam's passing, Frank channeled his family's experience into a national movement, writing 15 original songs and building the platform that connects families across all 50 states. His viral LinkedIn post reached 345,000 people and proved that families everywhere are waiting for permission to speak openly.",
     expertise: "Nonprofit Leadership, Communications, Legal",
   },
   {
@@ -97,7 +97,7 @@ const EXPERTISE_AREAS = [
     title: "Communications / Media",
     icon: Megaphone,
     description:
-      "Destigmatizing health messaging, storytelling for social change, and building national awareness campaigns.",
+      "Normalizing honest conversation about health, storytelling for social change, and building national awareness campaigns.",
     color: "bg-sage/10 text-sage border-sage/20",
     iconColor: "text-sage",
   },
@@ -129,7 +129,7 @@ export default function AdvisoryBoardPage() {
           <h2 className="mb-6">Why an Advisory Board</h2>
           <p className="text-xl text-gray-600 leading-relaxed mb-4">
             Sam&apos;s OATH was born from a family&apos;s experience with loss,
-            love, and the failures of stigma. Our founding advisors bring the
+            love, and the cost of silence. Our founding advisors bring the
             most important credential there is: they lived it. They know what
             families go through because they went through it themselves.
           </p>
@@ -147,8 +147,8 @@ export default function AdvisoryBoardPage() {
           <div className="text-center mb-12">
             <h2 className="mb-4">Founding Advisors</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              The Sheeder family founded Sam&apos;s OATH after losing Sam to
-              substance use disorder. Each member brings a different
+              The Sheeder family founded Sam&apos;s OATH to honor Sam and
+              the openness he lived by. Each member brings a different
               perspective on what families experience and what they need.
             </p>
           </div>
@@ -201,11 +201,11 @@ export default function AdvisoryBoardPage() {
       <SectionWrapper variant="dark">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-2xl md:text-3xl font-light leading-relaxed text-white/90 mb-6">
-            &ldquo;When we lost Sam, we learned that stigma doesn&apos;t just
+            &ldquo;When we lost Sam, we learned that silence doesn&apos;t just
             hurt the person struggling. It isolates entire families. Our board
             starts with the people who know that truth firsthand, and we are
-            growing it to include people who can help us fight stigma with
-            science, with stories, and with real support.&rdquo;
+            growing it to include people who can help us replace silence with
+            openness, with stories, and with real support.&rdquo;
           </blockquote>
           <p className="text-white/60 font-medium">
             Frank Sheeder, Founder of Sam&apos;s OATH
