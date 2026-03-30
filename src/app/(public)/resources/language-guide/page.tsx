@@ -5,48 +5,53 @@ import {
   ArrowRight,
   ArrowRightLeft,
   Megaphone,
+  Heart,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Substance Use Language Guide | Words That Heal | Sam's OATH",
+  title: "Language Guide | Words That Heal | Sam's OATH",
   description:
-    "Words matter. Learn person-first, stigma-free language for talking about substance use and mental health. A practical guide for families and communities.",
+    "A practical guide to compassionate language for talking about substance use and mental health. Simple swaps that put the person first and make it safer to ask for help.",
   alternates: { canonical: "/resources/language-guide" },
 };
 
 const LANGUAGE_PAIRS = [
   {
-    category: "Referring to People",
+    category: "Talking About People",
+    intro: "Every person is more than a diagnosis. These swaps put the person first.",
     items: [
-      { instead: "Addict", say: "Person with a substance use disorder" },
-      { instead: "Junkie", say: "Person who uses drugs" },
-      { instead: "Alcoholic", say: "Person with alcohol use disorder" },
-      { instead: "Former addict", say: "Person in recovery" },
-      { instead: "Drug baby", say: "Baby born with neonatal abstinence syndrome" },
-      { instead: "Crazy / Insane", say: "Person living with a mental health condition" },
+      { instead: "Addict", say: "A person dealing with substance use" },
+      { instead: "Junkie", say: "A person who uses drugs" },
+      { instead: "Alcoholic", say: "A person with alcohol use disorder" },
+      { instead: "Former addict", say: "A person in recovery" },
+      { instead: "Drug baby", say: "A baby born with neonatal abstinence syndrome" },
+      { instead: "Crazy / Insane", say: "A person experiencing mental health challenges" },
     ],
   },
   {
-    category: "Describing Conditions",
+    category: "Talking About Conditions",
+    intro: "Substance use disorder is a medical condition, not a moral failure. The language should reflect that.",
     items: [
-      { instead: "Drug abuse / Substance abuse", say: "Substance use disorder (SUD)" },
+      { instead: "Drug abuse / Substance abuse", say: "Substance use disorder" },
       { instead: "Drug habit", say: "Substance use disorder" },
       { instead: "Drug problem", say: "Substance use disorder" },
       { instead: "Addiction", say: "Substance use disorder (in clinical settings)" },
     ],
   },
   {
-    category: "Describing Recovery",
+    category: "Talking About Recovery",
+    intro: "Recovery is a journey, not a judgment. These words remove the moral weight.",
     items: [
       { instead: "Clean / Dirty", say: "In recovery / Actively using" },
-      { instead: "Clean urine / Dirty urine", say: "Positive / Negative test result" },
+      { instead: "Clean urine / Dirty urine", say: "Negative / Positive test result" },
       { instead: "Relapse", say: "Recurrence or return to use" },
       { instead: "On the wagon / Off the wagon", say: "In recovery / Experiencing a recurrence" },
     ],
   },
   {
-    category: "Describing Treatment",
+    category: "Talking About Treatment",
+    intro: "Treatment language should be medical, not judgmental.",
     items: [
       { instead: "Medication-assisted treatment (MAT)", say: "Medications for addiction treatment" },
       { instead: "Opioid replacement / Substitution", say: "Opioid agonist therapy" },
@@ -54,12 +59,13 @@ const LANGUAGE_PAIRS = [
     ],
   },
   {
-    category: "Describing Behaviors & Situations",
+    category: "Talking About Difficult Situations",
+    intro: "Some common phrases cause more pain than we realize.",
     items: [
-      { instead: "Enabling", say: "Supporting (context-dependent)" },
-      { instead: "Rock bottom", say: "Avoid. Implies someone must suffer maximally before getting help" },
+      { instead: "Enabling", say: "Supporting (be specific about what you mean)" },
+      { instead: "Rock bottom", say: "Avoid entirely. It implies someone must suffer before getting help." },
       { instead: "Committed suicide", say: "Died by suicide" },
-      { instead: "Successful / Failed suicide attempt", say: "Suicide attempt / Survived a suicide attempt" },
+      { instead: "Failed suicide attempt", say: "Survived a suicide attempt" },
     ],
   },
 ];
@@ -68,24 +74,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://samsoath.org",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Resources",
-      item: "https://samsoath.org/resources",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Language Guide",
-      item: "https://samsoath.org/resources/language-guide",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://samsoath.org" },
+    { "@type": "ListItem", position: 2, name: "Resources", item: "https://samsoath.org/resources" },
+    { "@type": "ListItem", position: 3, name: "Language Guide", item: "https://samsoath.org/resources/language-guide" },
   ],
 };
 
@@ -105,12 +96,12 @@ export default function LanguageGuidePage() {
             Words That Heal
           </p>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            A Guide to Language That Heals Instead of Harms
+            How to Talk About Substance Use and Mental Health
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            The words we use shape how people see themselves, and whether they
-            feel safe enough to ask for help. Here&apos;s how to talk about
-            substance use and mental health without adding to the stigma.
+            The words we choose shape how people see themselves, and whether
+            they feel safe enough to ask for help. Here are simple swaps
+            that make a real difference.
           </p>
         </div>
       </section>
@@ -128,46 +119,56 @@ export default function LanguageGuidePage() {
 
           <div className="flex items-center gap-3 mb-6">
             <Megaphone className="w-6 h-6 text-primary" />
-            <h2 className="mb-0">Why Language Matters</h2>
+            <h2 className="mb-0">Why This Matters</h2>
           </div>
 
           <div className="space-y-4 text-lg text-gray-600 leading-relaxed mb-8">
             <p>
-              Research consistently shows that stigmatizing language, even when
-              used with good intentions, has real consequences. Studies
-              published in the <em>International Journal of Drug Policy</em> and
-              the <em>Journal of Substance Abuse Treatment</em> found that when
-              healthcare providers read patient files using stigmatizing labels
-              (like &ldquo;substance abuser&rdquo; instead of &ldquo;person with
-              a substance use disorder&rdquo;), they were significantly more
-              likely to recommend punitive measures over treatment.
+              When we call someone an &ldquo;addict,&rdquo; we reduce a whole
+              person to a single condition. When we say someone is
+              &ldquo;clean,&rdquo; we imply they were somehow dirty before.
+              These words carry moral weight that has no place in a conversation
+              about health.
             </p>
             <p>
-              Words don&apos;t just describe reality. They create it. When we
-              call someone an &ldquo;addict,&rdquo; we reduce a whole person to
-              a single condition. When we say someone is &ldquo;clean,&rdquo; we
-              imply they were &ldquo;dirty&rdquo; before. These words carry moral
-              weight that has no place in a medical conversation.
+              Research published in the <em>Journal of Substance Abuse
+              Treatment</em> found that when healthcare providers read patient
+              files using stigmatizing labels, they were more likely to
+              recommend punishment over treatment. Language changes how people
+              are treated, literally.
             </p>
             <p>
-              Changing our language isn&apos;t about being politically correct.
-              It&apos;s about being accurate, compassionate, and effective. When
-              we change how we talk about substance use and mental health, we
-              make it safer for people to ask for help, and that saves lives.
+              This is not about being politically correct. It is about being
+              accurate, compassionate, and effective. When we change how we
+              talk, we make it safer for people to ask for help.
             </p>
           </div>
 
           {/* Key principle callout */}
           <div className="bg-teal-50 border-l-4 border-teal rounded-r-xl p-6 mb-12">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              The Core Principle: Person-First Language
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Person-first language puts the person before the condition. Instead
-              of &ldquo;an addict,&rdquo; we say &ldquo;a person with a
-              substance use disorder.&rdquo; This isn&apos;t just semantics.
-              It&apos;s a reminder that a diagnosis doesn&apos;t define a person.
-              They are someone&apos;s child, parent, friend, and colleague first.
+            <div className="flex items-center gap-3 mb-3">
+              <Heart className="w-5 h-5 text-teal flex-shrink-0" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-0">
+                The Simple Rule: Person First
+              </h3>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-3">
+              Instead of defining someone by their condition, name the person
+              first. That is the whole idea.
+            </p>
+            <div className="space-y-2 text-sm">
+              <p className="text-gray-600">
+                Instead of <span className="line-through text-red-400">&ldquo;an addict&rdquo;</span>,
+                say <span className="font-semibold text-teal">&ldquo;a person dealing with substance use.&rdquo;</span>
+              </p>
+              <p className="text-gray-600">
+                Instead of <span className="line-through text-red-400">&ldquo;a mentally ill person&rdquo;</span>,
+                say <span className="font-semibold text-teal">&ldquo;a person experiencing mental health challenges.&rdquo;</span>
+              </p>
+            </div>
+            <p className="text-gray-500 text-sm mt-3">
+              They are someone&apos;s child, parent, friend, and neighbor first.
+              The condition is something they are dealing with, not who they are.
             </p>
           </div>
         </div>
@@ -176,19 +177,19 @@ export default function LanguageGuidePage() {
       {/* ===== LANGUAGE GUIDE TABLE ===== */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">The Complete Language Guide</h2>
+          <h2 className="text-center mb-4">The Complete Guide</h2>
           <p className="text-center text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-            A practical reference for families, media, healthcare providers,
-            educators, and anyone who wants to talk about these issues with
-            care.
+            Simple swaps for families, workplaces, schools, media, and anyone
+            who wants to talk about these issues with care.
           </p>
 
           <div className="space-y-8">
             {LANGUAGE_PAIRS.map((section) => (
               <div key={section.category}>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   {section.category}
                 </h3>
+                <p className="text-sm text-gray-500 mb-4">{section.intro}</p>
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                   {/* Header */}
                   <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
@@ -196,7 +197,7 @@ export default function LanguageGuidePage() {
                       Instead of...
                     </div>
                     <div className="px-6 py-3 font-bold text-teal uppercase text-xs tracking-wider">
-                      Try saying...
+                      Say this...
                     </div>
                   </div>
                   {/* Rows */}
@@ -216,7 +217,7 @@ export default function LanguageGuidePage() {
                         >
                           &times;
                         </span>
-                        <span className="text-gray-600 line-through decoration-red-300/50 text-sm">
+                        <span className="text-gray-500 line-through decoration-red-300/50 text-sm">
                           {item.instead}
                         </span>
                       </div>
@@ -245,7 +246,7 @@ export default function LanguageGuidePage() {
         </div>
       </SectionWrapper>
 
-      {/* ===== HOW TO USE THIS IN DAILY LIFE ===== */}
+      {/* ===== PUTTING IT INTO PRACTICE ===== */}
       <SectionWrapper variant="white">
         <div className="max-w-3xl mx-auto">
           <h2 className="mb-6">Putting It Into Practice</h2>
@@ -259,7 +260,7 @@ export default function LanguageGuidePage() {
                 dinner table shapes how your children and family members think
                 about it. If your family is directly affected, person-first
                 language helps your loved one feel seen as a whole person, not
-                defined by their struggle.
+                defined by what they are going through.
               </p>
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
@@ -267,11 +268,11 @@ export default function LanguageGuidePage() {
                 At Work
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                If you&apos;re an employer, manager, or HR professional, the
+                If you are an employer, manager, or HR professional, the
                 language in your policies and conversations directly impacts
-                whether employees feel safe disclosing a substance use or mental
-                health issue. Replace &ldquo;substance abuse&rdquo; with
-                &ldquo;substance use disorder&rdquo; in all documentation.
+                whether employees feel safe asking for help. Use
+                &ldquo;substance use disorder&rdquo; instead of &ldquo;substance
+                abuse&rdquo; in all documentation.
               </p>
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
@@ -281,7 +282,7 @@ export default function LanguageGuidePage() {
               <p className="text-gray-600 leading-relaxed">
                 When you share articles, comment on stories, or post about
                 these issues, your language reaches people you may never meet.
-                A single comment using person-first language can model better
+                A single comment using person-first language can model a better
                 conversation for everyone who sees it.
               </p>
             </div>
@@ -290,12 +291,12 @@ export default function LanguageGuidePage() {
                 In the Media
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Journalists and content creators have outsized influence on
-                public perception. The AP Stylebook now recommends
-                &ldquo;substance use disorder&rdquo; over &ldquo;substance
-                abuse&rdquo; and &ldquo;died by suicide&rdquo; over
-                &ldquo;committed suicide.&rdquo; Language shifts start with
-                those who shape the narrative.
+                Journalists and content creators shape public perception. The
+                AP Stylebook now recommends &ldquo;substance use
+                disorder&rdquo; over &ldquo;substance abuse&rdquo; and
+                &ldquo;died by suicide&rdquo; over &ldquo;committed
+                suicide.&rdquo; Language shifts start with those who shape the
+                narrative.
               </p>
             </div>
           </div>
@@ -308,9 +309,9 @@ export default function LanguageGuidePage() {
           <h2 className="text-white mb-4">
             When We Change Our Words, We Change the Conversation
           </h2>
-          <p className="text-white/80 text-xl mb-8 leading-relaxed">
-            Take Sam&apos;s OATH and commit to openness, authenticity,
-            togetherness, and healing, starting with the words you use.
+          <p className="text-white/90 text-xl mb-8 leading-relaxed">
+            Take Sam&apos;s OATH and commit to Openness, Authenticity,
+            Togetherness, and Healing, starting with the words you use.
           </p>
           <Link
             href="/take-the-oath"
