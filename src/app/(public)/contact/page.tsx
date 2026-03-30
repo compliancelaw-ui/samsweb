@@ -115,15 +115,7 @@ export default async function ContactPage() {
             <div className="lg:col-span-3">
               <h2 className="mb-4">{c["form.title"]}</h2>
               <p className="text-gray-600 mb-8">
-                {c["form.body"]}{" "}
-                Visit our{" "}
-                <Link
-                  href="/resources"
-                  className="text-primary font-semibold hover:text-primary-600 transition-colors"
-                >
-                  Resources page
-                </Link>
-                {" "}for additional support.
+                {c["form.body"]}
               </p>
               <ContactForm />
             </div>
@@ -158,8 +150,7 @@ export default async function ContactPage() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-500">
-                  For general inquiries, partnership requests, and media
-                  questions.
+                  For general inquiries and partnership requests.
                 </p>
               </div>
 
@@ -174,23 +165,6 @@ export default async function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ===== FOR MEDIA ===== */}
-      <SectionWrapper variant="white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-4">{c["media.title"]}</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            {c["media.body"]}
-          </p>
-          <Link
-            href="/press"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-600 transition-colors"
-          >
-            Visit our Press page
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </SectionWrapper>
 

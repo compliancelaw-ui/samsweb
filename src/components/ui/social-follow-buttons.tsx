@@ -51,14 +51,14 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-const SOCIAL_ICON_MAP = {
+const SOCIAL_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   appleMusic: AppleMusicIcon,
   spotify: SpotifyIcon,
   youtube: YouTubeIcon,
   tiktok: TikTokIcon,
   instagram: InstagramIcon,
   facebook: FacebookIcon,
-} as const;
+};
 
 type SocialKey = keyof typeof SOCIAL_LINKS;
 
@@ -80,6 +80,7 @@ export function SocialFollowButtons({
       {keys.map((key) => {
         const link = SOCIAL_LINKS[key];
         const Icon = SOCIAL_ICON_MAP[key];
+        if (!Icon) return null;
         return (
           <a
             key={key}
@@ -119,6 +120,7 @@ export function SocialFollowButtonsLabeled({
       {keys.map((key) => {
         const link = SOCIAL_LINKS[key];
         const Icon = SOCIAL_ICON_MAP[key];
+        if (!Icon) return null;
         return (
           <a
             key={key}

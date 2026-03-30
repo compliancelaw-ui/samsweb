@@ -5,11 +5,11 @@ import { Logo } from "@/components/ui/logo";
 export const metadata: Metadata = {
   title: "Links | Sam's OATH",
   description:
-    "All the ways to connect with Sam's OATH — take the pledge, share your story, listen to our music, find resources, and join a national movement breaking the silence on substance use and mental health.",
+    "All the ways to connect with Sam's OATH - take the pledge, share your story, find resources, and join a national movement breaking the silence on substance use and mental health.",
   openGraph: {
     title: "Links | Sam's OATH",
     description:
-      "All the ways to connect with Sam's OATH — take the pledge, share your story, listen to our music, and join the movement.",
+      "All the ways to connect with Sam's OATH - take the pledge, share your story, and join the movement.",
     url: "https://samsoath.org/links",
   },
   alternates: { canonical: "/links" },
@@ -30,11 +30,6 @@ const LINKS: readonly { label: string; href: string; primary?: boolean; descript
     label: "Share Your Story",
     href: "/share-your-story",
     description: "Your voice matters",
-  },
-  {
-    label: "Listen to Our Music",
-    href: "/music",
-    description: "15 original songs of hope",
   },
   {
     label: "Become an Ambassador",
@@ -99,14 +94,6 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function AppleMusicIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M23.997 6.124a9.23 9.23 0 0 0-.24-2.19 4.71 4.71 0 0 0-1.05-1.86 4.58 4.58 0 0 0-1.86-1.05A9.23 9.23 0 0 0 18.657.8h-13.3a9.2 9.2 0 0 0-2.19.24 4.58 4.58 0 0 0-1.86 1.05A4.71 4.71 0 0 0 .257 3.93a9.23 9.23 0 0 0-.24 2.19v11.75a9.23 9.23 0 0 0 .24 2.19 4.71 4.71 0 0 0 1.05 1.86 4.58 4.58 0 0 0 1.86 1.05 9.23 9.23 0 0 0 2.19.24h13.3a9.23 9.23 0 0 0 2.19-.24 4.58 4.58 0 0 0 1.86-1.05 4.71 4.71 0 0 0 1.05-1.86 9.23 9.23 0 0 0 .24-2.19V6.124zm-6.46 5.81v5.48a2.56 2.56 0 0 1-.73 1.84 2.45 2.45 0 0 1-1.56.76 2.39 2.39 0 0 1-1.74-.47 2.1 2.1 0 0 1-.68-1.87 2.22 2.22 0 0 1 .93-1.53 3.15 3.15 0 0 1 1.87-.65c.32 0 .63.06.93.17v-3.87l-5.36 1.7v5.13a2.56 2.56 0 0 1-.73 1.84 2.45 2.45 0 0 1-1.56.76 2.39 2.39 0 0 1-1.74-.47 2.1 2.1 0 0 1-.68-1.87 2.22 2.22 0 0 1 .93-1.53 3.15 3.15 0 0 1 1.87-.65c.32 0 .63.06.93.17V9.594a1.67 1.67 0 0 1 .13-.66 1.05 1.05 0 0 1 .49-.47l5.56-1.81a.78.78 0 0 1 .6.04.67.67 0 0 1 .34.56v4.694z" />
-    </svg>
-  );
-}
-
 const SOCIAL_ICONS = [
   {
     label: "Instagram",
@@ -127,11 +114,6 @@ const SOCIAL_ICONS = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/samsoath",
     Icon: LinkedInIcon,
-  },
-  {
-    label: "Apple Music",
-    href: "https://music.apple.com/us/artist/sams-oath/1862953585",
-    Icon: AppleMusicIcon,
   },
 ] as const;
 

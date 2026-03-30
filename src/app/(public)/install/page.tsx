@@ -94,11 +94,12 @@ export default function InstallPage() {
       <SectionWrapper variant="dark">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Install Sam&apos;s OATH on Your Device
+            Add Sam&apos;s OATH to Your Home Screen
           </h1>
           <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-            Add Sam&apos;s OATH to your home screen for quick access to the movement,
-            community stories, and upcoming events. No app store needed.
+            Create a shortcut to Sam&apos;s OATH on your home screen for quick access
+            to the movement, community stories, and upcoming events. This is not an
+            app store download, just a convenient home screen shortcut to samsoath.org.
           </p>
         </div>
       </SectionWrapper>
@@ -107,7 +108,7 @@ export default function InstallPage() {
       <SectionWrapper variant="light">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">
-            Why install?
+            Why add to home screen?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
@@ -144,7 +145,7 @@ export default function InstallPage() {
       <SectionWrapper variant="white">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-xl font-bold text-gray-900 mb-2 text-center">
-            How to install
+            How to add it
           </h2>
           <p className="text-center text-sm text-gray-500 mb-8">
             {platform !== 'unknown'

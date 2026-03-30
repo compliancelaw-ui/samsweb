@@ -22,8 +22,7 @@ const learnMoreLinks = [
 
 const connectLinks = [
   { href: "/contact", label: "Contact Us" },
-  { href: "/music", label: "Listen to the Music" },
-  { href: "/install", label: "Install the App" },
+  { href: "/install", label: "Add to Home Screen" },
 ];
 
 export function Footer() {
@@ -49,7 +48,7 @@ export function Footer() {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-3">
                 Follow Us
               </h4>
-              <SocialFollowButtons variant="dark" size="sm" />
+              <SocialFollowButtons variant="dark" size="sm" platforms={["youtube", "tiktok", "instagram", "facebook"]} />
             </div>
           </div>
 

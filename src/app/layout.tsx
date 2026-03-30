@@ -76,7 +76,6 @@ const jsonLd = {
     url: "https://samsoath.org/contact",
   },
   sameAs: [
-    "https://music.apple.com/us/artist/sams-oath/1862953585",
     "https://www.instagram.com/samsoath",
     "https://www.facebook.com/samsoath",
     "https://www.tiktok.com/@samsoath",

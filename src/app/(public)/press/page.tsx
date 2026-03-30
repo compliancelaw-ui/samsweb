@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Newspaper,
-  Download,
-  Camera,
   Quote,
-  Mail,
-  ArrowRight,
   Music,
   MapPin,
   Users,
   Heart,
-  Palette,
   Copy,
-  FileText,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { getPageContent } from "@/lib/cms/get-page-content";
@@ -184,10 +177,10 @@ export default async function PressPage() {
         </div>
       </SectionWrapper>
 
-      {/* Story Angles */}
+      {/* Story Topics */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-10">Story Angles</h2>
+          <h2 className="text-center mb-10">Story Topics</h2>
           <div className="space-y-6">
             {[
               {
@@ -279,78 +272,6 @@ export default async function PressPage() {
         </div>
       </SectionWrapper>
 
-      {/* Brand Assets */}
-      <SectionWrapper variant="light">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-center mb-4">Brand Assets</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-            When referencing the organization, always write &ldquo;Sam&apos;s
-            OATH&rdquo; with OATH in all capitals. The acronym stands for
-            Openness, Authenticity, Togetherness, Healing.
-          </p>
-
-          {/* Brand Colors */}
-          <div className="mb-10">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <Palette className="w-5 h-5 text-primary" />
-              Brand Colors (Hopeful Twilight Palette)
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {[
-                { name: "Primary Blue", hex: "#4A6FA5", bg: "bg-primary", textClass: "text-white" },
-                { name: "Teal", hex: "#3EABA8", bg: "bg-teal", textClass: "text-white" },
-                { name: "Slate", hex: "#2E3B4E", bg: "bg-[#2E3B4E]", textClass: "text-white" },
-                { name: "Sage", hex: "#7AB87A", bg: "bg-sage", textClass: "text-white" },
-                { name: "Warm Orange", hex: "#E8956F", bg: "bg-orange", textClass: "text-white" },
-              ].map((color) => (
-                <div key={color.name} className="text-center">
-                  <div
-                    className={`${color.bg} ${color.textClass} rounded-xl p-6 mb-2 shadow-sm`}
-                  >
-                    <p className="text-sm font-mono font-semibold">{color.hex}</p>
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">{color.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Logo & Downloads */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-lg text-center shadow-sm">
-              <Download className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Logos &amp; Brand Assets
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                High-resolution logos, color palette, and brand guidelines
-              </p>
-              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request assets</a>
-            </div>
-            <div className="p-6 bg-white rounded-lg text-center shadow-sm">
-              <Camera className="w-8 h-8 text-teal mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Photos
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                High-resolution photos of Frank, Sam, family, and the movement
-              </p>
-              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request photos</a>
-            </div>
-            <div className="p-6 bg-white rounded-lg text-center shadow-sm">
-              <Newspaper className="w-8 h-8 text-orange mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Fact Sheet
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                One-page overview of Sam&apos;s OATH with key stats and quotes
-              </p>
-              <a href="mailto:press@samsoath.org" className="text-sm text-primary font-medium hover:text-primary-600 transition-colors">Request fact sheet</a>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
       {/* Boilerplate */}
       <SectionWrapper variant="white">
         <div className="max-w-4xl mx-auto">
@@ -380,56 +301,22 @@ export default async function PressPage() {
         </div>
       </SectionWrapper>
 
-      {/* Recent Coverage */}
+      {/* Media Inquiries */}
       <SectionWrapper variant="light">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-center mb-4">Media Inquiries</h2>
           <div className="bg-white rounded-xl p-12 text-center shadow-sm border border-gray-100">
-            <FileText className="w-10 h-10 text-primary/30 mx-auto mb-4" />
-            <p className="text-gray-700 text-lg font-medium">Media inquiries welcome</p>
-            <p className="text-gray-500 text-sm mt-2">
-              For interview requests, story leads, or coverage inquiries, contact{" "}
+            <p className="text-gray-700 text-lg leading-relaxed">
+              For media inquiries, interviews, or speaking requests, contact Frank
+              Sheeder at{" "}
               <a
-                href="mailto:press@samsoath.org"
-                className="text-primary hover:text-primary-600"
+                href="mailto:frank@samsoath.org"
+                className="text-primary font-medium hover:text-primary-600 transition-colors"
               >
-                press@samsoath.org
+                frank@samsoath.org
               </a>
             </p>
           </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Media Contact */}
-      <SectionWrapper variant="white">
-        <div className="max-w-2xl mx-auto text-center">
-          <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
-          <h2 className="mb-4">Media Contact</h2>
-          <p className="text-gray-600 text-lg mb-6">
-            {c["media-contact.body"]}
-          </p>
-          <p className="text-gray-900 font-medium mb-2">Frank Sheeder</p>
-          <p className="text-gray-600 mb-1">
-            Founder &amp; Executive Director, Sam&apos;s OATH
-          </p>
-          <p className="text-gray-600 mb-6">
-            <a
-              href="mailto:press@samsoath.org"
-              className="text-primary hover:text-primary-600 font-medium"
-            >
-              press@samsoath.org
-            </a>
-          </p>
-          <p className="text-sm text-gray-400 mb-8">
-            Available for interviews, keynote speeches, panel discussions,
-            podcast appearances, and corporate speaking engagements.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors"
-          >
-            Send a Message <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </SectionWrapper>
     </>

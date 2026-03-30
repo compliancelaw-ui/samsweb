@@ -200,7 +200,7 @@ export default async function MusicPage() {
           </p>
           <div className="flex justify-center">
             <SocialFollowButtonsLabeled
-              platforms={["appleMusic", "spotify", "youtube", "tiktok", "instagram", "facebook"]}
+              platforms={["youtube", "tiktok", "instagram", "facebook"]}
             />
           </div>
           <p className="text-white/70 text-sm mt-6">
