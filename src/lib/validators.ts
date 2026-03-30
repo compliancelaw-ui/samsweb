@@ -129,3 +129,16 @@ export const donationSchema = z.object({
 });
 
 export type DonationFormData = z.infer<typeof donationSchema>;
+
+// ─── Feedback Form ─────────────────────────────────────────────────────────
+
+export const feedbackSchema = z.object({
+  biggest_challenge: z.string().min(10, "Please share at least a sentence").max(2000, "2,000 characters max"),
+  what_would_help: z.string().max(2000, "2,000 characters max").optional(),
+  anything_else: z.string().max(2000, "2,000 characters max").optional(),
+  name: z.string().optional(),
+  email: z.string().email("Invalid email address").optional().or(z.literal("")),
+  role: z.enum(["family", "person_in_recovery", "professional", "supporter", "other"]).optional(),
+});
+
+export type FeedbackFormData = z.infer<typeof feedbackSchema>;

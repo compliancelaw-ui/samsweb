@@ -171,6 +171,7 @@ export default function InstallPage() {
                     onClick={() => setOpenGuide(isOpen ? null : guide.id)}
                     className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors rounded-xl"
                     aria-expanded={isOpen}
+                    aria-label={`${guide.device} instructions`}
                   >
                     <div>
                       <span className="font-semibold text-gray-900">{guide.device}</span>
@@ -189,6 +190,7 @@ export default function InstallPage() {
                       viewBox="0 0 24 24"
                       strokeWidth={2}
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>

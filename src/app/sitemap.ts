@@ -26,6 +26,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/blog",
     "/challenges",
     "/share-your-story",
+    "/events",
+    "/donate",
+    "/feedback",
+    "/links",
+    "/accessibility",
     "/privacy",
     "/terms",
   ].map((path) => ({
@@ -71,5 +76,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Table may not have data yet
   }
 
-  return [...staticPages, ...storyPages, ...blogPages];
+  // Dynamic: resource guides
+  let guidePages: MetadataRoute.Sitemap = [];
+  try {
+    const { data: guides } = await supabaseAdmin()
+      .from("resource_documents")
+      .select("slug, updated_at")
+      .eq("status", "published");
+
+    guidePages = (guides || []).map((g) => ({
+      url: `${baseUrl}/resources/guides/${g.slug}`,
+      lastModified: new Date(g.updated_at),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // Table may not have data yet
+  }
+
+  return [...staticPages, ...storyPages, ...blogPages, ...guidePages];
 }

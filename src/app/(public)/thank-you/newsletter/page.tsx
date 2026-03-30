@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail, Heart, BookOpen, ArrowRight } from "lucide-react";
+import { Mail, Heart, BookOpen, Megaphone, ArrowRight } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
@@ -31,10 +31,10 @@ export default function ThankYouNewsletterPage() {
       {/* Next Steps */}
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">More Ways to Join the Movement</h2>
+          <h2 className="mb-4">Now Help Spread the Word</h2>
           <p className="text-gray-600 text-lg mb-10">
-            Subscribing is a great first step. Here are a few more ways to make
-            a difference.
+            The most powerful thing you can do right now is tell someone else.
+            One conversation can change everything for a family carrying this in silence.
           </p>
           <div className="space-y-4">
             <Link
@@ -64,6 +64,23 @@ export default function ThankYouNewsletterPage() {
                   </p>
                   <p className="text-sm text-gray-500">
                     Your experience could help another family feel less alone
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400" />
+            </Link>
+            <Link
+              href="/get-involved"
+              className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border"
+            >
+              <div className="flex items-center gap-4">
+                <Megaphone className="w-6 h-6 text-sage" />
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">
+                    Get Involved
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Volunteer, partner, or bring the movement to your community
                   </p>
                 </div>
               </div>

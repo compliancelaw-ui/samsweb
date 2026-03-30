@@ -6,6 +6,8 @@ import { Logo } from "@/components/ui/logo";
 const takeActionLinks = [
   { href: "/take-the-oath", label: "Take Sam's OATH" },
   { href: "/share-your-story", label: "Share Your Story" },
+  { href: "/get-involved", label: "Get Involved" },
+  { href: "/challenges", label: "Monthly Challenges" },
   { href: "/ambassadors", label: "Become an Ambassador" },
   { href: "/workplace", label: "Workplace Programs" },
   { href: "/donate", label: "Donate" },
@@ -13,6 +15,7 @@ const takeActionLinks = [
 
 const learnMoreLinks = [
   { href: "/about", label: "About the Movement" },
+  { href: "/families", label: "For Families" },
   { href: "/stories", label: "Shared Stories" },
   { href: "/map", label: "OATH Map" },
   { href: "/resources", label: "Resources" },
@@ -22,6 +25,7 @@ const learnMoreLinks = [
 
 const connectLinks = [
   { href: "/contact", label: "Contact Us" },
+  { href: "/feedback", label: "Share Feedback" },
   { href: "/install", label: "Add to Home Screen" },
 ];
 
@@ -35,17 +39,17 @@ export function Footer() {
             <Link href="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded-lg">
               <Logo variant="footer" className="h-12 w-auto" />
             </Link>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-gray-300">
+            <p className="mt-4 text-sm font-medium leading-relaxed text-gray-200">
               What&apos;s hidden doesn&apos;t heal.
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-gray-300">
+            <p className="mt-2 text-sm leading-relaxed text-gray-200">
               <span className="text-white">Our mission:</span> Break the
               silence around substance use and mental health so no family
               carries this weight alone.
             </p>
             {/* Follow Us */}
             <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-3">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-200 mb-3">
                 Follow Us
               </h4>
               <SocialFollowButtons variant="dark" size="sm" platforms={["youtube", "tiktok", "instagram", "facebook"]} />
@@ -62,7 +66,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -81,7 +85,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -100,7 +104,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {link.label}
                   </Link>
@@ -117,7 +121,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.suicideHotline.number}`}
-                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.suicideHotline.label}:{" "}
                     <span className="font-semibold text-white">
@@ -126,7 +130,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <p className="py-2 text-sm text-gray-300">
+                  <p className="py-2 text-sm text-gray-200">
                     {CRISIS_RESOURCES.crisisText.label}:{" "}
                     <span className="font-semibold text-white">
                       Text {CRISIS_RESOURCES.crisisText.keyword} to{" "}
@@ -137,7 +141,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${CRISIS_RESOURCES.emergency.number}`}
-                    className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+                    className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
                   >
                     {CRISIS_RESOURCES.emergency.label}:{" "}
                     <span className="font-semibold text-white">
@@ -154,25 +158,25 @@ export function Footer() {
       {/* Bottom Bar — extra bottom padding so the fixed crisis banner doesn't cover it */}
       <div className="border-t border-gray-500">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 pb-[max(4rem,calc(1.5rem+env(safe-area-inset-bottom)))] sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-gray-200">
             &copy; 2026 {SITE_NAME}. A 501(c)(3) public charity. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
             <Link
               href="/terms"
-              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+              className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
-              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+              className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Privacy Policy
             </Link>
             <Link
               href="/accessibility"
-              className="inline-block py-2 text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
+              className="inline-block py-2 text-sm text-gray-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E3B4E] rounded"
             >
               Accessibility
             </Link>

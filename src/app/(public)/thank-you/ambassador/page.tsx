@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Award, Clock, CheckCircle, Users, ArrowRight } from "lucide-react";
+import { Award, Clock, CheckCircle, Users, Megaphone, ArrowRight } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
@@ -77,8 +77,12 @@ export default function ThankYouAmbassadorPage() {
       {/* Meanwhile */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">In the Meantime</h2>
-          <div className="space-y-4 mt-8">
+          <h2 className="mb-4">Start Spreading the Word Now</h2>
+          <p className="text-gray-600 mb-8">
+            You do not have to wait for approval to start making a difference.
+            Tell someone about Sam&apos;s OATH today.
+          </p>
+          <div className="space-y-4">
             <Link
               href="/take-the-oath"
               className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -106,6 +110,23 @@ export default function ThankYouAmbassadorPage() {
                   </p>
                   <p className="text-sm text-gray-500">
                     Your experience could inspire others to join the movement
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400" />
+            </Link>
+            <Link
+              href="/challenges"
+              className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4">
+                <Megaphone className="w-6 h-6 text-sage" />
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">
+                    Join This Month&apos;s Challenge
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Small actions that build community and break silence
                   </p>
                 </div>
               </div>

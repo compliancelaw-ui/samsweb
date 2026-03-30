@@ -1,57 +1,57 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail, Clock, ArrowRight, Heart, BookOpen, Megaphone } from "lucide-react";
+import { MessageCircleHeart, ArrowRight, Heart, Users, Share2 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 
 export const metadata: Metadata = {
-  title: "Message Sent",
-  description: "Your message has been received. We'll respond as soon as possible.",
+  title: "Thank You for Your Feedback",
+  description: "Your feedback has been received. It helps us build better resources for families.",
   robots: { index: false, follow: false },
 };
 
-export default function ThankYouContactPage() {
+export default function ThankYouFeedbackPage() {
   return (
     <>
       {/* Confirmation Hero */}
-      <section className="bg-gradient-to-br from-primary to-slate py-24">
+      <section className="bg-gradient-to-br from-teal to-primary py-24">
         <div className="container-wide text-white text-center">
           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Mail className="w-10 h-10 text-white" />
+            <MessageCircleHeart className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Message Received
+            We Hear You
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Thank you for reaching out. We read every message and will get back
-            to you as soon as possible.
+            Your feedback is exactly how this movement grows - from the ground up,
+            shaped by the people it serves. Thank you.
           </p>
         </div>
       </section>
 
-      {/* What to Expect */}
+      {/* What happens next */}
       <SectionWrapper variant="white">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <Clock className="w-7 h-7 text-primary" />
-          </div>
-          <h2 className="mb-4">What to Expect</h2>
+          <h2 className="mb-4">What Happens Next</h2>
           <p className="text-gray-600 text-lg mb-4">
-            We typically respond within 1-2 business days. For speaking
-            engagements and partnership inquiries, we may need a bit more time to
-            prepare a thoughtful response.
+            Frank reads every piece of feedback personally. What you shared will
+            directly influence the resources, guides, and programs we build next.
           </p>
           <p className="text-gray-500">
-            If your matter is urgent, please call the 988 Suicide &amp; Crisis
-            Lifeline by dialing or texting <strong>988</strong>.
+            If you left your contact info, we may reach out to learn more about
+            your experience.
           </p>
         </div>
       </SectionWrapper>
 
-      {/* Explore More */}
+      {/* Help spread the word */}
       <SectionWrapper variant="light">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="mb-4">While You Wait, Spread the Word</h2>
-          <div className="space-y-4 mt-8">
+          <h2 className="mb-4">Help Spread the Movement</h2>
+          <p className="text-gray-600 mb-8">
+            The most powerful thing you can do right now is tell someone else
+            about Sam&apos;s OATH. One conversation can change everything.
+          </p>
+          <div className="space-y-4">
             <Link
               href="/take-the-oath"
               className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -61,22 +61,7 @@ export default function ThankYouContactPage() {
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Take Sam&apos;s OATH</p>
                   <p className="text-sm text-gray-500">
-                    Join the movement and place your pin on the map
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-5 h-5 text-gray-400" />
-            </Link>
-            <Link
-              href="/stories"
-              className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="flex items-center gap-4">
-                <BookOpen className="w-6 h-6 text-orange" />
-                <div className="text-left">
-                  <p className="font-semibold text-gray-900">Read Stories</p>
-                  <p className="text-sm text-gray-500">
-                    Hear from families who chose openness over silence
+                    Place your pin on the map and join the movement
                   </p>
                 </div>
               </div>
@@ -87,11 +72,26 @@ export default function ThankYouContactPage() {
               className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex items-center gap-4">
-                <Megaphone className="w-6 h-6 text-sage" />
+                <Users className="w-6 h-6 text-primary" />
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Get Involved</p>
                   <p className="text-sm text-gray-500">
-                    Help bring the movement to your community
+                    Volunteer, partner, or bring Sam&apos;s OATH to your community
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400" />
+            </Link>
+            <Link
+              href="/share-your-story"
+              className="flex items-center justify-between p-5 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4">
+                <Share2 className="w-6 h-6 text-orange" />
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Share Your Story</p>
+                  <p className="text-sm text-gray-500">
+                    Your experience can help another family feel less alone
                   </p>
                 </div>
               </div>
