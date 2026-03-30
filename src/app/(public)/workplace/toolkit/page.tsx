@@ -80,7 +80,7 @@ export default function WorkplaceToolkitPage() {
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
               Bring Sam&apos;s OATH to Your Workplace
             </h1>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               A free toolkit for starting honest conversations about substance
               use and mental health at work.
             </p>
@@ -204,7 +204,7 @@ export default function WorkplaceToolkitPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-white mb-4">Want More Than a Toolkit?</h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p className="text-white/90 text-lg mb-8">
             Sam&apos;s OATH offers live workplace programs: Safe Listener
             Training, Corporate OATH Programs, and keynote speaking. Let us come
             to your organization.

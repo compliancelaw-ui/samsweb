@@ -675,11 +675,11 @@ export default async function ResourcesPage() {
       {/* ===== FOOTER CTA ===== */}
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <Heart className="w-10 h-10 mx-auto mb-4 text-white/80" />
+          <Heart className="w-10 h-10 mx-auto mb-4 text-white/90" />
           <h2 className="text-white mb-4">
             {c["cta.title"]}
           </h2>
-          <p className="text-white/80 text-xl mb-6 leading-relaxed">
+          <p className="text-white/90 text-xl mb-6 leading-relaxed">
             {c["cta.body"]}
           </p>
           <p className="text-white/90 text-lg font-semibold mb-10">

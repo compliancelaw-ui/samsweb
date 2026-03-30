@@ -36,7 +36,7 @@ export default async function GetInvolvedPage() {
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
                 {c["hero.title"]}
               </h1>
-              <p className="text-xl text-white/80">
+              <p className="text-xl text-white/90">
                 {c["hero.subtitle"]}
               </p>
             </div>

@@ -28,9 +28,9 @@ export function CrisisBanner() {
             {CRISIS_RESOURCES.suicideHotline.number}
           </a>
 
-          <span className="hidden text-white/60 sm:inline" aria-hidden="true">|</span>
+          <span className="hidden text-white/90 sm:inline" aria-hidden="true">|</span>
 
-          <span className="text-sm text-white/80">
+          <span className="text-sm text-white/90">
             {CRISIS_RESOURCES.crisisText.label}: Text{" "}
             <span className="font-semibold">
               {CRISIS_RESOURCES.crisisText.keyword}
@@ -45,7 +45,7 @@ export function CrisisBanner() {
         <button
           type="button"
           onClick={() => setVisible(false)}
-          className="flex-shrink-0 rounded-full p-1.5 text-white/80 transition-colors hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#276A68]"
+          className="flex-shrink-0 rounded-full p-1.5 text-white/90 transition-colors hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#276A68]"
           aria-label="Dismiss crisis resources banner"
         >
           <X className="h-4 w-4" />

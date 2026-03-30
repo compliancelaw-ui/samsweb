@@ -427,7 +427,7 @@ export default function GriefAndLossPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Their Life Mattered. So Does Yours.</h2>
-          <p className="text-white/80 text-xl mb-8 leading-relaxed">
+          <p className="text-white/90 text-xl mb-8 leading-relaxed">
             Sam&apos;s OATH began with loss, and the belief that no family
             should carry that loss in silence. Take Sam&apos;s OATH in your loved
             one&apos;s memory and join a community that understands.

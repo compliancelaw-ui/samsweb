@@ -34,7 +34,7 @@ export default async function WorkplacePage() {
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
                 {c["hero.title"]}
               </h1>
-              <p className="text-xl text-white/80">
+              <p className="text-xl text-white/90">
                 {c["hero.subtitle"]}
               </p>
             </div>
@@ -256,7 +256,7 @@ export default async function WorkplacePage() {
           <h2 className="text-white mb-4">
             {c["cta.title"]}
           </h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p className="text-white/90 text-lg mb-8">
             {c["cta.body"]}
           </p>
           <Link

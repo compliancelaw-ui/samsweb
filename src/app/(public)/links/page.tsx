@@ -169,7 +169,7 @@ export default function LinksPage() {
           >
             <span className="relative z-10">Take Sam&apos;s OATH</span>
             <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal to-[#4ABFBC] opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-            <span className="mt-1 block text-sm font-normal text-white/80 relative z-10">
+            <span className="mt-1 block text-sm font-normal text-white/90 relative z-10">
               Pledge to break the silence
             </span>
           </Link>

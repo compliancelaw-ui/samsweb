@@ -167,7 +167,7 @@ export default async function HomePage() {
               <p className="text-white/90 text-sm">Of families carry this in silence, alone</p>
             </div>
           </div>
-          <p className="text-center text-white/80 text-lg max-w-2xl mx-auto">
+          <p className="text-center text-white/90 text-lg max-w-2xl mx-auto">
             They&apos;re not alone. They just can&apos;t see each other because
             nobody is talking. Sam&apos;s OATH changes that.
           </p>

@@ -192,7 +192,7 @@ export default async function MusicPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">Listen &amp; Follow</h2>
-          <p className="text-white/80 text-xl mb-10 leading-relaxed">
+          <p className="text-white/90 text-xl mb-10 leading-relaxed">
             Sam&apos;s OATH is on Apple Music, Spotify, YouTube, and dozens of
             streaming platforms. Follow us to hear new releases and help these
             songs reach everyone carrying the weight of substance use or mental
@@ -203,7 +203,7 @@ export default async function MusicPage() {
               platforms={["appleMusic", "spotify", "youtube", "tiktok", "instagram", "facebook"]}
             />
           </div>
-          <p className="text-white/50 text-sm mt-6">
+          <p className="text-white/70 text-sm mt-6">
             Search &ldquo;Sam&apos;s OATH&rdquo; on any streaming platform
           </p>
         </div>

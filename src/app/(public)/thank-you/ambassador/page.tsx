@@ -21,7 +21,7 @@ export default function ThankYouAmbassadorPage() {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Application Received
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Thank you for wanting to be an ambassador for Sam&apos;s OATH. Your
             willingness to lead speaks volumes.
           </p>

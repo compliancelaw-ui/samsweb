@@ -119,7 +119,7 @@ export default function EventsPage() {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
             Bringing the Conversation to Your Community
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Frank Sheeder speaks to organizations, communities, and families about
             substance use, loss, and the power of choosing openness over
             silence.
@@ -290,7 +290,7 @@ export default function EventsPage() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Bring This Conversation to Your Community
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Every audience includes people who are carrying substance use or
             mental health challenges in silence. Frank helps organizations create
             space for honest conversation, practical support, and lasting change.
@@ -310,7 +310,7 @@ export default function EventsPage() {
               Take Sam&apos;s OATH
             </Link>
           </div>
-          <p className="text-white/50 text-sm mt-6">
+          <p className="text-white/70 text-sm mt-6">
             For booking inquiries, use the contact form or email directly.
             Frank is available for in-person and virtual events nationwide.
           </p>

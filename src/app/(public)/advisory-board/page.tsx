@@ -109,7 +109,7 @@ export default function AdvisoryBoardPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-primary-800 via-primary to-teal py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/80 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/90 mb-3">
             Guided by Lived Experience
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -170,7 +170,7 @@ export default function AdvisoryBoardPage() {
                     <h3 className="text-xl font-bold text-white">
                       {advisor.name}
                     </h3>
-                    <p className="text-white/80 text-sm">{advisor.relationship}</p>
+                    <p className="text-white/90 text-sm">{advisor.relationship}</p>
                   </div>
                 </div>
                 <div className="p-6">
@@ -207,7 +207,7 @@ export default function AdvisoryBoardPage() {
             growing it to include people who can help us replace silence with
             openness, with stories, and with real support.&rdquo;
           </blockquote>
-          <p className="text-white/60 font-medium">
+          <p className="text-white/90 font-medium">
             Frank Sheeder, Founder of Sam&apos;s OATH
           </p>
         </div>
@@ -269,11 +269,11 @@ export default function AdvisoryBoardPage() {
             Express Interest or Nominate
             <ArrowRight className="w-5 h-5" />
           </Link>
-          <p className="text-white/60 text-sm mt-4">
+          <p className="text-white/90 text-sm mt-4">
             Or email us directly at{" "}
             <a
               href="mailto:board@samsoath.org"
-              className="text-white/80 underline"
+              className="text-white/90 underline"
             >
               board@samsoath.org
             </a>

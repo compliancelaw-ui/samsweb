@@ -21,7 +21,7 @@ export default function ThankYouNewsletterPage() {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             You&apos;re In
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Welcome to the community. You&apos;ll receive movement updates,
             stories, and ways to get involved. We promise not to spam you.
           </p>

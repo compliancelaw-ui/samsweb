@@ -75,7 +75,7 @@ export default async function FamiliesPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">{c["cta-early.title"]}</h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p className="text-white/90 text-lg mb-8">
             {c["cta-early.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

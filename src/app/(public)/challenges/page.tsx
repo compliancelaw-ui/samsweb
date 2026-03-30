@@ -289,7 +289,7 @@ export default async function ChallengesPage() {
           <h2 className="text-white text-3xl font-bold mb-4">
             Ready to Start the Journey?
           </h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p className="text-white/90 text-lg mb-8">
             Every challenge is one step closer to healing. Take Sam&apos;s OATH and
             become part of a community that chooses openness over silence.
           </p>

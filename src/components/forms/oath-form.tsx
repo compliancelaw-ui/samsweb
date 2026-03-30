@@ -155,7 +155,7 @@ export function OathForm() {
                 <cat.icon aria-hidden="true" className={cn("w-6 h-6 mt-0.5 flex-shrink-0", isSelected ? "text-white" : "")} />
                 <div>
                   <p className="font-semibold text-base">{cat.label}</p>
-                  <p className={cn("text-sm mt-1", isSelected ? "text-white/80" : "opacity-70")}>
+                  <p className={cn("text-sm mt-1", isSelected ? "text-white/90" : "opacity-70")}>
                     {cat.description}
                   </p>
                 </div>

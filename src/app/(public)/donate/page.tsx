@@ -6,9 +6,7 @@ import {
   BookOpen,
   Shield,
   HandHeart,
-  FileText,
 } from "lucide-react";
-import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { DonationForm } from "@/components/forms/donation-form";
 
@@ -61,11 +59,11 @@ export default function DonatePage() {
       <section className="bg-gradient-to-br from-teal to-primary py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <Heart className="w-12 h-12 mx-auto mb-6 text-white/80" />
+            <Heart className="w-12 h-12 mx-auto mb-6 text-white/90" />
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
               Support the Movement
             </h1>
-            <p className="text-xl text-white/80">
+            <p className="text-xl text-white/90">
               Every dollar helps us break the silence around substance use and
               mental health. Your generosity ensures no family carries this
               weight alone.

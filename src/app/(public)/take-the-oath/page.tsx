@@ -28,7 +28,7 @@ export default async function TakeTheOathPage() {
               <p className="text-xl text-white/90 mb-6">
                 {c["hero.subtitle"]}
               </p>
-              <p className="text-white/80">
+              <p className="text-white/90">
                 {c["hero.body"]}
               </p>
             </div>

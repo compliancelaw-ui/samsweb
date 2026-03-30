@@ -198,7 +198,7 @@ export default async function ContactPage() {
       <SectionWrapper variant="gradient">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-white mb-4">{c["cta.title"]}</h2>
-          <p className="text-white/80 text-xl mb-10 leading-relaxed">
+          <p className="text-white/90 text-xl mb-10 leading-relaxed">
             {c["cta.body"]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

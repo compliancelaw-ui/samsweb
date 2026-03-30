@@ -150,7 +150,7 @@ export default async function GuidePage({
             <span className="text-xs font-medium px-2.5 py-1 bg-white/20 rounded-full">
               {CATEGORY_LABELS[guide.category] || guide.category}
             </span>
-            <span className="text-xs text-white/80 flex items-center gap-1">
+            <span className="text-xs text-white/90 flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               {new Date(guide.created_at).toLocaleDateString("en-US", {
                 year: "numeric",

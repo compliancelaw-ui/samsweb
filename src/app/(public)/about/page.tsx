@@ -131,7 +131,7 @@ export default async function AboutPage() {
                   </p>
                 </blockquote>
               </div>
-              <div className="mt-8 flex items-center gap-3 text-white/50">
+              <div className="mt-8 flex items-center gap-3 text-white/70">
                 <div className="w-2 h-2 rounded-full bg-teal/50" />
                 <p className="text-sm">
                   Samuel Martin Hagood Sheeder &middot; July 11, 1998 &ndash;
@@ -324,7 +324,7 @@ export default async function AboutPage() {
       <SectionWrapper variant="gradient">
         <div className="text-center text-white mb-12">
           <h2 className="text-white mb-4">{c["vision.title"]}</h2>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto">
+          <p className="text-white/90 text-lg max-w-2xl mx-auto">
             {c["vision.subtitle"]}
           </p>
         </div>
@@ -356,7 +356,7 @@ export default async function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 {item.title}
               </h3>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 {item.description}
               </p>
             </div>

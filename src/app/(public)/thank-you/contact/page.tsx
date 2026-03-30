@@ -21,7 +21,7 @@ export default function ThankYouContactPage() {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Message Received
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Thank you for reaching out. We read every message and will get back
             to you as soon as possible.
           </p>

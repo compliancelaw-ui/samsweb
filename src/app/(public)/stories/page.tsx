@@ -394,7 +394,7 @@ export default async function StoriesPage() {
             Sharing your story is Authenticity.
             Together, we heal.
           </p>
-          <p className="text-white/80 text-base mb-10">
+          <p className="text-white/90 text-base mb-10">
             O &rarr; A &rarr; T &rarr; H
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
