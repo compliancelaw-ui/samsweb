@@ -159,7 +159,7 @@ export default async function ShareYourStoryPage() {
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="text-teal mt-0.5">&#10003;</span>
-                  Your family's experience with substance use, mental health, or loss
+                  Your family&apos;s experience with substance use, mental health, or loss
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-teal mt-0.5">&#10003;</span>

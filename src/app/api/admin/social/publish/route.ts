@@ -2,13 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import {
   publishToFacebook,
   publishToInstagram,
+  publishToLinkedIn,
 } from "@/lib/social-publish";
 
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/admin/social/publish
- * Body: { platform: "facebook" | "instagram", text: string, imageUrl?: string }
+ * Body: { platform: "facebook" | "instagram" | "linkedin", text: string, imageUrl?: string }
  */
 export async function POST(req: NextRequest) {
   try {
@@ -39,6 +40,11 @@ export async function POST(req: NextRequest) {
         );
       }
       const result = await publishToInstagram(text, imageUrl);
+      return NextResponse.json(result, { status: result.ok ? 200 : 500 });
+    }
+
+    if (platform === "linkedin") {
+      const result = await publishToLinkedIn(text);
       return NextResponse.json(result, { status: result.ok ? 200 : 500 });
     }
 

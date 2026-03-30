@@ -125,6 +125,17 @@ const PAGE_HELP: Record<string, { title: string; tips: string[]; manualSection: 
       "Pick a post type for a quick start, or write custom instructions.",
       "Click Copy to paste directly into the social platform.",
       "Add hashtags from the suggestions below the generated post.",
+      "Click 'View Analytics' to see engagement metrics across all platforms.",
+    ],
+    manualSection: "social",
+  },
+  "/admin/social/analytics": {
+    title: "Social Media Analytics",
+    tips: [
+      "Overview cards show totals across all connected platforms.",
+      "Switch between 7, 30, and 90 day windows to spot trends.",
+      "Each platform card breaks down impressions, clicks, likes, shares, and comments.",
+      "Platforms without credentials show 'Not Connected' with setup instructions.",
     ],
     manualSection: "social",
   },

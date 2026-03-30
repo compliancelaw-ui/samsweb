@@ -13,6 +13,7 @@ export async function GET() {
     platforms: {
       facebook: configured.includes("Facebook"),
       instagram: configured.includes("Instagram"),
+      linkedin: configured.includes("LinkedIn"),
     },
   });
 }

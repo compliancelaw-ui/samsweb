@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   Sparkles,
@@ -17,6 +18,7 @@ import {
   CheckCircle2,
   Image as ImageIcon,
   AlertCircle,
+  BarChart3,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -176,6 +178,7 @@ const SUGGESTED_HASHTAGS = [
 interface PlatformStatus {
   facebook: boolean;
   instagram: boolean;
+  linkedin: boolean;
 }
 
 interface PublishResult {
@@ -214,7 +217,7 @@ export default function AdminSocialPage() {
       })
       .catch((err) => {
         console.error("Failed to fetch social status:", err);
-        setPlatformStatus({ facebook: false, instagram: false });
+        setPlatformStatus({ facebook: false, instagram: false, linkedin: false });
       })
       .finally(() => setStatusLoading(false));
   }, []);
@@ -239,7 +242,7 @@ export default function AdminSocialPage() {
         : "bg-red-500";
 
   const anyPlatformConnected =
-    platformStatus?.facebook || platformStatus?.instagram;
+    platformStatus?.facebook || platformStatus?.instagram || platformStatus?.linkedin;
 
   /* ---- generate ---- */
 
@@ -305,7 +308,7 @@ export default function AdminSocialPage() {
 
   /* ---- publish ---- */
 
-  const handlePublish = async (targetPlatform: "facebook" | "instagram") => {
+  const handlePublish = async (targetPlatform: "facebook" | "instagram" | "linkedin") => {
     if (!generatedPost) return;
     setPublishing(targetPlatform);
     setPublishResult(null);
@@ -349,13 +352,22 @@ export default function AdminSocialPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900">
-          Social Post Generator
-        </h2>
-        <p className="text-gray-500 mt-1">
-          Create ready-to-post content for your social channels.
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900">
+            Social Post Generator
+          </h2>
+          <p className="text-gray-500 mt-1">
+            Create ready-to-post content for your social channels.
+          </p>
+        </div>
+        <Link
+          href="/admin/social/analytics"
+          className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition-colors shrink-0"
+        >
+          <BarChart3 className="h-4 w-4" />
+          View Analytics
+        </Link>
       </div>
 
       {/* Connection status banner */}
@@ -388,6 +400,12 @@ export default function AdminSocialPage() {
                       Instagram
                     </span>
                   )}
+                  {platformStatus.linkedin && (
+                    <span className="flex items-center gap-1.5 text-xs text-emerald-700">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      LinkedIn
+                    </span>
+                  )}
                   {!platformStatus.facebook && (
                     <span className="flex items-center gap-1.5 text-xs text-gray-500">
                       <span className="h-2 w-2 rounded-full bg-gray-300" />
@@ -398,6 +416,12 @@ export default function AdminSocialPage() {
                     <span className="flex items-center gap-1.5 text-xs text-gray-500">
                       <span className="h-2 w-2 rounded-full bg-gray-300" />
                       Instagram not configured
+                    </span>
+                  )}
+                  {!platformStatus.linkedin && (
+                    <span className="flex items-center gap-1.5 text-xs text-gray-500">
+                      <span className="h-2 w-2 rounded-full bg-gray-300" />
+                      LinkedIn not configured
                     </span>
                   )}
                 </div>
@@ -411,9 +435,9 @@ export default function AdminSocialPage() {
                   Social publishing is not yet connected
                 </p>
                 <p className="text-xs text-blue-700 mt-1">
-                  Add META_SAMSOATH_PAGE_TOKEN and META_SAMSOATH_PAGE_ID to your
-                  environment variables to enable direct publishing to Facebook
-                  and Instagram.
+                  Add META_SAMSOATH_PAGE_TOKEN and META_SAMSOATH_PAGE_ID for
+                  Facebook/Instagram, or LINKEDIN_SAMSOATH_ACCESS_TOKEN and
+                  LINKEDIN_SAMSOATH_ORG_ID for LinkedIn publishing.
                 </p>
               </div>
             </div>
@@ -720,6 +744,24 @@ export default function AdminSocialPage() {
                       {publishing === "instagram"
                         ? "Publishing..."
                         : "Publish to Instagram"}
+                    </button>
+                  )}
+
+                  {/* Publish to LinkedIn button */}
+                  {platformStatus?.linkedin && (
+                    <button
+                      onClick={() => handlePublish("linkedin")}
+                      disabled={publishing !== null || !generatedPost}
+                      className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] text-white text-sm font-medium rounded-lg hover:bg-[#0A66C2]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {publishing === "linkedin" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="h-4 w-4" />
+                      )}
+                      {publishing === "linkedin"
+                        ? "Publishing..."
+                        : "Publish to LinkedIn"}
                     </button>
                   )}
                 </div>
