@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Workplace Mental Health Toolkit | Sam's OATH",
     description:
-      "Everything you need to bring Sam's OATH to your workplace: facilitator guide, discussion prompts, ceremony instructions, and printable materials.",
+      "Everything you need to bring Sam's OATH to your workplace: facilitator guide, discussion prompts, group OATH session guide, and printable materials.",
     url: "https://samsoath.org/workplace/toolkit",
   },
 };
@@ -46,7 +46,7 @@ const toolkitItems = [
   },
   {
     icon: Heart,
-    title: "OATH Ceremony Guide",
+    title: "Group OATH Session Guide",
     description:
       "How to host a brief, optional group oath-taking at work. Five minutes, deeply meaningful, and a moment your team will remember.",
     color: "bg-orange-50",

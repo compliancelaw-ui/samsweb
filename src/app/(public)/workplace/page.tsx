@@ -65,7 +65,7 @@ export default async function WorkplacePage() {
                 </h2>
                 <p className="text-gray-600">
                   Download our complete toolkit with a facilitator guide,
-                  discussion prompts, OATH ceremony instructions, and printable
+                  discussion prompts, OATH session guide, and printable
                   materials. Everything you need to start the conversation.
                 </p>
               </div>

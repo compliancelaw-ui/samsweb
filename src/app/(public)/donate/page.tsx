@@ -30,7 +30,7 @@ const IMPACT_ITEMS = [
     icon: Users,
     title: "Community Events",
     description:
-      "Local gatherings, speaking engagements, and OATH ceremonies that bring families together and build real connection.",
+      "Local gatherings, speaking engagements, and community events that bring families together and build real connection.",
     color: "primary",
     bgColor: "bg-primary-50",
   },
