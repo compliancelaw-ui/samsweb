@@ -44,7 +44,7 @@ const LANGUAGE_PAIRS = [
     intro: "Recovery is a journey, not a judgment. These words remove the moral weight.",
     items: [
       { instead: "Clean / Dirty", say: "In recovery / Actively using" },
-      { instead: "Clean urine / Dirty urine", say: "Negative / Positive test result" },
+      { instead: "Clean urine / Dirty urine", say: "Testing negative / Testing positive" },
       { instead: "Relapse", say: "Recurrence or return to use" },
       { instead: "On the wagon / Off the wagon", say: "In recovery / Experiencing a recurrence" },
     ],
