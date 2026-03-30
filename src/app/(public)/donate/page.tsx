@@ -153,15 +153,6 @@ export default function DonatePage() {
               <p className="font-semibold text-gray-900">Secured by Stripe</p>
             </div>
           </div>
-          <div className="mt-6">
-            <Link
-              href="/about/annual-reports"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-600 transition-colors"
-            >
-              <FileText className="w-4 h-4" />
-              View Annual Reports
-            </Link>
-          </div>
         </div>
       </SectionWrapper>
     </>
