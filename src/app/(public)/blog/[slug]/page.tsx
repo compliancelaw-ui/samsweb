@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { MarkdownContent } from "@/components/ui/markdown-content";
 
 export const dynamic = "force-dynamic";
 
@@ -147,9 +148,10 @@ export default async function BlogPostPage({
       {/* Content */}
       <SectionWrapper variant="white">
         <article className="max-w-3xl mx-auto">
-          <div className="prose prose-lg prose-gray max-w-none whitespace-pre-wrap">
-            {post.content}
-          </div>
+          <MarkdownContent
+            content={post.content}
+            className="prose prose-lg prose-gray max-w-none"
+          />
         </article>
       </SectionWrapper>
 

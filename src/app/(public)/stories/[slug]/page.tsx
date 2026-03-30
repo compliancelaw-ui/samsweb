@@ -6,6 +6,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { StoryShareButton } from "@/components/stories/story-share-button";
 import { PageShareButtons } from "@/components/ui/page-share-buttons";
+import { MarkdownContent } from "@/components/ui/markdown-content";
 
 export const revalidate = 300;
 
@@ -169,11 +170,10 @@ export default async function StoryPage({
             Back to all stories
           </Link>
 
-          <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed">
-            {story.content.split("\n").map((paragraph, i) =>
-              paragraph.trim() ? <p key={i}>{paragraph}</p> : null
-            )}
-          </div>
+          <MarkdownContent
+            content={story.content}
+            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed"
+          />
 
           {/* Footer */}
           <div className="mt-12 pt-8 border-t border-gray-200">
