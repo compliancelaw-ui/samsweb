@@ -214,6 +214,8 @@ export default function LinksPage() {
         <div className="text-center">
           <a
             href="https://samsoath.org"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm text-gray-400 hover:text-teal transition-colors duration-200"
           >
             samsoath.org
