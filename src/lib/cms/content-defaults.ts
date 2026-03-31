@@ -586,7 +586,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Hero Subtitle",
     contentType: "textarea",
     defaultContent:
-      "15 original songs for anyone who knows the weight of silence \u2014 and the relief of finally being heard. Music has a way of saying what words alone can\u2019t.",
+      "Original songs for anyone who knows the weight of silence, and the relief of finally being heard. Music has a way of saying what words alone cannot.",
     group: "Hero",
   },
   {
@@ -879,7 +879,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Frank \u2014 Paragraph 3",
     contentType: "textarea",
     defaultContent:
-      "After Sam\u2019s passing, Frank made a decision that changed everything. He wrote about his son publicly on LinkedIn \u2014 openly, honestly, without filter. That post reached over 345,000 people. Nearly 2,000 reactions. 484 comments. Families everywhere responded, saying the same thing: \u201cI thought I was the only one.\u201d",
+      "After Sam\u2019s passing, Frank made a decision that changed everything. He wrote about his son publicly on LinkedIn \u2014 openly, honestly, without filter. That post reached over 345,000 people. 2,000+ reactions. 484 comments. Families everywhere responded, saying the same thing: \u201cI thought I was the only one.\u201d",
     group: "Frank",
   },
   {
@@ -888,7 +888,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Frank \u2014 Paragraph 4",
     contentType: "textarea",
     defaultContent:
-      "Frank channeled that grief into purpose. He wrote 15 original songs, founded Sam\u2019s OATH, and committed his life to making sure no parent ever has to grieve in silence again.",
+      "Frank channeled that grief into purpose. He wrote original songs, founded Sam's OATH, and committed his life to making sure no parent ever has to grieve in silence again.",
     group: "Frank",
   },
   {
@@ -915,7 +915,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Annie \u2014 Paragraph 3",
     contentType: "textarea",
     defaultContent:
-      "One of the 15 songs on the Sam\u2019s OATH album is called \u201cFor Annie\u201d \u2014 written from a sister\u2019s perspective, about the unique grief and love that siblings carry. It\u2019s a reminder that when we talk about families affected by substance use, siblings deserve to be heard too.",
+      "One of the songs Frank wrote is called \"For Annie,\" written from a sister's perspective, about the unique grief and love that siblings carry. It's a reminder that when we talk about families affected by substance use, siblings deserve to be heard too.",
     group: "Annie",
   },
   {
@@ -1363,7 +1363,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Origin Story \u2014 Paragraph 2",
     contentType: "textarea",
     defaultContent:
-      "After Sam passed away on September 28, 2025, his father Frank made a decision that changed everything. Instead of retreating into silence, Frank wrote openly on LinkedIn about Sam\u2019s life, his struggles, and his love. That post reached 345,000 people. Nearly 2,000 reactions. 484 comments. All saying the same thing: \u201cI thought I was the only one.\u201d",
+      "After Sam passed away on September 28, 2025, his father Frank made a decision that changed everything. Instead of retreating into silence, Frank wrote openly on LinkedIn about Sam\u2019s life, his struggles, and his love. That post reached 345,000 people. 2,000+ reactions. 484 comments. All saying the same thing: \u201cI thought I was the only one.\u201d",
     group: "Origin Story",
   },
   {
@@ -1390,7 +1390,7 @@ export const CONTENT_REGISTRY: ContentFieldDef[] = [
     label: "Frank Bio \u2014 Paragraph 2",
     contentType: "textarea",
     defaultContent:
-      "A seasoned business leader with decades of experience building organizations and leading teams, Frank brings the same strategic thinking and relentless energy to Sam\u2019s OATH. He is the songwriter behind all 15 original tracks on the Sam\u2019s OATH album, available on Apple Music, Spotify, YouTube, and all major streaming platforms.",
+      "A seasoned business leader with decades of experience building organizations and leading teams, Frank brings the same strategic thinking and relentless energy to Sam's OATH. He is also a songwriter whose original music about grief, healing, and family has resonated with families across the country.",
     group: "Founder Bio",
   },
   {

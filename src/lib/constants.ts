@@ -40,7 +40,7 @@ export const NAV_LINKS = [
 
 export const CRISIS_RESOURCES = {
   suicideHotline: { number: "988", label: "Suicide & Crisis Lifeline" },
-  crisisText: { number: "741741", keyword: "HELLO", label: "Crisis Text Line" },
+  crisisText: { number: "741741", keyword: "HOME", label: "Crisis Text Line" },
   emergency: { number: "911", label: "Emergency" },
 } as const;
 

@@ -13,7 +13,7 @@ import { getPageContent } from "@/lib/cms/get-page-content";
 export const metadata: Metadata = {
   title: "Original Music for Healing | Songs About Substance Use, Grief & Hope",
   description:
-    "Listen to 15 original songs about substance use, grief, healing, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
+    "Listen to original songs about substance use, grief, healing, and hope. Music that speaks what words alone cannot say. From the Sam's OATH movement.",
   alternates: { canonical: "/music" },
 };
 

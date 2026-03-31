@@ -101,13 +101,13 @@ const BOOKS = [
     title: "Beautiful Boy",
     author: "David Sheff",
     description:
-      "A father's powerful account of his son's addiction. Honest, heartbreaking, and full of love.",
+      "A father's powerful account of his son's substance use disorder. Honest, heartbreaking, and full of love.",
   },
   {
     title: "Codependent No More",
     author: "Melody Beattie",
     description:
-      "The groundbreaking guide for anyone who loves someone struggling with addiction.",
+      "The groundbreaking guide for anyone who loves someone affected by substance use.",
   },
   {
     title: "It's OK That You're Not OK",
@@ -119,7 +119,7 @@ const BOOKS = [
     title: "In the Realm of Hungry Ghosts",
     author: "Gabor Mate, M.D.",
     description:
-      "A compassionate look at the roots of addiction from one of the world's leading experts.",
+      "A compassionate look at the roots of substance use disorder from one of the world's leading experts.",
   },
   {
     title: "The Grief Recovery Handbook",

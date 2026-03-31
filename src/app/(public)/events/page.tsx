@@ -47,7 +47,7 @@ const SPEAKING_TOPICS: SpeakingTopic[] = [
   {
     title: "What Employers Need to Know",
     description:
-      "Substance use and mental health challenges cost U.S. employers over $400 billion annually. More importantly, they cost lives. This session helps leaders create workplace cultures where people feel safe asking for help before crisis hits.",
+      "Untreated mental health in the workplace costs over $740 billion annually. More importantly, it costs lives. This session helps leaders create workplace cultures where people feel safe asking for help before crisis hits.",
     icon: <Building2 className="w-6 h-6" />,
   },
   {
@@ -326,7 +326,7 @@ export default function EventsPage() {
             {" | "}
             <strong>SAMHSA Helpline</strong> 1-800-662-4357
             {" | "}
-            <strong>Crisis Text Line</strong> text HELLO to 741741
+            <strong>Crisis Text Line</strong> text HOME to 741741
           </p>
         </div>
       </div>

@@ -111,7 +111,7 @@ export default async function GetInvolvedPage() {
                 {c["ambassador-card.description"]}
               </p>
               <span className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4">
-                Learn more <ArrowRight className="w-4 h-4" />
+                Apply to be an Ambassador <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
 

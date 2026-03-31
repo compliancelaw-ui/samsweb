@@ -46,8 +46,8 @@ export default async function PressPage() {
               <p className="text-sm text-gray-600 mt-1">People Reached</p>
             </div>
             <div className="text-center p-6 bg-primary-50 rounded-xl">
-              <p className="text-3xl font-bold text-primary">15</p>
-              <p className="text-sm text-gray-600 mt-1">Original Songs</p>
+              <p className="text-3xl font-bold text-primary">2,000+</p>
+              <p className="text-sm text-gray-600 mt-1">Reactions on Viral Post</p>
             </div>
             <div className="text-center p-6 bg-orange-50 rounded-xl">
               <p className="text-3xl font-bold text-orange">484</p>
@@ -191,7 +191,7 @@ export default async function PressPage() {
               },
               {
                 icon: Users,
-                title: "The OATH That's Changing How We Talk About Addiction",
+                title: "The OATH That's Changing How We Talk About Substance Use",
                 description:
                   "Sam's OATH is the first national framework giving families a concrete way to break through the silence around substance use and mental health challenges. Four simple commitments, Openness, Authenticity, Togetherness, and Healing, replace shame with community and silence with conversation.",
               },
@@ -203,9 +203,9 @@ export default async function PressPage() {
               },
               {
                 icon: Music,
-                title: "Music as Medicine: 15 Songs of Grief and Hope",
+                title: "Music as Medicine: Songs of Grief and Hope",
                 description:
-                  "Frank Sheeder wrote 15 original songs about loss, healing, and family. From 'What's Hidden Doesn't Heal' to 'Joy Anyway,' the music gives voice to emotions families struggle to express. All tracks are on Apple Music, Spotify, and streaming platforms.",
+                  "Frank Sheeder wrote original songs about loss, healing, and family. From 'What's Hidden Doesn't Heal' to 'Joy Anyway,' the music gives voice to emotions families struggle to express.",
               },
               {
                 icon: MapPin,
@@ -292,7 +292,7 @@ export default async function PressPage() {
               interactive movement map, community stories, original music,
               workplace programs, and ambassador network, Sam&apos;s OATH has
               reached more than 345,000 people across all 50 states. The
-              foundation&apos;s tagline, &ldquo;What&apos;s hidden doesn&apos;t
+              organization&apos;s tagline, &ldquo;What&apos;s hidden doesn&apos;t
               heal,&rdquo; captures the core belief that open conversation is the
               first step toward recovery and connection. Learn more at
               samsoath.org.

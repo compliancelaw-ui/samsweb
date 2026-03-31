@@ -30,7 +30,7 @@ const CRISIS_FOOTER = `
   </p>
   <p style="margin:0;font-size:13px;color:#4B5563;line-height:1.6;">
     Suicide &amp; Crisis Lifeline: <strong>988</strong> (call or text)<br/>
-    Crisis Text Line: Text <strong>HELLO</strong> to <strong>741741</strong><br/>
+    Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong><br/>
     SAMHSA National Helpline: <strong>1-800-662-4357</strong> (free, confidential, 24/7)
   </p>
 </div>`;

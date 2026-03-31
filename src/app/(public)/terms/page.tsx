@@ -296,8 +296,9 @@ export default function TermsPage() {
 
           <h2>12. Governing Law</h2>
           <p>
-            These terms are governed by the laws of the United States. Any
-            disputes will be resolved in the state of Maryland.
+            These terms are governed by the laws of the State of Texas. Any
+            disputes will be resolved in the state and federal courts located
+            in Dallas County, Texas.
           </p>
 
           <h2>Contact Us</h2>

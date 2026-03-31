@@ -221,7 +221,7 @@ export default function InstallPage() {
       <SectionWrapper variant="default">
         <div className="mx-auto max-w-xl text-center">
           <p className="text-gray-600 mb-6">
-            Have not taken the OATH yet? Start there.
+            Haven&apos;t taken the OATH yet? Start there.
           </p>
           <Link
             href="/take-the-oath"

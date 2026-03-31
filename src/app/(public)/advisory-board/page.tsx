@@ -30,7 +30,7 @@ const FOUNDING_ADVISORS = [
     color: "bg-primary/10 text-primary border-primary/20",
     iconColor: "text-primary",
     image: "/images/photos/frank-headshot.jpg",
-    bio: "Attorney, songwriter, and the driving force behind Sam's OATH. After Sam's passing, Frank channeled his family's experience into a national movement, writing 15 original songs and building the platform that connects families across all 50 states. His viral LinkedIn post reached 345,000 people and proved that families everywhere are waiting for permission to speak openly.",
+    bio: "Attorney, songwriter, and the driving force behind Sam's OATH. After Sam's passing, Frank channeled his family's experience into a national movement, writing original songs and building the platform that connects families across all 50 states. His viral LinkedIn post reached 345,000 people and proved that families everywhere are waiting for permission to speak openly.",
     expertise: "Nonprofit Leadership, Communications, Legal",
   },
   {

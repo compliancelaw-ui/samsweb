@@ -178,7 +178,7 @@ export default async function AboutPage() {
                   <p className="text-xs text-gray-500 mt-1">People Reached</p>
                 </div>
                 <div className="bg-teal-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-teal">1,933</p>
+                  <p className="text-2xl font-bold text-teal">2,000+</p>
                   <p className="text-xs text-gray-500 mt-1">Reactions</p>
                 </div>
                 <div className="bg-orange-50 rounded-xl p-4 text-center">
