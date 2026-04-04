@@ -45,7 +45,7 @@ export function NewsletterForm() {
 
       if (!response.ok) {
         const error = await response.json();
-        throw new Error(error.message || "Something went wrong");
+        throw new Error(error.message || error.error || "Something went wrong");
       }
 
       setIsSuccess(true);
