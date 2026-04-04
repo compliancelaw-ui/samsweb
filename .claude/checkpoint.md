@@ -1,86 +1,69 @@
-# Checkpoint - 2026-03-29 (Final)
+# Checkpoint - 2026-04-04
 
-## Session Complete - Site Is Debut Ready
+## What Was Accomplished This Session
 
-75 pages deployed across 21 commits. Full engagement platform built.
+### Fixes & Cleanup
+- Committed orphaned text contrast fixes from prior session (28 files)
+- Contact page: removed "For Media" section
+- Press page: "Story Angles" -> "Story Topics", removed brand assets section, merged media sections
+- Install page: reframed from "Install" to "Add to Home Screen"
+- Removed Apple Music/Spotify icons and references from social buttons, constants, links page
+- Removed music link from footer, updated metadata
 
-## Pre-Launch Testing (Frank's action)
+### Content Audit & Fixes
+- Full site content audit for language, accuracy, consistency
+- Fixed governing law: Maryland -> Texas, Dallas County
+- Standardized Crisis Text keyword to HOME (was mixed HELLO/HOME)
+- Fixed "foundation's tagline" -> "organization's tagline"
+- Standardized reactions stat to "2,000+"
+- Standardized workplace cost stat to $740B
+- Replaced "addiction" with person-first language in book descriptions
+- Removed "15 songs" count from all references (music pulled back)
+- Removed ceremony/ritual language from workplace pages
+- Generated Word doc of all site content for Frank's review
 
-- [ ] Take the OATH on mobile - test form, thank-you page, certificate, sharing
-- [ ] Submit a test story - check submission and thank-you flow
-- [ ] Download a resource guide PDF - verify branding and content
-- [ ] Try the challenge join form on /challenges
-- [ ] Test mobile experience (nav, images, readability)
-- [ ] Read "Who Was Sam?" section aloud - make sure it sounds like Frank
-- [ ] Read first blog post - would you post this on LinkedIn?
-- [ ] Verify Supabase is on paid plan (free tier will choke under traffic)
-- [ ] Verify Vercel is on Pro plan (free tier has bandwidth limits)
+### Usability, Accessibility, Navigation
+- Generated PWA icons (192px + 512px) - fixes broken manifest
+- Footer text contrast: gray-300 -> gray-200 for WCAG AA
+- Added /families, /challenges, /get-involved, /feedback to footer
+- Added resource guides + missing pages to sitemap
+- Install page aria-label and aria-hidden fixes
+- Added spread-the-movement CTAs to all thank-you pages
 
-## Post-Launch Action Items
+### New Features
+- Built /feedback page with form, API route, thank-you page
+- Dynamic OG images for blog posts and stories (branded social cards)
+- Playwright test suite (navigation, oath flow, donate flow, accessibility)
+- Blog and story content now renders markdown properly (react-markdown)
 
-- [ ] Film founder video (2-3 min, iPhone, natural light, script outline in feature spec)
-- [ ] Write and post LinkedIn announcement linking to samsoath.org/take-the-oath
-- [ ] Set up Meta Developer App for social publishing (full checklist below)
-- [ ] Wait for TechSoup verification, then apply for Google Ad Grants
-- [ ] Get real stories flowing (ask LinkedIn audience to share)
+### Infrastructure
+- Stripe donations wired and LIVE (fixed env var newline issue)
+- Sentry org fixed from "sams-oath" to "frankventure"
+- Verified DNS/Cloudflare/Vercel config is working correctly
 
-## Social Account Setup
+## Still TODO
 
-### Meta Developer App (enables publishing from admin)
-1. Go to developers.facebook.com, create app (type: Business)
-2. Add Facebook Login product
-3. Request: pages_manage_posts, pages_read_engagement, instagram_content_publish, instagram_basic
-4. Generate long-lived Page Access Token
-5. Add env vars to Vercel:
-   - META_SAMSOATH_PAGE_TOKEN
-   - META_SAMSOATH_PAGE_ID
-   - META_SAMSOATH_IG_ACCOUNT_ID
+### Frank's Actions
+- [ ] Complete Goodstack verification for Google Ad Grants
+- [ ] Verify Supabase is on paid plan
+- [ ] Verify Vercel is on Pro plan
+- [ ] Film founder video
+- [ ] Write LinkedIn announcement
+- [ ] Set up Meta Developer App (Facebook/Instagram publishing)
+- [ ] Create/verify Facebook Page, Instagram Business, TikTok
+- [ ] Review Word doc (artifacts/samsoath-site-content.docx) and redline content
+- [ ] Test all mobile flows
+- [ ] Grab TechSoup freebies: social media audit, Canva templates, grant boot camp
 
-### Other Social
-- Create/verify Facebook Page for Sam's OATH
-- Convert Instagram @samsoath to Business Account, link to Facebook Page
-- TikTok @samsoath profile setup
-- Consider LinkedIn company page
+### Code Work (next session)
+- [ ] Advisory board page content (when ready)
+- [ ] Wire Meta Developer App (when Frank has tokens)
+- [ ] Quick wins from strategic review (crisis resource link on homepage, email required on OATH form)
+- [ ] Sentry auth token on Vercel for source map uploads
+- [ ] Run Playwright tests and fix any failures
 
-## What Was Built This Session
-
-### Public Site (75 pages)
-- Homepage restructured around O->A->T->H journey with Sam's story
-- Advisory board with Sheeder family as founding advisors
-- 11 Firefly-generated inclusive photos across site
-- 8 blog posts on Updates page
-- 7 downloadable resource guides for families + workplace toolkit
-- Monthly challenge system with public page + homepage card
-- Stories feed with masonry grid, featured stories, per-story sharing
-- Post-oath/story social sharing with pre-written messages + certificates
-- OG image generation for social sharing
-- Soft email capture for anonymous users
-- All language corrected (no stigma, no Foundation, no em-dashes, correct cause of death)
-
-### Admin Features
-- Content Calendar, Donations Dashboard, Social Publishing, Google Ad Grant tab
-- Resource Library CRUD, Analytics (shares + downloads)
-- 8-email drip sequence (0-90 days) following O->A->T->H arc
-- Post-story drip sequence (2 emails)
-- Monthly newsletter cron + template
-- Share event tracking
-
-### Database Tables Created
-- share_events (share tracking)
-- resource_documents (7 family guides + 1 workplace toolkit)
-- challenges + challenge_participants (3 months seeded)
-- blog_posts (8 posts)
-
-## Key Decisions (permanent)
-- "Sam's OATH" (never Foundation), EIN 39-5101030, Texas public charity
-- No "stigma" language - use openness, silence, community
-- No em-dashes - use commas, periods, colons, or hyphens
-- Sam died in a moped accident - never imply substance use was cause
-- OATH is a journey: O -> A -> T -> H (not four equal pillars)
-- Movement is FOR FAMILIES, not people in recovery
-- All content cites authoritative sources (SAMHSA, NAMI, NIMH)
-- Admin features built in SamsOath directly (not Frankventure hub)
-- Frank/Joey/Nancy in Texas, Annie in North Carolina
-
-## Feature Spec
-Full engagement platform plan at .claude/feature_specs/engagement-platform-plan.md
+## Key Decisions
+- No donation push (Frank prefers organic, not aggressive asks)
+- Advisory board page exists but not linked (not ready yet)
+- Music page exists but hidden from nav
+- TechSoup useful for social media audit, Canva templates, grant boot camp only

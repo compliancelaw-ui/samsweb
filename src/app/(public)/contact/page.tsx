@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ContactForm } from "@/components/forms/contact-form";
-import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
+// import { SocialFollowButtonsLabeled } from "@/components/ui/social-follow-buttons";
 import { getPageContent } from "@/lib/cms/get-page-content";
 
 export const metadata: Metadata = {
@@ -154,7 +154,7 @@ export default async function ContactPage() {
                 </p>
               </div>
 
-              {/* Social media links */}
+              {/* Social media links - uncomment when accounts are set up
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">
                   Follow the Movement
@@ -163,6 +163,7 @@ export default async function ContactPage() {
                   platforms={["instagram", "facebook", "youtube", "tiktok"]}
                 />
               </div>
+              */}
             </div>
           </div>
         </div>

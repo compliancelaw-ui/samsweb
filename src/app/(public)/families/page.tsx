@@ -5,7 +5,6 @@ import {
   Heart,
   Users,
   ArrowRight,
-  Music,
   HandHeart,
   Camera,
   Play,
@@ -120,18 +119,6 @@ export default async function FamiliesPage() {
                 <p>{c["frank.body-3"]}</p>
                 <p>{c["frank.body-4"]}</p>
               </div>
-              <div className="mt-6 flex items-center gap-3 text-sm text-gray-500">
-                <Music className="w-4 h-4 text-primary" />
-                <span>
-                  Listen to Frank&apos;s music on the{" "}
-                  <Link
-                    href="/music"
-                    className="text-primary font-medium hover:text-primary-600 transition-colors"
-                  >
-                    Sam&apos;s OATH album
-                  </Link>
-                </span>
-              </div>
             </div>
           </div>
           {/* Additional Frank photos */}
@@ -183,18 +170,6 @@ export default async function FamiliesPage() {
                 <p>{c["annie.body-1"]}</p>
                 <p>{c["annie.body-2"]}</p>
                 <p>{c["annie.body-3"]}</p>
-              </div>
-              <div className="mt-6 flex items-center gap-3 text-sm text-gray-500">
-                <Music className="w-4 h-4 text-teal" />
-                <span>
-                  Listen to &ldquo;For Annie&rdquo; on the{" "}
-                  <Link
-                    href="/music"
-                    className="text-teal font-medium hover:text-teal-600 transition-colors"
-                  >
-                    Sam&apos;s OATH album
-                  </Link>
-                </span>
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">

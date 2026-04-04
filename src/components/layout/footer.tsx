@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE_NAME, CRISIS_RESOURCES } from "@/lib/constants";
-import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
+// import { SocialFollowButtons } from "@/components/ui/social-follow-buttons";
 import { Logo } from "@/components/ui/logo";
 
 const takeActionLinks = [
@@ -47,13 +47,14 @@ export function Footer() {
               silence around substance use and mental health so no family
               carries this weight alone.
             </p>
-            {/* Follow Us */}
+            {/* Follow Us - uncomment when social accounts are set up
             <div className="mt-6">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-200 mb-3">
                 Follow Us
               </h4>
               <SocialFollowButtons variant="dark" size="sm" platforms={["youtube", "tiktok", "instagram", "facebook"]} />
             </div>
+            */}
           </div>
 
           {/* Column 2: Take Action */}
