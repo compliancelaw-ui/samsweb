@@ -26,7 +26,7 @@ const nextConfig = {
 };
 
 export default withSentryConfig(nextConfig, {
-  org: "sams-oath",
+  org: "frankventure",
   project: "samsoath",
   silent: true,
   widenClientFileUpload: true,

@@ -67,6 +67,15 @@ export async function generateMetadata({
   const story = await getStory(slug);
   if (!story) return { title: "Story Not Found" };
 
+  const location =
+    story.author_city && story.author_state
+      ? `${story.author_city}, ${story.author_state}`
+      : "";
+  const ogImageParams = new URLSearchParams({
+    title: story.title,
+    author: story.author_name,
+    ...(location ? { location } : {}),
+  });
   return {
     title: story.title,
     description:
@@ -78,6 +87,14 @@ export async function generateMetadata({
         story.excerpt || `A story of courage from ${story.author_name}.`,
       type: "article",
       publishedTime: story.published_at,
+      images: [
+        {
+          url: `/api/og/story?${ogImageParams.toString()}`,
+          width: 1200,
+          height: 630,
+          alt: story.title,
+        },
+      ],
     },
     alternates: { canonical: `/stories/${slug}` },
   };

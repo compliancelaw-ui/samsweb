@@ -49,6 +49,15 @@ export async function generateMetadata({
   }
 
   const description = post.excerpt || `${post.content.slice(0, 160)}...`;
+  const formattedDate = new Date(post.published_at).toLocaleDateString(
+    "en-US",
+    { month: "long", day: "numeric", year: "numeric" }
+  );
+  const ogImageParams = new URLSearchParams({
+    title: post.title,
+    author: post.author_name,
+    date: formattedDate,
+  });
   return {
     title: `${post.title} | Sam's OATH Updates`,
     description,
@@ -59,6 +68,14 @@ export async function generateMetadata({
       publishedTime: post.published_at,
       authors: [post.author_name],
       tags: post.tags || undefined,
+      images: [
+        {
+          url: `/api/og/blog?${ogImageParams.toString()}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     alternates: { canonical: `/blog/${slug}` },
   };
