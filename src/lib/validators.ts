@@ -5,10 +5,10 @@ import { z } from "zod";
 export const oathSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
   last_name: z.string().optional(),
-  email: z.string().email("Invalid email address").optional(),
+  email: z.string().email("Invalid email address").optional().or(z.literal("")),
   category: z.enum(["supporting", "supporter", "hope"]),
   city: z.string().min(1, "City is required"),
-  state: z.string().min(2, "State must be 2 characters").max(2, "State must be 2 characters").toUpperCase(),
+  state: z.string().min(2, "State must be 2 characters").max(2, "State must be 2 characters"),
   message: z.string().max(500, "Message must be 500 characters or fewer").optional(),
   name_display_type: z.enum(["full", "first", "initials", "anonymous"]),
   email_optin: z.boolean().default(false),
