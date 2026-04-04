@@ -26,7 +26,7 @@ export const storySchema = z.object({
   author_relation: z.string().optional(),
   title: z.string().min(3, "Title must be at least 3 characters").max(150, "Title must be 150 characters or fewer"),
   content: z.string().min(50, "Story must be at least 50 characters").max(10000, "Story must be 10,000 characters or fewer"),
-  photo_url: z.string().url().optional(),
+  photo_url: z.string().url().optional().or(z.literal("")),
   consent_publish: z.literal(true, "You must consent to publish"),
   consent_name: z.boolean(),
 });
@@ -123,7 +123,7 @@ export const donationSchema = z.object({
   amount: z.number().min(1, "Donation amount must be at least $1").max(100000, "Maximum donation is $100,000"),
   donation_type: z.enum(["one-time", "recurring"]),
   donor_name: z.string().optional(),
-  donor_email: z.string().email("Invalid email address").optional(),
+  donor_email: z.string().email("Invalid email address").optional().or(z.literal("")),
   is_anonymous: z.boolean().default(false),
   campaign: z.string().default("general"),
 });
