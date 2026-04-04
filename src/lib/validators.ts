@@ -138,7 +138,7 @@ export const feedbackSchema = z.object({
   anything_else: z.string().max(2000, "2,000 characters max").optional(),
   name: z.string().optional(),
   email: z.string().email("Invalid email address").optional().or(z.literal("")),
-  role: z.enum(["family", "person_in_recovery", "professional", "supporter", "other"]).optional(),
+  role: z.enum(["family", "person_in_recovery", "professional", "supporter", "other"]).optional().or(z.literal("")),
 });
 
 export type FeedbackFormData = z.infer<typeof feedbackSchema>;
