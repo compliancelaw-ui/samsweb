@@ -11,7 +11,7 @@ export default defineConfig({
   expect: { timeout: 10_000 },
 
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:3939",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -32,8 +32,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "pnpm dev",
-    port: 3000,
+    command: "pnpm dev --port 3939",
+    port: 3939,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

@@ -5,7 +5,7 @@ test.describe("Navigation - key pages load without errors", () => {
     await page.goto("/");
     await expect(page.locator("h1").first()).toBeVisible();
     await expect(
-      page.getByRole("link", { name: /Take Sam.*OATH/i })
+      page.locator('a[href="/take-the-oath"]').first()
     ).toBeVisible();
   });
 
