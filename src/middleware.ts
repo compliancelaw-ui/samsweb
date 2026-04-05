@@ -11,6 +11,11 @@ const PUBLIC_PATHS = [
   "/sitemap.xml",
 ];
 
+// Paths that require admin cookie (both pages and API routes)
+function requiresAdmin(pathname: string): boolean {
+  return pathname.startsWith("/admin") || pathname.startsWith("/api/admin/");
+}
+
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname.startsWith(p));
 }
@@ -24,13 +29,14 @@ export function middleware(request: NextRequest) {
   }
 
   // Site is public - no preview gate needed for launch
-  // Admin routes still require admin cookie below
-
-  // For admin routes, also require admin cookie
-  if (pathname.startsWith("/admin")) {
+  // Admin routes and admin API routes require admin cookie
+  if (requiresAdmin(pathname)) {
     const adminCookie = request.cookies.get("admin-access");
     if (adminCookie?.value !== "granted") {
-      // Send back to the main login page (they'll choose Admin Access)
+      // API routes return 401, page routes redirect
+      if (pathname.startsWith("/api/")) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
       return NextResponse.redirect(new URL("/preview-login", request.url));
     }
   }
